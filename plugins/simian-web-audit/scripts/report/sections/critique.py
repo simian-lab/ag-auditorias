@@ -9,7 +9,7 @@ CSS = """
 .sa-crit-crops img{max-height:56px;max-width:100%;border-radius:6px;background:#fff}
 .sa-crit-sw{width:44px;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
 .sa-crit-font{font-size:22px;font-weight:600;padding:6px 12px;background:#fff;border-radius:8px}
-.sa-crit-font small{font:12px Inter,sans-serif;color:var(--ash)}
+.sa-crit-font small{font:12px var(--font-body);color:var(--ash)}
 .sa-crit-prop{display:flex;gap:10px;font-size:14px;color:var(--graphite);border-top:1px solid var(--fog);padding-top:14px}
 .sa-crit-prop b{color:var(--mint-ink);white-space:nowrap}
 .sa-crit-pal{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}

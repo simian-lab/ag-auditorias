@@ -2,13 +2,13 @@
 from report.render import Section, esc
 
 CSS = """
-.sa-ba-slider{position:relative;max-width:1100px;margin:40px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(24,25,37,.18);aspect-ratio:16/10;user-select:none;cursor:ew-resize;background:#fff}
+.sa-ba-slider{position:relative;max-width:1100px;margin:40px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(27,25,24,.18);aspect-ratio:16/10;user-select:none;cursor:ew-resize;background:#fff}
 .sa-ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none}
 .sa-ba-after{clip-path:inset(0 0 0 50%)}
 .sa-ba-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
 .sa-ba-handle::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:18px;box-shadow:var(--shadow-3)}
 .sa-ba-lbl{position:absolute;top:16px;z-index:2;background:var(--carbon);color:#fff;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:500}
-.sa-ba-l{left:16px}.sa-ba-r{right:16px;background:var(--lavender)}
+.sa-ba-l{left:16px}.sa-ba-r{right:16px;background:var(--brand)}
 .sa-ba-solves{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
 .sa-ba-solves b{color:var(--mint-ink)}
 .sa-ba-solves span{border:1px solid var(--fog);background:#fff;border-radius:9999px;padding:6px 12px;font-size:13px}

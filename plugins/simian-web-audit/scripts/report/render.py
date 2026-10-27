@@ -25,9 +25,9 @@ def _dock(sections: list[Section]) -> str:
 
 
 DOCK_CSS = """
-.sa-dock{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:40;background:var(--carbon);border-radius:9999px;padding:6px;display:flex;gap:2px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.sa-dock a{color:#bbb;text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:9999px;white-space:nowrap}
-.sa-dock a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.sa-dock{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:40;background:var(--carbon);border-radius:9999px;padding:6px;display:flex;gap:2px;box-shadow:0 10px 30px rgba(27,25,24,.25)}
+.sa-dock a{color:#ceccc9;text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:9999px;white-space:nowrap}
+.sa-dock a:hover{color:#fff;background:var(--brand)}
 @media(max-width:860px){.sa-dock{display:none}}
 """
 

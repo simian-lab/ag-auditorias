@@ -3,15 +3,15 @@ from report.render import Section, esc
 
 CSS = """
 .sa-show{position:relative;padding:0 0 96px;overflow:hidden;
-  background:radial-gradient(60% 50% at 15% 30%,rgba(120,90,220,.85),transparent 70%),radial-gradient(50% 60% at 85% 25%,rgba(186,140,240,.9),transparent 70%),
-  radial-gradient(70% 40% at 50% 95%,rgba(44,120,252,.9),transparent 70%),radial-gradient(40% 40% at 70% 70%,rgba(145,141,246,.8),transparent 70%),linear-gradient(180deg,#c9b8f5,#8f9cf7 60%,#4d84fb)}
+  background:radial-gradient(60% 50% at 15% 30%,rgba(88,178,155,.7),transparent 70%),radial-gradient(50% 60% at 85% 25%,rgba(244,223,151,.5),transparent 70%),
+  radial-gradient(70% 40% at 50% 95%,rgba(70,43,13,.45),transparent 70%),radial-gradient(40% 40% at 70% 70%,rgba(11,120,93,.8),transparent 70%),linear-gradient(180deg,#0b785d,#0a6a53 60%,#08503f)}
 .sa-show-notch{position:relative;z-index:2;margin:0 auto;width:max-content;max-width:100%;background:#fff;padding:14px 24px 18px;border-radius:0 0 32px 32px;display:flex;gap:4px}
 .sa-show-notch::before,.sa-show-notch::after{content:"";position:absolute;top:0;width:32px;height:32px}
 .sa-show-notch::before{left:-32px;background:radial-gradient(circle at 0 100%,transparent 31.5px,#fff 32px)}
 .sa-show-notch::after{right:-32px;background:radial-gradient(circle at 100% 100%,transparent 31.5px,#fff 32px)}
-.sa-show-notch button{border:0;background:transparent;border-radius:9999px;padding:8px 16px;font:500 15px Inter,sans-serif;color:var(--ash);cursor:pointer}
+.sa-show-notch button{border:0;background:transparent;border-radius:9999px;padding:8px 16px;font:600 16px var(--font-body);color:var(--ash);cursor:pointer}
 .sa-show-notch button.sa-show-on{background:var(--mist);color:var(--carbon)}
-.sa-show-browser{position:relative;z-index:2;max-width:980px;margin:56px auto 0;background:#fff;border-radius:16px;box-shadow:0 30px 80px rgba(24,25,37,.25);overflow:hidden}
+.sa-show-browser{position:relative;z-index:2;max-width:980px;margin:56px auto 0;background:#fff;border-radius:16px;box-shadow:0 30px 80px rgba(27,25,24,.3);overflow:hidden}
 .sa-show-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--fog);background:var(--linen)}
 .sa-show-lights{display:flex;gap:6px}.sa-show-lights i{width:11px;height:11px;border-radius:50%;background:var(--fog)}
 .sa-show-url{flex:1;max-width:420px;margin:0 auto;background:#fff;border:1px solid var(--fog);border-radius:9999px;padding:5px 14px;font-size:13px;color:var(--graphite)}
@@ -22,7 +22,7 @@ CSS = """
 .sa-show-phone{display:grid;place-items:center;background:var(--linen)}
 .sa-show-phone div{height:92%;aspect-ratio:9/19;border-radius:28px;border:8px solid var(--carbon);overflow:hidden;background:#fff}
 .sa-show-phone img{width:100%;height:auto}
-.sa-show-shade{position:absolute;inset:0;background:rgba(24,25,37,.28);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.sa-show-shade{position:absolute;inset:0;background:rgba(27,25,24,.28);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
 .sa-show-pins .sa-show-shade{opacity:1}
 .sa-show-hot{position:absolute;z-index:3;opacity:0;transform:scale(.6);transition:opacity .3s,transform .3s;pointer-events:none}
 .sa-show-pins .sa-show-hot{opacity:1;transform:scale(1);pointer-events:auto}

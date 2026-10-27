@@ -7,15 +7,15 @@ FILTER = {"ux": "Uso", "a11y": "Accesibilidad", "vis": "Visual", "tec": "Técnic
 CSS = """
 .sa-top-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
 .sa-top-filters{display:flex;gap:4px;background:var(--mist);padding:4px;border-radius:9999px;flex-wrap:wrap}
-.sa-top-filters button{border:0;background:transparent;border-radius:9999px;padding:8px 14px;font:500 14px Inter,sans-serif;color:var(--graphite);cursor:pointer}
+.sa-top-filters button{border:0;background:transparent;border-radius:9999px;padding:8px 14px;font:600 15px var(--font-body);color:var(--graphite);cursor:pointer}
 .sa-top-filters button.sa-top-on{background:#fff;color:var(--carbon);box-shadow:var(--shadow-1)}
 .sa-top-item{margin-bottom:12px;overflow:hidden}
 .sa-top-row{display:grid;grid-template-columns:56px 1fr 160px 90px 24px;gap:20px;align-items:center;padding:20px 24px;cursor:pointer}
 .sa-top-rank{font-size:32px;font-weight:600;color:var(--ash);letter-spacing:-1px}
 .sa-top-t{font-weight:600;font-size:18px}.sa-top-s{font-size:14px;color:var(--graphite)}
 .sa-top-tag{display:inline-block;border-radius:9999px;padding:2px 10px;font-size:12px;font-weight:500}
-.sa-top-ux{background:var(--amber-wash);color:var(--amber-ink)}.sa-top-a11y{background:#e8f0ff;color:var(--sky)}
-.sa-top-vis{background:#fbe6f3;color:#a8307c}.sa-top-tec{background:#efeeff;color:#5f59d6}
+.sa-top-ux{background:var(--banana-wash);color:var(--banana-ink)}.sa-top-a11y{background:var(--brand-wash);color:var(--brand)}
+.sa-top-vis{background:var(--trunk-wash);color:var(--trunk)}.sa-top-tec{background:var(--fog);color:#363330}
 .sa-top-imp{display:flex;gap:3px}.sa-top-imp i{width:14px;height:22px;border-radius:3px;background:var(--fog)}.sa-top-imp i.sa-top-full{background:var(--carbon)}
 .sa-top-mini{font-size:11px;color:var(--ash);margin-top:4px}
 .sa-top-chev{color:var(--ash);transition:transform .2s}.sa-top-open .sa-top-chev{transform:rotate(180deg)}

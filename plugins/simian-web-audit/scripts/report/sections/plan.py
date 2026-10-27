@@ -13,15 +13,15 @@ CSS = """
 .sa-plan-card ul{list-style:none;font-size:15px;color:var(--graphite)}
 .sa-plan-card li{padding:8px 0;border-top:1px solid var(--fog)}
 .sa-plan-card li b{color:var(--carbon);font-weight:500;margin-right:6px}
-.sa-plan-opt{border:1.5px dashed var(--lavender);background:#fbfaff}
-.sa-plan-chip{display:inline-block;background:var(--lavender);color:#fff;border-radius:9999px;padding:2px 10px;font-size:11px;font-weight:600;margin-left:6px}
+.sa-plan-opt{border:1.5px dashed var(--brand);background:var(--brand-wash)}
+.sa-plan-chip{display:inline-block;background:var(--brand);color:#fff;border-radius:9999px;padding:2px 10px;font-size:11px;font-weight:600;margin-left:6px}
 .sa-plan-table{width:100%;border-collapse:collapse;margin-top:40px;font-size:14px}
 .sa-plan-table th{text-align:left;font-size:12px;font-weight:500;color:var(--ash);text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;border-bottom:1px solid var(--fog)}
 .sa-plan-table td{padding:12px;border-bottom:1px solid var(--fog);vertical-align:middle}
 .sa-plan-n{font-weight:600;color:var(--ash);width:48px}
-.sa-plan-optrow td{color:var(--graphite)}.sa-plan-optrow .sa-plan-n{color:var(--lavender)}
+.sa-plan-optrow td{color:var(--graphite)}.sa-plan-optrow .sa-plan-n{color:var(--brand)}
 .sa-plan-st{display:inline-block;border-radius:9999px;padding:2px 10px;font-size:12px;font-weight:500;background:var(--mist);white-space:nowrap}
-.sa-plan-st4{background:#efeeff;color:#5f59d6}
+.sa-plan-st4{background:var(--brand-wash);color:var(--brand)}
 .sa-plan-dt{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--fog);margin-right:4px}
 .sa-plan-dton{background:var(--carbon)}
 .sa-plan-sep td{background:var(--linen);font-size:12px;font-weight:600;color:var(--graphite);text-transform:uppercase;letter-spacing:.04em}

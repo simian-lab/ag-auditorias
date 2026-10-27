@@ -76,8 +76,7 @@ def build_report(audit_dir: Path) -> Path:
         print(f"warning: only {n} items in the Top (target minimum {minimum}); the report shows Top {n}.")
     sections = [s for s in (mod.build(ctx) for mod in SECTIONS) if s is not None]
     assets = ctx["assets_dir"]
-    (assets / "fonts").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(paths.asset("fonts", "InterVariable.woff2"), assets / "fonts" / "InterVariable.woff2")
+    paths.copy_fonts(assets)
     for name, src in ctx["_used"].items():
         shutil.copy2(src, assets / name)
     for rel, src in ctx["_plugin_used"].items():

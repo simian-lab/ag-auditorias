@@ -71,7 +71,7 @@ class RenderCoreTest(unittest.TestCase):
         report = self.audit / "report"
         for ref in re.findall(r'(?:src|href)="(assets/[^"#?]+)"', html):
             self.assertTrue((report / ref).exists(), ref)
-        self.assertTrue((report / "assets" / "fonts" / "InterVariable.woff2").exists())
+        self.assertTrue((report / "assets" / "fonts" / "Vollkorn-latin-wght.woff2").exists())
 
     def test_score_shows_criteria_counts_and_list(self):
         import score as score_mod

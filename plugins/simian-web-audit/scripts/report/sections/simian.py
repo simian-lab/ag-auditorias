@@ -10,7 +10,7 @@ CSS = """
 .sa-sim-card{overflow:hidden;text-decoration:none;color:inherit}
 .sa-sim-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .sa-sim-bd{padding:24px}
-.sa-sim-rel{font-size:12px;color:var(--lavender);font-weight:600;margin-bottom:8px}
+.sa-sim-rel{font-size:12px;color:var(--brand);font-weight:600;margin-bottom:8px}
 .sa-sim-card ul{list-style:none;margin-top:12px;font-size:14px;color:var(--graphite)}
 .sa-sim-card li{padding:6px 0;border-top:1px solid var(--fog)}
 @media(max-width:860px){.sa-sim-grid{grid-template-columns:1fr}}

@@ -125,8 +125,7 @@ def build_load_page(audit_dir: Path) -> Path | None:
             .replace("{{MEANING_HTML}}", meaning).replace("{{RINGS}}", "").replace("{{VISION_BIG}}", _vision_big(areas))
             .replace("{{SITES_JSON}}", _js(sites)).replace("{{VISION_TXT_JSON}}", _js(VISION_TXT)))
     assets = report / "assets"
-    (assets / "fonts").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(paths.asset("fonts", "InterVariable.woff2"), assets / "fonts" / "InterVariable.woff2")
+    paths.copy_fonts(assets)
     shot = audit_dir / "screenshots" / "desktop-viewport.png"
     if shot.exists():
         shutil.copy2(shot, assets / "desktop-viewport.png")

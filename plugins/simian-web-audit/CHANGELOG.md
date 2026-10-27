@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0] - 2026-10-27
+
+### Changed
+- Report and load page follow the Simian visual identity manual: Green forest `#0B785D` as the brand accent (replaces the lavender/purple), Banana light and Dark trunk for category tags, the warm 0-900 gray scale, and `#3F47A9` for links.
+- The showcase band uses a Green forest gradient instead of the purple-to-blue one.
+- Typography: Vollkorn for `h1`/`h2`, Source Sans 3 for body text, both bundled as local woff2 so reports still work offline. Inter is removed.
+- Secondary text uses `#7A746F` and banana tag text uses `#7A5F14` so both pass WCAG AA (the manual's gray 400 and banana 700 fall below 4.5:1 as text).
+
 ## [0.2.1] - 2026-10-24
 
 ### Added
