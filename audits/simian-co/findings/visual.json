@@ -1,0 +1,147 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "Botones y pie de página no usan la tipografía de marca",
+      "summary": "El CTA principal, los botones de servicios y todo el footer se ven en una fuente genérica del sistema, no en la del manual de marca.",
+      "now": "El manual define Vollkorn para títulos y Source Sans Pro para texto. Pero el hero y la sección Soluciones declaran `font-family: sans-serif` y el footer pide 'Inter', que nunca se carga; por eso 'Agenda una reunión', los 'Conocer más' y los enlaces del footer se ven en Helvetica/Arial.",
+      "fix": "Usar Source Sans Pro en todos los elementos interactivos (botones, enlaces y footer): quitar los `font-family` locales del hero, de #soluciones y de #main-footer, y dejar que hereden del body. Cambiar el genérico de reserva de `serif` a `sans-serif`.",
+      "why": "Para una agencia de diseño, que el botón principal del sitio salga en otra tipografía es un descuido que cualquier cliente con ojo de diseño nota.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "assets/css/home.css: `#hero-simian { font-family: sans-serif }` and `#soluciones { font-family: sans-serif }`: `.btn` is an <a>, not covered by the `p, h1..h6 { font-family: \"Source Sans Pro\" }` rule, so it inherits the generic sans-serif",
+        "assets/css/home.css: `#main-footer { font-family: \"Inter\", sans-serif }`. The only Google Fonts request in raw/home.html is `family=Vollkorn:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700`, with no Inter. Inter is also declared in conocenos.css, servicios.css, portafolio.css and contacto.css",
+        "screenshots/desktop-viewport.png: hero button 'Agenda una reunión' (~x 237, y 571) is visibly Helvetica/Arial, while the paragraph above it is Source Sans Pro",
+        "screenshots/visual-desktop-long.png and the Lighthouse mobile screenshot: footer links ('Estrategia de producto / Consultoría', 'Política de cookies', '© Simian SAS') render in the system sans",
+        "body / p / h* rules use `\"Source Sans Pro\", serif`, so the fallback is a serif font (Times) if the webfont fails"
+      ],
+      "technical_note": "Fonts effectively rendered on the home page: Vollkorn, Source Sans Pro, and the system sans (Helvetica/Arial via the `sans-serif` and `Inter` fallbacks). Fix: delete the three local font-family declarations (or set them to `var(--font-body)`) and make the fallback stack `\"Source Sans Pro\", system-ui, sans-serif`. If Inter is intended for the footer, it is not part of the brand manual, so remove it rather than load it.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 16.5, "y_pct": 63.5}
+    },
+    {
+      "id": "visual-2",
+      "title": "Cinco estilos de botón distintos en la home",
+      "summary": "Los botones no forman un sistema, así que la jerarquía de acciones se desdibuja: el CTA principal es el que menos pesa visualmente.",
+      "now": "La home tiene 5 botones distintos: contorno blanco con texto amarillo (hero), verde sólido #0E6F52 ('Todos los proyectos'), contorno translúcido con texto #F8E7A1 ('Conocer más'), contorno amarillo con ícono (WordPress VIP) y verde sólido #0B785D ('¿Quiénes somos?'). Además usan cuatro radios de borde (4, 5 y 6 px) y tamaños de 0,9 a 1,4 rem. El CTA principal, 'Agenda una reunión', es un botón de contorno, mientras que 'Todos los proyectos' es sólido y más llamativo.",
+      "fix": "Definir dos componentes, primario (sólido, Green forest #0B785D) y secundario (contorno), con un solo radio, padding y tamaño de fuente. Aplicar el primario a 'Agenda una reunión' y el secundario al resto, y reemplazar las clases .btn, .btn-more, .btn-wp-vip y .btn-primary por esas dos.",
+      "why": "Un sistema de botones coherente hace evidente cuál es la acción importante y muestra el mismo rigor de UI que vendemos.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "home.css `#hero-simian .text-box .btn`: border 1px #fff, color #F4DF97, radius 4px, transparent bg (font: system sans-serif)",
+        "home.css `#portfolio .btn-more`: bg #0e6f52, radius 5px, font-size 1.4rem (1.0625rem in media query), weight 600",
+        "home.css `.card-solucion .back .btn`: border rgba(255,255,255,.5) / #F4DF97 on mobile, color #f8e7a1, radius 4px, 0.9rem",
+        "home.css `#banner-wp-vip .btn-wp-vip`: border #F4DF97, color #F4DF97, radius 4px, WhatsApp icon, 1rem/1.125rem",
+        "home.css `#about-section .btn-primary`: bg #0B785D, radius 6px, 1.125rem, weight 600",
+        "screenshots/desktop-fullpage.jpg: solid 'Todos los proyectos' (~x 49%, y 90%) outweighs the outline hero CTA"
+      ],
+      "technical_note": "The two solid buttons use different greens (#0e6f52 vs #0B785D) and different hover colors computed by a preprocessor (rgb(16.856,133.644,98.728) vs rgb(13.14,143.36,111.10)). Suggest `.btn` / `.btn--primary` / `.btn--secondary` in a shared stylesheet; today each page ships its own CSS (home.css, conocenos.css, servicios.css, portafolio.css, contacto.css).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 90}
+    },
+    {
+      "id": "visual-3",
+      "title": "La paleta tiene verdes duplicados y colores fuera del manual",
+      "summary": "No hay tokens de color, así que cada sección elige su propio tono y la marca se ve un poco distinta en cada bloque.",
+      "now": "Entre las 5 hojas de estilo hay 25 colores hex distintos y ninguna variable CSS. Solo de verde hay cinco: #0B785D (manual), #0B775D (fondo del hero), #0E6F52, #004D40 y #1A8A58. Los amarillos #F4DF97 y #F8E7A1 conviven, y hay un azul marino #131D25 (banner WordPress VIP) que no está en el manual. El color de enlaces del manual, #3F47A9, no aparece en ninguna hoja.",
+      "fix": "Crear variables en `:root` con los colores del manual (Green forest, Banana light, Dark trunk, enlaces #3F47A9, más uno o dos neutros) y reemplazar los valores sueltos por ellas. Si el banner de WordPress VIP necesita un fondo oscuro, que sea Dark trunk o un neutro definido.",
+      "why": "Los tokens mantienen la marca idéntica en cada página y simplifican cualquier rediseño o tema futuro.",
+      "impact": 2,
+      "effort": "Medio",
+      "evidence": [
+        "Hex colors collected from assets/css/{home,conocenos,servicios,portafolio,contacto}.css (saved as raw/visual-*.css): 25 distinct values, 0 `--custom-properties`",
+        "Greens: #0b785d, #0b775d (`#hero-simian` background), #0e6f52 (`.card-portafolio .info h3`, `.btn-more`), #004d40 (`header` color), #1a8a58 (portafolio.css)",
+        "Yellows: #f4df97 and #f8e7a1 (`.card-solucion .back .btn`). Dark neutrals: #462b0d, #363330 (footer bg), #1b1918 (body text), #131d25 (`#banner-wp-vip`), #333, #444, #666, #6b6561",
+        "#3F47A9 (brand link color) is not present in any stylesheet"
+      ],
+      "technical_note": "#0B775D vs #0B785D differ by 1 in the G channel, which looks like a typo. The hover colors are fractional rgb() values compiled from Sass lighten(), so they are not brand colors either. Suggested tokens: --green-forest #0B785D, --banana-light #F4DF97, --dark-trunk #462B0D, --link #3F47A9, --cream #FCF5EE, --ink #1B1918.",
+      "pin": null
+    },
+    {
+      "id": "visual-4",
+      "title": "Fotos de stock genéricas debilitan servicios y testimonios",
+      "summary": "La imagen de los servicios y de los testimonios parece de banco de fotos, mientras que el hero sí muestra trabajo real, y ese contraste baja la credibilidad.",
+      "now": "Las 6 tarjetas de Soluciones usan fotos genéricas: equipos alrededor de planos, código desenfocado con gafas, una mano señalando un portátil. La sección de testimonios muestra al lado la foto de una persona sin relación con las citas de Luis Puerto (Externado) y Diego Vallejo (El Tiempo), y parece que fuera uno de ellos. Al equipo real solo se le ve como ilustraciones de monos.",
+      "fix": "Cambiar las fotos de Soluciones por piezas propias: capturas de proyectos reales, fragmentos de wireframes, dashboards de automatizaciones o fotos del equipo trabajando. En testimonios, quitar la foto o usar el logo o el proyecto de cada cliente. Una sesión de fotos del equipo cubriría además Conócenos.",
+      "why": "Para una agencia, las imágenes propias son prueba de capacidad. Las fotos de stock son intercambiables con cualquier competidor.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html: `/assets/img/home/soluciones-1.jpg` … `soluciones-6.jpg` inside `.card-solucion`",
+        "screenshots/visual-desktop-long.png (rendered via local copy, hero height fixed): Soluciones grid shows six generic stock-style photos (people at a table with sketches, two men pointing at screens, blurred code behind glasses, hand pointing at a laptop)",
+        "Testimonios section: right half background photo of an unidentified person in a denim jacket next to the two quote cards",
+        "By contrast the hero image `/assets/img/home/hero-dispositivos-1.webp` and the portfolio cards show real client apps (Externado, El Tiempo, Salud Total)"
+      ],
+      "technical_note": "The stock-vs-real judgement is visual; there is no EXIF or licence check. Several of the Soluciones images have the soft, over-lit look typical of generated or stock imagery. The testimonial photo is a CSS background: `url(\"../img/home/fondo-testimonios.jpg\") no-repeat right` in home.css.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 97}
+    },
+    {
+      "id": "visual-5",
+      "title": "En escritorio los servicios esconden su descripción",
+      "summary": "En escritorio, cada servicio se ve solo como un título y una foto genérica; lo que hacemos y el botón aparecen únicamente al pasar el mouse.",
+      "now": "En escritorio, las tarjetas de Soluciones muestran solo el título y la foto. La descripción y el botón 'Conocer más' están en una capa con opacidad 0 que solo aparece con :hover. Quien recorre la página sin mover el mouse sobre cada tarjeta ve seis fotos y no la propuesta de valor. En móvil la capa sí es visible.",
+      "fix": "Mostrar siempre la descripción corta y el enlace debajo del título, en escritorio como en móvil, y reservar el hover para un realce sutil (sombra o zoom de la imagen), no para revelar contenido.",
+      "why": "Si la oferta de servicios es visible sin interacción, se entiende de un vistazo y la sección deja de depender de las fotos de stock.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "home.css: `.card-solucion .back { position:absolute; ... background: rgba(11,120,93,.7) }` hidden by default and revealed by `.card-solucion:hover .back, .card-solucion.active .back { opacity: 1 }`",
+        "Mobile override: `.card-solucion .back { position: relative; opacity: 1 }`, so the copy is visible only on mobile",
+        "screenshots/visual-desktop-long.png: the six Soluciones cards show only title + photo; the Lighthouse mobile screenshot shows the description and 'Conocer más'",
+        "Fixed `.card-solucion { height: 380px }` and `h3 { height: 60px }` on desktop: two-line titles ('Estrategia de producto / Consultoría') shift visually against one-line titles"
+      ],
+      "technical_note": "Hover-only reveal also fails on touch laptops and tablets above the mobile breakpoint. The `.active` class hints at a JS toggle, but no tap affordance is visible. Rendering the `.back` content statically below the image removes the duplicated <h3> (front and back) too.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 98}
+    },
+    {
+      "id": "visual-6",
+      "title": "Los títulos de sección cambian de peso, color y estilo",
+      "summary": "Cada H2 de la home tiene su propio peso y color, así que las secciones no se leen como parte de un mismo sistema.",
+      "now": "Los H2 en Vollkorn alternan peso 400 y 500, y verde, café o una mezcla blanco y amarillo en dos pesos (banner WordPress VIP). Los H3 de las tarjetas también varían: en Portafolio son #0E6F52 a 1,4 rem, en Soluciones #0B785D a 1,5 rem y peso 600. El H1 y el H2 de 'Conoce sobre nosotros' piden peso 500, que no se carga, así que el navegador los muestra en 400.",
+      "fix": "Definir una escala tipográfica (H1, H2, H3, cuerpo) con tamaño, peso y color fijos en una hoja compartida, y aplicar el mismo estilo a todos los H2 de sección. Las variaciones de color, si se mantienen, deberían depender del fondo y no de cada sección.",
+      "why": "Una escala de títulos consistente ordena la lectura y comunica cuidado en el detalle, que es lo que un cliente espera de su agencia de UX/UI.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "home.css: `#soluciones .wrap-titulo h2` 400 #0B785D, `#testimonios .intro h2` 400 #462B0D, `#clientes h2` 400 #0B785D, `#about-section .info h2` 500 #0B785D, `#banner-wp-vip .titulo-regular` 400 #fff 1.875rem + `.titulo-bold` 700 #F4DF97 2.375rem",
+        "home.css: `.card-portafolio .info h3` color #0e6f52 1.4rem (default weight) vs `.card-solucion h3` color #0B785D 1.5rem 600",
+        "Google Fonts request loads Vollkorn 400;600;700 only, so `font-weight: 500` on `#hero-simian h1` and `#about-section h2` resolves to 400",
+        "Footer `.footer-brand h3` uses a third accent color, #E2BC8D"
+      ],
+      "technical_note": "Each page has its own stylesheet with section-scoped heading rules (`#section h2 {...}`), which is why the scale drifts. Move the headings to element/utility rules in a shared base.css and keep section CSS for layout only.",
+      "pin": null
+    },
+    {
+      "id": "visual-7",
+      "title": "El muro de 25 logos es largo y desigual en móvil",
+      "summary": "La prueba social más fuerte de la home ocupa una franja muy larga en celular, con logos de tamaño irregular y algunos ilegibles.",
+      "now": "Los 25 logos se apilan en 2 columnas en móvil: 13 filas, con La Kalle sola en la última. Cada logo es un JPG con su propio margen interno, así que los tamaños aparentes varían mucho. Soluciones Bolívar sale diminuto y el de Minenergía es una franja gris ilegible.",
+      "fix": "Normalizar los logos a SVG o PNG transparente con el mismo alto óptico y recortes uniformes. Mostrar en móvil una selección de 8 a 12 logos en 3 columnas (o un carrusel manual) y enlazar al resto. Reemplazar el archivo de Minenergía por una versión legible.",
+      "why": "Clientes como El Tiempo, Samsung o Davivienda son prueba de confianza de primer nivel; presentados de forma pareja y compacta, se leen de un vistazo.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html `#clientes .logo-grid`: 25 <img> named `/assets/img/home/clientes-simian/client NN.jpg` (JPG, file names with spaces)",
+        "home.css: `.logo-grid` `repeat(2, 1fr)` at the smallest breakpoint; `img { height: 90px; max-height: 3.75rem; filter: grayscale(100%); opacity: .7 }`",
+        "screenshots/mobile-fullpage.jpg (412px wide): the logo grid spans roughly y 8150 to y 9290 (~1,100px) of the 10,908px page; the last row holds a single logo (La Kalle)",
+        "Same screenshot: the Minenergía logo (alt 'Minenergia') renders as a small grey bar with unreadable text; the Soluciones Bolívar mark is noticeably smaller than its neighbours"
+      ],
+      "technical_note": "Because the logos are JPG with baked-in white backgrounds, `object-fit: contain` cannot equalise their optical size. Export trimmed transparent assets and size them by height. Also remove the space from the file names (URLs with %20).",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 79}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "pass", "evidence": "H1 'Technology for human beings' is real text; mobile rule sets `#hero-simian h1 { font-size: 2.5rem }` = 40px, clearly legible in the Lighthouse mobile screenshot (412px)."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "Hero headline is a clear focal point and the client-app mockup supports it, but the primary CTA is a thin outline button that weighs less than the solid 'Todos los proyectos' below. On desktop the Soluciones section shows six equally weighted stock photos with the offer text hidden behind hover."},
+    {"id": "vis-fonts", "result": "fail", "evidence": "Three families render on the home page: Vollkorn, Source Sans Pro, and the system sans (Helvetica/Arial) via `font-family: sans-serif` on #hero-simian/#soluciones and the never-loaded 'Inter' on #main-footer."},
+    {"id": "vis-buttons", "result": "fail", "evidence": "Five button styles: hero outline (white border, #F4DF97 text), .btn-more solid #0e6f52, card .btn translucent outline #f8e7a1, .btn-wp-vip yellow outline with icon, .btn-primary solid #0B785D; radii 4, 5 and 6px."},
+    {"id": "vis-headings", "result": "partial", "evidence": "All H2s use Vollkorn, but weight (400/500/700) and color (green, brown, white+yellow) change per section; card H3s differ in color (#0e6f52 vs #0B785D), size (1.4 vs 1.5rem) and weight."},
+    {"id": "vis-palette", "result": "fail", "evidence": "Near-duplicate greens (#0B785D, #0B775D, #0E6F52, #004D40, #1A8A58), two yellows (#F4DF97, #F8E7A1) and an off-manual navy #131D25. There are no CSS variables, and the brand link color #3F47A9 is unused."},
+    {"id": "vis-photos", "result": "partial", "evidence": "Hero and portfolio cards use real client work (Externado, El Tiempo). The six Soluciones photos and the testimonial background photo look like generic stock, and the team appears only as mascot illustrations."},
+    {"id": "vis-products", "result": "partial", "evidence": "Services (the 'products' here) always show a name, but on desktop the description and the 'Conocer más' link are hidden until :hover (`.card-solucion .back` opacity 0). On mobile they are visible."},
+    {"id": "vis-positioning", "result": "pass", "evidence": "Claims are backed by visible proof: real client app mockups in the hero, two case-study cards, the WordPress VIP partner logo, two named testimonials with client logos, and 25 client logos."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "The desktop grid is aligned (140px container gutter, consistent card grids). Issues: fixed-height solution cards with 1- vs 2-line titles, a large empty area in the first testimonial card (stretched to match the second), and an orphan last logo plus a ~1,100px logo wall on mobile."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "Footer reads '© Simian SAS - Todos los derechos reservados - 2026' (current year); no dated patterns (heavy shadows, clip-art) observed."}
+  ]
+}

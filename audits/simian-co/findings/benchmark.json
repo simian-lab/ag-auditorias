@@ -1,0 +1,88 @@
+{
+  "competitors": [
+    {
+      "name": "Imaginamos",
+      "slug": "imaginamos",
+      "url": "https://imaginamos.com/",
+      "why_competitor": "Agencia de Bogotá con más de 15 años en desarrollo de producto digital, UX/UI y software a medida (perfil en DesignRush); referente grande del mismo mercado.",
+      "screenshot": "screenshots/bench-imaginamos.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "quote_cta": true,
+        "trust_proof": true,
+        "text_headline": true
+      },
+      "notes_es": "Promesa en texto ('Lanza tu producto digital en semanas, no en meses'), CTA 'Hablemos de tu proyecto' y franja de logos de clientes (Credibanco, Davivienda, ETB, Rappi, Alpina) en el primer pantallazo; no dice sector objetivo.",
+      "lighthouse": {
+        "performance": 53,
+        "accessibility": 85,
+        "seo": 92,
+        "total_mb": 1.0
+      }
+    },
+    {
+      "name": "Fusepong",
+      "slug": "fusepong",
+      "url": "https://fusepong.com/",
+      "why_competitor": "Casa de software de Bogotá (fundada en 2016) que ofrece sitios web, aplicaciones web/móviles y UX/UI; tamaño y oferta comparables a Simian.",
+      "screenshot": "screenshots/bench-fusepong.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "quote_cta": false,
+        "trust_proof": false,
+        "text_headline": true
+      },
+      "notes_es": "Titular en texto y subtítulo claro (web, apps, marketing digital), pero sin botón de cotizar en el hero (solo el enlace 'Contacto' del menú) y sin clientes ni cifras visibles; LCP móvil de 11,4 s.",
+      "lighthouse": {
+        "performance": 61,
+        "accessibility": 75,
+        "seo": 92,
+        "total_mb": 2.49
+      }
+    },
+    {
+      "name": "Imagine Apps",
+      "slug": "imagine-apps",
+      "url": "https://imagineapps.co/",
+      "why_competitor": "Empresa de software de Bogotá (oficina en Miami) enfocada en desarrollo a medida y soluciones de IA; compite con la línea de automatización con IA de Simian.",
+      "screenshot": "screenshots/bench-imagine-apps.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "quote_cta": true,
+        "trust_proof": true,
+        "text_headline": true
+      },
+      "notes_es": "Hero 'Custom AI Solutions' con dos CTA de agenda ('Book a Free Consultation', 'Schedule Call') y contadores de años/productos/clientes; en la captura los contadores animados se ven ilegibles y el sitio carga en inglés por defecto.",
+      "lighthouse": {
+        "performance": 73,
+        "accessibility": 90,
+        "seo": 100,
+        "total_mb": 4.15
+      }
+    }
+  ],
+  "client": {
+    "name": "Simian",
+    "slug": "client",
+    "url": "https://simian.co/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": false,
+      "quote_cta": true,
+      "trust_proof": false,
+      "text_headline": true
+    },
+    "notes_es": "H1 en texto ('Technology for human beings', en inglés sobre un sitio en español) y subtítulo que sí dice qué hacen; CTA 'Agenda una reunión' visible. Las marcas (Externado, El Tiempo) solo aparecen dentro de los mockups, no como clientes ni con cifras.",
+    "lighthouse": {
+      "performance": 69,
+      "accessibility": 94,
+      "seo": 100,
+      "total_mb": 1.16
+    }
+  },
+  "takeaway_es": "Simian tiene la mejor accesibilidad (94) y el mejor LCP después de Imagine Apps entre los cuatro sitios, pero Imaginamos e Imagine Apps muestran clientes o cifras en el primer pantallazo y Simian no, aunque tiene casos como Externado y El Tiempo para mostrar."
+}

@@ -1,0 +1,155 @@
+
+### https://simian.co/
+HTTP/2 200 
+cache-control: max-age=3600
+content-type: text/html; charset=utf-8
+etag: "5972309becaa54c75a25ced79d58b60305cf364660a6ff97d8beee670ccbf3b7"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:15 GMT
+x-served-by: cache-bog-skbo2340044-BOG
+x-cache: HIT
+x-cache-hits: 0
+x-timer: S1793137636.878527,VS0,VE2
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 17823
+
+
+### http://simian.co/
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Content-Length: 0
+Server: Varnish
+Retry-After: 0
+Location: https://simian.co/
+Accept-Ranges: bytes
+Date: Tue, 27 Oct 2026 21:47:16 GMT
+X-Served-By: cache-mia-kmia1760075-MIA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1793137636.355097,VS0,VE0
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+
+### http://www.simian.co/
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Content-Length: 0
+Server: Varnish
+Retry-After: 0
+Location: https://www.simian.co/
+Accept-Ranges: bytes
+Date: Tue, 27 Oct 2026 21:47:16 GMT
+X-Served-By: cache-pdk-katl1840084-PDK
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1793137637.901513,VS0,VE0
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+
+### https://www.simian.co/
+HTTP/2 301 
+location: https://simian.co/
+content-type: text/plain; charset=utf-8
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:17 GMT
+x-served-by: cache-bog-skbo2340079-BOG
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1793137637.050793,VS0,VE70
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 33
+
+
+### https://simian.co/pagina-que-no-existe-xyz/
+HTTP/2 404 
+cache-control: max-age=3600
+content-type: text/html; charset=utf-8
+etag: "9c132af42f80c62085a474bc30e235b9009ec98a7c6931f96fb6673e1feb4c84"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:17 GMT
+x-served-by: cache-bog-skbo2340038-BOG
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1793137637.222919,VS0,VE205
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 5615
+
+
+### https://simian.co/assets/css/home.css
+HTTP/2 200 
+cache-control: max-age=3600
+content-type: text/css; charset=utf-8
+etag: "4dc58e3c538bbe6b553a391e7630ac07a62c5d37ed2791d16428631210b816d1"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:17 GMT
+x-served-by: cache-bog-skbo2340066-BOG
+x-cache: HIT
+x-cache-hits: 1
+x-timer: S1793137638.545052,VS0,VE5
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 25436
+
+
+### https://simian.co/assets/img/home/ai.webp
+HTTP/2 200 
+cache-control: max-age=31536000
+content-type: image/webp
+etag: "94cc743532edabdfcad5f15cf23268754786baf2846ef4b9affc9785bc9bdb23"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:17 GMT
+x-served-by: cache-bog-skbo2340062-BOG
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1793137638.699206,VS0,VE294
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 185858
+
+
+### https://simian.co/assets/js/general.js
+HTTP/2 200 
+cache-control: max-age=3600
+content-type: text/javascript; charset=utf-8
+etag: "915a09b1013ed41db99f0eb0aed2e6321097a9a86cc8c1682261f287f6cb853e"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:18 GMT
+x-served-by: cache-bog-skbo2340032-BOG
+x-cache: HIT
+x-cache-hits: 1
+x-timer: S1793137638.132827,VS0,VE1
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 604
+
+
+### https://simian.co/assets/fonts/icofont/fonts/icofont.woff2
+HTTP/2 200 
+cache-control: max-age=3600
+content-type: font/woff2
+etag: "82c25ff0d80f56929d076e4e39d7cbf0d904c2e58b9930ccd1cef143e6dc72ce"
+last-modified: Fri, 09 Oct 2026 15:24:24 GMT
+strict-transport-security: max-age=31556926
+accept-ranges: bytes
+date: Tue, 27 Oct 2026 21:47:18 GMT
+x-served-by: cache-bog-skbo2340065-BOG
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1793137638.231428,VS0,VE125
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 2012
+

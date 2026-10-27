@@ -1,0 +1,120 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "Imágenes mucho más grandes de lo que se muestran",
+      "summary": "La home descarga entre 602 y 738 KiB de imagen que nadie ve, y eso es la mayor parte del peso evitable del sitio.",
+      "now": "Las 40 imágenes de la home se sirven en un único tamaño (ningún srcset ni <picture>). Por ejemplo, soluciones-2.jpg mide 2000x1367 px y se pinta a 484x331 en móvil; las tarjetas del portafolio son PNG/JPG de ~1340 px para un hueco de 401 px. Solo 3 de las imágenes pesadas están en WebP.",
+      "fix": "Generar variantes por ancho (p. ej. 400/800/1200 px) en WebP o AVIF en el build, y servirlas con srcset + sizes. Pasar los PNG de las tarjetas de portafolio y las fotos de soluciones a WebP/AVIF.",
+      "why": "Somos una agencia que vende desarrollo web: la home es nuestra carta de presentación técnica y hoy descarga en móvil casi el doble de imagen de lo necesario.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "602 KiB evitables en móvil",
+      "evidence": [
+        "Lighthouse mobile image-delivery-insight: est. savings 602 KiB (9 images); desktop: 738 KiB (13 images)",
+        "soluciones-2.jpg: 164 KiB, natural 2000x1367, displayed 484x331 (mobile) / 541x370 (desktop)",
+        "card-app-uexternado.png: 157 KiB PNG, 1444x754, displayed 401x209 (mobile)",
+        "hero-dispositivos-1.webp: 113 KiB, 989x1189, displayed 331x398 (mobile)",
+        "soluciones-5.jpg (desktop): 154 KiB, flagged for both legacy format and oversize",
+        "raw/home.html: 40 <img>, 0 with srcset, 0 <picture>, 0 with width/height attributes",
+        "Images = 895 KiB of 1,185 KiB total transfer on mobile (Lighthouse network-requests)"
+      ],
+      "technical_note": "Static site on Firebase Hosting (inferred from x-fh-requested-host / Fastly headers). Easiest path: an image pipeline step in the build (sharp / eleventy-img or equivalent) that emits AVIF+WebP at fixed widths and writes srcset/sizes. Add width/height attributes at the same time to lock aspect ratio. Client logo files contain spaces in their names ('client 01.jpg'); rename to slugs while touching them.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 78, "y_pct": 50}
+    },
+    {
+      "id": "tech-2",
+      "title": "En móvil, la portada tarda en mostrarse completa",
+      "summary": "En móvil el contenido principal tarda 5,3 s en el laboratorio y 2,75 s en la medición observada, por encima del umbral de 2,5 s.",
+      "now": "El elemento que Lighthouse marca como contenido principal (LCP) es la sección del hero completa, cuyo fondo decorativo (ai.webp, 181 KiB, 1317x1317 px) se precarga con prioridad alta. Casi todo el tiempo se va en 'element render delay' (2,48 s), no en la descarga. Además, Google Analytics (164 KiB) es el script más pesado de la página y el 42 % no se usa al cargar.",
+      "fix": "Quitar el preload con fetchpriority=high del fondo decorativo y reducirlo (WebP a ~600 px y más compresión). Dejar que la imagen de los dispositivos o el H1 sean el elemento principal. Cargar gtag después de la interacción o del evento load. Volver a medir LCP en móvil hasta quedar por debajo de 2,5 s.",
+      "why": "La primera impresión en móvil es lo primero que ve un prospecto que llega por LinkedIn o WhatsApp, y Google usa el LCP como señal de experiencia.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "5,3 s",
+      "evidence": [
+        "Lighthouse mobile (simulated slow 4G): LCP 5.3 s, FCP 3.8 s, Speed Index 5.5 s, performance score 69",
+        "Lighthouse mobile metrics: observedLargestContentfulPaint 2751 ms (rubric threshold 2.5 s); desktop observed LCP 384 ms, desktop score 99",
+        "lcp-breakdown-insight (mobile): LCP node body.home > main > section#hero-simian; TTFB 111 ms, load delay 16 ms, load duration 145 ms, element render delay 2479 ms",
+        "raw/home.html line 24: <link rel=\"preload\" as=\"image\" href=\"/assets/img/home/ai.webp\" fetchpriority=\"high\">; ai.webp is only used as #hero-simian:before background (raw/tech-home.css), 181.5 KiB, 1317x1317 px",
+        "unused-javascript (mobile): gtag/js 164 KiB, 69 KiB unused (42 %), est. LCP saving 300 ms",
+        "Positives: TBT 30 ms, CLS 0, TTFB 40 ms, no redirects on the main URL"
+      ],
+      "technical_note": "The 5.3 s figure is a Lighthouse simulated-throttling estimate; the rubric uses the observed value (2751 ms), which still fails narrowly. The LCP candidate is the whole hero section (decorative ::before background with mix-blend-mode: lighten), so the metric is dominated by render delay. The preloaded ai.webp competes with hero-dispositivos-1.webp (both fetched at ~130 ms with High priority). Consider marking the decorative layer so it is not the largest paint (e.g. smaller box, or rendered as an image with lower priority) and let the <img fetchpriority=high> become the LCP.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 30}
+    },
+    {
+      "id": "tech-3",
+      "title": "Faltan cuatro de cinco cabeceras de seguridad básicas",
+      "summary": "El servidor solo envía HSTS; sin las demás cabeceras el sitio queda más expuesto a ataques comunes y lo detectaría cualquier escáner de un cliente.",
+      "now": "La respuesta de https://simian.co/ incluye Strict-Transport-Security, pero no Content-Security-Policy, X-Frame-Options (o frame-ancestors), X-Content-Type-Options ni Referrer-Policy.",
+      "fix": "Declarar las cabeceras en la configuración del hosting (bloque headers de firebase.json) para todas las rutas. Empezar con CSP en modo Report-Only, permitiendo googletagmanager, google-analytics y fonts, y pasarla a enforce cuando no haya reportes.",
+      "why": "Vendemos infraestructura, seguridad y DevOps; un prospecto técnico que revise nuestras cabeceras con securityheaders.com vería una nota baja.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Strict-Transport-Security: present (max-age=31556926, no includeSubDomains)",
+        "Content-Security-Policy: absent",
+        "X-Frame-Options / frame-ancestors: absent",
+        "X-Content-Type-Options: absent",
+        "Referrer-Policy: absent",
+        "Source: curl -sI https://simian.co/ saved in raw/tech-headers.txt"
+      ],
+      "technical_note": "Suggested baseline: X-Content-Type-Options: nosniff; Referrer-Policy: strict-origin-when-cross-origin; X-Frame-Options: DENY plus CSP frame-ancestors 'none'; CSP allowing self, www.googletagmanager.com, *.google-analytics.com, fonts.googleapis.com, fonts.gstatic.com, plus the inline gtag bootstrap (move it to a file or use a hash). Consider HSTS includeSubDomains after checking subdomains. HTTP->HTTPS and www->apex redirects work (301).",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "CSS, JavaScript y fuentes caducan en una hora",
+      "summary": "Quien vuelve al sitio después de una hora descarga de nuevo los archivos de estilo y código, aunque no hayan cambiado.",
+      "now": "Las imágenes tienen caché de un año, pero home.css, general.js, icofont.min.css e icofont.woff2 (y el propio HTML) se sirven con max-age=3600.",
+      "fix": "Añadir un hash de versión a los nombres de CSS, JS y fuentes en el build y servirlos con Cache-Control: public, max-age=31536000, immutable. Dejar el HTML con caché corta.",
+      "why": "Las visitas de retorno (clientes y prospectos en un proceso de venta) cargan más rápido y consumen menos datos móviles.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/tech-headers.txt: /assets/css/home.css cache-control: max-age=3600",
+        "raw/tech-headers.txt: /assets/js/general.js cache-control: max-age=3600",
+        "raw/tech-headers.txt: /assets/fonts/icofont/fonts/icofont.woff2 cache-control: max-age=3600",
+        "raw/tech-headers.txt: /assets/img/home/ai.webp cache-control: max-age=31536000",
+        "Lighthouse cache-insight (mobile): 4 resources with 1 h TTL, est. savings 6 KiB"
+      ],
+      "technical_note": "Byte savings are small (static assets are light: CSS 4.3 KiB, JS 0.3 KiB compressed), so this is hygiene rather than a big win. Requires filename fingerprinting so long TTLs do not serve stale CSS after deploys.",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "Las fuentes se descargan duplicadas y llegan tarde",
+      "summary": "Se descarga una fuente que nunca se usa y las fuentes reales empiezan a cargar tarde, lo que provoca un cambio visible de tipografía en la portada.",
+      "now": "El <head> precarga Source Sans Pro con una URL de versión v22, pero la hoja de Google Fonts sirve v24, así que el mismo archivo se descarga dos veces. La hoja de fuentes se difiere con el truco media=print, por lo que las fuentes reales no empiezan hasta ~760 ms. Se piden 7 pesos (Vollkorn 400/600/700 y Source Sans Pro 300/400/600/700), pero home.css no usa el 300 y sí usa 500, que no se pide.",
+      "fix": "Quitar el preload de v22, o mejor alojar las fuentes en el propio dominio con preload de las 1-2 que se usan arriba del pliegue. Pedir solo los pesos usados y añadir font-display: swap a icofont.",
+      "why": "Un titular que cambia de tipografía al cargar se ve descuidado, justo en el hero que presenta nuestra propuesta de diseño.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: <link rel=\"preload\" href=\"https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2\" as=\"font\">",
+        "Lighthouse mobile network-requests: sourcesanspro/v22/...woff2 15.1 KiB at 127 ms AND sourcesanspro/v24/...woff2 (same file id) 14.5 KiB at 761 ms",
+        "Vollkorn and Source Sans Pro v24 requests start at 760-761 ms (stylesheet loaded with media=\"print\" onload)",
+        "Google Fonts URL: Vollkorn:wght@400;600;700 & Source Sans Pro:wght@300;400;600;700",
+        "raw/tech-home.css font-weight usage: 400 x8, 600 x6, 500 x3, 700 x3, 300 x0; also references \"Inter\" which is never loaded",
+        "font-display-insight: icofont.woff2 without font-display, est. 30 ms"
+      ],
+      "technical_note": "Render-blocking-insight reports 0 ms savings (home.css 4.3 KiB and general.js 0.3 KiB are tiny), so blocking is fine; the issue is font discovery order and duplication. Only home.css was inspected for weights; check other page CSS before dropping 300. Self-hosting removes the two extra origins (fonts.googleapis.com, fonts.gstatic.com).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 21, "y_pct": 30}
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "pass", "evidence": "Lighthouse total-byte-weight: mobile 1,185 KiB (1.16 MB), desktop 1,544 KiB (1.51 MB), both under 3 MB."},
+    {"id": "tech-lcp", "result": "fail", "evidence": "Mobile observedLargestContentfulPaint 2751 ms (> 2.5 s); lab LCP 5.3 s. Desktop observed 384 ms."},
+    {"id": "tech-images", "result": "fail", "evidence": "image-delivery-insight savings 602 KiB mobile / 738 KiB desktop (> 100 KiB); 0 of 40 images use srcset; most heavy images are JPG/PNG."},
+    {"id": "tech-lazy", "result": "partial", "evidence": "35 of 38 below-the-fold <img> have loading=\"lazy\"; 3 small ones do not (two testimonial client logos, footer logo-blanco-trans.png)."},
+    {"id": "tech-render-blocking", "result": "partial", "evidence": "Render-blocking savings 0 ms (pass part), but fonts are not limited to needed weights: 7 weights requested, 300 unused, 500 used but not requested, plus a duplicate v22 font preload."},
+    {"id": "tech-cache", "result": "partial", "evidence": "Images max-age=31536000 (pass); CSS, JS and icon font max-age=3600 (1 h, below 7 days)."},
+    {"id": "tech-https", "result": "pass", "evidence": "https://simian.co/ 200 with HSTS; http://simian.co/ 301 to https; http://www and https://www redirect (301) to https://simian.co/."},
+    {"id": "tech-security-headers", "result": "fail", "evidence": "1 of 5 present: HSTS only. CSP, X-Frame-Options/frame-ancestors, X-Content-Type-Options and Referrer-Policy absent (raw/tech-headers.txt)."},
+    {"id": "tech-console", "result": "pass", "evidence": "Lighthouse errors-in-console score 1 on mobile and desktop, no errors."},
+    {"id": "tech-links", "result": "pass", "evidence": "51 internal URLs from the homepage (pages, images, CSS/JS, footer legal pages) HEAD-checked: all 200 (raw/tech-links.txt)."},
+    {"id": "tech-404", "result": "pass", "evidence": "https://simian.co/pagina-que-no-existe-xyz/ returns HTTP 404 with a branded page ('Página no encontrada'), 'Ir al inicio' link, full navigation and footer (raw/tech-404.html)."}
+  ]
+}

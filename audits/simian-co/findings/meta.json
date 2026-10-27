@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-27T21:44:31+00:00",
+  "url": "https://simian.co/",
+  "domain": "simian.co",
+  "slug": "simian-co",
+  "plugin_version": "0.4.0",
+  "scoring_version": "3",
+  "options": {
+    "load_page": true,
+    "extra": true,
+    "openseo": false,
+    "internal": true
+  }
+}

@@ -1,0 +1,51 @@
+200  https://simian.co/assets/fonts/icofont/icofont.min.css
+200  https://simian.co/assets/img/home/ai.webp
+200  https://simian.co/assets/css/home.css
+200  https://simian.co/assets/img/favicon-simian.png
+200  https://simian.co/assets/js/general.js
+200  https://simian.co/
+200  https://simian.co/assets/img/logo.png
+200  https://simian.co/portafolio/
+200  https://simian.co/servicios/
+200  https://simian.co/conocenos/
+200  https://simian.co/contacto/
+200  https://simian.co/?lang=es
+200  https://simian.co/?lang=en
+200  https://simian.co/assets/img/home/hero-dispositivos-1.webp
+200  https://simian.co/app-externado/
+200  https://simian.co/assets/img/proyectos/app-uexternado/card-app-uexternado.png
+200  https://simian.co/elecciones-el-tiempo/
+200  https://simian.co/assets/img/proyectos/elecciones-el-tiempo/thumb-elecciones-et.jpg
+200  https://simian.co/assets/img/home/soluciones-1.jpg
+200  https://simian.co/estrategia-producto-consultoria/
+200  https://simian.co/assets/img/home/soluciones-2.jpg
+200  https://simian.co/automatizacion-ia/
+200  https://simian.co/assets/img/home/soluciones-3.jpg
+200  https://simian.co/diseno-ux-ui-usuario/
+200  https://simian.co/assets/img/home/soluciones-4.jpg
+200  https://simian.co/desarrollo-web-movil/
+200  https://simian.co/assets/img/home/soluciones-5.jpg
+200  https://simian.co/infraestructura-seguridad-devops/
+200  https://simian.co/assets/img/home/soluciones-6.jpg
+200  https://simian.co/soporte-mejora-continua/
+200  https://simian.co/assets/img/banner-wp-vip/logo-wp-vip.png
+200  https://simian.co/assets/img/home/cliente-universidad-externado-colombia.png
+200  https://simian.co/assets/img/home/cliente-el-tiempo.png
+200  https://simian.co/assets/img/home/clientes-simian/client 01.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 21.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 10.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 04.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 02.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 03.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 05.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 06.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 07.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 08.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 09.jpg
+200  https://simian.co/assets/img/home/clientes-simian/client 11.jpg
+200  https://simian.co/cookies/
+200  https://simian.co/privacy-policy/
+200  https://simian.co/assets/img/home/simian-group.png
+200  https://simian.co/assets/img/logo-blanco-trans.png
+200  https://simian.co/assets/img/home/clientes-simian/client 25.jpg
+200  https://simian.co/assets/img/home/sprite.png

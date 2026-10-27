@@ -1,0 +1,253 @@
+{
+  "verdict": "La home tiene buen material (trabajo real de clientes, logos de peso, una marca reconocible), pero sin tokens ni componentes cada sección resuelve botones, títulos y colores por su cuenta, y el CTA principal termina siendo el elemento más débil de la página.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Cinco botones y ninguno es el principal",
+      "explanation": "En la home conviven cinco estilos de botón con radios de 4, 5 y 6 px, dos verdes sólidos distintos y dos tipografías; el CTA de agenda es un contorno fino en Helvetica/Arial que pesa menos que «Todos los proyectos» y «¿Quiénes somos?». Cuando todo compite al mismo nivel, quien llega no sabe cuál es la acción que esperamos de él, y en la cabecera «Contacto» es un enlace más.",
+      "items": [
+        {
+          "label": "Hero: «Agenda una reunión», contorno blanco, texto #F4DF97, system sans, radio 4 px",
+          "crop": "ui-crop-btn-hero.png"
+        },
+        {
+          "label": "Soluciones: «Conocer más», contorno translúcido, texto #F8E7A1, 0,9 rem, solo visible con hover en escritorio",
+          "crop": "ui-crop-btn-conocer.png"
+        },
+        {
+          "label": "Portafolio: «Todos los proyectos», sólido #0E6F52, radio 5 px, 1,4 rem",
+          "crop": "ui-crop-btn-proyectos.png"
+        },
+        {
+          "label": "Banner WP VIP: «Potenciemos tu solución», contorno amarillo con ícono de WhatsApp",
+          "crop": "ui-crop-btn-wpvip.png"
+        },
+        {
+          "label": "Conócenos: «¿Quiénes somos?», sólido #0B785D, radio 6 px",
+          "crop": "ui-crop-btn-quienes.png"
+        },
+        {
+          "label": "Cabecera: «Contacto» con el mismo peso que el resto del menú",
+          "crop": "ui-crop-nav-contacto.png"
+        }
+      ],
+      "proposal": "Dos componentes en una hoja compartida: .btn--primary (sólido Green forest #0B785D, texto blanco 5,44:1) y .btn--secondary (contorno), ambos en Source Sans Pro 600, mismo radio y padding. «Agenda una reunión» y «Contacto» de la cabecera pasan a primario; el resto, secundario."
+    },
+    {
+      "kind": "headings",
+      "title": "Cada sección titula a su manera",
+      "explanation": "Todos los títulos usan Vollkorn, pero cambian de peso (400, 500 que no se carga y se ve en 400, 700) y de color (verde, café, blanco con amarillo, #E2BC8D en el footer) según la sección. El resultado es que la página no se lee como un recorrido continuo sino como bloques pegados, y el ojo no encuentra un patrón para saber qué es sección y qué es subtítulo.",
+      "items": [
+        {
+          "label": "H1 hero: Vollkorn, peso 500 pedido (se ve 400), blanco + #F4DF97",
+          "crop": "ui-crop-h1-hero.png"
+        },
+        {
+          "label": "H2 Soluciones: Vollkorn 400, #0B785D",
+          "crop": "ui-crop-h2-soluciones.png"
+        },
+        {
+          "label": "H2 WP VIP: dos tamaños y dos pesos (400 blanco / 700 #F4DF97)",
+          "crop": "ui-crop-h2-wpvip.png"
+        },
+        {
+          "label": "H2 Testimonios: Vollkorn 400, #462B0D",
+          "crop": "ui-crop-h2-testimonios.png"
+        },
+        {
+          "label": "H2 Conócenos: peso 500 pedido (se ve 400), #0B785D",
+          "crop": "ui-crop-h2-nosotros.png"
+        },
+        {
+          "label": "Título del footer: Vollkorn bold en #E2BC8D, color fuera del manual",
+          "crop": "ui-crop-h3-footer.png"
+        }
+      ],
+      "proposal": "Una escala única por elemento, no por sección: H1, H2 y H3 con tamaño, peso (400 o 600, los que sí se cargan) y color fijos; el color solo cambia según el fondo (Green forest sobre claro, blanco sobre oscuro, Dark trunk sobre Banana light)."
+    },
+    {
+      "kind": "colors",
+      "title": "Cinco verdes y dos amarillos para una sola marca",
+      "explanation": "El manual define un verde y un amarillo, pero las hojas de estilo usan cinco verdes, dos amarillos, un café claro, un azul marino y varios grises sueltos, sin ninguna variable CSS. Las diferencias son pequeñas (#0B785D frente a #0B775D difieren en un dígito), pero se acumulan y la marca se ve ligeramente distinta en cada bloque.",
+      "items": [
+        {
+          "label": "Green forest del manual (46 usos)",
+          "hex": "#0B785D"
+        },
+        {
+          "label": "Fondo del hero, casi idéntico",
+          "hex": "#0B775D"
+        },
+        {
+          "label": "Botón «Todos los proyectos» y H3 de portafolio",
+          "hex": "#0E6F52"
+        },
+        {
+          "label": "Color de la cabecera",
+          "hex": "#004D40"
+        },
+        {
+          "label": "Verde de portafolio.css",
+          "hex": "#1A8A58"
+        },
+        {
+          "label": "Banana light del manual",
+          "hex": "#F4DF97"
+        },
+        {
+          "label": "Amarillo de «Conocer más»",
+          "hex": "#F8E7A1"
+        },
+        {
+          "label": "Acento del footer, fuera del manual",
+          "hex": "#E2BC8D"
+        },
+        {
+          "label": "Azul marino del banner WP VIP, fuera del manual",
+          "hex": "#131D25"
+        },
+        {
+          "label": "Crema de fondo de sección, fuera del manual",
+          "hex": "#FCF5EE"
+        }
+      ],
+      "proposal": "Variables en :root solo con los colores del manual (Green forest, Banana light, Dark trunk, la escala de grises y #3F47A9 para enlaces) y reemplazo de todos los hex sueltos. Si el crema #FCF5EE se quiere conservar, se agrega al manual como neutro cálido en vez de vivir solo en el CSS."
+    },
+    {
+      "kind": "fonts",
+      "title": "Dos fuentes de marca y una tercera que nadie eligió",
+      "explanation": "El manual pide Vollkorn y Source Sans Pro, pero el hero y Soluciones declaran font-family: sans-serif y el footer pide «Inter», que nunca se carga, así que los botones y el footer se ven en Helvetica/Arial. Justo los elementos que piden acción quedan con la tipografía genérica del sistema.",
+      "items": [
+        {
+          "label": "Vollkorn: títulos (cargada en 400, 600 y 700)",
+          "family": "Vollkorn"
+        },
+        {
+          "label": "Source Sans Pro: párrafos y tarjetas",
+          "family": "Source Sans Pro"
+        },
+        {
+          "label": "Helvetica/Arial: CTA, «Conocer más» y footer, vía sans-serif e «Inter» sin cargar",
+          "family": "Helvetica"
+        }
+      ],
+      "proposal": "Quitar los font-family locales de #hero-simian, #soluciones y #main-footer, definir --font-heading y --font-body en :root y cambiar el respaldo de serif a system-ui, sans-serif."
+    },
+    {
+      "kind": "cards",
+      "title": "Dos tarjetas, dos lenguajes",
+      "explanation": "Las tarjetas de portafolio usan título #0E6F52 a 1,4 rem con texto debajo, mientras que las de Soluciones usan #0B785D a 1,5 rem peso 600 y esconden la descripción bajo una capa verde translúcida que solo aparece con hover. Son el mismo patrón (imagen, título, descripción, enlace) resuelto dos veces de forma distinta.",
+      "items": [
+        {
+          "label": "Título de tarjeta de portafolio: #0E6F52, 1,4 rem",
+          "crop": "ui-crop-h3-portafolio.png"
+        },
+        {
+          "label": "Título de tarjeta de Soluciones: #0B785D, 1,5 rem, 600",
+          "crop": "ui-crop-h3-solucion.png"
+        },
+        {
+          "label": "Tarjeta de Soluciones en estado hover: capa rgba(11,120,93,.7) sobre la foto",
+          "crop": "ui-crop-card-solucion.png"
+        }
+      ],
+      "proposal": "Un solo componente .card (imagen, H3, descripción corta y enlace siempre visibles), con toda la tarjeta clicable y el hover reservado para un realce sutil."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {
+        "name": "Green forest",
+        "hex": "#0B785D",
+        "role": "Botón primario, fondo del hero y títulos sobre fondo claro; texto blanco encima 5,44:1 (AA). Como texto sobre blanco 5,44:1 y sobre #E7E5E4 4,33:1 (solo texto grande). Banana light encima da 4,11:1: solo para texto grande (24 px, o 18,66 px en negrita), nunca en botones."
+      },
+      {
+        "name": "Banana light",
+        "hex": "#F4DF97",
+        "role": "Acento y fondo de bandas como testimonios; texto #1B1918 encima 13,22:1 y Dark trunk 9,83:1. Sobre Green forest queda en 4,11:1, por debajo de AA para texto normal."
+      },
+      {
+        "name": "Dark trunk",
+        "hex": "#462B0D",
+        "role": "Títulos sobre Banana light y banda oscura en lugar de #131D25; texto blanco encima 13,03:1 y Banana light 9,83:1."
+      },
+      {
+        "name": "Tinta",
+        "hex": "#1B1918",
+        "role": "Texto de cuerpo; 17,52:1 sobre blanco y 13,95:1 sobre #E7E5E4."
+      },
+      {
+        "name": "Gris 600",
+        "hex": "#363330",
+        "role": "Fondo del footer; texto blanco 12,55:1, Banana light 9,47:1 y #CECCC9 7,83:1."
+      },
+      {
+        "name": "Gris 500",
+        "hex": "#6B6561",
+        "role": "Texto secundario y borde de campos de formulario; 5,74:1 sobre blanco (supera el 3:1 que pide un borde de control)."
+      },
+      {
+        "name": "Gris 400",
+        "hex": "#9E9894",
+        "role": "Solo separadores decorativos; 2,85:1 sobre blanco, no apto para texto ni para bordes de campos."
+      },
+      {
+        "name": "Gris 300",
+        "hex": "#CECCC9",
+        "role": "Separadores y texto terciario sobre fondos oscuros; 7,83:1 sobre #363330."
+      },
+      {
+        "name": "Gris 200",
+        "hex": "#E7E5E4",
+        "role": "Fondo alterno de sección; #1B1918 encima 13,95:1."
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "role": "Superficie base y tarjetas; soporta todo el texto oscuro de la escala."
+      },
+      {
+        "name": "Enlace",
+        "hex": "#3F47A9",
+        "role": "Solo enlaces dentro de texto corrido, nunca botones ni títulos; 7,82:1 sobre blanco."
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Vollkorn",
+        "role": "H1 y H2, pesos 400 y 600 (los que ya se cargan; eliminar el 500).",
+        "stack": "\"Vollkorn\", Georgia, serif"
+      },
+      {
+        "name": "Source Sans Pro",
+        "role": "Cuerpo, H3, botones, menú, formularios y footer, pesos 400 y 600.",
+        "stack": "\"Source Sans Pro\", system-ui, sans-serif"
+      }
+    ],
+    "button_primary": "Fondo #0B785D, texto #FFFFFF (5,44:1), Source Sans Pro 600 1,0625 rem, padding 0,75 rem 1,5 rem, radio 6 px, sin borde; hover y active oscureciendo a Dark trunk #462B0D (13,03:1); :focus-visible con anillo de 2 px #1B1918 y separación de 2 px. Sobre el fondo verde del hero se invierte: fondo #FFFFFF y texto #0B785D (5,44:1).",
+    "button_secondary": "Fondo transparente, borde 2 px y texto en el mismo color: #0B785D sobre claro (5,44:1) o #FFFFFF sobre verde u oscuro; misma tipografía, padding y radio que el primario. Banana light no se usa como color de texto en botones sobre Green forest (4,11:1).",
+    "heading_scale": "H1 Vollkorn 600 3,25 rem / 1,1 (2,5 rem en móvil); H2 Vollkorn 600 2,25 rem / 1,2 (1,75 rem en móvil); H3 Source Sans Pro 600 1,375 rem / 1,3; cuerpo Source Sans Pro 400 1,125 rem / 1,6 en #1B1918; texto pequeño 0,875 rem en #6B6561. Color de títulos por fondo: #0B785D sobre claro, #FFFFFF sobre verde u oscuro, #462B0D sobre Banana light."
+  },
+  "hierarchy_notes": [
+    "Hero: el ojo va primero al mockup de dispositivos y al H1 «Technology for human beings»; el CTA «Agenda una reunión» es un contorno fino en fuente del sistema y casi desaparece. Debería leerse H1 que diga qué hacemos, luego el CTA sólido, luego el mockup como prueba.",
+    "Cabecera: los cuatro enlaces pesan igual, así que «Contacto» no se distingue. Debería ser un botón primario que siga visible en la cabecera fija.",
+    "Portafolio: el botón sólido «Todos los proyectos» es el elemento de acción más fuerte de la primera pantalla y media, por encima del CTA de agenda. Debería ser secundario y dejar el peso al CTA de contacto.",
+    "Soluciones: en escritorio se ven seis fotos de stock con el mismo peso y la oferta oculta tras el hover. Debería verse primero el nombre y la descripción corta de cada servicio, con la imagen como apoyo.",
+    "Banner WordPress VIP: el bloque azul marino #131D25 es el contraste más fuerte de la página y su botón de contorno amarillo lleva a WhatsApp, compitiendo con el CTA principal. Debería usar Dark trunk y el botón secundario.",
+    "Testimonios: la foto grande de una persona sin identificar ocupa media sección y atrae la mirada antes que las citas de Luis Puerto y Diego Vallejo. Debería verse primero la cita, el nombre y el logo del cliente, seguido de un CTA de contacto.",
+    "Clientes: 25 logos grises con tamaños ópticos irregulares; el ojo no se detiene en ninguno. Deberían destacar primero 8 a 12 logos normalizados, con el resto accesible.",
+    "Footer: el título «Escríbenos y comencemos…» en #E2BC8D es lo primero que se ve, pero no tiene botón; los enlaces van en Helvetica/Arial. Debería cerrar con el CTA primario y la tipografía de marca."
+  ],
+  "sharp_headlines": {
+    "1": "En escritorio, los servicios dependen del hover",
+    "2": "Los casos de éxito no piden contacto",
+    "3": "Nuestro CTA principal no pasa contraste AA",
+    "4": "La portada móvil tarda 5,3 s en pintar",
+    "5": "602 KiB de imagen sobrante en móvil",
+    "6": "Los leads llegan sin datos para calificarlos",
+    "7": "El H1 no dice qué hacemos",
+    "8": "Vendemos seguridad y enviamos 1 de 5 cabeceras",
+    "9": "Fotos de stock donde va nuestro trabajo",
+    "10": "Cinco verdes y cero tokens de color"
+  }
+}

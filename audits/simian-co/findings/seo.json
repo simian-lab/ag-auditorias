@@ -1,0 +1,144 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "simian.co no aparece en búsquedas de compradores",
+      "summary": "En 6 búsquedas de servicios que vendemos y 3 de marca, el sitio no salió ni una vez: hoy la captación orgánica depende de referidos.",
+      "now": "Las búsquedas como 'agencia de desarrollo de software Colombia', 'agencia diseño UX UI Colombia' o 'partner WordPress VIP Colombia' devuelven directorios (Clutch, GoodFirms, DesignRush) y competidores; en búsquedas de marca solo aparecen perfiles de GitHub y StackShare de Simian, no simian.co.",
+      "fix": "Resolver primero la base técnica (sitemap, robots, canonical, JSON-LD), crear o reclamar perfiles en Clutch, GoodFirms y el directorio de partners de WordPress VIP, y publicar páginas por servicio + ciudad y por sector (medios, universidades, salud) con casos y cifras.",
+      "why": "Los directorios que hoy ocupan los resultados son justo donde los compradores B2B comparan agencias, y ahí Simian no está.",
+      "impact": 5,
+      "effort": "Alto",
+      "headline_metric": "0 de 6 búsquedas de compradores",
+      "evidence": [
+        "WebSearch (2026-10-27), 6 buyer queries in Spanish: simian.co absent in all 6 (see search_tests).",
+        "Brand queries 'Simian agencia digital Colombia', 'simian.co', '\"Simian SAS\" desarrollo web Bogotá': simian.co not returned; only github.com/simian-lab and stackshare.io/companies/simian reference the brand.",
+        "Query 'partner WordPress VIP Colombia desarrollo web': results say no Colombian WordPress VIP partner was found, although the home page states 'Somos partners de WordPress VIP' (H2)."
+      ],
+      "technical_note": "WebSearch is a US-indexed tool, not a local Google ranking; results are indicative only. The WordPress VIP partnership is a strong differentiator that search engines currently cannot connect to simian.co (no partner-directory backlink observed in results). Brand name 'Simian' collides with the dictionary word, so brand queries need entity signals (Organization schema with sameAs to LinkedIn/GitHub/Clutch).",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "No existen robots.txt ni sitemap.xml",
+      "summary": "Google tiene que descubrir las páginas solo por enlaces, lo que retrasa la indexación de casos y servicios nuevos.",
+      "now": "https://simian.co/robots.txt, /sitemap.xml y /sitemap_index.xml responden 404 (con la página de error del sitio). No hay ninguna referencia a un sitemap.",
+      "fix": "Generar sitemap.xml en el build con todas las URLs canónicas (inicio, servicios, 6 servicios, portafolio, casos, conócenos, contacto), publicar robots.txt que lo declare y enviarlo en Search Console.",
+      "why": "Sin sitemap, cada nuevo caso de éxito tarda más en aparecer en Google y no hay control sobre qué URLs se rastrean.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "curl https://simian.co/robots.txt -> 404 text/html (raw/seo-robots.txt)",
+        "curl https://simian.co/sitemap.xml -> 404 text/html (raw/seo-sitemap.xml)",
+        "curl https://simian.co/sitemap_index.xml -> 404",
+        "Lighthouse SEO score = 100 on mobile and desktop (raw/lighthouse-*.json), based on only 11 audits"
+      ],
+      "technical_note": "The Lighthouse SEO 100/100 is misleading: its 11 audits check basics (title, meta description, crawlable links, http status, hreflang syntax, valid robots.txt if present) and do not penalise a missing sitemap, missing canonical, missing structured data, thin content or zero search visibility. robots.txt returning 404 is treated as 'allow all', so crawling is not blocked, but there is no sitemap discovery.",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "Google no sabe quién es Simian ni dónde está",
+      "summary": "Sin datos estructurados ni dirección, buscadores y asistentes de IA no pueden asociar la marca con Colombia ni con sus servicios.",
+      "now": "Ninguna de las 9 páginas revisadas tiene JSON-LD (Organization, LocalBusiness, Service ni FAQPage). No aparece dirección ni ciudad en ninguna página; el footer solo muestra WhatsApp +57 311 599 2255, info@simian.co y LinkedIn. El nombre varía: 'Simian', 'Simian SAS', 'simian.co', 'Simian.co'.",
+      "fix": "Añadir JSON-LD Organization/ProfessionalService en el layout global (nombre legal, logo, url, teléfono, email, dirección o al menos ciudad, sameAs a LinkedIn, GitHub, Clutch), Service en cada página de servicio y CreativeWork/Article en cada caso. Mostrar la ciudad en el footer y unificar el nombre comercial.",
+      "why": "Es la señal más barata para que Google muestre la marca correctamente y para que una IA pueda citar a Simian con datos verificables.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "0 de 9 páginas con datos estructurados",
+      "evidence": [
+        "No <script type=\"application/ld+json\"> in raw/seo-home.html, seo-servicios.html, seo-portafolio.html, seo-conocenos.html, seo-contacto.html, seo-desarrollo-web-movil.html, seo-diseno-ux-ui.html, seo-automatizacion-ia.html, seo-app-externado.html",
+        "grep for Bogotá/Medellín/calle/carrera/address across those files: no business address or city found; 'Colombia' only appears in client names",
+        "Footer: '© Simian SAS', titles end in '| simian.co', 404 page uses 'Simian.co'",
+        "Google Business Profile: not found in any search; could not confirm it exists"
+      ],
+      "technical_note": "Phone is consistent (+57 311 599 2255, WhatsApp link only, no tel: link). Google Business Profile could not be verified with the available tools (no paid OpenSEO calls); check directly in Google Maps.",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Sin canonical y con URLs duplicadas indexables",
+      "summary": "La misma página responde en varias URLs, lo que diluye la autoridad y ensucia cómo se ve el enlace al compartirlo.",
+      "now": "Ninguna página tiene <link rel=\"canonical\">. https://simian.co/?lang=en devuelve exactamente el mismo HTML en español que la home, /index.html responde 200 y cualquier parámetro (?utm_source=) también. og:url está vacío en todas las páginas y og:image usa rutas relativas (/assets/img/simian-share.webp).",
+      "fix": "Añadir canonical absoluto por página, redirigir /index.html a /, eliminar los enlaces ?lang=es/?lang=en (o implementar /en/ real con hreflang), poblar og:url y usar URLs absolutas en og:image.",
+      "why": "Consolida las señales en una sola URL por página y asegura que LinkedIn y WhatsApp muestren la imagen al compartir casos.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "No rel=canonical in any of the 9 fetched pages (parse of raw/seo-*.html)",
+        "cmp raw/seo-home.html raw/seo-home-en.html -> identical (https://simian.co/?lang=en)",
+        "https://simian.co/index.html -> 200 (no redirect); https://simian.co/?utm_source=x -> 200",
+        "og:url content=\"\" and og:image=\"/assets/img/simian-share.webp\" on home; same pattern on all pages",
+        "raw/tech-links.txt lists https://simian.co/?lang=es and ?lang=en as crawlable links"
+      ],
+      "technical_note": "http://, www. and no-trailing-slash variants correctly 301 to https://simian.co/<path>/. Language switcher markup is commented out in the 404 template but ?lang links are still reachable from the home page per tech-links.txt. Open Graph spec requires absolute og:image URLs; several scrapers ignore relative ones.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "El H1 de inicio no dice qué hace Simian",
+      "summary": "El título principal de la home está en inglés y es un eslogan, así que no aporta a búsquedas como 'desarrollo web' o 'UX/UI'.",
+      "now": "El H1 de la home es 'Technology for human beings'. Conócenos tiene dos H1 ('Lo que nos motiva' y 'Los simios'). La página Servicios (hub) tiene 250 palabras y ningún H2.",
+      "fix": "Usar en la home un H1 en español con la categoría (p. ej. 'Desarrollo web, apps y UX/UI con IA para empresas en Colombia') y dejar el eslogan como subtítulo; dejar un solo H1 en Conócenos; estructurar Servicios con un H2 por servicio y texto que enlace a cada página.",
+      "why": "El H1 es una de las señales más fuertes de relevancia y hoy no coincide con lo que los compradores buscan.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "raw/seo-home.html H1: 'Technology for human beings' (html lang=es)",
+        "raw/seo-conocenos.html H1 x2: 'Lo que nos motiva', 'Los simios'",
+        "raw/seo-servicios.html: 250 words, H1 'Desde la planeación hasta el mantenimiento', 0 H2",
+        "Other 6 pages checked have exactly one H1"
+      ],
+      "technical_note": "Titles and meta descriptions are good: unique and descriptive on all 9 pages, so the gap is in H1/body, not in the head. Conócenos H2 'Nuestrashabilidades' is missing a space in the DOM text (probably a <br> or span without whitespace).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 30, "y_pct": 40}
+    },
+    {
+      "id": "seo-6",
+      "title": "Poco contenido citable para buscadores e IA",
+      "summary": "Las páginas son cortas y sin datos verificables, así que un asistente de IA no tiene de dónde sacar razones para recomendar a Simian.",
+      "now": "Las páginas tienen entre 119 y 494 palabras. No hay FAQ, ni llms.txt (404), ni cifras propias (año de fundación, número de proyectos, tamaño del equipo, sectores). Los 5 casos del portafolio usan el mismo alt 'Portafolio Destacado 1'. Hay testimonios y logos de clientes reconocidos (El Tiempo, Caracol, Samsung, Externado), pero solo como imágenes.",
+      "fix": "Añadir a la home y a Conócenos una ficha con datos verificables (año, proyectos, sectores, partner WordPress VIP), una sección de FAQ por servicio con FAQPage schema, publicar /llms.txt con resumen de servicios y casos, escribir alt descriptivos en el portafolio y mencionar en texto a los clientes clave.",
+      "why": "Buscadores y motores de respuesta citan hechos concretos; hoy los mejores argumentos de Simian (clientes y partnership) están en imágenes.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": null,
+      "evidence": [
+        "Word counts (visible text, raw/seo-*.html): home 494, app-externado 477, conocenos 431, desarrollo-web-movil 431, automatizacion-ia 424, diseno-ux-ui 417, servicios 250, portafolio 233, contacto 119",
+        "https://simian.co/llms.txt -> 404",
+        "raw/seo-portafolio.html: 5 case images all alt='Portafolio Destacado 1'",
+        "No FAQ section or FAQPage markup on any page; no founding year or project count found in home or conocenos text"
+      ],
+      "technical_note": "Client logos have good alt text (e.g. 'Caracol Televisión', 'Samsung'), which helps a little, but entity facts in plain text and JSON-LD carry more weight for answer engines. No AI-mention counts were estimated.",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {"query": "agencia de desarrollo de software Colombia", "appears": false, "position_or_note": "Not in results", "who_appears": ["Rootstack", "Aloa", "Behance (Micoworker)"]},
+    {"query": "empresa desarrollo de apps móviles Bogotá", "appears": false, "position_or_note": "Not in results", "who_appears": ["Clutch", "GoodFirms", "Grupo GAGC", "Foonkie Monkey", "PerfectionGeeks", "DesignRush"]},
+    {"query": "agencia diseño UX UI Colombia", "appears": false, "position_or_note": "Not in results", "who_appears": ["Clutch", "DesignProject (Blaster)", "Sortlist (UZER)"]},
+    {"query": "partner WordPress VIP Colombia desarrollo web", "appears": false, "position_or_note": "Not in results; tool reported no Colombian WordPress VIP partner found", "who_appears": ["WP Engine agency directory (AA Programación, DesignPlus)", "GoodFirms", "Clutch", "wpvip.com (40Q)"]},
+    {"query": "empresa automatización con inteligencia artificial para empresas Colombia", "appears": false, "position_or_note": "Not in results", "who_appears": ["Efficiency IT Services (eitserv.tech)", "Nexcore IA SAS (Clutch)", "Pymes.ai", "Enter.co"]},
+    {"query": "empresa desarrollo web para medios de comunicación Colombia", "appears": false, "position_or_note": "Not in results", "who_appears": ["Web & Digital Ark SAS (Acquia)", "Semrush agencies", "DesignRush"]},
+    {"query": "Simian agencia digital Colombia", "appears": false, "position_or_note": "Brand query: not in results; unrelated agencies with similar names", "who_appears": ["Sima Agencia Digital SAS", "Símbolo Agencia Digital", "Simplixity (Clutch)"]},
+    {"query": "simian.co", "appears": false, "position_or_note": "Brand query: simian.co itself not returned; only github.com/simian-lab links to it", "who_appears": ["GitHub simian-lab", "dictionary sites"]},
+    {"query": "\"Simian SAS\" desarrollo web Bogotá", "appears": false, "position_or_note": "Brand query: only StackShare profile and an employee LinkedIn profile", "who_appears": ["StackShare (Simian)", "LinkedIn", "Clutch Bogotá listings"]}
+  ],
+  "search_tests_note": "Pruebas con WebSearch (índice con base en EE. UU.) el 2026-10-27: no es un ranking local de Google Colombia ni personalizado, y no mide menciones en asistentes de IA. Sirve como indicio, no como posición exacta.",
+  "extra_pitch_es": "Con un sprint corto de base técnica (sitemap, robots, canonical y datos estructurados) y contenido con cifras y casos, simian.co puede empezar a competir en búsquedas donde hoy solo aparecen directorios y competidores.",
+  "checks": [
+    {"id": "seo-appears", "result": "fail", "evidence": "0 of 6 buyer queries returned simian.co (and 0 of 3 brand queries returned the site itself)."},
+    {"id": "seo-titles", "result": "pass", "evidence": "All 9 main pages checked have unique, descriptive <title> tags (e.g. 'Servicio de Automatización con IA | simian.co')."},
+    {"id": "seo-descriptions", "result": "pass", "evidence": "Meta description present and unique on all 9 pages checked."},
+    {"id": "seo-h1", "result": "partial", "evidence": "8 of 9 pages have exactly one H1; /conocenos/ has two ('Lo que nos motiva', 'Los simios'). Home H1 is an English slogan."},
+    {"id": "seo-structured-data", "result": "fail", "evidence": "No JSON-LD of any type on the 9 pages checked; no Organization/LocalBusiness with name, address, phone."},
+    {"id": "seo-product-pages", "result": "pass", "evidence": "Each of the 6 services has its own indexable page (417–431 words, unique title/description), plus case-study pages like /app-externado/."},
+    {"id": "seo-clean-index", "result": "pass", "evidence": "No sitemap exists (404); no placeholder pages found among crawled links (raw/tech-links.txt). Duplicate URLs (?lang=en, /index.html) are covered in seo-4, not placeholders."},
+    {"id": "seo-share", "result": "partial", "evidence": "og:title, og:description and og:image present on all pages, but og:image is a relative path and og:url is empty."},
+    {"id": "seo-nap", "result": "partial", "evidence": "Phone +57 311 599 2255 and info@simian.co consistent on all pages; no address or city anywhere; name varies (Simian / Simian SAS / simian.co); Google Business Profile not confirmed."},
+    {"id": "seo-ai-ready", "result": "fail", "evidence": "No FAQ, no llms.txt (404), no fact sheet with verifiable figures (founding year, project count, team size)."}
+  ]
+}

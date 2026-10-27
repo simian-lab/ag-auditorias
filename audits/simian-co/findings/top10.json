@@ -1,0 +1,255 @@
+{
+  "client": "Simian",
+  "domain": "simian.co",
+  "date": "Octubre 2026",
+  "big_stat": {
+    "value": "51%",
+    "count_to": 51,
+    "suffix": "%",
+    "headline": "La mitad de lo que descarga la home en celular es imagen que sobra",
+    "explain": "La página de inicio pesa 1,16 MB en celular, un peso sano, pero 602 KiB de eso son imágenes más grandes de lo que se muestran o en formatos pesados. Ninguna de las 40 imágenes usa srcset: soluciones-2.jpg, por ejemplo, mide 2000×1367 px y se pinta a 484×331.",
+    "grid_pct": 51,
+    "grid_legend": [
+      "Imagen evitable (602 KiB)",
+      "Todo lo demás"
+    ],
+    "source": "Lighthouse móvil, octubre 2026 (total-byte-weight 1.185 KiB; image-delivery-insight: ahorro estimado de 602 KiB)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "a11y-2",
+        "ux-4",
+        "visual-5"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "En escritorio, los servicios dependen del hover",
+      "t_plain": "En escritorio, la descripción y el enlace de los 6 servicios solo aparecen al pasar el mouse",
+      "s": "En escritorio, la sección «Soluciones de Simian» muestra solo título y foto; lo que hacemos y el botón aparecen únicamente con hover, y con teclado el foco cae en enlaces invisibles.",
+      "now": "En pantallas de más de 992 px, la capa .back de cada tarjeta tiene opacity: 0 y solo se muestra con :hover o con la clase .active, que ningún script asigna. Al tabular, el foco cae en 6 enlaces «Conocer más» que no se ven, y en tabletas táctiles grandes el contenido depende de un hover que no existe. En móvil sí se ve siempre.",
+      "fix": "Mostrar siempre en escritorio la descripción corta y el enlace, como en móvil, y dejar el hover para un realce sutil. Como mínimo, mostrar la capa también con :focus-within y limitar el efecto con @media (hover: hover). Convertir toda la tarjeta en el enlace y dejar un solo título por tarjeta.",
+      "why": "Los servicios son el centro de la oferta comercial: hoy no se entienden de un vistazo y quedan fuera para quien navega con teclado o lector de pantalla.",
+      "shot": {
+        "img": "desktop-long.jpg",
+        "x": 20,
+        "y": 30.5
+      }
+    },
+    {
+      "n": 2,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "ux-6",
+        "ux-3"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Los casos de éxito no piden contacto",
+      "t_plain": "Casos de éxito, testimonios y portafolio terminan sin un llamado a la acción, y la cabecera no tiene un botón de contacto",
+      "s": "Quien lee un caso completo o llega a los testimonios no encuentra a la vista cómo pedir algo similar; el único CTA de agenda está en el hero.",
+      "now": "El caso /app-externado/ termina en «¿Qué logramos?» sin botón; /portafolio/, /servicios/ y /conocenos/ no tienen contacto en el contenido. En celular, los testimonios empiezan a unos 6.500 px y después solo hay «¿Quiénes somos?» y el pie. En la cabecera, «Contacto» se ve igual que los demás enlaces, y los CTA usan cuatro textos y destinos distintos (Google Calendar, WhatsApp, formulario).",
+      "fix": "Crear un bloque de cierre reutilizable («¿Tienes un reto parecido? Agenda una asesoría») al final de cada caso, del portafolio, de /servicios/, de /conocenos/ y justo después de testimonios y logos. Convertir «Contacto» en un botón relleno en la cabecera fija y unificar un CTA principal (agenda) y uno secundario.",
+      "why": "Los casos de éxito son la prueba que más convence a un comprador B2B; si no tienen salida, se pierde el impulso justo cuando la intención es más alta.",
+      "shot": {
+        "img": "desktop-long.jpg",
+        "x": 50,
+        "y": 52.5
+      }
+    },
+    {
+      "n": 3,
+      "c": "vis",
+      "src": [
+        "a11y-1",
+        "visual-1",
+        "visual-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Nuestro CTA principal no pasa contraste AA",
+      "t_plain": "El botón «Agenda una reunión» falla contraste, no usa la tipografía de marca y convive con otros 4 estilos de botón",
+      "s": "El botón más importante del sitio no cumple contraste AA, se ve en una fuente genérica y pesa menos que botones secundarios.",
+      "now": "«Agenda una reunión» es un botón de contorno con texto #F4DF97 sobre el verde del hero (#0B775D): 4,16:1, por debajo de 4,5:1; los «Conocer más» móviles dan 4,38:1. El hero, Soluciones y el footer declaran font-family: sans-serif o «Inter», que nunca se carga, así que se ven en Helvetica/Arial. En la home hay 5 estilos de botón con radios de 4, 5 y 6 px, y «Todos los proyectos» (sólido) destaca más que el CTA principal.",
+      "fix": "Definir dos componentes, primario sólido en Green forest #0B785D y secundario de contorno, con un solo radio, padding y tamaño, en Source Sans Pro. Aplicar el primario a «Agenda una reunión». Validar cada par texto/fondo con un chequeo de contraste (el par Banana light sobre Green forest no alcanza AA en texto normal).",
+      "why": "Vendemos UX/UI accesible: que nuestro propio CTA principal falle contraste y tipografía resta credibilidad ante cualquier cliente que lo revise.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 16.5,
+        "y": 63.5
+      }
+    },
+    {
+      "n": 4,
+      "c": "tec",
+      "src": [
+        "tech-2",
+        "tech-5"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "La portada móvil tarda 5,3 s en pintar",
+      "t_plain": "En móvil, el contenido principal tarda 5,3 s en laboratorio (2,75 s observado) y las fuentes llegan tarde y duplicadas",
+      "s": "En celular la portada supera el umbral de 2,5 s de Google, sobre todo por demora de render y no por descarga.",
+      "now": "El LCP es la sección completa del hero, cuyo fondo decorativo (ai.webp, 181 KiB, 1317×1317 px) se precarga con fetchpriority=high; 2,48 s son «element render delay». Google Analytics (164 KiB) es el script más pesado y el 42 % no se usa al cargar. El preload de Source Sans Pro apunta a v22 pero Google sirve v24, así que el archivo se descarga dos veces, y las fuentes reales empiezan hacia los 760 ms.",
+      "fix": "Quitar el preload del fondo decorativo y reducirlo (WebP a ~600 px), para que el H1 o la imagen de dispositivos sean el LCP. Cargar gtag después del evento load. Alojar las fuentes en el propio dominio, precargar solo las 1-2 de arriba del pliegue y pedir solo los pesos usados. Volver a medir hasta quedar por debajo de 2,5 s.",
+      "why": "Es lo primero que ve un prospecto que llega por LinkedIn o WhatsApp, y Google usa el LCP como señal de experiencia.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 25,
+        "y": 30
+      }
+    },
+    {
+      "n": 5,
+      "c": "tec",
+      "src": [
+        "tech-1"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "602 KiB de imagen sobrante en móvil",
+      "t_plain": "Las imágenes se sirven en un solo tamaño, sin srcset, y pesan 602 KiB de más en móvil",
+      "s": "La home descarga en celular 602 KiB de imagen que nadie ve; es la mayor parte del peso evitable del sitio.",
+      "now": "Las 40 imágenes de la home se sirven en un único tamaño, sin srcset ni <picture>. soluciones-2.jpg mide 2000×1367 px y se pinta a 484×331; las tarjetas del portafolio son PNG/JPG de unos 1.340 px para un hueco de 401 px. Solo 3 de las imágenes pesadas están en WebP.",
+      "fix": "Generar en el build variantes por ancho (400/800/1200 px) en WebP o AVIF y servirlas con srcset + sizes. Pasar a WebP/AVIF los PNG del portafolio y las fotos de soluciones.",
+      "why": "La home es nuestra carta de presentación técnica: debe cumplir lo que recomendamos a nuestros clientes.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 78,
+        "y": 50
+      }
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-1",
+        "a11y-3"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Los leads llegan sin datos para calificarlos",
+      "t_plain": "El formulario de contacto no pide empresa, servicio ni alcance, y oculta el foco y el resultado del envío",
+      "s": "Cada contacto llega sin datos para calificarlo, y quien usa teclado o lector de pantalla no sabe dónde está ni si su mensaje se envió.",
+      "now": "En /contacto/ el formulario pide solo Nombre, Correo y «¿En qué podemos ayudarte?», y al enviar muestra «¡Gracias por contactarnos!» sin decir cuándo respondemos. Los campos quitan el outline; el anillo de foco que queda mide 1,15:1 en los campos y 1,53:1 en el botón, el borde en reposo 2,85:1, el mensaje de estado no tiene aria-live y no hay autocomplete.",
+      "fix": "Agregar empresa, un selector con las 6 líneas de servicio, presupuesto o etapa (opcional) y plazo. Prometer un tiempo de respuesta en el mensaje de éxito y ofrecer el enlace de agenda. Definir un :focus-visible común de al menos 3:1, oscurecer el borde de los campos, añadir role=\"status\" al mensaje y autocomplete a nombre y correo.",
+      "why": "Es el punto de conversión del sitio: un lead calificado se responde más rápido, y un envío claro evita abandonos o mensajes duplicados.",
+      "shot": null
+    },
+    {
+      "n": 7,
+      "c": "ux",
+      "src": [
+        "ux-5",
+        "a11y-6"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "El H1 no dice qué hacemos",
+      "t_plain": "El titular principal es «Technology for human beings» y no dice qué hacemos ni para quién",
+      "s": "Lo primero que se lee es un eslogan en inglés en un sitio en español; la oferta concreta queda en el párrafo de abajo y no nombra el tipo de cliente.",
+      "now": "El H1 es «Technology for human beings», sin lang=\"en\" en una página declarada en español. El párrafo siguiente aclara la oferta («sitios Web, PWAs, Apps y automatizaciones con IA que conectan marcas con personas»), pero no dice si trabajamos con empresas medianas, medios, universidades o banca, que son los sectores que aparecen después como clientes.",
+      "fix": "Dejar el eslogan como apoyo visual y usar como H1 una frase en español que nombre la oferta y el cliente (por ejemplo, «Diseñamos y desarrollamos productos digitales y automatizaciones con IA para empresas, medios y universidades»). Si el eslogan se mantiene en el HTML, marcarlo con lang=\"en\".",
+      "why": "En los primeros segundos el visitante decide si está en el lugar correcto; un titular específico responde «¿esto es para mí?» y ayuda a buscadores y asistentes de IA.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 21,
+        "y": 30
+      }
+    },
+    {
+      "n": 8,
+      "c": "tec",
+      "src": [
+        "tech-3",
+        "tech-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Vendemos seguridad y enviamos 1 de 5 cabeceras",
+      "t_plain": "Faltan 4 de 5 cabeceras de seguridad y el CSS, el JS y las fuentes se guardan en caché solo una hora",
+      "s": "El servidor solo envía HSTS; cualquier escáner de un cliente técnico lo detectaría. Además, las visitas de retorno vuelven a descargar estilos y código.",
+      "now": "La respuesta de https://simian.co/ incluye Strict-Transport-Security, pero no Content-Security-Policy, X-Frame-Options, X-Content-Type-Options ni Referrer-Policy. Las imágenes tienen caché de un año, pero home.css, general.js, icofont.min.css e icofont.woff2 se sirven con max-age=3600.",
+      "fix": "Declarar las cabeceras en el bloque headers de firebase.json para todas las rutas, empezando la CSP en modo Report-Only. Versionar con hash los nombres de CSS, JS y fuentes en el build y servirlos con Cache-Control: public, max-age=31536000, immutable.",
+      "why": "Vendemos infraestructura, seguridad y DevOps: nuestras cabeceras deben aprobar la misma revisión que haríamos a un cliente.",
+      "shot": null,
+      "checks": [
+        [
+          "HSTS",
+          "ok"
+        ],
+        [
+          "Content-Security-Policy",
+          "no"
+        ],
+        [
+          "X-Frame-Options",
+          "no"
+        ],
+        [
+          "X-Content-Type-Options",
+          "no"
+        ],
+        [
+          "Referrer-Policy",
+          "no"
+        ]
+      ]
+    },
+    {
+      "n": 9,
+      "c": "vis",
+      "src": [
+        "visual-4"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Fotos de stock donde va nuestro trabajo",
+      "t_plain": "Servicios y testimonios usan fotos genéricas de banco de imágenes",
+      "s": "El hero muestra trabajo real, pero servicios y testimonios usan fotos de stock, y ese contraste baja la credibilidad.",
+      "now": "Las 6 tarjetas de Soluciones usan fotos genéricas: equipos alrededor de planos, código desenfocado con gafas, una mano señalando un portátil. En testimonios aparece la foto de una persona sin relación con las citas de Luis Puerto (Externado) y Diego Vallejo (El Tiempo), y parece que fuera uno de ellos. Es un juicio visual: no se revisaron metadatos ni licencias.",
+      "fix": "Cambiar las fotos de Soluciones por piezas propias: capturas de proyectos, wireframes, dashboards de automatizaciones o fotos del equipo. En testimonios, quitar la foto o usar el logo o el proyecto de cada cliente.",
+      "why": "Para una agencia, las imágenes propias son prueba de capacidad; las de stock son intercambiables con cualquier competidor.",
+      "shot": {
+        "img": "desktop-long.jpg",
+        "x": 40,
+        "y": 33
+      }
+    },
+    {
+      "n": 10,
+      "c": "vis",
+      "src": [
+        "visual-3",
+        "visual-6"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Cinco verdes y cero tokens de color",
+      "t_plain": "No hay tokens de color ni escala tipográfica: cinco verdes, colores fuera del manual y títulos que cambian por sección",
+      "s": "Cada sección elige su propio tono, peso y color de título, así que la marca se ve un poco distinta en cada bloque.",
+      "now": "Las 5 hojas de estilo usan 25 colores hex y ninguna variable CSS. Hay cinco verdes (#0B785D del manual, #0B775D, #0E6F52, #004D40, #1A8A58), dos amarillos (#F4DF97 y #F8E7A1) y un azul marino #131D25 fuera del manual; el color de enlaces del manual, #3F47A9, no aparece. Los H2 alternan pesos 400 y 500 y colores por sección, y el peso 500 de Vollkorn no se carga, así que se muestra en 400.",
+      "fix": "Crear variables en :root con los colores del manual (Green forest, Banana light, Dark trunk, enlaces #3F47A9 y uno o dos neutros) y una escala tipográfica (H1, H2, H3, cuerpo) con tamaño, peso y color fijos en una hoja compartida. Reemplazar los valores sueltos por esas variables.",
+      "why": "Los tokens mantienen la marca idéntica en cada página, demuestran el rigor de UI que vendemos y simplifican cualquier rediseño futuro.",
+      "shot": {
+        "img": "desktop-long.jpg",
+        "x": 50,
+        "y": 22.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "El botón principal no alcanza el contraste mínimo",
+      "summary": "El CTA \"Agenda una reunión\", el botón más importante del sitio, queda por debajo de WCAG AA y cuesta leerlo para personas con baja visión o en pantallas con brillo bajo.",
+      "now": "El texto amarillo claro (#F4DF97) sobre el verde del hero (#0B775D) da 4,16:1 con texto de 16 px normal; el mínimo es 4,5:1. El mismo par de colores se usa en el hover del menú, y los botones \"Conocer más\" de las tarjetas de soluciones en móvil dan 4,38:1 (Lighthouse los marca).",
+      "fix": "Usa un tono más claro para el texto del CTA (por ejemplo #FFF4CC o blanco) o súbelo a 18,66 px en negrita, y ajusta el mismo token en las tarjetas de soluciones y en el hover del menú. Valida cada par de colores del sistema con un chequeo de contraste antes de publicar.",
+      "why": "Somos una agencia que vende UX/UI accesible: que nuestro propio CTA principal falle contraste resta credibilidad ante cualquier cliente que lo revise.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "4,16:1",
+      "evidence": [
+        "#hero-simian .text-box .btn: color #F4DF97 on background-color #0B775D, font-size 16px, weight 400 -> 4.16:1 (WCAG formula, raw/a11y-css/home.css lines 633-694)",
+        "Lighthouse mobile color-contrast (score 0): article.card-solucion > div.back > div.wrap-content > a.btn x6, #f8e7a1 on #0b785d, 14.4px -> 4.38:1",
+        "header nav a:hover / body.home header nav a:hover: #F4DF97 on #0B775D -> 4.16:1",
+        "Desktop solution-card overlay: rgba(11,120,93,0.7) over photos; worst case over a white image area the .btn (#f8e7a1) drops to 2.49:1 and white text to 3.09:1 (computed)",
+        "Scrolled header: white nav text over rgba(15,87,69,0.7) above the white portfolio section -> 3.98:1 (computed)",
+        "screenshots/desktop-viewport.png: CTA at approx. x=237, y=572"
+      ],
+      "technical_note": "Lighthouse did not flag the hero CTA because #hero-simian has background-image (sprite.png + :before ai.webp with mix-blend-mode: lighten), so axe returns it as 'incomplete' rather than failing it. That is one reason the 94/100 (mobile) and 97/100 (desktop) accessibility scores overstate real compliance: Lighthouse only runs automated checks, skips anything over images, and lists focus order, focus traps and offscreen content as manual checks it never verifies. Hero paragraph (#fff at opacity .9) computes 4.78:1, passes but has little margin.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 16, "y_pct": 64}
+    },
+    {
+      "id": "a11y-2",
+      "title": "Las tarjetas de soluciones no funcionan con teclado",
+      "summary": "En escritorio, la descripción y el enlace \"Conocer más\" de los 6 servicios solo aparecen al pasar el mouse, así que quien navega con teclado recorre enlaces invisibles.",
+      "now": "En pantallas de más de 992 px, el bloque .back de cada tarjeta tiene opacity: 0 y solo se muestra con :hover o con la clase .active, que ningún script asigna. Al tabular, el foco cae en 6 enlaces \"Conocer más\" que no se ven, y en tabletas táctiles de más de 992 px el contenido depende de un hover que no existe.",
+      "fix": "Muestra el overlay también con :focus-within (y elimina la dependencia del hover en dispositivos táctiles con @media (hover: hover)), o deja visibles la descripción y el enlace como ya se hace en móvil. Haz que toda la tarjeta sea el enlace y deja un solo título por tarjeta.",
+      "why": "Los servicios son el centro de la oferta comercial y hoy quedan fuera para usuarios de teclado y lectores de pantalla en escritorio.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/a11y-css/home.css lines 537-557: .card-solucion .back { opacity: 0; position: absolute }",
+        "raw/a11y-css/home.css line 586: .card-solucion:hover .back, .card-solucion.active .back { opacity: 1 } with no :focus or :focus-within rule",
+        "raw/a11y-css/general.js only toggles .burger/.nav-wrap and body.scroll; nothing adds .active to .card-solucion",
+        "raw/home.html: 6x <a href=\"/...\" class=\"btn\">Conocer más</a> inside the hidden .back blocks",
+        "Mobile (<=992px) shows .back with opacity 1, so the issue is desktop/tablet-landscape only"
+      ],
+      "technical_note": "WCAG 2.4.7 Focus Visible and 2.4.11 Focus Not Obscured: the focused link is fully transparent. opacity:0 keeps the element in the accessibility tree and tab order, so screen readers do read it, but sighted keyboard users do not see it. Suggested minimal patch: .card-solucion:focus-within .back { opacity: 1 }.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 98}
+    },
+    {
+      "id": "a11y-3",
+      "title": "El formulario de contacto oculta el foco y los mensajes",
+      "summary": "En /contacto/ el foco del teclado casi no se ve y el resultado del envío no se anuncia a lectores de pantalla, lo que puede hacer perder solicitudes.",
+      "now": "Los campos y el botón \"Enviar\" quitan el outline del navegador. En los campos queda solo un cambio de borde de 1 px y una sombra de 1,15:1; en el botón queda un anillo de 1,53:1 sobre el fondo crema. El borde de los campos en reposo (#9e9894 sobre blanco) da 2,85:1. El mensaje de éxito o error se escribe en un div sin aria-live, y los campos no tienen autocomplete.",
+      "fix": "Define un estilo :focus-visible común (anillo de 2 px con al menos 3:1 contra el fondo, por ejemplo #0B785D con offset), oscurece el borde de los campos a 3:1 o más, añade role=\"status\" (o aria-live=\"polite\") a #my-form-status y autocomplete=\"name\" / \"email\" a los campos.",
+      "why": "Es el punto de conversión del sitio: si alguien no sabe dónde está o si su mensaje se envió, abandona o envía dos veces.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,53:1",
+      "evidence": [
+        "raw/a11y-css/contacto.css lines 545-550: input:focus, textarea:focus { outline: none; border-color: #0B785D; box-shadow: 0 0 0 2px rgba(11,120,93,0.1) } -> shadow vs #FCF5EE 1.15:1",
+        "raw/a11y-css/contacto.css lines 603-606: .btn-submit:focus { outline: none; box-shadow: 0 0 0 2px rgba(11,120,93,0.3) } -> 1.53:1 vs #FCF5EE",
+        "raw/a11y-css/contacto.css line 537: input border #9e9894 on #ffffff -> 2.85:1 (WCAG 1.4.11 requires 3:1)",
+        "raw/a11y-contacto.html: <div id=\"my-form-status\" class=\"form-status\"></div> without role/aria-live; status set via innerHTML in handleSubmit()",
+        "raw/a11y-contacto.html: inputs #name (type=text) and #email (type=email) have visible <label for> but no autocomplete attribute; required fields not visually marked"
+      ],
+      "technical_note": "Positive: every field has a visible, programmatically associated <label>, and email uses type=email. Errors come back from Formspree as a joined string in the same non-live region, so a screen reader user gets no feedback on failure either.",
+      "pin": null
+    },
+    {
+      "id": "a11y-4",
+      "title": "Los títulos de la home saltan niveles y se duplican",
+      "summary": "La estructura de títulos no refleja las secciones, así que quien navega por encabezados con lector de pantalla no entiende bien la página.",
+      "now": "Después del H1 aparecen directamente los H3 de los proyectos del portafolio, sin un H2 para esa sección. Cada tarjeta de soluciones repite su H3 dos veces (12 H3 para 6 servicios), y el pie de página usa H3 y H4 que cuelgan de la última sección de contenido.",
+      "fix": "Añade un H2 (puede ser visualmente oculto) a la sección de portafolio, deja un solo título por tarjeta de solución (oculta el duplicado con aria-hidden o reestructura la tarjeta) y cambia los títulos del footer a texto con estilo o a un nivel coherente.",
+      "why": "Una estructura limpia mejora la navegación asistida y también ayuda a buscadores y asistentes de IA a entender qué ofrecemos.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse heading-order (score 0, mobile and desktop): article.card-portafolio > a > div.info > h3",
+        "raw/home.html: h1 (#hero-simian) -> h3 x2 (#portfolio) -> h2 'Soluciones de Simian'",
+        "raw/home.html: each article.card-solucion contains <h3> before the image and the same <h3> again inside .back",
+        "raw/home.html footer: h3 'Escríbenos y comencemos...' and h4 'Servicios' / 'Nosotros'"
+      ],
+      "technical_note": "Exactly one H1 per page on home and /contacto/ (pass). On mobile the first card h3 is display:none (removed from the a11y tree) but on desktop both are exposed.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 25, "y_pct": 87}
+    },
+    {
+      "id": "a11y-5",
+      "title": "Enlaces y textos alternativos repetidos confunden al lector",
+      "summary": "Un lector de pantalla escucha seis veces \"Conocer más\" sin contexto y lee dos veces el nombre de cada proyecto, lo que alarga y confunde la navegación.",
+      "now": "Los seis enlaces de servicios dicen solo \"Conocer más\". En las tarjetas de portafolio el enlace incluye una imagen cuyo alt repite el H3 (con espacios sobrantes), y en las tarjetas de soluciones la foto tiene como alt el mismo texto del título.",
+      "fix": "Da contexto a los enlaces (\"Conocer más sobre Automatización con IA\", visible o con texto oculto) y usa alt=\"\" en las imágenes que acompañan un título que ya las describe. Limpia los espacios finales del alt y del H3 en la plantilla de proyecto.",
+      "why": "Es una corrección de plantilla de minutos que deja el sitio a la altura de lo que recomendamos a nuestros clientes.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: 6x <a class=\"btn\">Conocer más</a> with different hrefs (WCAG 2.4.4 Link Purpose relies on context)",
+        "raw/home.html: <img alt=\"Desarrollo de app móvil Externado    \"> inside the same <a> as <h3>Desarrollo de app móvil Externado    </h3> -> accessible name repeats the title",
+        "raw/home.html: .card-solucion img alt equals the adjacent h3 text, e.g. alt=\"Automatización con IA\"",
+        "No alt text uses file names; client logos have proper brand names (pass)"
+      ],
+      "technical_note": "Lighthouse image-redundant-alt and identical-links-same-purpose did not fail here because the duplication spans img alt + heading inside the link and the links have different targets. Logo file names contain spaces ('client 01.jpg'); not an a11y issue but worth renaming.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 3}
+    },
+    {
+      "id": "a11y-6",
+      "title": "Falta saltar al contenido y el menú móvil no informa estado",
+      "summary": "Quien usa teclado debe recorrer todo el menú en cada página, y un lector de pantalla no sabe si el menú móvil está abierto o cerrado.",
+      "now": "No hay enlace \"Saltar al contenido\". El botón hamburguesa tiene aria-label=\"Menú\" pero no aria-expanded ni aria-controls, no se cierra con Escape y no lleva el foco al menú. El H1 está en inglés (\"Technology for human beings\") en una página declarada en español sin lang=\"en\".",
+      "fix": "Agrega un skip link visible al recibir foco que apunte a <main id=\"contenido\">, actualiza aria-expanded en el script del menú, añade aria-controls y cierre con Escape, y marca el H1 con lang=\"en\".",
+      "why": "Son ajustes pequeños en el header compartido que mejoran todas las páginas del sitio a la vez.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: no <a href=\"#...\"> before <header>; landmarks header/nav/main/footer present (Lighthouse landmark-one-main pass, bypass notApplicable)",
+        "raw/home.html: <button class=\"burger\" aria-label=\"Menú\"> without aria-expanded/aria-controls",
+        "raw/a11y-css/general.js: click handler only toggles .active classes; no keydown/Escape handling, no focus management",
+        "raw/a11y-css/home.css lines 143-164: closed mobile nav uses visibility:hidden (correctly removed from tab order)",
+        "raw/home.html: <html lang=\"es\"> with English <h1>Technology <br> <span>for human beings</span></h1>"
+      ],
+      "technical_note": "Burger target is 32x40 CSS px (meets 2.5.8). Home CSS does not remove outlines, so default browser focus rings remain on nav and CTA links (pass), unlike /contacto/ (see a11y-3). WCAG 3.1.2 Language of Parts applies to the English H1.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 60, "y_pct": 5}
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "fail", "evidence": "Hero CTA #F4DF97 on #0B775D 4.16:1 (16px normal); mobile solution buttons 4.38:1 (Lighthouse color-contrast fail x6); desktop overlay button over photos down to 2.49:1. Body text (#1B1918, #444, #666 on light backgrounds) and footer text pass (5.3:1 to 12.6:1)."},
+    {"id": "a11y-text-not-image", "result": "pass", "evidence": "H1, hero copy, section titles, services and testimonials are real HTML text. The hero image is a device mockup of portfolio work (illustrative), the WP VIP logo has alt text."},
+    {"id": "a11y-alt", "result": "partial", "evidence": "All images have alt and none use file names; client logos are named correctly. But portfolio and solution images repeat the adjacent heading (redundant inside links, should be alt=\"\") and some alts have trailing spaces."},
+    {"id": "a11y-headings", "result": "partial", "evidence": "Exactly one H1 on home and /contacto/ (pass), but heading order skips H1->H3 in the portfolio (Lighthouse heading-order fail), solution cards duplicate each H3, footer uses H3/H4 out of context."},
+    {"id": "a11y-names", "result": "pass", "evidence": "Burger has aria-label=\"Menú\"; WhatsApp SVG is aria-hidden with visible text; footer/contact icons sit next to visible text. Lighthouse button-name and link-name pass. No icon-only social links or chat widget."},
+    {"id": "a11y-focus", "result": "partial", "evidence": "Home keeps the browser default focus ring on nav and CTA links. /contacto/ removes outline on inputs (replacement 1.15:1) and on the submit button (1.53:1), and on desktop the 6 'Conocer más' links receive focus while invisible (opacity 0)."},
+    {"id": "a11y-keyboard", "result": "partial", "evidence": "Mobile menu is a native <button> and the closed nav is visibility:hidden (no stray focus); no carousels, chat or focus traps. But desktop solution-card content is hover-only (no :focus-within), no skip link, and the burger lacks aria-expanded/Escape handling."},
+    {"id": "a11y-form-labels", "result": "partial", "evidence": "/contacto/ fields have visible associated <label for> and email uses type=email (pass), but there is no autocomplete on name/email, required fields are not visually marked and the status/error region has no aria-live."},
+    {"id": "a11y-motion", "result": "pass", "evidence": "No auto-advancing carousels, videos or looping animations on home or /contacto/; only short hover/scroll transitions (0.2-0.4s). No prefers-reduced-motion rules, but nothing moves on its own."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> on home and /contacto/ (Lighthouse html-has-lang and html-lang-valid pass). Minor: English H1 not marked lang=\"en\"."},
+    {"id": "a11y-targets", "result": "pass", "evidence": "Lighthouse target-size pass on mobile; burger is 32x40 CSS px; mobile menu links have 1rem vertical padding; footer list links have enough spacing (~30px pitch)."}
+  ]
+}

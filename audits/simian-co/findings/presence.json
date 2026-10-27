@@ -1,0 +1,153 @@
+{
+  "area": "presence",
+  "serp": {
+    "today": [
+      {
+        "url": "simian.co",
+        "page": "https://simian.co/",
+        "title": "Desarrollo web, UX/UI y automatización con IA | simian.co",
+        "meta_description": "En Simian creamos productos digitales y automatizaciones con IA: UX/UI, desarrollo y DevOps. Agenda una reunión.",
+        "breadcrumb": "simian.co",
+        "note": "Title (56 chars) and description (112 chars) are within limits. The brand appears only as the domain 'simian.co' at the end of the title, not as 'Simian'. No <link rel=canonical>, and https://simian.co/index.html, /?lang=es and /?lang=en also return 200 with the same head (raw/tech-links.txt, raw/ux-home-en.html)."
+      },
+      {
+        "url": "simian.co › servicios",
+        "page": "https://simian.co/servicios/",
+        "title": "Servicios de desarrollo, UX/UI e IA | simian.co",
+        "meta_description": "Diseñamos y construimos soluciones digitales listas para crecer: IA, desarrollo, infraestructura y soporte continuo. Contáctanos.",
+        "breadcrumb": "simian.co › servicios",
+        "note": "Within limits. Title pattern is inconsistent across pages: most end in '| simian.co' but /portafolio/ uses 'Portafolio | Simian: Desarrollo web, WordPress y automatizaciones con IA' (72 chars, will be truncated in the SERP)."
+      },
+      {
+        "url": "simian.co › desarrollo-web-movil",
+        "page": "https://simian.co/desarrollo-web-movil/",
+        "title": "Servicio de Desarrollo web y móvil | simian.co",
+        "meta_description": "Del diseño al producto real: desarrollo con foco en velocidad, estabilidad y experiencia impecable. Productos para crecer con tu equipo y tus usuarios.",
+        "breadcrumb": "simian.co › desarrollo-web-movil",
+        "note": "Within limits."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "https://simian.co/",
+        "title": "Simian: desarrollo web, UX/UI y automatización con IA",
+        "description": "Diseñamos, construimos y operamos productos digitales: UX/UI, desarrollo web y móvil, automatización con IA y DevOps. Partners de WordPress VIP."
+      },
+      {
+        "page": "https://simian.co/servicios/",
+        "title": "Servicios de UX/UI, desarrollo web y móvil e IA | Simian",
+        "description": "Estrategia de producto, UX/UI, desarrollo web y móvil, automatización con IA, infraestructura y DevOps, y soporte continuo para productos digitales."
+      },
+      {
+        "page": "https://simian.co/portafolio/",
+        "title": "Portafolio: casos de desarrollo web e IA | Simian",
+        "description": "Casos reales de Simian: app móvil para la Universidad Externado, aplicación de Elecciones El Tiempo y más proyectos web, WordPress y de IA."
+      }
+    ]
+  },
+  "share_preview": {
+    "today": {
+      "pages_checked": ["/", "/servicios/", "/portafolio/", "/conocenos/", "/contacto/", "/desarrollo-web-movil/", "/app-externado/"],
+      "og_tags_home": {
+        "og:title": "Desarrollo web, UX/UI y automatización con IA | simian.co",
+        "og:description": "En Simian creamos productos digitales y automatizaciones con IA: UX/UI, desarrollo y DevOps. Agenda una reunión.",
+        "og:type": "website",
+        "og:url": "",
+        "og:image": "/assets/img/simian-share.webp"
+      },
+      "og_tags_servicios": {
+        "og:title": "Servicios de desarrollo, UX/UI e IA | simian.co",
+        "og:url": "",
+        "og:image": "/assets/img/servicios/og_servicios.jpg"
+      },
+      "twitter_tags": "none on any checked page",
+      "issues": [
+        "og:url is an empty string on every checked page.",
+        "og:image is a relative path on every checked page; the OG protocol requires an absolute URL, and some scrapers (LinkedIn, Slack, WhatsApp) fail to resolve relative images, so the card may show no image.",
+        "Home og:image is WebP (940x530, 10.5 KB); WebP support in link-preview scrapers is inconsistent. Service/portfolio images are JPEG 940x530, below the recommended 1200x630.",
+        "No og:site_name, og:locale, og:image:width/height/alt, and no twitter:card tags."
+      ],
+      "what_whatsapp_linkedin_show": "Not verified with the live scrapers (LinkedIn Post Inspector requires login). Based on the tags, the title and description render correctly; the image depends on the scraper resolving a relative WebP URL and may be missing."
+    },
+    "proposed": {
+      "og:title": "Simian: desarrollo web, UX/UI y automatización con IA",
+      "og:description": "Diseñamos, construimos y operamos productos digitales: UX/UI, desarrollo web y móvil, automatización con IA y DevOps.",
+      "og:image": "https://simian.co/assets/img/simian-share.webp",
+      "og:url": "https://simian.co/",
+      "og:site_name": "Simian",
+      "og:locale": "es_CO",
+      "twitter:card": "summary_large_image",
+      "og_image_note": "Re-export the existing share image (logo on green grid) as a 1200x630 JPEG with an absolute URL, e.g. https://simian.co/assets/img/simian-share.jpg; local proof at screenshots/og-source.jpg.",
+      "og_image_local": "og-source.jpg"
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Datos estructurados de la empresa",
+        "fix": "Agrega un bloque Organization (o ProfessionalService) en JSON-LD en todas las páginas con nombre legal Simian SAS, logo, correo, teléfono, ciudad y el enlace a LinkedIn en sameAs. Hoy ninguna página tiene datos estructurados, así que los motores de respuesta tienen que adivinar quiénes son.",
+        "evidence": "0 application/ld+json blocks in raw/home.html, ux-servicios.html, ux-portafolio.html, ux-conocenos.html, ux-contacto.html, ux-desarrollo-web-movil.html, ux-app-externado.html."
+      },
+      {
+        "title": "Ficha de datos verificables en Conócenos",
+        "fix": "Publica en /conocenos/ una ficha corta y citable: año de fundación, ciudad, tamaño del equipo, modelo de trabajo remoto, número de proyectos y sectores atendidos. Hoy el sitio no dice ninguno de estos datos y LinkedIn los da por su cuenta (fundada en 2013, 2-10 empleados, Bogotá).",
+        "evidence": "No founding year, city or team size found in the text of home, /conocenos/ or /servicios/. LinkedIn company page (raw/presence-linkedin.html): Founded 2013, Company size 2-10 employees, Headquarters Bogotá."
+      },
+      {
+        "title": "Página de preguntas frecuentes",
+        "fix": "Crea una sección de preguntas frecuentes (en /servicios/ o en cada servicio) que responda en una o dos frases lo que un comprador pregunta: cuánto tarda un proyecto, cómo cobran, si trabajan con empresas fuera de Colombia, qué incluye el soporte, qué significa ser partner de WordPress VIP. Márcala con FAQPage.",
+        "evidence": "No FAQ / 'preguntas frecuentes' content in raw/home.html or raw/ux-servicios.html."
+      },
+      {
+        "title": "Una página clara por servicio y por caso",
+        "fix": "Ya existen páginas por servicio y por caso (por ejemplo /desarrollo-web-movil/ y /app-externado/). Refuérzalas con un primer párrafo que diga qué es, para quién y con qué resultado medible, y enlázalas entre sí (servicio → casos que lo usan), para que la IA pueda citar una página concreta.",
+        "evidence": "Service URLs: /estrategia-producto-consultoria/, /automatizacion-ia/, /diseno-ux-ui-usuario/, /desarrollo-web-movil/, /infraestructura-seguridad-devops/, /soporte-mejora-continua/; case URLs /app-externado/, /elecciones-el-tiempo/ (raw/tech-links.txt)."
+      },
+      {
+        "title": "Permitir y guiar el rastreo: robots, sitemap y llms.txt",
+        "fix": "Publica robots.txt con la ruta del sitemap, un sitemap.xml con todas las páginas y un llms.txt que resuma en texto plano quién es Simian, sus servicios y los enlaces principales. Hoy las tres rutas devuelven 404.",
+        "evidence": "curl https://simian.co/robots.txt, /sitemap.xml and /llms.txt → HTTP 404 (served the custom 404 page), checked 2026-10-27."
+      },
+      {
+        "title": "Mismos datos de contacto y descripción en todas partes",
+        "fix": "Alinea el sitio y LinkedIn: misma ciudad, misma dirección (o declarar explícitamente que es un equipo remoto con sede legal en Bogotá), mismas especialidades (LinkedIn aún dice solo desarrollo web, diseño web y apps móviles, sin IA ni DevOps) y el sitio con https.",
+        "evidence": "See nap block: LinkedIn specialties and website URL vs. site services list."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {"field": "Nombre", "source": "Sitio: footer de todas las páginas", "value": "Simian SAS"},
+      {"field": "Nombre", "source": "Sitio: títulos de página", "value": "simian.co (la mayoría) / Simian (portafolio)"},
+      {"field": "Nombre", "source": "Política de tratamiento de datos (/privacy-policy/)", "value": "Simian SAS, NIT 900.639.528-5"},
+      {"field": "Nombre", "source": "LinkedIn (linkedin.com/company/simian-co)", "value": "Simian"},
+      {"field": "Teléfono", "source": "Sitio: home, contacto, conócenos, servicios, portafolio, casos (footer y botón WhatsApp)", "value": "+57 311 599 2255 (wa.me/573115992255)"},
+      {"field": "Teléfono", "source": "Política de tratamiento de datos y política de cookies", "value": "+57 311 599 2255"},
+      {"field": "Teléfono", "source": "LinkedIn", "value": "No publicado"},
+      {"field": "Correo", "source": "Sitio: todas las páginas revisadas y políticas", "value": "info@simian.co"},
+      {"field": "Dirección", "source": "Sitio: home, contacto, footer", "value": "No publicada"},
+      {"field": "Dirección", "source": "Política de tratamiento de datos (/privacy-policy/)", "value": "Carrera 7b #126-71 (sin ciudad)"},
+      {"field": "Dirección", "source": "Sitio: /conocenos/", "value": "Equipo remoto ('Trabajamos remoto desde el inicio')"},
+      {"field": "Dirección", "source": "LinkedIn", "value": "Bogotá, CO (sin dirección)"},
+      {"field": "Horario", "source": "Sitio y LinkedIn", "value": "No publicado en ninguna fuente"},
+      {"field": "Sitio web", "source": "LinkedIn", "value": "http://simian.co (redirige 301 a https://simian.co/)"},
+      {"field": "Especialidades", "source": "LinkedIn", "value": "Web development, Web design, Mobile applications"},
+      {"field": "Especialidades", "source": "Sitio: footer / servicios", "value": "Estrategia de producto, Automatización con IA, UX/UI, Desarrollo web y móvil, Infraestructura/seguridad/DevOps, Soporte"},
+      {"field": "Datos estructurados", "source": "Sitio: todas las páginas revisadas", "value": "Sin JSON-LD (no hay Organization ni LocalBusiness)"},
+      {"field": "Chat", "source": "Sitio", "value": "No hay widget de chat; solo enlace directo a WhatsApp"}
+    ],
+    "inconsistencies": [
+      "La única dirección física del sitio (Carrera 7b #126-71) aparece solo en la política de datos y sin ciudad; el resto del sitio no menciona ciudad y Conócenos dice que el equipo es remoto, mientras LinkedIn ubica la sede en Bogotá.",
+      "LinkedIn describe a Simian solo como desarrollo web, diseño web y apps móviles; el sitio vende además automatización con IA, estrategia de producto, DevOps y soporte, así que las dos fuentes no cuentan la misma historia.",
+      "El nombre cambia según el lugar: 'simian.co' en casi todos los títulos, 'Simian' en portafolio y LinkedIn, 'Simian SAS' en el footer y las políticas.",
+      "LinkedIn enlaza a http://simian.co sin https; funciona por redirección, pero conviene que el enlace oficial sea https://simian.co/."
+    ],
+    "not_verified": [
+      "Google Business Profile: no se encontró una ficha en la búsqueda web; no se consultó Google Maps directamente.",
+      "Directorios (Clutch, DesignRush): la búsqueda no devolvió un perfil de Simian.",
+      "Indeed (indeed.com/cmp/Simian): bloqueó la consulta (HTTP 403); un resumen de búsqueda lo atribuye a Bogotá con 11-50 empleados, pero no se pudo confirmar ni comparar con los 2-10 de LinkedIn.",
+      "Cómo se ve hoy la tarjeta en WhatsApp/LinkedIn: inferido de las etiquetas, no probado con los scrapers reales."
+    ]
+  }
+}

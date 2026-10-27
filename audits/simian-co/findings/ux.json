@@ -1,0 +1,137 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "El formulario de contacto no califica el proyecto",
+      "summary": "Cada contacto llega sin empresa, servicio ni alcance, así que ventas tiene que hacer una ronda extra de preguntas antes de poder responder con algo útil.",
+      "now": "En /contacto/ el formulario pide solo Nombre, Correo y «¿En qué podemos ayudarte?». No pregunta empresa, servicio de interés, presupuesto ni plazo, y al enviar solo muestra «¡Gracias por contactarnos!», sin decir cuándo vamos a responder.",
+      "fix": "Agrega empresa, un selector de servicio con las 6 líneas del menú, un rango de presupuesto o etapa del proyecto (opcional) y un plazo deseado. Cambia el mensaje de éxito por uno que prometa un tiempo de respuesta concreto (por ejemplo, «te respondemos en 1 día hábil») y ofrezca el enlace de agenda como siguiente paso.",
+      "why": "Un lead calificado desde el primer mensaje se responde más rápido y mejor, y una promesa de tiempo de respuesta reduce el abandono después de enviar.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/ux-contacto.html: form#my-form action=https://formspree.io/f/myzpqbol with only input#name (text), input#email (email), textarea#message; all three required",
+        "Success handler sets #my-form-status to '¡Gracias por contactarnos!'; no response-time copy anywhere on the page",
+        "No company/service/budget/timeline field; the contact page does not link the Google Calendar booking used by the home hero"
+      ],
+      "technical_note": "Formspree errors are surfaced raw via data.errors[].message (English by default). Consider a <select name=\"service\"> mirroring the 6 service slugs, and a hidden field with the referring page so leads from service pages are attributable. Required fields carry no visual marker (no asterisk / 'obligatorio').",
+      "pin": null
+    },
+    {
+      "id": "ux-2",
+      "title": "Casos de éxito y portafolio terminan sin siguiente paso",
+      "summary": "El visitante más interesado, el que lee un caso completo, llega al final y no encuentra a la vista ninguna forma de pedir algo similar.",
+      "now": "El caso /app-externado/ termina en «¿Qué logramos?» sin ningún botón: el único contacto es el del pie de página. Lo mismo pasa en /portafolio/, /servicios/ y /conocenos/, que no tienen ningún enlace de contacto ni de agenda en el contenido. Solo las páginas de cada servicio (como /desarrollo-web-movil/) incluyen «Agenda una asesoría».",
+      "fix": "Crea un bloque de cierre reutilizable («¿Tienes un reto parecido? Agenda una asesoría» + enlace a contacto) e inclúyelo al final de cada caso, del portafolio, de /servicios/ y de /conocenos/. En los casos, menciona el servicio aplicado y enlaza a su página.",
+      "why": "Los casos de éxito son la prueba que más convence a un comprador B2B; si no tienen salida, se pierde el impulso justo cuando la intención es más alta.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/ux-app-externado.html <main>: only h1/h2 headings (El cliente, El reto, La solución, ¿Qué logramos?), zero <a> or <button>",
+        "raw/ux-portafolio.html, ux-servicios.html, ux-conocenos.html: 0 occurrences of calendar.google.com and no /contacto/ link inside <main> (only in header/footer)",
+        "raw/ux-desarrollo-web-movil.html: 2 calendar CTAs ('Agenda una asesoría', 'Agenda una asesoría · Cuéntanos tu reto'), so the pattern already exists"
+      ],
+      "technical_note": "The service-page CTA block can be extracted into a shared partial and reused on case-study templates.",
+      "pin": null
+    },
+    {
+      "id": "ux-3",
+      "title": "La cabecera no tiene un botón de contacto destacado",
+      "summary": "Cuando el visitante baja más allá del hero, la única acción comercial es «Contacto», que se ve igual que el resto de los enlaces del menú.",
+      "now": "El menú tiene cuatro enlaces con el mismo peso visual (Portafolio, Servicios, Conócenos, Contacto). El único botón de agenda está en el hero y es de contorno, con poco contraste frente al fondo verde. Los botones de conversión además usan textos y destinos distintos: «Agenda una reunión» (Google Calendar), «Agenda una asesoría» (Google Calendar), «Potenciemos tu solución» (WhatsApp) y «Enviar» (formulario).",
+      "fix": "Convierte «Contacto» en un botón relleno dentro de la cabecera fija (por ejemplo, «Agenda una reunión»). Define un CTA principal (agenda) y uno secundario (formulario o WhatsApp) y usa los mismos textos en todo el sitio.",
+      "why": "Una acción principal constante y siempre visible acorta el camino a la reunión desde cualquier punto de la página.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "desktop-viewport.png: nav links at y≈44px, all same style; 'Contacto' at x≈1249",
+        "Hero CTA a.btn 'Agenda una reunión' is outlined (transparent fill, light border) at ~ (237,573) in desktop-viewport.png",
+        "general.js adds body.scroll after 100px, so the header behaves as a persistent bar and can host the CTA"
+      ],
+      "technical_note": "CTA destinations today: Google Calendar appointment schedule (home hero, service pages), wa.me/573115992255 (WordPress VIP block, footer, contact), Formspree form (/contacto/). Consider tagging each with a GA4 event (gtag G-50YE9GPTJM is loaded) to compare channels.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 86.7, "y_pct": 4.9}
+    },
+    {
+      "id": "ux-4",
+      "title": "Los servicios solo se explican al pasar el mouse",
+      "summary": "En escritorio, las tarjetas de «Soluciones de Simian» muestran solo un título y una foto; la descripción y el botón aparecen únicamente al pasar el cursor.",
+      "now": "Las seis tarjetas de servicio de la home muestran título e imagen. El texto y el botón «Conocer más» están en una capa .back que solo se ve con :hover (o con una clase .active que ningún script agrega). En celular sí se ven siempre, porque el CSS móvil fuerza esa capa a opacity 1.",
+      "fix": "Muestra siempre en escritorio una línea de descripción y el enlace, y deja el hover solo como realce visual. También puedes hacer que toda la tarjeta sea el enlace a su servicio.",
+      "why": "Quien lee la página de forma rápida, o navega con teclado o pantalla táctil, no ve qué hace cada servicio ni cómo entrar a él.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: article.card-solucion > h3 + img + div.back(h3, p, a.btn 'Conocer más')",
+        "raw/ux-home.css: '.card-solucion:hover .back, .card-solucion.active .back { opacity: 1; }'; no JS in /assets/js/general.js toggles .active",
+        "desktop-fullpage.jpg: card fronts show only title + photo (y≈97% of page)"
+      ],
+      "technical_note": "No :focus-within rule either, so keyboard users tabbing into the hidden link get no visible card state (flag for a11y). Mobile breakpoint sets .back {position: relative; opacity: 1} and hides the front h3.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 20, "y_pct": 97}
+    },
+    {
+      "id": "ux-5",
+      "title": "El titular principal no dice qué ni para quién",
+      "summary": "Lo primero que se lee es un eslogan en inglés en un sitio en español; la oferta concreta queda en el párrafo de abajo y no define a qué tipo de cliente va dirigida.",
+      "now": "El H1 es «Technology for human beings». El párrafo siguiente aclara la oferta («sitios Web, PWAs, Apps y automatizaciones con IA que conectan marcas con personas»), pero «marcas» no dice si trabajamos con empresas medianas, medios, universidades o banca, que son los sectores que aparecen después como clientes.",
+      "fix": "Deja el eslogan como apoyo visual y usa como H1 una frase en español que nombre la oferta y el cliente, por ejemplo «Diseñamos y desarrollamos productos digitales y automatizaciones con IA para empresas, medios y universidades en Colombia». Puedes sumar una prueba corta debajo (años o número de clientes).",
+      "why": "En los primeros segundos el visitante decide si está en el lugar correcto; un titular específico filtra mejor y responde la pregunta «¿esto es para mí?».",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: <html lang=\"es\">, <h1>Technology <span>for human beings</span></h1>",
+        "Hero <p>: 'En Simian diseñamos y construimos sitios Web, PWAs, Apps y automatizaciones con IA que conectan marcas con personas.'",
+        "Sectors only stated further down: '#clientes' copy 'medios de comunicación, universidades, fintech, bancos'"
+      ],
+      "technical_note": "Language switcher (?lang=en) is commented out in the header and ?lang=en returns the identical Spanish document, so there is no English audience the English H1 could be serving.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 21, "y_pct": 30}
+    },
+    {
+      "id": "ux-6",
+      "title": "Testimonios y clientes quedan lejos de los botones",
+      "summary": "Las pruebas más fuertes (dos testimonios con nombre y cargo, y más de 20 logos) aparecen hacia la mitad de la página en celular, lejos de cualquier botón de contacto.",
+      "now": "En celular, el botón «Agenda una reunión» está arriba del todo y los testimonios empiezan a unos 6.500 px de altura. Después de los testimonios y logos solo hay «¿Quiénes somos?» y el pie de página: no hay un botón para agendar junto a la prueba social. Además, «Más de 7 años» aparece solo dentro de una cita y no como dato visible.",
+      "fix": "Coloca un CTA de agenda justo después del bloque de testimonios/logos y agrega una franja de cifras verificables (años, proyectos, clientes) cerca del CTA del hero.",
+      "why": "La confianza convierte cuando está junto a la decisión; si el visitante tiene que volver a subir para actuar, se pierde el momento.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "mobile-fullpage.jpg (412x10908): hero CTA at y≈375px; '¿Qué dicen de nosotros?' at y≈6550px (~60%)",
+        "raw/home.html section#testimonios: 2 article.testimonio-card (Luis Puerto – Externado; Diego Vallejo – El Tiempo); section#clientes: logo grid of client images; no CTA inside either section",
+        "Next CTA after #clientes is a.btn-primary '¿Quiénes somos?' (/conocenos/), not a contact action"
+      ],
+      "technical_note": "Sector-grouped client list already exists on /conocenos/ (40+ named clients) and could feed a compact 'sectores' strip near the hero.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 60}
+    },
+    {
+      "id": "ux-7",
+      "title": "WhatsApp sin mensaje inicial y teléfono no marcable",
+      "summary": "El canal más directo abre un chat vacío y sin contexto, y no hay forma de llamar con un toque desde el celular.",
+      "now": "Todos los enlaces de WhatsApp apuntan a wa.me/573115992255 sin texto precargado; el número es el mismo en todas las páginas. El teléfono solo aparece como «WhatsApp +57 311 599 2255», sin un enlace tel:. El correo sí usa mailto:.",
+      "fix": "Agrega ?text= con un mensaje que cambie según la página (por ejemplo, «Hola Simian, vengo de la página de Automatización con IA y quiero…») y un enlace tel: para quien prefiera llamar.",
+      "why": "Un mensaje inicial le dice al equipo desde dónde llega el lead y le quita al visitante el trabajo de redactar el primer mensaje.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html, ux-contacto.html, ux-servicios.html, ux-portafolio.html, ux-conocenos.html, ux-desarrollo-web-movil.html: only 'wa.me/573115992255' (no ?text=)",
+        "grep 'tel:' across all fetched pages: 0 matches; 'mailto:info@simian.co' present on every page",
+        "mobile-fullpage.jpg footer: 'WhatsApp +57 311 599 2255', 'info@simian.co', 'LinkedIn' at y≈94%"
+      ],
+      "technical_note": "Per-page ?text= can be built from the page slug in the shared footer partial; this also gives lead-source attribution without extra tooling.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 30, "y_pct": 94.4}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "partial", "evidence": "First viewport (desktop and mobile) has real-text category ('sitios Web, PWAs, Apps y automatizaciones con IA') in the hero <p>, but the H1 is an English slogan and the target customer is only 'marcas'."},
+    {"id": "ux-quote-cta", "result": "pass", "evidence": "'Agenda una reunión' (Google Calendar booking) visible in the first viewport on desktop (~237,573 in desktop-viewport.png) and on mobile (mobile-fullpage.jpg y≈375). Outlined style, low emphasis."},
+    {"id": "ux-catalog-path", "result": "pass", "evidence": "Home project cards link to /app-externado/ and /elecciones-el-tiempo/; 6 service cards link to their pages (on desktop the link only shows on hover, see ux-4); /servicios/ and /portafolio/ items all link to detail pages."},
+    {"id": "ux-contact-visible", "result": "pass", "evidence": "Footer on home, contacto, servicios, portafolio, conocenos and service pages shows 'WhatsApp +57 311 599 2255' and info@simian.co."},
+    {"id": "ux-contact-tappable", "result": "partial", "evidence": "Email uses mailto: on every page; phone is only a wa.me link, with no tel: link anywhere."},
+    {"id": "ux-form-data", "result": "fail", "evidence": "/contacto/ form asks only name, email and message; no company, service of interest, scope/budget, and no response-time promise."},
+    {"id": "ux-form-friction", "result": "partial", "evidence": "3 required fields, labelled, email uses type=email (passes). Required fields are not visually marked, and errors rely on browser defaults plus raw Formspree messages."},
+    {"id": "ux-chat-ready", "result": "partial", "evidence": "No floating chat widget; WhatsApp links (footer, contact, WP VIP block) use the same number as the contact page but have no prefilled ?text= message."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "mobile-fullpage.jpg shows a burger (button.burger aria-label='Menú'); general.js toggles .nav-wrap.active, a fixed panel at ≤992px containing all 4 main links (Portafolio, Servicios, Conócenos, Contacto)."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Hero mockups show client brands (Externado, El Tiempo, Salud Total) next to the CTA, but testimonials and the logo grid sit ~6,500px down on mobile with no CTA next to them; no years/numbers strip."},
+    {"id": "ux-content-not-hidden", "result": "partial", "evidence": "No auto-advancing carousels. However, on desktop the service descriptions and links are hidden behind :hover (card-solucion .back); visible on mobile."}
+  ]
+}
