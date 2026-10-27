@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- This is the parent sitemap linking to additional sitemaps for products, collections and pages as shown below. The sitemap can not be edited manually, but is kept up to date in real time. -->
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_agentic_discovery.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_products_1.xml?from=4877289619558&amp;to=15416002937110</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_pages_1.xml?from=13854998643&amp;to=167296893206</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_collections_1.xml?from=161483915366&amp;to=535514448150</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_blogs_1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.saju.co/sitemap_articles_1.xml</loc>
+  </sitemap>
+</sitemapindex>

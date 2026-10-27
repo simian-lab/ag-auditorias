@@ -1,0 +1,240 @@
+{
+  "client": "Safetti",
+  "domain": "safetti.com",
+  "date": "Octubre 2026",
+  "big_stat": {
+    "value": "2,2 MB",
+    "count_to": null,
+    "suffix": null,
+    "headline": "Tu página de inicio descarga 2,2 MB solo en código",
+    "explain": "Son etiquetas de medición, publicidad y apps que el celular del visitante debe descargar y ejecutar antes de que la tienda responda bien: 6 de cada 10 MB de tu portada son código, no fotos de tus prendas. Varias etiquetas de Google se cargan dos veces. En la prueba en celular, la página tardó 27,2 segundos en estar lista para usarse por completo.",
+    "grid_pct": 60,
+    "grid_legend": [
+      "Código de scripts (2,2 MB)",
+      "Todo lo demás"
+    ],
+    "source": "Lighthouse móvil, octubre 2026 (scripts 2.272 KiB de 3.762 KiB; interactive 27,2 s simulado)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "vis",
+      "src": [
+        "visual-1",
+        "ux-1",
+        "a11y-1",
+        "a11y-6"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu portada esconde qué vendes",
+      "t_plain": "El mensaje principal y las categorías son imágenes con texto pintado",
+      "s": "Quien llega por primera vez no lee en texto qué vendes, y Google y los asistentes de IA tampoco pueden leerlo.",
+      "now": "La primera pantalla es un carrusel que cambia cada 4 segundos; el título, la frase y hasta el botón «DESCUBRE NEXO» son parte de la foto. Las fichas de categoría (Ciclismo, Running, Triatlón…) también son imágenes sin descripción. La frase que sí explica el negocio («ropa deportiva de alto rendimiento para cada disciplina») aparece al final de la página, y el título principal de arriba es el logo.",
+      "fix": "Escribir sobre la foto un titular en texto real del tipo «Ropa técnica para ciclismo, running, triatlón y pádel, hecha en Colombia», con botones reales para comprar por género o deporte, y dejar el nombre de la colección como subtítulo. Escribir también como texto los nombres de las categorías.",
+      "why": "Un visitante nuevo decide en segundos si está en el lugar correcto; si tiene que adivinarlo, se va.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 31
+      }
+    },
+    {
+      "n": 2,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-3",
+        "tech-2"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "Tu portada carga más código que fotos",
+      "t_plain": "Exceso de scripts de seguimiento, imágenes pesadas y banner principal tardío",
+      "s": "En celular la tienda tarda en reaccionar a toques y clics, justo cuando llegan los visitantes de tus anuncios.",
+      "now": "La página de inicio pesa 3,7 MB en celular, y 2,2 MB son código. Solo las etiquetas de Google ocupan 1,2 MB y varias se cargan dos veces. El banner principal se pide al servidor con 1,3 s de retraso, y las fotos de categorías se entregan en un formato pesado: se podrían ahorrar 552 KB en imágenes.",
+      "fix": "Hacer un inventario de etiquetas y apps, quitar duplicados y cargar lo no esencial después de que la página responda; cargar el primer banner de inmediato y entregar las imágenes en formato moderno y del tamaño justo para cada pantalla.",
+      "why": "Cada segundo que la tienda tarda en responder en el celular es tráfico pagado que se va antes de llegar al carrito.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 50,
+        "y": 5
+      }
+    },
+    {
+      "n": 3,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "visual-4"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu portada móvil anuncia una oferta vencida",
+      "t_plain": "Banner del celular con fechas de promoción vencidas y pie con © 2024",
+      "s": "Lo primero que ve un cliente en el celular es una promoción que ya terminó, y eso le resta credibilidad a toda la tienda.",
+      "now": "La primera pantalla del celular anuncia «ÚLTIMAS UNIDADES 16 - 23 OCTUBRE, del 20% al 50% de descuento», con las fechas dentro de la imagen. La revisamos el 25 de octubre. El pie de página, además, dice «© 2024».",
+      "fix": "Programar inicio y fin de cada banner promocional, escribir porcentajes y fechas como texto real para cambiarlos sin diseñar otra imagen, y hacer que el año del pie se actualice solo.",
+      "why": "Una oferta vencida en la portada hace dudar al cliente justo cuando decide si compra.",
+      "shot": {
+        "img": "ux-mobile-first-screen.jpg",
+        "x": 50,
+        "y": 16
+      }
+    },
+    {
+      "n": 4,
+      "c": "ux",
+      "src": [
+        "ux-3",
+        "ux-4"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu WhatsApp del pie tiene un número errado",
+      "t_plain": "Número de WhatsApp errado en el pie y contacto escondido",
+      "s": "Un cliente que copia el número del pie de página no llega a ventas, y quien busca un correo o una página de contacto no la encuentra.",
+      "now": "El pie muestra «(+57) 318 2340082», pero el enlace y la página de contacto usan 318 2430082. El pie lista seis números de WhatsApp, pero no tiene correo ni enlace a «Contáctanos». La página de contacto existe, aunque nada lleva a ella, y su correo y su PBX no se pueden pulsar.",
+      "fix": "Corregir el número del pie, agregar «Contáctanos» al menú y al pie con el correo de servicio al cliente, y convertir correo y teléfono en enlaces que abran el correo o la llamada. Indicar qué número es para comprar y cuál para posventa.",
+      "why": "Un cliente que no logra comunicarse con ventas es una venta perdida.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 31.5,
+        "y": 98
+      }
+    },
+    {
+      "n": 5,
+      "c": "ux",
+      "src": [
+        "ux-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu envío gratis dice dos montos distintos",
+      "t_plain": "El envío gratis se anuncia con dos montos distintos",
+      "s": "El cliente no sabe cuánto debe comprar para no pagar envío, y esa duda aparece justo en el carrito.",
+      "now": "La barra superior y la sección de beneficios dicen «Envío gratis en compras superiores a $250.000», pero el carrito dice «Agrega $189,900 más y disfruta de envío GRATIS».",
+      "fix": "Definir un solo monto y usarlo en la barra superior, en la portada y en el carrito, mostrando cuánto falta con ese mismo valor.",
+      "why": "El costo de envío es una de las razones más comunes para abandonar un carrito; un mensaje contradictorio lo empeora.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 39,
+        "y": 69.7
+      }
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-6",
+        "visual-6"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tres ventanas compiten con tus productos",
+      "t_plain": "Ventana de suscripción inmediata y dos chats flotantes",
+      "s": "Antes de ver un solo producto, el visitante tiene que cerrar una ventana y esquivar dos botones flotantes.",
+      "now": "La ventana «SUSCRÍBETE HOY» aparece sobre los productos mientras carga la página y oscurece todo; en celular ocupa casi todo el ancho. En la esquina hay a la vez un botón de WhatsApp y un chat automático con una alerta roja.",
+      "fix": "Mostrar la invitación a suscribirse después de que el visitante navegue un rato o al intentar salir, y en celular como una franja pequeña. Dejar un solo botón de contacto flotante.",
+      "why": "Interrumpir al visitante antes de que vea un producto aumenta la probabilidad de que cierre la página.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 49.5,
+        "y": 12.9
+      }
+    },
+    {
+      "n": 7,
+      "c": "a11y",
+      "src": [
+        "a11y-3",
+        "a11y-2",
+        "a11y-4"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu menú se pierde sobre la foto",
+      "t_plain": "Contraste insuficiente, enlaces sin nombre y foco invisible",
+      "s": "El menú, las etiquetas de novedad y el botón del banner se leen con dificultad, y quien navega con teclado o lector de pantalla se pierde.",
+      "now": "El menú blanco sobre la foto del banner y el botón «DESCUBRE NEXO» quedan en torno a 2,2:1 de contraste, y la etiqueta «New» de los productos en 1,64:1 con letra de 9 px; el mínimo recomendado es 4,5:1. Hay 30 enlaces sin nombre (la lupa, los banners, las categorías) y el tema borra el recuadro que muestra dónde está el foco del teclado.",
+      "fix": "Poner una franja o sombra oscura detrás del menú y de los textos del banner, oscurecer las etiquetas, dar nombre a cada ícono y enlace de imagen y restaurar un recuadro de foco visible.",
+      "why": "Si no se lee el menú, se navega menos y se compra menos, sobre todo en celular a pleno sol.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 31.7,
+        "y": 11.8
+      }
+    },
+    {
+      "n": 8,
+      "c": "ux",
+      "src": [
+        "ux-7",
+        "visual-5"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Ninguna opinión respalda tu alto rendimiento",
+      "t_plain": "Sin opiniones de clientes ni pruebas de la promesa técnica y ecológica",
+      "s": "Para pagar una prenda costosa en línea, el cliente necesita pruebas, y la portada no muestra opiniones, datos de la marca ni detalles del material.",
+      "now": "Las tarjetas de producto no muestran estrellas ni número de opiniones, y no hay testimonios, años de la marca ni equipos que la usen. La promesa ecológica («el 23% de nuestro portafolio… tejidos EKO y/o biodegradables») es un ícono genérico en letra pequeña, sin sello, foto del material ni detalle técnico de las prendas.",
+      "fix": "Mostrar calificación y número de opiniones en cada tarjeta, una franja con datos verificables de la marca y una sección corta con fotos reales del tejido, las costuras y la ventilación, más el sello o nombre del material ecológico.",
+      "why": "Las pruebas visibles justifican precios de $300.000 o más y te diferencian de la ropa deportiva genérica.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 61,
+        "y": 69
+      }
+    },
+    {
+      "n": 9,
+      "c": "vis",
+      "src": [
+        "visual-2",
+        "visual-3",
+        "visual-7"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Cada sección parece de otra marca",
+      "t_plain": "Tipografías, botones y títulos sin un sistema común",
+      "s": "Letras, botones y títulos cambian de una sección a otra, y la marca se ve menos premium que sus fotos.",
+      "now": "El sitio usa una sola letra, pero los banners y mosaicos suman al menos dos más, con dos tratamientos distintos; en pantalla grande «PANTALONETA» se corta como «PANTALONE». Conviven al menos cinco estilos de botón, y el título más grande de toda la página está al final, no en la portada.",
+      "fix": "Definir dos tipografías, un botón principal y uno secundario y una escala de tres niveles de títulos, y aplicarlos igual en banners, mosaicos y secciones.",
+      "why": "Una identidad coherente es lo que hace que una marca deportiva se perciba premium y confiable.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 12,
+        "y": 6
+      }
+    },
+    {
+      "n": 10,
+      "c": "tec",
+      "src": [
+        "tech-4",
+        "tech-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu portada arranca con 20 errores",
+      "t_plain": "Errores en consola y tema publicado como copia de respaldo",
+      "s": "Hay partes de la tienda que fallan en silencio, y el tema publicado está marcado como una copia de desarrollo.",
+      "now": "Al abrir la portada el navegador registra 20 errores: 16 del widget de Mercado Pago, uno porque falta una librería que otro script necesita, dos errores de sintaxis y un ícono de idioma que no existe. El tema activo se llama «BK [DEV] safetti oficial - NO ELIMINAR».",
+      "fix": "Revisar la instalación del widget de Mercado Pago, corregir los scripts que fallan, reemplazar el ícono faltante y ordenar el entorno: un tema publicado con nombre claro y otro de pruebas separado.",
+      "why": "Los errores silenciosos suelen romper partes de la tienda que nadie nota hasta que se pierden ventas.",
+      "shot": null
+    }
+  ]
+}

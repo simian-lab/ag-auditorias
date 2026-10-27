@@ -1,0 +1,44 @@
+{
+ "competitors": [
+  {
+   "name": "Competidor Uno",
+   "slug": "uno",
+   "url": "https://uno.example",
+   "screenshot": "screenshots/bench-uno.png",
+   "five_second": {
+    "what": true,
+    "for_whom": true,
+    "quote_cta": false,
+    "trust_proof": true,
+    "text_headline": true
+   },
+   "notes_es": "Muestra sus clientes.",
+   "lighthouse": {
+    "performance": 72,
+    "accessibility": 78,
+    "seo": 83,
+    "total_mb": 1.77
+   }
+  }
+ ],
+ "client": {
+  "name": "Tu sitio",
+  "slug": "client",
+  "screenshot": "screenshots/desktop-viewport.png",
+  "five_second": {
+   "what": true,
+   "for_whom": false,
+   "quote_cta": false,
+   "trust_proof": false,
+   "text_headline": false
+  },
+  "lighthouse": {
+   "performance": 59,
+   "accessibility": 93,
+   "seo": 92,
+   "total_mb": 13.39
+  },
+  "url": "https://example.com"
+ },
+ "takeaway_es": "En 5 segundos tu competencia dice qué hace; tu sitio no."
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- This is the parent sitemap linking to additional sitemaps for products, collections and pages as shown below. The sitemap can not be edited manually, but is kept up to date in real time. -->
+  <sitemap>
+    <loc>https://safetti.com/sitemap_agentic_discovery.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_products_1.xml?from=8634480132314&amp;to=8989046636762</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_products_2.xml?from=8989046669530&amp;to=15265089257690</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_pages_1.xml?from=112804561114&amp;to=165336383706</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_collections_1.xml?from=433521688794&amp;to=509396648154</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_blogs_1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://safetti.com/sitemap_articles_1.xml</loc>
+  </sitemap>
+</sitemapindex>

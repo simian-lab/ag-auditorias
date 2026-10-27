@@ -1,0 +1,174 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "Demasiados códigos de seguimiento frenan la tienda",
+      "summary": "Más de la mitad de lo que descarga el visitante es código de terceros, y eso hace que la tienda tarde en responder a los toques en el celular.",
+      "now": "La página de inicio descarga 70 archivos de código (2,2 MB de 3,7 MB en total). Solo las etiquetas de Google ocupan 1,2 MB, y varias se cargan dos veces con el mismo identificador. En la prueba de celular de Lighthouse, la página tarda 27,2 s en quedar lista para usarse.",
+      "fix": "Hacer un inventario de las etiquetas y apps (Google Ads, Analytics, Meta, TikTok, Clarity, Omnisend, Wizybot, Littledata), quitar duplicados y centralizar todo en un solo contenedor, cargando lo no esencial después de que la página es usable.",
+      "why": "Una tienda que responde lento a los toques hace que el cliente abandone antes de llegar al carrito, y las mediciones duplicadas pueden inflar los reportes de campañas.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "2,2 MB de código",
+      "evidence": [
+        "Lighthouse mobile network-requests: 70 Script requests = 2272 KiB of 3762 KiB total transfer",
+        "googletagmanager.com: 8 requests = 1226 KiB; gtag/js loaded twice for G-GG7Z479TG0, AW-806123642 and GT-TB6TDT8G (plain and &cx=c&gtm=4e6am0h2 variants) plus G-GZGZM5BSEZ",
+        "unused-javascript (mobile): est. savings 924 KiB; top: gtag G-GG7Z479TG0 130 KiB, GT-TB6TDT8G 118 KiB, AW-806123642 116 KiB",
+        "total-blocking-time (mobile, simulated): 2960 ms; mainthread-work-breakdown 14.9 s; bootup-time 5.3 s; interactive 27.2 s; max-potential-fid 1050 ms",
+        "Desktop: TBT 150 ms, interactive 6.3 s (problem concentrated on mobile CPUs)",
+        "Third parties on homepage: Google Tag Manager, Facebook (fbevents.js 115 KiB), Clarity, Omnisend (omnisnippet1.com), TikTok analytics, Mercado Pago/Mercado Libre fingerprint scripts, Wizybot bundle.js 142 KiB, Essential post-purchase upsell 112 KiB"
+      ],
+      "technical_note": "Lighthouse 13.0.1 mobile (simulated slow 4G + 4x CPU). TBT/TTI are lab values; the main-thread cost is real but magnified by the 4x CPU throttle. Duplicate gtag loads suggest tags installed both natively (Google & YouTube channel / theme) and via a GTM container (gtm=4e6am0h2); verify with Tag Assistant before removing. bootup-time top: inline document scripts 5.4 s, mercadopago.com/v2/security.js 2.1 s, lazysizes.js 0.96 s.",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 5
+      }
+    },
+    {
+      "id": "tech-2",
+      "title": "El banner principal se pide tarde al servidor",
+      "summary": "La imagen más importante de la portada espera a que se ejecute código antes de empezar a descargarse, así que el cliente ve primero un espacio vacío o borroso.",
+      "now": "El banner principal (Nexo en celular, Hot Sale en computador) no está en el HTML inicial: lo carga un script de carga diferida. En computador, además, está marcado para cargar 'cuando se necesite', aunque es lo primero que se ve. En celular el navegador pierde 1,3 s antes de empezar a pedirlo.",
+      "fix": "Cargar el primer banner de forma inmediata (sin carga diferida), con su versión correcta en el HTML y marcado como prioritario; dejar la carga diferida solo para los banners siguientes del carrusel.",
+      "why": "La primera imagen es lo que convence al visitante de quedarse; si aparece tarde, la tienda se percibe lenta aunque el resto cargue bien.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,3 s de espera",
+      "evidence": [
+        "lcp-breakdown-insight (mobile): TTFB 107 ms, resource load delay 1285 ms, load duration 431 ms, render delay 29 ms; LCP element div#swiper-wrapper… > div#image_T9FF3r > a.ss_link > img.ssimg (BANNER-PEQ-NEXO, 412x458)",
+        "lcp-discovery-insight (mobile and desktop): fetchpriority=high not applied; request not discoverable in initial document",
+        "Desktop LCP element img.ssimg BANNER_HOT_SALE-02 has loading=\"lazy\" and class lazyload; initial src is the _100x.jpg placeholder, real srcset only in data-srcset (raw/home.html); desktop load delay 871 ms",
+        "No <link rel=preload as=image> and no fetchpriority attribute in raw/home.html",
+        "Observed LCP on the unthrottled run: 1.85 s mobile, 1.51 s desktop; simulated slow-4G LCP: 9.9 s mobile, 2.3 s desktop"
+      ],
+      "technical_note": "The 9.9 s mobile LCP is a Lighthouse lab artifact of slow-4G simulation; observed LCP (1.85 s) passes. The fix still matters for real users on mid-range phones and mobile data. Theme Vogal uses lazysizes (lazypreload/lazyautosizes) for slider images; set the first slide to eager src/srcset with fetchpriority=high.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 45
+      }
+    },
+    {
+      "id": "tech-3",
+      "title": "La portada pesa más de lo necesario",
+      "summary": "Cada visita desde el celular descarga 3,7 MB, lo que consume datos del cliente y hace más lenta la primera impresión.",
+      "now": "La página de inicio pesa 3,7 MB en celular y 4,1 MB en computador. Las fotos de categorías se entregan en JPG en vez de formatos modernos, y los banners de celular se descargan más grandes de lo que se muestran. Lighthouse estima 552 KiB de ahorro solo en imágenes.",
+      "fix": "Entregar todas las imágenes en WebP/AVIF con el tamaño justo para cada pantalla (Shopify lo permite desde el tema) y reducir el código de terceros (ver punto anterior) para bajar de 3 MB.",
+      "why": "Una página más liviana carga más rápido con datos móviles, que es como compra buena parte de los clientes en Colombia.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "3,7 MB",
+      "evidence": [
+        "total-byte-weight: mobile 3762 KiB (3.67 MB), desktop 4199 KiB (4.10 MB)",
+        "Transfer by type (mobile): Script 2272 KiB, Image 988 KiB, Font 196 KiB, Stylesheet 31 KiB",
+        "image-delivery-insight: est. savings 552 KiB mobile / 573 KiB desktop",
+        "Category images served as JPEG (e.g. IMAGENES_DEPORTE_ESPANOL-03_360x.jpg 72 KiB, savings 44 KiB; IMAGENES_CATEGORIA-07_50x.jpg 30 KiB) — 'Using a modern image format (WebP, AVIF)…'",
+        "Mobile banners BANNER-PEQ-NEXO_1000x (141 KiB) and BANNER-PEQ-HOT_SALE_1000x (122 KiB): 1000x1111 delivered for 721x801 displayed",
+        "Fonts: Inter in 5 weights (300–700), ~39 KiB each"
+      ],
+      "technical_note": "Some _50x placeholders are 28–30 KiB JPEGs (heavier than expected for a 50 px LQIP), suggesting the source files are very high-resolution; Shopify CDN can serve format=webp via image_url filters.",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 13
+      }
+    },
+    {
+      "id": "tech-4",
+      "title": "Errores de código en la página de inicio",
+      "summary": "Hay componentes que fallan al cargar, entre ellos el widget de Mercado Pago, y eso puede dejar sin mostrar información de pago o funciones de la tienda.",
+      "now": "Al abrir la portada, el navegador registra 16 errores del widget de Mercado Pago, un error porque falta la librería jQuery que otro script necesita, dos errores de sintaxis en código del propio HTML y un ícono de bandera de idioma (es.svg) que no existe.",
+      "fix": "Revisar la instalación del widget de Mercado Pago y su configuración, corregir los scripts del tema que fallan y reemplazar el ícono faltante; luego verificar que la consola quede limpia.",
+      "why": "Los errores silenciosos suelen romper partes de la tienda que nadie nota hasta que se pierden ventas.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "20 errores",
+      "evidence": [
+        "errors-in-console (mobile): 16× '[Mercado Pago Widget] Error in initWidget: TypeError: Cannot read properties of undefined (reading 'length')' from cdn.shopify.com/s/files/1/0905/8631/7101/files/mercado-pago-widget.min.js",
+        "errors-in-console: 'ReferenceError: jQuery is not defined' at safetti.com/cdn/shopifycloud/storefront/assets/themes_support/api.jquery-7ab1a3a4.js",
+        "errors-in-console: 2× 'SyntaxError: Invalid left-hand side in assignment' in https://safetti.com/ (inline script, lines 160 and 162)",
+        "404: https://safetti.com/cdn/shop/files/es.svg?v=5301 (HTTP/2 404 confirmed in raw/tech-headers.txt)",
+        "inspector-issues: third-party cookie issues from Clarity, Omnisend, Mercado Pago, shop.app"
+      ],
+      "technical_note": "We did not verify what the Mercado Pago widget is meant to render (likely installment messaging); the error is thrown in initWidget on every instance. api.jquery.js runs before jQuery is defined (load-order issue).",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "La tienda funciona sobre una copia de respaldo",
+      "summary": "El diseño publicado es una copia marcada como respaldo y desarrollo, lo que hace más riesgoso cada cambio o actualización.",
+      "now": "El tema activo de Shopify se llama \"BK [DEV] safetti oficial - NO ELIMINAR\" (tema Vogal v1.2, de fuera de la tienda oficial de temas), con al menos 6 apps inyectando código en la portada.",
+      "fix": "Ordenar el entorno: dejar un tema publicado con nombre y versión claros, un tema de pruebas separado, y documentar qué apps están activas y para qué sirven.",
+      "why": "Sin un orden claro entre lo publicado y lo de pruebas, es fácil publicar un error o perder cambios en plena campaña.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html Shopify.theme = {\"name\":\"BK [DEV] safetti oficial - NO ELIMINAR\",\"id\":149827322074,\"schema_name\":\"Vogal\",\"schema_version\":\"v1.2\",\"theme_store_id\":null,\"role\":\"main\"}",
+        "App extensions in homepage HTML: wizybot, essential-post-purchase-upsell, cartbite, littledata, omnisend, mercadopago-pf-app",
+        "66 <script> tags (25 external) in homepage HTML",
+        "Libraries (js-libraries): jQuery 3.6.0, Lo-Dash 4.5.1, Preact 10, core-js 3.37.0"
+      ],
+      "technical_note": "Platform: Shopify behind Cloudflare (server: cloudflare, powered-by: Shopify), myshopify domain safetti-co.myshopify.com. Lo-Dash 4.5.1 is an old release (2016). Theme name is public in page source.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {
+      "id": "tech-weight",
+      "result": "fail",
+      "evidence": "total-byte-weight mobile 3762 KiB = 3.67 MB; desktop 4199 KiB = 4.10 MB (> 3 MB)."
+    },
+    {
+      "id": "tech-lcp",
+      "result": "pass",
+      "evidence": "observedLargestContentfulPaint mobile 1851 ms (1.85 s ≤ 2.5 s). Simulated slow-4G LCP is 9.9 s (lab)."
+    },
+    {
+      "id": "tech-images",
+      "result": "fail",
+      "evidence": "image-delivery-insight est. savings 552 KiB mobile (> 100 KiB): category images served as JPEG, mobile banners 1000x1111 for 721x801 displayed."
+    },
+    {
+      "id": "tech-lazy",
+      "result": "pass",
+      "evidence": "Below-the-fold product/category images use loading=lazy (14) and lazysizes (lazyload class); Lighthouse offscreen issues not flagged. Note: on desktop the hero (above the fold) is also lazy-loaded (see tech-2)."
+    },
+    {
+      "id": "tech-render-blocking",
+      "result": "pass",
+      "evidence": "render-blocking-insight savings FCP 0 ms / LCP 0 ms (mobile and desktop). Fonts: Inter 5 weights (300–700) self-hosted, font-display-insight passes."
+    },
+    {
+      "id": "tech-cache",
+      "result": "pass",
+      "evidence": "First-party CSS/JS/images (theme.css, lazysizes.js, cdn/shop/files/*.jpg) served with cache-control: public, max-age=31557600 (1 year). cache-insight (288 KiB) lists only third-party scripts (fbevents.js 20 min, omnisnippet1.com 1 h, clarity.js 1 day)."
+    },
+    {
+      "id": "tech-https",
+      "result": "pass",
+      "evidence": "http://safetti.com/ → 301 https://safetti.com/; https://www.safetti.com/ → 301 https://safetti.com/; is-on-https passes."
+    },
+    {
+      "id": "tech-security-headers",
+      "result": "pass",
+      "evidence": "HSTS: present (max-age=7889238); CSP: present (only block-all-mixed-content, frame-ancestors 'none', upgrade-insecure-requests); X-Frame-Options: present (DENY); X-Content-Type-Options: present (nosniff); Referrer-Policy: absent. 4 of 5."
+    },
+    {
+      "id": "tech-console",
+      "result": "fail",
+      "evidence": "errors-in-console: 16 Mercado Pago widget TypeErrors, 'jQuery is not defined', 2 inline SyntaxErrors, 404 for es.svg."
+    },
+    {
+      "id": "tech-links",
+      "result": "fail",
+      "evidence": "40 homepage URLs checked (30 internal links sampled evenly from 172 + images; raw/tech-links*.txt, curl HEAD then spaced GET retries): 25 returned 200, broken: 404 https://safetti.com/cdn/shop/files/es.svg?v=5301, 14 could not be verified (Shopify HTTP 429 rate limiting). The 404 is the language flag icon es.svg shown in the header (also logged by Lighthouse)."
+    },
+    {
+      "id": "tech-404",
+      "result": "pass",
+      "evidence": "https://safetti.com/esta-pagina-no-existe-xyz returns HTTP 404 (raw/tech-404.html) with title '404 No encontrado – Safetti', buttons to home and collections, and the menu. Copy is in English ('Oops! Page Not Found')."
+    }
+  ]
+}

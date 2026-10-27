@@ -1,0 +1,140 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "Los mensajes clave están dentro de fotos ilegibles",
+      "summary": "En el celular, la invitación a agendar el examen visual se lee a un tamaño diminuto, así que muchos visitantes no la ven ni la entienden.",
+      "now": "El titular principal («¡Llegamos a Gran Estación!», «Local 259 | Segundo piso», «Agenda aquí») y el banner «Agenda tu examen» son imágenes con el texto pegado. En el celular la frase «La vida es muy corta para no ver bien» y el botón «Click aquí» quedan con letras de unos 6–8 px de alto.",
+      "fix": "Escribir el titular, la frase y el botón como texto real encima de la foto, con un tamaño mínimo de 24 px para el titular en celular y botones de tamaño normal.",
+      "why": "Si el mensaje no se lee en el celular, la promesa de la tienda y del examen visual no llega a quien está listo para comprar.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "≈6 px de alto en celular",
+      "evidence": [
+        "raw/home.html: hero slides are images bannerwebtiendas-01.webp / bannerwebtiendas-03.webp with alt=\"\"; no text headline in the slideshow; the only <h1> is the logo (h1.header__logo)",
+        "raw/home.html: exam banner is banner-agenda-examen-1.webp (alt=\"\"), with 'LA ÓPTICA DEL MONO', 'Agenda tu examen', 'LA VIDA ES MUY CORTA PARA NO VER BIEN', 'CLICK AQUÍ' baked into the image",
+        "screenshots/mobile-fullpage.jpg (412px wide), y≈5580–5655: cap height of 'LA ÓPTICA DEL MONO' ≈5 px, 'LA VIDA ES MUY CORTA…' ≈6 px, 'CLICK AQUÍ' ≈8 px (measured on a 3x crop)",
+        "screenshots/mobile-fullpage.jpg y≈600–770: hero 'LOCAL 259 | SEGUNDO PISO' ≈12 px and 'AGENDA AQUÍ' ≈10 px cap height, inside the image"
+      ],
+      "technical_note": "Shopify slideshow / image banner sections with text rendered in the artwork. Rebuild with the theme's native text overlay blocks (heading + subheading + button) so text scales responsively and is indexable.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 72}
+    },
+    {
+      "id": "visual-2",
+      "title": "La primera pantalla tiene tres mensajes compitiendo",
+      "summary": "Al entrar, el ojo no sabe dónde mirar y la marca no queda clara en los primeros segundos.",
+      "now": "Antes de ver la marca aparecen una franja negra con texto en movimiento («Envíos gratis…»), una franja amarilla con otra promoción («En octubre, compra 2 gafas formuladas…») y luego una foto de la nueva tienda. Cada una usa un estilo de letra distinto y ninguna dice qué hace especial a Sajú.",
+      "fix": "Dejar una sola franja superior con la promoción del mes y usar la primera foto para el mensaje de marca (gafas de materiales reciclados, sol y formuladas) con un botón claro.",
+      "why": "Una primera pantalla ordenada transmite marca premium y ayuda a que el visitante siga explorando en vez de irse.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-viewport.png (1440x900): black scrolling bar y=0–50, yellow bar #F7D254 y=50–113, nav y=113–241, hero image y=241–781",
+        "raw/home.html: scrolling bar uses font-family Helvetica, Arial, 18px, letter-spacing 0, animation 120s infinite; yellow announcement bar (color scheme 52b8eaa4, background 247 210 84) uses the theme fonts, small and letter-spaced",
+        "Hero message is a store-opening announcement ('¡Llegamos a Gran Estación!'), not a brand/product statement"
+      ],
+      "technical_note": "Two stacked announcement components (custom ai-scrolling-text block + theme announcement-bar). Consider consolidating into the theme announcement bar.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 6}
+    },
+    {
+      "id": "visual-3",
+      "title": "Demasiados tipos de letra mezclados en la página",
+      "summary": "La mezcla de letras hace que la marca se vea menos cuidada que sus fotos.",
+      "now": "La página carga dos tipos de letra (Jost y Poppins), la franja negra usa una tercera (Helvetica/Arial) y los banners en foto suman al menos tres estilos más: una serif alta y condensada, una palo seco condensada y otra en negrita.",
+      "fix": "Definir dos tipos de letra (uno para títulos y otro para textos) y usarlos también en franjas, banners y botones.",
+      "why": "Una tipografía coherente es lo que hace que una marca se perciba profesional y fácil de recordar.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "6 estilos de letra",
+      "evidence": [
+        "raw/home.html @font-face: Jost 400 (normal/italic), Poppins 300 and 400 (normal/italic); --heading-font-family: Jost; --text-font-family: Poppins",
+        "raw/home.html: .ai-scrolling-text__item font-family: Helvetica, Arial, sans-serif",
+        "screenshots/desktop-viewport.png: hero image text uses a high-contrast condensed serif ('¡Llegamos a Gran Estación!') and a condensed sans ('LOCAL 259 | SEGUNDO PISO', 'AGENDA AQUÍ')",
+        "screenshots/mobile-fullpage.jpg y≈5580–5655: exam banner adds a bold geometric sans ('LA VIDA ES MUY CORTA PARA NO VER BIEN')"
+      ],
+      "technical_note": "Fonts in images counted by visual inspection; exact families not identifiable from pixels.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 20, "y_pct": 50}
+    },
+    {
+      "id": "visual-4",
+      "title": "Los botones se ven grises y apagados",
+      "summary": "Los botones principales parecen desactivados, lo que resta fuerza a la invitación a comprar.",
+      "now": "Los botones «Ver la colección», «Ver todas» y «Suscribirse» son píldoras gris medio (#5C5C5C) sin el amarillo de la marca, y conviven con enlaces subrayados «Ver», un botón crema dentro de una foto («Agenda aquí») y otro con borde dentro de otra foto («Click aquí»).",
+      "fix": "Usar un botón principal con el color de marca y un botón secundario, y aplicarlos igual en todas las secciones (incluidos los banners).",
+      "why": "Botones visibles y consistentes guían al visitante hacia la compra y hacen que la tienda se sienta confiable.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html color schemes: --button-background 92 92 92 in schemes 1, 2, 63dbeb0e, 6dd7268f, f80259d6, 3e9ce3ad, 0b0f478d; other schemes define 255 255 255, 38 38 38, 72 13 13 and 178 0 0",
+        "screenshots/desktop-fullpage.jpg y≈1950: grey pill 'VER LA COLECCIÓN'; y≈3735: grey pill 'VER TODAS'",
+        "screenshots/desktop-fullpage.jpg: category/collab tiles use underlined text links 'VER'; hero uses a cream rounded button baked into the image ('AGENDA AQUÍ'); exam banner uses an outlined baked-in button ('CLICK AQUÍ')"
+      ],
+      "technical_note": "Contrast ratios belong to the a11y area; this finding is about visual weight and consistency. Brand yellow #F7D254 (247 210 84) appears only in the announcement bar.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 21}
+    },
+    {
+      "id": "visual-5",
+      "title": "El mensaje sostenible no se demuestra con pruebas",
+      "summary": "La marca dice ser reciclada y amiga del planeta, pero la página no lo prueba, así que el cliente no tiene por qué pagar por esa diferencia.",
+      "now": "Se habla de «Metal reciclado», «Eco-acetato», «Plástico reciclado» y de cuidar «al planeta», pero solo se muestran fotos de gafas sobre fondo blanco y un ícono de reciclaje. No hay cifras, sellos, origen del material ni imágenes del proceso.",
+      "fix": "Mostrar pruebas visibles: de qué está hecho cada material, cifras reales si las tienes, sellos o fotos del proceso y del taller.",
+      "why": "Una promesa verde sin pruebas se percibe como publicidad; con pruebas se vuelve una razón concreta para elegir Sajú.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg y≈3230–3290: 'NUESTROS MATERIALES' tabs SAJÚ-GRIP / METAL RECICLADO / ECO-ACETATO / PLÁSTICO RECICLADO showing only product packshots",
+        "raw/home.html '¿POR QUÉ SAJÚ?' section: 'COMPROMISO — Trabajamos para hacerle la vida más fácil a nuestros clientes y al planeta' with image PlasticoReciclado-S.png (recycling icon, alt=\"\")",
+        "raw/home.html visible text: no numbers, certifications or process descriptions for recycled materials (searched 'recicla', 'planeta', 'certific', 'botella', 'kg')"
+      ],
+      "technical_note": "Do not invent sustainability figures; the brand must supply real data (material origin, supplier certificates, volumes).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 35}
+    },
+    {
+      "id": "visual-6",
+      "title": "Las gafas se muestran sin decir para qué son",
+      "summary": "El cliente ve nombres como «Cumbre Gravel» y un precio, pero no sabe si son de sol, formuladas o de qué material.",
+      "now": "Cada tarjeta muestra la foto, un nombre de modelo y «$299.000 COP». Todas las fotos son gafas vistas de frente sobre fondo blanco; no se ve tipo, material ni una foto puesta en una persona.",
+      "fix": "Agregar en cada tarjeta una etiqueta corta (Sol / Formulada y material) y una segunda foto de la gafa puesta al pasar el mouse.",
+      "why": "Entender rápido qué es cada producto reduce la duda y acerca la compra.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg y≈930–1870: 14 product cards (CUMBRE GRAVEL, CUMBRE DENIM, PISTA DENIM, …, BLOCK GRAVEL), each with name + '$299,000 COP' only",
+        "screenshots/mobile-fullpage.jpg y≈930–2050: same cards in 2 columns, no type/material label"
+      ],
+      "technical_note": "Product card snippet could render a product type or metafield badge; hover image requires a second product image.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 11, "y_pct": 12}
+    },
+    {
+      "id": "visual-7",
+      "title": "Hay huecos vacíos que rompen el ritmo de la página",
+      "summary": "Los espacios en blanco sin contenido hacen que la página parezca incompleta.",
+      "now": "En computador, la lista de 14 gafas se arma en filas de 6 y la última fila queda con solo 2 productos y cuatro espacios vacíos. Debajo de «¿Por qué Sajú?» las capturas estáticas muestran una banda oscura muy alta sin contenido visible.",
+      "fix": "Mostrar 12 productos (dos filas completas) o usar un carrusel, y revisar que la sección «¿Por qué Sajú?» muestre su contenido sin depender del desplazamiento.",
+      "why": "Una página que se ve completa y ordenada transmite una marca cuidada.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg y≈1580–1880: last row with PÁRAMO DENIM and BLOCK GRAVEL, 4 empty columns to the right",
+        "screenshots/desktop-fullpage.jpg y≈6560–9180 and screenshots/visual-desktop-tall.png (1440x7600 headless capture): '¿POR QUÉ SAJÚ?' heading followed by an empty dark (#1F1F1F) band",
+        "raw/home.html: that section is <images-with-text-scroll> (4 items: COMPROMISO, GARANTÍAS, MARCA COLOMBIANA, DIFERENCIAL); on mobile it renders as a dotted carousel"
+      ],
+      "technical_note": "images-with-text-scroll is a scroll-driven sticky component; the empty band was observed in two static captures but was not confirmed during a real scroll session, so treat it as a check item, not a confirmed bug.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 65, "y_pct": 18}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "fail", "evidence": "Hero headline '¡Llegamos a Gran Estación!' is baked into bannerwebtiendas images (alt=\"\"); no real-text headline; the only h1 is the logo. Secondary hero text ≈10–12 px cap height on 412px mobile."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "Sections below the fold (product grid, category tiles, collabs, before/after) each have one clear focus; the first screen stacks a scrolling black bar, a yellow promo bar and a store-opening hero, three competing messages."},
+    {"id": "vis-fonts", "result": "fail", "evidence": "Jost + Poppins via @font-face, Helvetica/Arial in the scrolling bar, plus at least 3 further display styles inside banner images (condensed serif, condensed sans, bold geometric sans)."},
+    {"id": "vis-buttons", "result": "fail", "evidence": "Grey pill buttons (92 92 92), underlined 'VER' text links, cream rounded baked-in 'AGENDA AQUÍ', outlined baked-in 'CLICK AQUÍ', white square '+' quick-add on mobile: more than 2 styles."},
+    {"id": "vis-headings", "result": "pass", "evidence": "Section titles (SAJÚ GRIP/TRIPLE CASE, NUESTROS MATERIALES tabs, NUESTRAS COLLABS, PARA SOL | FORMULADAS, ¿POR QUÉ SAJÚ?) share Jost 400 uppercase with 0.18em letter-spacing at a similar size."},
+    {"id": "vis-palette", "result": "partial", "evidence": "Visible palette is mostly neutrals + yellow #F7D254, but 12 color schemes are defined with button colors grey 92, dark 38, white, maroon 72 13 13 and red 178 0 0, and near-duplicate darks (28/31/38/62/63); brand yellow has no fixed role beyond the promo bar."},
+    {"id": "vis-photos", "result": "pass", "evidence": "Real, well-lit campaign photography (category tiles, collabs, before/after, store interior) and consistent white-background packshots."},
+    {"id": "vis-products", "result": "partial", "evidence": "Product cards show a visible name and price, but no type (sol/formulada) or material; names like 'Cumbre Gravel' do not explain use."},
+    {"id": "vis-positioning", "result": "fail", "evidence": "Recycled/eco claims ('Metal reciclado', 'Eco-acetato', 'Plástico reciclado', 'al planeta') have no numbers, seals or process imagery on the home page; only packshots and a recycling icon."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "Mobile layout is evenly spaced; on desktop the 14-item grid leaves a last row with 2 items and 4 empty slots, and static captures show a tall empty dark band under '¿POR QUÉ SAJÚ?' (scroll-driven section, not confirmed in a live scroll)."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "Footer '© 2026', promo bar 'EN OCTUBRE' matches the current month (Oct 2026); no dated patterns observed."}
+  ]
+}

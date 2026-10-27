@@ -1,0 +1,262 @@
+{
+  "business_inferred": "Inferido del sitio: Safetti, marca colombiana (Medellín) de ropa deportiva técnica para ciclismo, running, triatlón y pádel, con tienda Shopify y tiendas físicas en Medellín (Laureles, Indiana), Llanogrande y Bogotá.",
+  "serp": {
+    "today": [
+      {
+        "page": "Inicio",
+        "url": "https://safetti.com/",
+        "title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón– Safetti",
+        "meta_description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón.",
+        "breadcrumb": "safetti.com",
+        "notes": "El título tiene un error de escritura ('runnig') y supera los 60 caracteres, así que Google lo corta. La descripción también es más larga de lo recomendado y no dice dónde estás ni desde cuándo."
+      },
+      {
+        "page": "Categoría Ciclismo",
+        "url": "https://safetti.com/collections/ropa-ciclismo",
+        "title": "Ropa deportiva ciclismo para hombre y mujer– Safetti",
+        "meta_description": "Descubre nuestra selección de ropa de ciclismo: buzos, camisas, chaquetas impermeables y pantalones diseñados para comodidad y rendimiento en cada ruta.",
+        "breadcrumb": "safetti.com › collections › ropa-ciclismo",
+        "notes": "Correcta en lo básico. /collections/ciclismo declara como canónica /collections/ropa-ciclismo."
+      },
+      {
+        "page": "Producto (ejemplo)",
+        "url": "https://safetti.com/products/vestido-de-bano-triatlon-seatide-para-mujer",
+        "title": "VESTIDO DE BAÑO TRIATLON SEATIDE PARA MUJER– Safetti",
+        "meta_description": "Diseñado para competencias de natación y triatlón, este traje ergonómico es la mejor elección para deportistas que buscan comodidad, tecnología y un rendimiento superior. Su diseño con espalda olímpica proporciona mayor confort, permitiendo libertad de movimiento y soporte durante la competencia. Su tejido AquaZero™ of",
+        "breadcrumb": "safetti.com › products › vestido-de-bano-triatlon-seatide-para-mujer",
+        "notes": "Título en mayúsculas sostenidas. La descripción es el texto del producto cortado automáticamente a mitad de palabra ('AquaZero™ of')."
+      },
+      {
+        "page": "Contacto",
+        "url": "https://safetti.com/pages/contact",
+        "title": "Contáctanos– Safetti",
+        "meta_description": null,
+        "breadcrumb": "safetti.com › pages › contact",
+        "notes": "No tiene meta descripción: Google improvisa el texto del resultado con lo que encuentre en la página."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "Inicio",
+        "url": "https://safetti.com/",
+        "title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
+        "description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005 para ciclismo, running, triatlón y pádel. Tiendas en Medellín, Llanogrande y Bogotá.",
+        "title_chars": 53,
+        "description_chars": 145
+      },
+      {
+        "page": "Categoría Ciclismo",
+        "url": "https://safetti.com/collections/ropa-ciclismo",
+        "title": "Ropa de ciclismo para hombre y mujer | Safetti",
+        "description": "Jerseys, pantalonetas, chaquetas y buzos de ciclismo diseñados por Safetti para cada ruta. Envío gratis en compras superiores a $250.000.",
+        "title_chars": 46,
+        "description_chars": 137
+      },
+      {
+        "page": "Producto (ejemplo)",
+        "url": "https://safetti.com/products/vestido-de-bano-triatlon-seatide-para-mujer",
+        "title": "Vestido de baño triatlón Seatide para mujer | Safetti",
+        "description": "Traje para natación y triatlón con espalda olímpica y tejido AquaZero™. Diseñado por Safetti para competir con comodidad y libertad de movimiento.",
+        "title_chars": 53,
+        "description_chars": 146
+      },
+      {
+        "page": "Contacto",
+        "url": "https://safetti.com/pages/contact",
+        "title": "Contacto y tiendas Safetti | Safetti",
+        "description": "Escríbenos a servicioalcliente@safetti.com.co o llama al PBX (604) 444 8461. Direcciones y WhatsApp de nuestras tiendas en Medellín, Llanogrande y Bogotá.",
+        "title_chars": 36,
+        "description_chars": 154
+      }
+    ]
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón",
+        "og:description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón.",
+        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422",
+        "og:image_size": "4000x2250",
+        "twitter:card": "summary_large_image"
+      },
+      "collection_ciclismo": {
+        "og:title": "Ropa deportiva ciclismo para hombre y mujer",
+        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422"
+      },
+      "product_example": {
+        "og:title": "VESTIDO DE BAÑO TRIATLON SEATIDE PARA MUJER",
+        "og:image": "https://safetti.com/cdn/shop/files/59776H_VESTIDO_BANO_SEATIDE_1.jpg?v=1776980503",
+        "og:image_size": "2251x2251",
+        "og:price": "180,400 COP"
+      },
+      "contact": {
+        "og:title": "Contáctanos",
+        "og:description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón. (descripción genérica del inicio)",
+        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422"
+      }
+    },
+    "what_people_see": "Cuando alguien comparte safetti.com por WhatsApp o LinkedIn aparece solo el logo blanco de Safetti sobre fondo negro, con el título que dice 'runnig' en lugar de 'running'. Las páginas de categoría y contacto muestran esa misma imagen del logo. Las fichas de producto sí muestran la foto del producto, pero con el título en mayúsculas.",
+    "issues": [
+      "La imagen para compartir del inicio es solo el logo sobre negro: no muestra producto, deporte ni personas.",
+      "El título para compartir del inicio tiene el error 'runnig'.",
+      "La página de contacto reutiliza la descripción genérica del inicio.",
+      "og:image se declara con http:// (og:image:secure_url sí usa https)."
+    ],
+    "proposed": {
+      "og:title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
+      "og:description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005. Conoce la nueva colección NEXO y visita nuestras tiendas en Medellín, Llanogrande y Bogotá.",
+      "og:image": "https://safetti.com/cdn/shop/files/BANNER_NEXO.jpg",
+      "og:image:width": 1200,
+      "og:image:height": 630,
+      "og_image_local": "og-source.jpg",
+      "note": "Banner real de la colección NEXO publicado en el inicio (4000x2250), recortado al centro a 1200x630."
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "note": "No consultamos motores de IA en este paso; las respuestas reales vienen del módulo OpenSEO.",
+    "aeo_fixes": [
+      {
+        "title": "Convierte tu llms.txt en una ficha de la marca",
+        "fix": "Hoy tu archivo llms.txt solo trae las instrucciones de compra que Shopify genera por defecto. Agrega quién es Safetti, desde cuándo existe, qué deportes cubre, dónde están las tiendas y cómo contactarlos, para que los asistentes de IA tengan datos oficiales que citar.",
+        "evidence": "https://safetti.com/llms.txt (HTTP 200): contenido genérico 'Agent Instructions — Safetti' sobre Shop skill/UCP, sin datos de la marca. Guardado en raw/presence-llms.txt."
+      },
+      {
+        "title": "Marca cada tienda física con datos estructurados",
+        "fix": "Agrega un bloque de datos de tienda (LocalBusiness / ClothingStore) para Laureles, Indiana, Llanogrande y Bogotá con dirección completa, ciudad, teléfono, WhatsApp y horario, para que Google y las IA respondan bien a 'tienda Safetti cerca de mí'.",
+        "evidence": "Ninguna página revisada (inicio, contacto, tiendas, categoría, producto) contiene LocalBusiness/Store; solo Organization, WebSite, WebPage y Product."
+      },
+      {
+        "title": "Completa la ficha de empresa con contacto y redes limpias",
+        "fix": "El dato de empresa (Organization) no tiene teléfono, correo ni dirección, y su lista de redes trae entradas vacías. Complétalo con el PBX, el correo de servicio al cliente, la dirección principal y solo los enlaces reales a redes.",
+        "evidence": "Organization JSON-LD en el inicio: solo name, logo, url; sameAs = ['', facebook, '', instagram, '', null, linkedin, tiktok, youtube, '']."
+      },
+      {
+        "title": "Publica una ficha de datos verificables de la marca",
+        "fix": "Crea una sección 'Safetti en cifras' en Conoce nuestra marca con datos que puedas respaldar: año de fundación (2005, según tu propio sitio), deportes, tiendas y países donde tienes distribuidores. Las IA prefieren citar cifras concretas y consistentes.",
+        "evidence": "El dato 'Desde 2005' solo aparece dentro del JSON-LD WebPage, no como texto visible. La página /pages/tiendas lista distribuidores en Canadá, México, Brasil, Argentina, USA y Costa Rica."
+      },
+      {
+        "title": "Amplía tus preguntas frecuentes con dudas de tienda",
+        "fix": "Tu página de preguntas frecuentes ya tiene 21 preguntas marcadas para Google, lo cual está bien. Súmale preguntas sobre horarios y direcciones de tiendas, envíos internacionales y personalización de uniformes, y dale una descripción propia en Google.",
+        "evidence": "/pages/preguntas-frecuentes: FAQPage JSON-LD con 21 Question; sin meta description. Guardado en raw/presence-faq.html."
+      },
+      {
+        "title": "Escribe descripciones propias en cada producto",
+        "fix": "Las descripciones que ven Google y las IA son el texto del producto cortado a mitad de palabra. Redacta una frase corta por producto con deporte, tecnología de la tela y para quién es.",
+        "evidence": "Producto vestido-de-bano-triatlon-seatide-para-mujer: meta description termina en 'Su tejido AquaZero™ of'."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "Nombre",
+        "source": "Sitio (todas las páginas) y Organization JSON-LD",
+        "value": "Safetti"
+      },
+      {
+        "field": "Correo",
+        "source": "Contacto y pie de página",
+        "value": "servicioalcliente@safetti.com.co"
+      },
+      {
+        "field": "Teléfono fijo",
+        "source": "Contacto (cuerpo)",
+        "value": "PBX (604) 4448461"
+      },
+      {
+        "field": "Teléfono fijo",
+        "source": "Pie de página (Laureles)",
+        "value": "PBX 604 444 8461"
+      },
+      {
+        "field": "WhatsApp servicio al cliente",
+        "source": "Pie de página",
+        "value": "(+57) 3186150418 → wa.me/573186150418"
+      },
+      {
+        "field": "WhatsApp servicio al cliente",
+        "source": "Contacto (cuerpo)",
+        "value": "No aparece"
+      },
+      {
+        "field": "WhatsApp compras",
+        "source": "Pie de página (texto visible)",
+        "value": "(+57) 318 2340082"
+      },
+      {
+        "field": "WhatsApp compras",
+        "source": "Pie de página (enlace) y botón flotante de WhatsApp",
+        "value": "wa.me/573182430082"
+      },
+      {
+        "field": "WhatsApp compras",
+        "source": "Contacto (cuerpo)",
+        "value": "Shopping Safetti: 318 2430082"
+      },
+      {
+        "field": "WhatsApp personalización",
+        "source": "Pie de página, enlace 'Personalización'",
+        "value": "wa.me/573183468891 (número no visible en ninguna página)"
+      },
+      {
+        "field": "Tienda Laureles",
+        "source": "Pie de página",
+        "value": "Calle 41 # 73 - 29 – PBX 604 444 8461 – Celular (+57) 317 3806060 (enlace wa.me/message/EJ7UQ2MOSIQVI1)"
+      },
+      {
+        "field": "Tienda Laureles",
+        "source": "Contacto (cuerpo)",
+        "value": "Calle 41 # 73 - 29 – PBX 604 444 8461 (sin celular)"
+      },
+      {
+        "field": "Tienda Indiana",
+        "source": "Contacto y pie de página",
+        "value": "Carrera 6 # 24a sur 285 local 156 – (+57) 316 5282644"
+      },
+      {
+        "field": "Tienda Llanogrande",
+        "source": "Contacto y pie de página",
+        "value": "Km 1.7 desde Don Diego hacia Llanogrande frente a Sierra Blanca – (+57) 314 8302201"
+      },
+      {
+        "field": "Tienda Bogotá",
+        "source": "Contacto y pie de página",
+        "value": "Carrera 5 #69A 30 Zona G Chapinero – (+57) 318 3516417"
+      },
+      {
+        "field": "Tiendas",
+        "source": "/pages/tiendas (cuerpo)",
+        "value": "Solo nombres de tienda con botón de WhatsApp; sin dirección ni horario en texto"
+      },
+      {
+        "field": "Horario",
+        "source": "Todo el sitio revisado",
+        "value": "No publicado"
+      },
+      {
+        "field": "Dirección / teléfono / horario",
+        "source": "Datos estructurados (JSON-LD)",
+        "value": "No declarados (Organization solo con name, logo, url)"
+      }
+    ],
+    "inconsistencies": [
+      "El WhatsApp de compras aparece escrito como 318 2340082 en el pie de página, pero el enlace, el botón flotante y la página de contacto usan 318 2430082: quien copie el número a mano escribe a un número equivocado.",
+      "La tienda de Laureles muestra un celular (317 3806060) en el pie de página que no aparece en la página de contacto.",
+      "El WhatsApp de servicio al cliente (318 615 0418) solo aparece en el pie de página; la página de contacto no lo menciona.",
+      "El enlace 'Personalización' abre un WhatsApp (318 346 8891) que no está escrito en ninguna parte del sitio.",
+      "Ninguna página publica horarios de las tiendas, aunque la página de tiendas dice ofrecer 'información actualizada sobre ubicación, horarios y datos de contacto'.",
+      "Las direcciones de Laureles e Indiana no indican la ciudad, y los datos estructurados del sitio no incluyen dirección, teléfono ni horario de ninguna tienda."
+    ],
+    "evidence_files": [
+      "raw/home.html",
+      "raw/ux-pages-contact.html",
+      "raw/ux-pages-tiendas.html",
+      "raw/presence-product.html",
+      "raw/presence-collection-ciclismo.html",
+      "raw/presence-faq.html",
+      "raw/presence-llms.txt"
+    ]
+  }
+}

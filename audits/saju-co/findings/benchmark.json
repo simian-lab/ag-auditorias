@@ -1,0 +1,88 @@
+{
+  "competitors": [
+    {
+      "name": "Ben & Frank Colombia",
+      "url": "https://www.benandfrank.co/",
+      "slug": "ben-frank",
+      "why_competitor": "Marca propia de gafas formuladas y de sol que vende online en Colombia y agenda examen visual en sus tiendas físicas: el mismo modelo de Sajú.",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": true
+      },
+      "notes_es": "Botón real «Agendar examen» en la primera pantalla; el titular «Yo y mis Ben & Frank» es una imagen.",
+      "screenshot": "screenshots/bench-ben-frank.png",
+      "lighthouse": {
+        "performance": 61,
+        "accessibility": 70,
+        "seo": 77,
+        "total_mb": 2.45
+      }
+    },
+    {
+      "name": "Breathe",
+      "url": "https://www.breatheeyewear.com/",
+      "slug": "breathe",
+      "why_competitor": "Marca bogotana de diseño de monturas ópticas y gafas de sol con tiendas propias, comparable en tamaño y público con Sajú.",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Mensaje en texto real («opticals», «sunglasses») y botón de compra, pero sin botón para agendar o contactar.",
+      "screenshot": "screenshots/bench-breathe.png",
+      "lighthouse": {
+        "performance": 52,
+        "accessibility": 84,
+        "seo": 100,
+        "total_mb": 3.78
+      }
+    },
+    {
+      "name": "Ópticas Lafam",
+      "url": "https://www.lafam.com.co/",
+      "slug": "lafam",
+      "why_competitor": "Gran cadena óptica colombiana (referencia del mercado) que vende gafas formuladas y de sol online y ofrece consulta de optometría en sus sedes.",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Categorías claras, pero el titular es un banner de imagen y la cita de optometría solo aparece como franja de texto; un popup de cupón tapa la página al entrar.",
+      "screenshot": "screenshots/bench-lafam.png",
+      "lighthouse": {
+        "performance": 8,
+        "accessibility": 84,
+        "seo": 85,
+        "total_mb": 7.32
+      }
+    }
+  ],
+  "client": {
+    "name": "Sajú",
+    "url": "https://www.saju.co/",
+    "slug": "client",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": false,
+      "text_headline": false,
+      "trust_proof": false,
+      "quote_cta": true
+    },
+    "notes_es": "Se entiende que vende gafas, pero el titular y el botón «Agenda aquí» están pintados dentro de una imagen que rota, y no hay ninguna prueba de confianza (reseñas, años, reciclaje) en la primera pantalla.",
+    "lighthouse": {
+      "performance": 39,
+      "accessibility": 93,
+      "seo": 100,
+      "total_mb": 3.54
+    }
+  },
+  "takeaway_es": "Ben & Frank, que vende como tú gafas propias con examen en tienda, muestra un botón real de «Agendar examen» en su primera pantalla; en Sajú ese botón está pintado dentro de una foto que rota y desaparece."
+}

@@ -1,0 +1,108 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Los banners principales dicen todo dentro de la imagen",
+      "summary": "Tus mensajes más importantes (la nueva tienda, agendar examen, Triple Case) no existen para Google ni para quien usa lector de pantalla.",
+      "now": "El banner principal \"¡Llegamos a Gran Estación! Local 259, segundo piso, Agenda aquí\" y los de Triple Case y \"Agenda tu examen\" son fotos con el texto pintado encima. La imagen no tiene descripción y el enlace no tiene nombre, así que un lector de pantalla solo anuncia \"enlace\" sin decir a dónde lleva. Lo mismo pasa con el logo de la SIC en el pie de página.",
+      "fix": "Escribir el título, el texto y el botón del banner como texto real encima de la foto (el tema Prestige ya lo permite) y darle a cada enlace y al logo de la SIC una descripción clara, por ejemplo \"Agenda tu examen visual en Gran Estación\".",
+      "why": "Quien no ve la imagen (personas con baja visión, buscadores y asistentes de IA) no se entera de la tienda nueva ni de cómo agendar, que es justo lo que quieres vender.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "5 enlaces sin nombre",
+      "evidence": [
+        "Lighthouse (mobile and desktop) audit `link-name` score 0: `a.slideshow__slide` href=/products/examen-visual-san-roque, `a.slideshow__slide` href=/collections/examenes-visuales, footer `a[href='https://www.sic.gov.co/']`",
+        "raw/home.html: all 4 `a.slideshow__slide` (/collections/triple-cases, /products/examen-visual-gran-estacion, /products/examen-visual-san-roque, /collections/examenes-visuales) contain only `<img alt=\"\">` and an empty `<div class=\"prose\"></div>`",
+        "Banner images with alt=\"\" whose message is baked into the pixels: TripleCaseDesktop.webp (\"NUEVO · TRIPLE CASE · PARA CUALQUIER SITUACIÓN\"), bannerwebtiendas-01/03.webp (\"¡Llegamos a Gran Estación! LOCAL 259 | SEGUNDO PISO · AGENDA AQUÍ\", visible in screenshots/desktop-viewport.png), banner-agenda-examen-1.webp (\"Agenda tu examen · La vida es muy corta para no ver bien · CLICK AQUÍ\"), BannerFormuladas webp (benefit labels such as \"Fórmula personalizada\", \"Lentes con protección UV400\")",
+        "16 of 127 <img> on the home page have alt=\"\"; product photos do have meaningful alt (e.g. \"Cumbre Gravel — gafas de sol cuadradas compactas de Sajú en TR90 negro grava…\")"
+      ],
+      "technical_note": "Shopify theme Prestige 11.3.0, sections slideshow_DKtXfJ and slideshow_tQRp4f. The slide content block (`.slideshow__slide-content .prose`) is empty, so the merchant uploaded text-in-image banners instead of using the theme's heading/text/button fields. Lighthouse reports 93 (mobile) / 90 (desktop) for accessibility, but that score only covers automated checks: it cannot tell that an empty alt hides a headline, nor read text inside an image, so it overstates how accessible the page is.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 20, "y_pct": 52}
+    },
+    {
+      "id": "a11y-2",
+      "title": "Los precios se leen con dificultad",
+      "summary": "El precio, el dato que decide la compra, aparece en gris claro y pequeño, difícil de leer para muchos clientes.",
+      "now": "En todas las tarjetas de producto el precio (\"$299,000 COP\") está en gris claro de 12 px sobre blanco, con un contraste de 3,0:1; el mínimo recomendado es 4,5:1. Para una óptica, cuyos clientes muchas veces tienen problemas de visión, esto pesa más.",
+      "fix": "Oscurecer el color del precio al mismo gris de los nombres de producto (#5C5C5C, 6,7:1) o más, y subirle un poco el tamaño.",
+      "why": "Si el cliente no lee bien el precio, duda o se va; y quien busca gafas es justamente alguien que puede no ver bien.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "3,0:1",
+      "evidence": [
+        "Lighthouse desktop audit `color-contrast` score 0, 14 nodes, all `sale-price.h6.text-subdued` (label \"PRECIO DE OFERTA $299,000 COP\"): foreground #959595 on #ffffff, 9pt (12px), ratio 2.99:1, expected 4.5:1",
+        "raw/a11y-css/theme.css: `.text-subdued{color:rgb(var(--text-color) / .65)}`; with scheme-1 text 92 92 92 on 255 255 255 this blends to #959595 → computed WCAG ratio 3.0:1",
+        "For comparison, normal body text #5C5C5C on white = 6.69:1 and on #EFEFEF = 5.82:1 (pass)"
+      ],
+      "technical_note": "Change the subdued opacity for price-list or set a dedicated price color. Text over photos (collab labels \"JAMES / VER\", small white text on images) was not measured numerically and may also be low-contrast on light areas of the photo.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 14, "y_pct": 2}
+    },
+    {
+      "id": "a11y-3",
+      "title": "Textos y banners se mueven solos sin pausa",
+      "summary": "Tres elementos se mueven solos sin forma de detenerlos, lo que distrae y dificulta leer las promociones.",
+      "now": "La franja negra de \"Envíos gratis…\" se desplaza sin parar, la barra amarilla de promoción cambia cada 3 segundos y los banners grandes cambian cada 5 segundos. No hay botón de pausa y la franja ignora la opción del celular de \"reducir movimiento\"; solo se detiene si pasas el mouse por encima, algo imposible en un celular.",
+      "fix": "Agregar un botón de pausa a los carruseles, detener el movimiento cuando el usuario tiene activado \"reducir movimiento\" y dejar más tiempo en cada mensaje de la barra de promociones.",
+      "why": "Un cliente que lee despacio no alcanza a leer la promoción del mes antes de que cambie, y el movimiento constante cansa o marea a algunas personas.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html inline style: `.ai-scrolling-text__wrapper-… { animation: ai-scroll-… 120s linear infinite; }` with only `:hover { animation-play-state: paused; }` and no `@media (prefers-reduced-motion)` rule",
+        "raw/home.html: `<announcement-bar-carousel … autoplay=\"3\">` (\"EN OCTUBRE - COMPRA 2 GAFAS FORMULADAS Y LAS SEGUNDAS TE QUEDAN AL 50%*\")",
+        "raw/home.html: both `<slideshow-carousel … autoplay=\"5\">` sections; no pause/play button in markup (only `carousel-navigation.page-dots`)",
+        "Marquee visible at top of screenshots/desktop-viewport.png"
+      ],
+      "technical_note": "WCAG 2.2.2 Pause, Stop, Hide (Level A) applies to content that moves for more than 5 seconds. Prestige's own reveal/parallax effects do respect prefers-reduced-motion in theme.css; the custom AI-generated scrolling-text block does not.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 3}
+    },
+    {
+      "id": "a11y-4",
+      "title": "Las secciones no tienen títulos reales",
+      "summary": "Quien navega con lector de pantalla salta de título en título, y en tu página casi no encuentra ninguno.",
+      "now": "La página tiene solo 3 títulos reales: el logo (\"Sajú Colombia\") como título principal, \"Nuestras collabs\" y \"Para sol | Formuladas\". Secciones como \"¿Por qué Sajú?\", \"Compromiso\", \"Garantías\" o los nombres de las collabs se ven como títulos pero en el código son párrafos con letra grande.",
+      "fix": "Convertir los títulos de sección en títulos reales, con un título principal que diga qué vende Sajú (por ejemplo \"Gafas de sol y formuladas hechas en Colombia\") en lugar del logo.",
+      "why": "Los títulos son el índice de la página para lectores de pantalla y también para Google; sin ellos tu mensaje de marca y garantías se pierde.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html real headings: h1 \"Sajú Colombia\" (class header__logo), h2 \"NUESTRAS COLLABS\", h2 \"PARA SOL | FORMULADAS\"",
+        "Styled paragraphs used as headings: `<p class=\"h1\">¿POR QUÉ SAJÚ?</p>`, `<p class=\"h4\">COMPROMISO</p>`, `<p class=\"h4\">GARANTÍAS</p>`, `<p class=\"h4\">MARCA COLOMBIANA</p>`, `<p class=\"h6\">JAMES</p>` etc.",
+        "Lighthouse `heading-order` passes because it only checks the few real headings present"
+      ],
+      "technical_note": "Prestige lets you choose heading tags per block in many sections; otherwise edit the section liquid to output <h2>/<h3>. Landmarks (header, nav, main, footer) and the skip link \"Ir al contenido\" are present and fine.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 72}
+    },
+    {
+      "id": "a11y-5",
+      "title": "Los puntos del carrusel son diminutos en celular",
+      "summary": "Cambiar de banner en el celular exige atinarle a un punto de 6 píxeles, así que muchos clientes no ven las otras promociones.",
+      "now": "Los puntos para pasar de un banner a otro miden 6 × 6 píxeles y están muy juntos; el mínimo recomendado es 24 × 24 (ideal 44 × 44 en celular).",
+      "fix": "Ampliar el área táctil de los puntos (sin cambiar cómo se ven) o agregar flechas grandes para pasar de banner.",
+      "why": "Si tocar el control es difícil, los banners 2 y 3 (tienda nueva, examen visual) casi nadie los ve a propósito.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "6×6 px",
+      "evidence": [
+        "Lighthouse mobile audit `target-size` score 0, 6 nodes: `carousel-navigation.page-dots > button.tap-area` in slideshow_DKtXfJ and in images-with-text-scroll; \"Target has insufficient size (6px by 6px, should be at least 24px by 24px)\"",
+        "Lighthouse desktop `target-size` score 0, 2 nodes (same dots)",
+        "Dots visible at bottom right of hero in screenshots/desktop-viewport.png (~1367,730)"
+      ],
+      "technical_note": "WCAG 2.2 SC 2.5.8 Target Size (Minimum). The class name `tap-area` suggests the theme intends an enlarged hit area, but the measured target is still 6×6.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 95, "y_pct": 81}
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "partial", "evidence": "Body text #5C5C5C on white 6.69:1 and on #EFEFEF 5.82:1, buttons white on #5C5C5C 6.69:1, announcement bar black on #F7D254 14.3:1 (pass). Fails: all product prices `sale-price.text-subdued` #959595 on white at 12px = 3.0:1 (Lighthouse desktop color-contrast, 14 nodes). Small white text over photos (collab labels) not measured."},
+    {"id": "a11y-text-not-image", "result": "fail", "evidence": "Hero slideshow banners (\"¡Llegamos a Gran Estación! Local 259…\", \"Triple Case\"), \"Agenda tu examen\" banner and BannerFormuladas benefit labels are text baked into images; slide content blocks are empty."},
+    {"id": "a11y-alt", "result": "partial", "evidence": "Product photos have descriptive alt (e.g. \"Cumbre Gravel — gafas de sol cuadradas…\"). 16 of 127 images have alt=\"\", including informative text banners (TripleCaseDesktop, bannerwebtiendas-01/03, banner-agenda-examen-1, BannerFormuladas) and the linked SIC logo."},
+    {"id": "a11y-headings", "result": "partial", "evidence": "Exactly one H1, but it is the logo \"Sajú Colombia\"; only 3 real headings on the page. Section titles (\"¿POR QUÉ SAJÚ?\" p.h1, \"COMPROMISO\" p.h4, collab names p.h6) are styled paragraphs. Lighthouse heading-order passes."},
+    {"id": "a11y-names", "result": "partial", "evidence": "Buttons (carousel dots/arrows with sr-only text), social icons and WhatsApp (aria-label \"Chat en WhatsApp\") have names. Lighthouse link-name fails: 2 hero slide links in the audit (4 in HTML) and the SIC footer logo link have no accessible name."},
+    {"id": "a11y-focus", "result": "pass", "evidence": "theme.css only removes outline for `:focus:not(:focus-visible)` (browser focus ring kept for keyboard); inputs swap outline for border-color on focus; skip link \"Ir al contenido\" becomes visible on focus. No inline outline:none overrides in home.html. Static CSS review, not live keyboard test."},
+    {"id": "a11y-keyboard", "result": "pass", "evidence": "Header dropdowns use native <details>/<summary>; carousels use <button> prev/next and dots; WhatsApp chat is a plain <a>; skip link present. No focus-trap patterns found in markup. Based on markup review, not a live keyboard session."},
+    {"id": "a11y-form-labels", "result": "partial", "evidence": "Newsletter field has a <label> (floating), type=email and autocomplete=email. Search field relies on placeholder \"Buscar…\" plus aria-label (no visible label). No contact page exists (/pages/contact and /pages/contacto return 404); the exam booking product page returned HTTP 429 and could not be reviewed."},
+    {"id": "a11y-motion", "result": "fail", "evidence": "Custom scrolling-text marquee runs `120s linear infinite`, pauses only on hover, no prefers-reduced-motion rule; announcement bar autoplay=3; both slideshows autoplay=5 with no pause control."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\" dir=\"ltr\">; Lighthouse html-has-lang passes."},
+    {"id": "a11y-targets", "result": "partial", "evidence": "Lighthouse target-size fails (mobile 6 nodes): carousel dot buttons are 6×6 px with insufficient spacing. Other controls pass the audit; viewport allows zoom (maximum-scale=5.0)."}
+  ]
+}

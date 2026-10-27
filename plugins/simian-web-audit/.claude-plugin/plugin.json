@@ -1,0 +1,8 @@
+{
+  "name": "simian-web-audit",
+  "version": "0.2.1",
+  "description": "Audit a prospect's website and build a persuasive, offline Top N micrositio for in-person Simian presentations.",
+  "author": {
+    "name": "mager19"
+  }
+}

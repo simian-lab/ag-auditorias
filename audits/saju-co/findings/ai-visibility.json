@@ -1,0 +1,45 @@
+{
+  "source": "OpenSEO AI visibility, run ff00ec0e-c1bc-49df-8197-04e058255f7b (manual check, 2026-10-25)",
+  "date": "Octubre 2026",
+  "brand": "Sajú",
+  "answers": [
+    {
+      "engine": "gemini",
+      "prompt": "¿Qué marcas colombianas de gafas de sol recomiendas comprar en línea?",
+      "mentioned": true,
+      "named": ["Sajú", "Bad Simon", "Breathe Eyewear"],
+      "note_es": "Te recomienda en primer lugar y cita tu sitio para hablar de tus materiales reciclados."
+    },
+    {
+      "engine": "google_ai_overview",
+      "prompt": "¿Qué marcas colombianas de gafas de sol recomiendas comprar en línea?",
+      "mentioned": true,
+      "named": ["Sajú", "Marolo (Casa Precis)", "Breathe Eyewear", "FOLKS", "Oruz", "Sky Apparel"],
+      "note_es": "El resumen de IA de Google te nombra primero y enlaza tu sitio; destaca Sajú Grip y tus materiales reciclados."
+    },
+    {
+      "engine": "chatgpt",
+      "prompt": "¿Qué marcas colombianas de gafas de sol recomiendas comprar en línea?",
+      "mentioned": false,
+      "named": ["FENTO Eyewear", "San Basilio", "Solé Sunglasses", "KOVA", "NAVANI", "Breathe Eyewear"],
+      "note_es": "ChatGPT recomienda seis marcas colombianas, entre ellas tu competidor Breathe; tú no apareces."
+    },
+    {
+      "engine": "gemini",
+      "prompt": "¿Dónde puedo hacerme un examen visual y comprar gafas formuladas en Bogotá?",
+      "mentioned": true,
+      "named": ["Ópticas Lafam", "Opticalia", "Ópticas Éxito / Olímpica", "Óptica Medina", "Óptica Italiana", "Sajú", "Zeiss Vision Center"],
+      "note_es": "Te menciona en sexto lugar, sin citar tu sitio y sin una dirección exacta de tus ópticas; Lafam aparece primero y con enlace a su página de citas."
+    },
+    {
+      "engine": "chatgpt",
+      "prompt": "¿Dónde puedo hacerme un examen visual y comprar gafas formuladas en Bogotá?",
+      "mentioned": false,
+      "named": ["Óptica Naratodo", "Ópticas Apolo Visión", "Gafas & Gafas", "Óptica Medina"],
+      "note_es": "Recomienda cuatro ópticas con dirección, teléfono y precio del examen; tus ópticas no aparecen."
+    }
+  ],
+  "no_answer": [
+    "google_ai_overview: ¿Dónde puedo hacerme un examen visual y comprar gafas formuladas en Bogotá?"
+  ]
+}

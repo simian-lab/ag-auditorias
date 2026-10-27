@@ -1,0 +1,15 @@
+{
+  "client": "Example SAS",
+  "domain": "example.com",
+  "date": "Octubre 2026",
+  "big_stat": {"value": "13,4 MB", "count_to": 13, "suffix": ",4 MB", "headline": "descarga cada visitante solo para ver la página de inicio.", "explain": "El 97% de ese peso son imágenes sin optimizar.", "grid_pct": 97, "grid_legend": ["imágenes", "todo lo demás"], "source": "Fuente: medición con Google Lighthouse."},
+  "items": [
+    {"n": 1, "c": "ux", "src": ["ux-1"], "imp": 5, "eff": "Bajo", "stage": 1, "t": "Tu WhatsApp saluda con un mensaje de prueba", "t_plain": "WhatsApp le envía un mensaje de prueba al cliente", "s": "El chat tiene el texto del plugin.", "now": "Abre con «Estoy probando el plugin» & <b>John</b>.", "fix": "Mensaje para vender.", "why": "Es tu canal más directo.", "shot": {"img": "desktop-fullpage.jpg", "x": 87, "y": 98}},
+    {"n": 2, "c": "tec", "src": ["tech-1"], "imp": 5, "eff": "Bajo", "stage": 1, "t": "13,4 MB: tu inicio hace esperar al comprador", "t_plain": "Tu página de inicio pesa 13,4 MB", "s": "Imágenes sin optimizar.", "now": "Banner de 10 MB.", "fix": "Imágenes livianas.", "why": "Un sitio lento pierde visitas.", "shot": {"img": "desktop-fullpage.jpg", "x": 60, "y": 12}},
+    {"n": 3, "c": "ux", "src": ["ux-2"], "imp": 5, "eff": "Bajo", "stage": 1, "t": "Tu sitio no está pidiendo la venta", "t_plain": "No hay forma clara de pedir una cotización", "s": "No hay botón de cotizar.", "now": "El único botón dice «Productos».", "fix": "Botón «Solicitar cotización».", "why": "Sin camino claro se pierden contactos.", "shot": null},
+    {"n": 4, "c": "vis", "src": ["visual-1"], "imp": 4, "eff": "Medio", "stage": 2, "t": "Tu mensaje principal es una foto, no texto", "t_plain": "El mensaje principal es una imagen, no texto", "s": "Diminuto en celular.", "now": "Texto dentro del banner.", "fix": "Titular en texto real.", "why": "Los primeros segundos deciden.", "shot": {"img": "mobile-fullpage.jpg", "x": 25, "y": 7}},
+    {"n": 5, "c": "a11y", "src": ["a11y-1"], "imp": 3, "eff": "Bajo", "stage": 2, "t": "Tus botones verdes casi no se leen", "t_plain": "Los botones verdes son difíciles de leer", "s": "Contraste 2,0:1.", "now": "Blanco sobre verde claro.", "fix": "Contraste 4,5:1.", "why": "Si no se lee, no se pulsa.", "shot": {"img": "missing.jpg", "x": 50, "y": 50}},
+    {"n": 6, "c": "vis", "src": ["visual-1"], "imp": 3, "eff": "Bajo", "stage": 3, "t": "Cada sección parece de una empresa distinta", "t_plain": "Cada sección parece de un sitio distinto", "s": "Cinco estilos de botones.", "now": "Estilos mezclados.", "fix": "Un sistema simple.", "why": "La coherencia transmite orden.", "shot": {"img": "desktop-fullpage.jpg", "x": 50, "y": 40}},
+    {"n": 7, "c": "tec", "src": ["tech-2"], "imp": 3, "eff": "Bajo", "stage": 1, "t": "A tu sitio le faltan cerraduras básicas", "t_plain": "Faltan protecciones de seguridad básicas", "s": "Sin cabeceras estándar.", "now": "Sin HSTS ni CSP.", "fix": "Activar protecciones.", "why": "Un sitio vulnerado daña tu reputación.", "checks": [["HTTPS activo", "ok"], ["HSTS", "no"]]}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": ["serp", "share_preview", "ai_answer", "nap"],
+  "properties": {
+    "serp": {"type": "object", "required": ["today", "proposed"], "properties": {
+      "today": {"type": "array", "items": {"type": "object", "required": ["url", "title"]}},
+      "proposed": {"type": "array", "items": {"type": "object", "required": ["title", "description"]}}
+    }},
+    "share_preview": {"type": "object", "required": ["proposed"], "properties": {
+      "proposed": {"type": "object", "required": ["og:title", "og:description"], "properties": {"og_image_local": {"type": ["string", "null"]}}}
+    }},
+    "ai_answer": {"type": "object", "required": ["aeo_fixes"], "properties": {
+      "status": {"type": "string"},
+      "aeo_fixes": {"type": "array", "items": {"type": "object", "required": ["title", "fix"], "properties": {"title": {"type": "string"}, "fix": {"type": "string"}, "evidence": {"type": "string"}}}}
+    }},
+    "nap": {"type": "object", "required": ["inconsistencies"], "properties": {"inconsistencies": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

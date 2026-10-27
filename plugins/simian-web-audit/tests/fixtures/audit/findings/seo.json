@@ -1,0 +1,82 @@
+{
+ "area": "seo",
+ "findings": [
+  {
+   "id": "seo-1",
+   "title": "No apareces cuando te buscan",
+   "summary": "0 de 2 búsquedas.",
+   "impact": 5
+  }
+ ],
+ "search_tests": [
+  {
+   "query": "cajas de cartón para flores",
+   "appears": false,
+   "who_appears": [
+    "Uno SAS",
+    "Dos SAS"
+   ]
+  },
+  {
+   "query": "example",
+   "appears": true,
+   "who_appears": [
+    "Example SAS"
+   ]
+  }
+ ],
+ "search_tests_note": "Herramienta con índice de EE. UU.",
+ "extra_pitch_es": "Podemos ponerte frente a quienes ya buscan lo que fabricas.",
+ "checks": [
+  {
+   "id": "seo-appears",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-titles",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-descriptions",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-h1",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-structured-data",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-product-pages",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-clean-index",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-share",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-nap",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "seo-ai-ready",
+   "result": "pass",
+   "evidence": "fixture"
+  }
+ ]
+}

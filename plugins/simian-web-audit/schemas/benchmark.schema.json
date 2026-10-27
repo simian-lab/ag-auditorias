@@ -1,0 +1,182 @@
+{
+  "type": "object",
+  "required": [
+    "competitors",
+    "client",
+    "takeaway_es"
+  ],
+  "properties": {
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "url",
+          "screenshot",
+          "five_second",
+          "lighthouse"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "screenshot": {
+            "type": "string"
+          },
+          "five_second": {
+            "type": "object",
+            "required": [
+              "what",
+              "for_whom",
+              "quote_cta",
+              "trust_proof",
+              "text_headline"
+            ],
+            "properties": {
+              "what": {
+                "type": "boolean"
+              },
+              "for_whom": {
+                "type": "boolean"
+              },
+              "quote_cta": {
+                "type": "boolean"
+              },
+              "trust_proof": {
+                "type": "boolean"
+              },
+              "text_headline": {
+                "type": "boolean"
+              }
+            }
+          },
+          "notes_es": {
+            "type": "string"
+          },
+          "lighthouse": {
+            "type": "object",
+            "required": [
+              "total_mb"
+            ],
+            "properties": {
+              "performance": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "accessibility": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "seo": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "total_mb": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "client": {
+      "type": "object",
+      "required": [
+        "name",
+        "url",
+        "screenshot",
+        "five_second",
+        "lighthouse"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "screenshot": {
+          "type": "string"
+        },
+        "five_second": {
+          "type": "object",
+          "required": [
+            "what",
+            "for_whom",
+            "quote_cta",
+            "trust_proof",
+            "text_headline"
+          ],
+          "properties": {
+            "what": {
+              "type": "boolean"
+            },
+            "for_whom": {
+              "type": "boolean"
+            },
+            "quote_cta": {
+              "type": "boolean"
+            },
+            "trust_proof": {
+              "type": "boolean"
+            },
+            "text_headline": {
+              "type": "boolean"
+            }
+          }
+        },
+        "notes_es": {
+          "type": "string"
+        },
+        "lighthouse": {
+          "type": "object",
+          "required": [
+            "total_mb"
+          ],
+          "properties": {
+            "performance": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "accessibility": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "seo": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "total_mb": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "takeaway_es": {
+      "type": "string"
+    }
+  }
+}

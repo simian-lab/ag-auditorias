@@ -1,0 +1,102 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "Exceso de scripts de seguimiento frena la tienda en celular",
+      "summary": "En celular la tienda tarda en responder a toques y clics porque carga mucho código de medición y publicidad, y eso le resta compras a quien llega desde anuncios.",
+      "now": "La página de inicio descarga 141 archivos de código (1,72 MB). Las etiquetas de Google se cargan dos veces cada una, y además corren Meta, TikTok, Clarity, Omnisend y otras apps. En la prueba de celular, el procesador queda ocupado 12,6 s y la página no responde del todo hasta los 22,8 s.",
+      "fix": "Revisar todas las etiquetas y apps: dejar una sola instalación de cada herramienta de Google (Google Tag Manager o la app de Shopify, no ambas), quitar las apps que ya no se usan y retrasar la carga de las de marketing hasta que el usuario interactúe.",
+      "why": "Si la página tarda en reaccionar en el celular, el visitante que viene de un anuncio pagado se va antes de ver productos.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "1,72 MB de código",
+      "evidence": [
+        "Lighthouse mobile: total-blocking-time 1.010 ms; interactive 22,8 s; mainthread-work-breakdown 12,6 s (Script Evaluation 2.760 ms, Rendering 2.081 ms, Style & Layout 1.834 ms); bootup-time 2,6 s; 17 long tasks",
+        "Lighthouse mobile network-requests: 141 requests of type Script, 1.765 KiB transferred (1,72 MB) out of 3.628 KiB total",
+        "Same Google tags requested twice: gtag/js?id=G-T2N9ZJVCMY (195 KiB, twice) and gtag/js?id=GT-TBWHBTQK (155 KiB, twice), plus gtm.js?id=GTM-PCZZNV7B (116 KiB); www.googletagmanager.com totals 816 KiB",
+        "connect.facebook.net 279 KiB (fbevents.js + signals config); analytics.tiktok.com 50 KiB; omnisnippet1.com 97 KiB; scripts.clarity.ms 25 KiB; po.kaktusapp.com 36 KiB; s1.staq-cdn.com 25 KiB",
+        "Lighthouse unused-javascript (mobile): est. savings 641 KiB, metricSavings LCP 700 ms; top waste in the GTM/gtag scripts (65-76% unused)",
+        "Lighthouse desktop TBT is only 10 ms: the problem is concentrated on phones"
+      ],
+      "technical_note": "Lab values are simulated slow 4G + 4x CPU throttling. Observed (unthrottled) metrics in the same run: FCP 2.448 ms, LCP 2.448 ms, Speed Index 4.708 ms, load 20.342 ms. The double gtag fetch (one plain, one with &cx=c&gtm=) suggests Google tag installed both via Shopify Google & YouTube channel and via GTM. Additional platform weight: 35 requests / 609 KiB of shopifycloud/checkout-web assets preloaded on the homepage. Legacy JS only in fbevents.js (12 KiB).",
+      "pin": null
+    },
+    {
+      "id": "tech-2",
+      "title": "La página de inicio pesa más de 3,5 MB",
+      "summary": "Cada visita al inicio consume más de 3,5 MB de datos, lo que hace la carga más lenta y costosa para quien navega con plan de datos.",
+      "now": "En celular la página de inicio pesa 3,54 MB y hace 340 solicitudes al servidor; en computador llega a 3,97 MB. Casi la mitad del peso es código (1,72 MB) y 0,86 MB son imágenes.",
+      "fix": "Bajar la página de inicio a menos de 3 MB: limpiar scripts de terceros (ver hallazgo de scripts), ajustar el tamaño de las imágenes y revisar qué carga de forma anticipada el pago de Shopify en el inicio.",
+      "why": "Una página más liviana carga más rápido en redes móviles, y eso se traduce en más visitas que llegan a ver un producto.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "3,54 MB",
+      "evidence": [
+        "Lighthouse mobile total-byte-weight: 3.628 KiB (3,54 MB), 340 requests",
+        "Lighthouse desktop total-byte-weight: 4.066 KiB (3,97 MB)",
+        "Mobile breakdown by type: Script 1.765 KiB, Image 885 KiB, Other 704 KiB, Document 165 KiB, Font 32 KiB, Stylesheet 14 KiB",
+        "Top 5 resources by transfer (mobile): gtag/js?id=G-T2N9ZJVCMY 195 KiB; gtag/js?id=G-T2N9ZJVCMY&cx=c 195 KiB; palma_clear_blue...jpg 187 KiB; checkout-web/assets/c1/164ad2e3.js 176 KiB; facebook signals/config 164 KiB",
+        "Mobile 'Other' type includes 35 shopifycloud/checkout-web requests (609 KiB) loaded on the homepage"
+      ],
+      "technical_note": "checkout-web assets are likely Shopify's checkout preloading; check whether it can be deferred. www.saju.co own host 1.989 KiB across 127 requests; shopify-assets.shopifycdn.com 62 requests (88 KiB).",
+      "pin": null
+    },
+    {
+      "id": "tech-3",
+      "title": "Imágenes más grandes de lo que se muestran",
+      "summary": "Las fotos y banners se descargan en un tamaño mayor al que se ve en pantalla, lo que hace esperar al cliente sin mejorar cómo se ven.",
+      "now": "En celular, el banner principal y los banners de tiendas se descargan a 800x1067 px para mostrarse a 412x550 px; una foto de producto pesa 186 KB y se podría comprimir mucho más; las miniaturas de 194 px se bajan a 600 px. Además, 6 fotos de productos debajo del primer pantallazo cargan de inmediato en vez de esperar al desplazamiento.",
+      "fix": "Ajustar en el tema los tamaños de imagen que pide cada sección según el ancho real en pantalla, comprimir las fotos más pesadas y activar la carga diferida en todas las tarjetas de producto.",
+      "why": "Las imágenes son lo primero que el cliente quiere ver en una tienda de gafas; si tardan, se pierde la primera impresión.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "0,49 MB ahorrables",
+      "evidence": [
+        "Lighthouse mobile image-delivery-insight: est. savings 497 KiB (0,49 MB), metricSavings LCP 350 ms",
+        "palma_clear_blue_...jpg?width=800: 186 KiB, 162 KiB wasted (compression 137 KiB; 400x800 served for 412x412 display)",
+        "bannerwebtiendas-04.webp, bannerwebtiendas-02.webp, TripleCaseMobile.webp (LCP hero): 800x1067 served for 412x550 display",
+        "Product thumbnails BLOCKMOLE_3.jpg, TROCHAINDIGO_7.jpg: 600x600 served for 194x194 display",
+        "Images are served as WebP by Shopify CDN (format is fine; size/compression is the problem)",
+        "raw/home.html: 117 of 127 <img> use loading=\"lazy\"; without it: 6 product-card images (CUMBREGRAVEL_2, CUMBREDENIM_2, PISTADENIM_2, travel-case black/navy/pastel-yellow), logo-sic-noticia, header logo, hero, WhatsApp icon",
+        "Lighthouse desktop image-delivery-insight: est. savings 346 KiB"
+      ],
+      "technical_note": "Prestige 11.3.0 sections use sizes=\"100vw\" with a srcset starting at width=800 for the mobile hero; adding smaller srcset widths (400/600) and correct sizes attributes would fix most of it. LCP hero (a.slideshow__slide picture > img) already has fetchpriority=high and no lazy loading, which is correct; on mobile lab its LCP breakdown shows element render delay 1.679 ms (main thread busy, see tech-1).",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 6.5}
+    },
+    {
+      "id": "tech-4",
+      "title": "Protecciones del servidor completas en parte",
+      "summary": "El sitio ya tiene la mayoría de protecciones básicas, pero le faltan ajustes menores que refuerzan la confianza y la privacidad de los compradores.",
+      "now": "El sitio usa HTTPS y redirige bien desde http. Tiene 4 de 5 protecciones básicas activas; falta la que controla qué información de navegación se comparte con otros sitios, y la política de contenido es mínima.",
+      "fix": "Pedir a quien administra el dominio que agregue la cabecera Referrer-Policy y, si es posible, una política de contenido más completa; y ampliar la vigencia de HSTS a un año.",
+      "why": "Son ajustes de bajo costo que reducen riesgos y muestran una tienda cuidada a nivel técnico.",
+      "impact": 1,
+      "effort": "Bajo",
+      "evidence": [
+        "HSTS: present (strict-transport-security: max-age=7889238, about 91 days, no includeSubDomains)",
+        "CSP: present (only block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests; no script-src/default-src)",
+        "X-Frame-Options / frame-ancestors: present (x-frame-options: DENY; frame-ancestors 'none')",
+        "X-Content-Type-Options: present (nosniff)",
+        "Referrer-Policy: absent",
+        "HTTPS: http://www.saju.co/ -> 301 https://www.saju.co/; http://saju.co/ -> 301 https://saju.co/ -> 301 https://www.saju.co/",
+        "Source: raw/tech-headers.txt (curl -sI)"
+      ],
+      "technical_note": "Shopify-hosted behind Cloudflare; some headers are controlled by Shopify and may not be configurable from the theme. Lighthouse best-practices 0.77 due to third-party-cookies (11 cookies: omnisnippet1.com, shop.app, clarity.ms) and inspector-issues (cookie warnings), not to console errors.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "fail", "evidence": "Lighthouse total-byte-weight: mobile 3.628 KiB (3,54 MB), desktop 4.066 KiB (3,97 MB); above 3 MB"},
+    {"id": "tech-lcp", "result": "pass", "evidence": "observedLargestContentfulPaint (mobile) 2.448 ms (2,45 s), at the 2,5 s limit; lab simulated LCP is 7,3 s"},
+    {"id": "tech-images", "result": "partial", "evidence": "Images served as WebP (modern format passes), but image-delivery-insight estimates 497 KiB savings (oversized/under-compressed), above the 100 KiB threshold"},
+    {"id": "tech-lazy", "result": "partial", "evidence": "117 of 127 <img> lazy-loaded; 6 below-the-fold product-card images and the press logo load eagerly"},
+    {"id": "tech-render-blocking", "result": "pass", "evidence": "render-blocking-insight metricSavings FCP 0 ms / LCP 0 ms (theme.css only); fonts: Jost 400 + Poppins 300/400 loaded (3 font files, 32 KiB)"},
+    {"id": "tech-cache", "result": "pass", "evidence": "Own static assets (theme.js, theme.css, CDN images) served with cache-control: public, max-age=31557600 (1 year); short TTLs only on third-party scripts (fbevents.js 20 min, Omnisend 1 h; cache-insight 368 KiB)"},
+    {"id": "tech-https", "result": "pass", "evidence": "HTTPS 200 with HSTS; http://www.saju.co/ and http://saju.co/ 301 to HTTPS; Lighthouse is-on-https pass"},
+    {"id": "tech-security-headers", "result": "pass", "evidence": "4 of 5 present: HSTS, CSP (minimal), X-Frame-Options DENY, X-Content-Type-Options nosniff; Referrer-Policy absent"},
+    {"id": "tech-console", "result": "pass", "evidence": "Lighthouse errors-in-console score 1, no items (mobile and desktop)"},
+    {"id": "tech-links", "result": "pass", "evidence": "40 URLs checked (30 sampled of 91 internal links + 10 images): 33 returned 200, none returned 404; 7 product URLs answered 429 (Shopify rate limiting after repeated requests), inconclusive, not broken. See raw/tech-links.txt"},
+    {"id": "tech-404", "result": "pass", "evidence": "https://www.saju.co/pagina-que-no-existe-xyz returns HTTP 404 with a branded page ('404 No encontrado', 'Seguir comprando' button, full navigation); raw/tech-404.html"}
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "Inicio",
+        "url": "https://www.saju.co",
+        "breadcrumb": "saju.co",
+        "title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
+        "meta_description": "Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta",
+        "note": "El título es solo el eslogan en inglés: no dice gafas, ni Colombia, ni ópticas. La descripción no menciona productos, tiendas ni envío."
+      },
+      {
+        "page": "Producto (Cumbre Gravel)",
+        "url": "https://www.saju.co/products/cumbre-gravel",
+        "breadcrumb": "saju.co › products › cumbre-gravel",
+        "title": "Cumbre Gravel · Gafas de sol cuadradas compactas TR90 | Sajú",
+        "meta_description": "Cumbre Gravel: gafas de sol cuadradas compactas en TR90 negro grava, con Grip antideslizante y filtro UV400. Envío a toda Colombia.",
+        "note": "Bien resuelto: título y descripción propios y descriptivos."
+      },
+      {
+        "page": "Tiendas",
+        "url": "https://www.saju.co/pages/tiendas-1",
+        "breadcrumb": "saju.co › pages › tiendas-1",
+        "title": "TIENDAS",
+        "meta_description": null,
+        "note": "Título de una sola palabra sin marca ni ciudad; sin descripción, Google improvisa el texto."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "Inicio",
+        "title": "Sajú: gafas de sol, formuladas y ópticas en Colombia",
+        "description": "Gafas de sol con filtro UV400, gafas formuladas y examen visual en ópticas Sajú de Bogotá, Chía y Medellín. Envío a toda Colombia."
+      },
+      {
+        "page": "Tiendas",
+        "title": "Tiendas y ópticas Sajú en Colombia y Costa Rica",
+        "description": "Direcciones, horarios y teléfonos de las tiendas y ópticas Sajú en Bogotá, Chía, Medellín, Cartagena, Barranquilla y Costa Rica. Agenda tu cita."
+      }
+    ]
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
+        "og:description": "Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta",
+        "og:image": "https://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png (1080×1080, logo on white)",
+        "twitter:card": "summary"
+      },
+      "product": {
+        "og:title": "Cumbre Gravel",
+        "og:image": "https://www.saju.co/cdn/shop/files/CUMBREGRAVEL_2.jpg (2048×2048)",
+        "twitter:description": "full product body dumped without spaces between headings (e.g. 'UVB.MaterialMontura en TR90')"
+      },
+      "tiendas": {
+        "og:title": "TIENDAS",
+        "og:description": null,
+        "twitter:description": "TIENDAS"
+      },
+      "whatsapp_today": "Al compartir el inicio por WhatsApp/LinkedIn sale el logo sobre fondo blanco (imagen cuadrada) con el eslogan en inglés; al compartir la página de tiendas sale solo 'TIENDAS' y el logo, sin texto que explique qué es."
+    },
+    "proposed": {
+      "og:title": "Sajú: gafas de sol y formuladas, ópticas en Colombia",
+      "og:description": "Gafas de sol UV400, gafas formuladas y examen visual en ópticas Sajú. Envío a toda Colombia.",
+      "og:image": "https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp",
+      "og:image:width": 1200,
+      "og:image:height": 630,
+      "twitter:card": "summary_large_image",
+      "og_image_local": "og-source.jpg"
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Arreglar la página de preguntas frecuentes",
+        "fix": "Publicar una página de preguntas frecuentes real (garantía, cambios, tiempos de envío, cómo funciona el examen visual, cuánto tarda una gafa formulada, qué es el plástico reciclado de Sajú) para que la IA tenga respuestas tuyas que citar.",
+        "evidence": "https://www.saju.co/pages/faqs → 301 to /pages/preguntas-frecuentes → 404 (checked 2026-10-25)"
+      },
+      {
+        "title": "Ficha de marca con datos verificables",
+        "fix": "Crear una página 'Sobre Sajú' con datos comprobables: año de fundación, número de tiendas y ópticas por ciudad, materiales (plástico reciclado, TR90), garantía de 365 días y razón social. Hoy no existe una página así.",
+        "evidence": "/pages/nosotros → 404; home links only to collabs, envíos, privacidad, tachalo, términos, tiendas-1"
+      },
+      {
+        "title": "Cada tienda como negocio local en los datos del sitio",
+        "fix": "Añadir datos estructurados de tienda/óptica (LocalBusiness / Optician) por cada sede, con dirección, teléfono y horario idénticos a los publicados, y completar el bloque de organización con teléfono, correo y razón social.",
+        "evidence": "JSON-LD on home: only WebSite, Organization (name, logo, description, slogan, sameAs) and BreadcrumbList; no telephone, email, address or LocalBusiness on /pages/tiendas-1"
+      },
+      {
+        "title": "Una sola versión de cada dirección y horario",
+        "fix": "Corregir el buscador de tiendas para que coincida con las fichas de la misma página (ver datos contradictorios). La IA y Google desconfían de un negocio que da dos direcciones para la misma tienda.",
+        "evidence": "/pages/tiendas-1: locator cards vs. detail blocks disagree on Calle 122, Parque La Colina, La Serrezuela and Medellín (see nap)"
+      },
+      {
+        "title": "Completar el archivo llms.txt con la marca",
+        "fix": "El archivo llms.txt actual solo trae instrucciones genéricas de compra de Shopify. Añadir un resumen de quién es Sajú, qué vende, dónde están las ópticas y enlaces a tiendas, garantía y preguntas frecuentes.",
+        "evidence": "https://www.saju.co/llms.txt → 200, content is Shopify's default 'Agent Instructions' (Shop skill / UCP), no brand facts"
+      },
+      {
+        "title": "Descripciones legibles en las fichas de producto",
+        "fix": "Separar la descripción de producto en frases y secciones limpias; hoy los textos se pegan entre sí ('UVB.MaterialMontura…') en los datos que leen buscadores y asistentes.",
+        "evidence": "/products/cumbre-gravel: twitter:description and Product JSON-LD description concatenate headings without spaces"
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "Nombre",
+        "source": "Footer (todas las páginas)",
+        "value": "La Familia del Mono SAS · © 2026 - Sajú Colombia"
+      },
+      {
+        "field": "Nombre",
+        "source": "JSON-LD Organization (home)",
+        "value": "Sajú Colombia"
+      },
+      {
+        "field": "Nombre",
+        "source": "Términos de envío (/pages/envios-garantias-y-devoluciones)",
+        "value": "La Familia Del Mono S.A.S."
+      },
+      {
+        "field": "Teléfono",
+        "source": "Botón flotante de WhatsApp (todas las páginas)",
+        "value": "+57 312 322 5855"
+      },
+      {
+        "field": "Teléfono",
+        "source": "JSON-LD Organization",
+        "value": "no declarado"
+      },
+      {
+        "field": "Email",
+        "source": "/pages/envios-garantias-y-devoluciones",
+        "value": "sac@sajucompany.com (dominio distinto a saju.co)"
+      },
+      {
+        "field": "Email",
+        "source": "Footer / contacto",
+        "value": "no publicado; /pages/contact devuelve 404"
+      },
+      {
+        "field": "Dirección Calle 122",
+        "source": "Buscador de tiendas (/pages/tiendas-1)",
+        "value": "Carrera 58d #146-51"
+      },
+      {
+        "field": "Dirección Calle 122",
+        "source": "Ficha de tienda (/pages/tiendas-1)",
+        "value": "Calle 122 #17-19"
+      },
+      {
+        "field": "Dirección Parque La Colina",
+        "source": "Buscador de tiendas",
+        "value": "CC Parque La Colina, Cra. 72 # 145, LC338"
+      },
+      {
+        "field": "Dirección Parque La Colina",
+        "source": "Ficha de tienda",
+        "value": "Cra. 58d #146-51 - Local 338"
+      },
+      {
+        "field": "Dirección Parque La Colina",
+        "source": "VisitBogotá (visitbogota.co)",
+        "value": "Carrera 58D # 146 - 51 (dirección del centro comercial)"
+      },
+      {
+        "field": "Dirección La Serrezuela",
+        "source": "Buscador de tiendas",
+        "value": "Cra. 5 #4 - 49 (igual a Cartagena Centro)"
+      },
+      {
+        "field": "Dirección La Serrezuela",
+        "source": "Ficha de tienda",
+        "value": "Comercial La Serrezuela, Cra. 11 #39-21 Local S25-1"
+      },
+      {
+        "field": "Horario La Serrezuela",
+        "source": "Buscador de tiendas",
+        "value": "Lun a Dom: 10am - 8pm"
+      },
+      {
+        "field": "Horario La Serrezuela",
+        "source": "Ficha de tienda",
+        "value": "Lun a Sáb 10:00–20:00 | Dom y festivos 10:00–21:00"
+      },
+      {
+        "field": "Horario Medellín",
+        "source": "Buscador de tiendas",
+        "value": "Lun a Sáb: 10am - 8pm · Dom: 11am - 6pm"
+      },
+      {
+        "field": "Horario Medellín",
+        "source": "Ficha de tienda (Amsterdam Plaza)",
+        "value": "Lun a Sáb 10:00–20:00 | Dom y festivos 10:00–18:00"
+      },
+      {
+        "field": "Teléfono Cedritos-140",
+        "source": "Ficha de tienda",
+        "value": "323 808 9097 (mismo número que Parque La Colina)"
+      },
+      {
+        "field": "Redes",
+        "source": "Footer",
+        "value": "instagram.com/saju, tiktok.com/@losdesaju, linkedin.com/company/sajucolombia, youtube.com/@tachalo"
+      },
+      {
+        "field": "Redes",
+        "source": "JSON-LD Organization sameAs",
+        "value": "instagram.com/saju, tiktok.com/@losdesaju (sin LinkedIn ni YouTube)"
+      }
+    ],
+    "inconsistencies": [
+      "La óptica de la Calle 122 aparece con dos direcciones en la misma página de tiendas: «Carrera 58d #146-51» en el buscador y «Calle 122 #17-19» en su ficha; la primera es en realidad la dirección del centro comercial Parque La Colina.",
+      "La óptica de Parque La Colina tiene dos direcciones distintas: «Cra. 72 # 145» en el buscador y «Cra. 58d #146-51» en su ficha (esta última coincide con la dirección pública del centro comercial).",
+      "La tienda La Serrezuela (Cartagena) muestra en el buscador la dirección de la tienda del Centro (Cra. 5 #4-49) y en su ficha otra (Cra. 11 #39-21); además el horario del domingo cambia de 8 p.m. a 9 p.m. según dónde mires.",
+      "El horario de domingo de la tienda de Medellín es de 11 a.m. en el buscador y de 10 a.m. en su ficha.",
+      "El sitio no tiene una página de contacto (devuelve error) y el único correo publicado, en la política de envíos, usa otro dominio (sajucompany.com); los datos del sitio para Google no incluyen ni teléfono ni correo."
+    ]
+  }
+}

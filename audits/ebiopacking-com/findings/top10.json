@@ -1,0 +1,265 @@
+{
+  "client": "eBiopacking",
+  "domain": "ebiopacking.com",
+  "date": "Octubre 2026",
+  "big_stat": {
+    "value": "13,4 MB",
+    "count_to": null,
+    "suffix": null,
+    "headline": "Tu página de inicio pesa 13,4 MB",
+    "explain": "Es lo que descarga cada visitante solo para ver la portada, varias veces más de lo recomendado. En un celular con datos móviles, el banner principal tardó 7,7 segundos en aparecer, y muchos compradores se van antes.",
+    "grid_pct": 98,
+    "grid_legend": [
+      "Imágenes (13,1 MB)",
+      "Todo lo demás"
+    ],
+    "source": "Lighthouse móvil, octubre 2026 (total-byte-weight 13.715 KiB; imágenes 13.384 KiB)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "vis",
+      "src": [
+        "visual-1",
+        "ux-4",
+        "ux-3",
+        "a11y-1",
+        "a11y-4"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu banner no dice qué fabricas",
+      "t_plain": "El mensaje principal es una imagen ilegible en celular",
+      "s": "Quien entra desde el celular no alcanza a leer qué ofreces, no puede pulsar el botón y Google tampoco puede leer tu propuesta.",
+      "now": "\"Naturalmente resistentes\", la frase de apoyo y el botón \"Productos\" están dibujados dentro de las imágenes del banner. En celular el título queda de unos 18 px, el botón no se puede pulsar y ninguna página tiene un título principal (H1). La frase no menciona que fabricas empaques de cartón corrugado.",
+      "fix": "Escribir el título, la frase y un botón real \"Solicita tu cotización\" como texto sobre el banner, con un mensaje claro del tipo \"Fabricamos empaques de cartón corrugado para la industria, el comercio y el sector agro en Colombia\", marcado como título principal de la página.",
+      "why": "La primera pantalla decide si el comprador sigue leyendo o vuelve a Google a buscar otro proveedor.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 25,
+        "y": 52
+      }
+    },
+    {
+      "n": 2,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-2",
+        "tech-3"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu portada hace esperar 7,7 segundos",
+      "t_plain": "La portada pesa 13,4 MB y el banner tarda 7,7 s en celular",
+      "s": "Cada visitante descarga más de 13 MB solo para ver la portada, y en celular el banner tarda casi 8 segundos en mostrarse.",
+      "now": "Los tres banners son archivos PNG de 1920×1080 que suman cerca de 10 MB, aunque en el celular se muestran a 412×232. Las 22 imágenes se descargan todas al inicio, y la página carga tres tipografías con 18 variantes cada una antes de mostrar nada.",
+      "fix": "Convertir banners y fotos a WebP del tamaño real en que se muestran, cargar las imágenes de más abajo solo cuando el visitante llega a ellas, dar prioridad al primer banner y dejar solo las tipografías que usa el diseño. Meta: portada de menos de 3 MB y contenido principal en menos de 2,5 s.",
+      "why": "Un comprador que entra desde el celular abandona antes de ver tus productos si la página tarda en mostrarse.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 45
+      }
+    },
+    {
+      "n": 3,
+      "c": "ux",
+      "src": [
+        "ux-1"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu WhatsApp recibe clientes con texto de prueba",
+      "t_plain": "El WhatsApp envía un mensaje de prueba",
+      "s": "El canal de contacto más directo recibe a tus clientes con texto de demostración y apunta a un número distinto al de tu página de Contacto.",
+      "now": "Al pulsar \"¿Cómo puedo ayudarte?\" el chat abre con el mensaje \"¡Hola! Estoy probando el plugin Social Chat\"; el contacto se llama \"John Doe\" y apunta al +57 310 311 8117, mientras Contacto muestra +57 310 325 0267 y +57 310 451 4510.",
+      "fix": "Cambiar el mensaje por uno de venta (por ejemplo: \"Hola, quiero cotizar empaques de cartón para…\"), poner el nombre real del asesor y usar el mismo número comercial que aparece en Contacto.",
+      "why": "Un cliente que ve texto de prueba duda de que alguien atienda, y si el número no es el comercial la consulta puede perderse.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 88.8,
+        "y": 95.1
+      }
+    },
+    {
+      "n": 4,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "visual-2",
+        "a11y-3"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tus productos se ven, pero no se piden",
+      "t_plain": "Los productos son fotos sin nombre, sin ficha y sin botón de cotizar",
+      "s": "Quien encuentra la caja que necesita no sabe bien qué es ni tiene cómo pedirla desde ahí, así que el interés se queda en la foto.",
+      "now": "En el inicio, 18 fotos de producto pasan en carruseles sin nombre, sin uso y sin enlace; se describen con nombres de archivo con errores (\"Tlescopicas\", \"Tipo-Bnadeja\"). En la página Productos ninguna referencia tiene con medidas, ficha ni botón de cotizar.",
+      "fix": "Mostrar cada producto como tarjeta con nombre, uso principal (\"para exportar flores\", \"para frutas\") y un botón \"Cotizar\" que abra WhatsApp o el formulario con el producto ya escrito; corregir la descripción de cada foto.",
+      "why": "Cada clic extra entre \"esto es lo que necesito\" y \"pedir precio\" es un punto donde el comprador se va a otro proveedor.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 49.6,
+        "y": 50.6
+      }
+    },
+    {
+      "n": 5,
+      "c": "ux",
+      "src": [
+        "ux-5",
+        "a11y-5"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu formulario no pide lo necesario para cotizar",
+      "t_plain": "El formulario no pide lo que ventas necesita",
+      "s": "Las solicitudes llegan sin empresa, producto ni cantidad, así que tu equipo debe volver a contactar a cada cliente antes de cotizar.",
+      "now": "El formulario de Contacto pide Número, Correo, Nombre y Mensaje, con nombres en gris que desaparecen al escribir. No pregunta empresa, tipo de empaque ni cantidad, ningún campo es obligatorio, el correo no se valida y no dice en cuánto tiempo responden.",
+      "fix": "Convertirlo en solicitud de cotización: nombre, empresa, teléfono, correo, producto de interés (lista) y cantidad aproximada, con etiquetas visibles, obligatorios marcados, correo validado y un tiempo de respuesta prometido (\"te respondemos en 1 día hábil\").",
+      "why": "Una solicitud completa se cotiza de inmediato; una incompleta se enfría mientras se piden los datos.",
+      "shot": {
+        "img": "ux-contacto-desktop.png",
+        "x": 30.8,
+        "y": 15
+      }
+    },
+    {
+      "n": 6,
+      "c": "a11y",
+      "src": [
+        "a11y-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus botones de venta casi no se leen",
+      "t_plain": "Botones verdes con texto blanco de bajo contraste (2,0:1)",
+      "s": "Los botones que llevan a vender (\"Conoce más\", \"Ver más productos\", el chat de WhatsApp) cuestan leerse, sobre todo al sol o para personas con baja visión.",
+      "now": "El texto blanco sobre el verde claro de la marca tiene un contraste de 2,0:1, y el botón de WhatsApp 1,98:1; el mínimo recomendado es 4,5:1. El menú superior en gris sobre la textura de papel queda alrededor de 3,6:1.",
+      "fix": "Usar el verde oscuro de tu marca para el texto sobre el verde claro, o un verde más oscuro de fondo con texto blanco, y oscurecer el gris del menú. Así pasan el estándar sin cambiar tu identidad.",
+      "why": "Si el botón de compra o de contacto no se lee con claridad, menos personas lo pulsan.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 70.5,
+        "y": 36
+      }
+    },
+    {
+      "n": 7,
+      "c": "vis",
+      "src": [
+        "visual-3",
+        "ux-7"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Dices ser ecológico, pero no lo pruebas",
+      "t_plain": "La promesa ecológica y la experiencia no se respaldan con pruebas",
+      "s": "Lo que te diferencia (empaques biodegradables, fabricación propia desde 2006) no acompaña al comprador en el momento de decidir.",
+      "now": "La sostenibilidad solo aparece en un párrafo de \"Nosotros\"; no hay sellos, certificaciones, clientes, testimonios ni datos de planta. Que eres fabricante con maquinaria propia y que exportas solo aparece en la página Nosotros.",
+      "fix": "Agregar una franja de pruebas junto a los productos y al formulario: años en el mercado, \"fabricantes directos en Mosquera\", sectores o clientes atendidos, certificaciones o sellos que tengas y 2–3 fotos reales del proceso.",
+      "why": "Un comprador de exportación necesita evidencia para elegir proveedor, y lo que no se ve no cuenta.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 70,
+        "y": 32
+      }
+    },
+    {
+      "n": 8,
+      "c": "ux",
+      "src": [
+        "ux-6",
+        "visual-7"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Llamarte desde el celular cuesta trabajo",
+      "t_plain": "Teléfono y correo solo aparecen en Contacto; el pie dice ©2025",
+      "s": "Un comprador que quiere llamar desde cualquier página tiene que buscar, y en celular no puede marcar con un toque.",
+      "now": "El pie de página de todas las páginas solo tiene redes sociales, textos legales y \"©2025\". Los teléfonos y el correo de ventas aparecen únicamente en Contacto, como texto que no se puede pulsar.",
+      "fix": "Agregar teléfono, correo y ciudad en el pie de página de todo el sitio como enlaces que abran la llamada o el correo con un toque, y poner el año automático.",
+      "why": "En celular, un número que se marca con un toque es la vía más corta entre la duda y la venta.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 49.4,
+        "y": 95.8
+      }
+    },
+    {
+      "n": 9,
+      "c": "vis",
+      "src": [
+        "visual-4",
+        "visual-5",
+        "visual-6"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 3,
+      "t": "Seis verdes distintos: tu marca se ve desordenada",
+      "t_plain": "Demasiados verdes, tipografías y títulos que parecen botones",
+      "s": "La marca se ve menos cuidada porque cada sección usa un verde y una letra distinta, y hay títulos que parecen botones pero no hacen nada.",
+      "now": "Se usan seis verdes diferentes y cuatro tipografías (tres en la página y una dibujada en el banner). Las categorías son píldoras con borde y sombra que parecen botones, pero no se pueden pulsar, y las separaciones entre secciones son irregulares.",
+      "fix": "Definir una paleta corta (un verde oscuro, un verde lima de acción y un neutro), dos tipografías y una separación constante entre secciones, y reservar la forma de botón solo para lo que se puede pulsar.",
+      "why": "La coherencia visual transmite que la empresa es seria y ordenada, el mismo cuidado que el cliente espera de su empaque.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 49,
+        "y": 44
+      }
+    },
+    {
+      "n": 10,
+      "c": "tec",
+      "src": [
+        "tech-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu servidor no activa protecciones básicas",
+      "t_plain": "Faltan las cabeceras de seguridad del servidor",
+      "s": "Faltan las protecciones estándar que los navegadores usan para proteger a tus visitantes y la imagen de tu marca.",
+      "now": "La respuesta del servidor no incluye ninguna de las cinco cabeceras de seguridad recomendadas. Por ejemplo, otro sitio podría mostrar tu página dentro de la suya, y el navegador no recibe la instrucción de usar siempre conexión segura.",
+      "fix": "Activar en el servidor las cabeceras básicas de seguridad (conexión segura obligatoria, protección contra inserción en otros sitios, control de contenido y de referencias). Es un ajuste de configuración que no cambia el diseño.",
+      "why": "Un sitio que transmite seguridad protege la confianza de los clientes que te contactan por la web.",
+      "shot": null,
+      "checks": [
+        [
+          "Conexión segura obligatoria (HSTS)",
+          "no"
+        ],
+        [
+          "Política de contenido (CSP)",
+          "no"
+        ],
+        [
+          "Protección contra inserción en otros sitios",
+          "no"
+        ],
+        [
+          "Protección de tipo de archivo",
+          "no"
+        ],
+        [
+          "Política de referencias",
+          "no"
+        ],
+        [
+          "HTTPS activo",
+          "ok"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "required": ["source", "date", "answers"],
+  "properties": {
+    "source": {"type": "string"},
+    "date": {"type": "string"},
+    "brand": {"type": "string"},
+    "answers": {"type": "array", "items": {"type": "object", "required": ["engine", "prompt", "mentioned", "named", "note_es"], "properties": {
+      "engine": {"type": "string"}, "prompt": {"type": "string"}, "mentioned": {"type": "boolean"},
+      "named": {"type": "array", "items": {"type": "string"}}, "note_es": {"type": "string"}
+    }}},
+    "no_answer": {"type": "array", "items": {"type": "string"}}
+  }
+}

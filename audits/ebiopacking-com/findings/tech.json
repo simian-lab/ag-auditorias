@@ -1,0 +1,113 @@
+{
+  "area": "tech",
+  "business_context": "Inferido del sitio (no proporcionado): empresa colombiana de empaques de cartón corrugado (cajas, láminas, separadores y bandejas para flores, frutas y hierbas), con venta B2B y contacto por WhatsApp.",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "La página de inicio pesa más de 13 MB",
+      "summary": "Cada visitante descarga más de 13 MB solo para ver la portada, lo que la hace lenta y costosa en datos móviles.",
+      "now": "Las tres imágenes del carrusel principal son archivos PNG de 1920×1080 que suman cerca de 10 MB, aunque en el celular se muestran a un tamaño de 412×232. En total, la portada pesa 13,4 MB.",
+      "fix": "Convertir los banners y fotos a WebP, generar versiones del tamaño real en que se muestran y comprimirlas. El objetivo es que la portada completa pese menos de 3 MB.",
+      "why": "Un comprador que entra desde el celular abandona antes de ver tus productos si la página tarda en mostrarse.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "13,4 MB",
+      "evidence": [
+        "Lighthouse mobile total-byte-weight: 13,715 KiB (13,4 MB); desktop: 14,099 KiB (13,8 MB). 76 requests, images = 13,384 KiB of the total.",
+        "Top resources by transfer size (mobile): 03-EBIO_INICIO_BANNER_03.png 3,673 KiB; 01-EBIO_INICIO_BANNER_01-2.png 3,541 KiB; 01-EBIO_INICIO_BANNER_02.png 2,780 KiB; textura-de-la-cartulina.jpg 1,009 KiB; textura-de-la-cartulina-1.jpg 687 KiB.",
+        "image-delivery-insight (mobile): est. savings 12,254 KiB (12,0 MB). Banner subitem: 'larger than it needs to be (1920x1080) for its displayed dimensions (412x232)' and 'Using a modern image format (WebP, AVIF) ... could improve this image's download size'.",
+        "raw/home.html: all 22 <img> are .png/.jpg; no WebP/AVIF sources."
+      ],
+      "technical_note": "Elementor image carousel (swiper) serves full-size originals without srcset for the banners. Fix via an image optimization plugin (WebP conversion + resizing) or re-exporting banners at ~1600px WebP, plus a separate mobile crop. The 'textura-de-la-cartulina' background JPGs (~1.7 MB) can also be compressed heavily.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 50}
+    },
+    {
+      "id": "tech-2",
+      "title": "El banner principal tarda casi 8 segundos en aparecer",
+      "summary": "Lo primero que ve un visitante en el celular tarda 7,7 segundos en cargar, y muchos se van antes.",
+      "now": "En la medición en celular, el banner principal (el elemento más grande de la pantalla) apareció a los 7,7 s. El sitio marca como prioritaria la imagen de logos en lugar del banner, y las 22 imágenes de la página se descargan todas al inicio, incluso las que están muy abajo.",
+      "fix": "Dar prioridad de carga al primer banner, hacer que las imágenes de más abajo se carguen solo cuando el visitante llega a ellas y aligerar los banners (ver hallazgo anterior). La meta es que el contenido principal aparezca en menos de 2,5 s.",
+      "why": "La primera impresión de tu marca depende de lo que se ve en los primeros segundos.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "7,7 s",
+      "evidence": [
+        "Lighthouse mobile audits.metrics observedLargestContentfulPaint: 7,746 ms (desktop observed: 10,542 ms). Lab LCP 65.6 s mobile is inflated by simulated slow 4G (throttlingMethod=simulate); the observed value is used.",
+        "largest-contentful-paint element: img.swiper-slide-image '01-EBIO_INICIO_BANNER_01' (412×232 on mobile). lcp-breakdown-insight: resourceLoadDuration 7,573 ms of the total; TTFB only 137 ms.",
+        "lcp-discovery-insight: 'fetchpriority=high should be applied' = false for the LCP image.",
+        "raw/home.html: fetchpriority=\"high\" is on ICONOS-Y-LOGOS-1-1024x529.png (not the LCP banner); 0 of 22 <img> use loading=\"lazy\"."
+      ],
+      "technical_note": "Server response is fast (server-response-time 60 ms, LiteSpeed cache hit), so the bottleneck is image download. Enable Elementor's 'Optimized image loading' / lazy load, set fetchpriority=high + eager on the first swiper slide only, and preload it.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "tech-3",
+      "title": "Fuentes y estilos retrasan la primera visualización",
+      "summary": "El navegador espera a descargar tipografías y estilos antes de mostrar nada, lo que suma más de un segundo en celular.",
+      "now": "La portada carga tres familias tipográficas, cada una con 18 variantes de grosor y estilo, más varios archivos de estilos y scripts que bloquean el dibujo de la página. En celular, esto retrasa la primera visualización unos 1,15 s.",
+      "fix": "Dejar solo las tipografías y grosores que realmente usa el diseño (normalmente 2 o 3) y cargar los estilos y scripts no esenciales después de mostrar el contenido.",
+      "why": "Cada segundo en blanco aumenta la probabilidad de que el visitante cierre la página.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,15 s",
+      "evidence": [
+        "Lighthouse mobile render-blocking-insight: est. savings 1,150 ms on FCP (desktop: 580 ms).",
+        "Render-blocking requests include fonts.googleapis.com/css?family=Roboto (980 ms), Roboto+Slab (221 ms), Poppins, jquery.min.js (300 ms), wp-whatsapp-chat style.css (150 ms).",
+        "raw/home.html: Google Fonts URLs request Poppins, Roboto and Roboto Slab with weights 100–900 plus italics each (18 variants per family).",
+        "unused-css-rules: wp-whatsapp-chat style.css 94% unused (12 KiB)."
+      ],
+      "technical_note": "Elementor setting google_font-enabled loads every weight. Disable Elementor Google Fonts and self-host only the weights used, or limit weights in the Site Settings; defer jQuery-dependent scripts where possible.",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "El servidor no activa protecciones básicas de seguridad",
+      "summary": "Faltan las protecciones estándar que los navegadores usan para proteger a tus visitantes y la imagen de tu marca.",
+      "now": "La respuesta del servidor no incluye ninguna de las cinco cabeceras de seguridad recomendadas. Por ejemplo, otro sitio podría mostrar tu página dentro de la suya, y el navegador no recibe la instrucción de usar siempre conexión segura.",
+      "fix": "Activar en el servidor las cabeceras básicas de seguridad (conexión segura obligatoria, protección contra inserción en otros sitios, control de contenido y de referencias). Es un ajuste de configuración que no cambia el diseño.",
+      "why": "Un sitio que transmite seguridad protege la confianza de los clientes que te contactan por la web.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "HSTS (Strict-Transport-Security): ausente",
+        "Content-Security-Policy: ausente",
+        "X-Frame-Options / frame-ancestors: ausente",
+        "X-Content-Type-Options: ausente",
+        "Referrer-Policy: ausente",
+        "Source: curl -sI https://ebiopacking.com/ saved in raw/tech-headers.txt. HTTPS works and HTTP / www redirect 301 to https://ebiopacking.com/."
+      ],
+      "technical_note": "LiteSpeed server: headers can be added in .htaccess or via LiteSpeed Cache / a security plugin. Also: /wp-json/wp/v2/users is publicly accessible and returns 1 user record (user enumeration), and the HTML exposes generator meta tags with CMS/builder versions; restrict the users endpoint and remove generator tags. Do not show these details to the client.",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "Los scripts se descargan de nuevo en cada visita",
+      "summary": "Quien vuelve al sitio descarga otra vez parte del código, lo que hace más lentas las visitas repetidas.",
+      "now": "Las imágenes y estilos se guardan en el navegador por un año, pero los archivos de código (scripts) no tienen instrucciones de almacenamiento, así que se vuelven a pedir en cada visita.",
+      "fix": "Configurar el servidor para que los scripts también se guarden en el navegador por al menos una semana (idealmente un año, ya que cambian de nombre al actualizarse).",
+      "why": "Los clientes que regresan a cotizar varias veces tienen una experiencia más rápida.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "215 KiB",
+      "evidence": [
+        "Lighthouse cache-insight (mobile and desktop): est. savings 215 KiB; all listed JS have cacheLifetimeMs 0 (react-dom.min.js 41 KiB, swiper.min.js 38 KiB, jquery.min.js 30 KiB, elementor frontend-modules 23 KiB, wp-whatsapp-chat index.js 13 KiB...).",
+        "raw/tech-headers.txt: jquery.min.js response has no cache-control/expires header; Particiones.jpg and style.css return cache-control: public, max-age=31536000."
+      ],
+      "technical_note": "Add ExpiresByType / Cache-Control for application/javascript and text/javascript in .htaccess or enable browser cache for JS in LiteSpeed Cache.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "fail", "evidence": "Lighthouse mobile total-byte-weight 13,715 KiB = 13,4 MB (desktop 14,099 KiB = 13,8 MB); threshold 3 MB."},
+    {"id": "tech-lcp", "result": "fail", "evidence": "Mobile observedLargestContentfulPaint 7,746 ms (> 2.5 s). LCP element: hero swiper banner PNG."},
+    {"id": "tech-images", "result": "fail", "evidence": "image-delivery-insight est. savings 12,254 KiB; banners are 1920x1080 PNG (2.7–3.6 MB each) displayed at 412x232 on mobile; no WebP/AVIF used."},
+    {"id": "tech-lazy", "result": "fail", "evidence": "0 of 22 <img> in raw/home.html use loading=\"lazy\"; below-the-fold product images load eagerly."},
+    {"id": "tech-render-blocking", "result": "fail", "evidence": "render-blocking-insight est. savings 1,150 ms mobile (580 ms desktop); 3 Google Font families with 18 variants each."},
+    {"id": "tech-cache", "result": "partial", "evidence": "Images and CSS: cache-control max-age=31536000 (pass). JS files: no cache headers (cache-insight 215 KiB, cacheLifetimeMs 0) (fail)."},
+    {"id": "tech-https", "result": "pass", "evidence": "https://ebiopacking.com/ returns 200 over HTTP/2; http:// and https://www. redirect 301 to https://ebiopacking.com/; Lighthouse is-on-https passes."},
+    {"id": "tech-security-headers", "result": "fail", "evidence": "0 of 5 present: HSTS, CSP, X-Frame-Options/frame-ancestors, X-Content-Type-Options, Referrer-Policy all absent (raw/tech-headers.txt)."},
+    {"id": "tech-console", "result": "pass", "evidence": "Lighthouse errors-in-console score 1 (no errors) on mobile and desktop."},
+    {"id": "tech-links", "result": "pass", "evidence": "33 internal URLs from the homepage (8 pages/feeds + 25 images) checked with HEAD -L: all returned 200 (raw/tech-links.txt)."},
+    {"id": "tech-404", "result": "partial", "evidence": "Missing URL returns HTTP 404 and keeps the site header/menu, but the body is only the generic 'No se ha podido encontrar la página' text with no search box, product links or call to action (raw/tech-404.html)."}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "verdict": "Tu sitio tiene buenos ingredientes, pero cada sección parece diseñada por separado.",
+  "inventory": [
+    {"kind": "buttons", "title": "Cinco botones, cinco personalidades", "explanation": "Cada botón cambia de color y forma.", "items": [{"label": "Botón del banner", "crop": "ui-crop-btn.png"}, {"label": "Botón perdido", "crop": "ui-crop-missing.png"}], "proposal": "Un botón principal y uno secundario."},
+    {"kind": "colors", "title": "Seis verdes y ninguno oficial", "explanation": "El color cambia en cada sección.", "items": [{"label": "Verde 1", "hex": "#98C71B"}, {"label": "Verde 2", "hex": "#7CA50A"}], "proposal": "Cuatro colores con un papel fijo."},
+    {"kind": "fonts", "title": "Cuatro voces para una marca", "explanation": "Cuatro tipografías distintas.", "items": [{"label": "Roboto", "family": "Roboto"}, {"label": "Poppins", "family": "Poppins"}], "proposal": "Dos tipografías."}
+  ],
+  "proposed_system": {"colors": [{"name": "Verde bosque", "hex": "#194414", "role": "Títulos y botones. Texto blanco encima."}]},
+  "hierarchy_notes": [],
+  "sharp_headlines": {}
+}

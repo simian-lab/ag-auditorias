@@ -1,0 +1,138 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "La portada no dice en texto qué vendes",
+      "summary": "Quien llega desde Google ve una foto y la palabra NEXO, pero ninguna frase le confirma que aquí se compra ropa técnica de ciclismo, running, triatlón y pádel.",
+      "now": "La primera pantalla es un carrusel de dos imágenes que cambia cada 4 segundos. El mensaje (\"NUEVA COLECCIÓN NEXO\", \"CADA MOVIMIENTO GENERA UNA CONEXIÓN\") está dentro de la foto. La frase que sí explica el negocio (\"Safetti ropa deportiva de alto rendimiento para cada disciplina\") aparece al final de la página, justo antes del pie.",
+      "fix": "Poner sobre la imagen principal un titular en texto real del tipo \"Ropa técnica para ciclismo, running, triatlón y pádel, hecha en Colombia\", con dos botones: \"Comprar hombre\" y \"Comprar mujer\". Dejar el nombre de la colección como subtítulo.",
+      "why": "Un visitante nuevo decide en segundos si está en el lugar correcto; si tiene que adivinarlo, se va.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "screenshots/desktop-viewport.png: hero text 'NUEVA COLECCIÓN / NEXO / CADA MOVIMIENTO GENERA UNA CONEXIÓN' is part of the image",
+        "raw/home.html: slideshow data-effect=\"fade\" data-autoplay='{ \"delay\":\"4000\" }', 2 slides, images BANNER_NEXO / BANNER_HOT_SALE-02 with alt=\"\" and no text overlay",
+        "raw/home.html: only real-text value statement is <h1>Safetti ropa deportiva de alto rendimiento para cada disciplina</h1> inside the SEO text block near the footer (visible at bottom of screenshots/desktop-fullpage.jpg)"
+      ],
+      "technical_note": "Two <h1> on the page: the logo link wrapper and the SEO block H1. The hero has no HTML heading; slides are image-only links (/collections/nexo, /collections/sale).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 33}
+    },
+    {
+      "id": "ux-2",
+      "title": "La oferta del celular muestra fechas ya vencidas",
+      "summary": "En celular la primera imagen anuncia una promoción \"16 - 23 octubre\" que, el día de la revisión (25 de octubre), ya había terminado, lo que genera dudas sobre si el sitio está al día.",
+      "now": "En la primera pantalla del celular aparece \"ÚLTIMAS UNIDADES 16 - 23 OCTUBRE, del 20% al 50% de descuento\". Ese texto está dentro de una imagen del carrusel, así que no se actualiza solo y no se puede leer si la imagen no carga.",
+      "fix": "Programar el inicio y el fin de cada banner promocional y escribir el porcentaje y las fechas como texto real sobre la imagen, para poder cambiarlos sin diseñar una imagen nueva.",
+      "why": "Una oferta vencida en la portada resta credibilidad justo en el momento en que el cliente decide si compra.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/ux-mobile-first-screen.jpg (Lighthouse mobile final-screenshot, fetchTime 2026-10-25T22:41Z): banner reads '16 - 23 OCTUBRE / ÚLTIMAS UNIDADES / Del 20% al 50% de descuento'",
+        "raw/home.html: mobile slide image BANNER-PEQ-HOT_SALE_ecd11742…jpg, alt=\"\"; the strings 'octubre', '20%', '50%' do not exist as page text"
+      ],
+      "technical_note": "Slides are Shopify theme slideshow images (hide-sm / hide-md hide-lg pairs). No scheduling; promo copy only lives in the bitmap.",
+      "pin": null
+    },
+    {
+      "id": "ux-3",
+      "title": "El número de WhatsApp de ventas está mal escrito",
+      "summary": "En el pie de página el número de \"WhatsApp Shopping\" aparece con dos dígitos cambiados, así que quien lo copie o lo guarde escribirá a un número equivocado.",
+      "now": "El pie muestra \"(+57) 318 2340082\", pero el enlace lleva a 318 2430082, que es el número correcto según la página de contacto y el botón flotante de WhatsApp.",
+      "fix": "Corregir el texto del pie a 318 2430082 y revisar que todos los números del sitio estén escritos igual que sus enlaces.",
+      "why": "Un cliente que no logra comunicarse con ventas es una venta perdida y una mala primera impresión.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html footer: <a href=\"https://wa.me/573182430082\">(+57) 318 2340082</a> under 'WhatsApp Shopping'",
+        "raw/ux-pages-contact.html: 'Shopping Safetti: 318 2430082'",
+        "raw/home.html: floating widget <a href=\"https://wa.me/573182430082\" class=\"gmk-widget\">"
+      ],
+      "technical_note": "Digits 3 and 4 are transposed in the visible label only; the href is correct.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 31.5, "y_pct": 98}
+    },
+    {
+      "id": "ux-4",
+      "title": "La página de contacto y el correo están escondidos",
+      "summary": "No hay ningún enlace a la página de contacto en el menú ni en el pie, y el correo de servicio al cliente no aparece en la portada, así que quien prefiere escribir por correo no encuentra cómo.",
+      "now": "El pie lista seis números de WhatsApp distintos (servicio al cliente, cuatro tiendas y compras), pero no tiene correo ni enlace a \"Contáctanos\". La página /pages/contact existe y muestra servicioalcliente@safetti.com.co y el PBX (604) 4448461, pero ninguno se puede pulsar para escribir o llamar.",
+      "fix": "Agregar \"Contáctanos\" al pie y al menú, poner el correo de servicio al cliente en el pie y convertir el correo y el PBX en enlaces que abran el correo o la llamada. Indicar qué número usar para comprar y cuál para posventa.",
+      "why": "Mientras más fácil sea preguntar antes de comprar, menos clientes abandonan por una duda sin resolver.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: 0 links to /pages/contact; footer columns TIENDAS / AYUDA / NOSOTROS contain no 'Contacto' entry",
+        "raw/home.html: no mailto: and no tel: links; email only appears in a JS variable (shpeml)",
+        "raw/ux-pages-contact.html: email and 'PBX (604) 4448461' are plain text in <li>, no mailto:/tel:",
+        "raw/home.html footer: 6 different wa.me numbers (3186150418, 3173806060, 3165282644, 3148302201, 3183516417, 3182430082)"
+      ],
+      "technical_note": "Contact page reachable only by URL. Phones in footer are wa.me links (open WhatsApp, not a call).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 52, "y_pct": 91.2}
+    },
+    {
+      "id": "ux-5",
+      "title": "El envío gratis se anuncia con dos montos distintos",
+      "summary": "El sitio dice que el envío es gratis desde $250.000, pero el carrito dice que es desde $189.900, y esa contradicción hace dudar al cliente justo antes de pagar.",
+      "now": "La barra superior y el bloque \"Lo que nos hace iguales a ninguno\" dicen \"Envío gratis en compras superiores a $250.000\". El carrito vacío dice \"Agrega $189,900 más y disfruta de envío GRATIS\".",
+      "fix": "Definir un solo monto, usarlo en la barra superior, en la portada y en el carrito, y mostrar en el carrito cuánto falta con ese mismo valor.",
+      "why": "El costo de envío es una de las razones más comunes para abandonar un carrito, y un mensaje contradictorio lo empeora.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html promo bar: 'ENVÍO GRATIS EN COMPRAS SUPERIORES A $250.000'",
+        "raw/home.html benefits block: 'Envío gratis Por compras iguales o superiores a $250.000 pesos.'",
+        "raw/home.html cart drawer (Total $0 COP): 'Agrega $189,900 más y disfruta de envío GRATIS'"
+      ],
+      "technical_note": "The cart drawer threshold is a theme setting separate from the static copy; they are out of sync.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 39, "y_pct": 69.7}
+    },
+    {
+      "id": "ux-6",
+      "title": "Una ventana emergente tapa los productos al entrar",
+      "summary": "Sin que el visitante haga nada, aparece una ventana de suscripción que cubre los productos en computador y celular, y compite con dos botones flotantes de chat.",
+      "now": "La ventana \"SUSCRÍBETE HOY\" (10% de cortesía, correo y deporte preferido) aparece sobre los productos durante la carga de la página. En la esquina inferior derecha hay a la vez un botón de WhatsApp y un chat automático (Wizybot) con un aviso rojo.",
+      "fix": "Mostrar la invitación a suscribirse después de que el visitante haya navegado un rato o al intentar salir, y en celular como una franja pequeña en la parte inferior. Dejar un solo botón de contacto flotante, o agruparlos en uno.",
+      "why": "Interrumpir al visitante antes de que vea un producto aumenta la probabilidad de que cierre la página.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg: 'SUSCRÍBETE HOY' modal over the product grid (~49%, 13%)",
+        "screenshots/mobile-fullpage.jpg: same modal covering product cards",
+        "screenshots/desktop-viewport.png: WhatsApp widget (~96%, 79%) and Wizybot chat with red '!' badge (~96%, 94%) stacked bottom-right",
+        "raw/home.html: #wizydiv (api.wizybot.com) and a.gmk-widget (wa.me/573182430082) both loaded"
+      ],
+      "technical_note": "Popup appears in Lighthouse full-page capture without interaction (Omnisend in-shop script is loaded). Two floating widgets plus popup = three overlays on first visit.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49.5, "y_pct": 12.9}
+    },
+    {
+      "id": "ux-7",
+      "title": "No hay opiniones de clientes cerca de los productos",
+      "summary": "Los productos cuestan entre $96.000 y $525.800, y en la portada no hay ninguna opinión, calificación o cifra de clientes que ayude a decidir esa compra.",
+      "now": "Las tarjetas de producto muestran foto, nombre, precio y \"COMPRAR\", sin estrellas ni número de opiniones. La sección de beneficios menciona envío gratis, devoluciones gratuitas y telas ecológicas, pero no hay testimonios, años de trayectoria, atletas o equipos que usen la marca.",
+      "fix": "Mostrar la calificación promedio y el número de opiniones en cada tarjeta de producto, y agregar cerca de \"LO MÁS VENDIDO\" una franja con datos verificables: años de la marca, tiendas en Colombia, países donde vende y equipos que patrocina.",
+      "why": "Las opiniones de otros compradores son lo que más tranquiliza a alguien que no conoce la marca y va a pagar una prenda costosa en línea.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg and mobile-fullpage.jpg: product cards without ratings",
+        "raw/home.html: 0 matches for 'testimon', 'reseñ', 'años', 'clientes'; review-star CSS (#revieStar) present but no rendered rating in product grids",
+        "raw/ux-pages-tiendas.html: presence in Canada, México, Brasil, Argentina, USA, Costa Rica, Chile — not surfaced on the home"
+      ],
+      "technical_note": "A review-star stylesheet exists in the theme, suggesting a reviews integration that is not displayed on collection cards. Also: 4 product buttons read 'SELECCIONAR OPCIOINES' (typo) vs 'COMPRAR' elsewhere.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 63}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "fail", "evidence": "First viewport on desktop shows only image text 'NUEVA COLECCIÓN NEXO'; on mobile an image-only sale banner. No real-text statement of product category and target customer; the H1 'Safetti ropa deportiva de alto rendimiento para cada disciplina' sits near the footer. Nav labels (HOMBRE, MUJER, DEPORTES) are real text but are not a value statement."},
+    {"id": "ux-quote-cta", "result": "partial", "evidence": "First viewport has a shopping CTA ('DESCUBRE NEXO' desktop, 'VER ÚLTIMAS UNIDADES' mobile) and a cart icon, but no visible 'Contáctanos'/'Habla con un asesor' button; contact only via floating WhatsApp/chat widgets, which do not count."},
+    {"id": "ux-catalog-path", "result": "pass", "evidence": "Home product cards link to /products/... with 'COMPRAR' buttons; category tiles link to /collections/... . Minor: 4 buttons labelled 'SELECCIONAR OPCIOINES' (typo). Products page not re-fetched (HTTP 429)."},
+    {"id": "ux-contact-visible", "result": "partial", "evidence": "Footer on every page lists WhatsApp phone numbers (6 of them), but no email; email appears only on /pages/contact, which is not linked from menu or footer."},
+    {"id": "ux-contact-tappable", "result": "fail", "evidence": "No tel: and no mailto: links on home or contact page. Phones are wa.me links (WhatsApp only); PBX (604) 4448461 and servicioalcliente@safetti.com.co are plain text."},
+    {"id": "ux-form-data", "result": "fail", "evidence": "/pages/contact form asks only Nombre, Correo, Número, Mensaje; no order number/product of interest, no response-time promise."},
+    {"id": "ux-form-friction", "result": "partial", "evidence": "4 fields with correct types (email, tel), but placeholder-only (no <label>), no required attribute or required markers, no visible validation messaging in markup."},
+    {"id": "ux-chat-ready", "result": "partial", "evidence": "WhatsApp widget points to wa.me/573182430082, matching contact page 'Shopping Safetti: 318 2430082', but has no prefilled message (no text= param). Footer label for same number is mistyped as 318 2340082. A second chatbot (Wizybot) is also shown."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Lighthouse mobile screenshot shows hamburger menu + search, account, wishlist and cart icons; mobile nav markup (#mobNav) contains all main sections: Últimas unidades, Hombre, Mujer, Niños, Deportes, Complementos, Custom, Safetti Experience."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Benefits strip (envío gratis, devoluciones gratuitas, eco-amigables) sits below product carousels, but there are no reviews, ratings, testimonials, years or client numbers near product lists or the hero CTA."},
+    {"id": "ux-content-not-hidden", "result": "fail", "evidence": "Main offers (NEXO collection, 'Del 20% al 50%' sale) exist only inside images of an auto-advancing 4 s fade slideshow; top promo bar (free shipping, credit with Addi/Sistecrédito) rotates every 5 s; category tiles 'TOPS/JERSEYS/PANTALONETA/SHORTS' are text in images."}
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "type": "object",
+  "required": [
+    "client",
+    "domain",
+    "date",
+    "items"
+  ],
+  "properties": {
+    "client": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "big_stat": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "value",
+        "headline",
+        "explain",
+        "source"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "count_to": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "suffix": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "headline": {
+          "type": "string"
+        },
+        "explain": {
+          "type": "string"
+        },
+        "grid_pct": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "grid_legend": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "c",
+          "imp",
+          "eff",
+          "t",
+          "t_plain",
+          "s",
+          "now",
+          "fix",
+          "why"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "c": {
+            "type": "string",
+            "enum": [
+              "ux",
+              "a11y",
+              "vis",
+              "tec"
+            ]
+          },
+          "src": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "imp": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "eff": {
+            "type": "string",
+            "enum": [
+              "Bajo",
+              "Medio",
+              "Alto"
+            ]
+          },
+          "stage": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "t": {
+            "type": "string"
+          },
+          "t_plain": {
+            "type": "string"
+          },
+          "s": {
+            "type": "string"
+          },
+          "now": {
+            "type": "string"
+          },
+          "fix": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          },
+          "shot": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "img",
+              "x",
+              "y"
+            ],
+            "properties": {
+              "img": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            }
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

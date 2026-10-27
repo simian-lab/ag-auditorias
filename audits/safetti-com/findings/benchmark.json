@@ -1,0 +1,88 @@
+{
+  "competitors": [
+    {
+      "name": "Suarez",
+      "slug": "suarez",
+      "url": "https://www.suarezclothing.com.co/",
+      "why_competitor": "Colombian technical cycling/triathlon/running apparel brand from Sabaneta (Valle de Aburra), official kit supplier of the Colombian Cycling Federation; same category, same region, own stores and e-commerce.",
+      "screenshot": "screenshots/bench-suarez.png",
+      "five_second": {
+        "what": true,
+        "for_whom": true,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Un pop-up de descuento tapa casi toda la primera pantalla (persiste tras reintentar) y el titular del banner está dentro de la imagen.",
+      "lighthouse": {
+        "performance": 13,
+        "accessibility": 73,
+        "seo": 85,
+        "total_mb": 3.26
+      }
+    },
+    {
+      "name": "Go Rigo Go!",
+      "slug": "gorigogo",
+      "url": "https://www.gorigogo.com/",
+      "why_competitor": "Rigoberto Uran's Medellin-based cycling apparel brand on Shopify with physical stores in Colombia; direct competitor for cycling kits.",
+      "screenshot": "screenshots/bench-gorigogo.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Imagen de campaña a pantalla completa con el mensaje dentro de la foto; el menú está escondido y no dice para quién es.",
+      "lighthouse": {
+        "performance": 30,
+        "accessibility": 92,
+        "seo": 100,
+        "total_mb": 6.78
+      }
+    },
+    {
+      "name": "GW",
+      "slug": "gw",
+      "url": "https://gwbicycles.com/",
+      "why_competitor": "Colombian cycling brand selling bikes, components and men's/women's cycling apparel online; overlaps on cycling clothing (big reference, broader catalogue).",
+      "screenshot": "screenshots/bench-gw.png",
+      "five_second": {
+        "what": true,
+        "for_whom": true,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Menú claro por categorías (Hombre, Mujer, Bicicletas) y la página más liviana del grupo, aunque su titular también es una imagen.",
+      "lighthouse": {
+        "performance": 50,
+        "accessibility": 87,
+        "seo": 92,
+        "total_mb": 2.36
+      }
+    }
+  ],
+  "client": {
+    "name": "Safetti",
+    "slug": "client",
+    "url": "https://safetti.com/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": true,
+      "text_headline": false,
+      "trust_proof": false,
+      "quote_cta": false
+    },
+    "notes_es": "Foto de grupo potente y menú por público (Hombre, Mujer, Niños), pero el mensaje de la colección está dentro de la imagen y la línea Custom no tiene un botón de cotización visible.",
+    "lighthouse": {
+      "performance": 37,
+      "accessibility": 93,
+      "seo": 100,
+      "total_mb": 3.67
+    }
+  },
+  "takeaway_es": "Ni Safetti ni Suarez, Go Rigo Go o GW muestran en su primera pantalla un mensaje en texto, una prueba de confianza o un botón para cotizar uniformes personalizados: la primera marca que lo haga se diferencia de inmediato."
+}

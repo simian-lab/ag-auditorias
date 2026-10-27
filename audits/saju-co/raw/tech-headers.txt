@@ -1,0 +1,120 @@
+### curl -sI https://www.saju.co/
+HTTP/2 103 
+link: <https://cdn.shopify.com>; rel=preconnect, <https://cdn.shopify.com>; crossorigin; rel=preconnect, <//www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188>; as=style; rel=preload
+
+HTTP/2 200 
+date: Sun, 25 Oct 2026 21:29:04 GMT
+content-type: text/html; charset=utf-8
+x-permitted-cross-domain-policies: none
+x-download-options: noopen
+product-filtering-backend: bitset_roaring
+cf-cache-status: DYNAMIC
+set-cookie: localization=CO; path=/; expires=Mon, 25 Oct 2027 21:29:04 GMT; SameSite=Lax
+set-cookie: _shopify_essential=:AaF095IkAAEA1sMsR5YFL7WM-nugOiieHTFUaXsGp0ouDDAcG9FKAm1dt9ekgKHu5vSJIiQtl4LyDpq00TwwsVxg5Bg:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_analytics=:AaF095PFAAEAHDO4hxto_aquvyRcRw6fnLahTvVoQwjunI7pCsH-v855Z8igZffnFZhSbm0Z9-n3xifm_mRFeUWZ6_Y:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_marketing=:AaF095PFAAEAYJh30_wJCwSRtpQ45fZYni-C2QcdEnFwCbwnPrdmIM8o0mv9chr_LWhDd-g-iqm6IDQeZ8irbi9qnuU:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+link: <https://cdn.shopify.com>; rel="preconnect", <https://cdn.shopify.com>; rel="preconnect"; crossorigin, <//www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188>; as="style"; rel="preload", </.well-known/ucp>; rel="ucp"; version="2026-08-25"
+etag: W/"page_cache:1544454259:IndexController:58e3b7111b8c7f74f37175dae96496dd:ffa7b24513f10317b76d7082fc7dc309"
+nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+shopify-complexity-score: 0
+shopify-complexity-score-v2: 422
+x-frame-options: DENY
+content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
+strict-transport-security: max-age=7889238
+vary: Accept
+cdn-cache-control: no-cache, no-store
+content-language: es-CO
+cache-control: private, max-age=0, must-revalidate
+powered-by: Shopify
+server-timing: processing;dur=427;desc="gc:6", db;dur=79, db_async;dur=126.559, render;dur=227, asn;desc="13489", edge;desc="BOG", country;desc="CO", theme;desc="190351180054", pageType;desc="index", servedBy;desc="c47r", requestID;desc="6ddd75f4-5ca7-4dd4-886b-3ebc95a2c26b-1792963744", _y;desc="dab3bd7c-56ff-484e-90b7-86756138733c", _s;desc="49334197-0d72-4ac1-9db8-33042294e1bc", _cmp;desc="3.AMPS_COANT_f_f_uRn8nml9RPSMx*-NGexE4w", _ye;desc="1824521344", _se;desc="1792965544", compressionLevel;desc="5", compressionTime;dur=10.127
+x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+x-xss-protection: 1; mode=block
+alt-svc: h3=":443"; ma=86400
+server: cloudflare
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Dp09YErfAO%2FjPxR9QfPw7j161gE433zBnNC7gMcKw0mPGJy2aJhxoHfLfWsD%2BNWUty3a3d737QxoEQTSs02s8hWe4XKNRCFeMyINfGg3T3pTP6a4SZDwSoJjo26rbVR9lRr4eKS7eV1E"}]}
+x-content-type-options: nosniff
+x-request-id: 6ddd75f4-5ca7-4dd4-886b-3ebc95a2c26b-1792963744
+cf-ray: a50450898fd97d6e-BOG
+server-timing: ipv6, earlyhints
+
+### curl -sI http://www.saju.co/
+HTTP/1.1 301 Moved Permanently
+Date: Sun, 25 Oct 2026 21:29:05 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 167
+Connection: keep-alive
+Location: https://www.saju.co/
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=T9cJBbxW4MpG0UXqV2gRRSdKGQt0Fq0h8jMxj9lSlwSzdPPJwUPrWbdohQY8BRRy12zgaNjLuwPtwJTb89RaAnWJaBaFN3pEvrAmhlxsSwL6b%2BZC4ufE6BzYJdqsLytHuBdeZDbbDGB%2F"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Download-Options: noopen
+Server-Timing: ipv6
+Server: cloudflare
+CF-RAY: a50450908e773198-MIA
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI http://saju.co/
+HTTP/1.1 301 Moved Permanently
+Date: Sun, 25 Oct 2026 21:29:06 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 167
+Connection: keep-alive
+Location: https://saju.co/
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=LzFTHMtXFEiVkXsuTra5lZR7WqH7PRvJZNKsqx1eFdnx0y6a69wBPioh7xNadDjvP4xXYZUE%2BOP9JxFvJkw%2BPZEIBgA5ZjadpirRAcOqT7HZJcUmXpNagoI%3D"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Download-Options: noopen
+Server: cloudflare
+CF-RAY: a50450974ef26333-ATL
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI https://saju.co/
+HTTP/2 301 
+date: Sun, 25 Oct 2026 21:29:06 GMT
+content-type: text/html; charset=utf-8
+content-length: 0
+location: https://www.saju.co/
+x-download-options: noopen
+x-redirect-reason: canonical_host_redirection
+shopify-complexity-score: 0
+shopify-complexity-score-v2: 17
+set-cookie: _shopify_essential=:AaF095w3AAEAva-geb-3OtI5oYRwZkEieJ9pNL44JcC8XJaACALbyixuLbRw-8gpvpTjiYF4n4_tdGFU_ZDFvfD6T-I:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+x-frame-options: DENY
+content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
+strict-transport-security: max-age=7889238
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=n65Y52%2F%2BDK8q1CvxTHy1W99MH6%2FstS%2FFLBk2CxTz%2FCaY2qhzSPvhSP30H4VKHw6y9fm5C%2B7Nl%2BDl0geowlm%2B1nINGSJmDdDtbwOY9NAq2UEBTkIGlOHXQhE%3D"}]}
+vary: Accept
+cdn-cache-control: no-cache, no-store
+cache-control: private, no-store
+link: </.well-known/ucp>; rel="ucp"; version="2026-08-25"
+powered-by: Shopify
+server-timing: processing;dur=22;desc="gc:1", db;dur=4, db_async;dur=4.511, asn;desc="13489", edge;desc="BOG", country;desc="CO", pageType;desc="index", servedBy;desc="qpn4", requestID;desc="b8a2b083-0d1a-411b-8e3b-49c8931b0766-1792963746", _y;desc="113350da-e8ba-42ed-947a-ac80aeb539cf", _s;desc="cafe35cc-372a-4a0c-aa48-d628e1f66e69", _cmp;desc="3.AMPS_COANT_f_f_UP4etu6hT3yEJpG-OaYRNA", _ye;desc="1824521346", _se;desc="1792965546"
+server: cloudflare
+cf-cache-status: DYNAMIC
+alt-svc: h3=":443"; ma=86400
+nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-permitted-cross-domain-policies: none
+x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+x-request-id: b8a2b083-0d1a-411b-8e3b-49c8931b0766-1792963746
+cf-ray: a50450999a6cffac-BOG
+
+### 404 test https://www.saju.co/pagina-que-no-existe-xyz
+404 196866
+### https://www.saju.co/cdn/shop/t/56/assets/theme.js?v=13968561988284492361790625188
+HTTP/2 200 
+content-type: text/javascript
+cache-control: public, max-age=31557600
+### https://www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188
+HTTP/2 200 
+content-type: text/css
+cache-control: public, max-age=31557600
+### https://www.saju.co/cdn/shop/files/TripleCaseMobile.webp?v=1791479834&width=800
+HTTP/2 200 
+content-type: image/jpeg
+cache-control: public, max-age=31557600

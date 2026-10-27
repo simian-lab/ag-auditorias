@@ -1,0 +1,150 @@
+{
+  "area": "a11y",
+  "business_context": "Inferido del sitio (no proporcionado): eBiopacking es una empresa colombiana fundada en 2006 que fabrica empaques de cartón corrugado (empaques industriales, cajas regulares y empaques para el sector agro: flores y frutas), con enfoque en empaques biodegradables. Vende a empresas (B2B) mediante contacto por formulario y WhatsApp.",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "El mensaje principal es una imagen, no texto",
+      "summary": "Tu propuesta de valor no la leen Google, los lectores de pantalla ni quien amplía el texto, y en celular se vuelve diminuta.",
+      "now": "El titular \"Naturalmente resistentes. Diseñadas para cuidar tus flores y frutas con estilo.\", los íconos de redes y el botón \"Productos\" de la portada están dibujados dentro de las 3 imágenes del banner. El botón \"Productos\" parece un botón, pero no se puede pulsar, y en el celular todo el texto se encoge junto con la imagen.",
+      "fix": "Escribir el titular, el subtítulo y el botón como texto real encima de la imagen de fondo (con el botón enlazado a Productos), y dejar en la imagen solo la fotografía de los empaques.",
+      "why": "Lo primero que ve un comprador debe poder leerse en cualquier pantalla y ser entendido por buscadores y tecnologías de apoyo.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "3 de 3 banners con texto dentro de la imagen",
+      "evidence": [
+        "raw/home.html: hero is an Elementor image-carousel (.elementor-element-958f370) whose only content is 3 <img> slides: 01-EBIO_INICIO_BANNER_01-2.png, 01-EBIO_INICIO_BANNER_02.png, 03-EBIO_INICIO_BANNER_03.png; no heading, paragraph or button markup inside the hero",
+        "screenshots/desktop-viewport.png: headline, subheadline, Facebook/Instagram/TikTok icons and 'Productos' button visible at roughly x 150-580, y 360-800, all part of the banner bitmap",
+        "screenshots/mobile-fullpage.jpg: on mobile (412px) the same banner is scaled down and the subheadline and 'Productos' pill become very small (top ~370px of the page)",
+        "Alt text of those slides is the file name ('01-EBIO_INICIO_BANNER_01'), so the message is not available as text anywhere"
+      ],
+      "technical_note": "WCAG 1.4.5 Images of Text and 1.1.1. Hero carousel has no autoplay in data-settings (only navigation:both), so motion is not the issue here. Rebuild as a container with background image + Heading (H1) + Text + Button widgets per slide (or Elementor Slides widget).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 52}
+    },
+    {
+      "id": "a11y-2",
+      "title": "Botones verdes con texto blanco casi ilegible",
+      "summary": "Los botones que llevan a vender (\"Conoce más\", \"Ver más productos\", el chat de WhatsApp) cuestan leerse, sobre todo al sol o para personas con baja visión.",
+      "now": "El texto blanco sobre el verde claro de la marca tiene un contraste de 2,0:1, y el botón de WhatsApp 1,98:1; el mínimo recomendado es 4,5:1. El menú superior en gris sobre la textura de papel queda alrededor de 3,6:1.",
+      "fix": "Usar el verde oscuro de tu marca (#194414) para el texto sobre el verde claro, o un verde más oscuro de fondo con texto blanco; oscurecer el gris del menú. Así los botones y el menú pasan el estándar sin cambiar la identidad.",
+      "why": "Si el botón de compra o de contacto no se lee con claridad, menos personas lo pulsan.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "2,0:1",
+      "evidence": [
+        "raw/lighthouse-mobile.json + lighthouse-desktop.json audit color-contrast (score 0): .elementor-button-text #ffffff on #97c61b = 2.01:1 (15px normal); h2 'Productos' #ffffff on #97c61b = 2.01:1 (32px normal, needs 3:1); a.qlwapp__button span.qlwapp__text #ffffff on #25d366 = 1.98:1 (18px)",
+        "Computed with WCAG formula: #FFFFFF on #97C61B = 2.02:1; #FFFFFF on #7CA50A = 2.90:1 (still fails); #194414 on #97C61B = 5.54:1 (passes)",
+        "Header nav: .elementor-28 .elementor-element-7ede68e .elementor-nav-menu--main .elementor-item {color:#7A7A7A} over header background texture textura-de-la-cartulina*.jpg, average color #EAEAEA (downscaled to 1px) → 3.57:1; even on pure white #7A7A7A is 4.29:1",
+        "Body text in 'Nosotros' #4A7147 on texture average #EAEAEA = 4.66:1 (passes)",
+        "Footer text #98C71B on #194414 = 5.60:1 (passes)"
+      ],
+      "technical_note": "Lighthouse does not flag the nav because it cannot compute contrast over a background image; ratio estimated against the texture's average color (raw/a11y-css/texture*.jpg). WhatsApp colors come from wp-whatsapp-chat (qlwapp) scheme settings: change --qlwapp-scheme-brand to a darker green or text to dark.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 70.5, "y_pct": 36}
+    },
+    {
+      "id": "a11y-3",
+      "title": "Fotos de productos descritas con nombres de archivo",
+      "summary": "Quien usa lector de pantalla, o Google Imágenes, recibe nombres técnicos con errores en lugar de saber qué empaque es cada foto.",
+      "now": "Las 17 fotos de productos de la portada se describen con el nombre del archivo, varios con errores: \"Tlescopicas\", \"Tipo-Bnadeja\", \"Cjas-personalizadas\", \"asilador-de-calor\", \"Caja-ready-to-seel\", \"Bandejad-para-frutas\". Los banners se describen como \"01-EBIO_INICIO_BANNER_01\".",
+      "fix": "Escribir una descripción corta y correcta para cada foto (por ejemplo, \"Caja telescópica de cartón corrugado\") y una para cada banner con su mensaje.",
+      "why": "Las descripciones correctas hacen que tus productos se entiendan y se encuentren también en búsquedas de imágenes.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "17 de 17 fotos de producto",
+      "evidence": [
+        "raw/home.html <img alt> in product carousels: 'Lamina-carton-corrugado', 'Particiones', 'Tlescopicas', 'Caja-regular', 'Tipo-Bnadeja', 'Caja-regular-impresa', 'Tipo-Baul', 'Cajas-exhibidoras', 'Cajas-tipo-nevera', 'Cjas-personalizadas', 'asilador-de-calor', 'Caja-ready-to-seel', 'Caja-para-verdes,-hierbas', 'Separadores-ramos', 'caja-para-flores', 'Lamina-corrugada-flores', 'Bandejad-para-frutas'",
+        "Hero slides alt: '01-EBIO_INICIO_BANNER_01', '01-EBIO_INICIO_BANNER_02', '03-EBIO_INICIO_BANNER_03'",
+        "Lighthouse image-alt audit passes (score 1) because an alt exists; it does not judge whether the text is meaningful"
+      ],
+      "technical_note": "Lighthouse accessibility score is 93 (mobile and desktop) but it only runs automated checks: it cannot tell a file name from a description, cannot read text inside images, skips contrast over background images and does not test focus visibility or form usability. Alt texts come from the WordPress media title; fix in Media Library (alt field) so they propagate.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49.5, "y_pct": 50.7}
+    },
+    {
+      "id": "a11y-4",
+      "title": "Ninguna página tiene un título principal",
+      "summary": "Lectores de pantalla y buscadores no encuentran de qué trata cada página, porque no existe un título principal (H1).",
+      "now": "La portada solo tiene dos subtítulos (\"Nosotros\" y \"Productos\") y la página de Contacto tres (\"Numero celular\", \"Correo\", \"Ubicación\"); ninguna tiene título principal. Las categorías \"Empaques Industriales\", \"Regulares\" y \"Sector Agro\" se ven como títulos pero no lo son.",
+      "fix": "Dar a cada página un título principal con lo que vendes (por ejemplo, \"Empaques de cartón corrugado para industria y agro\") y marcar las categorías como subtítulos.",
+      "why": "Una estructura clara permite a cualquiera, y a Google, saltar directo a lo que busca.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "0 títulos H1",
+      "evidence": [
+        "raw/home.html headings in order: h2 'Nosotros', h2 'Productos' — no h1",
+        "raw/a11y-contacto.html headings: h2 'Numero celular', h2 'Correo', h2 'Ubicación' — no h1",
+        "Category labels 'Empaques Industriales' / 'Empaques Regulares' / 'Empaques Sector Agro' are Elementor icon-list items (.elementor-icon-list-item), not headings",
+        "Lighthouse page-has-heading-one is not scored in this report (scoreDisplayMode null)"
+      ],
+      "technical_note": "The natural H1 on home is the hero headline, currently an image (see a11y-1). Set category labels as H3 under the 'Productos' H2.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49.5, "y_pct": 40}
+    },
+    {
+      "id": "a11y-5",
+      "title": "El formulario de contacto no muestra etiquetas",
+      "summary": "Un cliente puede enviar datos mal escritos o abandonar el formulario porque los campos se quedan sin nombre al escribir y no ayudan a llenarlos.",
+      "now": "Los 4 campos de Contacto solo muestran un texto gris dentro de la caja (Numero, Correo, Nombre, Mensaje) que desaparece al escribir. El teléfono es un campo numérico, el correo no se valida como correo, ningún campo es obligatorio y el navegador no puede autocompletarlos.",
+      "fix": "Mostrar el nombre de cada campo encima de la caja, usar el tipo correcto para teléfono y correo, activar el autocompletado y marcar como obligatorios los datos que ventas necesita.",
+      "why": "Cada mensaje mal enviado o abandonado es un pedido que no llega a ventas.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "4 de 4 campos sin etiqueta visible",
+      "evidence": [
+        "raw/a11y-contacto.html: <label class=\"elementor-field-label elementor-screen-only\"> for all 4 fields (visually hidden; placeholder-only)",
+        "Phone: <input type=\"number\" name=\"form_fields[name]\" placeholder=\"Numero\"> (type=number, not tel; field id is 'name')",
+        "Email: <input type=\"text\" name=\"form_fields[field_dee5fd0]\" placeholder=\"Correo\"> (type=text, not email)",
+        "No required / aria-required / autocomplete attributes on any field",
+        "Focus style: frontend.min.css '.elementor-field-group .elementor-field-textual:focus{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);outline:0}'"
+      ],
+      "technical_note": "Elementor Pro Form widget: enable 'Label' display, change phone field type to Tel and email to Email, set Required, and add autocomplete (tel, email, name) via field attributes. Field naming mismatch (phone stored under form_fields[name]) may confuse submissions/CRM mapping.",
+      "pin": null
+    },
+    {
+      "id": "a11y-6",
+      "title": "Carruseles de productos se mueven cada 2 segundos",
+      "summary": "Los productos pasan antes de que el cliente alcance a verlos, y en celular no hay forma de detenerlos.",
+      "now": "Los 3 carruseles de productos avanzan solos cada 2 segundos. Solo se detienen al pasar el ratón por encima o al tocarlos; no hay botón de pausa y no respetan la opción del sistema \"reducir movimiento\".",
+      "fix": "Quitar el avance automático (o dejarlo en 5 segundos o más con botón de pausa) para que cada cliente recorra los productos a su ritmo.",
+      "why": "El contenido que se mueve solo distrae y hace que se pierdan productos que podrías vender.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "2 s por producto",
+      "evidence": [
+        "raw/home.html data-settings of the 3 product image carousels: \"autoplay\":\"yes\", \"autoplay_speed\":2000, \"pause_on_hover\":\"yes\", \"pause_on_interaction\":\"yes\", \"infinite\":\"yes\"",
+        "No pause/stop control in carousel markup; 0 occurrences of 'prefers-reduced-motion' in raw/home.html",
+        "Product images in the carousels are not wrapped in links (no <a> around carousel images)"
+      ],
+      "technical_note": "WCAG 2.2.2 Pause, Stop, Hide. Elementor Image Carousel: set Autoplay = No, or Autoplay Speed ≥ 5000 and add a pause control via custom code. Hover pause does not help touch or keyboard users.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49.5, "y_pct": 64.5}
+    },
+    {
+      "id": "a11y-7",
+      "title": "Logo sin nombre y chat sin foco visible",
+      "summary": "Quien navega con teclado o lector de pantalla no sabe adónde lleva el logo ni ve cuándo está sobre el botón de WhatsApp.",
+      "now": "El logo enlaza a la portada pero un lector de pantalla lo anuncia como un enlace sin nombre. El botón de WhatsApp elimina a propósito el recuadro que indica dónde está el teclado.",
+      "fix": "Dar al logo la descripción \"eBiopacking, ir al inicio\" y mostrar un borde visible cuando el botón de chat y los campos reciben el foco.",
+      "why": "Tu principal canal de contacto debe poder usarse sin ratón.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/lighthouse-mobile.json audit link-name (score 0): <a href=\"https://ebiopacking.com/inicio/\"> containing only <img ... ICONOS-Y-LOGOS-1-1024x529.png alt=\"\">, present on home and contacto",
+        "raw/a11y-css/style.css (wp-whatsapp-chat): '.qlwapp__button,.qlwapp__button:active,.qlwapp__button:focus,.qlwapp__button:hover{outline:none !important; ... background-color:var(--qlwapp-scheme-brand,#25d366) !important}' — focus looks identical to rest state",
+        "Positive: skip link 'Ir al contenido' exists; social icons have screen-reader text (Facebook, Instagram, Tiktok); menu toggle has role=button, tabindex=0, aria-expanded; theme reset.css only removes outline on anchors without href"
+      ],
+      "technical_note": "Logo link points to /inicio/ while home is '/' (possible redirect/duplicate; not this area). Menu toggle aria-label is English ('Menu Toggle') on a Spanish page. Override qlwapp focus with .qlwapp__button:focus-visible{outline:3px solid #194414;outline-offset:2px}.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 9.2, "y_pct": 5.3}
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "fail", "evidence": "Lighthouse color-contrast fails: white on #97C61B buttons/H2 = 2.01:1, WhatsApp white on #25D366 = 1.98:1. Nav #7A7A7A on texture (avg #EAEAEA) ≈ 3.57:1. Body text #4A7147 (4.66:1) and footer #98C71B on #194414 (5.60:1) pass."},
+    {"id": "a11y-text-not-image", "result": "fail", "evidence": "Hero headline, subheadline, social icons and 'Productos' button are baked into all 3 banner images (01-EBIO_INICIO_BANNER_0x.png); no real text in the hero."},
+    {"id": "a11y-alt", "result": "fail", "evidence": "17/17 product images and 3/3 banners use file names as alt (several misspelled: 'Tlescopicas', 'Tipo-Bnadeja', 'Caja-ready-to-seel'); the logo, the only content of its link, has alt=\"\"."},
+    {"id": "a11y-headings", "result": "fail", "evidence": "No H1 on home (only h2 Nosotros, h2 Productos) nor on Contacto (h2 Numero celular, Correo, Ubicación). Order otherwise not broken (no skipped levels)."},
+    {"id": "a11y-names", "result": "partial", "evidence": "Social icons have screen-reader text and menu toggle has aria-label; the logo link has no accessible name (Lighthouse link-name fail). Carousel arrow divs have no aria-label in static HTML (may be added by Swiper at runtime; Lighthouse did not flag them)."},
+    {"id": "a11y-focus", "result": "partial", "evidence": "Links keep the browser default focus ring (theme only removes it on anchors without href). WhatsApp button forces outline:none !important on :focus with identical styling; form fields set outline:0 with a 1px rgba(0,0,0,.1) inset shadow (reset.css adds border-color #333). Not runtime-tested with a keyboard."},
+    {"id": "a11y-keyboard", "result": "pass", "evidence": "Markup review (no runtime keyboard test): skip link 'Ir al contenido' to #content; menu toggle role=button tabindex=0 aria-expanded; carousel arrows role=button tabindex=0; WhatsApp is an <a>. No focus trap observed in markup."},
+    {"id": "a11y-form-labels", "result": "fail", "evidence": "Contacto form: all 4 labels are .elementor-screen-only (placeholder-only visually); phone is type=number, email is type=text; no autocomplete or required attributes."},
+    {"id": "a11y-motion", "result": "fail", "evidence": "3 product carousels autoplay every 2000 ms; pause only on hover/interaction, no pause control, no prefers-reduced-motion handling. Hero carousel does not autoplay."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> on home and contacto; Lighthouse html-has-lang passes."},
+    {"id": "a11y-targets", "result": "pass", "evidence": "Lighthouse mobile target-size audit passes (score 1); viewport meta does not disable zoom (width=device-width, initial-scale=1)."}
+  ]
+}

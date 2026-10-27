@@ -1,0 +1,77 @@
+{
+ "area": "a11y",
+ "findings": [
+  {
+   "id": "a11y-1",
+   "title": "Botones verdes difíciles de leer",
+   "summary": "Texto blanco sobre verde claro.",
+   "now": "Contraste 2,0:1.",
+   "fix": "Contraste mínimo 4,5:1.",
+   "why": "Si no se lee, no se pulsa.",
+   "impact": 3,
+   "effort": "Bajo",
+   "evidence": [
+    "color-contrast"
+   ],
+   "technical_note": "",
+   "pin": null
+  }
+ ],
+ "checks": [
+  {
+   "id": "a11y-contrast",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-text-not-image",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-alt",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-headings",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-names",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-focus",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-keyboard",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-form-labels",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-motion",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-lang",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "a11y-targets",
+   "result": "pass",
+   "evidence": "fixture"
+  }
+ ]
+}

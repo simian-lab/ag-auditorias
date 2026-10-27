@@ -1,0 +1,73 @@
+### HTTPS home
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+link: <https://ebiopacking.com/wp-json/>; rel="https://api.w.org/"
+link: <https://ebiopacking.com/wp-json/wp/v2/pages/34>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://ebiopacking.com/>; rel=shortlink
+etag: "3-1792788195;;;"
+x-litespeed-cache: hit
+date: Sat, 24 Oct 2026 20:05:47 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### HTTP home
+HTTP/1.1 301 Moved Permanently
+Connection: Keep-Alive
+Keep-Alive: timeout=5, max=100
+Content-Type: text/html; charset=UTF-8
+X-Redirect-By: WordPress
+Location: https://ebiopacking.com/
+X-LiteSpeed-Cache-Control: public,max-age=604800
+X-LiteSpeed-Tag: 1f7_front,1f7_URL.6666cd76f96956469e7be39d750cc7d9,1f7_F,1f7_Po.34,1f7_PGS,1f7_
+Date: Sat, 24 Oct 2026 20:05:48 GMT
+Server: LiteSpeed
+
+### www
+HTTP/2 301 
+content-type: text/html; charset=UTF-8
+x-redirect-by: WordPress
+location: https://ebiopacking.com/
+x-litespeed-cache-control: public,max-age=604800
+x-litespeed-tag: 1f7_front,1f7_URL.6666cd76f96956469e7be39d750cc7d9,1f7_F,1f7_Po.34,1f7_PGS,1f7_
+date: Sat, 24 Oct 2026 20:05:49 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### 404 test
+status=404
+### static jpg
+HTTP/2 200 
+cache-control: public, max-age=31536000
+expires: Sun, 24 Oct 2027 20:05:49 GMT
+content-type: image/jpeg
+last-modified: Mon, 01 Dec 2025 23:44:36 GMT
+accept-ranges: bytes
+content-length: 67335
+date: Sat, 24 Oct 2026 20:05:49 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### static js
+HTTP/2 200 
+content-type: text/javascript
+last-modified: Mon, 28 Aug 2023 22:14:24 GMT
+accept-ranges: bytes
+content-length: 87553
+date: Sat, 24 Oct 2026 20:05:50 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### static css
+HTTP/2 200 
+cache-control: public, max-age=31536000
+expires: Sun, 24 Oct 2027 20:05:50 GMT
+content-type: text/css
+last-modified: Thu, 04 Dec 2025 00:36:36 GMT
+accept-ranges: bytes
+content-length: 42043
+date: Sat, 24 Oct 2026 20:05:50 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### wp-json users
+status=200

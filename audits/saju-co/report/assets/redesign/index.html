@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sajú · Concepto de portada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1c1c; --ink-2:#4a4a46; --mute:#6b6b63;
+  --yellow:#f7d254; --yellow-d:#e9bf2f;
+  --cream:#f7f7e3; --paper:#fbfbf4; --line:#e3e2cf;
+  --green:#22392d;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Jost,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.ph{color:var(--mute);font-style:italic;font-size:.82em;letter-spacing:0;text-transform:none;font-weight:400;background:rgba(0,0,0,.04);border:1px dashed #c9c7b0;border-radius:6px;padding:1px 6px;white-space:nowrap}
+
+/* buttons: one system */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font:500 16px/1 Jost,sans-serif;letter-spacing:.02em;border:2px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-primary{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.btn-primary:hover{background:var(--yellow-d);border-color:var(--yellow-d)}
+.btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn svg{width:18px;height:18px}
+
+/* promo */
+.promo{background:var(--ink);color:#fff;font-size:14px;letter-spacing:.03em}
+.promo .wrap{display:flex;justify-content:center;gap:28px;height:42px;align-items:center}
+.promo b{color:var(--yellow);font-weight:600}
+.promo .sep{opacity:.35}
+
+/* header */
+header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;height:84px;gap:36px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:52px;height:52px}
+.logo span{font-weight:600;font-size:22px;letter-spacing:.14em}
+nav{display:flex;gap:28px;font-size:16px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--yellow)}
+.h-right{margin-left:auto;display:flex;align-items:center;gap:20px}
+.h-contact{font-size:14px;line-height:1.25;text-align:right;color:var(--ink-2)}
+.h-contact strong{display:block;color:var(--ink);font-weight:600;font-size:15px}
+.icon{width:24px;height:24px}
+.menu-m{display:none}
+header .btn{height:46px;padding:0 20px;font-size:15px}
+
+/* hero */
+.hero{background:var(--cream)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:56px;padding-bottom:56px}
+.eyebrow{font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--ink)}
+h1{font-family:Jost,sans-serif;font-weight:500;font-size:62px;line-height:1.04;letter-spacing:-.02em;margin:20px 0 22px}
+h1 em,h2 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.lead{font-size:20px;color:var(--ink-2);max-width:540px}
+.ctas{display:flex;gap:14px;margin:32px 0 26px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta i{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
+.hero-art{position:relative}
+.hero-art .main{width:100%;aspect-ratio:4/4.3;object-fit:cover;object-position:50% 40%;border-radius:22px}
+.hero-card{position:absolute;left:-36px;bottom:34px;background:#fff;border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center;box-shadow:0 18px 40px -18px rgba(0,0,0,.35);max-width:310px}
+.hero-card img{width:74px;height:56px;object-fit:contain;background:#f4f4f1;border-radius:10px}
+.hero-card small{display:block;font-size:13px;color:var(--mute)}
+.hero-card b{display:block;font-weight:600;font-size:16px}
+.hero-card .price{font-weight:600;font-size:16px}
+.hero-badge{position:absolute;top:22px;right:22px;background:var(--yellow);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600}
+
+/* benefits */
+.benefits{background:var(--ink);color:#fff}
+.benefits .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.benefit{padding:26px 26px;border-left:1px solid rgba(255,255,255,.14);display:flex;gap:14px;align-items:flex-start}
+.benefit:first-child{border-left:0;padding-left:0}
+.benefit svg{flex:0 0 30px;width:30px;height:30px;color:var(--yellow)}
+.benefit b{display:block;font-weight:600;font-size:17px;line-height:1.25}
+.benefit span{font-size:14px;color:#cfcfc4}
+
+section{padding:64px 0}
+.s-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+h2{font-weight:500;font-size:42px;line-height:1.08;letter-spacing:-.015em}
+.s-head p{color:var(--ink-2);max-width:420px}
+.link{font-weight:600;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:1.3fr 1.3fr 1fr 1fr;gap:18px}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;height:360px;background:#ddd}
+.cat img{width:100%;height:100%;object-fit:cover}
+.cat:nth-child(1) img{object-position:50% 30%}
+.cat:nth-child(2) img{object-position:50% 30%}
+.cat .lbl{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(251,251,244,.96);border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.cat .lbl b{font-size:19px;font-weight:600;display:block;line-height:1.2}
+.cat .lbl small{font-size:14px;color:var(--ink-2)}
+.arrow{width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:0 0 38px}
+.arrow svg{width:16px;height:16px}
+
+/* products */
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card .img{position:relative;background:#f3f3ef;border-radius:var(--r);aspect-ratio:1/1;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover}
+.card .tag{position:absolute;top:12px;left:12px;background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500}
+.card h3{font-size:19px;font-weight:600;margin:14px 0 2px}
+.card .type{font-size:15px;color:var(--ink-2)}
+.card{min-width:0}
+.card .row{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;margin-top:10px}
+.card .price{font-size:18px;font-weight:600;color:var(--ink)}
+.stars{font-size:13px}
+
+/* proof / materials */
+.mat{background:var(--green);color:#f3f1e4;border-radius:24px;padding:56px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.mat h2{color:#fff}
+.mat p.l{color:#cfd6cc;margin-top:16px;font-size:18px}
+.mat .ph{color:#d9dccf;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3)}
+.mat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.m{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px}
+.m b{font-size:18px;font-weight:600;color:#fff;display:block}
+.m .w{font-size:14px;color:var(--yellow);font-weight:500;margin:4px 0 10px;display:block}
+.m div{font-size:14px;color:#cfd6cc;line-height:1.55}
+.proof-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+/* exam */
+.exam{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.exam .pic{background:url(tienda.webp) 51% 50%/cover;min-height:400px;position:relative}
+.exam .pic span{position:absolute;left:20px;bottom:20px;background:var(--yellow);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
+.exam form{padding:40px 48px}
+.exam h2{font-size:36px}
+.exam p.l{color:var(--ink-2);margin:10px 0 24px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.fld.full{grid-column:1/-1}
+.fld div{height:50px;border:1.5px solid #cfcdb9;border-radius:10px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:16px;font-weight:400;color:var(--ink-2);background:var(--paper)}
+.exam .btn{width:100%;justify-content:center;margin-top:18px}
+.note{font-size:14px;color:var(--ink-2);margin-top:14px;display:flex;gap:8px}
+
+/* collabs */
+.collabs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.col{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.4}
+.col img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.col span{position:absolute;left:14px;bottom:14px;background:var(--paper);padding:8px 14px;border-radius:999px;font-weight:600;font-size:15px}
+
+/* footer */
+footer{background:var(--ink);color:#e9e8dc;padding:56px 0 40px;margin-top:20px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:32px}
+footer h4{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;font-weight:600}
+footer li{list-style:none;margin:8px 0;font-size:16px}
+footer .ph{color:#bdbcb0;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25)}
+.f-big a{display:block;font-size:20px;font-weight:600;color:#fff;margin:6px 0}
+
+/* responsive */
+@media (max-width:1100px){
+  nav{display:none}
+  .h-contact{display:none}
+  .menu-m{display:block}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .promo .wrap{height:auto;padding-top:9px;padding-bottom:9px;flex-direction:column;gap:2px;text-align:center;font-size:13px}
+  .promo .sep{display:none}
+  header .wrap{height:64px;gap:12px}
+  .logo img{width:40px;height:40px}.logo span{font-size:18px}
+  header .btn{height:40px;padding:0 14px;font-size:14px}
+  .h-right{gap:14px}
+  .hide-m{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding-top:30px;padding-bottom:36px}
+  h1{font-size:40px;margin:14px 0 14px}
+  .lead{font-size:17px}
+  .ctas{margin:22px 0 18px}
+  .ctas .btn{flex:1 1 100%;justify-content:center}
+  .hero-card{left:12px;bottom:12px;right:12px;max-width:none}
+  .hero-art .main{aspect-ratio:4/4}
+  .benefits .wrap{grid-template-columns:1fr 1fr}
+  .benefit{padding:18px 10px;border-left:0}
+  .benefit:first-child{padding-left:10px}
+  .benefit b{font-size:15px}
+  section{padding:48px 0}
+  h2{font-size:30px}
+  .s-head{flex-direction:column;align-items:flex-start}
+  .cats{grid-template-columns:1fr 1fr;gap:12px}
+  .cat{height:230px}
+  .cat .lbl{left:8px;right:8px;bottom:8px;padding:10px}
+  .cat .lbl b{font-size:16px}.cat .lbl small{font-size:12px}
+  .arrow{display:none}
+  .prods{grid-template-columns:1fr 1fr;gap:14px}
+  .card h3{font-size:16px}
+  .card .ph{white-space:normal;font-size:12px}
+  .eyebrow{font-size:12px;letter-spacing:.14em}
+  .mat{padding:28px 20px;grid-template-columns:1fr;gap:28px}
+  .mat-grid{grid-template-columns:1fr}
+  .exam{grid-template-columns:1fr}
+  .exam .pic{min-height:220px;background-position:88% 50%}
+  .exam form{padding:26px 20px}
+  .f{grid-template-columns:1fr}
+  .collabs{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .col span{font-size:12px;left:6px;bottom:6px;padding:5px 9px}
+  footer .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="promo"><div class="wrap">
+  <span><b>Octubre:</b> compra 2 gafas formuladas y las segundas te quedan al 50%*</span>
+  <span class="sep">|</span>
+  <span>Envío gratis en compras desde $249.000</span>
+</div></div>
+
+<header><div class="wrap">
+  <svg class="icon menu-m" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-label="Menú"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  <a class="logo" href="#"><img src="logo.webp" alt="Sajú"><span>SAJÚ</span></a>
+  <nav>
+    <a href="#">Gafas de sol</a>
+    <a href="#">Formuladas</a>
+    <a href="#">Accesorios</a>
+    <a href="#">Tiendas</a>
+    <a href="#">Sale</a>
+  </nav>
+  <div class="h-right">
+    <div class="h-contact">¿Dudas? Escríbenos<strong>WhatsApp 312 322 5855</strong></div>
+    <svg class="icon hide-m" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+    <a class="btn btn-dark" href="#examen">Agenda tu examen</a>
+  </div>
+</div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Marca colombiana desde 2017</div>
+      <h1>Gafas de sol y formuladas, <em>hechas con materiales reciclados.</em></h1>
+      <p class="lead">Elige tu marco y llévalo para sol o con tu fórmula: está disponible en todos nuestros modelos. Y si lo necesitas, hazte el examen visual en una de nuestras ópticas.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">Ver gafas de sol
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-secondary" href="#">Ver gafas formuladas</a>
+      </div>
+      <div class="hero-meta">
+        <span><i></i>Arreglos gratis de por vida en plástico reciclado*</span>
+        <span><i></i>Examen visual en 8 ópticas</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img class="main" src="hero-sol.webp" alt="Mujer con gafas de sol Sajú">
+      <div class="hero-badge">Sol | Formuladas</div>
+      <div class="hero-card">
+        <img src="p-cumbre.webp" alt="">
+        <div><small>Línea Sajú Grip</small><b>Cumbre Gravel</b><span class="price">$299.000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="benefits"><div class="wrap">
+  <div class="benefit">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg>
+    <div><b>Arreglos gratis de por vida*</b><span>En gafas de plástico reciclado</span></div></div>
+  <div class="benefit">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+    <div><b>365 días de garantía</b><span>En gafas de acetato y metal</span></div></div>
+  <div class="benefit">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+    <div><b>Envío gratis</b><span>En compras desde $249.000</span></div></div>
+  <div class="benefit">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    <div><b>Tiendas y ópticas</b><span>Bogotá, Chía, Medellín y más ciudades</span></div></div>
+</div></div>
+
+<section><div class="wrap">
+  <div class="s-head">
+    <h2>¿Qué estás <em>buscando?</em></h2>
+    <a class="link" href="#">Ver todo el catálogo</a>
+  </div>
+  <div class="cats">
+    <a class="cat" href="#"><img src="cat-sol.webp" alt="Gafas de sol"><div class="lbl"><div><b>Gafas de sol</b><small>Grip, metal, acetato y plástico reciclado</small></div><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+    <a class="cat" href="#"><img src="cat-formuladas.webp" alt="Gafas formuladas"><div class="lbl"><div><b>Gafas formuladas</b><small>Cualquier marco, con tu fórmula</small></div><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+    <a class="cat" href="#"><img src="cat-cuelgagafas.webp" alt="Cuelga-gafas"><div class="lbl"><div><b>Cuelga-gafas</b><small>Accesorios</small></div></div></a>
+    <a class="cat" href="#"><img src="cat-accesorios.webp" alt="Triple Case"><div class="lbl"><div><b>Cases y clip-ons</b><small>Triple Case $100.000</small></div></div></a>
+  </div>
+</div></section>
+
+<section id="examen" style="padding-top:0"><div class="wrap">
+  <div class="exam">
+    <div class="pic"><span>Tienda San Roque · Chía</span></div>
+    <form onsubmit="return false">
+      <div class="eyebrow">Examen visual</div>
+      <h2 style="margin-top:14px">Agenda tu examen <em>en un minuto</em></h2>
+      <p class="l">Elige sede, día y hora. Sin pasar por el carrito.</p>
+      <div class="f">
+        <label class="fld full">Sede<div>Bogotá · Calle 81 (Flagship) <span>▾</span></div></label>
+        <label class="fld">Día<div>Elige un día <span>▾</span></div></label>
+        <label class="fld">Hora<div>Elige una hora <span>▾</span></div></label>
+        <label class="fld">Nombre<div>Tu nombre</div></label>
+        <label class="fld">Celular<div>300 000 0000</div></label>
+      </div>
+      <button class="btn btn-primary" type="button">Reservar mi cita</button>
+      <p class="note">ⓘ Hoy el examen tiene un anticipo de $50.000 que se te devuelve como bono si compras gafas formuladas.</p>
+    </form>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="s-head">
+    <h2>Una gafa por <em>cada material</em></h2>
+    <p>Cada etiqueta te dice de qué está hecha. Todos los marcos se pueden pedir para sol o formulados.</p>
+  </div>
+  <div class="prods">
+    <a class="card" href="#"><div class="img"><img src="p-cumbre.webp" alt="Cumbre Gravel"><span class="tag">Sajú Grip</span></div>
+      <h3>Cumbre Gravel</h3><div class="type">Sol o formulada</div>
+      <div class="row"><span class="price">$299.000</span><span class="stars ph">[★ reseñas por confirmar]</span></div></a>
+    <a class="card" href="#"><div class="img"><img src="p-marea-2.webp" alt="Marea Gold puesta"><span class="tag">Metal reciclado</span></div>
+      <h3>Marea Gold</h3><div class="type">Sol o formulada · Nuevo</div>
+      <div class="row"><span class="price">$399.000</span><span class="stars ph">[★ reseñas por confirmar]</span></div></a>
+    <a class="card" href="#"><div class="img"><img src="p-bellucci.webp" alt="Bellucci Dark Brown"><span class="tag">Eco-acetato</span></div>
+      <h3>Bellucci Dark Brown</h3><div class="type">Sol o formulada</div>
+      <div class="row"><span class="price">$399.000</span><span class="stars ph">[★ reseñas por confirmar]</span></div></a>
+    <a class="card" href="#"><div class="img"><img src="p-chelsea.webp" alt="Chelsea Midnight Green"><span class="tag">Plástico reciclado</span></div>
+      <h3>Chelsea Midnight Green</h3><div class="type">Sol o formulada · 3 colores</div>
+      <div class="row"><span class="price">$199.000</span><span class="stars ph">[★ reseñas por confirmar]</span></div></a>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="mat">
+    <div>
+      <div class="eyebrow" style="color:#cfd6cc">Feel good, look good, do good</div>
+      <h2 style="margin-top:16px">Sostenible, <em>y te lo mostramos.</em></h2>
+      <p class="l">Cuatro materiales, cada uno con su origen y su garantía a la vista. Así sabes por qué una gafa Sajú es distinta antes de pagarla.</p>
+      <div class="proof-row">
+        <span class="ph">[Certificado del proveedor por confirmar]</span>
+        <span class="ph">[Fotos del taller por confirmar]</span>
+      </div>
+    </div>
+    <div class="mat-grid">
+      <div class="m"><b>Plástico reciclado</b><span class="w">Arreglos gratis de por vida*</span><div>Origen del material: <span class="ph">[por confirmar]</span><br>Contenido reciclado: <span class="ph">[% por confirmar]</span></div></div>
+      <div class="m"><b>Metal reciclado</b><span class="w">365 días de garantía</span><div>Origen del material: <span class="ph">[por confirmar]</span><br>Contenido reciclado: <span class="ph">[% por confirmar]</span></div></div>
+      <div class="m"><b>Eco-acetato</b><span class="w">365 días de garantía</span><div>Qué lo hace «eco»: <span class="ph">[por confirmar]</span></div></div>
+      <div class="m"><b>Sajú Grip</b><span class="w">Línea destacada</span><div>De qué está hecho: <span class="ph">[por confirmar]</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="s-head"><h2>Nuestras <em>collabs</em></h2><a class="link" href="#">Ver colaboraciones</a></div>
+  <div class="collabs">
+    <a class="col" href="#"><img src="collab-james.webp" alt="Colección JAMES"><span>JAMES</span></a>
+    <a class="col" href="#"><img src="collab-simon.webp" alt="Colección Simón Vargas"><span>Simón Vargas</span></a>
+    <a class="col" href="#"><img src="collab-marcela.webp" alt="Colección Marcela García"><span>Marcela García</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>
+    <h4>Habla con nosotros</h4>
+    <div class="f-big"><a href="#">WhatsApp 312 322 5855</a><a href="#">sac@sajucompany.com</a></div>
+    <ul><li>Teléfono: <span class="ph">[Teléfono general por confirmar]</span></li><li>Horario: <span class="ph">[Horario de atención por confirmar]</span></li></ul>
+  </div>
+  <div><h4>Comprar</h4><ul><li>Gafas de sol</li><li>Gafas formuladas</li><li>Lentes de contacto</li><li>Accesorios</li></ul></div>
+  <div><h4>Ayuda</h4><ul><li>Estado de mi pedido</li><li>Envíos, garantías y devoluciones</li><li>Agenda tu examen visual</li><li>Tiendas</li></ul></div>
+  <div><h4>Sajú</h4><ul><li>Marca colombiana desde 2017</li><li>The Monkey Crew</li><li>¿Quieres llevar Sajú a tu país?</li></ul></div>
+</div></footer>
+</body>
+</html>

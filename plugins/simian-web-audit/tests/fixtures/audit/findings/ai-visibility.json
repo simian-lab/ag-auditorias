@@ -1,0 +1,10 @@
+{
+  "source": "OpenSEO AI visibility check",
+  "date": "2026-10-24",
+  "brand": "AcmeBox",
+  "answers": [
+    {"engine": "ChatGPT", "prompt": "¿Quién fabrica empaques en Mosquera?", "mentioned": true, "named": ["Latin Pack", "Acme Box S.A.S."], "note_es": "Te menciona desde directorios."},
+    {"engine": "Gemini", "prompt": "¿Quién fabrica empaques en Mosquera?", "mentioned": false, "named": ["Cartones América"], "note_es": "No apareces."}
+  ],
+  "no_answer": []
+}

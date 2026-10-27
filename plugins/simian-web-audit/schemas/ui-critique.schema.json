@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": ["verdict", "inventory", "proposed_system", "sharp_headlines"],
+  "properties": {
+    "verdict": {"type": "string"},
+    "inventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "title", "explanation", "items", "proposal"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["buttons", "headings", "colors", "fonts", "cards", "icons"]},
+          "title": {"type": "string"},
+          "explanation": {"type": "string"},
+          "items": {"type": "array", "items": {"type": "object", "required": ["label"], "properties": {"label": {"type": "string"}, "crop": {"type": ["string", "null"]}, "hex": {"type": ["string", "null"]}, "family": {"type": ["string", "null"]}}}},
+          "proposal": {"type": "string"}
+        }
+      }
+    },
+    "proposed_system": {
+      "type": "object",
+      "required": ["colors"],
+      "properties": {
+        "colors": {"type": "array", "items": {"type": "object", "required": ["name", "hex", "role"], "properties": {"name": {"type": "string"}, "hex": {"type": "string"}, "role": {"type": "string"}}}}
+      }
+    },
+    "hierarchy_notes": {"type": "array", "items": {"type": "string"}},
+    "sharp_headlines": {"type": "object"}
+  }
+}

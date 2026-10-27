@@ -1,0 +1,14 @@
+{
+  "version": "3",
+  "method": "rubric",
+  "target": 80,
+  "lighthouse_blend": {
+    "tech": [
+      "performance",
+      "best-practices"
+    ],
+    "a11y": [
+      "accessibility"
+    ]
+  }
+}

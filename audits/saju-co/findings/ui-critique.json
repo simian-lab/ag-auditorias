@@ -1,0 +1,120 @@
+{
+  "verdict": "Sajú tiene fotos y producto de marca grande, pero la página de inicio se ve armada por partes: dos logos, al menos seis tipos de letra y botones grises que no se parecen entre sí.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Cinco botones, cinco personalidades",
+      "explanation": "En una sola página conviven una píldora gris, un enlace subrayado, un botón crema pintado dentro de una foto y otro con borde dentro de otra foto. El comprador no aprende cuál es «el botón de Sajú», así que ninguno destaca como la siguiente acción.",
+      "items": [
+        {"label": "«Ver la colección»: píldora gris #5C5C5C", "crop": "ui-crop-btn-ver-coleccion.png"},
+        {"label": "«Ver todas»: la misma píldora gris, sin color de marca", "crop": "ui-crop-btn-ver-todas.png"},
+        {"label": "«Ver»: enlace subrayado sobre foto", "crop": "ui-crop-btn-ver-link.png"},
+        {"label": "«Agenda aquí»: botón crema pintado en la imagen del banner", "crop": "ui-crop-btn-agenda-aqui.png"},
+        {"label": "«Click aquí»: botón con borde pintado en la imagen del examen", "crop": "ui-crop-btn-click-aqui.png"}
+      ],
+      "proposal": "Un solo botón principal amarillo Sajú con texto negro para comprar o agendar, y un secundario con borde negro para «ver más». Ningún botón dentro de imágenes."
+    },
+    {
+      "kind": "headings",
+      "title": "Cada título habla con otra voz",
+      "explanation": "Los títulos de sección son mayúsculas grises muy espaciadas, mientras los banners usan una serif condensada, una letra decorativa amarilla y otra serif, todas dentro de fotos. Además, el título de la sección de materiales es más pequeño que sus propias pestañas, así que el ojo no sabe qué es lo importante.",
+      "items": [
+        {"label": "Banner Gran Estación: serif condensada dentro de la foto", "crop": "ui-crop-h-gran-estacion.png"},
+        {"label": "Banner Triple Case: letra decorativa amarilla dentro de la foto", "crop": "ui-crop-h-triple-case.png"},
+        {"label": "Banner del examen: otra serif, con otra subletra", "crop": "ui-crop-h-agenda-examen.png"},
+        {"label": "«Nuestros materiales» queda más pequeño que sus pestañas", "crop": "ui-crop-h-materiales.png"},
+        {"label": "«¿Por qué Sajú?»: el título más grande de la página no es un título real", "crop": "ui-crop-h-por-que.png"}
+      ],
+      "proposal": "Una escala fija de títulos en texto real: título de página, título de sección y subtítulo, todos en Jost y con el mismo tratamiento en banners y secciones."
+    },
+    {
+      "kind": "colors",
+      "title": "Seis grises y un amarillo escondido",
+      "explanation": "El amarillo de la marca solo aparece en la franja de promoción de arriba; todo lo demás es una gama de grises que cambia de sección en sección. Sin un color que se repita en los botones y acentos, la tienda no se recuerda ni guía la mirada hacia la compra.",
+      "items": [
+        {"label": "Amarillo de la franja de promoción (único uso de marca)", "hex": "#F7D254"},
+        {"label": "Gris de botones y textos", "hex": "#5C5C5C"},
+        {"label": "Gris claro de los precios (contraste 3,0:1)", "hex": "#959595"},
+        {"label": "Gris de fondo del encabezado y secciones", "hex": "#EFEFEF"},
+        {"label": "Gris del pie de página", "hex": "#F7F7F7"},
+        {"label": "Casi negro de la franja de envíos y «¿Por qué Sajú?»", "hex": "#1C1C1C"},
+        {"label": "Verde del botón de WhatsApp", "hex": "#25D366"}
+      ],
+      "proposal": "Cuatro colores con un trabajo fijo: negro mono para textos, amarillo Sajú para la acción principal, crema para secciones de marca y blanco de fondo."
+    },
+    {
+      "kind": "fonts",
+      "title": "Al menos seis voces para una marca",
+      "explanation": "El tema carga Jost y Poppins, la franja de envíos usa Helvetica y los banners agregan al menos tres estilos más dentro de las fotos. Cada cambio de letra se lee como un cambio de dueño, y la marca pierde personalidad propia.",
+      "items": [
+        {"label": "Jost (títulos del tema)", "family": "Jost"},
+        {"label": "Poppins 300 (textos del tema)", "family": "Poppins"},
+        {"label": "Helvetica/Arial (franja de envíos)", "family": "Helvetica"},
+        {"label": "Serif condensada (dentro de banners, no identificable)", "family": "serif"},
+        {"label": "Sans condensada (dentro de banners, no identificable)", "family": "sans-serif"},
+        {"label": "Letra decorativa de Triple Case (dentro de banner, no identificable)", "family": "cursive"}
+      ],
+      "proposal": "Dos tipos de letra en toda la tienda: Jost para títulos y Poppins para textos, usados también en franjas y banners como texto real."
+    },
+    {
+      "kind": "icons",
+      "title": "Dos logos y tres estilos de íconos",
+      "explanation": "El encabezado firma con el mono, pero el banner del examen firma con un óvalo «sajú.» que no aparece en ningún otro lugar de la página. Los íconos van de trazos finos en el encabezado a círculos gruesos pintados en fotos y al globo verde de WhatsApp, y eso diluye la identidad.",
+      "items": [
+        {"label": "Logo del mono en el encabezado", "crop": "ui-crop-logo-mono.png"},
+        {"label": "Logo «sajú.» en óvalo, solo en el banner del examen", "crop": "ui-crop-logo-saju-oval.png"},
+        {"label": "Íconos de trazo fino del encabezado", "crop": "ui-crop-icons-header.png"},
+        {"label": "Íconos en círculo grueso pintados dentro de la foto", "crop": "ui-crop-icon-en-foto.png"},
+        {"label": "Flecha en círculo blanco entre secciones", "crop": "ui-crop-icon-chevron.png"},
+        {"label": "Botón verde de WhatsApp", "crop": "ui-crop-icon-whatsapp.png"}
+      ],
+      "proposal": "Un solo logo oficial en todo el sitio y una familia de íconos de trazo fino, como los del encabezado, usada también para los beneficios."
+    },
+    {
+      "kind": "cards",
+      "title": "Tarjetas que solo dicen nombre y precio",
+      "explanation": "Las tarjetas de producto son correctas pero mudas: nombre en mayúsculas espaciadas y un precio gris claro que casi desaparece. Junto a fotos de campaña tan fuertes, la tarjeta se siente como un catálogo sin terminar.",
+      "items": [
+        {"label": "Tarjeta de producto: foto, nombre y precio en gris claro", "crop": "ui-crop-card-producto.png"}
+      ],
+      "proposal": "Tarjeta con etiqueta de tipo (Sol o Formulada), estrellas de reseñas y precio en negro mono legible."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {"name": "Negro mono", "hex": "#1C1C1C", "role": "Títulos, textos importantes, precios y botón secundario. Texto blanco encima: 17,0:1; sobre blanco: 17,0:1."},
+      {"name": "Amarillo Sajú", "hex": "#F7D254", "role": "Botón principal (comprar, agendar) y acentos. Texto negro mono encima: 11,6:1."},
+      {"name": "Crema", "hex": "#F7F7E3", "role": "Fondo de secciones de marca y beneficios (ya existe en el tema). Texto negro mono encima: 15,7:1."},
+      {"name": "Gris texto", "hex": "#5C5C5C", "role": "Solo texto de párrafo sobre blanco. Contraste 6,7:1."},
+      {"name": "Blanco", "hex": "#FFFFFF", "role": "Fondo general y de tarjetas. Texto negro mono encima: 17,0:1."}
+    ],
+    "fonts": [
+      {"role": "Títulos", "family": "Jost", "note": "400–500, mayúsculas con espaciado moderado (0.08em en vez de 0.18em)"},
+      {"role": "Textos, precios y botones", "family": "Poppins", "note": "400 para textos, 500 para precios y botones; retirar Helvetica de la franja"}
+    ],
+    "button_primary": "Fondo #F7D254, texto #1C1C1C Poppins 500 en mayúsculas, píldora (radio 60px como hoy), alto mínimo 48px; hover: fondo #1C1C1C con texto #F7D254.",
+    "button_secondary": "Fondo transparente, borde 1.5px #1C1C1C, texto #1C1C1C; sobre fotos, borde y texto blancos. Mismo tamaño que el principal.",
+    "heading_scale": "H1 de página 40px / H2 de sección 28px / H3 de bloque 20px / texto 16px / precio 15px #1C1C1C. Hoy el tema define H1 22–32px y H2 20–28px, y los títulos de banner están dentro de imágenes."
+  },
+  "hierarchy_notes": [
+    "Primera pantalla: el ojo ve primero la franja negra que se mueve y la amarilla de promoción; luego un banner de un local o de un estuche. Debería ver primero qué es Sajú (gafas colombianas en materiales reciclados) y un botón amarillo de compra.",
+    "Encabezado: ocho enlaces del menú con el mismo peso; «Agenda tu examen visual», que es una acción clave, se ve igual que «Estado de mi pedido». Debería destacar como botón.",
+    "Primera grilla de productos: no tiene título de sección, solo las pestañas «Sajú Grip | Triple Case»; el ojo salta a 14 fotos casi iguales. Debería ver un título que diga qué colección es y por qué importa.",
+    "Nuestros materiales: el título «Nuestros materiales» es más pequeño que las pestañas, así que el ojo lee cuatro nombres técnicos sin contexto. Debería ver primero la promesa (materiales reciclados) y luego las opciones.",
+    "Collabs: las fotos dominan y el nombre de cada embajador y el enlace «Ver» son texto blanco pequeño sobre la foto. Debería leerse quién es y qué gafa usa.",
+    "Banner del examen: todo el mensaje está en la imagen y lo primero que se ve es un logo distinto («sajú.» en óvalo). Debería verse el título «Agenda tu examen» como texto y un botón amarillo real.",
+    "¿Por qué Sajú?: tiene el título más grande de la página pero está al final y sus argumentos (garantía, marca colombiana) quedan dentro de un carrusel. Esos argumentos deberían estar cerca del primer producto."
+  ],
+  "sharp_headlines": {
+    "1": "Tu portada vende un local, no tu marca",
+    "2": "En celular, tu tienda responde tarde",
+    "3": "Agendar tu examen exige pagar primero",
+    "4": "Nadie encuentra tu teléfono ni tu correo",
+    "5": "Tu mejor garantía está escondida al final",
+    "6": "Dices ser sostenible, pero no lo pruebas",
+    "7": "Tus precios casi no se leen",
+    "8": "Tus botones grises no piden la compra",
+    "9": "Tus promociones cambian antes de leerlas",
+    "10": "Tus gafas no dicen para qué son"
+  }
+}

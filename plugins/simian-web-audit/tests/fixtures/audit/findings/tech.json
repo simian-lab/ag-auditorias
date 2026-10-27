@@ -1,0 +1,97 @@
+{
+ "area": "tech",
+ "findings": [
+  {
+   "id": "tech-1",
+   "title": "La página pesa 13,4 MB",
+   "summary": "Carga lenta en celular.",
+   "now": "Banner de 10 MB.",
+   "fix": "Imágenes en WebP.",
+   "why": "Un sitio lento pierde visitas.",
+   "impact": 5,
+   "effort": "Bajo",
+   "headline_metric": "13,4 MB",
+   "evidence": [
+    "total-byte-weight 13714 KiB"
+   ],
+   "technical_note": "",
+   "pin": {
+    "screenshot": "desktop-fullpage.jpg",
+    "x_pct": 60,
+    "y_pct": 12
+   }
+  },
+  {
+   "id": "tech-2",
+   "title": "Faltan protecciones de seguridad",
+   "summary": "Sin cabeceras estándar.",
+   "now": "Sin HSTS ni CSP.",
+   "fix": "Activar cabeceras.",
+   "why": "Un sitio vulnerado daña la marca.",
+   "impact": 3,
+   "effort": "Bajo",
+   "evidence": [
+    "curl -I"
+   ],
+   "technical_note": "admin user exposed",
+   "pin": null
+  }
+ ],
+ "checks": [
+  {
+   "id": "tech-weight",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-lcp",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-images",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-lazy",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-render-blocking",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-cache",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-https",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-security-headers",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-console",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-links",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "tech-404",
+   "result": "pass",
+   "evidence": "fixture"
+  }
+ ]
+}

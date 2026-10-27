@@ -1,0 +1,66 @@
+{
+  "source": "OpenSEO AI visibility, run eaeeaa5b-94e5-4173-b481-0096ba6efe0a (manual check, 2026-10-24)",
+  "date": "Octubre 2026",
+  "brand": "eBiopacking",
+  "answers": [
+    {
+      "engine": "chatgpt",
+      "prompt": "¿Quién fabrica empaques de cartón corrugado en Mosquera, Cundinamarca?",
+      "mentioned": true,
+      "named": [
+        "Latin Pack S.A.S.",
+        "Diseño Empaques Corrugados Ltda.",
+        "E Biopacking S.A.S.",
+        "Karton S.A.S.",
+        "Cartones América",
+        "Indipaq Ingeniería y Diseño S.A.S."
+      ],
+      "note_es": "Te nombra en tercer lugar, pero solo con datos de directorios empresariales: no cita tu sitio web ni describe tus productos."
+    },
+    {
+      "engine": "gemini",
+      "prompt": "¿Quién fabrica empaques de cartón corrugado en Mosquera, Cundinamarca?",
+      "mentioned": false,
+      "named": [
+        "Cartones América",
+        "Reempacar",
+        "Indipaq Ingeniería y Diseño S.A.S.",
+        "Cartonería Mosquera S.A."
+      ],
+      "note_es": "Aunque tu planta está en Mosquera, Gemini no te menciona entre los fabricantes de la zona."
+    },
+    {
+      "engine": "chatgpt",
+      "prompt": "¿Qué empresas fabrican cajas de cartón para exportar flores en Colombia?",
+      "mentioned": false,
+      "named": [
+        "CentroPack",
+        "Packing S.A.S.",
+        "Distribuciones y Empaques S.A.",
+        "Corrumed S.A.",
+        "Smurfit Westrock",
+        "Empacor S.A.",
+        "Biocartón S.A.S."
+      ],
+      "note_es": "Recomienda siete proveedores de cajas para flores y tú no estás, aunque es una de tus líneas principales."
+    },
+    {
+      "engine": "google_ai_overview",
+      "prompt": "¿Qué empresas fabrican cajas de cartón para exportar flores en Colombia?",
+      "mentioned": false,
+      "named": [
+        "Smurfit Westrock",
+        "Empaques Tecnipack",
+        "Cartonecol",
+        "Cymacosta",
+        "Divipack",
+        "PPC Temkin Flexible Packaging"
+      ],
+      "note_es": "El resumen de IA de Google nombra a seis empresas, entre ellas tu competidor Divipack; tú no apareces."
+    }
+  ],
+  "no_answer": [
+    "gemini: ¿Qué empresas fabrican cajas de cartón para exportar flores en Colombia?",
+    "google_ai_overview: ¿Quién fabrica empaques de cartón corrugado en Mosquera, Cundinamarca?"
+  ]
+}

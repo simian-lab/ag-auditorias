@@ -1,0 +1,32 @@
+{
+  "source": "https://simian.co/portafolio/ (extracted 2026-10-24)",
+  "contact": {"whatsapp": "+57 311 599 2255", "whatsapp_url": "https://wa.me/573115992255", "email": "info@simian.co"},
+  "services": ["Estrategia de producto / Consultoría", "Automatización con IA", "UX/UI centrado en el usuario", "Desarrollo web y móvil", "Infraestructura, seguridad y DevOps", "Soporte y mejora continua"],
+  "cases": [
+    {"slug": "veyalthi", "client": "Veyalthi Group", "sector": "Distribución de insumos médicos",
+     "url": "https://simian.co/veyalthi/", "image": "card-veyalthi.jpg",
+     "headline": "Agente comercial de IA por WhatsApp que atiende, asesora y cotiza 24/7",
+     "results": ["Atención comercial 24/7, primer contacto al instante", "Cotizaciones formales en PDF en segundos, con precios reales e IVA", "Escalamiento a un asesor humano con captura del lead"],
+     "matches": ["whatsapp", "quote-cta", "b2b-sales", "catalog"]},
+    {"slug": "noticiero-90-minutos", "client": "Noticiero 90 Minutos", "sector": "Medios de comunicación",
+     "url": "https://simian.co/noticiero-90-minutos/", "image": "card-noticiero-90-minutos.png",
+     "headline": "Reconstrucción de un sitio WordPress frágil, lento y lleno de plugins",
+     "results": ["Mejora significativa en velocidad de carga y experiencia móvil", "Base técnica optimizada para SEO", "Infraestructura en AWS más segura y estable", "Sistema de diseño propio"],
+     "matches": ["wordpress", "performance", "seo", "security", "design-system"]},
+    {"slug": "salud-total", "client": "Salud Total E.P.S.", "sector": "Salud",
+     "url": "https://simian.co/salud-total/", "image": "card-salud-total.png",
+     "headline": "Rediseño del portal de afiliados centrado en usabilidad y accesibilidad",
+     "results": ["Experiencia más clara orientada a la autogestión", "Buenas prácticas de accesibilidad digital", "Mejores tiempos de carga y mayor seguridad"],
+     "matches": ["ux", "accessibility", "forms", "performance"]},
+    {"slug": "app-externado", "client": "Universidad Externado de Colombia", "sector": "Educación superior",
+     "url": "https://simian.co/app-externado/", "image": "card-app-uexternado.png",
+     "headline": "App móvil (PWA) que centraliza los servicios estudiantiles",
+     "results": ["Servicios centralizados en una sola plataforma", "Alta velocidad de carga y bajo consumo", "Administrador a la medida"],
+     "matches": ["mobile", "ux"]},
+    {"slug": "elecciones-el-tiempo", "client": "El Tiempo", "sector": "Medios de comunicación",
+     "url": "https://simian.co/elecciones-el-tiempo/", "image": "thumb-elecciones-et.jpg",
+     "headline": "Aplicación web interactiva de afinidad electoral para el medio más influyente de Colombia",
+     "results": ["Experiencia rápida, sin fricción", "Metodología trazable y verificable"],
+     "matches": ["interactive", "performance"]}
+  ]
+}

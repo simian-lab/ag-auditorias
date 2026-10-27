@@ -1,0 +1,223 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Los banners y categorías son solo imágenes con texto",
+      "summary": "Quien usa lector de pantalla o traductor no se entera de la colección NEXO, del Hot Sale ni de las categorías, que son la puerta de entrada a la tienda.",
+      "now": "El banner principal (\"NUEVA COLECCIÓN NEXO… DESCUBRE NEXO\") y las fichas de categoría (CICLISMO, RUNNING, TRIATLÓN, LIFESTYLE, TOPS, JERSEYS…) son fotos con el texto pintado encima y sin descripción. Los íconos de beneficios (envío gratis, devoluciones) sí tienen descripción, pero se lee con código visible: \"<b>Envío gratis</b>\".",
+      "fix": "Escribir los títulos y botones del banner y de las categorías como texto real sobre la foto, y dar a cada imagen una descripción útil (por ejemplo \"Colección NEXO de ciclismo\"); limpiar las etiquetas <b> de los textos de los íconos.",
+      "why": "Si el mensaje principal no se puede leer, tampoco lo entienden los buscadores, los traductores automáticos ni los asistentes de IA que recomiendan tiendas.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "15 de 25 imágenes con descripción vacía",
+      "evidence": [
+        "raw/home.html: hero slides img.ssimg src BANNER_NEXO / BANNER_HOT_SALE (desktop and mobile versions) all alt=\"\"; the overlay text container div.ss_txt is empty, so all copy is baked into the JPG",
+        "raw/home.html: category tiles img src IMAGENES_DEPORTE_ESPANOL-01..04 alt=\"\" inside a.cl_item_link with title=\"\" (labels CICLISMO/RUNNING/TRIATLON/LIFESTYLE only exist in the pixels, see screenshots/desktop-fullpage.jpg y≈1100-1330)",
+        "raw/home.html: 25 <img> on the home, 15 with alt=\"\" and 1 without alt",
+        "raw/home.html: trust icons alt=\"&lt;b&gt;Envío gratis&lt;/b&gt;\", \"&lt;b&gt;Devoluciones gratuitas&lt;/b&gt;\", \"&lt;b&gt;Eco amigables&lt;/b&gt;\", \"&lt;b&gt;DISEÑADO PARA CADA DISCIPLiNA&lt;/b&gt;\" (escaped markup is read aloud)",
+        "Product photos are CSS background images (div.grid_img data-bgset), not <img>; the product link carries aria-label with the product name, so products are named but photos are invisible to assistive tech"
+      ],
+      "technical_note": "Lighthouse a11y score is 93 (mobile) / 92 (desktop) because axe passes alt=\"\" as 'decorative' and cannot read text inside pixels; the score only covers automated checks and overstates real accessibility. Fix in the slideshow and collection-list section settings (use the theme's heading/button text fields instead of baked banners) and edit image alt texts in Shopify Files.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 31
+      }
+    },
+    {
+      "id": "a11y-2",
+      "title": "Treinta enlaces e íconos no dicen a dónde llevan",
+      "summary": "Una persona ciega que navega con lector de pantalla oye \"enlace\" sin destino en la lupa de búsqueda, el banner y las categorías, y abandona la compra.",
+      "now": "Lighthouse encontró 30 enlaces sin nombre: la lupa de búsqueda, una pestaña del menú móvil, los banners principales y todas las fichas de categoría. Además, todos los botones \"COMPRAR\" se anuncian igual, sin decir qué producto compran.",
+      "fix": "Poner un nombre a cada ícono y enlace de imagen (\"Buscar\", \"Ver colección NEXO\", \"Ropa de ciclismo\"…) y que cada botón diga \"Comprar\" más el nombre del producto.",
+      "why": "Son los caminos principales hacia el catálogo; si no se entienden, esa persona no llega a ningún producto.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "30 enlaces sin nombre",
+      "evidence": [
+        "raw/lighthouse-mobile.json audit link-name: score 0, 30 items",
+        "header#header a.hdicon.searchIcn[href=/search] (icon only, title=\"\")",
+        "div.mob_nav_wr a.fl1.mnvTtl[href=#mobCtnav] (empty text; raw/a11y-home-rendered.html)",
+        "slideshow a.ss_link[href=/collections/nexo], a.ss_link[href=/collections/sale] (image with alt=\"\" only)",
+        "a.cl_item_link to /collections/ropa-ciclismo, running, triatlon, lifestyle, jersey-ciclismo, pantalonetas-ciclismo, shorts-running, top-mujer (image with alt=\"\", title=\"\")",
+        "raw/home.html: every product button a.gbtn.quickShop has aria-label=\"COMPRAR\" (identical, no product name)"
+      ],
+      "technical_note": "Positive: footer social icons have visually hidden .fallback_txt names, Swiper adds role=button + aria-label to arrows/bullets at runtime (in English: 'Next slide'). Cart drawer button text reads 'Translation missing: es.sections.cart.update' (missing locale key in theme). Chat iframe title is 'wizybot-chat-iframe'.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 84.5,
+        "y_pct": 11.6
+      }
+    },
+    {
+      "id": "a11y-3",
+      "title": "Textos claros sobre fotos y etiquetas casi ilegibles",
+      "summary": "El menú, el botón \"Descubre NEXO\" y las etiquetas \"New\" se pierden sobre fondos claros, y los clientes con baja visión o en la calle con el celular no los leen.",
+      "now": "La etiqueta \"New\" de los productos es texto blanco sobre dorado claro, con un contraste de 1,64:1 y letra de 9 px. El menú superior blanco sobre la foto del banner queda en torno a 2,2:1 en \"HOMBRE\" y \"DEPORTES\", y el botón \"DESCUBRE NEXO\" del banner también ronda 2,2:1. El mínimo recomendado es 4,5:1.",
+      "fix": "Usar texto oscuro (o un dorado más oscuro) en las etiquetas, subirlas a 11-12 px, y poner una franja o sombra oscura detrás del menú y de los textos del banner.",
+      "why": "Si no se lee el menú ni la novedad, se navega menos y se compra menos, sobre todo en celular con sol.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "1,64:1",
+      "evidence": [
+        "raw/lighthouse-mobile.json audit color-contrast: label.lbl.pr_lbl2 'New' — #ffffff on #d4ca9f, 1.64:1, 9px (4 items)",
+        "raw/a11y-css/theme.css: .pr_lbl .lbl{color:#fff;font-size:9px} .pr_lbl2{background-color:#d4ca9f}",
+        "screenshots/desktop-viewport.png pixel sampling (WCAG formula): nav 'HOMBRE' #fff vs avg background rgb(176,173,168) = 2.24:1; 'DEPORTES' vs rgb(177,176,174) = 2.17:1; 'COMPLEMENTOS' brightest 10% background = 3.10:1",
+        "screenshots/desktop-viewport.png: 'DESCUBRE NEXO' (baked in image) white vs rgb(198,169,160) = 2.17:1",
+        "home.html: .hdicon and top-level menu links forced to #ffffff!important while header is transparent over the hero"
+      ],
+      "technical_note": "Body text #333 on #fff (12.6:1) and .btn black on #d4ca9f pass. Lighthouse does not test text over images (axe marks them 'incomplete'), so the nav/hero failures are absent from its report. Pixel ratios are approximations from the 1440x900 screenshot.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 31.7,
+        "y_pct": 11.8
+      }
+    },
+    {
+      "id": "a11y-4",
+      "title": "Con teclado no se ve dónde estás",
+      "summary": "Quien no puede usar mouse (lesiones, temblores, usuarios avanzados) se pierde en la página y no llega a las subcategorías del menú.",
+      "now": "El tema borra a propósito el recuadro de foco en todos los enlaces y campos, así que al usar Tab no se ve qué está seleccionado. Además, los submenús de escritorio (Hombre, Mujer, Deportes…) solo se abren al pasar el mouse.",
+      "fix": "Restaurar un recuadro de foco visible (por ejemplo, contorno dorado de 2 px) y hacer que los submenús se abran también con teclado.",
+      "why": "Es una corrección pequeña en el código del tema que deja la tienda usable para todos y cumple la norma WCAG que se exige cada vez más en ventas online.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html inline CSS: a,img{outline:0!important} a:focus,a:hover{outline:0!important} button,input,optgroup,select,textarea{outline:0}",
+        "raw/a11y-css/theme.css: .btn{outline:none}; input:focus{border-color:#bbb} (1.9:1 vs white, too faint); .btn:focus changes background to black (only visible focus cue)",
+        "raw/home.html: #main_nav li:hover>div.mgmenu, #main_nav li:hover>.ddmenu reveal submenus; no :focus-within rule and no aria-expanded anywhere",
+        "Positive: skip link 'Ir directamente al contenido' exists; Swiper arrows/bullets are tabindex=0 role=button (raw/a11y-home-rendered.html)"
+      ],
+      "technical_note": "Replace outline:0!important with a :focus-visible style (e.g. outline:2px solid #111; outline-offset:2px, or the gold #d4ca9f on dark backgrounds) and add #main_nav li:focus-within > .mgmenu/.ddmenu to mirror the hover rule.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 46,
+        "y_pct": 11.8
+      }
+    },
+    {
+      "id": "a11y-5",
+      "title": "El formulario de contacto no tiene etiquetas visibles",
+      "summary": "Al empezar a escribir desaparece la pista de qué va en cada campo, y quien usa lector de pantalla o autocompletar tiene más fricción para escribirte.",
+      "now": "En /pages/contact los campos Nombre, Correo, Teléfono y Mensaje solo tienen texto de ejemplo dentro de la casilla, sin etiqueta y sin autocompletar. El boletín y el buscador funcionan igual.",
+      "fix": "Añadir etiquetas visibles encima de cada campo y activar el autocompletado (nombre, correo, teléfono) para que el navegador los llene solo.",
+      "why": "Cada pequeña fricción en el formulario es un mensaje de cliente que no llega a tu equipo.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "0 de 4 campos con etiqueta",
+      "evidence": [
+        "raw/a11y-contact.html form#contact_form: input#ContactFormName type=text placeholder=\"Nombre\"; input#ContactFormEmail type=email placeholder=\"Correo electrónico\"; input#ContactFormPhone type=tel pattern=\"[0-9\\-]*\" placeholder=\"Número de teléfono\"; textarea#ContactFormMessage placeholder=\"Mensaje\"; no <label for>, no autocomplete attributes",
+        "raw/home.html footer newsletter: input#Email- type=email placeholder only, no label",
+        "raw/home.html search: input.s_input type=search placeholder=\"¿Qué estás buscando?\" autocomplete=off, no label",
+        "Positive: input types email/tel are correct"
+      ],
+      "technical_note": "Lighthouse 'label' passes because axe accepts the placeholder as accessible name; WCAG 3.3.2 still requires a persistent visible label. Add autocomplete=name/email/tel. Phone pattern rejects '+57' and spaces without an error message.",
+      "pin": null
+    },
+    {
+      "id": "a11y-6",
+      "title": "El título principal de la página es el logo",
+      "summary": "Los lectores de pantalla y los buscadores toman \"Safetti\" como tema principal de la portada, en lugar de lo que vendes.",
+      "now": "La portada tiene dos títulos principales: el logo \"Safetti\" y un texto al final de la página. Los nombres de 40 productos están marcados como subtítulos del mismo nivel que las secciones, y la página de contacto no tiene título principal.",
+      "fix": "Dejar un único título principal arriba que diga qué vendes (ropa deportiva de ciclismo, running y triatlón), y ordenar secciones y productos por niveles.",
+      "why": "Una estructura clara permite saltar entre secciones con lector de pantalla y ayuda a que Google entienda la tienda.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "2 títulos H1",
+      "evidence": [
+        "raw/home.html: <h1 class=\"header-logo\"> wraps the logo img alt=\"Safetti\"; second <h1> 'Safetti ropa deportiva de alto rendimiento para cada disciplina' near the footer (Ver más block)",
+        "raw/home.html: 53 headings; ~40 product titles are <h2> at the same level as section titles (CATEGORÍAS, DEPORTES, LO MÁS VENDIDO)",
+        "raw/lighthouse-mobile.json audit heading-order: h5 'COMPRA TUS PRENDAS POR TALLA' skips levels",
+        "raw/a11y-contact.html: no <h1>; page title is <h2>CONTÁCTANOS</h2>"
+      ],
+      "technical_note": "Change the logo wrapper to <div> (keep <h1> only on the template title), product card titles to <h3>, and the size-guide h5 to h2.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 9.9,
+        "y_pct": 11.7
+      }
+    },
+    {
+      "id": "a11y-7",
+      "title": "Carruseles que se mueven solos sin botón de pausa",
+      "summary": "El banner y la barra de promociones cambian cada 4-5 segundos y no dejan terminar de leer; a personas con TDAH, dislexia o mareo por movimiento les distrae.",
+      "now": "Tres carruseles avanzan solos (barra superior de promociones, banner principal y una lista de colecciones) y no hay botón de pausa. Las animaciones de entrada (zoom en 42 elementos) tampoco se desactivan cuando el usuario pidió reducir el movimiento en su teléfono.",
+      "fix": "Añadir un botón de pausa visible, detener el avance al pasar el mouse o al usar el teclado, y respetar la opción \"reducir movimiento\" del sistema.",
+      "why": "Mensajes como \"Envío gratis\" o \"Compra a crédito\" solo convencen si alcanzan a leerse.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "3 carruseles automáticos",
+      "evidence": [
+        "raw/home.html: #Quotes-promotion-bar_top data-autoplay='{ \"delay\":\"5000\" }' (rotates 'COMPRA A CREDITO…', 'ENVÍO GRATIS…')",
+        "raw/home.html: hero slideshow data-autoplay='{ \"delay\":\"4000\" }' data-loop=\"true\" data-effect=\"fade\"",
+        "raw/home.html: #swptemplate--19284316881114__collection_list_3Rkmcr data-autoplay='{ \"delay\":\"5000\" }'",
+        "No pause control or pauseOnMouseEnter found in raw/home.html or raw/a11y-home-rendered.html",
+        "42 elements with class 'wow zoomIn'; the only prefers-reduced-motion rule in theme.css is for scroll-behavior"
+      ],
+      "technical_note": "Swiper supports autoplay.pauseOnMouseEnter and disableOnInteraction; add a play/pause button and wrap WOW.js init in matchMedia('(prefers-reduced-motion: reduce)') check.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 2.3
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "a11y-contrast",
+      "result": "fail",
+      "evidence": "'New' labels #fff on #d4ca9f = 1.64:1 at 9px (Lighthouse color-contrast); nav links white over hero photo ≈2.2:1 and baked 'DESCUBRE NEXO' ≈2.2:1 (pixel sampling). Body text #333/#fff and gold buttons pass."
+    },
+    {
+      "id": "a11y-text-not-image",
+      "result": "fail",
+      "evidence": "Hero headline/CTA (NEXO, Hot Sale) and all category tile labels are baked into JPGs; slideshow text container div.ss_txt is empty."
+    },
+    {
+      "id": "a11y-alt",
+      "result": "fail",
+      "evidence": "15 of 25 <img> have alt=\"\" including informative hero and category images; trust icons have alt with escaped '<b>' markup; product photos are CSS backgrounds. Logo alt 'Safetti' and WhatsApp alt are fine."
+    },
+    {
+      "id": "a11y-headings",
+      "result": "fail",
+      "evidence": "Home has 2 H1 (logo and footer SEO text); h5 skips levels (Lighthouse heading-order); contact page has no H1."
+    },
+    {
+      "id": "a11y-names",
+      "result": "fail",
+      "evidence": "Lighthouse link-name: 30 links without name (search icon, mobile tab, hero and category links). Social icons and Swiper arrows do have names."
+    },
+    {
+      "id": "a11y-focus",
+      "result": "fail",
+      "evidence": "Inline CSS a:focus{outline:0!important} and outline:0 on button/input; inputs only change border to #bbb; only .btn changes background on focus."
+    },
+    {
+      "id": "a11y-keyboard",
+      "result": "partial",
+      "evidence": "Carousel arrows/bullets are focusable role=button (Swiper a11y) and a skip link exists; desktop submenus open only on :hover (no :focus-within/aria-expanded), so subcategories are unreachable by keyboard. Chat widget not tested."
+    },
+    {
+      "id": "a11y-form-labels",
+      "result": "fail",
+      "evidence": "Contact form (Nombre, Correo, Teléfono, Mensaje), newsletter and search use placeholder only, no <label>, no autocomplete; input types email/tel are correct."
+    },
+    {
+      "id": "a11y-motion",
+      "result": "fail",
+      "evidence": "3 autoplay carousels (4-5 s) with no pause control; 42 WOW zoomIn animations without prefers-reduced-motion handling."
+    },
+    {
+      "id": "a11y-lang",
+      "result": "pass",
+      "evidence": "<html lang=\"es\"> on home and contact; Lighthouse html-has-lang pass."
+    },
+    {
+      "id": "a11y-targets",
+      "result": "pass",
+      "evidence": "Lighthouse target-size pass on mobile; header icons have 10px padding around 18px icons, size buttons 40px; footer social icons 16px with 14px spacing meet the spacing exception. Viewport allows zoom."
+    }
+  ]
+}

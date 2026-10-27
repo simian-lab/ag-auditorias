@@ -1,0 +1,63 @@
+internal links 91 imgs 110
+200 0 https://www.saju.co/collections/gafas-lentes-sol-plastico-reciclado-saju
+429 0 https://www.saju.co/products/m55c201s
+200 0 https://www.saju.co/collections/examenes-visuales
+200 0 https://www.saju.co/pages/terminos-y-condiciones
+200 0 https://www.saju.co/collections/gafas-formuladas-acetate-renew
+429 0 https://www.saju.co/products/examen-visual-san-roque
+429 0 https://www.saju.co/products/examen-visual-calle-122
+200 0 https://www.saju.co/products/examen-visual-calle-82
+429 0 https://www.saju.co/products/chelsea-mars
+200 0 https://www.saju.co/collections/triple-cases
+200 0 https://www.saju.co/collections/gafas-de-sol
+429 0 https://www.saju.co/products/examen-visual-parque-la-colina
+200 0 https://www.saju.co/collections/acetate-renew
+200 0 https://www.saju.co/products/chelsea-midnight-green
+429 0 https://www.saju.co/products/cumbre-mole
+200 0 https://www.saju.co/
+429 0 https://www.saju.co/products/rocket-earth-copy
+200 0 https://www.saju.co/pages/tiendas-1
+200 0 https://www.saju.co/pages/mi-pedido
+200 0 https://www.saju.co/collections/gafas-especializadas
+429 0 https://www.saju.co/products/block-gravel
+429 0 https://www.saju.co/products/paramo-denim
+200 0 https://www.saju.co/collections/accesorios-v2
+200 0 https://www.saju.co/products/intense-cinnamon-fire
+200 0 https://www.saju.co/cart
+429 0 https://www.saju.co/products/pista-sangria
+200 0 https://www.saju.co/pages/collabs
+429 0 https://www.saju.co/products/cumbre-gravel
+200 0 https://www.saju.co/products/chelsea-earth
+429 0 https://www.saju.co/products/gafas-manhattan-2
+200 0 https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp?v=1747191712&width=2400
+200 0 https://www.saju.co/cdn/shop/files/BLOCKGRAVEL_2.jpg?v=1787958500&width=2048
+200 0 https://www.saju.co/cdn/shop/files/BLOCKGRAVEL_4.jpg?v=1787958499&width=2048
+200 0 https://www.saju.co/cdn/shop/files/BLOCKMOLE_3.jpg?v=1787958444&width=2048
+200 0 https://www.saju.co/cdn/shop/files/BLOCKMOLE_4.jpg?v=1787958444&width=2048
+200 0 https://www.saju.co/cdn/shop/files/Banner-CuelgaGafas_84c74fea-c095-47bd-b174-7143bfbe88d0.webp?v=1747191472&width=1500
+200 0 https://www.saju.co/cdn/shop/files/BannerFormuladas_b91cde4d-5d23-4bd4-9725-c3b40394841e.webp?v=1747191772&width=2400
+200 0 https://www.saju.co/cdn/shop/files/CANOPYJADE_3.jpg?v=1787958525&width=2048
+200 0 https://www.saju.co/cdn/shop/files/CANOPYJADE_6.jpg?v=1787958525&width=2048
+200 0 https://www.saju.co/cdn/shop/files/CANOPYMOLE_3.jpg?v=1787958547&width=2048
+NON-200: [('429 0', 'https://www.saju.co/products/m55c201s'), ('429 0', 'https://www.saju.co/products/examen-visual-san-roque'), ('429 0', 'https://www.saju.co/products/examen-visual-calle-122'), ('429 0', 'https://www.saju.co/products/chelsea-mars'), ('429 0', 'https://www.saju.co/products/examen-visual-parque-la-colina'), ('429 0', 'https://www.saju.co/products/cumbre-mole'), ('429 0', 'https://www.saju.co/products/rocket-earth-copy'), ('429 0', 'https://www.saju.co/products/block-gravel'), ('429 0', 'https://www.saju.co/products/paramo-denim'), ('429 0', 'https://www.saju.co/products/pista-sangria'), ('429 0', 'https://www.saju.co/products/cumbre-gravel'), ('429 0', 'https://www.saju.co/products/gafas-manhattan-2')]
+retry 429 0 https://www.saju.co/products/m55c201s
+retry 429 0 https://www.saju.co/products/examen-visual-san-roque
+retry 429 0 https://www.saju.co/products/examen-visual-calle-122
+retry 429 0 https://www.saju.co/products/chelsea-mars
+retry 429 0 https://www.saju.co/products/examen-visual-parque-la-colina
+retry 429 0 https://www.saju.co/products/cumbre-mole
+retry 200 0 https://www.saju.co/products/rocket-earth-copy
+retry 429 0 https://www.saju.co/products/block-gravel
+retry 429 0 https://www.saju.co/products/paramo-denim
+retry 429 0 https://www.saju.co/products/pista-sangria
+retry 200 0 https://www.saju.co/products/cumbre-gravel
+retry 200 0 https://www.saju.co/products/gafas-manhattan-2
+retry2 429 https://www.saju.co/products/m55c201s
+retry2 200 https://www.saju.co/products/examen-visual-san-roque
+retry2 429 https://www.saju.co/products/examen-visual-calle-122
+retry2 429 https://www.saju.co/products/chelsea-mars
+retry2 429 https://www.saju.co/products/examen-visual-parque-la-colina
+retry2 429 https://www.saju.co/products/cumbre-mole
+retry2 429 https://www.saju.co/products/block-gravel
+retry2 429 https://www.saju.co/products/paramo-denim
+retry2 200 https://www.saju.co/products/pista-sangria

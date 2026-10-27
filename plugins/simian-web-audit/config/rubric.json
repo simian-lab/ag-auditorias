@@ -1,0 +1,69 @@
+{
+  "version": "1",
+  "areas": {
+    "ux": [
+      {"id": "ux-value-prop", "weight": 3, "label": "La primera pantalla dice qué vendes y para quién", "check": "Within the first viewport (desktop and mobile), a real-text statement names the product category and the target customer."},
+      {"id": "ux-quote-cta", "weight": 3, "label": "Hay un botón visible para cotizar o contactar ventas", "check": "A button/link labelled to request a quote or contact sales is visible in the first viewport. A floating chat widget alone does not count."},
+      {"id": "ux-catalog-path", "weight": 3, "label": "Cada producto lleva a una ficha o a una acción", "check": "Product/category items on the home and products page link to a detail page or a quote action (not dead images/cards)."},
+      {"id": "ux-contact-visible", "weight": 2, "label": "Teléfono y correo visibles en todas las páginas", "check": "Phone and email appear in the header or footer of every main page."},
+      {"id": "ux-contact-tappable", "weight": 1, "label": "Teléfono y correo se pueden pulsar", "check": "Phone uses tel: and email uses mailto: links."},
+      {"id": "ux-form-data", "weight": 2, "label": "El formulario pide lo que ventas necesita", "check": "The contact/quote form asks for company, product of interest and quantity (or equivalent) and states response time."},
+      {"id": "ux-form-friction", "weight": 1, "label": "El formulario es corto y valida bien", "check": "6 or fewer required fields, correct input types, required fields marked, clear error messages."},
+      {"id": "ux-chat-ready", "weight": 2, "label": "El chat o WhatsApp está listo para vender", "check": "Prefilled message and contact name are real (no plugin demo text); the number matches the contact page. 'na' if there is no chat."},
+      {"id": "ux-mobile-nav", "weight": 2, "label": "El menú funciona bien en celular", "check": "A mobile menu exists and exposes all main sections (verify with the Lighthouse mobile screenshot or device emulation)."},
+      {"id": "ux-trust-near-cta", "weight": 2, "label": "Hay pruebas de confianza cerca de la decisión", "check": "Years, clients, certifications, testimonials or numbers appear near the main CTA or product list."},
+      {"id": "ux-content-not-hidden", "weight": 1, "label": "El contenido clave no se esconde en carruseles", "check": "Key offers/products are not only inside auto-advancing carousels or inside images."}
+    ],
+    "a11y": [
+      {"id": "a11y-contrast", "weight": 3, "label": "Textos y botones con contraste suficiente (4,5:1)", "check": "Body text and button labels meet WCAG AA contrast 4.5:1 (3:1 for large text), including text over images."},
+      {"id": "a11y-text-not-image", "weight": 3, "label": "El texto importante no está dentro de imágenes", "check": "Headlines and key messages are real text, not baked into images."},
+      {"id": "a11y-alt", "weight": 2, "label": "Las imágenes tienen descripciones útiles", "check": "Informative images have meaningful alt text (not file names); decorative images have empty alt."},
+      {"id": "a11y-headings", "weight": 1, "label": "Un título principal y títulos en orden", "check": "Exactly one H1 per page and a logical heading order."},
+      {"id": "a11y-names", "weight": 2, "label": "Iconos y botones tienen nombre para lectores de pantalla", "check": "Icon-only links/buttons (social, arrows, chat) have accessible names."},
+      {"id": "a11y-focus", "weight": 2, "label": "Se ve dónde está el foco al usar teclado", "check": "Visible focus indicator on links, buttons and form fields."},
+      {"id": "a11y-keyboard", "weight": 2, "label": "Menú y carruseles funcionan con teclado", "check": "Menu, carousels and chat can be operated with the keyboard; no focus traps."},
+      {"id": "a11y-form-labels", "weight": 2, "label": "Los campos del formulario tienen etiquetas visibles", "check": "Visible labels (not placeholder-only), autocomplete and correct types."},
+      {"id": "a11y-motion", "weight": 1, "label": "Lo que se mueve solo se puede pausar", "check": "Auto-advancing carousels/animations have a pause control or respect prefers-reduced-motion."},
+      {"id": "a11y-lang", "weight": 1, "label": "El idioma de la página está declarado", "check": "<html lang> is set correctly."},
+      {"id": "a11y-targets", "weight": 1, "label": "Botones de tamaño cómodo en celular", "check": "Touch targets at least 24x24 CSS px with spacing."}
+    ],
+    "visual": [
+      {"id": "vis-headline-legible", "weight": 3, "label": "El mensaje principal se lee bien en celular", "check": "The main headline is real text and at least ~24px on a 390-412px wide phone."},
+      {"id": "vis-focal-point", "weight": 2, "label": "Cada sección tiene un foco claro", "check": "The first screen and each section have one clear focal point; the eye lands on what matters."},
+      {"id": "vis-fonts", "weight": 1, "label": "Dos tipografías como máximo", "check": "At most 2 font families in use (including text inside images)."},
+      {"id": "vis-buttons", "weight": 2, "label": "Botones con un estilo coherente", "check": "At most 2 button styles (primary/secondary) used consistently."},
+      {"id": "vis-headings", "weight": 1, "label": "Títulos con una escala coherente", "check": "Headings of the same level look the same across sections."},
+      {"id": "vis-palette", "weight": 1, "label": "Paleta de colores definida", "check": "Brand colors limited to a small set with fixed roles (no near-duplicate shades)."},
+      {"id": "vis-photos", "weight": 2, "label": "Fotos reales y de buena calidad", "check": "Real, well-lit, consistent photos; no low-quality or generic stock as main imagery."},
+      {"id": "vis-products", "weight": 2, "label": "Productos presentados con nombre y contexto", "check": "Products are shown with a visible name and use, not as bare photos."},
+      {"id": "vis-positioning", "weight": 2, "label": "El diseño demuestra lo que la marca promete", "check": "Claims (e.g. sustainability, premium, technical capability) are backed by visible proof (seals, numbers, process imagery)."},
+      {"id": "vis-spacing", "weight": 1, "label": "Espacios y alineación consistentes", "check": "No large empty bands or uneven gaps; elements align to a grid on desktop and mobile."},
+      {"id": "vis-up-to-date", "weight": 1, "label": "El sitio se ve actualizado", "check": "No outdated copyright year or dated patterns that signal abandonment."}
+    ],
+    "tech": [
+      {"id": "tech-weight", "weight": 3, "label": "La página de inicio pesa menos de 3 MB", "check": "Lighthouse total-byte-weight below 3 MB (KiB/1024)."},
+      {"id": "tech-lcp", "weight": 3, "label": "El contenido principal aparece en menos de 2,5 s", "check": "Observed LCP (audits.metrics observedLargestContentfulPaint, mobile) at or below 2.5 s."},
+      {"id": "tech-images", "weight": 2, "label": "Imágenes en formato moderno y del tamaño correcto", "check": "Images use WebP/AVIF or are properly sized/compressed (Lighthouse image audits pass or savings under 100 KiB)."},
+      {"id": "tech-lazy", "weight": 1, "label": "Las imágenes de abajo cargan solo cuando se necesitan", "check": "Below-the-fold images use lazy loading."},
+      {"id": "tech-render-blocking", "weight": 1, "label": "Nada bloquea la primera visualización", "check": "Lighthouse render-blocking savings under 300 ms; fonts limited to needed weights."},
+      {"id": "tech-cache", "weight": 1, "label": "El navegador guarda los archivos para la siguiente visita", "check": "Static JS/CSS/images served with cache headers (max-age of at least 7 days)."},
+      {"id": "tech-https", "weight": 2, "label": "Sitio seguro con HTTPS", "check": "HTTPS works and HTTP redirects to HTTPS."},
+      {"id": "tech-security-headers", "weight": 2, "label": "Protecciones básicas del servidor activas", "check": "At least 3 of: HSTS, CSP, X-Frame-Options/frame-ancestors, X-Content-Type-Options, Referrer-Policy."},
+      {"id": "tech-console", "weight": 1, "label": "Sin errores en el código de la página", "check": "No console errors (Lighthouse errors-in-console)."},
+      {"id": "tech-links", "weight": 2, "label": "Sin enlaces ni imágenes rotas", "check": "No broken internal links or images among the URLs checked."},
+      {"id": "tech-404", "weight": 1, "label": "Las páginas inexistentes responden bien", "check": "A missing URL returns HTTP 404 with a useful page."}
+    ],
+    "seo": [
+      {"id": "seo-appears", "weight": 3, "label": "Apareces cuando un comprador busca lo que vendes", "check": "The site appears in at least half of the recorded buyer search tests."},
+      {"id": "seo-titles", "weight": 2, "label": "Cada página tiene un título propio y claro", "check": "Unique, descriptive <title> per main page."},
+      {"id": "seo-descriptions", "weight": 2, "label": "Cada página tiene descripción para Google", "check": "Meta description present on main pages."},
+      {"id": "seo-h1", "weight": 1, "label": "Cada página tiene un título principal", "check": "Exactly one H1 per main page."},
+      {"id": "seo-structured-data", "weight": 2, "label": "Google sabe quién eres y dónde estás", "check": "Organization or LocalBusiness structured data with name, address, phone."},
+      {"id": "seo-product-pages", "weight": 2, "label": "Cada producto tiene su propia página", "check": "Products or product lines have indexable pages with descriptions."},
+      {"id": "seo-clean-index", "weight": 1, "label": "No hay páginas de prueba publicadas", "check": "No placeholder pages (Hello world, Sample page, empty archives) in the sitemap or index."},
+      {"id": "seo-share", "weight": 1, "label": "El enlace se ve bien al compartirlo", "check": "Open Graph title, description and image present."},
+      {"id": "seo-nap", "weight": 1, "label": "Nombre, teléfono y dirección iguales en todas partes", "check": "Consistent business name, phone and address across the site and listings."},
+      {"id": "seo-ai-ready", "weight": 1, "label": "La IA tiene datos claros para recomendarte", "check": "FAQ, fact sheet with verifiable figures or llms.txt present."}
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+ "area": "ux",
+ "findings": [
+  {
+   "id": "ux-1",
+   "title": "WhatsApp abre con un mensaje de prueba",
+   "summary": "El primer contacto parece descuidado.",
+   "now": "El chat dice «Estoy probando el plugin».",
+   "fix": "Mensaje inicial pensado para vender.",
+   "why": "Es el canal más directo con compradores.",
+   "impact": 5,
+   "effort": "Bajo",
+   "evidence": [
+    "home.html qlwapp config"
+   ],
+   "technical_note": "plugin default text",
+   "pin": {
+    "screenshot": "desktop-viewport.png",
+    "x_pct": 88,
+    "y_pct": 94
+   }
+  },
+  {
+   "id": "ux-2",
+   "title": "No hay botón para cotizar",
+   "summary": "El interesado no sabe cómo pedir precio.",
+   "now": "El único botón dice «Productos».",
+   "fix": "Botón «Solicitar cotización» en el banner.",
+   "why": "Sin camino claro se pierden contactos.",
+   "impact": 5,
+   "effort": "Bajo",
+   "evidence": [
+    "hero CTA text"
+   ],
+   "technical_note": "",
+   "pin": null
+  }
+ ],
+ "checks": [
+  {
+   "id": "ux-value-prop",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-quote-cta",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-catalog-path",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-contact-visible",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-contact-tappable",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-form-data",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-form-friction",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-chat-ready",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-mobile-nav",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-trust-near-cta",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "ux-content-not-hidden",
+   "result": "pass",
+   "evidence": "fixture"
+  }
+ ]
+}

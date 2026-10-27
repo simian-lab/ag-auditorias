@@ -1,0 +1,9 @@
+{
+  "serp": {
+    "today": [{"page": "Inicio", "url": "https://example.com/", "title": "Example – Inicio", "meta_description": null}],
+    "proposed": [{"page": "Inicio", "title": "Cajas de cartón en Mosquera | Example", "description": "Fabricantes desde 2006."}]
+  },
+  "share_preview": {"proposed": {"og:title": "Example: cajas de cartón", "og:description": "Desde 2006.", "og_image_local": "og-source.jpg"}},
+  "ai_answer": {"status": "blocked", "aeo_fixes": [{"title": "Preguntas frecuentes", "fix": "Publicar 8 preguntas.", "evidence": "no FAQ"}]},
+  "nap": {"inconsistencies": ["Tres teléfonos distintos."]}
+}

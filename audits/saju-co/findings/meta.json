@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-10-25T20:56:15+00:00",
+  "url": "https://www.saju.co/",
+  "domain": "saju.co",
+  "slug": "saju-co",
+  "plugin_version": "0.2.1",
+  "scoring_version": "3",
+  "options": {
+    "load_page": true,
+    "extra": true,
+    "openseo": true
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "area": "seo",
+  "business_context_note": "Inferido del sitio: fabricante colombiano de empaques de cartón corrugado (industrial, regular y agro), Parque Industrial San Jorge, Mosquera, fundado en 2006, venta B2B.",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "No apareces cuando un comprador busca cajas de cartón",
+      "summary": "Los compradores que buscan proveedores de cartón corrugado encuentran directorios y otros fabricantes, no a eBiopacking.",
+      "now": "En 6 búsquedas reales de compradores (cajas para flores, láminas corrugadas, cajas personalizadas, empaques en Bogotá y Mosquera) tu sitio no apareció ni una vez. Incluso buscando tu propio nombre, \"eBiopacking Colombia\", el buscador no encontró tu sitio.",
+      "fix": "Crear páginas pensadas para lo que busca tu cliente (una por línea de producto y por sector: flores, frutas, industria), con textos propios, ubicación clara y un perfil de empresa en Google, y luego registrarlas en Google Search Console.",
+      "why": "En B2B el comprador arma su lista de proveedores buscando en Google; si no estás en esa lista, la cotización se la llevan otros.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "0 de 6 búsquedas",
+      "evidence": [
+        "search_tests: appears=false in 6/6 buyer queries and 3/3 brand queries (WebSearch, 2026-10-24)",
+        "Results dominated by directories (einforma, empresite, directoriodefabricas.com) and competitors such as Smurfit Kappa, Propac, Coempack",
+        "Brand query 'eBiopacking Colombia' returned no ebiopacking.com result"
+      ],
+      "technical_note": "WebSearch is a general web index (US-based), not a localized Google.com.co ranking. Absence is still a strong signal given that even the exact brand query did not surface the domain. Recommend verifying in Search Console (site may not be submitted; robots.txt is the hosting default and has no Sitemap: line).",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "Cada producto no tiene página propia ni descripción",
+      "summary": "Tus 17 productos viven en una sola página con solo el nombre y la foto, así que Google no tiene nada que mostrar cuando alguien busca uno de ellos.",
+      "now": "La página de Productos lista 17 productos (caja telescópica, cajas para flores, bandejas para frutas, etc.) solo con título y foto: unas 95 palabras en total, sin medidas, calibres, usos ni botón de cotizar por producto. Ninguna de sus 18 imágenes tiene texto alternativo.",
+      "fix": "Crear una página por producto o línea con descripción, usos, especificaciones (tipo de onda, resistencia, medidas, impresión), fotos con texto alternativo y un botón de cotizar directo.",
+      "why": "Las búsquedas de compradores son por producto (\"cajas para flores de exportación\"); sin páginas de producto no tienes con qué aparecer.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "raw/seo-productos.html: 18 H2 product/category headings, ~95 visible words, 18/18 <img> without alt",
+        "Sitemap wp-sitemap-posts-page-1.xml lists only /productos/ — no individual product URLs"
+      ],
+      "technical_note": "Products are Elementor image+heading widgets on a single page. Consider a 'producto' CPT or WooCommerce catalog mode, with Product schema per page.",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "Google no sabe quién eres ni dónde estás",
+      "summary": "El sitio no le dice a Google ni a los asistentes de IA tu nombre legal, dirección ni teléfono de forma estructurada, y no pudimos confirmar un perfil de empresa en Google.",
+      "now": "Ninguna página tiene datos estructurados de empresa. La dirección solo aparece en Contacto como \"Parque industrial San Jorge, Mosquera\", sin calle, bodega ni mapa. Buscando tu nombre y dirección no encontramos un perfil de Google Business.",
+      "fix": "Agregar datos estructurados de empresa (nombre, dirección completa, teléfono, horario, redes) en todo el sitio, publicar la dirección completa en el pie de página y crear o reclamar tu perfil en Google Business con fotos de planta.",
+      "why": "El perfil de Google y los datos estructurados son lo que hace que aparezcas en el mapa cuando alguien busca \"cartón corrugado cerca de Mosquera\".",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "0 <script type='application/ld+json'> blocks on home, productos, nosotros, servicio-al-cliente, contacto",
+        "raw/seo-contacto.html: address text 'Parque industrial San Jorge, Mosquera, Colombia' only",
+        "WebSearch '\"ebiopacking\" Parque Industrial San Jorge Mosquera' and 'Ebiopacking Mosquera empaques': no listing found"
+      ],
+      "technical_note": "Google Business Profile existence could not be confirmed with the tools available (no Maps lookup); state as unconfirmed, not absent. Add Organization/LocalBusiness JSON-LD with sameAs to Facebook/Instagram/TikTok.",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Hay páginas de prueba visibles para Google",
+      "summary": "Google puede mostrar páginas como \"Hello world!\" o \"Sample Page\" con tu marca, lo que da imagen de sitio sin terminar.",
+      "now": "El mapa del sitio que le entregas a Google incluye 6 páginas que no son tuyas: \"Hello world!\", \"Sample Page\", \"Próximamente\", una categoría vacía, una página interna del botón de WhatsApp y un archivo de autor. Todas abren y están marcadas como indexables.",
+      "fix": "Borrar o desindexar esas páginas y dejar en el mapa del sitio solo Inicio, Productos, Nosotros, Servicio al cliente, Contacto y las nuevas páginas de producto.",
+      "why": "Que un comprador vea \"Hello world!\" asociado a tu marca resta confianza en una empresa con casi 20 años.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-sitemap-posts-post-1.xml: /2025/07/25/hello-world/ (HTTP 200, H1 'Hello world!')",
+        "raw/seo-sitemap-posts-page-1.xml: /sample-page/ (200), /proximamente/ (200)",
+        "raw/seo-sitemap-taxonomies-category-1.xml: /category/uncategorized/ (200)",
+        "raw/seo-sitemap-posts-e-floating-buttons-1.xml: /e-floating-buttons/whatssap/ (200)",
+        "raw/seo-sitemap-users-1.xml: one /author/<slug>/ archive",
+        "robots meta on these pages: 'max-image-preview:large' (no noindex)"
+      ],
+      "technical_note": "The users sitemap exposes the WordPress author slug, which matches the login name in default setups; disable the users sitemap and author archives (wp_sitemaps_add_provider filter or an SEO plugin). Sample Page also links to /wp-admin/.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Tu sitio muestra tres teléfonos distintos",
+      "summary": "El botón de WhatsApp usa un número diferente a los dos que aparecen en Contacto, lo que confunde al cliente y a Google sobre cuál es tu línea oficial.",
+      "now": "La página de Contacto muestra +57 310 325 0267 y +57 310 451 4510, pero el botón flotante de WhatsApp de todas las páginas usa otro número terminado en 8117. Además el nombre aparece escrito como \"eBiopacking\" y como \"Ebiopacking\".",
+      "fix": "Definir un teléfono principal y un WhatsApp oficial, y usarlos igual en el sitio, el pie de página, Google Business y redes; unificar la escritura de la marca.",
+      "why": "Datos de contacto consistentes generan confianza y ayudan a Google a asociar tu negocio con una sola ficha.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-contacto.html visible text: '+57 3103250267 I +57 3104514510'",
+        "WhatsApp widget config on all pages: phone 573103118117",
+        "No tel: links on any page; brand written 'eBiopacking' (title) and 'Ebiopacking' (body copy)"
+      ],
+      "technical_note": "Numbers in contact page are plain text, not tel: links. WhatsApp chat widget config holds a third number.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "Google no tiene una descripción de ninguna página",
+      "summary": "Ninguna página le dice a Google qué ofreces, así que el texto que aparece bajo tu enlace lo elige Google y puede no invitar al clic.",
+      "now": "Las 5 páginas principales no tienen descripción para buscadores. Los títulos son genéricos (\"Productos – eBiopacking Colombia\") y no mencionan cartón corrugado, cajas ni Mosquera.",
+      "fix": "Escribir para cada página un título y una descripción con lo que vendes y dónde (por ejemplo, \"Cajas de cartón corrugado para flores y frutas – Fabricantes en Mosquera\").",
+      "why": "El título y la descripción son tu anuncio gratuito en Google: deciden si el comprador hace clic en ti o en el siguiente.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "meta[name=description] absent on home, productos, nosotros, servicio-al-cliente, contacto",
+        "Lighthouse mobile audit meta-description score 0",
+        "Titles: 'eBiopacking Colombia – Soluciones en Empaques', 'Productos – …', 'Nosotros – …', 'Servicio al Cliente – …', 'Contacto – …'"
+      ],
+      "technical_note": "Lighthouse SEO score is 92 on mobile, which looks good but only checks basics (crawlable, title present, canonical, status code). It does not measure rankings, content depth, structured data or whether the site appears for buyer queries — 0/6 here.",
+      "pin": null
+    },
+    {
+      "id": "seo-7",
+      "title": "Ninguna página tiene un título principal",
+      "summary": "Sin un título principal, Google no sabe de qué trata cada página.",
+      "now": "Ninguna de las 5 páginas principales tiene un encabezado principal (H1). La página de inicio solo tiene dos subtítulos: \"Nosotros\" y \"Productos\". Las únicas páginas con título principal son las de prueba (\"Hello world!\", \"Sample Page\").",
+      "fix": "Poner en cada página un título principal que diga lo que haces, por ejemplo en inicio: \"Fabricantes de empaques de cartón corrugado en Colombia desde 2006\".",
+      "why": "El título principal es una de las señales más claras para que Google entienda y posicione cada página.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "0 <h1> on home, productos, nosotros, servicio-al-cliente, contacto (raw/seo-*.html)",
+        "Home H2s: 'Nosotros', 'Productos'"
+      ],
+      "technical_note": "Elementor heading widgets set to H2; change the main one per page to H1.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "seo-8",
+      "title": "La IA no tiene datos tuyos para recomendarte",
+      "summary": "ChatGPT o Gemini solo recomiendan proveedores con datos claros y citables, y tu sitio casi no los tiene.",
+      "now": "El único dato verificable es el año de fundación (2006). No hay preguntas frecuentes, ni capacidad de producción, certificaciones, sectores atendidos con ejemplos, ni archivo llms.txt. El sitio completo suma pocas palabras (inicio unas 114, contacto unas 90). Al compartir tu enlace en WhatsApp o LinkedIn tampoco sale imagen ni descripción.",
+      "fix": "Publicar una ficha de empresa con cifras reales (capacidad, años, sectores, certificaciones, cobertura), una sección de preguntas frecuentes de compradores, un llms.txt, y configurar la vista previa (imagen y texto) al compartir.",
+      "why": "Cada vez más compradores preguntan a la IA \"¿quién fabrica cajas para flores en Colombia?\"; sin datos tuyos, la IA nombra a otros.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "https://ebiopacking.com/llms.txt → HTTP 404",
+        "No FAQ section or FAQPage schema on any page",
+        "og:title, og:description, og:image absent on all 5 main pages",
+        "Visible word counts (approx.): home 114, productos 95, nosotros 332, servicio-al-cliente 99, contacto 90"
+      ],
+      "technical_note": "AI visibility (actual mentions in AI answers) was not measured here; handled separately. This finding only covers citation readiness of on-site content.",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "fabricantes cajas de cartón corrugado Mosquera Cundinamarca",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["directorio-empresas.einforma.co (Diseño Empaques Corrugados Ltda)", "empresite.eleconomistaamerica.co", "cosmos.com.mx", "buyfromcostarica.com"]
+    },
+    {
+      "query": "empresa de empaques de cartón corrugado Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["einforma: Empaques Industriales de Colombia SAS", "einforma: Martempaque SAS", "einforma: Cartones Continental SAS", "einforma: Packing SAS", "empresite: Empaques & Cartones SAS"]
+    },
+    {
+      "query": "cajas para flores de exportación cartón corrugado Colombia",
+      "appears": false,
+      "position_or_note": "Not in results; no Colombian box supplier appeared",
+      "who_appears": ["repository.uniminuto.edu", "valoraanalitik.com", "cosmos.com.mx"]
+    },
+    {
+      "query": "láminas de cartón corrugado proveedor Colombia",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["directoriodefabricas.com", "smurfitkappa.com/co", "cosmos.com.mx"]
+    },
+    {
+      "query": "cajas de cartón personalizadas impresas fabricante Colombia",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["payhip.com/COEMPACK (Coempack SAS)", "empresite.eleconomistaamerica.co", "einforma: Cajas de Cartón Corrugado SAS", "cosmos.com.mx"]
+    },
+    {
+      "query": "empaques biodegradables cartón corrugado sector agro Colombia",
+      "appears": false,
+      "position_or_note": "Not in results — although sustainability is a core message of the site",
+      "who_appears": ["portafolio.co (Propac)", "directoriodefabricas.com (Corrugados del Darién)", "vc4a.com (Plantpack)", "larepublica.co"]
+    },
+    {
+      "query": "eBiopacking Colombia",
+      "appears": false,
+      "position_or_note": "Brand query: ebiopacking.com not returned; results about unrelated bio-packaging research",
+      "who_appears": ["researchportal.bath.ac.uk", "icta.unal.edu.co", "portafolio.co"]
+    },
+    {
+      "query": "Ebiopacking Mosquera empaques",
+      "appears": false,
+      "position_or_note": "Brand query: no result about the company",
+      "who_appears": ["noesis.uis.edu.co", "en.wikipedia.org (Mosquera)"]
+    },
+    {
+      "query": "\"ebiopacking\" Parque Industrial San Jorge Mosquera",
+      "appears": false,
+      "position_or_note": "Brand + address query (Google Business Profile check): no listing or mention found",
+      "who_appears": ["fincaraiz.com.co", "ciencuadras.com", "einforma: Epack SAS"]
+    }
+  ],
+  "search_tests_note": "Pruebas hechas el 2026-10-24 con una herramienta de búsqueda web general (índice basado en EE. UU.), no con Google Colombia ni con resultados locales de mapas. Indican presencia en la web abierta, no una posición exacta en Google. No se midieron menciones en respuestas de IA.",
+  "extra_pitch_es": "Hoy, cuando un comprador busca cajas de cartón para flores, frutas o industria, encuentra directorios y a tu competencia, no a ti: con páginas por producto, ficha de empresa y perfil en Google, podemos ponerte en esa lista.",
+  "checks": [
+    {"id": "seo-appears", "result": "fail", "evidence": "0 of 6 buyer search tests (and 0 of 3 brand queries) returned ebiopacking.com."},
+    {"id": "seo-titles", "result": "partial", "evidence": "All 5 main pages have unique <title>s, but only the home title is descriptive ('Soluciones en Empaques'); the rest are just the page name ('Productos – eBiopacking Colombia') with no product or location keywords."},
+    {"id": "seo-descriptions", "result": "fail", "evidence": "No meta description on any of the 5 main pages; Lighthouse meta-description = 0."},
+    {"id": "seo-h1", "result": "fail", "evidence": "0 H1 on home, productos, nosotros, servicio-al-cliente and contacto; only placeholder pages have an H1."},
+    {"id": "seo-structured-data", "result": "fail", "evidence": "No JSON-LD or microdata on any page; no Organization/LocalBusiness with name, address, phone."},
+    {"id": "seo-product-pages", "result": "fail", "evidence": "17 products listed only as heading+image on /productos/ (~95 words total); no individual product URLs in the sitemap and no descriptions."},
+    {"id": "seo-clean-index", "result": "fail", "evidence": "Sitemap lists Hello world!, Sample Page, Próximamente, /category/uncategorized/, a WhatsApp floating-button post and an author archive; all return 200 without noindex."},
+    {"id": "seo-share", "result": "fail", "evidence": "og:title, og:description and og:image absent on all 5 main pages."},
+    {"id": "seo-nap", "result": "fail", "evidence": "Contact page shows two phones (…0267, …4510); WhatsApp widget uses a third (…8117). Address only on contact page and incomplete. Brand spelled 'eBiopacking' and 'Ebiopacking'. No external listing found to compare."},
+    {"id": "seo-ai-ready", "result": "fail", "evidence": "No FAQ, no fact sheet with verifiable figures (only founding year 2006), llms.txt returns 404."}
+  ]
+}

@@ -1,0 +1,34 @@
+# Default robots.txt — Conexcol cPanel servers
+# Served automatically for sites without their own robots.txt
+# Customers can override by placing their own robots.txt in public_html
+# Doc: conocimiento/runbooks/bot-crawler-policy-hosting-compartido.md
+# Updated: 2026-09-15 — search engines, social networks and AI crawlers welcome
+#   (tarjeta 15n2AKra); only third-party SEO-tool scrapers are asked to stay out.
+
+# --- Third-party SEO-tool scrapers (no visibility for the site) ---
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# --- Everyone else: search, social previews and ads, AI assistants ---
+# Faceted shop URLs and cart side-effects should not be crawled.
+
+User-agent: *
+Allow: /
+Disallow: /*?*filter_
+Disallow: /*?*add-to-cart=

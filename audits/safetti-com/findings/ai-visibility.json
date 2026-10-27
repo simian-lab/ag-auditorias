@@ -1,0 +1,22 @@
+{
+  "source": "OpenSEO AI visibility, run 2381ab76-f39f-4fbd-907e-d296c0eef98f (manual check, 2026-10-25)",
+  "date": "Octubre 2026",
+  "brand": "Safetti",
+  "answers": [
+    {
+      "engine": "chatgpt",
+      "prompt": "¿Qué marcas colombianas de ropa de ciclismo recomiendas comprar en línea?",
+      "mentioned": true,
+      "named": ["Safetti", "Suárez", "Go Rigo Go", "Zueden", "Winner Cycling", "Givelo"],
+      "note_es": "Te recomienda en primer lugar («mi primera opción para rendimiento») y cita tu sitio. También nombra a tus competidores Suárez y Go Rigo Go."
+    },
+    {
+      "engine": "gemini",
+      "prompt": "¿Qué marcas colombianas de ropa de ciclismo recomiendas comprar en línea?",
+      "mentioned": true,
+      "named": ["Givelo", "Safetti", "Suárez (Suárez Clothing)", "Go Rigo Go!", "Zueden", "Winner Cycling", "KOM Sportswear"],
+      "note_es": "Te nombra en segundo lugar, detrás de Givelo, y destaca tus badanas por horas de ruta; pero no cita tu sitio: se apoya en un blog y en un distribuidor."
+    }
+  ],
+  "no_answer": []
+}

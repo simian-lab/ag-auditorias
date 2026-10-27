@@ -1,0 +1,107 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "La primera pantalla anuncia un local, no tu oferta",
+      "summary": "Quien llega por primera vez no lee en texto qué vende Sajú ni por qué elegirla antes de tener que bajar.",
+      "now": "Lo primero que se ve es una foto de la tienda con «¡Llegamos a Gran Estación! Local 259», escrito dentro de la imagen. No hay una frase en texto que diga «gafas de sol y formuladas en materiales reciclados, con examen visual» ni a quién van dirigidas.",
+      "fix": "Poner sobre el banner un titular corto en texto real (qué vendes, para quién y tu diferencial, por ejemplo: gafas formuladas y de sol de marca colombiana con arreglos gratis de por vida) y dejar los anuncios de tiendas nuevas como segunda diapositiva o franja.",
+      "why": "Si el visitante entiende en tres segundos qué ofreces, sigue navegando en vez de volver a Google.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-viewport.png: hero text '¡Llegamos a Gran Estación! LOCAL 259 | SEGUNDO PISO / AGENDA AQUÍ' is part of the image (x≈5-38%, y≈40-75%)",
+        "raw/home.html: the only <h1> is the logo (<h1 class=\"header__logo\">); hero slides have empty <div class=\"prose\"></div> and images with alt=\"\"",
+        "screenshots/mobile-fullpage.jpg: mobile first viewport shows the same image-only store announcement; only real text is the promo bar ('Envíos gratis…', 'Compra 2 gafas formuladas…')"
+      ],
+      "technical_note": "Hero is a Shopify slideshow section (carousel-template--…__slideshow_DKtXfJ) with 3 image-only slides linking to /collections/triple-cases, /products/examen-visual-gran-estacion and /products/examen-visual-san-roque. Slide content blocks are empty.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 22, "y_pct": 50}
+    },
+    {
+      "id": "ux-2",
+      "title": "No hay teléfono ni correo visibles en el sitio",
+      "summary": "Un cliente con una duda antes de comprar solo tiene WhatsApp; quien prefiere llamar o escribir un correo no encuentra cómo.",
+      "now": "El encabezado y el pie de página no muestran teléfono ni correo en ninguna página. La página de contacto no existe (da error 404). El correo de servicio al cliente solo aparece dentro del texto de la política de envíos, y en la página de tiendas solo 2 locales muestran teléfono, sin poder pulsarlo.",
+      "fix": "Agregar al pie de página de todo el sitio un teléfono, el correo de servicio al cliente y el horario de atención, con enlaces que se puedan pulsar para llamar o escribir, y crear una página de contacto simple.",
+      "why": "Ver un teléfono y un correo reales da confianza para pagar en línea y recupera a quien no usa WhatsApp.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "No tel: or mailto: links in raw/home.html, raw/ux-product.html, raw/ux-frame.html, raw/ux-examen.html, raw/ux-tiendas.html",
+        "https://www.saju.co/pages/contact returns HTTP 404 (raw/ux-contact.html)",
+        "raw/ux-envios.html: 'sac@sajucompany.com' appears only in policy body text (1 mailto)",
+        "raw/ux-tiendas.html: phone shown only for Óptica Gran Estación (3126685593) and Óptica San Roque (3126682112), plain text, no tel: link",
+        "Footer (mobile-fullpage.jpg, y≈91-98%): only 'La Familia del Mono SAS', policy links, newsletter and social/WhatsApp icons"
+      ],
+      "technical_note": "Customer-service email uses a different domain (sajucompany.com) than the store (saju.co); worth confirming it is the intended public address before publishing it in the footer.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 30, "y_pct": 95}
+    },
+    {
+      "id": "ux-3",
+      "title": "Agendar el examen visual obliga a pagar primero",
+      "summary": "Reservar una cita, que debería tomar un minuto, se convierte en una compra con carrito y pago, y eso frena a quien solo quiere averiguar.",
+      "now": "Para agendar hay que elegir sede en el menú, entrar a una ficha de «producto», escoger día y hora, añadir a la cesta y pagar $50.000 COP por adelantado. Si se necesitan varias citas, cada una se agrega por separado al carrito. El valor se devuelve como bono por correo solo si compras gafas formuladas.",
+      "fix": "Ofrecer una reserva directa (día, hora, nombre y celular) sin pasar por el carrito, y cobrar el anticipo solo cuando sea necesario o en la tienda; mostrar en una línea arriba que el examen es gratis si compras tus gafas.",
+      "why": "El examen es la puerta de entrada a la venta de gafas formuladas; cada paso extra antes de la cita es una oportunidad de que el cliente se vaya.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "Path walked: Home → menu 'AGENDA TU EXAMEN VISUAL' (8 locations) → /products/examen-visual-gran-estacion → choose date/time → 'Añadir a la cesta' → /cart → checkout payment",
+        "raw/ux-examen.html: 'Precio de oferta $50,000 COP', 'Para garantizar las reservas se realiza un anticipo 100% consumible', 'asegúrate de agregarlas una a una al carrito', 'bono de regalo llegará al mail… El bono solo puede ser usado en la compra de gafas formuladas'",
+        "raw/ux-examenes.html: 9 exam 'products' listed with prices ($50,000 each; contact lens exam $30,000)"
+      ],
+      "technical_note": "Booking is implemented as Shopify products with a date/time picker app; the deposit flows through standard checkout. Desktop nav label at desktop-viewport.png x≈44%, y≈20%.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 44, "y_pct": 20}
+    },
+    {
+      "id": "ux-4",
+      "title": "Los mensajes clave están en imágenes que rotan solas",
+      "summary": "Promociones y llamados a la acción cambian cada 5 segundos y viven solo dentro de fotos, así que muchos visitantes no los alcanzan a leer.",
+      "now": "El banner principal tiene 3 diapositivas que avanzan solas cada 5 segundos; todo su texto (tienda nueva, «Agenda aquí», estuches) está pintado dentro de la imagen. Cada diapositiva lleva a una sede distinta: quien toca «Agenda aquí» termina en la agenda de una sede concreta aunque viva lejos. Lo mismo pasa con el banner «Agenda tu examen».",
+      "fix": "Dejar fija la diapositiva principal o reducir el carrusel, escribir titulares y botones como texto real sobre la imagen, y hacer que «Agenda aquí» lleve a un selector de sede.",
+      "why": "Un mensaje que se ve completo y se puede leer en celular convierte más que uno que desaparece antes de terminar de leerlo.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html: <slideshow-carousel … autoplay=\"5\"> with 3 slides; each slide has <img alt=\"\"> and an empty <div class=\"prose\"></div>",
+        "Slide links: /collections/triple-cases, /products/examen-visual-gran-estacion, /products/examen-visual-san-roque",
+        "Second slideshow 'banner-agenda-examen-1.webp' (autoplay=\"5\") also image-only, links to /collections/examenes-visuales",
+        "screenshots/desktop-viewport.png: carousel dots at bottom right (x≈95%, y≈81%)"
+      ],
+      "technical_note": "Image-only CTAs also matter for a11y (alt=\"\" on linked images) — that part belongs to the a11y area; here the issue is message visibility and routing.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 95, "y_pct": 81}
+    },
+    {
+      "id": "ux-5",
+      "title": "Tus mejores argumentos de venta quedan al final",
+      "summary": "Lo que más convence a un comprador (arreglos gratis de por vida, marca colombiana desde 2017, reseñas) no aparece cerca de los productos ni del precio.",
+      "now": "La garantía de arreglos gratis de por vida y «desde 2017» solo están en la sección «¿Por qué Sajú?», al final de la página y dentro de un carrusel; en la captura de escritorio esa sección se ve vacía. Las tarjetas de producto de la página de inicio no muestran estrellas ni número de reseñas, aunque hay modelos con 22 reseñas. La línea destacada primero (Sajú Grip) muestra «Sé el primero en escribir una reseña».",
+      "fix": "Poner una franja corta de beneficios justo debajo del banner (arreglos gratis de por vida, envío gratis desde $249.000, número de tiendas) y mostrar estrellas y número de reseñas en las tarjetas de producto.",
+      "why": "Las pruebas de confianza junto al precio ayudan a decidir la compra en línea sin tener que ir a la tienda.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: images-with-text-scroll section (bottom of page) holds 'GARANTÍAS … arreglos GRATIS DE POR VIDA*' and 'MARCA COLOMBIANA … nació en 2017'; mobile shows it as a 4-dot carousel (mobile-fullpage.jpg y≈79%)",
+        "screenshots/desktop-fullpage.jpg: '¿Por qué Sajú?' block renders as an empty dark area in the Lighthouse desktop capture",
+        "raw/ux-frame.html (Chelsea Earth): 'Basado en 22 reseñas'; raw/ux-product.html (Cumbre Gravel, Grip line): 'Sé el primero en escribir una reseña'",
+        "No review badge/stars on home product cards (raw/home.html, desktop-fullpage.jpg)"
+      ],
+      "technical_note": "The scroll-driven section may render correctly for real users on scroll; the empty capture is reported as observed in the Lighthouse full-page screenshot only. Reviews come from Judge.me widget data in product pages.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 79}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "fail", "evidence": "First viewport (desktop and mobile) shows an image-only store-opening banner; the only real text is the promo bar (free shipping, 2x formuladas promo). No real-text statement of product category plus target customer; the H1 is the logo."},
+    {"id": "ux-quote-cta", "result": "partial", "evidence": "Desktop: nav text link 'AGENDA TU EXAMEN VISUAL' visible in first viewport. Mobile: nav collapsed; the only 'AGENDA AQUÍ' is painted inside a rotating hero image linking to a single store."},
+    {"id": "ux-catalog-path", "result": "pass", "evidence": "Home product cards link to /products/* pages with 'Añadir a la cesta'; category and collab cards link to /collections/*; product pages offer 'Quiero estas gafas formuladas →'."},
+    {"id": "ux-contact-visible", "result": "fail", "evidence": "No phone or email in header or footer on home, product, stores or exam pages; /pages/contact is 404; email only inside the shipping policy text."},
+    {"id": "ux-contact-tappable", "result": "fail", "evidence": "Zero tel: links in fetched pages; store phones on /pages/tiendas-1 are plain text; one mailto only inside the shipping policy page."},
+    {"id": "ux-form-data", "result": "na", "evidence": "B2C online store with cart checkout; no on-site contact or quote form exists (contact page 404). The only lead form is an external Google Form for international distributors ('¿Quieres llevar Sajú a tu país?'), not a customer sales form."},
+    {"id": "ux-form-friction", "result": "na", "evidence": "No on-site contact/quote form to evaluate (see ux-form-data). The exam booking uses a calendar plus cart/checkout, covered in finding ux-3."},
+    {"id": "ux-chat-ready", "result": "pass", "evidence": "Floating WhatsApp button builds wa.me/+573123225855 with prefilled text 'Hola, estoy interesado en los productos del 🐵' (real brand text, no plugin demo); footer icon and shipping page use the same number. No contact page exists to compare against."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Mobile header has a hamburger (mobile-fullpage.jpg top-left); drawer (header-sidebar) lists Home, Gafas, Accesorios, Agenda tu examen visual, Tiendas, TÁCHALO, Estado de mi pedido, SALE — all desktop sections — plus a 'GAFAS SOL | FORMULADAS' quick bar."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Celebrity collabs (James, Simón Vargas…) and the free-shipping bar are visible, but lifetime free repairs and 'since 2017' sit at the page bottom inside a carousel, and home product cards show no review stars."},
+    {"id": "ux-content-not-hidden", "result": "fail", "evidence": "Hero is a 3-slide autoplay=5 carousel with all copy and CTAs inside images (empty prose blocks); exam banner also image-only; '¿Por qué Sajú?' benefits are in a carousel on mobile."}
+  ]
+}

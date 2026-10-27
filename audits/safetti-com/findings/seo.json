@@ -1,0 +1,153 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "No apareces cuando un comprador busca tus productos",
+      "summary": "En 8 búsquedas reales de compradores (ciclismo, triatlón, pádel, uniformes personalizados) safetti.com no apareció ni una vez; esas visitas se las llevan Falabella, Éxito, Decathlon y tiendas extranjeras.",
+      "now": "Quien busca \"ropa de ciclismo Colombia\", \"trisuit triatlón comprar Colombia\" o \"uniformes de ciclismo personalizados Medellín\" encuentra a Falabella, Éxito, Decathlon, Vistaprint o tiendas de España, pero no a Safetti, aunque vendes exactamente eso.",
+      "fix": "Crear páginas de categoría con texto útil por deporte y ciudad, una guía de compra por producto clave (trisuit, pantaloneta con cargaderas, uniformes de club) y medir la posición real en Google Colombia con Search Console.",
+      "why": "Si no apareces en la búsqueda, el comprador que ya decidió comprar termina en el carrito de otra tienda.",
+      "impact": 5,
+      "effort": "Alto",
+      "headline_metric": "0 de 8 búsquedas",
+      "evidence": [
+        "search_tests: 8 buyer queries in Spanish via WebSearch, safetti.com absent in all 8 result lists",
+        "Who appears: falabella.com.co (2 queries), exito.com, decathlon.es, elcorteingles.es, padelmarket.com, vistaprint.com, varuste.net, sportsshoes.com, news sites",
+        "Lighthouse SEO score = 1.0 (100) on both raw/lighthouse-mobile.json and raw/lighthouse-desktop.json, yet the site is absent from buyer results"
+      ],
+      "technical_note": "WebSearch is a general US-based index, not a localized Google Colombia SERP; absence there is indicative, not a ranking. Lighthouse SEO only checks basics (title, meta description, crawlability, link text, hreflang, canonical), so 100/100 says nothing about rankings or content depth. Confirm with Google Search Console query data.",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "La página de uniformes personalizados está vacía",
+      "summary": "Tu servicio de personalización para clubes y equipos, un pedido de alto valor, no tiene una página que Google pueda mostrar.",
+      "now": "safetti.com/pages/personalizacion existe y está en el sitemap, pero solo muestra la palabra \"Personalización\" (3 palabras en total, sin descripción para Google); el enlace del pie de página manda directo a WhatsApp.",
+      "fix": "Convertir esa página en una landing real: qué prendas se personalizan, pedido mínimo, tiempos, proceso de diseño, fotos de equipos vestidos y un botón de cotización por WhatsApp o formulario.",
+      "why": "Los clubes y equipos buscan proveedor en Google antes de escribir; sin página, esa venta grande no empieza contigo.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "3 palabras",
+      "evidence": [
+        "raw/seo-personalizacion.html and raw/seo-personalizacion-rendered.html (headless Chrome dump): <main> text = 'Home Personalización Personalización'",
+        "No meta description on /pages/personalizacion; og:description falls back to the generic site text",
+        "Footer link 'Personalización' -> https://wa.me/573183468891",
+        "Buyer query 'uniformes de ciclismo personalizados Medellín': safetti.com absent"
+      ],
+      "technical_note": "Page is listed in sitemap_pages_1.xml. Content is not injected by JS either (rendered DOM identical).",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "Google no tiene la dirección ni el teléfono de tus tiendas",
+      "summary": "Tienes 4 tiendas físicas, pero el sitio no le dice a Google ni a los asistentes de IA dónde están ni cómo llamarlas, lo que te resta en búsquedas como \"tienda de ciclismo cerca\".",
+      "now": "Los datos estructurados solo dicen \"Safetti\" con el logo y redes sociales; no hay dirección, teléfono ni horario. La página \"Encuentra tu tienda\" lista Laureles, Indiana, Llanogrande y Bogotá sin escribir sus direcciones; estas solo aparecen en Contacto.",
+      "fix": "Agregar datos estructurados de cada tienda (nombre, dirección, teléfono, horario, mapa) y escribir dirección y horario en la página de tiendas y en cada página de ciudad, iguales a los de tu ficha de Google.",
+      "why": "Las búsquedas locales y los mapas son donde se decide a qué tienda ir; sin estos datos te muestran a la competencia.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-home.html JSON-LD Organization: name, logo, url, sameAs only; no address, telephone or LocalBusiness/Store types on any sampled page",
+        "Organization.sameAs contains empty strings and a null value",
+        "raw/seo-stores.html <main>: store names + WhatsApp links only, no street addresses",
+        "raw/seo-contact.html lists addresses: Calle 41 # 73-29 (Laureles), Carrera 6 # 24a sur 285 local 156 (Indiana), Km 1.7 Don Diego-Llanogrande, Carrera 5 #69A 30 (Bogotá)",
+        "Google Business Profile: not verified (brand/Maps lookups were out of scope for this tool)"
+      ],
+      "technical_note": "Add one LocalBusiness/ClothingStore node per store with address, telephone, openingHours, geo, and fix Organization.sameAs (remove '' and null).",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Páginas clave sin descripción y con títulos genéricos",
+      "summary": "Contacto, Preguntas frecuentes y Personalización salen en Google con un texto que Google improvisa, y el título de tu página principal tiene un error de ortografía.",
+      "now": "3 de 10 páginas revisadas no tienen descripción para Google; títulos como \"Contáctanos– Safetti\" o \"Conoce nuestra Marca– Safetti\" no dicen qué vendes; el título de inicio dice \"runnig\" en vez de \"running\"; los productos van en MAYÚSCULAS.",
+      "fix": "Escribir título y descripción propios para cada página clave (deporte + ciudad + beneficio), corregir \"runnig\" y usar mayúsculas normales en los nombres de producto.",
+      "why": "El título y la descripción son tu anuncio gratis en Google: un texto claro consigue más clics con la misma posición.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Home <title>: 'Ropa y accesorios para ciclismo, runnig, pádel y triatlón– Safetti' (typo 'runnig', also in og:title)",
+        "No <meta name=description> on /pages/contact, /pages/preguntas-frecuentes, /pages/personalizacion",
+        "Product <title>: 'CAMISA CICLISMO MANGA CORTA TRACE PARA MUJER– Safetti' (all caps)",
+        "Pages sampled: home, conoce-safetti, house, contact, tiendas, personalizacion, ropa-deportiva-medellin, preguntas-frecuentes, product, blog article"
+      ],
+      "technical_note": "All sampled titles are unique; Medellín, tiendas, house, article and christmas pages already have good custom titles/descriptions, so the pattern exists.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Faltan o sobran títulos principales en páginas importantes",
+      "summary": "Google usa el título principal de cada página para entender de qué trata, y en tus páginas clave ese título falta o está repetido.",
+      "now": "La página de inicio tiene dos títulos principales (el logo y el mensaje); Conoce Safetti, Contacto, Tiendas, Preguntas frecuentes y Safetti House no tienen ninguno.",
+      "fix": "Dejar un solo título principal por página que diga qué ofrece (por ejemplo, \"Tiendas Safetti en Medellín y Bogotá\") y quitar esa etiqueta del logo.",
+      "why": "Es una señal simple que ayuda a Google a asociar cada página con la búsqueda correcta.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-home.html: 2 <h1> (h1.header-logo wrapping the logo + 'Safetti ropa deportiva de alto rendimiento para cada disciplina')",
+        "0 <h1>: raw/seo-about.html, raw/seo-contact.html, raw/seo-stores.html, raw/seo-faq.html, raw/seo-house.html",
+        "Exactly 1 <h1>: product, personalizacion, ropa-deportiva-medellin, blog article, christmasishere"
+      ],
+      "technical_note": "Theme renders <h1 class=\"header-logo\"> only on the home template; other page templates use h2/h3 for the page heading.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "Poco contenido útil y páginas viejas o vacías indexadas",
+      "summary": "Con un solo artículo de blog y páginas de campañas pasadas en el índice, Google y la IA tienen poco material para recomendarte en preguntas de compra.",
+      "now": "El blog tiene 1 artículo (qué es un trisuit). En el sitemap siguen \"Safetti Black Days 2025\", una lista de favoritos vacía y la página de Personalización vacía. El artículo además tiene un error en sus datos estructurados.",
+      "fix": "Publicar guías de compra mensuales (tallas, cuándo usar cada prenda, cuidado, comparativas) enlazadas a productos, y retirar del índice o redirigir las páginas vencidas o vacías.",
+      "why": "Las preguntas \"qué comprar\" son las que más traen compradores nuevos, y hoy las responden otras tiendas.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/seo-sitemap-articles.xml: 1 URL (/blogs/like-no-other/que-es-un-trisuit-y-cuando-vale-la-pena-usarlo)",
+        "raw/seo-sitemap-pages.xml lists /pages/safetti-black-friday (title 'Safetti Black Days 2025'), /pages/wishlist (14 words: 'No hay productos agregados...'), /pages/personalizacion (3 words), /pages/father-days, /pages/safetti-run-upselling",
+        "raw/seo-article.html: Article JSON-LD fails to parse (invalid control character, line 5) so Google ignores it"
+      ],
+      "technical_note": "Positive: 1,312 product URLs and 231 collections in sitemap, FAQPage schema on /pages/preguntas-frecuentes (1,658 words), city pages for Medellín, Bogotá, Cali, Barranquilla, Tunja, Montería, Bucaramanga. llms.txt exists but is Shopify's generic agent file with no brand facts. Add noindex to wishlist via theme.",
+      "pin": null
+    },
+    {
+      "id": "seo-7",
+      "title": "Muchas imágenes sin descripción para Google",
+      "summary": "Las fotos de tus categorías y productos no aparecen en Google Imágenes porque no dicen qué muestran.",
+      "now": "En la página de inicio 15 de 25 imágenes no tienen texto descriptivo (incluidos banners y fotos de categoría); en Safetti House son 31 de 36.",
+      "fix": "Agregar a cada foto de producto y categoría una descripción breve con prenda, deporte y color (por ejemplo, \"camisa de ciclismo manga corta Trace para mujer\").",
+      "why": "Google Imágenes es otra puerta de entrada para quien busca ropa deportiva por cómo se ve.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-home.html: 15/25 <img> with missing or empty alt, e.g. BANNER_NEXO, IMAGENES_DEPORTE_ESPANOL-01..03, IMAGENES_CATEGORIA-06..08",
+        "raw/seo-house.html: 31/36 <img> without alt text"
+      ],
+      "technical_note": "Static regex count over server HTML; lazy-loaded duplicates may inflate the total slightly. Overlaps with a11y alt-text criterion.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 55}
+    }
+  ],
+  "search_tests": [
+    {"query": "ropa de ciclismo Colombia", "appears": false, "position_or_note": "Not in returned results", "who_appears": ["falabella.com.co", "portafolio.co", "larepublica.co", "elcolombiano.com", "pulzo.com", "forbes.co", "postobon.com"]},
+    {"query": "uniformes de ciclismo personalizados Medellín", "appears": false, "position_or_note": "Not in returned results; no local manufacturer appeared", "who_appears": ["vistaprint.com", "medellin.gov.co", "telemedellin.tv", "larepublica.co", "elcolombiano.com", "minuto30.com"]},
+    {"query": "tienda ropa deportiva ciclismo Medellín", "appears": false, "position_or_note": "Not in returned results", "who_appears": ["tiendeo.com (Sprinter)", "valoraanalitik.com (Decathlon, Specialized)", "winsports.co", "elcolombiano.com", "semana.com"]},
+    {"query": "trisuit triatlón comprar Colombia", "appears": false, "position_or_note": "Not in returned results; only foreign stores", "who_appears": ["varuste.net", "sportsshoes.com", "racycles.com", "ebay.com", "decathlon.com.sa"]},
+    {"query": "ropa para pádel mujer Colombia", "appears": false, "position_or_note": "Not in returned results; only Spanish stores", "who_appears": ["elcorteingles.es", "decathlon.es", "padelmarket.com"]},
+    {"query": "pantaloneta de ciclismo con cargaderas Colombia", "appears": false, "position_or_note": "Not in returned results", "who_appears": ["falabella.com.co", "exito.com", "ebay.com", "vozpopuli.com", "colombiareports.com"]},
+    {"query": "marcas colombianas de ropa de ciclismo", "appears": false, "position_or_note": "Not in returned results; articles cite Suárez, Go Rigo Go, Eleven Pro", "who_appears": ["noticiasrcn.com", "portafolio.co", "valoraanalitik.com", "las2orillas.co", "larepublica.co", "connectamericas.com"]},
+    {"query": "hospedaje para ciclistas El Retiro Antioquia", "appears": false, "position_or_note": "Not in returned results (Safetti House page targets this)", "who_appears": ["fincaraiz.com.co", "semana.com", "halfhalftravel.com", "ciencuadras.com", "glampinghub.com", "las2orillas.co"]}
+  ],
+  "search_tests_note": "8 buyer queries in Spanish run on 2026-10-25 with the WebSearch tool, which uses a general US-based index, not localized Google Colombia; results show which domains that index returns, not real Google.com.co positions. Brand queries were deliberately not run because a brand query missing the official site in this index is not reliable evidence. Safetti appeared in 0 of 8. Confirm with Google Search Console.",
+  "extra_pitch_es": "Tu sitio saca 100 en el SEO básico de Google, pero en 8 búsquedas reales de compradores no apareciste ni una vez: te proponemos convertir tus tiendas, tu servicio de personalización y tu conocimiento técnico en páginas que Google y la IA puedan recomendar.",
+  "checks": [
+    {"id": "seo-appears", "result": "fail", "evidence": "0 of 8 buyer search tests returned safetti.com (general US-based index, not Google Colombia)."},
+    {"id": "seo-titles", "result": "partial", "evidence": "All 10 sampled titles are unique; Medellín, tiendas, house and article titles are descriptive, but contact, about, FAQ and personalización are generic ('Contáctanos– Safetti'), home has the typo 'runnig', product titles are ALL CAPS."},
+    {"id": "seo-descriptions", "result": "partial", "evidence": "Meta description present on 7 of 10 sampled pages; missing on /pages/contact, /pages/preguntas-frecuentes, /pages/personalizacion."},
+    {"id": "seo-h1", "result": "fail", "evidence": "Home has 2 H1 (logo + headline); about, contact, tiendas, FAQ and house have 0; only product, personalización, Medellín, article and christmas have exactly 1."},
+    {"id": "seo-structured-data", "result": "fail", "evidence": "Organization JSON-LD has name, logo and sameAs (with '' and null entries) but no address or telephone; no LocalBusiness/Store for the 4 physical stores."},
+    {"id": "seo-product-pages", "result": "pass", "evidence": "1,312 product URLs and 231 collections in sitemap; sample product page has unique title, description with specs (UPF, fabric), 1 H1, canonical and Product JSON-LD with offers, GTIN and brand."},
+    {"id": "seo-clean-index", "result": "partial", "evidence": "No 'Hello world'/'Sample page'; but sitemap includes empty /pages/wishlist (14 words), empty /pages/personalizacion (3 words) and stale 'Safetti Black Days 2025'."},
+    {"id": "seo-share", "result": "pass", "evidence": "og:title, og:description and og:image present on all sampled pages (generic site image on non-product pages; some og:description fall back to the site default)."},
+    {"id": "seo-nap", "result": "partial", "evidence": "Name 'Safetti' consistent; contact-page phones match WhatsApp links site-wide; but store addresses appear only on Contact (not on Tiendas page or structured data), email domain safetti.com.co differs from safetti.com, and Google Business Profile listings could not be verified."},
+    {"id": "seo-ai-ready", "result": "pass", "evidence": "FAQ page (/pages/preguntas-frecuentes, 1,658 words) with valid FAQPage JSON-LD; WebPage JSON-LD states 'Desde 2005'. llms.txt exists but is Shopify's generic agent file without brand facts."}
+  ]
+}

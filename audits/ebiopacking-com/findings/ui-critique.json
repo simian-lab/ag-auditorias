@@ -1,0 +1,224 @@
+{
+  "verdict": "Tu marca tiene una base reconocible, pero cada sección parece diseñada por una persona distinta: seis verdes, cuatro tipografías y botones que no se parecen entre sí.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Seis botones, seis personalidades",
+      "explanation": "En una sola página conviven botones lima con mayúsculas y sin ellas, uno con sombra dibujado dentro de la foto, una píldora con borde que no hace nada y un verde distinto para WhatsApp. El comprador no aprende qué es pulsable, y dos de los que más llaman la atención (\"Productos\" del banner y las categorías) no responden al clic.",
+      "items": [
+        {
+          "label": "Menú \"Inicio\": píldora lima con texto blanco",
+          "crop": "ui-crop-btn-nav-inicio.png"
+        },
+        {
+          "label": "\"Productos\" del banner: dibujado en la imagen, no se puede pulsar",
+          "crop": "ui-crop-btn-hero-productos.png"
+        },
+        {
+          "label": "\"Conoce más\": lima, en minúsculas",
+          "crop": "ui-crop-btn-conoce-mas.png"
+        },
+        {
+          "label": "\"VER MÁS PRODUCTOS\": lima, en mayúsculas",
+          "crop": "ui-crop-btn-ver-mas.png"
+        },
+        {
+          "label": "Categoría con borde y sombra: parece botón, no lo es",
+          "crop": "ui-crop-btn-categoria.png"
+        },
+        {
+          "label": "WhatsApp: otro verde, otra forma",
+          "crop": "ui-crop-btn-whatsapp.png"
+        }
+      ],
+      "proposal": "Un solo botón principal (lima con texto verde bosque, misma esquina y mismo tamaño de letra) para \"Solicita tu cotización\", uno secundario con borde para \"Ver más\", y quitar la forma de botón a todo lo que no se puede pulsar."
+    },
+    {
+      "kind": "headings",
+      "title": "Cuatro títulos, cuatro estilos, ningún título principal",
+      "explanation": "El título más grande del sitio es una imagen, \"Nosotros\" es texto verde suelto, \"Productos\" es una barra lima con sombra y las categorías son píldoras con borde. Como ninguno sigue una regla, el ojo no distingue qué es sección, qué es subsección y qué es un botón.",
+      "items": [
+        {
+          "label": "Título del banner: texto dentro de la foto",
+          "crop": "ui-crop-h-hero-imagen.png"
+        },
+        {
+          "label": "\"Nosotros\": texto verde hoja (#4A7147)",
+          "crop": "ui-crop-h-nosotros.png"
+        },
+        {
+          "label": "\"Productos\": texto blanco en barra lima con sombra",
+          "crop": "ui-crop-h-productos-bar.png"
+        },
+        {
+          "label": "Categorías: píldora con borde verde y sombra",
+          "crop": "ui-crop-btn-categoria.png"
+        }
+      ],
+      "proposal": "Una escala fija de tres niveles en texto real: título principal de la página, título de sección y subtítulo de categoría, todos en verde bosque sobre fondo claro y sin cajas ni sombras."
+    },
+    {
+      "kind": "icons",
+      "title": "Las mismas flechas, en dos colores distintos",
+      "explanation": "Las flechas del banner son verde claro y las de los carruseles de productos son verde oscuro; los íconos de redes son blancos en el banner y lima en el pie. Son detalles pequeños, pero repetidos en toda la página transmiten que nadie revisó el conjunto.",
+      "items": [
+        {
+          "label": "Flecha del banner: verde claro (#7CA50A)",
+          "crop": "ui-crop-icon-flecha-banner.png"
+        },
+        {
+          "label": "Flecha de los carruseles: verde oscuro (#1E5000)",
+          "crop": "ui-crop-icon-flecha-carrusel.png"
+        },
+        {
+          "label": "Redes en el banner: blancas y dibujadas en la imagen",
+          "crop": "ui-crop-icon-redes-banner.png"
+        },
+        {
+          "label": "Redes en el pie: círculos lima",
+          "crop": "ui-crop-icon-redes-pie.png"
+        }
+      ],
+      "proposal": "Un solo estilo de ícono y un solo color por función: flechas siempre en verde bosque, redes sociales solo en el pie de página y como enlaces reales."
+    },
+    {
+      "kind": "colors",
+      "title": "Seis verdes donde bastan dos",
+      "explanation": "El código del sitio usa tres verdes oscuros y tres verdes lima casi iguales entre sí, y los colores globales del editor siguen en los valores por defecto (un azul claro que la marca no usa). A simple vista se percibe como un verde que \"no termina de cuadrar\" de una sección a otra.",
+      "items": [
+        {
+          "label": "Verde bosque (16 usos)",
+          "hex": "#194414"
+        },
+        {
+          "label": "Verde oscuro casi igual (6 usos)",
+          "hex": "#1E5000"
+        },
+        {
+          "label": "Verde hoja (2 usos)",
+          "hex": "#4A7147"
+        },
+        {
+          "label": "Verde lima (15 usos)",
+          "hex": "#97C61B"
+        },
+        {
+          "label": "Lima casi idéntico (4 usos)",
+          "hex": "#98C71B"
+        },
+        {
+          "label": "Lima más oscuro (3 usos)",
+          "hex": "#7CA50A"
+        },
+        {
+          "label": "Color global por defecto, sin relación con la marca",
+          "hex": "#6EC1E4"
+        }
+      ],
+      "proposal": "Dejar dos verdes de marca (bosque y lima) más un verde hoja de apoyo y un gris de texto, cargados como colores globales del sitio para que ninguna sección use un tono suelto."
+    },
+    {
+      "kind": "fonts",
+      "title": "Cuatro tipografías para una sola página",
+      "explanation": "El sitio carga Roboto, Roboto Slab y Poppins, y el banner usa una cuarta letra que está dibujada en la imagen. El resultado es que el título del banner, los títulos de sección y los párrafos no parecen de la misma empresa.",
+      "items": [
+        {
+          "label": "Roboto: títulos, menú y categorías",
+          "family": "Roboto"
+        },
+        {
+          "label": "Poppins: párrafo de Nosotros",
+          "family": "Poppins"
+        },
+        {
+          "label": "Roboto Slab: cargada como fuente secundaria",
+          "family": "Roboto Slab"
+        },
+        {
+          "label": "Letra del banner: dibujada dentro de la imagen",
+          "family": null
+        }
+      ],
+      "proposal": "Dos tipografías: Poppins para títulos y botones, Roboto para textos, con tres grosores como máximo."
+    },
+    {
+      "kind": "cards",
+      "title": "Tarjetas que muestran una caja y no dicen nada",
+      "explanation": "Cada producto es una foto con fondo blanco y borde gris, sin nombre, uso ni enlace, y la foto de Nosotros tiene un marco desplazado que no se repite en ningún otro lugar. Una tarjeta sin texto obliga al comprador a adivinar qué es y para qué sirve.",
+      "items": [
+        {
+          "label": "Tarjeta de producto: solo foto",
+          "crop": "ui-crop-card-producto.png"
+        },
+        {
+          "label": "Foto de Nosotros con marco desplazado",
+          "crop": "ui-crop-card-nosotros-foto.png"
+        }
+      ],
+      "proposal": "Una sola tarjeta de producto: foto, nombre, uso en una línea (\"para exportar flores\") y botón \"Cotizar\", con el mismo borde y esquina en todo el sitio."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {
+        "name": "Verde bosque",
+        "hex": "#194414",
+        "role": "Títulos, pie de página y flechas; texto blanco encima 11,2:1 (pasa AA)"
+      },
+      {
+        "name": "Verde lima",
+        "hex": "#97C61B",
+        "role": "Solo fondo del botón principal, con texto verde bosque 5,5:1 (pasa AA); texto blanco encima da 2,0:1 y no pasa"
+      },
+      {
+        "name": "Verde hoja",
+        "hex": "#4A7147",
+        "role": "Enlaces y detalles de apoyo; sobre blanco 5,6:1 y texto blanco encima 5,6:1 (pasa AA)"
+      },
+      {
+        "name": "Gris texto",
+        "hex": "#54595F",
+        "role": "Párrafos sobre fondo blanco, 7,1:1 (pasa AA)"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "role": "Fondo de tarjetas y formularios; texto verde bosque encima 11,2:1 (pasa AA)"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Poppins",
+        "role": "Títulos y botones, grosores 600 y 700"
+      },
+      {
+        "family": "Roboto",
+        "role": "Textos y formularios, grosor 400"
+      }
+    ],
+    "button_primary": "Fondo verde lima #97C61B, texto verde bosque #194414 en Poppins 600 de 16 px, esquinas de 10 px, sin sombra; al pasar el cursor, fondo verde bosque y texto blanco.",
+    "button_secondary": "Fondo transparente, borde de 2 px verde bosque #194414, texto verde bosque en Poppins 600 de 16 px, esquinas de 10 px.",
+    "heading_scale": "Título principal (H1) 44 px escritorio / 30 px celular; título de sección (H2) 32 / 24 px; subtítulo de categoría (H3) 22 / 18 px; texto 16 px. Todos en verde bosque, sin cajas ni sombras."
+  },
+  "hierarchy_notes": [
+    "Encabezado: lo primero que se ve es la píldora lima de \"Inicio\", la página en la que ya estás; debería destacar un botón \"Cotizar\" o el teléfono, y el resto del menú en gris (#7A7A7A, alrededor de 3,6:1 sobre la textura de papel) apenas se lee.",
+    "Banner: el ojo va primero a las fotos de cajas, flores y fresas, y luego a \"Naturalmente resistentes\"; debería leerse primero qué fabricas (empaques de cartón corrugado para industria, comercio y agro) y después un botón real de cotizar.",
+    "Nosotros: domina la foto de planta y el título queda pequeño y en un verde distinto; el dato más fuerte, \"fabricantes desde 2006\", está enterrado en el párrafo y debería ser lo primero que se lea.",
+    "Productos: la barra lima \"Productos\" y las tres píldoras de categoría compiten como si fueran botones; deberían leerse como títulos y dejar que el peso visual lo tengan los productos con su nombre y su botón de cotizar.",
+    "Carruseles de producto: se ven fotos sin texto y flechas; el comprador debería ver primero el nombre y el uso de cada empaque.",
+    "Cierre de página: lo último que se ve es un botón pequeño \"VER MÁS PRODUCTOS\" y un pie sin teléfono; debería cerrar con una franja de contacto y cotización.",
+    "Botón de WhatsApp: el verde intenso flotante es de lo más llamativo en pantalla, pero su texto blanco tiene 1,98:1 de contraste."
+  ],
+  "sharp_headlines": {
+    "1": "Tu banner no dice qué fabricas",
+    "2": "Tu portada hace esperar 7,7 segundos",
+    "3": "Tu WhatsApp recibe clientes con texto de prueba",
+    "4": "Tus productos se ven, pero no se piden",
+    "5": "Tu formulario no pide lo necesario para cotizar",
+    "6": "Tus botones de venta casi no se leen",
+    "7": "Dices ser ecológico, pero no lo pruebas",
+    "8": "Llamarte desde el celular cuesta trabajo",
+    "9": "Seis verdes distintos: tu marca se ve desordenada",
+    "10": "Tu servidor no activa protecciones básicas"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "required": [
+    "area",
+    "findings",
+    "search_tests",
+    "extra_pitch_es",
+    "checks"
+  ],
+  "properties": {
+    "area": {
+      "type": "string",
+      "enum": [
+        "seo"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "summary",
+          "impact"
+        ],
+        "properties": {
+          "impact": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+      }
+    },
+    "search_tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "query",
+          "appears"
+        ],
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "appears": {
+            "type": "boolean"
+          },
+          "who_appears": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "search_tests_note": {
+      "type": "string"
+    },
+    "extra_pitch_es": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "result",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "partial",
+              "fail",
+              "na"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

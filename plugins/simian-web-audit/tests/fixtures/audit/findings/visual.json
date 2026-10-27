@@ -1,0 +1,81 @@
+{
+ "area": "visual",
+ "findings": [
+  {
+   "id": "visual-1",
+   "title": "El titular es una imagen",
+   "summary": "En celular queda diminuto.",
+   "now": "Texto dibujado en el banner.",
+   "fix": "Titular en texto real.",
+   "why": "Los primeros segundos deciden.",
+   "impact": 4,
+   "effort": "Medio",
+   "evidence": [
+    "hero img"
+   ],
+   "technical_note": "",
+   "pin": {
+    "screenshot": "mobile-fullpage.jpg",
+    "x_pct": 25,
+    "y_pct": 7
+   }
+  }
+ ],
+ "checks": [
+  {
+   "id": "vis-headline-legible",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-focal-point",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-fonts",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-buttons",
+   "result": "fail",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-headings",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-palette",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-photos",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-products",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-positioning",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-spacing",
+   "result": "pass",
+   "evidence": "fixture"
+  },
+  {
+   "id": "vis-up-to-date",
+   "result": "pass",
+   "evidence": "fixture"
+  }
+ ]
+}
