@@ -27,7 +27,7 @@ Talk to the user in their language (Spanish by default). Client-facing copy: neu
 
 Write the answers to two JSON files in the run directory's scratch (or `/tmp`), then:
 `python3 -I "$PLUGIN/scripts/init_audit.py" <url> --context-json ctx.json --options-json opts.json`
-with options `{"load_page": bool, "extra": bool, "openseo": bool}`. It prints the audit folder (`AUDIT`).
+with options `{"load_page": bool, "extra": bool, "openseo": bool}`. For an internal audit of a Simian-owned site, add `"internal": true`: the report hides the "Por qué Simian" cases section, and you skip the `redesign` agent. It prints the audit folder (`AUDIT`).
 
 ## 3. Evidence (once, shared by all agents)
 `python3 -I "$PLUGIN/scripts/collect_evidence.py" "$AUDIT"` (HTML, Lighthouse mobile + desktop, screenshots). Look at `screenshots/desktop-viewport.png`; if it shows a cookie wall or bot check, tell the user.

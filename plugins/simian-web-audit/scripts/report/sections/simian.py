@@ -50,6 +50,8 @@ def pick_cases(cases: list[dict], top10_items: list[dict], k: int = 3) -> list[t
 
 
 def build(ctx) -> Section | None:
+    if ctx["meta"].get("options", {}).get("internal"):
+        return None
     picked = pick_cases(ctx["cases"], ctx["top10"]["items"])
     if not picked:
         return None

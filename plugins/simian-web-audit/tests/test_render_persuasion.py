@@ -88,6 +88,12 @@ class PersuasionTest(unittest.TestCase):
         self.assertIn("Veyalthi", sec.html)
         self.assertIsNone(simian.build({**ctx, "cases": []}))
 
+    def test_simian_section_hidden_for_internal_audits(self):
+        ctx = self.ctx()
+        ctx["cases"] = CASES
+        ctx["meta"] = {"options": {"internal": True}}
+        self.assertIsNone(simian.build(ctx))
+
 
 if __name__ == "__main__":
     unittest.main()

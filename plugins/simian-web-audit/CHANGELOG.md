@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0] - 2026-10-27
+
+### Added
+- `internal` audit option (`findings/meta.json` → `options.internal`): hides the "Por qué Simian" cases section, for audits of Simian's own sites.
+
 ## [0.3.0] - 2026-10-27
 
 ### Changed
