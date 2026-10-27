@@ -1,1 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+.superpowers/
+.atl/
 _site/

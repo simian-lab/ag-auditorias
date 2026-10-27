@@ -1,0 +1,13 @@
+{
+  "name": "ag-auditorias",
+  "owner": {
+    "name": "Simian"
+  },
+  "plugins": [
+    {
+      "name": "simian-web-audit",
+      "source": "./plugins/simian-web-audit",
+      "description": "Audit a prospect's website and build a persuasive Top N micrositio for in-person Simian presentations."
+    }
+  ]
+}
