@@ -1,0 +1,92 @@
+{
+  "competitors": [
+    {
+      "name": "Mercedes Campuzano",
+      "slug": "mercedes-campuzano",
+      "url": "https://www.mercedescampuzano.com/",
+      "why_competitor": "Colombian women's fashion brand selling dresses, clothing, bags and accessories online (site title: 'Tienda Online de zapatos, bolsos, ropa y accesorios para mujer en Colombia'); closest mix to Scarlett (Vestidos, Ropa, Accesorios in the main menu).",
+      "screenshot": "screenshots/bench-mercedes-campuzano.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "El menú (Vestidos, Ropa, Accesorios) deja claro qué vende y el banner tiene un botón 'Comprar', pero el titular está dentro de la imagen y no hay pruebas de confianza.",
+      "lighthouse": {
+        "performance": 46,
+        "accessibility": 82,
+        "seo": 100,
+        "total_mb": 4.59
+      },
+      "evidence": "screenshots/bench-mercedes-campuzano.png (1440x900); raw/bench-mercedes-campuzano-lh.json (mobile, LCP 23.4 s simulated); hero text 'the ESSENTIALS' not present as DOM text (only the marquee 'NUEVA COLECCIÓN THE ESSENTIALS')."
+    },
+    {
+      "name": "ela",
+      "slug": "ela",
+      "url": "https://www.ela.com.co/",
+      "why_competitor": "Colombian women's fashion retailer selling clothing and accessories ('Complementos') online (site title: 'Tienda de ropa para mujer | ela | Compra online').",
+      "screenshot": "screenshots/bench-ela.png",
+      "five_second": {
+        "what": true,
+        "for_whom": true,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "Dice 'Mujer | Girls' arriba y el banner invita con 'Quiero ver más', pero el titular 'Metamorfosis' es imagen y el aviso de cookies tapa parte de la primera pantalla.",
+      "lighthouse": {
+        "performance": 52,
+        "accessibility": 74,
+        "seo": 100,
+        "total_mb": 3.68
+      },
+      "evidence": "screenshots/bench-ela.png (cookie banner bottom-left, does not cover the hero headline); raw/bench-ela-lh.json (mobile, LCP 19.5 s simulated); 'METAMORFOSIS' not found as DOM text."
+    },
+    {
+      "name": "Studio F",
+      "slug": "studio-f",
+      "url": "https://www.studiof.com.co/",
+      "why_competitor": "Large reference: national Colombian women's fashion chain selling dresses, clothing and accessories ('Complementos') online, with a 'Nuestras tiendas' store section.",
+      "screenshot": "screenshots/bench-studio-f.png",
+      "five_second": {
+        "what": true,
+        "for_whom": true,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
+      "notes_es": "El menú y 'Mujer | Hombre' orientan rápido y hay un botón 'Ver más', pero el titular 'Party Season' es una imagen.",
+      "lighthouse": {
+        "performance": 43,
+        "accessibility": 79,
+        "seo": 100,
+        "total_mb": 6.22
+      },
+      "evidence": "screenshots/bench-studio-f.png; raw/bench-studio-f-lh.json (mobile, LCP 25.2 s simulated); hero is <img alt='Party Season | Studio  F'>."
+    }
+  ],
+  "client": {
+    "name": "Scarlett",
+    "slug": "client",
+    "url": "https://scarlettropayaccesorios.com/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": false,
+      "text_headline": false,
+      "trust_proof": false,
+      "quote_cta": false
+    },
+    "notes_es": "El menú (Accesorios, Ropa, Vestidos) y las joyas del banner muestran qué vendes, pero la oferta 'Hasta 60% off' está dentro de la imagen y no hay ningún botón en la primera pantalla.",
+    "lighthouse": {
+      "performance": 51,
+      "accessibility": 89,
+      "seo": 92,
+      "total_mb": 9.49
+    },
+    "evidence": "screenshots/desktop-viewport.png; raw/lighthouse-mobile.json (total-byte-weight 9.49 MB, LCP 17.4 s simulated); 'Hasta 60% off' / 'Love edition' not present as text in raw/home.html."
+  },
+  "takeaway_es": "Tu página pesa 9,5 MB en el celular, más que Studio F (6,2 MB), Mercedes Campuzano (4,6 MB) y ela (3,7 MB): tu clienta descarga hasta 2,6 veces más datos antes de ver tus accesorios."
+}

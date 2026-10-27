@@ -1,0 +1,231 @@
+{
+  "client": "Scarlett",
+  "domain": "scarlettropayaccesorios.com",
+  "date": "Octubre 2026",
+  "big_stat": {
+    "value": "9,5 MB",
+    "count_to": null,
+    "suffix": null,
+    "headline": "Tu página de inicio pesa 9,5 MB, y 8 de cada 10 de esos megas son fotos",
+    "explain": "Es lo que el celular de la clienta tiene que descargar para ver tu portada. Las fotos están en un formato pesado (PNG): solo la imagen de fondo pesa 1,5 MB y cada foto de vestido entre 290 y 450 KB. Con datos móviles, eso se traduce en espera y en datos gastados antes de ver un solo producto.",
+    "grid_pct": 81,
+    "grid_legend": [
+      "Imágenes (7,7 MB)",
+      "Todo lo demás"
+    ],
+    "source": "Lighthouse móvil, octubre 2026 (total-byte-weight 9.718 KiB; 47 imágenes suman 7.861 KiB)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "tec",
+      "src": [
+        "tech-1"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Doce segundos de rosado antes de vender",
+      "t_plain": "Una pantalla de carga tapa la tienda durante más de 12 segundos en celular",
+      "s": "En el celular, la clienta mira una pantalla rosada con un «0%» durante más de 12 segundos antes de ver un solo producto.",
+      "now": "Un complemento de «pantalla de carga» cubre toda la página hasta que terminan de descargarse todos los archivos. En la prueba en celular, a los 9 y a los 12,6 segundos todavía solo se ve el fondo rosado con «0%»; el contenido principal aparece a los 15 segundos.",
+      "fix": "Quitar la pantalla de carga, o limitarla a un instante, para que la tienda se muestre en cuanto el primer banner esté listo, y volver a medir el tiempo de aparición.",
+      "why": "Cada segundo de pantalla vacía es tiempo en que una clienta que llegó desde Instagram o un anuncio pagado no ve tu colección.",
+      "shot": {
+        "img": "tech-mobile-loading-12s.png",
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "n": 2,
+      "c": "ux",
+      "src": [
+        "ux-2"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu mejor oferta no lleva a comprar",
+      "t_plain": "El banner de «Hasta 60% OFF» en joyas lleva a vestidos en computador y no lleva a ningún lado en celular",
+      "s": "La promoción más visible del sitio no lleva a los productos en oferta, así que el interés que genera se pierde.",
+      "now": "En computador, el banner anuncia joyas «Love Edition» con hasta 60% de descuento, pero al hacer clic lleva al catálogo de vestidos. En celular el mismo banner no tiene enlace: tocarlo no hace nada. En ninguno de los dos hay un botón visible.",
+      "fix": "Enlazar el banner, en computador y en celular, a la página de la promoción, que ya existe en el menú como «LOVE SALE 60%», y añadir un botón con texto claro como «Ver joyas en oferta».",
+      "why": "Cada clic en la promoción que no llega a los productos en oferta es una venta que se queda a mitad de camino.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 55
+      }
+    },
+    {
+      "n": 3,
+      "c": "vis",
+      "src": [
+        "visual-1",
+        "ux-1",
+        "a11y-1",
+        "a11y-4"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu oferta es una foto, no un mensaje",
+      "t_plain": "La oferta y el mensaje de la portada están dentro de imágenes y la página no tiene título principal",
+      "s": "Nadie lee en texto qué vendes ni cuál es la oferta: en el celular las letras quedan diminutas, y ni Google ni los lectores de pantalla pueden leerlas.",
+      "now": "Todo el mensaje de la portada («Hasta 60% OFF – Love Edition») está dibujado dentro de la foto del banner, sin descripción. En un celular el «60% OFF» queda de unos 10 px de alto. La página no tiene ningún título principal que diga qué vende Scarlett, y lo mismo pasa con los nombres de categoría y los testimonios: son texto pegado en fotos.",
+      "fix": "Escribir como texto real sobre el banner un título corto de marca (por ejemplo «Vestidos y accesorios para mujer · Envío express en Bogotá») y el titular de la campaña, de al menos 28 px en celular, con un botón «Comprar ahora». Dejar la imagen solo con los productos.",
+      "why": "Si la clienta entiende en el primer vistazo qué vendes y cuál es la oferta, sigue navegando; y Google también puede mostrarlo.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 50,
+        "y": 4
+      }
+    },
+    {
+      "n": 4,
+      "c": "tec",
+      "src": [
+        "tech-2"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "9,5 MB antes del primer vestido",
+      "t_plain": "La página de inicio pesa 9,5 MB, casi todo por fotos en formato pesado",
+      "s": "Las fotos se suben en un formato muy pesado, así que la tienda gasta datos y tarda en abrir en el celular.",
+      "now": "Abrir la página de inicio descarga 9,5 MB; 7,7 MB son imágenes, casi todas PNG. Solo la imagen de fondo pesa 1,5 MB y cada foto de vestido entre 290 y 450 KB.",
+      "fix": "Convertir las fotos a WebP o AVIF, subirlas al tamaño real en que se muestran y activar una optimización automática para las fotos nuevas. La meta es dejar la página de inicio por debajo de 3 MB.",
+      "why": "Una página liviana abre rápido aun con datos móviles, y eso mantiene a la clienta mirando productos en vez de esperando.",
+      "shot": null
+    },
+    {
+      "n": 5,
+      "c": "ux",
+      "src": [
+        "ux-3",
+        "visual-5"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Cinco anuncios iguales antes del primer vestido",
+      "t_plain": "La promoción se repite en cuatro cuadros que no llevan a ningún producto",
+      "s": "Debajo del banner, la misma promoción se repite cuatro veces más con joyas que no se pueden tocar, y el primer vestido queda más de una pantalla abajo.",
+      "now": "Después del banner hay cuatro cuadros con el mismo fondo vino y el mismo «Hasta 60% OFF – Love Edition», cada uno con una joya distinta (collar de perlas, aretes de cerezas, cadena con llave, aretes dorados). Son imágenes sin enlace, sin nombre y sin precio. En el celular, el primer vestido aparece recién a unos 1.100 px.",
+      "fix": "Dejar la campaña solo en el banner y convertir los cuatro cuadros en tarjetas de producto que lleven a su ficha, con nombre, precio antes y después, y botón «Agregar al carrito».",
+      "why": "Un producto que se ve pero no se puede tocar es un camino de compra cerrado justo en el momento de mayor interés.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 50,
+        "y": 20
+      }
+    },
+    {
+      "n": 6,
+      "c": "vis",
+      "src": [
+        "visual-3"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "El «Sale» le gana al vestido",
+      "t_plain": "Una etiqueta «Sale» gigante cubre las fotos de los vestidos en oferta",
+      "s": "En los vestidos con descuento, la etiqueta de oferta cubre la mayor parte de la foto, así que la clienta no ve el producto que le quieres vender.",
+      "now": "En los vestidos Bahamas y Capri aparece un círculo rojo enorme con la palabra en inglés «SALE» que tapa medio vestido en celular y casi toda la tarjeta en computador; el resto de las tarjetas no tiene nada parecido.",
+      "fix": "Cambiar la etiqueta por una insignia pequeña en una esquina (por ejemplo «-20%» u «Oferta», en español) con el rosa o el vino de la marca, y mostrar el precio anterior tachado junto al nuevo.",
+      "why": "Una oferta solo vende si se ve el producto; tapar la foto convierte el descuento en ruido.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 28,
+        "y": 24
+      }
+    },
+    {
+      "n": 7,
+      "c": "a11y",
+      "src": [
+        "a11y-3",
+        "visual-4",
+        "a11y-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tus categorías existen, pero no se leen",
+      "t_plain": "Los nombres de las 12 categorías casi no se leen y sus enlaces no tienen nombre",
+      "s": "La cuadrícula de categorías no deja leer qué hay en cada cuadro, así que la clienta adivina en vez de elegir.",
+      "now": "Cada categoría (Anillos, Vestidos, Chaquetas…) es una sola imagen con el nombre en letra blanca muy pequeña sobre rosa claro: en celular mide unos 7 px y el contraste es de aproximadamente 1,7 a 1, cuando el mínimo recomendado es 4,5 a 1. Además, esos 12 enlaces no tienen nombre, así que un lector de pantalla no puede anunciarlos.",
+      "fix": "Escribir el nombre de cada categoría como texto real, oscuro (vino o negro) y de al menos 16 px, con el mismo estilo en las 12 tarjetas. Así el enlace también queda con nombre.",
+      "why": "Las categorías son la puerta de entrada al catálogo; si no se leen, la clienta navega a ciegas o se va.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 20,
+        "y": 38.5
+      }
+    },
+    {
+      "n": 8,
+      "c": "tec",
+      "src": [
+        "tech-3",
+        "tech-4"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "22 complementos cobran peaje en cada visita",
+      "t_plain": "Demasiados complementos y un servidor lento retrasan la primera vista",
+      "s": "Antes de mostrar nada, la página carga código de 22 complementos, incluso funciones que la portada no usa, y el servidor tarda casi un segundo y medio en responder.",
+      "now": "En el celular, los archivos que bloquean la vista suman unos 3,6 segundos: se cargan 88 scripts y 58 hojas de estilo, entre ellos calendarios y selectores de hora de las opciones de producto, y tres familias de letra completas. Además, el servidor tarda entre 1,3 y 1,4 segundos en dar la primera respuesta, cuando lo recomendable es menos de 0,6, y no se ven señales de una caché de páginas.",
+      "fix": "Desactivar los complementos que no se usan, cargar cada función solo en la página donde hace falta y dejar solo la tipografía y los grosores que el diseño usa. Activar una caché de páginas o un CDN.",
+      "why": "Menos código y un servidor más rápido aceleran todas las páginas a la vez: catálogo, fichas y carrito.",
+      "shot": null
+    },
+    {
+      "n": 9,
+      "c": "ux",
+      "src": [
+        "ux-5",
+        "ux-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu WhatsApp corta la conversación a medias",
+      "t_plain": "El mensaje de WhatsApp sale incompleto y el teléfono no se puede llamar con un toque",
+      "s": "Hablar con la tienda, justo cuando la clienta tiene dudas de talla o precio, cuesta más de lo necesario.",
+      "now": "El botón «¿Necesitas ayuda?» abre una ventana que dice «Hola , Bienvenido a Scarlett» y el mensaje que se envía a WhatsApp es «Hola **. Necesito más información sobre», cortado y sin el producto. El teléfono del pie de página es texto simple (no se puede llamar con un toque) y en el menú no hay una opción de contacto: «Universo Scarlett» apunta a una sección que no existe.",
+      "fix": "Escribir un saludo completo y hacer que el mensaje incluya automáticamente el producto que se está viendo (por ejemplo «Hola, quiero información sobre el Vestido Creta»). Hacer el teléfono pulsable y agregar «Contacto» al menú.",
+      "why": "Un mensaje que ya dice qué producto interesa permite responder más rápido y cerrar la venta en el chat.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 92,
+        "y": 93
+      }
+    },
+    {
+      "n": 10,
+      "c": "ux",
+      "src": [
+        "ux-6",
+        "a11y-5"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Tu mejor prueba social está al fondo",
+      "t_plain": "Las opiniones de clientas están al final de la página, en un carrusel que no se puede pausar",
+      "s": "Tu mejor prueba de confianza, clientas reconocidas usando tus vestidos, aparece cuando la mayoría ya pasó por los productos.",
+      "now": "Las fotos de clientas con cinco estrellas (por ejemplo, la presentadora Laura Acuña) están casi al final de la página, después de las tiendas, en un carrusel que cambia solo cada 5 segundos, sin botón de pausa, y que en celular muestra una a la vez. Las tarjetas de producto no muestran calificaciones ni comentarios.",
+      "fix": "Subir una franja fija de 3 o 4 testimonios justo debajo de los vestidos, sin rotación automática, y mostrar estas fotos también en la ficha de cada vestido.",
+      "why": "Ver a otras clientas con la prenda puesta, cerca del precio, da la seguridad que se necesita para pagar un vestido de precio alto.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 40,
+        "y": 83
+      }
+    }
+  ]
+}

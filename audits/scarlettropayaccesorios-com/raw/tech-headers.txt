@@ -1,0 +1,58 @@
+### curl -sI https://scarlettropayaccesorios.com/
+HTTP/2 200 
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://scarlettropayaccesorios.com/wp-json/>; rel="https://api.w.org/", <https://scarlettropayaccesorios.com/wp-json/wp/v2/pages/11>; rel="alternate"; title="JSON"; type="application/json", <https://scarlettropayaccesorios.com/>; rel=shortlink
+set-cookie: _fbp=fb.1.1793135728574.677857739.AQECAQIB; expires=Mon, 25 Jan 2027 21:15:28 GMT; Max-Age=7776000; path=/; domain=scarlettropayaccesorios.com; secure; SameSite=Lax
+set-cookie: database_validation=true; expires=Thu, 26 Nov 2026 21:15:28 GMT; Max-Age=2592000; path=/; secure; HttpOnly; SameSite=Strict
+content-type: text/html; charset=UTF-8
+date: Tue, 27 Oct 2026 21:15:28 GMT
+server: Apache
+
+### curl -sI http://scarlettropayaccesorios.com/
+HTTP/1.1 301 Moved Permanently
+Date: Tue, 27 Oct 2026 21:15:29 GMT
+Server: Apache
+Permissions-Policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+X-Redirect-By: WordPress
+Set-Cookie: _fbp=fb.1.1793135729957.1173447182.AQECAQIB; expires=Mon, 25 Jan 2027 21:15:29 GMT; Max-Age=7776000; path=/; domain=scarlettropayaccesorios.com; SameSite=Lax
+Set-Cookie: database_validation=true; expires=Thu, 26 Nov 2026 21:15:30 GMT; Max-Age=2592000; path=/; HttpOnly; SameSite=Strict
+Upgrade: h2,h2c
+Connection: Upgrade
+Location: https://scarlettropayaccesorios.com/
+Content-Type: text/html; charset=UTF-8
+
+### curl -sI https://scarlettropayaccesorios.com/pagina-que-no-existe-xyz/
+HTTP/2 404 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://scarlettropayaccesorios.com/wp-json/>; rel="https://api.w.org/"
+set-cookie: _fbp=fb.1.1793135731153.851324700.AQECAQIB; expires=Mon, 25 Jan 2027 21:15:31 GMT; Max-Age=7776000; path=/; domain=scarlettropayaccesorios.com; secure; SameSite=Lax
+set-cookie: database_validation=true; expires=Thu, 26 Nov 2026 21:15:32 GMT; Max-Age=2592000; path=/; secure; HttpOnly; SameSite=Strict
+content-type: text/html; charset=UTF-8
+date: Tue, 27 Oct 2026 21:15:31 GMT
+server: Apache
+
+### static css
+HTTP/2 200 
+last-modified: Mon, 06 Apr 2026 14:12:02 GMT
+accept-ranges: bytes
+content-length: 45719
+cache-control: max-age=31557600
+expires: Thu, 28 Oct 2027 03:15:34 GMT
+vary: Accept-Encoding
+content-type: text/css
+date: Tue, 27 Oct 2026 21:15:34 GMT
+server: Apache
+
+### image
+HTTP/2 200 
+last-modified: Mon, 06 Apr 2026 14:12:10 GMT
+accept-ranges: bytes
+content-length: 1605588
+cache-control: max-age=31557600
+expires: Thu, 28 Oct 2027 03:15:36 GMT
+content-type: image/png
+date: Tue, 27 Oct 2026 21:15:36 GMT
+server: Apache
+

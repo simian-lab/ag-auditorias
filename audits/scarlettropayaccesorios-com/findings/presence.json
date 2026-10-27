@@ -1,0 +1,143 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "Inicio",
+        "url": "https://scarlettropayaccesorios.com/",
+        "breadcrumb": "scarlettropayaccesorios.com",
+        "title": "Home -",
+        "meta_description": null,
+        "note": "El título es solo «Home -», en inglés y sin la marca: no dice Scarlett, ni ropa, ni accesorios, ni Bogotá. No hay descripción, así que Google improvisa el texto con lo que encuentre en la página."
+      },
+      {
+        "page": "Tienda (catálogo)",
+        "url": "https://scarlettropayaccesorios.com/latienda/",
+        "breadcrumb": "scarlettropayaccesorios.com › latienda",
+        "title": "Tienda -",
+        "meta_description": null,
+        "note": "Título genérico sin marca ni tipo de producto; sin descripción."
+      },
+      {
+        "page": "Producto (Vestido Creta)",
+        "url": "https://scarlettropayaccesorios.com/producto/vestido-creta/",
+        "breadcrumb": "scarlettropayaccesorios.com › producto › vestido-creta",
+        "title": "Vestido Creta -",
+        "meta_description": "Más de 25 formas de usarlo en un solo diseño. Su silueta fluida y versátil te permite crear diferentes estilos para cada ocasión, adaptándose a tu personalidad y momento. Confeccionado en tela Lira (73% Poliamida, 27% Elastano), un tejido elástico de apariencia brillante que brinda comodidad, ajuste perfecto y libertad de movimiento.",
+        "note": "La descripción existe y es buena, pero tiene unos 330 caracteres: Google la corta a la mitad. El título termina en «-» sin la marca, porque el nombre del sitio está vacío."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "Inicio",
+        "title": "Scarlett: ropa y accesorios para mujer en Bogotá",
+        "description": "Vestidos, ropa y accesorios para mujer. Visita nuestras casitas rosadas en Cedritos, Unicentro, Salitre y Zona T. Envío express en Bogotá en menos de 24 h."
+      },
+      {
+        "page": "Tienda (catálogo)",
+        "title": "Tienda Scarlett: vestidos, ropa y accesorios",
+        "description": "Compra vestidos, blusas, faldas, aretes, anillos y cadenitas Scarlett. Envío gratis desde $200.000 y envío express en Bogotá en menos de 24 horas."
+      },
+      {
+        "page": "Producto (Vestido Creta)",
+        "title": "Vestido Creta: más de 25 formas de usarlo | Scarlett",
+        "description": "Vestido Creta en tela Lira elástica y brillante (73% poliamida, 27% elastano). Más de 25 formas de usarlo en un solo diseño. Envío express en Bogotá."
+      }
+    ]
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:title": "Home -",
+        "og:description": "Vestido Creta $ 454.500 Vestido Maui Marfil $ 514.500 Vestido Santorini $ 446.000 Vestido Val´Quirico $ 480.000 Vestido Bahamas $ 399.000 Vestido Portofino $ 448.000 Vestido […]",
+        "og:image": "https://scarlettropayaccesorios.com/wp-content/uploads/2026/09/BANNER-LOVE-EDITION.png (1920×1080 PNG, promo banner 'Hasta 60% off Love Edition')",
+        "og:locale": "es_ES (the page itself declares es-CO)",
+        "twitter:card": "summary_large_image"
+      },
+      "tienda": {
+        "og:title": "Tienda -",
+        "og:description": null,
+        "og:image": null
+      },
+      "product": {
+        "og:title": "Vestido Creta -",
+        "og:description": "Más de 25 formas de usarlo en un solo diseño. […] (same long text as meta description)",
+        "og:image": "https://scarlettropayaccesorios.com/wp-content/uploads/2026/07/creta.webp (1500×1500 WebP)"
+      },
+      "whatsapp_today": "Al compartir el inicio por WhatsApp o LinkedIn sale el título «Home -» y como texto una lista de precios de vestidos cortada a la mitad; no aparece el nombre Scarlett. Al compartir la página de la tienda sale solo «Tienda -», sin texto ni imagen propia."
+    },
+    "proposed": {
+      "og:title": "Scarlett: ropa y accesorios para mujer en Bogotá",
+      "og:description": "Vestidos, ropa y accesorios para mujer. Casitas rosadas en Cedritos, Unicentro, Salitre y Zona T, y envío express en Bogotá.",
+      "og:image": "https://scarlettropayaccesorios.com/wp-content/uploads/2026/09/BANNER-LOVE-EDITION.png",
+      "og:image:width": 1200,
+      "og:image:height": 630,
+      "og:locale": "es_CO",
+      "twitter:card": "summary_large_image",
+      "og_image_local": "og-source.jpg"
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Ponerle nombre al sitio para Google y la IA",
+        "fix": "Hoy los datos del sitio dicen que tu web no tiene nombre ni descripción, por eso todas las páginas terminan en «-». Escribir «Scarlett» como nombre del sitio y una frase que diga qué vendes y dónde.",
+        "evidence": "JSON-LD WebSite on home, /latienda/, /producto/vestido-creta/: \"name\":\"\", \"description\":\"\"; <title> 'Home -', 'Tienda -', 'Vestido Creta -'"
+      },
+      {
+        "title": "Cada casita rosada como tienda en los datos del sitio",
+        "fix": "Añadir datos de negocio local (Organization + una ClothingStore por sede) con la dirección, el teléfono, el horario de lunes a domingo y el enlace a Google Maps de Cedritos, Unicentro, Salitre y Zona T, idénticos a los publicados.",
+        "evidence": "JSON-LD types on home: WebPage, ImageObject, BreadcrumbList, WebSite only; no Organization, LocalBusiness or telephone. Store data exists only as text in /nuestras-casitas/ and home"
+      },
+      {
+        "title": "Datos de producto que la IA pueda leer",
+        "fix": "Activar los datos de producto (precio, disponibilidad, material, imagen) en cada ficha, para que buscadores y asistentes puedan recomendar un vestido concreto con su precio.",
+        "evidence": "/producto/vestido-creta/: JSON-LD types WebPage, ImageObject, BreadcrumbList, WebSite; no Product/Offer"
+      },
+      {
+        "title": "Ampliar la página de preguntas frecuentes",
+        "fix": "La página FAQ solo trata garantías, cambios y cuidados. Sumar las preguntas que hace una compradora: tiempos y costo de envío, envío express en Bogotá, tallas, medios de pago, si puede recoger en tienda, y marcarlas como preguntas frecuentes en los datos del sitio.",
+        "evidence": "/faq/: 5 questions (garantía x2, cambio/devolución x2, cuidados); no FAQPage schema"
+      },
+      {
+        "title": "Una ficha de marca con datos comprobables",
+        "fix": "La página Historia es solo inspiracional. Añadir datos verificables: año de fundación, número de tiendas y barrios, qué se diseña o fabrica en Colombia, materiales de los accesorios y garantía.",
+        "evidence": "/historia/: brand narrative only ('Scarlett nació en Colombia…'), no founding year, figures or materials"
+      },
+      {
+        "title": "Crear un archivo llms.txt",
+        "fix": "Publicar un archivo llms.txt con un resumen de quién es Scarlett, qué vende, dónde están las tiendas y enlaces a catálogo, envíos, cambios y preguntas frecuentes.",
+        "evidence": "https://scarlettropayaccesorios.com/llms.txt → 'Página no encontrada' (checked 2026-10-27 in browser)"
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {"field": "Nombre", "source": "Footer (todas las páginas)", "value": "SCARLETT SAS • NIT 901299412-3"},
+      {"field": "Nombre", "source": "JSON-LD WebSite (todas las páginas)", "value": "vacío (\"name\":\"\")"},
+      {"field": "Nombre", "source": "Títulos de página", "value": "no aparece la marca ('Home -', 'Tienda -')"},
+      {"field": "Teléfono", "source": "Footer (todas las páginas)", "value": "+57 304 3958108"},
+      {"field": "Teléfono", "source": "Botón de WhatsApp (Joinchat)", "value": "573043958108 (coincide)"},
+      {"field": "Teléfono", "source": "Datos estructurados", "value": "no declarado"},
+      {"field": "Email", "source": "Footer (todas las páginas)", "value": "gerencia@scarlettropayaccesorios.com"},
+      {"field": "Dirección principal", "source": "Footer (todas las páginas)", "value": "AK 19 #142-25, código postal 110121"},
+      {"field": "Dirección Cedritos", "source": "Home y /nuestras-casitas/", "value": "Cedritos – Calle 142 Carrera 19 # 142 – 25"},
+      {"field": "Dirección Unicentro", "source": "Home y /nuestras-casitas/", "value": "Unicentro – Entrada 7 Carrera 13 # 123 – 10"},
+      {"field": "Dirección Salitre", "source": "Home y /nuestras-casitas/", "value": "Salitre L316 CC Salitre Plaza, Bogotá (sin dirección de calle)"},
+      {"field": "Dirección Zona T", "source": "Home y /nuestras-casitas/", "value": "Zona T Cra 14 # 79 – 14"},
+      {"field": "Horario", "source": "Footer (todas las páginas)", "value": "10:00AM – 7:00PM (sin días)"},
+      {"field": "Horario Cedritos", "source": "Home y /nuestras-casitas/", "value": "Lun a Sáb 10:00 AM – 7:00 PM · Dom 10:00 AM – 6:00 PM"},
+      {"field": "Horario Unicentro", "source": "Home y /nuestras-casitas/", "value": "Lun a Sáb 10:00 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM"},
+      {"field": "Horario Salitre", "source": "Home y /nuestras-casitas/", "value": "Lun a Sáb 10:00 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM"},
+      {"field": "Horario Zona T", "source": "Home y /nuestras-casitas/", "value": "Lun a Sáb 10:00 AM – 7:00 PM · Dom cerrado"},
+      {"field": "Redes", "source": "Footer", "value": "instagram.com/scarlettropayaccesorios, facebook.com/scarlettaccesorios1, tiktok.com/@scarlettaccesorios, Pinterest"},
+      {"field": "Fichas públicas", "source": "Búsqueda web (2026-10-27)", "value": "no se encontraron directorios ni fichas públicas verificables con los datos de las tiendas; la ficha de Google Business no fue verificada"}
+    ],
+    "inconsistencies": [
+      "El pie de página de todas las páginas dice «Horario: 10:00AM – 7:00PM» sin indicar días, mientras que las tiendas abren los domingos, Unicentro y Salitre cierran a las 8 p.m. y Zona T no abre el domingo: una clienta que solo ve el pie de página recibe un horario equivocado.",
+      "La dirección de Cedritos está escrita de dos formas: «AK 19 #142-25» en el pie de página y «Calle 142 Carrera 19 # 142 – 25» en la sección de tiendas; Google y los asistentes pueden tomarlas como dos lugares distintos.",
+      "La tienda de Salitre solo dice «L316 CC Salitre Plaza», sin dirección de calle, a diferencia de las otras tres sedes.",
+      "El nombre de la marca cambia entre redes: «scarlettropayaccesorios» en Instagram, «scarlettaccesorios1» en Facebook y «@scarlettaccesorios» en TikTok, y en los datos del sitio el nombre está vacío."
+    ]
+  }
+}

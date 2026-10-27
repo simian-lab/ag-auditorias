@@ -1,0 +1,146 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "La oferta principal está escrita dentro de una imagen",
+      "summary": "Quien usa lector de pantalla, traductor o zoom de texto no se entera de tu promoción de hasta 60% ni de las opiniones de clientas.",
+      "now": "El banner de inicio dice \"Hasta 60% OFF – Love Edition\" solo como dibujo dentro de la imagen, y esa imagen no tiene descripción. Lo mismo pasa con los nombres de las categorías (Anillos, Aretes, Vestidos…) y con los testimonios de clientas e influencers: son texto pegado en fotos sin descripción.",
+      "fix": "Escribir la oferta, los nombres de categoría y los testimonios como texto real encima de la imagen (o, como mínimo, poner una descripción que repita ese texto). Así se leen en voz alta, se traducen, se agrandan y Google también los entiende.",
+      "why": "Tu mensaje de venta más fuerte y tu mejor prueba social hoy no existen para una parte de tus visitantes ni para los buscadores.",
+      "impact": 5,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html: hero <img src=\".../2026/09/BANNER-LOVE-EDITION.png\" alt=\"\"> (text \"HASTA 60% OFF love EDITION\" visible only in the bitmap, screenshots/desktop-viewport.png)",
+        "raw/home.html: mobile hero <img src=\".../always-Post-para-Instagram-45-819x1024.png\" alt=\"\"> and slides 15.png, 10-819x1024.png, 7-819x1024.png with alt=\"\"; slide 1.png has alt=\"1\" (file name, not a description)",
+        "raw/home.html: 12 category tiles (anillos.png, aretes.png, brazaletes.png, gargantillas.png, cadenitas.png, earcuff.png, Vestidos-12.png, chaquetas.png, pantalones.png, faldas.png, blusastop.png, complementos.png) all alt=\"\"; the category name and \"Ver productos\" are baked into each PNG (screenshots/a11y-categorias-mobile.jpg)",
+        "raw/home.html: 6 testimonial images (valeleguizamong-monaco-rosado.png, laura.matamoros-hawai.png, larissa-maxi-maldivas.png, scarlett-capri-negro.png, laura-acuna-maxi-maldivas-albaricoque.png, natalita-bahamar-rojo-escarlata.png) all alt=\"\"; the @handle, stars and quote are part of the image (screenshots/desktop-fullpage.jpg, testimonials row)",
+        "Lighthouse image-alt passes because alt=\"\" is technically valid (it declares the image decorative); here the images are informative, so the automated check does not catch it"
+      ],
+      "technical_note": "Lighthouse mobile accessibility score is 89, but it only runs automated rules: it cannot judge whether alt text is meaningful, whether text is baked into images, whether a carousel can be paused or whether focus is visible enough. Fix: render promo/category/testimonial copy as live HTML text over CSS background images, or set alt to the exact visible copy. Also: the /vestidos/ hero link wraps <img src=\".../BANER-FW26-2-2.mp4\" alt=\"\"> — an MP4 used in an <img> tag cannot render and leaves an empty link (Lighthouse link-name, 0x24 px node).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 30}
+    },
+    {
+      "id": "a11y-2",
+      "title": "20 enlaces no dicen a dónde llevan",
+      "summary": "Una persona ciega que navega por tu tienda escucha \"enlace, enlace, enlace\" en las categorías y no puede elegir qué comprar.",
+      "now": "Las 12 casillas de categorías, el logo, las tarjetas de tiendas y varias fotos de producto son enlaces sin nombre: el lector de pantalla solo lee la dirección web o nada.",
+      "fix": "Dar a cada enlace un nombre claro (\"Ver anillos\", \"Ir al inicio\", \"Vestido Capri negro\"), ya sea con texto visible o con la descripción de la imagen.",
+      "why": "Si alguien no puede llegar a una categoría, no puede comprar en ella.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "20 enlaces",
+      "evidence": [
+        "raw/lighthouse-mobile.json audit link-name: 20 failing links",
+        "a.custom-logo-link (logo, img alt=\"\") and span.site-title > a (empty)",
+        "12 category links /categoria-producto/accesorios/{anillos,aretes,brazaletes,gargantillas,cadenitas,earcuff}/ and /categoria-producto/ropa/{vestidos,chaquetas,pantalones,faldas,blusas-tops,complementos}/ — each contains only an img with alt=\"\"",
+        "4 x a.elementor-flip-box__layer.elementor-flip-box__back with empty inner content (store cards section)",
+        "Testimonial carousel product links (e.g. /producto/vestido-capri-negro/) wrap only an image with alt=\"\"",
+        "Positive: social icons have hidden names (Facebook, Instagram, TikTok), the WhatsApp button has aria-label \"¿Necesitas ayuda? Abrir chat\", carousel arrows have aria-label (in English: \"Previous\"/\"Next\")"
+      ],
+      "technical_note": "WCAG 2.4.4 / 4.1.2. Quick fix in Elementor: set the Image widget alt to the category name, or add aria-label on the link. Translate carousel arrow labels to Spanish (\"Anterior\"/\"Siguiente\").",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 40.6}
+    },
+    {
+      "id": "a11y-3",
+      "title": "Los nombres de las categorías casi no se leen",
+      "summary": "Muchas personas, sobre todo con el celular al sol o con vista cansada, no logran leer a qué categoría están entrando.",
+      "now": "Los nombres de categoría (Anillos, Vestidos, Chaquetas…) y el \"Ver productos\" están en letra blanca y pequeña sobre un fondo rosa muy claro. El contraste medido es de aproximadamente 1,7 a 1, cuando el mínimo recomendado es 4,5 a 1.",
+      "fix": "Usar texto oscuro sobre el fondo rosa (o una franja oscura detrás del texto blanco) y aumentar el tamaño de la letra, como texto real y no dentro de la imagen.",
+      "why": "Las categorías son la puerta de entrada al catálogo; si no se leen, la clienta navega a ciegas o se va.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "1,7:1",
+      "evidence": [
+        "Pixel sampling on screenshots/mobile-fullpage.jpg (Lighthouse, 412 px wide) of the label area of 4 category tiles: brightest text pixel ~#FFFFFF/#FFEBEB vs median background ~rgb(201-212,177-189,178-189); WCAG ratios 1.62, 1.69, 1.76, 1.76 (≈1,7:1)",
+        "Tiles: anillos (x 30-134, y 2446-2638), vestidos/chaquetas/pantalones (label row y ≈3020-3060) — crop saved as screenshots/a11y-categorias-mobile.jpg",
+        "Lighthouse color-contrast does not flag these because the text is inside the image"
+      ],
+      "technical_note": "Ratio is an approximation from a compressed screenshot (antialiasing lowers the true text color slightly), but even pure white #FFFFFF over the measured background stays below 2:1. WCAG 1.4.3 requires 4.5:1 for this text size.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 19.9, "y_pct": 44.8}
+    },
+    {
+      "id": "a11y-4",
+      "title": "El inicio no tiene título principal ni orden",
+      "summary": "Quien navega por títulos (lectores de pantalla y también Google) no encuentra de qué trata la página ni sus secciones.",
+      "now": "La página de inicio no tiene ningún título principal (H1). Los títulos saltan de los nombres de producto (nivel 3) directamente a los nombres de las tiendas Cedritos, Unicentro, Salitre y Zona T (nivel 6), y el pie de página usa nivel 4 antes que nivel 3.",
+      "fix": "Agregar un título principal que diga qué vende Scarlett (por ejemplo, \"Vestidos y accesorios para mujer en Bogotá\") y ordenar los títulos de las secciones: Novedades, Categorías, Nuestras tiendas, Opiniones.",
+      "why": "Una estructura clara hace que la tienda se recorra rápido con lector de pantalla y ayuda a que los buscadores entiendan el sitio.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html heading outline: 0 x H1, 0 x H2; 12 x H3 (product names), 4 x H6 (CEDRITOS, UNICENTRO, SALITRE, ZONA T), 3 x H4 (CONTACTO, INFORMACIÓN, EMPRESA), 1 x H3 (SUSCRÍBETE A NUESTRO NEWSLETTER)",
+        "raw/lighthouse-mobile.json audit heading-order: h6.eael-accordion-tab-title in #eael-adv-accordion-fbbaaaf",
+        "\"CASITAS ROSADAS\" section title is styled text, not a heading"
+      ],
+      "technical_note": "WCAG 1.3.1 / 2.4.6. Astra page has entry-header ast-no-title, so no H1 is output; add an H1 in the Elementor hero (can be visually styled) and use H2 for section titles, H3 for items.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 77.9, "y_pct": 71.0}
+    },
+    {
+      "id": "a11y-5",
+      "title": "El carrusel de opiniones se mueve solo sin pausa",
+      "summary": "Las opiniones cambian cada 5 segundos y no hay botón para detenerlas, lo que impide leerlas con calma y distrae a personas con dificultades de atención.",
+      "now": "El carrusel de testimonios avanza solo cada 5 segundos. Solo se detiene si pasas el mouse encima o lo tocas; no hay botón de pausa y no respeta la opción del celular de \"reducir movimiento\".",
+      "fix": "Agregar un botón visible de pausa/reproducir, o quitar el avance automático y dejar que la clienta pase las opiniones con las flechas.",
+      "why": "Las opiniones son tu prueba social; si se escapan antes de leerlas, pierden su efecto de confianza.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "5 s",
+      "evidence": [
+        "raw/home.html: elementor-widget-n-carousel (data-id 6a36725) data-settings autoplay=yes, autoplay_speed=5000, pause_on_hover=yes, pause_on_interaction=yes, infinite=yes",
+        "No pause/play control in the carousel markup; no prefers-reduced-motion rule found in raw/home.html",
+        "Prev/next arrows exist (role=button, tabindex=0) — operable by keyboard"
+      ],
+      "technical_note": "WCAG 2.2.2 Pause, Stop, Hide applies to auto-moving content lasting > 5 s. In Elementor Nested Carousel, set Autoplay = No, or add a pause button plus a @media (prefers-reduced-motion: reduce) override.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 40, "y_pct": 83}
+    },
+    {
+      "id": "a11y-6",
+      "title": "El newsletter no tiene etiqueta visible ni autocompletar",
+      "summary": "Suscribirse es más difícil de lo necesario: el campo no indica bien qué pedir y no se llena solo en el celular.",
+      "now": "El campo del newsletter solo muestra un texto gris claro dentro de la casilla (\"CORREO ELECTRÓNICO\") que desaparece al escribir y no tiene suficiente contraste. El navegador no lo autocompleta con el correo de la clienta, y al hacer clic el campo no muestra un borde de foco claro.",
+      "fix": "Poner una etiqueta visible encima del campo, oscurecer el texto de ayuda, activar el autocompletado de correo y marcar claramente el campo cuando está seleccionado.",
+      "why": "Cada paso extra al suscribirse reduce la base de clientas a las que puedes enviar promociones.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "4,29:1",
+      "evidence": [
+        "raw/home.html: <label for=\"form-field-email\" class=\"elementor-field-label elementor-screen-only\"> (label hidden visually); input#form-field-email type=\"email\" placeholder=\"CORREO ELECTRÓNICO\", no autocomplete attribute",
+        "raw/lighthouse-mobile.json audit color-contrast: input#form-field-email placeholder #7a7a7a on #ffffff = 4.29:1 (needs 4.5:1)",
+        "raw/home.html theme CSS: input{outline:none;} and input:focus {box-shadow:none;outline:none;} (focus shown only by border-color change)",
+        "No contact form exists on the home page; contact is via WhatsApp (joinchat button) and mailto link"
+      ],
+      "technical_note": "Add autocomplete=\"email\" (Elementor form field > Advanced). Show labels (Form > Label: Show). Type=email is correct. WCAG 1.3.5, 3.3.2, 1.4.3, 2.4.7.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 79.0, "y_pct": 92.8}
+    },
+    {
+      "id": "a11y-7",
+      "title": "Los enlaces del pie son difíciles de tocar",
+      "summary": "En el celular es fácil tocar el enlace equivocado al buscar envíos, cambios o garantías, justo la información que da confianza para comprar.",
+      "now": "Los enlaces del pie de página (FAQ, Políticas de envío, cambios, garantías, Derecho de retracto, Sé parte del team y el correo) miden 20 píxeles de alto y están pegados entre sí.",
+      "fix": "Aumentar el espacio entre líneas y el área táctil de cada enlace a por lo menos 24 píxeles (idealmente 44).",
+      "why": "Las políticas de envío y cambios resuelven dudas antes de pagar; si cuesta abrirlas, la duda se queda sin resolver.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "20 px",
+      "evidence": [
+        "raw/lighthouse-mobile.json audit target-size: 7 failing targets, e.g. a[href*=\"/faq/\"] 25.1x20 px, /politicas-de-envio/ 126.6x20 px, /politicas-de-cambios/ 140.2x20 px, /politica-de-garantias/ 151.8x20 px, /derecho-de-retracto/ 144.2x20 px, /nuestro-trabajo/ 129.3x20 px, mailto:gerencia@ 113.2x20 px, all with insufficient spacing to neighbours"
+      ],
+      "technical_note": "WCAG 2.5.8 Target Size (Minimum) 24x24 CSS px. Set footer link line-height / padding-block so each target is ≥24 px tall.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 20, "y_pct": 93}
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "fail", "evidence": "Category labels baked into images: white on light pink ≈1.7:1 (pixel sampling, 4 tiles). Newsletter placeholder #7a7a7a on #fff 4.29:1 (Lighthouse). Header, menu, product titles and footer text pass Lighthouse color-contrast."},
+    {"id": "a11y-text-not-image", "result": "fail", "evidence": "Hero promo \"Hasta 60% OFF Love Edition\" (BANNER-LOVE-EDITION.png), 12 category names and 6 testimonial quotes are baked into images. Product names/prices and footer are real text."},
+    {"id": "a11y-alt", "result": "fail", "evidence": "Product images have good alt (\"Vestido Creta\"…), but hero banners (alt=\"\" and alt=\"1\"), 12 category images and 6 testimonial images are informative with alt=\"\"; logo alt=\"\"."},
+    {"id": "a11y-headings", "result": "fail", "evidence": "No H1 and no H2 on the home page; H3 product names jump to H6 store names; Lighthouse heading-order fails."},
+    {"id": "a11y-names", "result": "partial", "evidence": "Social icons (Facebook/Instagram/TikTok), WhatsApp chat button and carousel arrows have accessible names (arrows in English). But 20 links lack names (Lighthouse link-name): logo, 12 category tiles, 4 flip-box links, testimonial product links."},
+    {"id": "a11y-focus", "result": "partial", "evidence": "Astra a:focus-visible gives links/buttons a thin 1px dotted outline in inherited color (weak but present). Form fields have input{outline:none} and focus outline:none, relying only on a border-color change."},
+    {"id": "a11y-keyboard", "result": "pass", "evidence": "Markup review: skip link \"Ir al contenido\"; submenu toggles are <button aria-expanded>; carousel arrows role=button tabindex=0; WhatsApp button role=button tabindex=0 with dialog role. Not live-tested with a keyboard due to the 406 block; no tabindex traps found in markup."},
+    {"id": "a11y-form-labels", "result": "fail", "evidence": "Newsletter email field: label is elementor-screen-only (placeholder-only visually), no autocomplete attribute; type=email is correct."},
+    {"id": "a11y-motion", "result": "fail", "evidence": "Testimonial carousel autoplay every 5000 ms, only pauses on hover/interaction, no pause button, no prefers-reduced-motion rule."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es-CO\">; viewport allows zoom (width=device-width, initial-scale=1)."},
+    {"id": "a11y-targets", "result": "partial", "evidence": "Header menu, cart, chat and product cards are large enough; 7 footer links are 20 px tall with insufficient spacing (Lighthouse target-size)."}
+  ]
+}

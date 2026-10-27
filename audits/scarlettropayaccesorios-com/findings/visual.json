@@ -1,0 +1,142 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "El mensaje principal es una imagen ilegible en celular",
+      "summary": "La oferta que abre tu tienda (\"Hasta 60% OFF – Love Edition\") se lee con dificultad en el celular, justo donde llega la mayoría de compradoras de moda.",
+      "now": "Todo el texto de la portada está dibujado dentro de la foto del banner; en un celular de 412 px el \"60% OFF\" queda de unos 10 px de alto y la palabra \"HASTA\" casi desaparece. La página no tiene un título real que diga qué vende Scarlett.",
+      "fix": "Escribir el titular de la campaña y una frase de marca (por ejemplo \"Vestidos y accesorios para tus noches especiales\") como texto real sobre el banner, de al menos 28 px en celular, y dejar la imagen solo con los productos.",
+      "why": "Si la clienta no entiende la oferta en el primer vistazo, el banner más caro de la tienda no vende.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "~10 px de alto del \"60% OFF\" en celular",
+      "evidence": [
+        "raw/home.html: hero is <img fetchpriority=\"high\" src=\".../2026/09/BANNER-LOVE-EDITION.png\" alt=\"\"> with all copy baked into the PNG",
+        "raw/home.html: 0 <h1>, 0 <h2> on the homepage",
+        "screenshots/mobile-fullpage.jpg (412 px wide): '60% OFF' cap height ≈10 px at x≈190-280, y≈270; 'HASTA' ≈3 px at y≈258",
+        "screenshots/desktop-viewport.png: same banner, text only readable because it is scaled to 1380 px wide"
+      ],
+      "technical_note": "Mobile hero uses a portrait variant of the same artwork (text still rasterised). Keep the decorative script 'love' as image if desired, but render HASTA / 60% OFF / EDITION and a brand H1 as HTML text (Poppins) layered over the image.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 4}
+    },
+    {
+      "id": "visual-2",
+      "title": "Las tiendas físicas aparecen como bloques verdes vacíos",
+      "summary": "La sección que muestra tus cuatro tiendas \"Casitas Rosadas\" —tu mejor prueba de que eres una marca real— se ve rota, con cuadros color turquesa en lugar de fotos.",
+      "now": "Junto al título \"CASITAS ROSADAS\" se ven cuatro cuadros grandes de color verde turquesa liso, un color que no pertenece a tu marca rosa, tanto en computador como en celular. En celular ocupan cerca de dos pantallas completas.",
+      "fix": "Poner fotos reales de cada tienda (fachada rosada, interior, vitrina) en esos cuatro cuadros, cada una con el nombre de la sede, o quitar los cuadros hasta tener las fotos.",
+      "why": "Un bloque roto en la portada hace pensar que la tienda está descuidada y resta confianza para pagar en línea.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "4 cuadros sin foto",
+      "evidence": [
+        "raw/home.html: 4 Elementor flip-box widgets (data-id 671c01b, c130286, 653eb11, a0487f4) next to the text 'CASITAS<br><strong>ROSADAS</strong>'; front layers contain no <img> and empty .elementor-flip-box__layer__inner",
+        "screenshots/desktop-fullpage.jpg: four solid blocks rgb(27,188,155) at x≈108-845, y≈3585-4150",
+        "screenshots/mobile-fullpage.jpg: same turquoise blocks stacked at y≈3440-4600 (≈1.4 mobile screens)",
+        "raw/lighthouse-mobile.json network-requests: no image request associated with these flip boxes"
+      ],
+      "technical_note": "rgb(27,188,155) ≈ #1ABC9C, which matches Elementor's flip-box default front background, i.e. the widgets were added but their background images were never set (or were removed). All four back layers link to /categoria-producto/ropa/vestidos/, not to the stores. Observed in both Lighthouse renders; a fresh headless Chrome capture did not finish loading in this environment, so it could not be re-confirmed independently.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 35, "y_pct": 70}
+    },
+    {
+      "id": "visual-3",
+      "title": "La etiqueta \"Sale\" gigante tapa las fotos de los vestidos",
+      "summary": "En los vestidos con descuento, la etiqueta de oferta cubre la mayor parte de la foto, así que la clienta no ve el producto que se le quiere vender.",
+      "now": "En los vestidos Bahamas y Capri aparece un círculo rojo enorme con la palabra en inglés \"SALE\" que tapa medio vestido en celular y casi toda la tarjeta en computador; el resto de tarjetas no tiene nada parecido.",
+      "fix": "Cambiar la etiqueta por una pequeña insignia en una esquina (por ejemplo \"-20%\" o \"Oferta\", en español) con el mismo rosa o vino de la marca, y mostrar el precio anterior tachado junto al nuevo.",
+      "why": "Una oferta solo vende si se ve el producto; tapar la foto convierte el descuento en ruido.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: <span class=\"king-addons-quick-product-grid__badge\">Sale</span> on 'Vestido Bahamas' and 'Vestido Capri'",
+        "screenshots/mobile-fullpage.jpg: red circle covering ≈70% of the Bahamas photo at x≈45-190, y≈1560-1700 and the Capri photo at x≈222-365, y≈1780-1920",
+        "screenshots/desktop-fullpage.jpg: 'SALE' badge ≈370x275 px filling the image area of the Capri card at x≈488-857, y≈1855-2130"
+      ],
+      "technical_note": "Badge styling (King Addons quick product grid) appears to scale with the image box and overflow it; constrain with fixed width/height (e.g. 56x24px), position absolute top-left, and localise the label. Sale prices show as ranges with no strikethrough of the regular price.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 28, "y_pct": 24}
+    },
+    {
+      "id": "visual-4",
+      "title": "Los nombres de las categorías casi no se ven",
+      "summary": "La cuadrícula de categorías (anillos, aretes, vestidos, chaquetas…) no deja leer qué hay en cada cuadro, así que la clienta adivina en vez de elegir.",
+      "now": "Cada categoría es una sola imagen con el nombre escrito en letras blancas muy pequeñas sobre un fondo rosado claro; en celular el nombre mide unos 7 px y la línea de abajo unos 3 px.",
+      "fix": "Escribir el nombre de cada categoría como texto real, oscuro (vino o negro) y de al menos 16 px debajo o sobre cada foto, con el mismo estilo en las 12 tarjetas.",
+      "why": "Si la clienta no reconoce la categoría, no hace clic y se va sin explorar el catálogo.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: 12 category tiles are <img alt=\"\"> (anillos.png, aretes.png, brazaletes.png, gargantillas.png, cadenitas.png, earcuff.png, Vestidos-12.png, chaquetas.png, pantalones.png, faldas.png, blusastop.png, complementos.png) with labels baked into the image",
+        "screenshots/mobile-fullpage.jpg: label 'ANILLOS' cap height ≈7 px, sub-label ≈3 px, white on light pink at x≈35-140, y≈2610-2630"
+      ],
+      "technical_note": "Contrast ratio itself belongs to the a11y area; here the issue is visual identification of the category grid. Re-export tiles without text and overlay HTML captions.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 20, "y_pct": 38}
+    },
+    {
+      "id": "visual-5",
+      "title": "La misma promoción se repite cinco veces seguidas",
+      "summary": "La portada muestra el mismo arte de \"60% OFF Love Edition\" en el banner y otra vez en cuatro cuadros debajo, lo que empuja los vestidos fuera de la vista y no da un punto claro donde mirar.",
+      "now": "Después del banner hay cuatro tarjetas que repiten el mismo fondo vino, el mismo \"Hasta 60% OFF – love – EDITION\" y una joya distinta; en celular el primer vestido aparece recién a unos 1.100 px, más de una pantalla completa abajo.",
+      "fix": "Dejar la campaña solo en el banner y convertir los cuatro cuadros en productos de la colección con nombre y precio, para que lo segundo que vea la clienta sea qué puede comprar.",
+      "why": "Repetir el mismo mensaje cansa la vista y retrasa el momento en que la clienta ve algo que quiere comprar.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg: hero (y≈147-863) followed by 4 tiles (y≈893-1268) with identical 'HASTA 60% OFF love EDITION' artwork",
+        "screenshots/mobile-fullpage.jpg: hero + 4 repeated tiles occupy y≈140-1020; first product card (Vestido Creta) starts at y≈1110 on a 412 px wide render",
+        "raw/lighthouse-mobile.json network-requests: tile images always-Post-para-Instagram-45-768x960.png, 15-768x960.png, 10-768x960.png, 7-768x960.png"
+      ],
+      "technical_note": "Tiles appear to be Instagram post exports (filename 'always-Post-para-Instagram-45') reused as web tiles.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 12}
+    },
+    {
+      "id": "visual-6",
+      "title": "Demasiadas tipografías y títulos sin un estilo común",
+      "summary": "La portada mezcla varios tipos de letra y estilos de título, por lo que la marca se ve menos cuidada que tus fotos y tus tiendas.",
+      "now": "El sitio carga tres familias de letra (Poppins, Roboto y Roboto Slab, cada una con 18 variantes) y las imágenes añaden otras tres (la caligrafía de \"love\", una con serifa para \"60% OFF\" y una espaciada para \"EDITION\"). Títulos del mismo nivel se ven distintos: los nombres de vestidos son finos, pequeños y subrayados, y \"SUSCRÍBETE A NUESTRO NEWSLETTER\" es grande y en negrita.",
+      "fix": "Definir dos tipografías (la caligráfica del logo para acentos y Poppins para todo lo demás), quitar Roboto y Roboto Slab, y fijar tres tamaños de título que se usen igual en todas las secciones.",
+      "why": "Una tipografía coherente es lo que hace que una marca de moda se perciba como premium y confiable.",
+      "impact": 2,
+      "effort": "Medio",
+      "headline_metric": "6 tipografías visibles",
+      "evidence": [
+        "raw/home.html: Google Fonts links for Poppins (100-900 + italics), Roboto (100-900 + italics), Roboto Slab (100-900 + italics) and a second Poppins request (400,700,500)",
+        "raw/home.html: inline CSS font-family declarations reference only 'Poppins' (10x), so Roboto/Roboto Slab are loaded but unused in visible text",
+        "raw/home.html: <h3> used both for product titles ('Vestido Creta', light, underlined, ≈16px) and for 'SUSCRÍBETE A NUESTRO NEWSLETTER' (bold, ≈24px in screenshots/desktop-fullpage.jpg y≈4700); store names are <h6>, 'CASITAS ROSADAS' is a <p>; no <h1>/<h2>",
+        "screenshots/desktop-viewport.png: hero artwork uses a script, a serif and a wide-tracked sans (x≈520-880, y≈195-450)"
+      ],
+      "technical_note": "Roboto/Roboto Slab come from Elementor global defaults; disable via Elementor > Settings > 'Disable Default Fonts' or set global fonts to Poppins. Page-weight impact belongs to tech.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 30}
+    },
+    {
+      "id": "visual-7",
+      "title": "Franjas vacías y secciones desalineadas en la portada",
+      "summary": "Hay huecos en blanco y bloques corridos hacia un lado que hacen ver la página sin terminar.",
+      "now": "Entre los vestidos y la sección de tiendas queda una franja blanca vacía (unos 200 px en computador y 150 px en celular). En computador, el carrusel de clientas famosas ocupa solo dos tercios del ancho y deja el resto en blanco, con la flecha derecha flotando sola. En celular, el título \"CASITAS ROSADAS\" queda separado de la lista de sedes por un hueco de unos 100 px.",
+      "fix": "Ajustar los espacios a una medida fija entre secciones y centrar el carrusel de testimonios a todo el ancho (o mostrar 4 tarjetas), revisando la vista en celular antes de publicar.",
+      "why": "Los detalles de orden y alineación son lo que una clienta usa, sin darse cuenta, para decidir si la tienda es seria.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg: empty white band y≈3350-3565 between the last product row and the pink 'Casitas Rosadas' section",
+        "screenshots/desktop-fullpage.jpg: testimonial cards span x≈108-940 of 1350 px; right arrow alone at x≈1200, y≈4340; area x≈940-1300 empty",
+        "screenshots/mobile-fullpage.jpg: empty band y≈3270-3420; gap ≈100 px between 'ROSADAS' (y≈4690) and 'CEDRITOS' (y≈4830)"
+      ],
+      "technical_note": "Testimonial carousel slides per view likely set to 3 with a fixed slide width inside a full-width container; the blank band may be an empty/hidden Elementor container.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 80, "y_pct": 80}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "fail", "evidence": "No HTML headline (0 h1/h2). The only headline ('Hasta 60% OFF Love Edition') is baked into BANNER-LOVE-EDITION.png; on the 412 px Lighthouse mobile render '60% OFF' is ≈10 px tall and 'HASTA' ≈3 px."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "Hero has one clear focal point (envelope + offer). But the next section repeats the same artwork 4 times (no new focus), and the 'Casitas Rosadas' section's focus is four empty turquoise blocks. Product grid and testimonials have clear focus."},
+    {"id": "vis-fonts", "result": "fail", "evidence": "Loaded: Poppins, Roboto, Roboto Slab (Google Fonts, 18 styles each). In images: script ('love', logo), serif ('60% OFF'), wide sans ('EDITION'), heavy sans ('SALE' badge is HTML). More than 2 families visible."},
+    {"id": "vis-buttons", "result": "pass", "evidence": "Home has very few buttons: the red newsletter submit button and the floating WhatsApp button; product cards use text links only. No conflicting button styles observed."},
+    {"id": "vis-headings", "result": "fail", "evidence": "<h3> used for product names (light, underlined, ≈16px) and for the newsletter title (bold, ≈24px); store names are <h6>, section title 'CASITAS ROSADAS' is a <p> with mixed light/bold weights; no h1/h2."},
+    {"id": "vis-palette", "result": "partial", "evidence": "Brand set is pink/wine/black/white, but several near-duplicate pinks (#F8D0D1, #FAD8E9, #FCEEF5, #F78DA7 in home.html) and off-brand colours: bright red 'SALE' badge (sampled rgb(240,69,78)) and red newsletter button, turquoise rgb(27,188,155) blocks."},
+    {"id": "vis-photos", "result": "pass", "evidence": "Product photos are real, consistently lit on the same pink gradient background (Vestido Creta, Maui Marfil, Santorini, etc.); testimonials use real customer/influencer photos. No generic stock."},
+    {"id": "vis-products", "result": "partial", "evidence": "12 dresses show visible name and price (h3 + price). But 2 of 12 (Bahamas, Capri) have their photo largely covered by the 'SALE' badge, and the 12 category tiles' names are ≈7px text baked into images, effectively unreadable on mobile."},
+    {"id": "vis-positioning", "result": "partial", "evidence": "Inferred positioning: Bogotá fashion boutique (dresses + jewellery) with 4 physical stores. Influencer testimonials with real photos and Instagram handles back it up; the store proof ('Casitas Rosadas') shows turquoise placeholder blocks instead of store photos."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "Product grid and footer align well. Empty white band ≈215px (desktop y≈3350-3565) and ≈150px (mobile y≈3270-3420); testimonial carousel occupies only x≈108-940 of 1350px on desktop; ≈100px gap between 'ROSADAS' title and store list on mobile."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "Footer '© 2026 SCARLETT SAS'; current seasonal campaign ('Love Edition', uploads dated 2026/09). No dated patterns beyond moderately heavy card shadows; the turquoise blocks are covered under spacing/positioning."}
+  ]
+}

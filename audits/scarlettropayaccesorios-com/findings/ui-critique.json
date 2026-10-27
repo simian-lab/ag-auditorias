@@ -1,0 +1,128 @@
+{
+  "verdict": "Tus fotos y tus vestidos son de marca premium, pero la interfaz que los rodea parece armada por piezas: tres rojos distintos, títulos sin jerarquía, cero botones de compra visibles y una etiqueta «SALE» que grita más fuerte que tu propia marca.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Una tienda casi sin botones",
+      "explanation": "En toda la portada el único botón con forma de botón es la flecha roja del boletín, al final de la página; el banner, los cuadros de joyas y las tiendas no ofrecen nada que diga «compra aquí». Cuando cada acción tiene un aspecto distinto (texto suelto, ícono con borde negro, flecha gris casi invisible, lista rosada), la clienta no sabe qué se puede tocar y avanza menos.",
+      "items": [
+        {"label": "Banner principal: oferta grande, ningún botón", "crop": "ui-crop-btn-hero-none.png"},
+        {"label": "«LOVE SALE 60%» en el menú: texto plano, igual que los demás enlaces", "crop": "ui-crop-btn-menu-sale.png"},
+        {"label": "Carrito: ícono negro con marco cuadrado, otro estilo", "crop": "ui-crop-btn-cart.png"},
+        {"label": "Flecha del carrusel: gris claro sobre blanco, casi invisible", "crop": "ui-crop-btn-carousel-arrow.png"},
+        {"label": "Tiendas físicas: lista rosada sin «Cómo llegar» ni flecha", "crop": "ui-crop-btn-stores-list.png"},
+        {"label": "Boletín: el único botón real, en un rojo (#E53935) que no se usa en otro lugar", "crop": "ui-crop-btn-newsletter.png"}
+      ],
+      "proposal": "Dos botones para todo el sitio: uno principal vino (#881315) con texto blanco para comprar («Ver joyas en oferta», «Comprar vestido») y uno secundario con borde vino para acciones de apoyo («Cómo llegar», «Ver más reseñas»). Mismo radio, mismo alto mínimo de 48 px, mismo texto en mayúscula inicial."
+    },
+    {
+      "kind": "headings",
+      "title": "Cinco títulos, cinco idiomas visuales",
+      "explanation": "El título más importante de la portada está dentro de una foto, mientras que los títulos reales mezclan letra finísima con negrita pesada, subrayados de enlace y mayúsculas de pie de página sin un orden de tamaños. Sin una escala clara, el ojo no sabe qué leer primero y la página se siente improvisada.",
+      "items": [
+        {"label": "Mensaje principal: escrito dentro de la imagen, en tres letras distintas", "crop": "ui-crop-btn-hero-none.png"},
+        {"label": "«CASITAS ROSADAS»: una palabra finísima y otra muy pesada", "crop": "ui-crop-h-casitas.png"},
+        {"label": "Nombre de vestido: fino, pequeño y subrayado como enlace antiguo", "crop": "ui-crop-h-product-title.png"},
+        {"label": "«SUSCRÍBETE A NUESTRO NEWSLETTER»: el título más grande del pie, más que cualquier producto", "crop": "ui-crop-h-newsletter.png"},
+        {"label": "«CONTACTO»: negrita en mayúsculas, otro estilo más", "crop": "ui-crop-h-contacto.png"}
+      ],
+      "proposal": "Una escala de cuatro niveles en Poppins: un título de portada real en texto (40/28 px), títulos de sección en seminegrita (28/22 px), nombres de producto en peso medio sin subrayado (16 px) y etiquetas del pie en 14 px. El mensaje de campaña sale de la imagen y se escribe encima."
+    },
+    {
+      "kind": "colors",
+      "title": "Tres rojos que no se ponen de acuerdo",
+      "explanation": "Tu marca es vino y rosa, pero la etiqueta «SALE», el botón del boletín y la línea del pie usan tres rojos distintos, ninguno es el vino del banner, y el tema de la tienda define un azul marino y un gris pizarra que no aparecen en tu identidad. Cuando los colores no repiten, la clienta percibe descuido aunque no sepa explicarlo.",
+      "items": [
+        {"label": "Vino del banner (medido en la captura)", "hex": "#881315"},
+        {"label": "Rojo de la etiqueta «SALE» (medido en la captura)", "hex": "#EF4444"},
+        {"label": "Rojo del botón del boletín (medido en la captura)", "hex": "#E53935"},
+        {"label": "Rojo de la línea del pie (medido en la captura)", "hex": "#E23125"},
+        {"label": "Rosa de franja superior y pie (CSS, background-color)", "hex": "#F8D0D1"},
+        {"label": "Rosa muy claro del tema (CSS, --ast-global-color-5)", "hex": "#FCEEF5"},
+        {"label": "Rosa del tema (CSS, --ast-global-color-7)", "hex": "#FAD8E9"},
+        {"label": "Azul marino del tema (CSS, --ast-global-color-2)", "hex": "#0F172A"},
+        {"label": "Gris pizarra del tema (CSS, --ast-global-color-3)", "hex": "#454F5E"}
+      ],
+      "proposal": "Reducir a cinco colores con rol fijo: vino para acciones y ofertas, rosa para fondos de marca, rosa claro para superficies, tinta casi negra para texto y blanco. Todos los rojos actuales pasan a ser el mismo vino."
+    },
+    {
+      "kind": "fonts",
+      "title": "Seis letras para una marca que usa una",
+      "explanation": "El sitio descarga tres familias de letra completas pero en pantalla solo usa Poppins, y las imágenes de campaña agregan otras tres. El resultado es peso extra en cada visita y una voz visual que cambia de sección en sección.",
+      "items": [
+        {"label": "Poppins: la única que se ve en el texto real", "family": "Poppins"},
+        {"label": "Roboto: se descarga en 18 variantes y no se usa", "family": "Roboto"},
+        {"label": "Roboto Slab: se descarga en 18 variantes y no se usa", "family": "Roboto Slab"},
+        {"label": "Caligrafía de «love» (dentro de la imagen)", "family": "script (baked into image)"},
+        {"label": "Serifa de «60% OFF» (dentro de la imagen)", "family": "serif (baked into image)"},
+        {"label": "Sans espaciada de «EDITION» (dentro de la imagen)", "family": "wide-tracked sans (baked into image)"}
+      ],
+      "proposal": "Poppins como única letra de interfaz (3 pesos: 400, 500, 600) y una sola caligrafía de marca, reservada al logo y a una palabra de campaña. Dejar de cargar Roboto y Roboto Slab."
+    },
+    {
+      "kind": "cards",
+      "title": "Cada tarjeta habla un idioma distinto",
+      "explanation": "Las tarjetas de producto tienen sombra gris y borde, las de joyas son bloques vino sin nombre ni precio, las de categoría son fotos con letras blancas casi invisibles y la de reseña es una foto vertical con texto incrustado. Ninguna repite la estructura de otra, así que la clienta tiene que reaprender cómo leer cada sección.",
+      "items": [
+        {"label": "Producto: sombra gris, nombre subrayado, precio gris", "crop": "ui-crop-card-product.png"},
+        {"label": "Producto en oferta: la etiqueta «SALE» tapa el vestido", "crop": "ui-crop-card-product-sale.png"},
+        {"label": "Joya de la campaña: sin nombre, sin precio, sin enlace", "crop": "ui-crop-card-promo-tile.png"},
+        {"label": "Categoría (celular): nombre blanco sobre rosa, ilegible", "crop": "ui-crop-card-category-mobile.png"},
+        {"label": "Reseña: texto pegado en la foto", "crop": "ui-crop-card-testimonial.png"},
+        {"label": "Tienda física: foto sin nombre ni dirección", "crop": "ui-crop-card-store-photo.png"}
+      ],
+      "proposal": "Una sola tarjeta base: foto con esquinas redondeadas sobre fondo rosa claro, nombre en Poppins 500 sin subrayado, precio en tinta, y una pequeña etiqueta vino «-30%» en la esquina cuando hay descuento. Joyas, categorías y tiendas usan la misma tarjeta con su texto escrito, no dibujado."
+    },
+    {
+      "kind": "icons",
+      "title": "Íconos de cuatro cajas de herramientas",
+      "explanation": "El carrito es un ícono relleno con marco negro grueso, la lupa es otro estilo, la flecha del carrusel es un círculo de línea gris y la franja superior usa emojis. Esta mezcla hace que el encabezado se vea menos cuidado que tus productos.",
+      "items": [
+        {"label": "Carrito: relleno, con marco negro cuadrado", "crop": "ui-crop-btn-cart.png"},
+        {"label": "Lupa: relleno, sin marco", "crop": "ui-crop-icon-search.png"},
+        {"label": "Flecha de menú: de línea fina", "crop": "ui-crop-icon-chevron.png"},
+        {"label": "Flecha del carrusel: círculo de línea gris claro", "crop": "ui-crop-btn-carousel-arrow.png"},
+        {"label": "Emoji de cohete en la franja de envíos", "crop": "ui-crop-icon-topbar-emoji.png"}
+      ],
+      "proposal": "Un único juego de íconos de línea (mismo grosor, 24 px) en tinta o vino: carrito, lupa, flechas, envío y WhatsApp. Sin emojis en la interfaz."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {"name": "Vino Scarlett", "hex": "#881315", "role": "Botones principales, precios en oferta y etiquetas de descuento. Texto blanco sobre él: contraste 9,76:1 (AA y AAA)."},
+      {"name": "Rosa Scarlett", "hex": "#F8D0D1", "role": "Franja superior, pie y fondos de sección de marca. Texto tinta sobre él: 14,05:1; texto vino sobre él: 6,94:1."},
+      {"name": "Rosa nube", "hex": "#FCEEF5", "role": "Fondo de tarjetas y superficies suaves. Texto tinta sobre él: 17,58:1; texto vino: 8,69:1."},
+      {"name": "Tinta", "hex": "#140610", "role": "Todo el texto: títulos, nombres y precios. Sobre blanco: 19,75:1."},
+      {"name": "Blanco", "hex": "#FFFFFF", "role": "Fondo principal y texto sobre vino (9,76:1)."}
+    ],
+    "fonts": [
+      {"name": "Poppins", "role": "Única letra de interfaz: 600 para títulos, 500 para nombres de producto y botones, 400 para texto."},
+      {"name": "Caligrafía de marca (la del logo)", "role": "Solo logo y una palabra de campaña, nunca para texto que haya que leer."}
+    ],
+    "button_primary": "Fondo vino #881315, texto blanco Poppins 500 16 px, alto mínimo 48 px, radio 8 px, padding 14×28 px; al pasar el cursor, vino más oscuro #5C0D12 (texto blanco 13,8:1). Ejemplos: «Ver joyas en oferta», «Comprar vestido».",
+    "button_secondary": "Fondo transparente, borde 1,5 px vino #881315, texto vino Poppins 500 16 px, mismo alto y radio que el principal. Ejemplos: «Cómo llegar», «Ver más reseñas».",
+    "heading_scale": "H1 portada 40 px escritorio / 28 px celular (Poppins 600); H2 sección 28/22 px (600); H3 producto 16 px (500, sin subrayado); etiqueta de pie 14 px (600, mayúsculas con espaciado). Un solo H1 por página."
+  },
+  "hierarchy_notes": [
+    "Franja superior y encabezado: lo primero que se ve es el emoji de cohete y una frase larga en mayúsculas; debería verse primero el logo y el beneficio corto («Envío gratis desde $200.000 · Express en Bogotá») con «LOVE SALE 60%» destacado en vino en el menú.",
+    "Banner principal: el ojo va al sobre rosado y a las joyas, pero no hay un titular escrito ni un botón; debería ver primero el titular en texto («Hasta 60% OFF en joyas Love Edition») y justo debajo el botón «Ver joyas en oferta».",
+    "Cuatro cuadros de joyas: el ojo ve cuatro veces la misma pieza gráfica de campaña; debería ver cuatro productos con nombre, precio y enlace.",
+    "Grilla de vestidos: lo que más pesa visualmente es el círculo rojo «SALE» de Bahamas y Capri, no los vestidos; debería verse primero la foto del vestido, luego nombre y precio, con el descuento como etiqueta pequeña en la esquina.",
+    "Categorías (celular): el ojo ve 12 fotos de producto sin saber qué categoría es cada una; debería leer primero el nombre de la categoría en texto oscuro y grande.",
+    "Casitas Rosadas: el contraste entre «CASITAS» finísimo y «ROSADAS» muy pesado se lleva la atención, y los nombres de tiendas parecen una tabla; debería verse primero la foto de cada tienda con su nombre, dirección y un botón «Cómo llegar».",
+    "Reseñas: el carrusel deja gran parte del ancho en blanco y las flechas casi no se ven; debería verse primero la cara y la frase de la clienta, y esta sección debería subir más cerca de los productos.",
+    "Pie: el título más grande del pie es «SUSCRÍBETE A NUESTRO NEWSLETTER»; deberían destacar primero el WhatsApp y las tiendas, que son lo que cierra ventas."
+  ],
+  "sharp_headlines": {
+    "1": "Doce segundos de rosado antes de vender",
+    "2": "Tu mejor oferta no lleva a comprar",
+    "3": "Tu oferta es una foto, no un mensaje",
+    "4": "9,5 MB antes del primer vestido",
+    "5": "Cinco anuncios iguales antes del primer vestido",
+    "6": "El «Sale» le gana al vestido",
+    "7": "Tus categorías existen, pero no se leen",
+    "8": "22 complementos cobran peaje en cada visita",
+    "9": "Tu WhatsApp corta la conversación a medias",
+    "10": "Tu mejor prueba social está al fondo"
+  }
+}

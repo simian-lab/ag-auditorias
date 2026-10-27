@@ -1,0 +1,140 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "La primera pantalla no dice con palabras qué vendes",
+      "summary": "Quien llega desde Google ve una imagen de joyas, pero ningún texto le confirma que aquí compra vestidos y accesorios de mujer con envío en Bogotá.",
+      "now": "La primera pantalla muestra la barra de envíos gratis, el menú y una imagen grande con 'Hasta 60% off Love Edition'. Todo el mensaje de la oferta está dentro de la imagen; no hay ningún título de texto en la página.",
+      "fix": "Agregar sobre el banner (o junto a él) un título corto en texto real, por ejemplo 'Vestidos y accesorios para mujer · Envío express en Bogotá', con un botón 'Comprar ahora'.",
+      "why": "Una frase clara en los primeros segundos evita que el visitante se vaya sin entender qué ofreces, y Google también la puede leer.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: 0 <h1> and 0 <h2> elements on the homepage",
+        "Hero offer text ('HASTA 60% OFF', 'love EDITION') is baked into image BANNER-LOVE-EDITION.png (desktop, widget 363df14) and always-Post-para-Instagram-45-819x1024.png (mobile, widget d4ec8b3)",
+        "Only real text in first viewport: announcement bar 'Envíos gratis por compras superiores a 200.000 / Envío EXPRESS Bogotá' and menu labels (screenshots/desktop-viewport.png)"
+      ],
+      "technical_note": "Page <title> is 'Home -'. Add a visible text heading (H1) in the hero container; keep the promo image as a supporting visual.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 40}
+    },
+    {
+      "id": "ux-2",
+      "title": "El banner principal no lleva a la oferta anunciada",
+      "summary": "La promoción más visible del sitio no lleva a los productos en oferta, así que el interés que genera se pierde.",
+      "now": "En computador, el banner anuncia joyas 'Love Edition' con hasta 60% de descuento, pero al hacer clic lleva al catálogo de vestidos. En celular el mismo banner no tiene enlace: tocarlo no hace nada. En ninguno de los dos hay un botón visible.",
+      "fix": "Enlazar el banner (en computador y celular) a la página de la promoción, que ya existe en el menú como 'LOVE SALE 60%', y añadir un botón con texto claro como 'Ver joyas en oferta'.",
+      "why": "Cada clic en la promoción que no llega a los productos en oferta es una venta que se queda a mitad de camino.",
+      "impact": 5,
+      "effort": "Bajo",
+      "evidence": [
+        "Desktop hero widget 363df14 (elementor-hidden-mobile): image BANNER-LOVE-EDITION.png links to https://scarlettropayaccesorios.com/vestidos/",
+        "Mobile hero widget d4ec8b3 (elementor-hidden-desktop): image always-Post-para-Instagram-45-819x1024.png has no <a href>",
+        "Menu item 'LOVE SALE 60%' points to /newsale/, a different URL from the hero link",
+        "No button or text link in the hero on screenshots/desktop-viewport.png or screenshots/mobile-fullpage.jpg"
+      ],
+      "technical_note": "Set the Elementor image widget link on both responsive variants to /newsale/ (or the accessories sale category) and add a button widget overlay or below the banner.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 5}
+    },
+    {
+      "id": "ux-3",
+      "title": "Las joyas en promoción de la portada no se pueden pulsar",
+      "summary": "La clienta ve cuatro joyas en oferta que le gustan, pero no puede llegar a ellas desde la portada y tiene que buscarlas por su cuenta.",
+      "now": "Debajo del banner hay cuatro imágenes de joyas 'Love Edition 60% off' (collar de perlas, aretes de cerezas, cadena con llave, aretes dorados). Son imágenes sin enlace, sin nombre y sin precio.",
+      "fix": "Convertir cada imagen en una tarjeta de producto que lleve a su ficha, con nombre, precio antes/después y botón 'Agregar al carrito'.",
+      "why": "Un producto que se ve pero no se puede tocar es un camino de compra cerrado justo en el momento de mayor interés.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: image widgets with 1.png, 15.png, 10-819x1024.png, 7-819x1024.png have no <a href>",
+        "Visible as four tiles under the hero in screenshots/desktop-fullpage.jpg (y≈893–1266 px of 5370) and screenshots/mobile-fullpage.jpg (y≈610–1020 px of 6784)",
+        "Product names and prices exist only inside the images (none present as text)"
+      ],
+      "technical_note": "Replace the four Elementor image widgets with a WooCommerce product grid filtered by the sale category, or at least set each image link to its product URL.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 20}
+    },
+    {
+      "id": "ux-4",
+      "title": "El teléfono no se puede llamar con un toque",
+      "summary": "Quien quiere preguntar antes de comprar desde el celular tiene que copiar el número a mano, y no hay una página de contacto en el menú.",
+      "now": "El pie de página muestra 'TEL: +57 304 3958108' como texto simple; el correo sí se puede pulsar. En el menú no hay opción 'Contacto': el ítem 'UNIVERSO SCARLETT' apunta a '#contact', que no lleva a ningún lugar concreto.",
+      "fix": "Hacer el teléfono pulsable para llamar y agregar al menú un ítem 'Contacto' con teléfono, WhatsApp, correo y tiendas.",
+      "why": "Reducir un paso para hablar con la tienda ayuda a cerrar compras de prendas costosas, donde la clienta suele tener dudas de talla.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html footer widget 6cf7c561: '<p>TEL: +57 304 3958108<br>' with no tel: link; 0 href=\"tel:\" on the page",
+        "Email uses href=\"mailto:gerencia@scarlettropayaccesorios.com\" (2 occurrences)",
+        "Navigation: 'UNIVERSO SCARLETT' href=\"#contact\" and no element with id=\"contact\" exists on the page; no 'Contacto' menu item",
+        "Footer contact visible at y≈5900/6784 in screenshots/mobile-fullpage.jpg"
+      ],
+      "technical_note": "Wrap the number as <a href=\"tel:+573043958108\">. Contact page could not be inspected: further requests from automated clients were rate limited (406/429), so this is based on the homepage only.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 25, "y_pct": 87}
+    },
+    {
+      "id": "ux-5",
+      "title": "El WhatsApp abre con un mensaje incompleto",
+      "summary": "El canal de venta más usado arranca con un saludo cortado, lo que se ve descuidado y obliga a la clienta a escribir todo.",
+      "now": "El botón '¿Necesitas ayuda?' abre una ventana que dice 'Hola , Bienvenido a Scarlett' (falta el nombre). Al pasar a WhatsApp el texto que se envía es 'Hola **. Necesito más información sobre', que queda cortado sin decir sobre qué producto. El número sí coincide con el del pie de página.",
+      "fix": "Escribir un saludo completo con el nombre de quien atiende y hacer que el mensaje incluya automáticamente el producto que se está viendo, por ejemplo 'Hola, quiero información sobre el Vestido Creta'.",
+      "why": "Un mensaje que ya dice qué producto interesa permite responder más rápido y vender más en el chat.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Joinchat data-settings: \"telephone\":\"573043958108\", \"message_send\":\"Hola **. Necesito más información sobre\"",
+        "Chat welcome text in raw/home.html: 'Hola , Bienvenido a Scarlett ¿Te puedo ayudar en algo?'",
+        "Footer phone '+57 304 3958108' matches the chat number",
+        "Floating button visible bottom-right in screenshots/desktop-viewport.png"
+      ],
+      "technical_note": "Joinchat supports variables such as {TITLE} and {URL} in the prefilled message; set the agent name in the welcome text.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 92, "y_pct": 93}
+    },
+    {
+      "id": "ux-6",
+      "title": "Las opiniones de clientas quedan al final y en carrusel",
+      "summary": "La mejor prueba de confianza del sitio, clientas reconocidas usando tus vestidos, aparece cuando la mayoría ya pasó por los productos.",
+      "now": "Las fotos de clientas con cinco estrellas (por ejemplo la presentadora Laura Acuña) están casi al final de la página, después de las tiendas, dentro de un carrusel que cambia solo cada 5 segundos y muestra una a la vez en celular. Las tarjetas de producto no muestran calificaciones ni comentarios.",
+      "fix": "Subir una franja de 3 o 4 testimonios justo debajo de los vestidos, fija y sin rotación, y mostrar estas fotos también en la ficha de cada vestido.",
+      "why": "Ver a otras clientas con la prenda puesta, cerca del precio, da la seguridad que se necesita para pagar más de $400.000 por un vestido.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "nested-carousel settings: \"autoplay\":\"yes\",\"autoplay_speed\":5000,\"slides_to_show_mobile\":\"1\"",
+        "Testimonials at y≈4210–4700 of 5370 px in screenshots/desktop-fullpage.jpg and y≈5100–5710 of 6784 px in screenshots/mobile-fullpage.jpg",
+        "Product grid (king-addons-quick-product-grid) shows name and price only, no ratings"
+      ],
+      "technical_note": "Testimonial images link to product pages (e.g. /producto/vestido-maxi-maldivas-fucsia-silvestre/); reuse them as UGC on product pages.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 40, "y_pct": 83}
+    },
+    {
+      "id": "ux-7",
+      "title": "Las direcciones de las tiendas están escondidas",
+      "summary": "Quien prefiere probarse la ropa en persona no ve dónde están las tiendas sin abrir cada una, y las fotos de esa sección llevan a otra parte.",
+      "now": "La sección 'Casitas Rosadas' solo muestra los nombres Cedritos, Unicentro, Salitre y Zona T; la dirección, el horario y el enlace '¿Cómo llegar?' están ocultos hasta abrir cada nombre. Los cuatro bloques de imagen de la sección no tienen texto y todos llevan al catálogo de vestidos, no a las tiendas.",
+      "fix": "Mostrar las cuatro tiendas abiertas como tarjetas con dirección, horario y botón '¿Cómo llegar?', y enlazar cada foto a su tienda o a la página 'Nuestras casitas'.",
+      "why": "Las tiendas físicas son una ventaja frente a tiendas solo en línea, y hacerlas visibles da confianza y lleva visitas a la tienda.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Store details inside eael-adv-accordion (collapsed): addresses, hours and maps.app.goo.gl links",
+        "Flip-box widgets 671c01b, c130286, 653eb11, a0487f4 have empty front/back layers and all link to /categoria-producto/ropa/vestidos/",
+        "Section visible at y≈3585–4150 of 5370 px in screenshots/desktop-fullpage.jpg"
+      ],
+      "technical_note": "The flip boxes render as solid teal blocks in both Lighthouse captures; this may be a lazy-loaded background image not triggered during capture, so the visual state was not used as evidence.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 70, "y_pct": 72}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "fail", "evidence": "No real-text statement of what is sold or for whom in the first viewport (desktop or mobile); offer text is inside the hero image; page has no H1/H2. Only the shipping bar and menu labels are text."},
+    {"id": "ux-quote-cta", "result": "fail", "evidence": "No labelled buy/contact button in the first viewport. Desktop hero image links to /vestidos/ without a label; mobile hero image has no link. Only the floating WhatsApp widget, which does not count."},
+    {"id": "ux-catalog-path", "result": "partial", "evidence": "Product grid cards and category tiles link to product/category pages, but the four 'Love Edition' promo tiles have no link, the mobile hero has no link, and the four Casitas flip boxes are empty and all point to the dresses category."},
+    {"id": "ux-contact-visible", "result": "pass", "evidence": "Phone (+57 304 3958108) and email (gerencia@...) appear in the global Elementor footer template (elementor-location-footer). Other pages could not be loaded (automated requests rate limited), so verified on home via the shared template."},
+    {"id": "ux-contact-tappable", "result": "partial", "evidence": "Email uses mailto:; phone is plain text with no tel: link (0 tel: links on the page)."},
+    {"id": "ux-form-data", "result": "na", "evidence": "Retail store with cart checkout; no contact/quote form is linked from the homepage (only a newsletter form). Contact pages could not be loaded because automated requests were blocked/rate limited."},
+    {"id": "ux-form-friction", "result": "na", "evidence": "No contact/quote form reachable from the homepage; the only form is a one-field newsletter signup (its button reads 'Submit' in English)."},
+    {"id": "ux-chat-ready", "result": "partial", "evidence": "WhatsApp number 573043958108 matches the footer phone, but the welcome text reads 'Hola , Bienvenido a Scarlett' (missing name) and the prefilled message is truncated: 'Hola **. Necesito más información sobre'."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Lighthouse mobile screenshot shows a hamburger menu icon in the header; the mobile nav markup contains all main sections (Tienda, Accesorios, Ropa, Vestidos, Más vendidos, Universo Scarlett, Love Sale 60%) with subcategories."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Customer/celebrity testimonials with 5 stars exist, but only near the page end after the stores section (desktop y≈4210/5370), not next to the product grid; product cards show no ratings."},
+    {"id": "ux-content-not-hidden", "result": "fail", "evidence": "Main offer (60% off Love Edition) and the four promo products exist only inside images; testimonials are in an auto-advancing carousel (autoplay 5000 ms); store addresses are hidden in a collapsed accordion."}
+  ]
+}

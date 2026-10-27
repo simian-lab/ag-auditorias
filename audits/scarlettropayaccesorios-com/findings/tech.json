@@ -1,0 +1,120 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "Una pantalla de carga esconde la tienda varios segundos",
+      "summary": "En celular la clienta mira una pantalla rosada con un \"0%\" durante más de 12 segundos antes de ver un solo producto, y muchas se van antes.",
+      "now": "Un complemento de \"pantalla de carga\" tapa toda la página hasta que terminan de descargarse todos los archivos. En la prueba en celular, a los 9 y a los 12,6 segundos todavía solo se ve el fondo rosado con \"0%\"; el contenido principal aparece a los 15 segundos.",
+      "fix": "Quitar la pantalla de carga (o limitarla a un instante) para que la tienda se muestre en cuanto el primer banner esté listo, y medir de nuevo el tiempo de aparición.",
+      "why": "Cada segundo de pantalla vacía es una clienta que llegó desde Instagram o un anuncio pagado y se va sin ver la colección.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "15,1 s",
+      "evidence": [
+        "Plugin 'loading-page' (free 1.2.7) active on the homepage: raw/home.html inline config loading_page_settings = {\"loadingScreen\":1, \"removeInOnLoad\":false, \"screen_size\":\"all\", \"graphic\":\"logo\", \"backgroundColor\":\"rgba(248,208,209,0.8)\"}",
+        "Lighthouse mobile filmstrip (screenshot-thumbnails): frames at 9,447 ms and 12,596 ms show only the pink overlay with '0%' (saved as screenshots/tech-mobile-loading-12s.png)",
+        "raw/lighthouse-mobile.json audits.metrics: observedLargestContentfulPaint 15,080 ms, observedFirstContentfulPaint 4,108 ms (desktop observed LCP 7,688 ms)",
+        "lcp-breakdown-insight (mobile): element render delay 11,668 ms out of 17,449 ms lab LCP; TTFB 1,685 ms, resource load 1,570 ms — the image is downloaded long before it is shown",
+        "LCP element (mobile): img.attachment-large always-Post-para-Instagram-45-819x1024.png (352x440 px), no fetchpriority=high (lcp-discovery-insight)"
+      ],
+      "technical_note": "The overlay waits for window load; Lighthouse desktop observedLoad was 24,082 ms because the page keeps loading many images and scripts. Disable the loading-page plugin (or set it to remove on DOMContentLoaded) and add fetchpriority=high to the mobile LCP image. Lab LCP mobile is 17.4 s under simulated slow 4G; the observed 15.1 s confirms it is not just a throttling artifact.",
+      "pin": null
+    },
+    {
+      "id": "tech-2",
+      "title": "La página de inicio pesa 9,5 MB por fotos pesadas",
+      "summary": "Las fotos se suben en un formato muy pesado, así que la tienda gasta datos y tarda mucho en abrir en celular.",
+      "now": "Abrir la página de inicio descarga 9,5 MB; 7,7 MB son imágenes, casi todas PNG. Solo la imagen de fondo pesa 1,5 MB y cada foto de vestido entre 290 y 450 KB.",
+      "fix": "Convertir las fotos a WebP o AVIF, subirlas al tamaño real en que se muestran y activar una optimización automática para las fotos nuevas. La meta es dejar la página de inicio por debajo de 3 MB.",
+      "why": "Una página liviana abre rápido aun con datos móviles, y eso mantiene a la clienta mirando productos en vez de esperando.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "9,5 MB",
+      "evidence": [
+        "total-byte-weight (mobile): 9,718 KiB = 9.49 MB; desktop 7,831 KiB = 7.65 MB",
+        "network-requests (mobile): 47 images = 7,861 KiB (7.68 MB) of the total; 88 scripts = 1,418 KiB; 58 stylesheets = 222 KiB",
+        "Heaviest resources (mobile): Fondo.png 1,569 KiB; scarlett-capri-negro.png 452 KiB; chaquetas.png 440 KiB; laura.matamoros-hawai.png 412 KiB; cadenitas.png 358 KiB",
+        "raw/home.html <img> sources: 25 PNG, 5 JPG, 9 WebP",
+        "image-delivery-insight: estimated savings 5,035 KiB (desktop) and 648 KiB (mobile); Fondo.png alone 1,245 KiB savings",
+        "unsized-images: wp-content/uploads/2026/09/1.png has no width/height"
+      ],
+      "technical_note": "Fondo.png (1,568 KiB PNG, served by Apache with content-length 1,605,588) is loaded as a CSS background, so it is not covered by WordPress responsive srcset. Product/category PNGs are photos and should be WebP/AVIF at q~75. A plugin such as an image optimizer with WebP/AVIF conversion, or a CDN with image transformation, would cover new uploads automatically.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 30}
+    },
+    {
+      "id": "tech-3",
+      "title": "Demasiados complementos frenan la primera vista",
+      "summary": "La página carga código de 22 complementos antes de mostrar nada, incluso funciones que la página de inicio no usa.",
+      "now": "Antes de dibujar la página, el navegador debe descargar archivos que bloquean la vista: en celular eso suma unos 3,6 segundos. Se cargan 88 scripts y 58 hojas de estilo, entre ellas un carrusel, calendarios y selectores de hora de las opciones de producto, y tres familias de letra completas en todos sus grosores.",
+      "fix": "Revisar los complementos, desactivar los que no se usan y cargar cada función solo en la página donde hace falta (por ejemplo, las opciones de producto solo en la ficha). Además, dejar solo la familia de letra y los grosores que el diseño usa de verdad.",
+      "why": "Menos código significa una tienda que responde más rápido y menos piezas que pueden romperse con cada actualización.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "3,6 s",
+      "evidence": [
+        "render-blocking-insight (mobile): estimated savings 3,570 ms (desktop 820 ms); blocking items include jquery.min.js, pixelyoursite public.js and tld.min.js, woocommerce-extra-product-options-pro jquery.inputmask, jquery-ui-i18n, timepicker, wp-includes datepicker, dashicons.min.css, Google Fonts CSS",
+        "22 distinct plugins load assets on the homepage (network-requests, mobile); raw/home.html references 23 plugin folders",
+        "unused-javascript (mobile): 556 KiB; revslider sr7.js 116 of 121 KiB unused, revslider tptools.js 67 of 91 KiB unused, googletagmanager gtag 77 of 191 KiB, gtm.js 74 of 116 KiB",
+        "unused-css-rules: 118 KiB; mainthread-work-breakdown (mobile): 15.6 s",
+        "Google Fonts requests: Poppins, Roboto and Roboto Slab each with weights 100–900 plus italics (Elementor global fonts), plus a separate Poppins 400/500/700 from Astra",
+        "Two tag loaders (GTM-MFDH5CTR and GT-M6J65FKV) plus Site Kit, PixelYourSite, official-facebook-pixel and facebook-for-woocommerce plugins"
+      ],
+      "technical_note": "Stack: WordPress 7.0.7, Astra (child theme 'astra-child-scarlett_old'), Elementor 3.35.8 + Elementor Pro 3.32.1, Essential Addons, King Addons, Piotnet Addons, Slider Revolution 6.7.38, WooCommerce 10.3.7, Woo Extra Product Options Pro, Woo Variation Swatches/Gallery, Addi BNPL, BOGO, Woo Discount Rules, Local Pickup, Jetpack, WhatsApp Me, loading-page. Consolidate the overlapping Elementor add-on packs and tracking plugins; dequeue product-options/datepicker assets on non-product pages; set Elementor 'Google Fonts' to load only used weights or self-host.",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "El servidor tarda casi un segundo y medio en responder",
+      "summary": "Antes de empezar a mostrar la página, el servidor tarda alrededor de 1,4 segundos en contestar, y ese retraso se repite en cada página que visita la clienta.",
+      "now": "Cada visita espera 1,3 a 1,4 segundos solo para recibir la primera respuesta del servidor; lo recomendable es menos de 0,6 s. La página de inicio no muestra señales de una caché de páginas.",
+      "fix": "Activar una caché de páginas en el servidor o un CDN para que las páginas se entreguen ya preparadas, y evaluar el plan de hosting si no mejora.",
+      "why": "Una respuesta rápida del servidor acelera todas las páginas a la vez: catálogo, fichas y carrito.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,4 s",
+      "evidence": [
+        "server-response-time: root document took 1,380 ms (mobile) and 1,290 ms (desktop)",
+        "document-latency-insight: 'Server responded slowly (observed 1376 ms)', estimated savings 1,280 ms",
+        "lcp-breakdown-insight: time to first byte 1,685 ms (mobile), 1,698 ms (desktop)",
+        "raw/tech-headers.txt: homepage response from Apache with no cache-control, age or cache-plugin header"
+      ],
+      "technical_note": "No page-cache plugin assets or headers detected (no x-cache / cf-cache-status / x-litespeed-cache). Static assets already have cache-control max-age=31557600, so the gap is HTML generation (WooCommerce + Elementor on PHP). Options: hosting-level page cache, WP Rocket/LiteSpeed-equivalent, or Cloudflare APO. Exclude cart/checkout from caching.",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "Faltan protecciones básicas en el servidor",
+      "summary": "El sitio no activa las protecciones estándar del navegador que ayudan a evitar suplantaciones y ataques sobre una tienda que recibe pagos.",
+      "now": "El sitio funciona con HTTPS y redirige bien desde http, pero no envía ninguna de las cinco protecciones básicas que los navegadores esperan de una tienda en línea.",
+      "fix": "Activar en el servidor las cinco cabeceras de seguridad (HSTS, política de contenido, protección contra marcos, tipo de contenido y política de referencia), probándolas primero para no romper pagos ni seguimiento.",
+      "why": "Una tienda que maneja datos y pagos de clientas debe cerrar las puertas más conocidas; es un cambio barato que reduce riesgos de fraude.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "0 de 5",
+      "evidence": [
+        "HSTS (Strict-Transport-Security): absent",
+        "CSP (Content-Security-Policy): absent",
+        "X-Frame-Options / frame-ancestors: absent",
+        "X-Content-Type-Options: absent",
+        "Referrer-Policy: absent",
+        "HTTPS: present; http:// returns 301 to https:// (raw/tech-headers.txt)"
+      ],
+      "technical_note": "Only Permissions-Policy is sent. Version disclosure: meta generator tags expose WordPress 7.0.7, WooCommerce 10.3.7, Site Kit 1.162.1, Elementor 3.35.8 and Slider Revolution 6.7.38; Server header 'Apache'. Start CSP in Report-Only mode because GTM, Meta Pixel and Addi load third-party scripts.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "fail", "evidence": "total-byte-weight 9,718 KiB = 9.49 MB (mobile), 7,831 KiB = 7.65 MB (desktop); threshold 3 MB."},
+    {"id": "tech-lcp", "result": "fail", "evidence": "Mobile observedLargestContentfulPaint 15,080 ms (lab 17.4 s); a loading-screen overlay hides content."},
+    {"id": "tech-images", "result": "fail", "evidence": "25 of 39 <img> sources are PNG; image-delivery-insight savings 5,035 KiB desktop / 648 KiB mobile; Fondo.png 1,569 KiB."},
+    {"id": "tech-lazy", "result": "pass", "evidence": "36 of 46 <img> in raw/home.html use loading=\"lazy\"; the non-lazy ones are the header logo, hero banners (fetchpriority=high on BANNER-LOVE-EDITION), the footer logo and tracking pixels."},
+    {"id": "tech-render-blocking", "result": "fail", "evidence": "render-blocking-insight savings 3,570 ms mobile (820 ms desktop); Google Fonts load Poppins, Roboto and Roboto Slab in all weights 100–900 with italics."},
+    {"id": "tech-cache", "result": "pass", "evidence": "Own static CSS and images served with cache-control max-age=31557600 (1 year) per raw/tech-headers.txt; only third-party Meta scripts have 20-min TTL (cache-insight)."},
+    {"id": "tech-https", "result": "pass", "evidence": "is-on-https passes; http://scarlettropayaccesorios.com/ returns 301 to https:// (raw/tech-headers.txt)."},
+    {"id": "tech-security-headers", "result": "fail", "evidence": "0 of 5 present: HSTS, CSP, X-Frame-Options/frame-ancestors, X-Content-Type-Options, Referrer-Policy all absent (raw/tech-headers.txt)."},
+    {"id": "tech-console", "result": "pass", "evidence": "Lighthouse errors-in-console score 1 with no items (mobile and desktop)."},
+    {"id": "tech-links", "result": "pass", "evidence": "raw/tech-links.txt: 24 internal pages and 8 images answered 200; 8 later URLs got 429 (server rate-limit on rapid HEAD requests, not broken: those images loaded with Lighthouse). No 404s found."},
+    {"id": "tech-404", "result": "pass", "evidence": "Missing URL returns HTTP 404 (raw/tech-headers.txt) with a 'Página no encontrada' page that keeps the full menu and a search box (raw/tech-404.html)."}
+  ]
+}

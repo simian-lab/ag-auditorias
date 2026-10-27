@@ -1,0 +1,213 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "No apareces cuando buscan vestidos o accesorios",
+      "summary": "Quien busca en internet vestidos o accesorios en Bogotá encuentra a Zara, Mango, Falabella u otras tiendas, no a Scarlett.",
+      "now": "En 6 búsquedas reales de compradoras (por ejemplo «vestidos de mujer tienda Bogotá», «vestidos para matrimonio invitada Bogotá tienda», «tienda de accesorios aretes y brazaletes Bogotá») tu sitio no apareció ni una vez. Tampoco apareció al buscar tu propia marca («Scarlett ropa y accesorios Bogotá», «Scarlett casitas rosadas Unicentro»).",
+      "fix": "Trabajar títulos, descripciones y textos de categorías con las palabras que usan tus clientas (vestidos de invitada, vestidos largos, aretes, Bogotá) y darle a Google datos claros de tu marca y tus tiendas.",
+      "why": "Cada búsqueda en la que no apareces es una clienta que ya quiere comprar y termina en la tienda de otro.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "0 de 8 búsquedas",
+      "evidence": [
+        "search_tests: 0 of 6 buyer queries and 0 of 2 brand queries returned scarlettropayaccesorios.com (WebSearch tool, 2026-10-27)",
+        "Who appears instead: zara.com/co, shop.mango.com/co, falabella.com.co, alkomprar.com, closeando.com, encolombia.com directory, canojewelry.com"
+      ],
+      "technical_note": "WebSearch is a US-based index, not a localized Google.com.co ranking; it is a directional signal only. Brand queries returning zero results for the business suggest weak entity signals (see seo-2).",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "Google no sabe cómo se llama tu marca",
+      "summary": "Tu marca no aparece en el título de ninguna página, así que en Google y al compartir un enlace no se ve que eres Scarlett.",
+      "now": "La página de inicio se titula «Home -», la de historia «HISTORIA -», la de vestidos «Vestidos Archivos -» y cada producto «Vestido Creta -»: después del guion debería ir el nombre de la marca y está vacío. Al compartir tu inicio por WhatsApp o redes, el enlace muestra «Home -» y una lista de precios como descripción.",
+      "fix": "Configurar el nombre de la marca en el plugin de SEO que ya tienes (Yoast) y escribir títulos propios, por ejemplo «Vestidos largos y accesorios hechos en Colombia | Scarlett».",
+      "why": "Un título claro con tu marca es lo primero que ve una clienta en Google y decide si hace clic.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html <title>Home -</title>; og:title=\"Home -\"; og:description starts \"Vestido Creta $ 454.500 Vestido Maui Marfil $ 514.500...\"",
+        "raw/seo-historia.html <title>HISTORIA -</title>; raw/seo-category.html <title>Vestidos Archivos -</title>; raw/seo-product.html <title>Vestido Creta -</title>",
+        "Yoast JSON-LD WebSite node on every page: \"name\":\"\",\"description\":\"\""
+      ],
+      "technical_note": "Yoast SEO is installed (yoast-schema-graph, sitemap_index.xml). The title separator template is '%%title%% %%sep%% %%sitename%%' with an empty site name (Settings > General > Site title / Yoast Site representation). Fixing the site name also fills WebSite.name in the schema graph.",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "Tus vestidos no muestran precio ni stock en Google",
+      "summary": "Tus fichas de producto no le dicen a Google el precio ni la disponibilidad, así que no pueden aparecer con precio en resultados ni en Google Shopping gratuito.",
+      "now": "La ficha del Vestido Creta tiene buena descripción (tela, tecnologías, ocasión de uso) y precio visible ($454.500), pero el código que Google lee para mostrar producto, precio y disponibilidad no está en la página.",
+      "fix": "Activar los datos de producto (nombre, precio, disponibilidad, imagen, marca) en cada ficha y conectar el catálogo a Google Merchant Center para aparecer en la pestaña de Shopping.",
+      "why": "Los resultados con precio y foto se llevan más clics de compradoras listas para pagar.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "raw/seo-product.html (https://scarlettropayaccesorios.com/producto/vestido-creta/): JSON-LD contains only WebPage, ImageObject, BreadcrumbList, WebSite; no \"@type\":\"Product\" and no \"Offer\"",
+        "raw/seo-category.html (/categoria-producto/ropa/vestidos/): no Product/ItemList markup",
+        "Visible price on the product page: \"Vestido Creta $ 454.500\""
+      ],
+      "technical_note": "WooCommerce normally prints Product structured data on single product pages; it is absent in the rendered DOM, likely because the Elementor single-product template or a plugin suppresses it. Verify with Google Rich Results Test after the fix.",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Tus 4 tiendas no existen para las búsquedas locales",
+      "summary": "Tienes cuatro tiendas en Bogotá, pero el sitio no se las presenta a Google como negocio local, y no pudimos confirmar tu perfil de Google Maps.",
+      "now": "Las direcciones de Cedritos, Unicentro, Salitre Plaza y Zona T solo aparecen como texto al final del inicio. No hay datos de negocio (nombre, dirección, teléfono, horario) que Google pueda leer. Al buscar tu marca con «Unicentro» o «Bogotá» no apareció nada.",
+      "fix": "Marcar cada tienda como negocio local con dirección, teléfono y horario, crear una página por tienda y confirmar o crear el perfil de Google Business de cada una.",
+      "why": "Quien busca «tienda de vestidos cerca» decide en Google Maps antes de entrar a cualquier sitio web.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html footer text: CEDRITOS Calle 142 Carrera 19 # 142 – 25; UNICENTRO Carrera 13 # 123 – 10; SALITRE L316 CC Salitre Plaza; ZONA T Cra 14 # 79 – 14",
+        "No Organization / LocalBusiness / ClothingStore JSON-LD in raw/home.html, raw/seo-product.html, raw/seo-category.html, raw/seo-historia.html, raw/seo-faq.html",
+        "Brand queries 'Scarlett ropa y accesorios Bogotá' and 'Scarlett casitas rosadas Unicentro': site and Google Business Profile not found",
+        "Contact address written differently: footer 'AK 19 #142-25' vs store block 'Calle 142 Carrera 19 # 142 – 25'"
+      ],
+      "technical_note": "Google Business Profile existence could not be confirmed with the available tools (no Maps access); this is 'not confirmed', not 'does not exist'. /nuestras-casitas/ could not be loaded in headless Chrome during this audit (timeout).",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Inicio y categorías sin descripción para Google",
+      "summary": "Google tiene que inventar el texto que muestra de tu inicio y tus categorías, y el inicio no tiene un título principal que diga qué vendes.",
+      "now": "El inicio, la categoría Vestidos, Historia y FAQ no tienen descripción para Google (solo las fichas de producto la tienen). El inicio y la ficha de producto no tienen título principal (H1); la página de inicio tiene unas 400 palabras, casi todas menú y precios.",
+      "fix": "Escribir una descripción atractiva para el inicio y cada categoría, un título principal por página y un texto corto en cada categoría (por ejemplo, para qué ocasión es cada tipo de vestido).",
+      "why": "La descripción es el anuncio gratuito que ve la clienta en Google; si no la escribes tú, pierdes la oportunidad de convencerla.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse mobile/desktop audit 'meta-description' score 0 (raw/lighthouse-mobile.json, raw/lighthouse-desktop.json)",
+        "No <meta name=\"description\"> in raw/home.html, raw/seo-category.html, raw/seo-historia.html, raw/seo-faq.html; present in raw/seo-product.html",
+        "H1 count: home 0, product page 0 (product name is an H3), category 1, historia 1, faq 1",
+        "Home visible word count ≈ 397 including navigation"
+      ],
+      "technical_note": "Lighthouse SEO score is 92/100 on both mobile and desktop, which looks good but is misleading: it only checks ~10 technical basics (crawlable, has a <title>, canonical, alt...). It does not evaluate whether titles contain the brand, whether there is an H1, structured data, local signals, or whether the site ranks for any query.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "Páginas de prueba publicadas en Google",
+      "summary": "Le estás pidiendo a Google que muestre páginas de prueba como «Hola mundo», lo que resta seriedad y diluye tu tienda.",
+      "now": "El mapa del sitio que lee Google incluye la entrada de ejemplo «Hola mundo», la «Página de ejemplo», dos páginas internas de sliders, una página de pago duplicada, la categoría «Sin categoría» y un archivo de autor.",
+      "fix": "Borrar o marcar como no indexables las páginas de prueba y quitar del mapa del sitio los archivos de autor y categorías vacías.",
+      "why": "Una clienta que cae en una página de prueba piensa que la tienda está descuidada.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-post-sitemap.xml: /2025/07/30/hola-mundo/",
+        "raw/seo-page-sitemap.xml: /pagina-ejemplo/, /home-sliders/, /home-sliders-2/, /checkout-personalizado/, /shopping/, /mi-cuenta/",
+        "raw/seo-category-sitemap.xml: /category/sin-categoria/; raw/seo-author-sitemap.xml lists one author archive"
+      ],
+      "technical_note": "The author sitemap exposes a WordPress author slug (/author/jhon-tiga/), which reveals a login-related username; disable author archives in Yoast (Settings > Advanced > Author archives). Also exclude posts/categories sitemaps since the blog is unused.",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "vestidos de mujer tienda Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["alkomprar.com", "zara.com/co", "encolombia.com (directory)", "eltiempo.com", "closeando.com", "mercadolibre.com.co"]
+    },
+    {
+      "query": "tienda de accesorios aretes y brazaletes Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["las2orillas.co", "lafm.com.co", "canojewelry.com", "worldtravelguide.net"]
+    },
+    {
+      "query": "comprar vestidos largos para mujer online Colombia",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["falabella.com.co", "shop.mango.com/co", "zara.com/co", "closeando.com"]
+    },
+    {
+      "query": "tienda de ropa femenina Cedritos Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results despite having a store in Cedritos",
+      "who_appears": ["fincaraiz.com.co", "encolombia.com (directory)", "storecensus.com", "cronista.com"]
+    },
+    {
+      "query": "vestidos para matrimonio invitada Bogotá tienda",
+      "appears": false,
+      "position_or_note": "Not in results (the product page Vestido Creta says 'Ideal para bodas, galas y eventos de etiqueta')",
+      "who_appears": ["las2orillas.co", "marie-claire.es", "publimetro.co", "cos.com"]
+    },
+    {
+      "query": "earcuff y gargantillas comprar online Colombia",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": ["canojewelry.com", "falabella.com.co", "poweredbypeople.com", "thefolklore.com"]
+    },
+    {
+      "query": "Scarlett ropa y accesorios Bogotá",
+      "appears": false,
+      "position_or_note": "Brand query; no result about this business",
+      "who_appears": ["en.wikipedia.org (Austin Scarlett)", "anthropologie.com (Elizabeth Scarlett)", "cronista.com", "desigual.com"]
+    },
+    {
+      "query": "Scarlett casitas rosadas Unicentro",
+      "appears": false,
+      "position_or_note": "Brand + location query; no result about this business",
+      "who_appears": ["klikk.no", "colombia.redinmobiliariamls.com", "thehotelguru.com"]
+    }
+  ],
+  "search_tests_note": "Pruebas hechas el 27-oct-2026 con la herramienta WebSearch, que usa un índice con sede en EE. UU.: no equivale a una posición local en Google Colombia ni en Google Maps. Sirve como señal de visibilidad, no como ranking exacto. No se estimaron menciones en asistentes de IA.",
+  "extra_pitch_es": "Ya tienes producto, cuatro tiendas y fichas bien escritas; con unos ajustes de SEO podemos hacer que Google y Maps te muestren a quienes hoy buscan vestidos y accesorios en Bogotá y terminan comprando en Zara o Falabella.",
+  "checks": [
+    {
+      "id": "seo-appears",
+      "result": "fail",
+      "evidence": "0 of 6 buyer queries and 0 of 2 brand queries returned the site (search_tests)."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "Titles are unique and products use the product name ('Vestido Creta -'), but the brand is missing everywhere (empty site name) and home is 'Home -', category 'Vestidos Archivos -'."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "fail",
+      "evidence": "Meta description missing on home, Vestidos category, Historia and FAQ; present only on product pages. Lighthouse meta-description = 0."
+    },
+    {
+      "id": "seo-h1",
+      "result": "partial",
+      "evidence": "Exactly one H1 on category, Historia and FAQ; zero H1 on home and on the product page (name is an H3)."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "fail",
+      "evidence": "No Organization/LocalBusiness/ClothingStore JSON-LD on any sampled page; Yoast WebSite node has name \"\". Four store addresses exist only as plain text."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "pass",
+      "evidence": "Each product has its own indexable URL (robots index,follow) with a real description, e.g. /producto/vestido-creta/ (fabric, technologies, occasion, ~528 words). Category pages list products with H1."
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "fail",
+      "evidence": "Sitemap lists /2025/07/30/hola-mundo/, /pagina-ejemplo/, /home-sliders/, /home-sliders-2/, /category/sin-categoria/ and an author archive."
+    },
+    {
+      "id": "seo-share",
+      "result": "partial",
+      "evidence": "Home and product have og:title, og:description and og:image, but home og:title is 'Home -' and og:description is a price list; Vestidos category has no og:description or og:image."
+    },
+    {
+      "id": "seo-nap",
+      "result": "partial",
+      "evidence": "Phone consistent (+57 304 3958108, WhatsApp 573043958108). Name varies (empty site name, 'SCARLETT SAS', domain 'scarlettropayaccesorios'); address written 'AK 19 #142-25' vs 'Calle 142 Carrera 19 # 142 – 25'. External listings (Google Business Profile) not confirmed."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "pass",
+      "evidence": "A FAQ page exists (/faq/, ~834 words on warranty, shipping, returns). Weaknesses: no FAQPage markup, /llms.txt returns the 404 page, few citable brand facts (founding year, materials sourcing) on /historia/."
+    }
+  ]
+}
