@@ -1,0 +1,55 @@
+name: Publish reports
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "audits/**"
+      - "tools/build_site.py"
+      - ".github/workflows/publish-reports.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-reports
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build site
+        run: python3 tools/build_site.py _site
+
+      - name: Commit site as the reports branch
+        working-directory: _site
+        run: |
+          git init -q -b reports
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "chore: publish reports from ${GITHUB_SHA::7}"
+
+      - name: Push reports branch to GitHub
+        working-directory: _site
+        run: |
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" reports:reports
+
+      - name: Push to Spacefast
+        working-directory: _site
+        env:
+          SPACEFAST_GIT_URL: ${{ secrets.SPACEFAST_GIT_URL }}
+        run: |
+          if [ -z "$SPACEFAST_GIT_URL" ]; then
+            echo "::warning::SPACEFAST_GIT_URL secret is not set; skipping Spacefast deploy."
+            exit 0
+          fi
+          git push -f "$SPACEFAST_GIT_URL" reports:main

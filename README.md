@@ -53,10 +53,24 @@ It then collects evidence, runs the analysis agents, scores the site and builds 
 
 ## Publishing an audit
 
-1. Add a link to the new report in `index.html`.
-2. Commit and push to `main`. GitHub Pages redeploys automatically.
+Commit the new `audits/<domain>/` folder and push to `main`. The `Publish reports` workflow then:
 
-> Everything under `audits/` is served by GitHub Pages. Do not commit anything that should not be visible to whoever has the link.
+1. Builds the site with `tools/build_site.py`: every `audits/*/report/` folder plus a generated `index.html` listing each audit with its domain and overall score.
+2. Force-pushes that site to the `reports` branch.
+3. Force-pushes it to Spacefast, if the `SPACEFAST_GIT_URL` repository secret is set.
+
+Only the `report/` folders are published; `raw/`, `findings/` and `screenshots/` stay in `main`.
+
+To preview the site locally:
+
+```bash
+python3 tools/build_site.py _site
+open _site/index.html
+```
+
+### Spacefast setup
+
+Add the Spacefast Git URL, including its token, as a repository secret named `SPACEFAST_GIT_URL` (**Settings → Secrets and variables → Actions**). It is the URL from the `git remote add spacefast ...` command Spacefast shows, for example `https://t:<token>@git.spacefast.com/<space>`. Spacefast space URLs expire after 30 days, so update the secret when you get a new one.
 
 ## Updating the plugin
 
