@@ -1,0 +1,288 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "No apareces cuando alguien busca muebles de exterior",
+      "summary": "En las 6 búsquedas de compra que probamos no apareció tu tienda; quien busca lo que vendes encuentra a Homecenter, Falabella o Alkosto.",
+      "now": "Buscamos frases como «muebles para terraza exterior Bogotá», «comprar sala para exterior Bogotá» o «asador Napoleon Colombia comprar» y tu sitio no salió en ninguna. Al buscar tu propio nombre, el buscador te confundió con Crate & Barrel y Bed Bath & Beyond.",
+      "fix": "Crear páginas de categoría con texto propio pensado para esas búsquedas (salas, comedores, toldos, asadores en Bogotá), mencionar el showroom de El Retiro en ellas y reforzar el nombre de la marca junto a «muebles de exterior» en títulos y descripciones.",
+      "why": "Si no apareces cuando el cliente busca, la venta se la lleva quien sí aparece, aunque tenga menos diseño que tú.",
+      "impact": 5,
+      "effort": "Alto",
+      "headline_metric": "0 de 6 búsquedas",
+      "evidence": [
+        "WebSearch buyer queries (6): client domain absent in all result sets; see search_tests",
+        "Brand queries 'Bed Bath & Barrel Bogotá' and 'Bed Bath and Barrel Centro Comercial El Retiro muebles exterior': no result for bedbathandbarrel.com; engine returned Crate & Barrel / Bed Bath & Beyond / B&B lodging",
+        "Category pages have no intro copy: /categoria-producto/mobiliario-exterior/salas/ ~426 words total, mostly product grid and menu"
+      ],
+      "technical_note": "WebSearch is not a local Google ranking; results are indicative only. Brand-name ambiguity with Crate & Barrel and Bed Bath & Beyond makes entity signals (schema, consistent NAP, GBP) more important.",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "Ninguna página tiene descripción para Google",
+      "summary": "Google inventa el texto que muestra bajo tu enlace, y al compartir una página por WhatsApp no sale una vista previa cuidada.",
+      "now": "Revisamos 12 páginas (portada, tienda, categorías, productos, sobre nosotros, proyectos, cómo comprar) y ninguna tiene descripción escrita para buscadores ni datos para la vista previa al compartir (título, texto e imagen).",
+      "fix": "Instalar un plugin de SEO (por ejemplo Yoast o Rank Math) y escribir una descripción breve y vendedora para la portada, las categorías y los productos principales, con su imagen para compartir.",
+      "why": "Una buena descripción es el anuncio gratuito que convence de hacer clic, y una vista previa con foto genera más confianza al compartir por WhatsApp.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "0 de 12 páginas",
+      "evidence": [
+        "No <meta name=\"description\"> in raw/seo-home.html, seo-tienda.html, seo-cat-mobiliario-exterior.html, seo-cat-salas.html, seo-producto-*.html (3), seo-sobre-nosotros.html, seo-proyectos.html, seo-como-comprar.html, seo-mi-cuenta.html, seo-author.html",
+        "No og:title / og:description / og:image on any of those pages",
+        "Lighthouse mobile and desktop: meta-description audit score 0"
+      ],
+      "technical_note": "No SEO plugin detected: sitemap is WordPress core wp-sitemap.xml, no OG/Twitter tags, no meta descriptions. Lighthouse SEO is 92/100 on both devices only because it checks a handful of basics (crawlable, status code, viewport, etc.); it does not measure rankings, content depth, schema completeness or local signals, so 92 is misleading.",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "Google no tiene tus datos de negocio estructurados",
+      "summary": "Tu dirección, teléfono y horario están en el pie de página, pero no en el formato que Google y la IA leen para mostrarte en mapas y respuestas locales.",
+      "now": "El sitio no declara en código quién eres ni dónde estás (nombre, dirección del showroom, teléfono, horario). Tampoco pudimos confirmar que exista una ficha de Google Business para la tienda.",
+      "fix": "Añadir los datos del negocio en formato estructurado (tienda local con dirección del CC El Retiro, teléfono, horario y redes) y crear o verificar la ficha de Google Business con los mismos datos.",
+      "why": "Quien busca «muebles de exterior cerca de mí» ve primero el mapa; sin ficha y sin datos claros, el showroom no aparece ahí.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "No JSON-LD of type Organization/LocalBusiness/FurnitureStore on home, sobre-nosotros, como-comprar",
+        "Only Organization present is the 'seller' node inside WooCommerce Product JSON-LD (name + url, no address/phone)",
+        "NAP in footer text: 'Centro Comercial El Retiro Piso 3, Local 204-2 · Bogotá', '319 307 3762' (tel:+573193073762)",
+        "Google Business Profile: not found via WebSearch brand queries; existence could not be confirmed"
+      ],
+      "technical_note": "Recommend LocalBusiness/FurnitureStore JSON-LD with address, geo, telephone, openingHoursSpecification and sameAs (Facebook, Instagram). Footer email uses a personal-role mailbox; keep as is in schema only if desired.",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Salas y comedores sin ficha de producto para Google",
+      "summary": "Justo los muebles de exterior, tu producto principal, no le dicen a Google qué son ni cuánto cuestan, mientras aromatizadores y accesorios sí lo hacen.",
+      "now": "En 12 productos revisados, 8 tienen la ficha técnica que Google usa para mostrar precio y foto en resultados; los 4 que no la tienen son salas, comedor y toldo (Coccolona, Ocean, Mantinea, Toldo Solaris).",
+      "fix": "Activar la ficha de producto para todos los muebles, incluidos los que se venden por cotización, con nombre, foto, material, marca y precio «desde» cuando aplique.",
+      "why": "Los resultados con foto y precio atraen más clics y ponen tus muebles al lado de los de las grandes tiendas.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "4 de 12 productos",
+      "evidence": [
+        "Product JSON-LD present: asador-a-gas-portatil-travelq-285, difusor-...-mango-maracuya, difusor-...-cedro-verbena, piedra-para-pizza-pro, asoleadora-tahiti, horno-para-pizza-ooni-karu, cortador-ooni-pizza, forro-para-horno-ooni-karu",
+        "No ld+json at all: sala-para-exterior-coccolona, sala-para-exterior-ocean, comedor-para-exterior-mantinea, toldo-vertical-tipo-gancho-solaris",
+        "Product descriptions exist but are short: Coccolona 106 words, Mantinea 68, TravelQ 285 169"
+      ],
+      "technical_note": "WooCommerce omits Product structured data when the product has no price/purchasable state or uses a quote/catalog mode plugin; Mantinea shows a price element yet still has no JSON-LD, so likely a variable product without default variation. Sample: every 10th URL of wp-sitemap-posts-product-1.xml (145 URLs) plus 3 already collected; one fetch returned empty and was excluded.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Fotos de proyectos y portada sin texto descriptivo",
+      "summary": "Tus mejores fotos, las de proyectos reales, son invisibles para Google Imágenes y para la IA porque no dicen qué muestran.",
+      "now": "En la página de Proyectos, 45 de 47 imágenes no tienen texto alternativo; en la portada, 9 de 11.",
+      "fix": "Describir cada foto en pocas palabras (por ejemplo «terraza con sala de exterior en tecnopolímero, Bogotá») desde la biblioteca de medios.",
+      "why": "Las fotos de proyectos son prueba de calidad y pueden atraer visitas desde búsquedas de imágenes de terrazas y decoración exterior.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "45 de 47 fotos",
+      "evidence": [
+        "raw/seo-proyectos.html: 47 <img>, 45 with empty or missing alt",
+        "raw/seo-home.html: 11 <img>, 9 with empty or missing alt",
+        "Category and product listing images do have alt (0 missing on tienda, mobiliario-exterior)"
+      ],
+      "technical_note": "Counted <img> elements in static HTML; lazy-loaded or CSS background images not included.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "No hay preguntas frecuentes ni datos citables",
+      "summary": "Los asistentes de IA y Google responden preguntas como «qué material aguanta la intemperie»; sin esas respuestas en tu sitio, citan a otros.",
+      "now": "No hay página de preguntas frecuentes, ni archivo llms.txt, ni página de contacto (las direcciones /contacto/ y /contactenos/ dan error). El dato «Desde 2001» y «más de 20 años» solo aparece en Sobre nosotros.",
+      "fix": "Publicar una página de preguntas frecuentes (materiales, mantenimiento, garantías, tiempos de entrega, envíos, personalización) y una ficha con datos verificables: año de fundación, marcas que representas, proyectos realizados.",
+      "why": "Respuestas claras y datos concretos son lo que la IA y Google usan para recomendar una tienda frente a otra.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "https://bedbathandbarrel.com/llms.txt → 404 (raw/seo-llms-404.html)",
+        "No 'preguntas frecuentes'/FAQPage on any saved page; sitemap pages list has no FAQ URL",
+        "/contacto/ and /contactenos/ return the 404 template (raw/seo-contactenos.html)",
+        "Sobre nosotros: 'DESDE 2001', 'Más de 20 años creando espacios exteriores únicos'"
+      ],
+      "technical_note": "Brands carried (taxonomy product_brand): Napoleon, Scab Design, Lovato, Gaviota, Simple Human, The Candle Shop, etc. These are citable facts for a fact sheet.",
+      "pin": null
+    },
+    {
+      "id": "seo-7",
+      "title": "El título de la portada es largo y tiene caracteres rotos",
+      "summary": "En Google tu portada aparece cortada y con signos de interrogación, lo que se ve descuidado para una marca de lujo.",
+      "now": "El título de la portada tiene 159 caracteres y termina en «????» (un emoji que no se muestra bien); Google solo muestra unos 60.",
+      "fix": "Usar un título corto como «Bed Bath & Barrel | Muebles de exterior de lujo en Bogotá» y quitar el emoji.",
+      "why": "El título es lo primero que ve quien busca; debe decir en segundos quién eres y qué vendes.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "159 caracteres",
+      "evidence": [
+        "raw/seo-home.html <title>: 'Bed Bath & Barrel – Expertos en mobiliario para exterior, plasmamos tu idea en nuestros productos para acompañarte con el mejor diseño exterior en tu hogar????'",
+        "Other pages use unique 'Page – Bed Bath & Barrel' titles (Tienda, Salas, Sala para exterior COCCOLONA...)",
+        "Home H1 is 'Lujo de exteriores' (one H1 per page on all 12 checked pages)"
+      ],
+      "technical_note": "Title is the WP site name + tagline; the '????' are literal question marks in the served HTML (emoji lost on save, likely utf8 vs utf8mb4 DB charset).",
+      "pin": null
+    },
+    {
+      "id": "seo-8",
+      "title": "El mapa del sitio incluye páginas sin valor",
+      "summary": "Google recibe una página interna de usuario y las páginas de carrito y pago como si fueran contenido importante, en lugar de solo productos y categorías.",
+      "now": "El mapa que el sitio entrega a Google incluye una página de autor que se puede indexar, además del carrito, el pago y Mi cuenta, que están marcadas para no aparecer en Google.",
+      "fix": "Con el plugin de SEO, quitar del mapa del sitio las páginas de autor, carrito, pago y cuenta, y dejar solo páginas, categorías y productos.",
+      "why": "Un índice limpio ayuda a que Google dedique su atención a los muebles que quieres vender.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "robots.txt points to https://bedbathandbarrel.com/wp-sitemap.xml (WP core)",
+        "wp-sitemap-users-1.xml lists 1 author archive; that archive has robots 'max-image-preview:large' (indexable), no canonical",
+        "wp-sitemap-posts-page-1.xml lists /carrito/, /finalizar-compra/, /mi-cuenta/ which serve robots 'noindex, follow'",
+        "Sitemap otherwise clean: 12 pages, 145 products, 19 categories, 9 brands; no 'Hello world' or 'Sample Page'"
+      ],
+      "technical_note": "Author archive exposes the WordPress login username 'diseno' via /author/diseno/ and wp-sitemap-users-1.xml. Disable author sitemap and author archives (or noindex them).",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "muebles para terraza exterior Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": [
+        "homecenter.com.co",
+        "alkosto.com",
+        "falabella.com.co",
+        "naterial.com"
+      ]
+    },
+    {
+      "query": "mobiliario de exterior de lujo Bogotá tienda",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": [
+        "roche-bobois.com",
+        "gunnitrentino.es",
+        "eichholtzidhouse.com",
+        "homecenter.com.co"
+      ]
+    },
+    {
+      "query": "comprar sala para exterior Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": [
+        "alkomprar.com",
+        "alkosto.com",
+        "falabella.com.co",
+        "homecenter.com.co"
+      ]
+    },
+    {
+      "query": "toldo retráctil precio Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results; mostly non-Colombian results",
+      "who_appears": [
+        "homecenter.com.co",
+        "mercadolibre.com.mx",
+        "habitissimo.com.mx"
+      ]
+    },
+    {
+      "query": "asador Napoleon Colombia comprar",
+      "appears": false,
+      "position_or_note": "Not in results although the site sells Napoleon TravelQ grills",
+      "who_appears": [
+        "napoleon.com",
+        "falabella.com.co",
+        "desertcart.co",
+        "colombia.yaxa.co"
+      ]
+    },
+    {
+      "query": "comedor para exterior personalizado Bogotá",
+      "appears": false,
+      "position_or_note": "Not in results",
+      "who_appears": [
+        "homecenter.com.co",
+        "1stdibs.com",
+        "liverpool.com.mx"
+      ]
+    },
+    {
+      "query": "Bed Bath & Barrel Bogotá",
+      "appears": false,
+      "position_or_note": "Brand query; engine matched Crate & Barrel and B&B lodging instead",
+      "who_appears": [
+        "falabella.com.co (Crate and Barrel)",
+        "crateandbarrel.com",
+        "expedia.com"
+      ]
+    },
+    {
+      "query": "Bed Bath and Barrel Centro Comercial El Retiro muebles exterior",
+      "appears": false,
+      "position_or_note": "Brand + location query; no result for the site",
+      "who_appears": [
+        "falabella.com.co (Crate and Barrel)",
+        "fincaraiz.com.co"
+      ]
+    }
+  ],
+  "search_tests_note": "Pruebas hechas el 27-oct-2026 con la herramienta WebSearch, que usa un índice con sede en EE. UU.: no equivale a una posición local en Google Colombia ni en Google Maps, ni refleja resultados personalizados. Sirve como señal de visibilidad, no como ranking exacto. No se estimaron menciones en asistentes de IA.",
+  "extra_pitch_es": "Tienes 145 productos y un showroom en El Retiro, pero en 6 búsquedas de compra no apareciste ni una vez: con descripciones, fichas de producto y tus datos de negocio bien declarados, Google y la IA pueden empezar a recomendarte.",
+  "checks": [
+    {
+      "id": "seo-appears",
+      "result": "fail",
+      "evidence": "0 of 6 buyer search tests (plus 0 of 2 brand tests) returned bedbathandbarrel.com."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "All 12 checked pages have unique 'Page – Bed Bath & Barrel' titles, but the home title is 159 chars with broken '????' characters."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "fail",
+      "evidence": "Meta description missing on all 12 checked pages; Lighthouse meta-description audit = 0 on mobile and desktop."
+    },
+    {
+      "id": "seo-h1",
+      "result": "pass",
+      "evidence": "Exactly one H1 on each of the 12 checked pages (home 'Lujo de exteriores', products use product name)."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "fail",
+      "evidence": "No Organization/LocalBusiness JSON-LD with name, address and phone; only a seller Organization (name+url) inside Product schema."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "pass",
+      "evidence": "145 product URLs in sitemap, indexable with canonical and descriptions (68–169 words in sample); Product schema missing on 4 of 12 sampled, covered in seo-4."
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "partial",
+      "evidence": "No Hello world/Sample Page; but sitemap lists an indexable author archive and noindexed cart/checkout/account pages."
+    },
+    {
+      "id": "seo-share",
+      "result": "fail",
+      "evidence": "No og:title, og:description or og:image on any of the 12 checked pages."
+    },
+    {
+      "id": "seo-nap",
+      "result": "partial",
+      "evidence": "Name, phone (319 307 3762) and address (CC El Retiro, Piso 3, Local 204-2) consistent across site footer and Cómo comprar; external listings (Google Business Profile) could not be confirmed."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "fail",
+      "evidence": "No FAQ page or FAQPage schema, llms.txt returns 404, no fact sheet; only 'Desde 2001' on Sobre nosotros."
+    }
+  ]
+}

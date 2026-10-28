@@ -1,0 +1,447 @@
+{
+ "docH": 5964,
+ "fam": {
+  "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 64,
+  "-apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, oxygen-sans, ubuntu, cantarell, \"Helvetica Neue\", sans-serif": 6
+ },
+ "col": {
+  "rgb(26, 26, 26)": 4,
+  "rgb(255, 255, 255)": 40,
+  "rgb(46, 46, 46)": 12,
+  "rgb(207, 199, 187)": 4,
+  "rgb(74, 74, 74)": 2,
+  "rgba(0, 0, 0, 0.6)": 2,
+  "rgb(247, 244, 239)": 5,
+  "rgb(138, 138, 138)": 1
+ },
+ "bg": {
+  "rgb(255, 255, 255)": 8,
+  "rgb(26, 26, 26)": 11,
+  "rgb(232, 225, 215)": 2,
+  "rgb(247, 244, 239)": 1,
+  "rgb(135, 130, 124)": 1,
+  "rgb(147, 151, 152)": 1,
+  "rgb(135, 150, 139)": 1,
+  "rgb(161, 145, 126)": 1,
+  "rgb(145, 131, 124)": 1,
+  "rgb(0, 0, 0)": 2,
+  "rgb(37, 211, 102)": 1,
+  "rgba(0, 0, 0, 0.4)": 3,
+  "rgb(37, 212, 102)": 1,
+  "rgb(9, 12, 16)": 1,
+  "rgba(9, 12, 16, 0.97)": 1
+ },
+ "hs": [
+  [
+   "H1",
+   "Lujo de  exteriores",
+   "32px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   223
+  ],
+  [
+   "H4",
+   "Envío gratis en Bogotá",
+   "22px",
+   "700",
+   "rgb(46, 46, 46)",
+   "-apple-system, \"system-ui\", \"S",
+   733
+  ],
+  [
+   "H4",
+   "Pago 100% seguro",
+   "22px",
+   "700",
+   "rgb(46, 46, 46)",
+   "-apple-system, \"system-ui\", \"S",
+   898
+  ],
+  [
+   "H4",
+   "Asesoría personalizada",
+   "22px",
+   "700",
+   "rgb(46, 46, 46)",
+   "-apple-system, \"system-ui\", \"S",
+   1063
+  ],
+  [
+   "H4",
+   "Visita nuestro showroom",
+   "22px",
+   "700",
+   "rgb(46, 46, 46)",
+   "-apple-system, \"system-ui\", \"S",
+   1229
+  ],
+  [
+   "H2",
+   "Nuestras categorías",
+   "28px",
+   "700",
+   "rgb(26, 26, 26)",
+   "-apple-system, \"system-ui\", \"S",
+   1342
+  ],
+  [
+   "H3",
+   "Mobiliario exterior",
+   "24px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   1540
+  ],
+  [
+   "H3",
+   "Coberturas",
+   "24px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   1894
+  ],
+  [
+   "H3",
+   "BBQ y Pizza",
+   "24px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   2216
+  ],
+  [
+   "H3",
+   "Cocina",
+   "24px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   2510
+  ],
+  [
+   "H3",
+   "Hogar",
+   "24px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   2804
+  ],
+  [
+   "H2",
+   "Descubre nuestras novedades",
+   "28px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   3115
+  ],
+  [
+   "H2",
+   "Proyectos",
+   "28px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   3617
+  ],
+  [
+   "H2",
+   "Paso a paso para comprar en BB&B",
+   "28px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   4010
+  ],
+  [
+   "H2",
+   "Visita nuestro showroom",
+   "28px",
+   "700",
+   "rgb(26, 26, 26)",
+   "-apple-system, \"system-ui\", \"S",
+   4272
+  ],
+  [
+   "H4",
+   "Bed Bath & Barrel",
+   "15px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   4942
+  ],
+  [
+   "H4",
+   "Contacto",
+   "15px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   5301
+  ],
+  [
+   "H4",
+   "Horario del showroom",
+   "15px",
+   "700",
+   "rgb(255, 255, 255)",
+   "-apple-system, \"system-ui\", \"S",
+   5526
+  ]
+ ],
+ "btns": [
+  [
+   "Alternar el menú",
+   "rgba(0, 0, 0, 0)",
+   "rgb(255, 255, 255)",
+   "3px",
+   "14px",
+   "5.6px 8.4px",
+   "0px none rgb(255, 255, 255)",
+   "none"
+  ],
+  [
+   "Ver productos",
+   "rgb(247, 244, 239)",
+   "rgb(26, 26, 26)",
+   "3px",
+   "18px",
+   "7.2px 18px",
+   "0px none rgb(26, 26, 26)",
+   "none"
+  ],
+  [
+   "Ver novedades",
+   "rgb(26, 26, 26)",
+   "rgb(255, 255, 255)",
+   "3px",
+   "18px",
+   "7.2px 18px",
+   "0px none rgb(255, 255, 255)",
+   "none"
+  ]
+ ],
+ "fonts": [],
+ "imgs": [
+  [
+   "Logo_BBB_blanco-600x166.png",
+   412,
+   113,
+   0,
+   0,
+   "Bed Bath & Barrel"
+  ],
+  [
+   "Logo_BBB_blanco-600x166.png",
+   412,
+   113,
+   250,
+   69,
+   "Bed Bath & Barrel"
+  ],
+  [
+   "ChatGPT-Image-3-oct-2026-18_15_20-600x338.png",
+   412,
+   232,
+   412,
+   641,
+   ""
+  ],
+  [
+   "1f69a.svg",
+   150,
+   150,
+   17,
+   17,
+   "🚚"
+  ],
+  [
+   "1f512.svg",
+   150,
+   150,
+   17,
+   17,
+   "🔒"
+  ],
+  [
+   "1f4ac.svg",
+   150,
+   150,
+   17,
+   17,
+   "💬"
+  ],
+  [
+   "1f4cd.svg",
+   150,
+   150,
+   17,
+   17,
+   "📍"
+  ],
+  [
+   "ChatGPT-Image-31-jul-2026-15_22_08-600x480.png",
+   412,
+   329,
+   412,
+   320,
+   ""
+  ],
+  [
+   "ChatGPT-Image-1-abr-2026-15_19_21-600x900.png",
+   412,
+   618,
+   412,
+   320,
+   ""
+  ],
+  [
+   "HORNO-OONI-KODA-12_1.jpg",
+   411,
+   274,
+   412,
+   260,
+   ""
+  ],
+  [
+   "ChatGPT-Image-4-sept-2026-11_02_52-600x480.png",
+   412,
+   329,
+   412,
+   260,
+   ""
+  ],
+  [
+   "2-599x750.jpg",
+   411,
+   515,
+   412,
+   260,
+   ""
+  ],
+  [
+   "ChatGPT-Image-18-sept-2026-17_16_20-600x800.png",
+   412,
+   549,
+   412,
+   420,
+   ""
+  ],
+  [
+   "IMG-20211213-WA0026-600x450.jpg",
+   412,
+   309,
+   412,
+   380,
+   ""
+  ],
+  [
+   "IMG_2991-1-600x450.jpeg",
+   412,
+   309,
+   412,
+   380,
+   ""
+  ],
+  [
+   "1f4de.svg",
+   150,
+   150,
+   15,
+   15,
+   "📞"
+  ],
+  [
+   "1f4ac.svg",
+   150,
+   150,
+   15,
+   15,
+   "💬"
+  ],
+  [
+   "2709.svg",
+   150,
+   150,
+   15,
+   15,
+   "✉️"
+  ]
+ ],
+ "bgimgs": [
+  [
+   "wp-block-cover__image-background wp-image-647 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-655 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-656 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-657 size-full",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-658 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-659 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-673 size-large",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-771 size-full",
+   "none"
+  ],
+  [
+   "wp-block-cover__image-background wp-image-772 size-large",
+   "none"
+  ]
+ ],
+ "copyright": "© 2026 Bed Bath & Barrel · Todos los derechos reservados",
+ "vars": {
+  "--global-palette1": "#1a1a1a",
+  "--global-palette2": "#a89279",
+  "--global-palette3": "#1a1a1a",
+  "--global-palette4": "#2e2e2e",
+  "--global-palette5": "#555555",
+  "--global-palette6": "#8a8a8a",
+  "--global-palette7": "#e8e1d7",
+  "--global-palette8": "#f7f4ef",
+  "--global-palette9": "#ffffff",
+  "--global-palette10": "#c2b29c",
+  "--global-palette11": "#13612e",
+  "--global-palette12": "#1159af",
+  "--global-palette13": "#b82105",
+  "--global-palette14": "#f7630c",
+  "--global-palette15": "#f5a524"
+ },
+ "ffs": [
+  "font-family: monospace, monospace",
+  "font-family: \"Courier 10 Pitch\", Courier, monospace",
+  "font-family: Monaco, Consolas, \"Andale Mono\", \"DejaVu Sans Mono\", monospace",
+  "font-family: inherit",
+  "font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+  "font-family: var(--global-body-font-family)",
+  "font-family: var(--global-heading-font-family)",
+  "font-family: sans-serif",
+  "font-family: star",
+  "font-family: system-ui",
+  "font-family: \"serif\""
+ ],
+ "bodyFont": "17px"
+}

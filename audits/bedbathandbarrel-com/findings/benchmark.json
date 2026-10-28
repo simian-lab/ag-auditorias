@@ -1,0 +1,88 @@
+{
+  "competitors": [
+    {
+      "name": "Muebles Exteriores Colombia",
+      "slug": "muebles-exteriores-colombia",
+      "url": "https://www.mueblesexteriorescolombia.com/",
+      "why_competitor": "Fabricante y almacén de muebles para exterior (rattan y aluminio) en Bogotá; vende salas, comedores y nidos para terrazas, jardines y piscinas, el mismo cliente final.",
+      "screenshot": "screenshots/bench-muebles-exteriores-colombia.png",
+      "five_second": {
+        "what": true,
+        "for_whom": true,
+        "quote_cta": true,
+        "trust_proof": true,
+        "text_headline": true
+      },
+      "notes_es": "Titular en texto, 'desde 2010' visible, dirección del almacén y botón 'Cotizar por WhatsApp' en la primera pantalla.",
+      "lighthouse": {
+        "performance": 59,
+        "accessibility": 96,
+        "seo": 100,
+        "total_mb": 2.35
+      }
+    },
+    {
+      "name": "Muebles Exteriores La Terraza",
+      "slug": "muebles-la-terraza",
+      "url": "https://www.muebleslaterraza.com/",
+      "why_competitor": "Fábrica en Bogotá de muebles de exterior en rattan sintético y aluminio, toldos y parasoles, con tienda en línea y despachos nacionales.",
+      "screenshot": "screenshots/bench-muebles-la-terraza.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "quote_cta": false,
+        "trust_proof": false,
+        "text_headline": false
+      },
+      "notes_es": "Solo el logo y el menú explican qué vende; el carrusel no tiene mensaje y el contacto depende de un chat flotante.",
+      "lighthouse": {
+        "performance": 38,
+        "accessibility": 94,
+        "seo": 100,
+        "total_mb": 5.32
+      }
+    },
+    {
+      "name": "Punto Parasol",
+      "slug": "punto-parasol",
+      "url": "https://puntoparasol.com/",
+      "why_competitor": "Tienda en Bogotá especializada en muebles y parasoles de madera teca para exterior, con fabricación a medida.",
+      "screenshot": "screenshots/bench-punto-parasol.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "quote_cta": false,
+        "trust_proof": false,
+        "text_headline": true
+      },
+      "notes_es": "Titular en texto sobre la foto, pero sin pruebas de confianza ni botón de cotización; un aviso de cookies tapa parte del titular.",
+      "lighthouse": {
+        "performance": 42,
+        "accessibility": 79,
+        "seo": 83,
+        "total_mb": 1.27
+      }
+    }
+  ],
+  "client": {
+    "name": "Bed Bath & Barrel",
+    "slug": "client",
+    "url": "https://bedbathandbarrel.com/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": false,
+      "quote_cta": false,
+      "trust_proof": false,
+      "text_headline": true
+    },
+    "notes_es": "Titular claro en texto ('Lujo de exteriores'), pero sin años, clientes ni números visibles y el único botón es 'Ver productos'.",
+    "lighthouse": {
+      "performance": 79,
+      "accessibility": 95,
+      "seo": 92,
+      "total_mb": 7.53
+    }
+  },
+  "takeaway_es": "Muebles Exteriores Colombia te dice en cinco segundos qué hace, desde cuándo y cómo cotizar; tu sitio carga más rápido, pero no muestra ninguna prueba de confianza ni un botón para pedir asesoría."
+}

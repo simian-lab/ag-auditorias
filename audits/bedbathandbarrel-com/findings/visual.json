@@ -1,0 +1,128 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "Las fotos principales son imágenes generadas con IA",
+      "summary": "La portada de una tienda que vende lujo se apoya en escenas inventadas, y un comprador atento lo nota y desconfía de lo que va a recibir.",
+      "now": "La foto de portada, tres de las cinco categorías y el bloque de novedades son imágenes creadas con ChatGPT. Varias muestran playas y palmeras, aunque la tienda está en Bogotá. Se mezclan con fotos reales de producto y de proyectos que tienen otra luz y otro estilo.",
+      "fix": "Cambiar la portada y las categorías por fotos reales de tus productos en terrazas de Bogotá o en el showroom de El Retiro, todas con la misma luz y el mismo tratamiento de color.",
+      "why": "Cuando alguien va a gastar millones en una terraza, quiere ver el producto real que va a recibir, y las escenas inventadas le restan credibilidad a la promesa de lujo.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "5 de 9 fotos grandes",
+      "evidence": [
+        "Hero <img class='wp-block-cover__image-background wp-image-647'> src=/wp-content/uploads/2026/10/ChatGPT-Image-3-oct-2026-18_15_20-1024x576.png",
+        "Category covers: Mobiliario exterior = ChatGPT-Image-31-jul-2026-15_22_08, Coberturas = ChatGPT-Image-1-abr-2026-15_19_21, Cocina = ChatGPT-Image-4-sept-2026-11_02_52; BBQ y Pizza = HORNO-OONI-KODA-12_1.jpg (manufacturer photo, also a beach scene); Hogar = 2-599x750.jpg",
+        "Novedades cover = ChatGPT-Image-18-sept-2026-17_16_20.png; Proyectos = IMG-20211213-WA0026 (real WhatsApp photo); Paso a paso = IMG_2991-1.jpeg (real)",
+        "Count: 5 of the 9 large cover images on the home have ChatGPT filenames (hero, 3 categories, novedades)",
+        "screenshots/visual-desktop-categories.png: beach, palm trees and sea behind Mobiliario exterior, Coberturas and BBQ y Pizza",
+        "raw/visual-desktop-computed.json (imgs list)"
+      ],
+      "technical_note": "Image list taken from a CDP render at 1440x900 after scrolling to load the lazy images (document.images currentSrc). The filenames are the evidence that the images were generated with AI; the visual style (smooth surfaces, generic staging) is consistent with that.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 40}
+    },
+    {
+      "id": "visual-2",
+      "title": "La foto de portada se ve borrosa en celular",
+      "summary": "Lo primero que ve un cliente en el celular es una imagen ampliada de más y sin nitidez, y eso hace ver la marca descuidada.",
+      "now": "En el celular, la portada carga una versión pequeña de la foto (600×338 px) y la estira para llenar un espacio vertical de 412×641 px, unas 2,8 veces su tamaño. En computador pasa lo mismo, aunque menos: una versión de 1024 px se muestra a 1440 px de ancho.",
+      "fix": "Usar para la portada una foto pensada para celular (vertical) y otra para computador, y configurar el sitio para que entregue siempre la versión grande que corresponde a cada pantalla.",
+      "why": "La foto de portada fija la percepción de calidad en los primeros segundos, y si se ve pixelada el producto parece de menor categoría.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "2,8× ampliada en celular",
+      "evidence": [
+        "Mobile render (412x915, CDP emulation): hero currentSrc = ChatGPT-Image-3-oct-2026-18_15_20-600x338.png, natural 412x232 CSS px, rendered box 412x641 with object-fit:cover; 641/232 = 2.76x vertical upscale",
+        "Desktop render (1440x900): currentSrc = ...-1024x576.png rendered at 1440x630; 1440/1024 = 1.41x upscale",
+        "Hero <img> sizes='(max-width: 1024px) 100vw, 1024px' even though a 1672w original and a 1536w size are in the srcset",
+        "screenshots/visual-mobile-hero.png; Lighthouse screenshots/mobile-fullpage.jpg also shows the soft hero"
+      ],
+      "technical_note": "A 16:9 source cropped into a portrait cover on mobile needs about 641*16/9 ≈ 1140 CSS px of source width, but the browser picks the srcset entry from the 412px slot width. On a DPR 2.6 phone it would pick the 1536w file, which still needs about 1.9x upscaling for 641px*2.6 of height. Fix: add a portrait art-directed crop (a <picture> or a separate mobile cover) and correct the sizes attribute to 100vw.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 20}
+    },
+    {
+      "id": "visual-3",
+      "title": "La portada promete lujo pero no lo demuestra",
+      "summary": "La frase \"Lujo de exteriores\" no está respaldada por nada visible en la portada, así que el cliente no tiene razones para pagar precios de lujo.",
+      "now": "La portada no muestra ni un producto, ni un precio, ni una marca que representes, ni un proyecto terminado con fotos. La sección \"Proyectos\" usa una sola foto de WhatsApp de 2021, y el resto son ilustraciones de IA y textos genéricos.",
+      "fix": "Agregar en la portada una franja de productos destacados con nombre y precio, los logos de las marcas que distribuyes y dos o tres proyectos reales en Bogotá con fotos de antes y después.",
+      "why": "El lujo se demuestra con materiales, marcas y obras reales, y sin esa prueba el comprador compara solo por precio.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "H1 'Lujo de  exteriores' (32px) + subtitle 'Mobiliario, coberturas y accesorios para disfrutar tu terraza'",
+        "Home section order (headings): H1 hero, 4x H4 benefits, H2 Nuestras categorías, 5x H3 category tiles, H2 Descubre nuestras novedades, H2 Proyectos, H2 Paso a paso, H2 Visita nuestro showroom; no product grid, no prices, no brand logos, no testimonials on the home",
+        "Proyectos tile image = IMG-20211213-WA0026-768x576.jpg (WhatsApp photo, Dec 2021)",
+        "screenshots/visual-desktop-projects.png"
+      ],
+      "technical_note": "Rendered DOM checked at 1440 and 412 widths; no .products / li.product elements on the home.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 78}
+    },
+    {
+      "id": "visual-4",
+      "title": "Los íconos son emojis y se ven improvisados",
+      "summary": "La franja de beneficios y el pie de página usan emojis como íconos, y eso hace ver la tienda como un sitio armado a la carrera, no como una marca premium.",
+      "now": "Envío gratis, pago seguro, asesoría y showroom llevan emojis de 17 px (camión, candado, globo de chat, chincheta) sobre títulos de 22 px. Cada uno tiene un color distinto y quedan casi perdidos. En celular, esta franja ocupa unos 660 px, casi una pantalla completa, antes de llegar a las categorías.",
+      "fix": "Reemplazar los emojis por un set de íconos de línea en el color de la marca, del mismo tamaño y grosor, y en celular mostrar los cuatro beneficios en una cuadrícula de 2×2 compacta.",
+      "why": "Los detalles pequeños son los que separan una tienda de lujo de una genérica, y en celular esta franja empuja las categorías fuera de la primera pantalla.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Benefit icons: <img> 1f69a.svg, 1f512.svg, 1f4ac.svg, 1f4cd.svg (WordPress Twemoji) rendered 17x17px; footer uses 1f4de.svg, 1f4ac.svg, 2709.svg at 15x15px",
+        "Benefit headings H4 22px/700 #2e2e2e",
+        "Mobile (412px): first benefit H4 at y=733, last benefit text ends about y=1300 (H2 'Nuestras categorías' at y=1342) -> about 660px stacked block in a 915px viewport",
+        "screenshots/desktop-viewport.png y≈675; screenshots/visual-mobile-trustbar.png"
+      ],
+      "technical_note": "The emojis are typed into the block content and WordPress swaps them for s.w.org Twemoji images, so their look depends on the emoji set, not on the brand.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 37, "y_pct": 75}
+    },
+    {
+      "id": "visual-5",
+      "title": "El catálogo mezcla estilos de foto y de nombres",
+      "summary": "En las categorías cada producto parece venir de una tienda distinta, lo que le resta orden y sensación de colección curada.",
+      "now": "En Mobiliario exterior se mezclan recortes sobre fondo gris, fotos de piscina, fondos de color y renders 3D. Hay nombres en mayúsculas (\"COJIN DECORATIVO EXTERIOR\", \"ESFERA NIDO\") junto a otros en tipo título (\"Asoleadora VELA\"), algunas fichas no muestran precio y aparecen flotadores de piscina dentro de mobiliario.",
+      "fix": "Definir una regla de foto para el catálogo (fondo, encuadre y luz iguales en la primera imagen de cada producto), un formato único para los nombres y mostrar el precio o \"Cotizar\" en todas las fichas.",
+      "why": "Un catálogo uniforme se percibe como una selección cuidada y facilita comparar productos, y eso sostiene precios altos.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/ (25 results) rendered at 1440x900",
+        "screenshots/visual-category-1.png: Asoleadora TAHITI (pool lifestyle), Butaco PIU (blue studio backdrop, no price), COJIN DECORATIVO EXTERIOR (gray cutout, all caps)",
+        "screenshots/visual-category-2.png: Comedor MANTINEA (gray cutout, no price), Comedor OCEAN (3D render), Flotador BAHIA / STINSON (model lifestyle shots)"
+      ],
+      "technical_note": "WooCommerce product loop; names are stored with inconsistent casing in the product titles themselves.",
+      "pin": null
+    },
+    {
+      "id": "visual-6",
+      "title": "La tipografía es la genérica del sistema",
+      "summary": "El sitio usa la letra por defecto de cada dispositivo, así que no tiene una voz visual propia y se ve distinto en cada computador o celular.",
+      "now": "Todos los textos usan la fuente del sistema (San Francisco en Mac y iPhone, Segoe UI en Windows, Roboto en Android). El logo usa otra letra, geométrica, que no se repite en ningún título.",
+      "fix": "Elegir una fuente para títulos que combine con el logo (o una con más carácter para transmitir lujo) y cargarla en el sitio, dejando la del sistema solo para el texto corrido.",
+      "why": "La tipografía es la forma más barata de que una marca se vea premium y reconocible en todas las pantallas.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Computed font-family on 71 of 77 text elements: -apple-system, system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif (Kadence default stack)",
+        "document.fonts: no web fonts loaded; no Google Fonts or @font-face in the linked stylesheets (kadence global/header/content/woocommerce/footer, joinchat)",
+        "Logo Logo_BBB_blanco.png is an image in a geometric sans that matches no text style on the page"
+      ],
+      "technical_note": "Kadence: Customizer > General > Typography, set the heading font (self-host it to avoid a third-party request).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 28}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "pass", "evidence": "The H1 'Lujo de exteriores' is real text, 32px/700, white over a dimmed hero, at a 412px mobile width (CDP render)."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "The hero has a single focal point (headline plus one button). In the category tiles, the white 24px labels sit on bright, busy beach scenes (Mobiliario exterior, Coberturas, Cocina), so the eye goes to the image rather than the label."},
+    {"id": "vis-fonts", "result": "pass", "evidence": "One family is used for text (the system-ui stack). The logo image uses a second geometric sans. Total: 2."},
+    {"id": "vis-buttons", "result": "pass", "evidence": "There are 2 button styles with the same 3px radius, 18px size and padding: cream #f7f4ef with dark text ('Ver productos') and #1a1a1a with white text ('Ver novedades')."},
+    {"id": "vis-headings", "result": "partial", "evidence": "Every H2 is 28px/700 and every H3 is 24px/700, consistently. The H4 level differs: 22px/700 dark in the benefits bar against 15px/700 white uppercase in the footer. The eyebrow labels differ too: 'NUEVA COLECCIÓN' has no letter-spacing while 'NUESTRO TRABAJO' and 'FÁCIL Y SEGURO' are tracked."},
+    {"id": "vis-palette", "result": "pass", "evidence": "The Kadence palette is small and neutral (#1a1a1a, #2e2e2e, #a89279, #e8e1d7, #f7f4ef, #fff) and is used for text, backgrounds and buttons. The only other strong color is the WhatsApp green."},
+    {"id": "vis-photos", "result": "fail", "evidence": "5 of the 9 large home images are ChatGPT-generated (by filename), including the hero. The hero is upscaled 2.76x on mobile and 1.41x on desktop. AI images, manufacturer shots and WhatsApp photos are mixed together."},
+    {"id": "vis-products", "result": "partial", "evidence": "The home shows only category tiles: no product has a name or price there. Category pages do show name and price on the cards, but some cards have no price and the photo styles are mixed."},
+    {"id": "vis-positioning", "result": "fail", "evidence": "The 'Lujo de exteriores' claim has no visible proof on the home: no brands, products, prices, testimonials or project gallery. Proyectos has only one 2021 WhatsApp photo."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "On desktop the grid is consistent (1440 wide, 32px gutters between tiles, centered sections). On mobile the 4 stacked benefits take about 660px of a 915px viewport before the categories."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "The footer reads '© 2026 Bed Bath & Barrel · Todos los derechos reservados'. There are no heavy shadows or obviously dated patterns."}
+  ]
+}

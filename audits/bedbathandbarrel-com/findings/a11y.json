@@ -1,0 +1,124 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Los íconos de redes sociales no llevan a ningún lado",
+      "summary": "Los botones de Facebook, Instagram y WhatsApp del pie de página no abren tus redes, así que pierdes seguidores y conversaciones que ya estaban decididas a escribirte.",
+      "now": "Los tres íconos sociales del pie de página tienen el enlace vacío: al hacer clic se recarga la misma página de inicio. Además, quien usa un lector de pantalla escucha la dirección web completa (\"https://m.facebook.com/BedBathBarrel/\") en lugar de \"Facebook\".",
+      "fix": "Poner la dirección real de cada red en el enlace y dejar como nombre accesible solo \"Facebook\", \"Instagram\" y \"WhatsApp\". Es un ajuste de configuración del tema, no de diseño.",
+      "why": "Las redes y WhatsApp son donde un cliente de mobiliario exterior mira proyectos y pide cotización; un botón que no funciona corta ese camino para todos los visitantes, no solo para personas con discapacidad.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html footer: <a href=\"\" aria-label=\"https://m.facebook.com/BedBathBarrel/\" class=\"social-button footer-social-item social-link-facebook\">",
+        "Same pattern for social-link-instagram (aria-label=\"https://www.instagram.com/bedbathandbarrelterraza/\") and social-link-whatsapp (aria-label=\"https://wa.me/+573193073762 \" with trailing space)",
+        "Live DOM check (browser, 2026-10-27): all three .social-button have href=\"\" and render at 34x34 px"
+      ],
+      "technical_note": "Kadence footer social settings: the URL was typed into the label field instead of the link field. href=\"\" resolves to the current page, target=_self. Accessible name is a raw URL (WCAG 2.4.4 Link Purpose, 4.1.2 Name, Role, Value). The SVG <title> (Facebook/Instagram) is overridden by aria-label.",
+      "pin": null
+    },
+    {
+      "id": "a11y-2",
+      "title": "Los nombres de categorías se pierden sobre fotos claras",
+      "summary": "Las tarjetas de categoría (Cocina, BBQ y Pizza, Mobiliario exterior) usan letras blancas sobre fotos muy claras, y a muchas personas les cuesta leer por dónde entrar a la tienda.",
+      "now": "En la sección \"Nuestras categorías\" el texto blanco queda encima de platos blancos, arena y cielo. Medido sobre la captura, detrás de \"Cocina\" el contraste baja a cerca de 2,0:1 en las zonas claras y \"BBQ y Pizza\" queda en 3,4:1 de promedio y 2,5:1 en lo más claro; el mínimo para un título de este tamaño es 3:1. El puntaje de 95 de Lighthouse no lo detecta porque esa herramienta no puede medir texto sobre fotos.",
+      "fix": "Oscurecer más la capa sobre cada foto (hoy es 40 %), o poner el nombre en una franja oscura sólida en la parte inferior de la tarjeta, y elegir fotos con la zona central menos clara.",
+      "why": "Las categorías son la puerta principal al catálogo; si el nombre no se lee en un celular al sol o por una persona mayor, esa visita no llega a los productos.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "2,0:1",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg, categories row (y ≈ 3260 px of 3595): white 24px/700 h3 links (.wp-elements-2..6 a color palette-9 #ffffff) over .wp-block-cover.is-light with has-background-dim-40",
+        "Measured WCAG contrast of #fff vs background pixels just above/below each label (median / lightest 10%): Cocina 4,8:1 / 2,0:1; BBQ y Pizza 3,4:1 / 2,5:1; Mobiliario exterior 4,8:1 / 3,0:1; Hogar 5,4:1 / 3,3:1; Coberturas 7,5:1 / 6,3:1",
+        "screenshots/a11y-categorias-crop.jpg (crop of desktop-fullpage.jpg) shows 'Cocina' over the white dish rack",
+        "Lighthouse color-contrast audit = pass (score 1) on both mobile and desktop: axe skips text over background images"
+      ],
+      "technical_note": "Method: luminance sampled from the Lighthouse full-page screenshot in 10px bands above and below each label, WCAG 2.x relative luminance formula. Text is 24px bold = large text (3:1 threshold, WCAG 1.4.3). Lighthouse accessibility score 95 reflects only automated checks; 10 audits are manual and contrast over images, alt quality and link destinations are not evaluated. Lower banners (Proyectos / Paso a paso) measured fine (lightest 10% ≥ 4,1:1, screenshots/a11y-banners-desktop.png).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 91}
+    },
+    {
+      "id": "a11y-3",
+      "title": "El botón \"Abrir chat\" de WhatsApp casi no se lee",
+      "summary": "Tu canal de venta más directo, el chat de WhatsApp, muestra su botón principal con letras blancas sobre verde claro, difíciles de leer para personas con baja visión.",
+      "now": "Al abrir la burbuja de WhatsApp, el botón \"Abrir chat\" tiene texto blanco de 16 px sobre verde #25D366, con un contraste de 1,96:1. Lo mínimo para texto de ese tamaño es 4,5:1.",
+      "fix": "Usar texto oscuro sobre ese verde, o un verde más profundo (por ejemplo el verde oscuro de WhatsApp #075E54) detrás del texto blanco.",
+      "why": "Si quien quiere cotizar no distingue el botón, el chat que debería convertir esa intención en venta se queda sin usar.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,96:1",
+      "evidence": [
+        "Live DOM computed styles: .joinchat__open__text color rgb(255,255,255) on background rgb(37,212,102), font-size 16px, weight 400 → ratio 1.96:1",
+        "Found on / and /categoria-producto/mobiliario-exterior/ (Joinchat plugin, site-wide)",
+        "screenshots/desktop-viewport.png: floating WhatsApp button at bottom right"
+      ],
+      "technical_note": "Joinchat (creame-whatsapp-me 6.4.1) default brand color. Configurable in plugin settings (Joinchat → Apariencia → color) or override .joinchat__open background via CSS variable --joinchat-color. WCAG 1.4.3.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 96, "y_pct": 94}
+    },
+    {
+      "id": "a11y-4",
+      "title": "Fotos importantes sin descripción para lectores de pantalla",
+      "summary": "Las fotos que cuentan quién eres (los dueños, un proyecto real) son invisibles para personas ciegas y para los buscadores, que tampoco entienden qué muestran.",
+      "now": "En \"Sobre nosotros\" la foto de los dueños y la foto del proyecto de sala tienen la descripción vacía, como si fueran adorno. En la página de inicio las fotos de fondo también están vacías; ahí está bien porque el texto encima ya dice la categoría.",
+      "fix": "Escribir una frase corta en la descripción de cada foto con contenido: por ejemplo \"Los fundadores de Bed Bath & Barrel en el showroom de El Retiro\" o \"Sala para exterior instalada en terraza de cliente\".",
+      "why": "La historia de la marca y los proyectos reales son lo que genera confianza en una compra de alto valor; sin descripción, ese mensaje no llega a todos.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "/sobre-nosotros/ live DOM: <img class=\"wp-image-784 size-full\" alt=\"\" src=\".../DUENOS-BBB.jpg\"> rendered 720x776 px, standalone (not a cover background)",
+        "/sobre-nosotros/: <img class=\"wp-image-783 size-full\" alt=\"\" src=\".../SALA-NEW-FREEDOM-1536x736.jpg\"> rendered 720x345 px",
+        "Homepage: 9 wp-block-cover background images all alt=\"\" (acceptable: decorative behind real text)",
+        "Product images on category pages use the product name as alt (pass)"
+      ],
+      "technical_note": "WCAG 1.1.1. Lighthouse image-alt passes because alt=\"\" is technically valid; it cannot judge that the image is informative. Media library alt texts are empty for the owner/project photos.",
+      "pin": null
+    },
+    {
+      "id": "a11y-5",
+      "title": "Los títulos de la página saltan niveles",
+      "summary": "Quien navega con lector de pantalla salta de título en título para entender la página, y aquí la estructura salta niveles, así que le cuesta encontrar los beneficios.",
+      "now": "En el inicio, después del título principal \"Lujo de exteriores\" vienen cuatro títulos de nivel 4 (Envío gratis, Pago 100% seguro…) sin niveles 2 y 3 en medio. El pie de página repite el mismo salto. Lighthouse lo marca como error en celular y computador.",
+      "fix": "Cambiar esos títulos de beneficios al nivel 3 bajo un título de sección (o dejarlos como texto en negrita), y los títulos del pie de página a nivel 2.",
+      "why": "Una estructura ordenada hace que tanto lectores de pantalla como Google entiendan qué ofreces primero: envío gratis y pago seguro son argumentos de venta.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse heading-order score 0 (mobile + desktop): div.wp-block-column > h4.wp-block-heading and section#block-10 > h4",
+        "raw/home.html outline: h1 Lujo de exteriores → h4 ×4 → h2 Nuestras categorías → h3 ×5 → h2 … → footer h4 ×3",
+        "Exactly one H1 per page on /, /sobre-nosotros/, /como-comprar/, category page (pass)"
+      ],
+      "technical_note": "WCAG 1.3.1 / best practice. Landmarks are present (header, nav ×2, main, footer) and a skip link 'Saltar al contenido' exists and is first in tab order. Benefit icons are emoji paragraphs (🚚🔒💬📍) read aloud by screen readers; wrap in aria-hidden span.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 37, "y_pct": 82}
+    },
+    {
+      "id": "a11y-6",
+      "title": "El mapa y el carrito no se anuncian bien",
+      "summary": "Dos elementos útiles para comprar, el mapa del showroom y el contador del carrito, no se describen bien para quien usa lector de pantalla o control por voz.",
+      "now": "El mapa de Google del showroom no tiene nombre, así que se anuncia solo como \"marco\". El ícono del carrito muestra \"0\" en pantalla pero se anuncia como \"Carrito de la compra\", sin decir cuántos productos hay, y quien usa control por voz no sabe qué palabra decir para activarlo.",
+      "fix": "Añadir al mapa el título \"Mapa: showroom Bed Bath & Barrel, CC El Retiro\" y hacer que el nombre del carrito incluya la cantidad (\"Carrito, 0 productos\").",
+      "why": "El showroom es tu punto de venta físico; que todos puedan ubicarlo y revisar su carrito evita abandonos en la recta final.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse frame-title score 0: article#post-640 … > iframe[src^=\"https://www.google.com/maps?q=Centro+Comercial+El+Retiro\"] has no title",
+        "Lighthouse label-content-name-mismatch score 0: a.header-cart-button aria-label=\"Carrito de la compra\" while visible text is the item count",
+        "Other icon controls pass: search 'Ver el formulario de búsqueda', menu 'Abrir menú', chat 'Abrir chat', submenu buttons 'Menú hijo de …'"
+      ],
+      "technical_note": "WCAG 4.1.2 (iframe name) and 2.5.3 Label in Name. Map iframe is inline HTML in the home page content; cart label comes from Kadence header cart.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "partial", "evidence": "Body text and buttons on solid backgrounds pass (DOM scan of / and category page: only failure on solid colour is Joinchat 'Abrir chat' 1.96:1). Text over images fails in category tiles: Cocina ~2.0:1, BBQ y Pizza 2.5:1 in lightest areas (24px bold, needs 3:1). Hero, Proyectos and Paso a paso banners pass."},
+    {"id": "a11y-text-not-image", "result": "pass", "evidence": "Hero headline, category names, banners and benefits are real HTML text; no key message found baked into images on /, /sobre-nosotros/, /como-comprar/."},
+    {"id": "a11y-alt", "result": "partial", "evidence": "Product images use product names as alt and homepage cover backgrounds are correctly empty; informative photos on /sobre-nosotros/ (DUENOS-BBB.jpg, SALA-NEW-FREEDOM) have alt=\"\"."},
+    {"id": "a11y-headings", "result": "partial", "evidence": "Exactly one H1 on every page checked, but home jumps H1 → H4 (benefits) and footer uses H4; Lighthouse heading-order fails."},
+    {"id": "a11y-names", "result": "fail", "evidence": "Footer social icons have href=\"\" and raw URLs as accessible names; Google Maps iframe has no title; cart link label does not include visible count. Search, menu, chat and submenu toggles are correctly named."},
+    {"id": "a11y-focus", "result": "pass", "evidence": "Real Tab key navigation on home: skip link, logo, menu links and submenu buttons each show a 3px auto outline (Kadence removes hide-focus-outline on keyboard use). Search input relies on border colour change only (outline:0)."},
+    {"id": "a11y-keyboard", "result": "pass", "evidence": "Skip link first in tab order; desktop menu reachable with separate submenu toggle buttons ('Menú hijo de …'); Joinchat button is role=button tabindex=0; no carousel on home; no focus trap met in 14 tab stops. Full keyboard test of drawer menus not performed."},
+    {"id": "a11y-form-labels", "result": "partial", "evidence": "No contact form exists (/contacto/ returns 404). Search field has a screen-reader-only label but visually shows only the placeholder 'Buscar …'; category 'orderby' select has no label. Checkout fields not tested (empty cart)."},
+    {"id": "a11y-motion", "result": "pass", "evidence": "No auto-advancing carousel on home. Joinchat animations disabled under prefers-reduced-motion; its looping video only plays inside the opened chat box."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> present; Lighthouse html-has-lang passes."},
+    {"id": "a11y-targets", "result": "pass", "evidence": "Lighthouse target-size passes on mobile; social icons 34x34 px, chat button 60x60 px; viewport does not disable zoom (width=device-width, initial-scale=1, minimum-scale=1)."}
+  ]
+}

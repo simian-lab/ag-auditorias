@@ -1,0 +1,249 @@
+{
+  "client": "Bed Bath & Barrel",
+  "domain": "bedbathandbarrel.com",
+  "date": "Octubre 2026",
+  "big_stat": {
+    "value": "7,5 MB",
+    "count_to": null,
+    "suffix": null,
+    "headline": "Tu portada pesa 7,5 MB y 85 de cada 100 megas se pueden ahorrar",
+    "explain": "Es lo que el celular del cliente descarga para ver tu página de inicio. Casi todo son cinco imágenes en formato PNG sin comprimir; una sola pesa 2,1 MB. Convertidas a un formato moderno y al tamaño en que se muestran, la portada bajaría a una fracción de ese peso sin perder calidad visible.",
+    "grid_pct": 85,
+    "grid_legend": [
+      "Imagen que se puede ahorrar (6,4 MB)",
+      "Todo lo demás"
+    ],
+    "source": "Lighthouse móvil, octubre 2026 (total-byte-weight 7.706 KiB; image-delivery-insight: ahorro estimado de 6.553 KiB)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "ux-1"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus muebles más caros: sin precio, sin botón",
+      "t_plain": "Los productos personalizables no tienen precio, ni botón de compra, ni forma de pedir cotización",
+      "s": "Los productos de mayor valor, salas y comedores personalizables, terminan en una página sin precio, sin botón de compra y sin forma de pedir cotización.",
+      "now": "En «Mobiliario exterior», 5 de los 16 productos de la primera página (sala OCEAN, sala y poltrona COCCOLONA, comedor MANTINEA, butaco PIU) no muestran precio y solo dicen «Leer más». En la ficha del comedor MANTINEA el espacio del botón está vacío; más abajo hay una imagen que dice «Cotizar con un asesor», pero no es un enlace. La sala COCCOLONA dice «no quedan existencias» y no ofrece otra salida.",
+      "fix": "En cada producto sin precio o agotado, poner junto a la foto un botón visible «Cotizar este producto» que abra WhatsApp con el nombre del producto ya escrito (o un formulario corto). Convertir la imagen «Cotizar con un asesor» en un botón real.",
+      "why": "Son justo los productos de ticket alto y diseño a la medida; si el cliente no encuentra cómo pedir precio, no tiene cómo avanzar.",
+      "shot": {
+        "img": "ux-producto-mantinea-desktop.png",
+        "x": 69,
+        "y": 40
+      }
+    },
+    {
+      "n": 2,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-2"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu portada obliga a descargar 7,5 MB",
+      "t_plain": "La portada pesa 7,5 MB por imágenes PNG sin comprimir y la foto principal tarda en aparecer",
+      "s": "Cada visitante descarga 7,5 MB para ver la portada, y la foto de bienvenida tarda varios segundos en mostrarse, sobre todo en computador.",
+      "now": "Cinco imágenes de la portada están en PNG sin comprimir y suman unos 6,5 MB; una sola pesa 2,1 MB. La foto principal pesa 874 KB en computador y 516 KB en celular; en la prueba de computador tardó 4,9 s en aparecer, y el sitio le da prioridad de carga al logo en lugar de a esa foto.",
+      "fix": "Convertir las imágenes a WebP o AVIF y ajustarlas al tamaño en que se muestran, para dejar la portada por debajo de 2 MB; activar la conversión automática para las imágenes nuevas. Comprimir la foto principal (meta: menos de 150 KB) y marcarla como prioritaria.",
+      "why": "Una portada pesada tarda más con datos móviles y la tienda parece lenta justo en la primera impresión.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 45
+      }
+    },
+    {
+      "n": 3,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "ux-4"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Vendes asesoría, pero no hay botón para pedirla",
+      "t_plain": "No hay botón para pedir asesoría en la portada ni en el menú, y no existe página ni formulario de contacto",
+      "s": "La asesoría personalizada es tu diferencial, pero en la primera pantalla y en el menú no hay forma de pedirla, ni teléfono, ni página de contacto.",
+      "now": "La portada solo ofrece «Ver productos». El bloque «Asesoría personalizada — Te ayudamos a diseñar tu espacio» es texto y no se puede pulsar. El menú no tiene «Contacto», teléfono ni WhatsApp. /contacto/ y /contactenos/ dan «No se puede encontrar esa página», y no hay ningún formulario: el único canal es la burbuja de WhatsApp, sin tiempo de respuesta.",
+      "fix": "Agregar en la portada un segundo botón, «Agenda tu asesoría» o «Cotiza tu proyecto», y hacer que el bloque de asesoría lleve a esa acción. Sumar «Contacto» al menú y el WhatsApp en la cabecera. Crear una página «Cotiza tu proyecto» con un formulario corto (tipo de espacio, productos de interés, medidas, fotos) e indicar el tiempo de respuesta.",
+      "why": "Quien amobla una terraza completa quiere hablar con alguien; si no ve cómo hacerlo de inmediato, se pierde el cliente de mayor valor.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 63,
+        "y": 83
+      }
+    },
+    {
+      "n": 4,
+      "c": "a11y",
+      "src": [
+        "a11y-1"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Los botones de tus redes no funcionan",
+      "t_plain": "Los íconos de Facebook, Instagram y WhatsApp del pie de página tienen el enlace vacío",
+      "s": "Los botones de Facebook, Instagram y WhatsApp del pie de página no abren tus redes: al pulsarlos, la página de inicio se recarga.",
+      "now": "Los tres íconos sociales del pie de página tienen el enlace vacío, así que al hacer clic se recarga la misma página. Además, quien usa un lector de pantalla escucha la dirección web completa en lugar de «Facebook».",
+      "fix": "Poner la dirección real de cada red en el enlace y dejar como nombre accesible solo «Facebook», «Instagram» y «WhatsApp». Es un ajuste de configuración del tema.",
+      "why": "Las redes son donde un cliente de mobiliario exterior mira proyectos antes de decidir; un botón que no funciona corta ese camino para todos.",
+      "shot": null
+    },
+    {
+      "n": 5,
+      "c": "vis",
+      "src": [
+        "visual-1",
+        "visual-3"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Prometes lujo y muestras escenas inventadas",
+      "t_plain": "La portada usa escenas generadas con IA y no muestra productos, precios ni proyectos reales",
+      "s": "La portada promete «Lujo de exteriores» con escenas generadas por inteligencia artificial y no muestra nada real que lo respalde.",
+      "now": "La foto de portada, tres de las cinco categorías y el bloque de novedades son imágenes generadas con IA (sus nombres de archivo lo indican). Varias muestran playas y palmeras, aunque la tienda está en Bogotá. La portada no muestra ni un producto, ni un precio, ni una marca que representes, ni un proyecto terminado; la sección «Proyectos» usa una sola foto de WhatsApp de 2021.",
+      "fix": "Cambiar portada y categorías por fotos reales de tus productos en terrazas de Bogotá o en el showroom de El Retiro, con la misma luz y tratamiento. Agregar una franja de productos destacados con nombre y precio, y dos o tres proyectos reales.",
+      "why": "Quien va a invertir millones en una terraza quiere ver el producto real que recibirá; las escenas inventadas le restan credibilidad a la promesa de lujo.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 40
+      }
+    },
+    {
+      "n": 6,
+      "c": "vis",
+      "src": [
+        "visual-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu primera imagen llega borrosa al celular",
+      "t_plain": "La foto de portada se estira 2,8 veces en celular porque el sitio entrega una versión pequeña",
+      "s": "Lo primero que ve un cliente en el celular es una imagen ampliada de más y sin nitidez.",
+      "now": "En el celular, la portada carga una versión de 600×338 px y la estira para llenar un espacio vertical de 412×641 px, unas 2,8 veces su tamaño. En computador pasa lo mismo, aunque menos: una versión de 1024 px se muestra a 1440 px. Las versiones grandes ya existen, pero el sitio nunca las usa.",
+      "fix": "Usar para la portada una foto pensada para celular (vertical) y otra para computador, y configurar el sitio para que entregue siempre la versión que corresponde a cada pantalla.",
+      "why": "La foto de portada fija la percepción de calidad en los primeros segundos; si se ve pixelada, el producto parece de menor categoría.",
+      "shot": {
+        "img": "visual-mobile-hero.png",
+        "x": 50,
+        "y": 35
+      }
+    },
+    {
+      "n": 7,
+      "c": "ux",
+      "src": [
+        "ux-3"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tu botón principal abre aromatizadores, no muebles",
+      "t_plain": "El botón principal lleva a una tienda que empieza con utensilios de cocina y aromatizadores",
+      "s": "El botón principal promete «Lujo de exteriores», pero lleva a una tienda que empieza con utensilios de cocina y aromatizadores.",
+      "now": "«Ver productos» lleva a /tienda/, con 145 productos en orden alfabético. Los primeros 16 son un rebanador de mango, un accesorio de parasol, una algodonera, 9 aromatizadores y 4 asadores portátiles: ningún mueble de exterior.",
+      "fix": "Hacer que el botón lleve a «Mobiliario exterior» o a una selección de productos destacados de terraza, y ordenar la tienda para que primero aparezcan salas, comedores, parasoles y pérgolas.",
+      "why": "El primer clic define la impresión del visitante; si lo que ve no coincide con la promesa, abandona antes de llegar a lo que más vendes.",
+      "shot": {
+        "img": "ux-tienda-desktop.png",
+        "x": 50,
+        "y": 60
+      }
+    },
+    {
+      "n": 8,
+      "c": "a11y",
+      "src": [
+        "a11y-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tus categorías se pierden sobre fotos claras",
+      "t_plain": "Los nombres de categoría en blanco sobre fotos claras bajan a un contraste de 2,0:1",
+      "s": "Las tarjetas de categoría usan letras blancas sobre fotos muy claras, y a muchas personas les cuesta leer por dónde entrar a la tienda.",
+      "now": "En «Nuestras categorías» el texto blanco queda encima de platos blancos, arena y cielo. Detrás de «Cocina» el contraste baja a cerca de 2,0:1 en las zonas claras y «BBQ y Pizza» llega a 2,5:1; el mínimo para un título de ese tamaño es 3:1. Lighthouse no lo detecta porque no mide texto sobre fotos.",
+      "fix": "Oscurecer más la capa sobre cada foto (hoy es 40 %) o poner el nombre en una franja oscura sólida en la parte inferior de la tarjeta, y elegir fotos con el centro menos claro.",
+      "why": "Las categorías son la puerta principal al catálogo; si el nombre no se lee en un celular al sol, esa visita no llega a los productos.",
+      "shot": {
+        "img": "a11y-categorias-crop.jpg",
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "n": 9,
+      "c": "ux",
+      "src": [
+        "ux-5",
+        "ux-6"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 3,
+      "t": "Desde 2001, y tu portada no lo dice",
+      "t_plain": "La trayectoria y la fabricación propia solo están en «Sobre nosotros» y los proyectos no tienen contexto",
+      "s": "Los mejores argumentos de confianza (desde 2001, fabricación colombiana a la medida, equipo de diseño) no aparecen en la portada, y la galería de proyectos no cuenta nada.",
+      "now": "«Desde 2001», «+20 años de experiencia», «100 % productos colombianos y personalizables» y el equipo de diseñadores, arquitectos e instaladores solo están en /sobre-nosotros/. La portada no tiene testimonios ni cifras. /proyectos/ tiene 45 fotos sin nombre ni descripción (archivos tipo «WhatsApp-Image-2022…») y no aparece en el menú.",
+      "fix": "Llevar a la portada una franja con «Desde 2001», «Fabricamos a la medida en Colombia» y «Diseño e instalación», y sumar 2 o 3 testimonios con foto. Agrupar la galería en 6 a 10 proyectos con nombre, productos usados y un botón «Quiero algo así», y agregar «Proyectos» al menú.",
+      "why": "En compras grandes la gente compra confianza; trayectoria y obras reales te diferencian de un importador cualquiera.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 80
+      }
+    },
+    {
+      "n": 10,
+      "c": "tec",
+      "src": [
+        "tech-3",
+        "tech-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu tienda no activa protecciones básicas del navegador",
+      "t_plain": "El servidor no envía ninguna cabecera de seguridad y responde lento por falta de caché de página",
+      "s": "La tienda no envía ninguna de las cinco protecciones estándar de los navegadores y el servidor tarda en responder en cada clic.",
+      "now": "No aparece ninguna de las cabeceras de seguridad habituales (0 de 5), en una tienda que recibe pedidos y datos de clientes. Además, la página se arma desde cero en cada visita: no hay señales de caché de página y el primer byte tarda entre 0,63 y 0,74 s.",
+      "fix": "Activar en el servidor las cinco cabeceras de seguridad estándar y verificar que el pago y el carrito siguen funcionando. Activar caché de página completa (plugin o caché del hosting); meta: respuesta del servidor por debajo de 0,2 s.",
+      "why": "Una tienda en línea maneja datos personales y pagos; estas protecciones reducen el riesgo de fraude, y la caché hace que navegar se sienta rápido.",
+      "shot": null,
+      "checks": [
+        [
+          "HSTS",
+          "no"
+        ],
+        [
+          "Content-Security-Policy",
+          "no"
+        ],
+        [
+          "X-Frame-Options",
+          "no"
+        ],
+        [
+          "X-Content-Type-Options",
+          "no"
+        ],
+        [
+          "Referrer-Policy",
+          "no"
+        ]
+      ]
+    }
+  ]
+}

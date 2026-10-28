@@ -1,0 +1,125 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "Tus muebles a la medida no tienen precio ni botón",
+      "summary": "Los productos de mayor valor (salas y comedores personalizables) terminan en una página sin precio, sin botón de compra y sin forma de pedir cotización, así que el cliente interesado no tiene cómo avanzar.",
+      "now": "En «Mobiliario exterior», 5 de los 16 productos de la primera página (sala OCEAN, sala y poltrona COCCOLONA, comedor MANTINEA, butaco PIU) no muestran precio y solo dicen «Leer más». Al entrar, por ejemplo al comedor MANTINEA, el espacio donde debería estar el botón está vacío; más abajo hay una imagen que dice «Cotizar con un asesor», pero no es un enlace. La sala COCCOLONA dice «no quedan existencias» y no ofrece ninguna alternativa.",
+      "fix": "En cada producto sin precio o agotado, pon un botón visible junto a la foto, «Cotizar este producto», que abra WhatsApp con el nombre del producto ya escrito (o un formulario corto). Convierte la imagen «Cotizar con un asesor» en un botón real.",
+      "why": "Son justo los productos de ticket alto y diseño a la medida; si el cliente no encuentra cómo pedir precio, se va a la competencia.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "5 de 16",
+      "evidence": [
+        "raw/ux-categoria-producto-mobiliario-exterior.html: 16 products listed, 5 without .woocommerce-Price-amount (butaco-para-exterior-piu, comedor-para-exterior-mantinea, poltrona-exterior-coccolona, sala-para-exterior-coccolona, sala-para-exterior-ocean), all with 'Leer más' button",
+        "raw/ux-producto-mantinea.html: no .single_add_to_cart_button; description contains <p><img src=\".../2020/06/Cotizar-con-un-asesor.png\" alt=\"\"></p> not wrapped in any <a>",
+        "raw/ux-producto-coccolona.html: 'Este producto no está disponible porque no quedan existencias.'; no wa.me or tel: link inside the product content",
+        "screenshots/ux-producto-mantinea-desktop.png: empty purchase column to the right of the product image"
+      ],
+      "technical_note": "WooCommerce products with empty price are non-purchasable, so the theme renders no add-to-cart. A per-product 'Cotizar' button (e.g. wa.me/573193073762?text=Quiero cotizar <product name>) via a hook on woocommerce_single_product_summary covers all of them at once. The quote image should be an <a> or replaced by a real button.",
+      "pin": {"screenshot": "ux-producto-mantinea-desktop.png", "x_pct": 69, "y_pct": 40}
+    },
+    {
+      "id": "ux-2",
+      "title": "No hay botón de asesoría en la primera pantalla",
+      "summary": "La asesoría personalizada es tu diferencial, pero en la primera pantalla y en el menú no hay un botón para pedirla, ni teléfono, ni enlace de contacto.",
+      "now": "La primera pantalla solo ofrece «Ver productos». El bloque «Asesoría personalizada — Te ayudamos a diseñar tu espacio» es texto, no se puede pulsar. El menú superior no tiene «Contacto», teléfono ni WhatsApp; el teléfono y el correo solo aparecen en el pie de página. El único acceso inmediato es la burbuja flotante de WhatsApp.",
+      "fix": "Agrega un segundo botón en la portada, «Agenda tu asesoría» o «Cotiza tu proyecto», al lado de «Ver productos», y haz que el bloque «Asesoría personalizada» lleve a esa misma acción. Suma «Contacto» al menú y el teléfono o WhatsApp en la cabecera.",
+      "why": "Quien está amoblando una terraza completa quiere hablar con alguien; si no ve cómo hacerlo de inmediato, pierdes el cliente de mayor valor.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: hero has a single button a.wp-block-button__link href=\"/tienda/\" 'Ver productos'",
+        "raw/home.html: 'Asesoría personalizada' is an <h4> + <p> inside .wp-block-column with no <a>",
+        "Main menu items: Sobre Nosotros, Mobiliario exterior, Coberturas, BBQ y Pizza, Cocina, Hogar, Novedades — no Contacto / phone / WhatsApp",
+        "href=\"tel:+573193073762\" and mailto:diseno@bedbathandbarrel.com appear only once, in the footer",
+        "screenshots/desktop-viewport.png and screenshots/ux-mobile-firstview.jpg: only 'Ver productos' + floating WhatsApp bubble above the fold"
+      ],
+      "technical_note": "Kadence header builder can add a button/HTML element with tel: or wa.me link in desktop and mobile headers.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 63, "y_pct": 83}
+    },
+    {
+      "id": "ux-3",
+      "title": "«Ver productos» abre rebanadores y aromatizadores, no muebles",
+      "summary": "El botón principal promete «Lujo de exteriores», pero lleva a una tienda que empieza con utensilios de cocina y aromatizadores, lo que confunde y rebaja la percepción de marca.",
+      "now": "«Ver productos» lleva a /tienda/, que muestra 145 productos en orden alfabético. Los primeros 16 son un rebanador de mango, un accesorio de parasol, una algodonera, 9 aromatizadores y 4 asadores portátiles: ningún mueble de exterior.",
+      "fix": "Haz que el botón de la portada lleve a «Mobiliario exterior» (o a una selección de productos destacados de terraza) y ordena la tienda para que primero aparezcan salas, comedores, parasoles y pérgolas.",
+      "why": "El primer clic define la impresión del visitante; si lo que ve no coincide con la promesa, abandona antes de llegar a lo que más vendes.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: hero CTA href=\"/tienda/\"",
+        "raw/ux-tienda.html: 'Mostrando 1–16 de 145 resultados', 'Orden predeterminado'; first 16 slugs: 2-en-1-mango-rebanador, accesorio-para-parasol-luna, algodonera-deko, 9x aromatizador-*, 4x asador-*",
+        "screenshots/ux-tienda-desktop.png: first row shows mango slicer, parasol light, cotton holder, air freshener"
+      ],
+      "technical_note": "Default WooCommerce catalog ordering falls back to title when menu_order is unset. Set menu_order or 'featured' products, or point the CTA to /categoria-producto/mobiliario-exterior/.",
+      "pin": {"screenshot": "ux-tienda-desktop.png", "x_pct": 50, "y_pct": 60}
+    },
+    {
+      "id": "ux-4",
+      "title": "No existe página ni formulario de contacto",
+      "summary": "Quien no usa WhatsApp, o quiere enviar medidas y fotos de su terraza, no tiene un formulario para pedir asesoría, y la dirección /contacto da error.",
+      "now": "No hay formulario en ninguna página revisada. /contacto/ y /contactenos/ responden «¡Vaya! No se puede encontrar esa página». Todos los botones de proyecto («Quiero un proyecto así», «Solicita asesoría por WhatsApp») van solo a WhatsApp. No se dice en cuánto tiempo responden.",
+      "fix": "Crea una página «Contacto / Cotiza tu proyecto» con un formulario corto: nombre, WhatsApp, ciudad, tipo de espacio (terraza, jardín, piscina), productos de interés, medidas aproximadas y opción de adjuntar fotos. Indica el tiempo de respuesta («te respondemos en menos de 24 horas hábiles») y enlázala desde el menú.",
+      "why": "Un proyecto de terraza se decide con datos (medidas, fotos, presupuesto); recibirlos ordenados acelera la venta y no pierde a quien prefiere escribir por correo.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "curl https://bedbathandbarrel.com/contacto/ -> HTTP 404 (raw/ux-contacto.html); /contactenos/ -> 404",
+        "No <form> other than search on raw/home.html, raw/ux-sobre-nosotros.html, raw/ux-proyectos.html, raw/ux-como-comprar.html",
+        "raw/ux-proyectos.html: 'Quiero un proyecto así' href=\"https://wa.me/573193073762\"",
+        "No response-time statement found in any fetched page"
+      ],
+      "technical_note": "Any form plugin (WPForms/Fluent Forms/Contact Form 7) with file upload; route to diseno@bedbathandbarrel.com.",
+      "pin": null
+    },
+    {
+      "id": "ux-5",
+      "title": "Tus 20 años y fabricación propia no se ven",
+      "summary": "Los mejores argumentos de confianza (desde 2001, mobiliario 100 % colombiano y personalizable, equipo de diseñadores y arquitectos) están escondidos en «Sobre nosotros» y no aparecen en la portada ni junto a los productos.",
+      "now": "La portada solo muestra envío gratis, pago seguro, asesoría y showroom. «Desde 2001», «+20 años de experiencia», «100 % productos colombianos y personalizables» y «diseñadores, arquitectos, instaladores» solo están en /sobre-nosotros/. La portada no tiene testimonios, clientes ni cifras de proyectos.",
+      "fix": "Lleva a la portada, justo debajo del primer bloque, una franja con «Desde 2001 · +20 años», «Fabricamos a la medida en Colombia» y «Diseño e instalación incluidos», y suma 2 o 3 testimonios de clientes con foto de su terraza.",
+      "why": "En compras grandes la gente compra confianza; mostrar trayectoria y fabricación propia justo antes de decidir te diferencia de un importador cualquiera.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/ux-sobre-nosotros.html: 'DESDE 2001', 'Más de 20 años', '+20 Años de experiencia', '100% Productos colombianos y personalizables', 'diseñadores de interiores y exteriores, arquitectos, técnicos, instaladores y jardineros'",
+        "raw/home.html: 0 occurrences of 'años', '2001', 'testimon', 'reseña'",
+        "screenshots/desktop-viewport.png: trust strip shows only shipping, payment, advice, showroom"
+      ],
+      "technical_note": "",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 80}
+    },
+    {
+      "id": "ux-6",
+      "title": "La galería de proyectos no cuenta nada",
+      "summary": "La página de proyectos, que debería ser tu mejor vitrina, es una galería de fotos sin nombre, sin descripción y sin qué productos se usaron, y no está en el menú.",
+      "now": "/proyectos/ tiene 45 imágenes y ningún texto aparte del título, sin pies de foto ni descripción (las fotos son archivos tipo «WhatsApp-Image-2022-05-21…»). Solo se llega desde un banner en la parte baja de la portada; no aparece en el menú.",
+      "fix": "Agrupa las fotos en 6–10 proyectos con nombre («Terraza en Chicó, 40 m²»), qué se hizo, qué productos se usaron (con enlace a cada producto) y un botón «Quiero algo así». Agrega «Proyectos» al menú principal.",
+      "why": "Ver un trabajo real parecido al propio es lo que convence a alguien de pedir una asesoría de diseño.",
+      "impact": 2,
+      "effort": "Medio",
+      "evidence": [
+        "raw/ux-proyectos.html: 45 <img> in main content, 0 <figcaption>, 0 non-empty alt; visible text only 'Nuestros proyectos', intro sentence and 'Quiero un proyecto así'",
+        "Image filenames like /wp-content/uploads/2026/10/WhatsApp-Image-2022-05-21-at-1.18.03-PM.jpeg",
+        "raw/home.html: only link to /proyectos/ is the 'Proyectos' banner heading; not in primary menu"
+      ],
+      "technical_note": "",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "pass", "evidence": "Desktop and mobile first viewport: H1 'Lujo de exteriores' + 'Mobiliario, coberturas y accesorios para disfrutar tu terraza' in real text; 'Envío gratis en Bogotá' visible in first viewport on both (desktop-viewport.png, ux-mobile-firstview.jpg)."},
+    {"id": "ux-quote-cta", "result": "fail", "evidence": "Only CTA above the fold is 'Ver productos' (/tienda/); no quote/asesoría/contact button in hero or header; only the floating Joinchat WhatsApp bubble, which does not count."},
+    {"id": "ux-catalog-path", "result": "partial", "evidence": "Home category tiles and all shop/category cards link to category or product pages, but 5 of 16 products in Mobiliario exterior (no price) lead to product pages with no add-to-cart and no working quote action ('Cotizar con un asesor' is an unlinked image)."},
+    {"id": "ux-contact-visible", "result": "pass", "evidence": "Footer on home, sobre-nosotros, tienda and category pages shows '319 307 3762' and 'diseno@bedbathandbarrel.com' (not in header)."},
+    {"id": "ux-contact-tappable", "result": "pass", "evidence": "Footer uses href=\"tel:+573193073762\" and href=\"mailto:diseno@bedbathandbarrel.com\" on all fetched pages (the home showroom section repeats the phone as plain text)."},
+    {"id": "ux-form-data", "result": "fail", "evidence": "No contact/quote form exists; /contacto/ and /contactenos/ return 404; all project CTAs go only to WhatsApp; no response-time promise."},
+    {"id": "ux-form-friction", "result": "na", "evidence": "There is no contact or quote form on the site to evaluate (see ux-form-data)."},
+    {"id": "ux-chat-ready", "result": "pass", "evidence": "Joinchat data-settings: telephone 573193073762 (matches footer 319 307 3762), message_send 'Hola, estoy en la página web de Bed Bath & Barrel y quiero más información.', greeting 'Hola, bienvenido a Bed Bath & Barrel ¿Podemos ayudarte?' — no demo text."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Lighthouse mobile screenshot shows hamburger ('Alternar el menú') and cart; mobile menu markup contains all main sections with subcategories (Sobre Nosotros, Mobiliario exterior, Coberturas, BBQ y Pizza, Cocina, Hogar, Novedades)."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Home shows service guarantees right under the hero (envío gratis, pago seguro con Wompi, showroom CC El Retiro), but years (desde 2001, +20 años), customization/manufacturing and team credentials appear only on /sobre-nosotros/; no testimonials or client numbers anywhere near products."},
+    {"id": "ux-content-not-hidden", "result": "pass", "evidence": "No carousel/slider libraries on home (0 swiper/slick/splide); categories, novedades, proyectos and showroom are real-text headings over images."}
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "Inicio",
+        "url": "bedbathandbarrel.com",
+        "title": "Bed Bath & Barrel – Expertos en mobiliario para exterior, plasmamos tu idea en nuestros productos para acompañarte con el mejor diseño exterior en tu hogar????",
+        "meta_description": null,
+        "breadcrumb": "bedbathandbarrel.com",
+        "note": "Título de 155 caracteres: Google lo corta hacia los 60 y termina en «????» (emoji roto en el HTML). Sin meta description: Google improvisa el texto."
+      },
+      {
+        "page": "Tienda",
+        "url": "bedbathandbarrel.com › tienda",
+        "title": "Tienda – Bed Bath & Barrel",
+        "meta_description": null,
+        "breadcrumb": "bedbathandbarrel.com › tienda",
+        "note": "Título genérico sin decir qué se vende; sin meta description ni canonical."
+      },
+      {
+        "page": "Producto Mantinea",
+        "url": "bedbathandbarrel.com › producto › comedor-para-exterior-mantinea",
+        "title": "Comedor para exterior MANTINEA – Bed Bath & Barrel",
+        "meta_description": null,
+        "breadcrumb": "bedbathandbarrel.com › producto › comedor-para-exterior-mantinea"
+      }
+    ],
+    "proposed": [
+      {
+        "page": "Inicio",
+        "title": "Muebles de exterior en Bogotá | Bed Bath & Barrel",
+        "description": "Mobiliario, coberturas y accesorios de lujo para tu terraza. Showroom en CC El Retiro, Bogotá. Envío gratis en Bogotá en compras desde $500.000."
+      },
+      {
+        "page": "Tienda",
+        "title": "Tienda de muebles para terraza | Bed Bath & Barrel",
+        "description": "Comedores, salas, sillas, parasoles, pérgolas y asadores para tu exterior. Compra en línea con PSE o Nequi, o visítanos en CC El Retiro, Bogotá."
+      },
+      {
+        "page": "Producto (ej. Mantinea)",
+        "title": "Comedor para exterior Mantinea | Bed Bath & Barrel",
+        "description": "Comedor para exterior Mantinea. Pídelo en línea con envío a todo Colombia o míralo en nuestro showroom de CC El Retiro, Bogotá."
+      }
+    ]
+  },
+  "share_preview": {
+    "today": {
+      "og_tags_found": [],
+      "twitter_tags_found": [],
+      "pages_checked": [
+        "/",
+        "/tienda/",
+        "/producto/comedor-para-exterior-mantinea/",
+        "/sobre-nosotros/",
+        "/como-comprar/"
+      ],
+      "what_shows": "Sin etiquetas Open Graph ni Twitter en ninguna página revisada: WhatsApp y LinkedIn muestran solo el enlace y, como mucho, el título largo, sin imagen ni descripción."
+    },
+    "proposed": {
+      "og:title": "Bed Bath & Barrel: muebles de lujo para tu terraza",
+      "og:description": "Mobiliario, coberturas y accesorios para exteriores. Showroom en CC El Retiro, Bogotá.",
+      "og:image": "[URL de una foto real de proyecto, 1200x630, por confirmar]",
+      "og:url": "https://bedbathandbarrel.com/",
+      "og:type": "website",
+      "og_image_local": "og-source.jpg"
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Ficha del negocio legible por máquinas",
+        "fix": "Agregar datos estructurados de tienda local (LocalBusiness/FurnitureStore) con nombre, NIT, dirección completa, teléfono, horario y redes, para que Google y la IA entiendan quién eres y dónde estás.",
+        "evidence": "0 bloques JSON-LD en inicio, tienda, producto y sobre nosotros."
+      },
+      {
+        "title": "Página de preguntas frecuentes",
+        "fix": "Publicar 8–10 preguntas reales de compradores (envíos fuera de Bogotá, tiempos de entrega, garantía, materiales para exterior, recogida en showroom) con respuestas cortas. Es el formato que la IA más cita.",
+        "evidence": "No existe página de preguntas frecuentes; la información está repartida en Cómo comprar, Política de envíos y Garantías."
+      },
+      {
+        "title": "Una dirección completa en todas partes",
+        "fix": "Mostrar «CC El Retiro, Calle 82 # 11-75, Piso 3, Local 204-2, Bogotá» igual en el pie, el inicio y las páginas legales.",
+        "evidence": "La calle y el número solo aparecen en las páginas legales; el pie dice solo «Centro Comercial El Retiro Piso 3, Local 204-2»."
+      },
+      {
+        "title": "Ficha de producto que se pueda citar",
+        "fix": "En cada producto, agregar datos estructurados de producto (precio, disponibilidad, materiales, medidas) y una descripción en texto plano, para que buscadores y asistentes puedan recomendar piezas concretas.",
+        "evidence": "Páginas de producto sin JSON-LD Product ni meta description (ej. /producto/comedor-para-exterior-mantinea/)."
+      },
+      {
+        "title": "Conectar el sitio con tus redes",
+        "fix": "Enlazar de verdad los íconos de Facebook e Instagram del pie y declararlos como sameAs en los datos estructurados, para que la IA confirme que la tienda, el Instagram y el Facebook son el mismo negocio.",
+        "evidence": "Los íconos del pie tienen href vacío; las URL solo están en aria-label."
+      },
+      {
+        "title": "Archivo llms.txt con los datos clave",
+        "fix": "Publicar /llms.txt con un resumen del negocio: qué vendes, categorías, zona de envío, showroom, horario y contacto.",
+        "evidence": "bedbathandbarrel.com/llms.txt devuelve página no encontrada (raw/seo-llms-404.html)."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "Nombre",
+        "source": "Sitio (encabezado, pie, títulos)",
+        "value": "Bed Bath & Barrel"
+      },
+      {
+        "field": "Nombre",
+        "source": "Páginas legales (privacidad, términos, envíos, garantías)",
+        "value": "BB&B Bed Bath & Barrel S.A.S. · NIT 830.083.177-1"
+      },
+      {
+        "field": "Teléfono",
+        "source": "Todas las páginas (pie, tel:, WhatsApp) y páginas legales",
+        "value": "319 307 3762 (+57 319 307 3762)"
+      },
+      {
+        "field": "Correo",
+        "source": "Todas las páginas y páginas legales",
+        "value": "diseno@bedbathandbarrel.com"
+      },
+      {
+        "field": "Dirección",
+        "source": "Inicio, pie de página, Cómo comprar",
+        "value": "Centro Comercial El Retiro, Piso 3, Local 204-2, Bogotá"
+      },
+      {
+        "field": "Dirección",
+        "source": "Política de privacidad, envíos, garantías",
+        "value": "Centro Comercial El Retiro, Calle 82 # 11-75, Piso 3, Local 204-2, Bogotá"
+      },
+      {
+        "field": "Horario",
+        "source": "Pie de página (todas las páginas)",
+        "value": "Lunes 11:00–19:00; martes a viernes 10:00–19:00; sábados 11:00–19:00; domingos y festivos cerrado"
+      },
+      {
+        "field": "Horario",
+        "source": "Páginas legales, Sobre nosotros",
+        "value": "No publicado"
+      },
+      {
+        "field": "Facebook",
+        "source": "Pie de página (solo aria-label; href vacío)",
+        "value": "m.facebook.com/BedBathBarrel"
+      },
+      {
+        "field": "Instagram",
+        "source": "Pie de página (solo aria-label; href vacío)",
+        "value": "instagram.com/bedbathandbarrelterraza"
+      },
+      {
+        "field": "Datos estructurados",
+        "source": "JSON-LD en inicio, tienda, producto, sobre nosotros",
+        "value": "Ninguno (0 bloques application/ld+json)"
+      },
+      {
+        "field": "Fichas públicas",
+        "source": "Búsqueda web (WebSearch, 2 consultas)",
+        "value": "No se encontró ninguna ficha ni directorio; Google Business Profile no verificado"
+      }
+    ],
+    "inconsistencies": [
+      "La dirección aparece de dos formas: en el inicio y el pie solo dice «Centro Comercial El Retiro, Piso 3, Local 204-2», y la calle (Calle 82 # 11-75) solo está en las páginas legales.",
+      "Tus redes usan nombres distintos (Facebook «BedBathBarrel», Instagram «bedbathandbarrelterraza») y los íconos del pie no llevan a ningún lado, así que nada conecta el sitio con esos perfiles."
+    ],
+    "not_verified": [
+      "No encontramos ficha pública del negocio (Google Business Profile, directorios) con búsqueda web; no se consultaron herramientas pagas.",
+      "No pudimos confirmar el contenido de los perfiles de Instagram y Facebook (requieren inicio de sesión); no hay datos de seguidores ni reseñas."
+    ]
+  },
+  "technical_note": "Home <title> contains literal '????' (broken emoji encoding). No meta description, OG, Twitter or JSON-LD on any checked page; /tienda/ also lacks rel=canonical. Social URLs exist only as aria-label on <a href=\"\"> in the footer (social-link-facebook/instagram). Instagram returned HTTP 200 (login wall, content not verifiable); m.facebook.com returned 302. Proposed og:image was originally the homepage hero (an AI-generated render named 'ChatGPT-Image-...'); it was replaced with a real project photo (the redesign hero) cropped to 1200x630 as og-source.jpg, and the final og:image URL is left to confirm. Legal pages saved as raw/presence-*.html."
+}

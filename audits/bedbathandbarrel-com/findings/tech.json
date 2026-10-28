@@ -1,0 +1,116 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "La página de inicio pesa 7,5 MB por imágenes",
+      "summary": "Cada visitante descarga 7,5 MB para ver la portada, lo que la hace lenta en celular y gasta sus datos antes de ver un solo producto.",
+      "now": "Cinco imágenes de la portada están guardadas en formato PNG sin comprimir y suman unos 6,5 MB; una sola pesa 2,1 MB. Las imágenes representan casi todo el peso de la página.",
+      "fix": "Convertir las imágenes a WebP o AVIF comprimido y ajustarlas al tamaño en que se muestran, para dejar la portada por debajo de 2 MB sin perder calidad visible; activar la conversión automática para las imágenes que se suban en el futuro.",
+      "why": "Una portada pesada tarda más en cargar con datos móviles, y quien espera demasiado se va antes de ver los muebles.",
+      "impact": 5,
+      "effort": "Bajo",
+      "headline_metric": "7,5 MB",
+      "evidence": [
+        "Lighthouse mobile total-byte-weight: 7,706 KiB (7.5 MB); desktop: 7,748 KiB (7.6 MB)",
+        "Images: 19 requests, 7,132 KiB (7.0 MB) of the mobile total",
+        "Top 5 resources (mobile, transfer): ChatGPT-Image-1-abr-2026-15_19_21-768x1152.png 2,111 KiB; ChatGPT-Image-18-sept-2026-17_16_20-768x1024-1.png 1,831 KiB; ChatGPT-Image-31-jul-2026-15_22_08-767x614.png 1,219 KiB; ChatGPT-Image-4-sept-2026-11_02_52-767x614.png 1,027 KiB; ChatGPT-Image-3-oct-2026-18_15_20-768x432.png 516 KiB",
+        "Desktop downloads the full-size original ChatGPT-Image-18-sept-2026-17_16_20.png: 2,384 KiB",
+        "Lighthouse image-delivery-insight (mobile): estimated savings 6,553 KiB, mainly 'Using a modern image format (WebP, AVIF) or increasing the image compression'",
+        "Logo_BBB_blanco-768x212.png served at 768x212 but displayed at 438x121 (image-delivery-insight)"
+      ],
+      "technical_note": "PNG files appear to be AI-generated renders uploaded as-is (24-bit PNG). WordPress generates resized PNG variants but not WebP/AVIF. Fix: bulk-convert existing uploads (e.g. a WebP/AVIF conversion plugin or CDN image optimization) and serve via <picture>/srcset; review sizes attribute so desktop does not pull the 2.3 MB original.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "tech-2",
+      "title": "La foto principal tarda en aparecer en computador",
+      "summary": "La imagen de bienvenida, lo primero que ve el cliente, tarda varios segundos en mostrarse, sobre todo en computador.",
+      "now": "La foto grande de la portada es un PNG de 874 KB en computador y 516 KB en celular. En la prueba de computador tardó 4,9 s en aparecer; además, el sitio le da prioridad de carga al logo y no a esa foto.",
+      "fix": "Comprimir la foto principal en formato moderno (meta: menos de 150 KB) y marcarla como prioritaria para que el navegador la descargue primero; meta: imagen visible en menos de 2,5 s.",
+      "why": "La primera impresión depende de esa foto: si la pantalla se ve vacía unos segundos, la tienda parece lenta o poco confiable.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "4,9 s",
+      "evidence": [
+        "LCP element (both devices): div.wp-block-cover > img.wp-block-cover__image-background, src ChatGPT-Image-3-oct-2026-18_15_20-*.png",
+        "Desktop: observedLargestContentfulPaint 4,871 ms; lab LCP 7.5 s; lcp-breakdown resourceLoadDuration 3,971 ms for the 874 KiB 1024x576 PNG",
+        "Mobile: observedLargestContentfulPaint 2,129 ms (passes); lab LCP 5.2 s under simulated slow 4G (lab artifact, observed run is within target)",
+        "lcp-discovery-insight: 'fetchpriority=high should be applied' = false for the hero image",
+        "raw/home.html: fetchpriority=\"high\" is set on img.custom-logo.kadence-transparent-logo (Logo_BBB_blanco.png), not on the hero"
+      ],
+      "technical_note": "Kadence assigns fetchpriority=high to the transparent-header logo. Add fetchpriority=high to the cover image (or preload it) and remove it from the logo. Mobile observed LCP is fine; the problem is mainly desktop, where the 1024w PNG competes with other multi-MB PNGs.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 35}
+    },
+    {
+      "id": "tech-3",
+      "title": "El servidor no tiene protecciones básicas activadas",
+      "summary": "La tienda no envía ninguna de las cinco protecciones estándar que los navegadores usan para defender a tus clientes de ataques comunes.",
+      "now": "Revisamos las respuestas del servidor y no aparece ninguna de las cabeceras de seguridad habituales (0 de 5), en una tienda que recibe pedidos y datos de clientes.",
+      "fix": "Activar en el servidor las cinco cabeceras de seguridad estándar (HSTS, política de contenido, protección contra inserción en otros sitios, tipo de contenido y política de referencia) y verificar que el pago y el carrito siguen funcionando.",
+      "why": "Una tienda en línea maneja datos personales y pagos; estas protecciones reducen el riesgo de fraude y suplantación, y cuidan la confianza en la marca.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "0 de 5",
+      "evidence": [
+        "HSTS (Strict-Transport-Security): absent",
+        "CSP (Content-Security-Policy): absent",
+        "X-Frame-Options / frame-ancestors: absent",
+        "X-Content-Type-Options: absent",
+        "Referrer-Policy: absent",
+        "Source: curl -sI https://bedbathandbarrel.com/ saved in raw/tech-headers.txt"
+      ],
+      "technical_note": "Response headers only include content-type, link, date, vary, alt-svc. Version disclosure: <meta name=\"generator\"> exposes WordPress 7.1.3 and WooCommerce 11.1.2 in the homepage HTML; remove generator tags. Headers can be added via .htaccess / server config or a security plugin. Start CSP in Report-Only mode because of Google Maps and Joinchat.",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "El servidor tarda en responder antes de mostrar nada",
+      "summary": "Antes de que empiece a cargar la página pasan unos 0,7 s de espera en el servidor, que se suman a cada visita y a cada clic.",
+      "now": "La página se arma desde cero en cada visita: no hay señales de caché de página y el primer byte tarda entre 0,63 s y 0,74 s. Además, 5 hojas de estilo y jQuery bloquean el primer pintado (0,5 s estimados en celular).",
+      "fix": "Activar caché de página completa (plugin de caché o caché del hosting) y cargar en diferido los estilos y scripts que no se necesitan para la primera pantalla; meta: respuesta del servidor por debajo de 0,2 s.",
+      "why": "Cada segundo de espera al navegar por categorías y productos se acumula y hace que comprar se sienta lento.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "0,7 s",
+      "evidence": [
+        "Lighthouse server-response-time: 'Root document took 630 ms' (mobile), 620 ms (desktop)",
+        "curl time_starttransfer on 3 consecutive requests: 0.72 s, 0.74 s, 0.69 s (raw/tech-headers.txt)",
+        "HTML response has no cache-control, age or x-cache header; no cache-plugin markers in raw/home.html",
+        "render-blocking-insight: est. savings 500 ms (mobile), 270 ms (desktop); blocking: kadence woocommerce.min.css, header/global/footer/content.min.css, jquery.min.js 3.7.1, jquery-migrate.min.js 3.4.1"
+      ],
+      "technical_note": "Stack: WordPress 7.1.3 + WooCommerce 11.1.2, Kadence theme 1.5.2, Joinchat (creame-whatsapp-me 6.4.1). Only 2 plugins expose front-end assets on the home, so the cost is server-side generation, not plugin bloat. No web fonts are downloaded (0 font requests). Unused CSS est. 20 KiB.",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "Archivos guardados solo una semana en el navegador",
+      "summary": "Quien vuelve a la tienda después de una semana debe descargar de nuevo las imágenes pesadas, aunque no hayan cambiado.",
+      "now": "Las imágenes, estilos y scripts se guardan en el navegador del cliente solo 7 días; Lighthouse estima 738 KB que se podrían ahorrar en visitas repetidas.",
+      "fix": "Ampliar a un año el tiempo de caché de imágenes y archivos con versión, idealmente con un CDN que además acerque los archivos a los visitantes.",
+      "why": "Los clientes de muebles suelen volver varias veces antes de decidir; cada regreso debería ser casi instantáneo.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "7 días",
+      "evidence": [
+        "cache-control: public, max-age=604800 on PNG uploads and theme CSS (raw/tech-headers.txt)",
+        "Lighthouse cache-insight (mobile): est. savings 738 KiB; desktop 730 KiB"
+      ],
+      "technical_note": "Meets the rubric minimum (7 days) but is short for immutable versioned assets (?ver=) and uploads. Set max-age=31536000 for /wp-content/uploads and versioned CSS/JS.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "fail", "evidence": "total-byte-weight 7,706 KiB = 7.5 MB mobile; 7,748 KiB = 7.6 MB desktop (limit 3 MB)"},
+    {"id": "tech-lcp", "result": "pass", "evidence": "Mobile observedLargestContentfulPaint 2,129 ms (<= 2.5 s). Lab mobile LCP 5.2 s; desktop observed 4,871 ms (see tech-2)"},
+    {"id": "tech-images", "result": "fail", "evidence": "image-delivery-insight est. savings 6,553 KiB mobile / 6,747 KiB desktop; 5 uncompressed PNGs of 516-2,384 KiB, no WebP/AVIF"},
+    {"id": "tech-lazy", "result": "pass", "evidence": "raw/home.html: 8 of 11 <img> have loading=lazy; the 3 eager ones are 2 logos and the above-the-fold hero. Maps iframe also loading=lazy"},
+    {"id": "tech-render-blocking", "result": "partial", "evidence": "render-blocking-insight 270 ms desktop (pass) but 500 ms mobile (fail); no web fonts downloaded"},
+    {"id": "tech-cache", "result": "pass", "evidence": "cache-control: public, max-age=604800 (7 days) on images and CSS; exactly at the threshold, Lighthouse still flags 738 KiB savings"},
+    {"id": "tech-https", "result": "pass", "evidence": "HTTPS 200 over HTTP/2; http:// and http://www. return 301 to https://bedbathandbarrel.com/"},
+    {"id": "tech-security-headers", "result": "fail", "evidence": "0 of 5: HSTS, CSP, X-Frame-Options/frame-ancestors, X-Content-Type-Options, Referrer-Policy all absent"},
+    {"id": "tech-console", "result": "pass", "evidence": "Lighthouse errors-in-console score 1 on mobile and desktop"},
+    {"id": "tech-links", "result": "pass", "evidence": "40 internal URLs (links and images) from raw/home.html all returned 200 (raw/tech-links.txt)"},
+    {"id": "tech-404", "result": "pass", "evidence": "/pagina-que-no-existe-xyz/ returns HTTP 404 with themed 'Página no encontrada' page including header, menu and search (raw/tech-404.html)"}
+  ]
+}

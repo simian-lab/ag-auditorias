@@ -1,0 +1,120 @@
+{
+  "verdict": "Tu sitio tiene una paleta sobria y elegante, pero las piezas que deberían vender (botones, íconos, fichas de producto) se ven improvisadas y no transmiten el lujo que promete la portada.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Dos botones para mirar, ninguno para comprar",
+      "explanation": "En toda la portada solo hay dos botones, «Ver productos» y «Ver novedades», y ambos invitan a mirar, no a cotizar ni a comprar. En la ficha de un comedor personalizable el lugar del botón queda vacío, así que el cliente llega al producto y no encuentra qué hacer.",
+      "items": [
+        {"label": "«Ver productos»: crema #f7f4ef, letra de 18 px, esquinas de 3 px", "crop": "ui-crop-btn-ver-productos.png"},
+        {"label": "«Ver novedades»: negro #1a1a1a, mismo tamaño y forma", "crop": "ui-crop-btn-ver-novedades.png"},
+        {"label": "Ficha del comedor MANTINEA: título, entrega y garantía, sin precio ni botón", "crop": "ui-crop-btn-ficha-sin-accion.png"}
+      ],
+      "proposal": "Un botón principal único («Cotiza tu proyecto» o «Comprar») en negro con texto blanco, presente en la portada, en cada ficha y en el menú; y un botón secundario con borde para «Ver productos». Ningún producto sin acción."
+    },
+    {
+      "kind": "icons",
+      "title": "Emojis de chat donde debería haber marca",
+      "explanation": "Los cuatro beneficios usan emojis del teléfono (camión, candado, globo de chat, chincheta) de 17 px, cada uno de un color distinto, mientras el pie de página usa íconos de línea con borde y la burbuja de WhatsApp es el elemento más llamativo de la pantalla. Son tres estilos de ícono distintos en una misma página, y el comprador lo lee como un sitio armado por partes.",
+      "items": [
+        {"label": "Envío gratis: emoji de camión", "crop": "ui-crop-icon-envio.png"},
+        {"label": "Pago seguro: emoji de candado", "crop": "ui-crop-icon-pago.png"},
+        {"label": "Asesoría: emoji de globo de chat", "crop": "ui-crop-icon-asesoria.png"},
+        {"label": "Showroom: emoji de chincheta", "crop": "ui-crop-icon-showroom.png"},
+        {"label": "Pie de página: íconos de línea con borde", "crop": "ui-crop-icon-social-footer.png"},
+        {"label": "Burbuja flotante de WhatsApp, verde #25d366", "crop": "ui-crop-icon-whatsapp-flotante.png"}
+      ],
+      "proposal": "Un solo set de íconos de línea, del mismo grosor, a 32 px y en el tono tostado de la marca, para beneficios, contacto y redes."
+    },
+    {
+      "kind": "cards",
+      "title": "Cada ficha parece de una tienda distinta",
+      "explanation": "En «Mobiliario exterior» una mesa recortada sobre gris convive con una modelo en un flotador, una terraza en 3D y unas asoleadoras junto a la piscina; unos nombres van en mayúsculas y otros no, y unas fichas tienen precio y otras no. El catálogo no se percibe como una colección curada de lujo sino como un listado de proveedores.",
+      "items": [
+        {"label": "COJIN DECORATIVO EXTERIOR: recorte gris, nombre en mayúsculas, con precio", "crop": "ui-crop-card-cojin.png"},
+        {"label": "Flotador Tipo Dona STINSON: foto de modelo en piscina, dentro de mobiliario", "crop": "ui-crop-card-flotador.png"},
+        {"label": "Comedor MANTINEA: recorte gris, sin precio", "crop": "ui-crop-card-mantinea.png"},
+        {"label": "Sala OCEAN: escena 3D, sin precio", "crop": "ui-crop-card-ocean-sala.png"},
+        {"label": "Asoleadora TAHITI: foto ambientada, con precio", "crop": "ui-crop-card-tahiti.png"}
+      ],
+      "proposal": "Una regla para la primera foto de cada producto (mismo fondo cálido, mismo encuadre), nombres en un solo formato («Comedor Mantinea») y en cada ficha un precio o la etiqueta «Cotizar»."
+    },
+    {
+      "kind": "headings",
+      "title": "Un titular que no manda",
+      "explanation": "El título principal «Lujo de exteriores» mide 32 px y los de sección 28 px: casi el mismo tamaño, así que la promesa de la marca no se impone sobre el resto. Las etiquetas pequeñas tampoco siguen una regla: «NUESTRO TRABAJO» va espaciada, «NUEVA COLECCIÓN» no, y el pie usa otro estilo más.",
+      "items": [
+        {"label": "H1 «Lujo de exteriores»: 32 px, 700", "crop": "ui-crop-h1-hero.png"},
+        {"label": "H2 «Nuestras categorías»: 28 px, 700", "crop": "ui-crop-h2-categorias.png"},
+        {"label": "H3 sobre foto clara: 24 px blanco", "crop": "ui-crop-h3-mobiliario.png"},
+        {"label": "H4 de beneficio: 22 px, 700", "crop": "ui-crop-h4-beneficio.png"},
+        {"label": "Etiqueta «NUESTRO TRABAJO»: espaciada", "crop": "ui-crop-eyebrow-nuestro-trabajo.png"},
+        {"label": "Etiqueta «NUEVA COLECCIÓN»: sin espaciado", "crop": "ui-crop-eyebrow-nueva-coleccion.png"},
+        {"label": "Título del pie: mayúsculas espaciadas de 15 px", "crop": "ui-crop-h4-footer.png"}
+      ],
+      "proposal": "Una escala con saltos claros (56 / 36 / 24 / 18 px) y un único estilo de etiqueta: mayúsculas de 13 px, espaciado 0,15 em, en tono tostado."
+    },
+    {
+      "kind": "colors",
+      "title": "Tu color de marca solo aparece al pasar el mouse",
+      "explanation": "El tema define un tostado cálido (#a89279) que encaja con el lujo, pero solo se usa como efecto al pasar el cursor sobre los botones; lo que se ve es blanco, negro y gris. El color más fuerte de la página es el verde de WhatsApp, que no es tuyo.",
+      "items": [
+        {"label": "Negro de texto y botones", "hex": "#1a1a1a"},
+        {"label": "Gris oscuro de títulos de beneficio", "hex": "#2e2e2e"},
+        {"label": "Tostado de marca (solo al pasar el cursor)", "hex": "#a89279"},
+        {"label": "Arena de fondos", "hex": "#e8e1d7"},
+        {"label": "Crema del botón principal", "hex": "#f7f4ef"},
+        {"label": "Gris de textos secundarios", "hex": "#8a8a8a"},
+        {"label": "Verde WhatsApp, el color más visible", "hex": "#25d366"}
+      ],
+      "proposal": "Darle al tostado un trabajo fijo y visible (etiquetas, íconos, líneas, fondos de franja) en una versión más oscura para texto, y dejar el verde solo dentro del botón de WhatsApp."
+    },
+    {
+      "kind": "fonts",
+      "title": "Una marca que habla con la voz del teléfono",
+      "explanation": "Todos los textos usan la letra del sistema de cada dispositivo, así que en un Mac se ve una cosa y en Windows otra. El logo usa una letra geométrica que no se repite en ningún título, y el sitio no tiene una voz visual propia.",
+      "items": [
+        {"label": "Fuente del sistema (San Francisco, Segoe UI, Roboto)", "family": "-apple-system, system-ui"},
+        {"label": "Letra geométrica del logo (es una imagen, no se usa en ningún texto)", "family": null}
+      ],
+      "proposal": "Una fuente con carácter para títulos, afín al logo, y la del sistema solo para el texto corrido."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {"name": "Carbón", "hex": "#1a1a1a", "role": "Texto, botón principal y franjas oscuras. Texto blanco encima: contraste 17,4:1."},
+      {"name": "Tostado", "hex": "#a89279", "role": "Acento de marca en íconos, líneas y fondos de franja. Texto carbón encima: 5,85:1 (blanco encima solo 2,98:1, no usarlo para texto blanco)."},
+      {"name": "Tostado oscuro", "hex": "#6f5c47", "role": "Etiquetas y enlaces en tono de marca. Texto blanco encima: 6,37:1; sobre crema: 5,8:1."},
+      {"name": "Arena", "hex": "#e8e1d7", "role": "Fondo de secciones y botón secundario. Texto carbón encima: 13,41:1."},
+      {"name": "Crema", "hex": "#f7f4ef", "role": "Fondo general cálido en lugar del blanco puro. Texto carbón encima: 15,86:1."},
+      {"name": "Gris texto", "hex": "#555555", "role": "Texto secundario en lugar del #8a8a8a actual. Sobre blanco: 7,46:1 (el #8a8a8a da 3,45:1)."}
+    ],
+    "fonts": [
+      {"role": "Títulos", "family": "Una sans geométrica afín al logo (por ejemplo Jost o Outfit), alojada en el propio sitio"},
+      {"role": "Texto", "family": "Fuente del sistema (-apple-system, system-ui), como hoy"}
+    ],
+    "button_primary": "Fondo carbón #1a1a1a, texto blanco 16 px seminegrita, esquinas de 4 px, 14×28 px de relleno; al pasar el cursor, fondo tostado oscuro #6f5c47. Un solo texto de acción: «Cotiza tu proyecto» o «Comprar».",
+    "button_secondary": "Fondo transparente, borde de 1,5 px carbón (o blanco sobre foto), mismo tamaño que el principal; para «Ver productos» y «Ver novedades».",
+    "heading_scale": "H1 56 px / H2 36 px / H3 24 px / H4 18 px; etiquetas en mayúsculas de 13 px con espaciado 0,15 em en tostado oscuro."
+  },
+  "hierarchy_notes": [
+    "Portada: el ojo va primero a la escena generada con IA y la sombrilla; el titular de 32 px y el botón crema pequeño quedan en segundo plano. Debería ver primero la promesa, una prueba real (producto o proyecto) y un botón de cotizar.",
+    "Franja de beneficios: lo primero que se ve son los títulos en negrita; los emojis de 17 px casi desaparecen. «Asesoría personalizada», el diferencial, pesa igual que «Pago 100 % seguro» y no se puede pulsar; debería destacar y llevar a una acción.",
+    "Categorías: el ojo va a la playa, las palmeras y la arena; el nombre blanco de cada categoría se pierde sobre las zonas claras. Debería leerse primero el nombre de la categoría.",
+    "Novedades y proyectos: el ojo ve fotos grandes oscurecidas; la etiqueta pequeña y el botón negro sobre fondo oscuro pasan desapercibidos. Debería ver productos con nombre y precio, y proyectos reales.",
+    "Catálogo de mobiliario: lo primero que salta son el azul de las piscinas y las modelos en flotadores; las salas y comedores sin precio quedan relegados. Deberían destacar los muebles de mayor valor con su precio o «Cotizar».",
+    "Ficha de producto: el ojo va a la foto y al título; a la derecha no hay precio ni botón, solo entrega y garantía. Debería ver un botón «Cotizar este producto» junto al título."
+  ],
+  "sharp_headlines": {
+    "1": "Tus muebles más caros: sin precio, sin botón",
+    "2": "Tu portada obliga a descargar 7,5 MB",
+    "3": "Vendes asesoría, pero no hay botón para pedirla",
+    "4": "Los botones de tus redes no funcionan",
+    "5": "Prometes lujo y muestras escenas inventadas",
+    "6": "Tu primera imagen llega borrosa al celular",
+    "7": "Tu botón principal abre aromatizadores, no muebles",
+    "8": "Tus categorías se pierden sobre fotos claras",
+    "9": "Desde 2001, y tu portada no lo dice",
+    "10": "Tu tienda no activa protecciones básicas del navegador"
+  }
+}
