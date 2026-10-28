@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bed Bath &amp; Barrel — Concepto de portada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero.webp" media="(min-width: 761px)" fetchpriority="high">
+<style>
+:root{
+  --ink:#1a1a1a; --ink2:#2e2e2e; --muted:#5a554f; --sand:#a89279; --sand-d:#7d6a55;
+  --cream:#f7f4ef; --stone:#e8e1d7; --white:#fff;
+  --r:6px; --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sand-d)}
+.ph{font-style:italic;color:#8a7f73;font-size:.92em}
+
+/* Buttons: one system */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:var(--r);font-weight:700;font-size:15px;letter-spacing:.01em;border:1.5px solid transparent;transition:.2s}
+.btn-primary{background:var(--sand);color:var(--ink);}
+.btn-primary:hover{background:#b9a48c}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn svg{width:18px;height:18px}
+
+/* Utility bar */
+.util{background:var(--ink);color:#d9d2c8;font-size:13px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
+.util b{color:#fff;font-weight:600}
+.util .r{display:flex;gap:24px}
+
+/* Header */
+header.site{background:#fff;border-bottom:1px solid var(--stone);position:sticky;top:0;z-index:10}
+header.site .wrap{display:flex;align-items:center;height:80px;gap:24px}
+.logo{background:var(--ink);padding:10px 14px;border-radius:4px}
+.logo img{height:36px;width:auto}
+nav.main{display:flex;gap:20px;font-size:14px;font-weight:600;margin-left:4px;white-space:nowrap}
+nav.main a{padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--sand)}
+.hright{margin-left:auto;display:flex;align-items:center;gap:16px;white-space:nowrap}
+.wa-link{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.wa-link svg{width:20px;height:20px;color:#1f8f4e}
+.hright .btn{height:44px;padding:0 20px;font-size:14px}
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--stone)}
+.icon-btn svg{width:18px;height:18px}
+.menu-btn{display:none}
+
+/* Hero */
+.hero{position:relative;height:640px;color:#fff;overflow:hidden;background:#24211d}
+.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,16,.88) 0%,rgba(20,18,16,.72) 36%,rgba(20,18,16,.15) 66%,rgba(20,18,16,0) 100%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero .eyebrow{color:#d8c6ae}
+.hero h1{font-size:58px;max-width:620px;margin:18px 0 20px;color:#fff}
+.hero p.lead{font-size:18.5px;max-width:520px;color:#ece6dd}
+.hero .ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero .note{margin-top:18px;font-size:13.5px;color:#cfc6ba}
+.hero .tag{position:absolute;right:32px;bottom:26px;z-index:2;background:rgba(20,18,16,.72);font-size:12.5px;padding:8px 14px;border-radius:30px;color:#efe9df;letter-spacing:.02em}
+
+/* Proof strip */
+.proof{background:var(--cream);border-bottom:1px solid var(--stone)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof .it{padding:30px 26px;border-left:1px solid var(--stone)}
+.proof .it:first-child{border-left:0;padding-left:0}
+.proof .n{font-family:Fraunces,serif;font-size:34px;font-weight:500;line-height:1;color:var(--ink)}
+.proof .l{font-size:14px;color:var(--muted);margin-top:8px;font-weight:500}
+
+section{padding:88px 0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
+.shead h2{font-size:40px;margin-top:10px}
+.shead p{color:var(--muted);max-width:440px}
+.more{font-weight:700;font-size:14.5px;border-bottom:2px solid var(--sand);padding-bottom:2px;white-space:nowrap}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:250px 250px;gap:16px}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;background:#333}
+.cat:first-child{grid-row:span 2}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat:hover img{transform:scale(1.04)}
+.cat .lab{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.cat .lab b{font-size:17px;font-weight:700}
+.cat .lab span{font-size:13px;color:#cfc6ba;display:block;font-weight:500}
+.cat .lab i{font-style:normal;font-size:20px;color:var(--sand)}
+.chips{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.chips a{border:1px solid var(--stone);border-radius:30px;padding:9px 18px;font-size:14px;font-weight:600;background:#fff}
+.chips a:hover{border-color:var(--sand)}
+
+/* Products */
+.products{background:var(--cream)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--stone)}
+.card .im{aspect-ratio:1/1;background:#f1ede6;overflow:hidden}
+.card .im img{width:100%;height:100%;object-fit:cover}
+.card .bd{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.card .cat-n{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sand-d)}
+.card h3{font-family:Manrope,sans-serif;font-size:17px;font-weight:700;margin:6px 0 10px;line-height:1.3}
+.card .price{font-size:20px;font-weight:700;margin-top:auto}
+.card .price small{display:block;font-size:12.5px;color:var(--muted);font-weight:500}
+.card .act{margin-top:14px}
+.card .act .btn{width:100%;justify-content:center;height:46px;font-size:14px}
+.card.custom .price{font-family:Manrope;font-size:15px;color:var(--ink2)}
+.badge{position:absolute;margin:12px;background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:3px}
+.card .im{position:relative}
+
+/* Projects */
+.pj{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:18px}
+.pj figure{position:relative;border-radius:var(--r);overflow:hidden}
+.pj figure:first-child{grid-row:span 2}
+.pj img{width:100%;height:100%;object-fit:cover}
+.pj figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.96);border-radius:4px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pj figcaption b{display:block;font-size:15px}
+.pj figcaption span{font-size:13px;color:var(--muted)}
+.pj figcaption a{font-weight:700;font-size:13.5px;white-space:nowrap;border-bottom:2px solid var(--sand)}
+
+/* Asesoria */
+.ase{background:var(--ink);color:#fff}
+.ase .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.ase .eyebrow{color:#d8c6ae}
+.ase h2{font-size:42px;margin:12px 0 18px;color:#fff}
+.ase p{color:#d6cfc5}
+.steps{margin-top:30px;display:grid;gap:18px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step .k{flex:0 0 40px;height:40px;border-radius:50%;border:1.5px solid var(--sand);display:grid;place-items:center;font-family:Fraunces;color:var(--sand);font-size:18px}
+.step b{display:block;font-size:16px}
+.step span{font-size:14.5px;color:#bdb4a8}
+form.q{background:#fff;color:var(--ink);border-radius:var(--r);padding:30px}
+form.q h3{font-family:Manrope;font-weight:700;font-size:20px;margin-bottom:4px}
+form.q .sub{font-size:14px;color:var(--muted);margin-bottom:20px}
+.f{display:grid;gap:6px;margin-bottom:14px}
+.f label{font-size:13px;font-weight:700}
+.f input,.f select,.f textarea{font:inherit;font-size:15px;border:1px solid #cfc7bb;border-radius:4px;padding:12px 14px;background:#fff;color:var(--ink)}
+.f textarea{min-height:70px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form.q .btn{width:100%;justify-content:center;margin-top:6px}
+form.q .alt{font-size:13.5px;color:var(--muted);text-align:center;margin-top:12px}
+form.q .alt a{font-weight:700;color:#1f7a44}
+
+/* Testimonials */
+.tst{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tst blockquote{border:1px dashed #cfc7bb;border-radius:var(--r);padding:26px;background:#fff}
+.tst blockquote p{font-family:Fraunces,serif;font-size:19px;line-height:1.4;color:#6f665c;font-style:italic}
+.tst cite{display:block;margin-top:16px;font-style:normal;font-size:13.5px;font-weight:700;color:#8a7f73}
+
+/* Showroom / footer */
+.show{background:var(--cream)}
+.show .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.show h2{font-size:38px;margin:10px 0 16px}
+.show dl{display:grid;grid-template-columns:120px 1fr;gap:10px 16px;font-size:15px;margin:22px 0 28px}
+.show dt{font-weight:700}
+.show dd{color:var(--ink2)}
+.show img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+footer{background:var(--ink);color:#cfc6ba;font-size:14px;padding:48px 0 34px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;font-size:14px;margin-bottom:12px;letter-spacing:.04em}
+footer li{list-style:none;margin:6px 0}
+footer .soc{display:flex;gap:10px;margin-top:16px}
+footer .soc a{border:1px solid #4a4540;border-radius:30px;padding:7px 14px;color:#fff;font-weight:600;font-size:13px}
+footer img{height:34px;width:auto;margin-bottom:14px}
+
+.fab{position:fixed;right:24px;bottom:24px;z-index:20;background:#1f8f4e;color:#fff;border-radius:30px;padding:0 20px;height:52px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14.5px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.fab svg{width:22px;height:22px}
+
+/* Mobile */
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .util .wrap{justify-content:center;height:34px;font-size:12px}
+  .util .l,.util .r span.hide-m{display:none}
+  header.site .wrap{height:64px;gap:10px}
+  .logo{padding:8px 10px}.logo img{height:26px}
+  nav.main,.wa-link,.hright .btn,.icon-btn.search{display:none}
+  .menu-btn{display:grid}
+  .hero{height:auto;min-height:600px}
+  .hero::after{background:linear-gradient(180deg,rgba(20,18,16,.25) 0%,rgba(20,18,16,.55) 38%,rgba(20,18,16,.92) 72%)}
+  .hero picture img{object-position:50% 40%}
+  .hero .wrap{justify-content:flex-end;padding-top:220px;padding-bottom:34px}
+  .hero h1{font-size:36px;margin:12px 0 14px}
+  .hero p.lead{font-size:16px}
+  .hero .ctas{flex-direction:column;margin-top:24px}
+  .hero .ctas .btn{justify-content:center;width:100%}
+  .hero .tag{top:16px;bottom:auto;right:16px;font-size:11.5px}
+  .proof .wrap{grid-template-columns:1fr 1fr}
+  .proof .it{padding:20px 12px;border-left:0;border-top:1px solid var(--stone)}
+  .proof .it:nth-child(-n+2){border-top:0}
+  .proof .it:first-child{padding-left:12px}
+  .proof .n{font-size:26px}
+  section{padding:56px 0}
+  .shead{flex-direction:column;align-items:flex-start;margin-bottom:24px}
+  .shead h2{font-size:30px}
+  .cats{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px;gap:10px}
+  .cat:first-child{grid-column:span 2;grid-row:auto}
+  .cat .lab{padding:10px 12px}.cat .lab b{font-size:14.5px}.cat .lab span{display:none}
+  .pgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .card .bd{padding:12px}
+  .card h3{font-size:14.5px}.card .price{font-size:16px}
+  .card .act .btn{height:42px;font-size:13px;padding:0 10px}
+  .pj{grid-template-columns:1fr}
+  .pj figure:first-child{grid-row:auto}
+  .ase .wrap,.show .wrap{grid-template-columns:1fr;gap:32px}
+  .ase h2{font-size:32px}
+  .tst{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  .fab span{display:none}.fab{padding:0;width:56px;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="l">Envío gratis en Bogotá en compras desde <b>$500.000</b></div>
+    <div class="r">
+      <span class="hide-m">Showroom: CC El Retiro · Piso 3, Local 204-2 · Bogotá</span>
+      <span>Servicio al cliente <b>319 307 3762</b></span>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Bed Bath &amp; Barrel, inicio"><img src="logo.png" alt="Bed Bath &amp; Barrel" width="600" height="166"></a>
+    <nav class="main" aria-label="Principal">
+      <a href="https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/">Mobiliario exterior</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/coberturas/">Coberturas</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/bbq-y-pizza/">BBQ y Pizza</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/hogar/">Hogar</a>
+      <a href="https://bedbathandbarrel.com/proyectos/">Proyectos</a>
+      <a href="https://bedbathandbarrel.com/sobre-nosotros/">Nosotros</a>
+      <a href="#asesoria">Contacto</a>
+    </nav>
+    <div class="hright">
+      <a class="wa-link" href="https://wa.me/573193073762" aria-label="WhatsApp 319 307 3762">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.3Z"/></svg>
+        319 307 3762
+      </a>
+      <a class="btn btn-dark" href="#asesoria">Cotiza tu proyecto</a>
+      <a class="icon-btn" href="https://bedbathandbarrel.com/carrito/" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.4 11h11l2-8H6.3"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg></a>
+      <button class="icon-btn menu-btn" aria-label="Menú" style="background:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0" aria-label="Presentación">
+  <picture>
+    <source media="(max-width:760px)" srcset="hero-mobile.webp">
+    <img src="hero.webp" alt="Sala exterior en L con mesa de centro y puffs, instalada por Bed Bath &amp; Barrel en una terraza" width="1600" height="900" fetchpriority="high">
+  </picture>
+  <div class="wrap">
+    <div class="eyebrow">Desde 2001 · Fabricación colombiana</div>
+    <h1>Mobiliario y coberturas a la medida para tu terraza</h1>
+    <p class="lead">Salas, comedores, pérgolas y parasoles para terrazas y jardines en Bogotá. Te asesoramos desde la idea hasta la instalación.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#asesoria">Cotiza tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/">Ver mobiliario exterior</a>
+    </div>
+    <div class="note">Respuesta por WhatsApp en <span class="ph">[tiempo por confirmar]</span> · Showroom en CC El Retiro</div>
+  </div>
+  <div class="tag">Proyecto real de Bed Bath &amp; Barrel</div>
+</section>
+
+<div class="proof">
+  <div class="wrap">
+    <div class="it"><div class="n">+20 años</div><div class="l">Creando espacios exteriores desde 2001</div></div>
+    <div class="it"><div class="n">100 %</div><div class="l">Productos colombianos y personalizables</div></div>
+    <div class="it"><div class="n">360°</div><div class="l">Diseño, fabricación e instalación</div></div>
+    <div class="it"><div class="n">Garantía</div><div class="l">En todos nuestros productos · Pago con Tarjeta, PSE y Nequi</div></div>
+  </div>
+</div>
+
+<section aria-labelledby="h-cat">
+  <div class="wrap">
+    <div class="shead">
+      <div><div class="eyebrow">Compra por categoría</div><h2 id="h-cat">¿Qué espacio quieres transformar?</h2></div>
+      <a class="more" href="https://bedbathandbarrel.com/tienda/">Ver toda la tienda →</a>
+    </div>
+    <div class="cats">
+      <a class="cat" href="https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/">
+        <img src="cat-mobiliario.webp" alt="Sala exterior en terraza" loading="lazy">
+        <div class="lab"><div><b>Mobiliario exterior</b><span>Salas, comedores, sillas y mesas</span></div><i>→</i></div>
+      </a>
+      <a class="cat" href="https://bedbathandbarrel.com/categoria-producto/coberturas/">
+        <img src="cat-coberturas.webp" alt="Pérgola sobre comedor exterior" loading="lazy">
+        <div class="lab"><div><b>Coberturas</b><span>Pérgolas, toldos y parasoles</span></div><i>→</i></div>
+      </a>
+      <a class="cat" href="https://bedbathandbarrel.com/categoria-producto/bbq-y-pizza/">
+        <img src="band.webp" alt="Terraza con asador y comedor exterior" loading="lazy">
+        <div class="lab"><div><b>BBQ y Pizza</b><span>Asadores, hornos y accesorios</span></div><i>→</i></div>
+      </a>
+      <a class="cat" href="https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/piscina/">
+        <img src="cat-piscina.webp" alt="Asoleadoras TAHITI junto a piscina" loading="lazy">
+        <div class="lab"><div><b>Piscina</b><span>Asoleadoras y flotadores</span></div><i>→</i></div>
+      </a>
+      <a class="cat" href="https://bedbathandbarrel.com/proyectos/">
+        <img src="proj-3.webp" alt="Sala exterior en L instalada en terraza" loading="lazy">
+        <div class="lab"><div><b>Proyectos a la medida</b><span>Mira lo que hemos instalado</span></div><i>→</i></div>
+      </a>
+    </div>
+    <div class="chips">
+      <a href="https://bedbathandbarrel.com/categoria-producto/cocina/">Cocina</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/hogar/">Hogar</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/hogar/iluminacion-hogar/">Iluminación</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/hogar/materas-hogar/">Materas</a>
+      <a href="https://bedbathandbarrel.com/categoria-producto/novedades/">Novedades</a>
+    </div>
+  </div>
+</section>
+
+<section class="products" aria-labelledby="h-prod">
+  <div class="wrap">
+    <div class="shead">
+      <div><div class="eyebrow">Destacados para tu terraza</div><h2 id="h-prod">Compra en línea o cotiza a la medida</h2></div>
+      <a class="more" href="https://bedbathandbarrel.com/categoria-producto/mobiliario-exterior/">Ver mobiliario exterior →</a>
+    </div>
+    <div class="pgrid">
+      <article class="card">
+        <div class="im"><img src="p-comedor-ocean.webp" alt="Comedor para exterior OCEAN" loading="lazy" width="480" height="480"></div>
+        <div class="bd"><div class="cat-n">Comedores</div><h3>Comedor para exterior OCEAN</h3>
+          <div class="price">$ 8.250.000</div>
+          <div class="act"><a class="btn btn-dark" href="https://bedbathandbarrel.com/producto/comedor-para-exterior-ocean/">Comprar</a></div></div>
+      </article>
+      <article class="card">
+        <div class="im"><img src="p-tahiti.webp" alt="Asoleadora TAHITI" loading="lazy" width="480" height="480"></div>
+        <div class="bd"><div class="cat-n">Piscina</div><h3>Asoleadora TAHITI</h3>
+          <div class="price">$ 1.900.000</div>
+          <div class="act"><a class="btn btn-dark" href="https://bedbathandbarrel.com/producto/asoleadora-tahiti/">Comprar</a></div></div>
+      </article>
+      <article class="card">
+        <div class="im"><img src="p-argo.webp" alt="Mesa exterior ARGO" loading="lazy" width="480" height="480"></div>
+        <div class="bd"><div class="cat-n">Mesas</div><h3>Mesa exterior ARGO</h3>
+          <div class="price">$ 655.000</div>
+          <div class="act"><a class="btn btn-dark" href="https://bedbathandbarrel.com/producto/mesa-exterior-argo/">Comprar</a></div></div>
+      </article>
+      <article class="card custom">
+        <div class="im"><span class="badge">A la medida</span><img src="p-sala-ocean.webp" alt="Sala para exterior OCEAN" loading="lazy" width="480" height="480"></div>
+        <div class="bd"><div class="cat-n">Salas</div><h3>Sala para exterior OCEAN</h3>
+          <div class="price">Precio según medidas y telas<small>Te respondemos por WhatsApp</small></div>
+          <div class="act"><a class="btn btn-primary" href="https://wa.me/573193073762?text=Hola%2C%20quiero%20cotizar%20la%20Sala%20para%20exterior%20OCEAN">Cotizar este producto</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-pj">
+  <div class="wrap">
+    <div class="shead">
+      <div><div class="eyebrow">Nuestro trabajo</div><h2 id="h-pj">Terrazas reales que diseñamos e instalamos</h2></div>
+      <a class="more" href="https://bedbathandbarrel.com/proyectos/">Ver todos los proyectos →</a>
+    </div>
+    <div class="pj">
+      <figure><img src="proj-1.webp" alt="Terraza con pérgola, sala exterior y chimenea" loading="lazy">
+        <figcaption><div><b><span class="ph">[Nombre del proyecto por confirmar]</span></b><span>Pérgola, sala y comedor exterior</span></div><a href="#asesoria">Quiero algo así</a></figcaption></figure>
+      <figure><img src="proj-2.webp" alt="Sala exterior iluminada de noche en terraza" loading="lazy">
+        <figcaption><div><b><span class="ph">[Nombre del proyecto por confirmar]</span></b><span>Sala exterior con puffs</span></div><a href="#asesoria">Quiero algo así</a></figcaption></figure>
+      <figure><img src="cat-coberturas.webp" alt="Comedor exterior bajo pérgola de madera" loading="lazy">
+        <figcaption><div><b><span class="ph">[Nombre del proyecto por confirmar]</span></b><span>Pérgola y comedor exterior</span></div><a href="#asesoria">Quiero algo así</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ase" id="asesoria" aria-labelledby="h-ase">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Asesoría personalizada</div>
+      <h2 id="h-ase">Cotiza tu proyecto con nuestro equipo de diseño</h2>
+      <p>Diseñadores de interiores y exteriores, arquitectos, técnicos, instaladores y jardineros te acompañan desde la idea inicial hasta la instalación final.</p>
+      <div class="steps">
+        <div class="step"><div class="k">1</div><div><b>Cuéntanos tu espacio</b><span>Tipo de espacio, medidas y fotos de tu terraza o jardín.</span></div></div>
+        <div class="step"><div class="k">2</div><div><b>Diseñamos tu propuesta</b><span>Mobiliario y coberturas a la medida, con telas y acabados para exterior.</span></div></div>
+        <div class="step"><div class="k">3</div><div><b>Fabricamos e instalamos</b><span>Producto 100 % colombiano, con garantía.</span></div></div>
+      </div>
+    </div>
+    <form class="q" onsubmit="return false" aria-labelledby="h-form">
+      <h3 id="h-form">Pide tu cotización</h3>
+      <div class="sub">Te respondemos en <span class="ph">[tiempo por confirmar]</span>.</div>
+      <div class="row2">
+        <div class="f"><label for="n">Nombre</label><input id="n" autocomplete="name"></div>
+        <div class="f"><label for="t">Celular</label><input id="t" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="row2">
+        <div class="f"><label for="e">Tipo de espacio</label><select id="e"><option>Terraza</option><option>Jardín</option><option>Zona de piscina</option><option>Balcón</option></select></div>
+        <div class="f"><label for="p">Me interesa</label><select id="p"><option>Sala o comedor</option><option>Pérgola o toldo</option><option>Parasol</option><option>BBQ y pizza</option><option>Proyecto completo</option></select></div>
+      </div>
+      <div class="f"><label for="m">Medidas aproximadas y comentarios</label><textarea id="m" placeholder="Ej.: terraza de 4 × 6 m, queremos sala y pérgola"></textarea></div>
+      <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+      <div class="alt">¿Prefieres hablar ya? <a href="https://wa.me/573193073762?text=Hola%2C%20quiero%20asesor%C3%ADa%20para%20mi%20terraza">Escríbenos por WhatsApp</a></div>
+    </form>
+  </div>
+</section>
+
+<section aria-labelledby="h-tst">
+  <div class="wrap">
+    <div class="shead"><div><div class="eyebrow">Clientes</div><h2 id="h-tst">Lo que dicen quienes ya disfrutan su terraza</h2></div></div>
+    <div class="tst">
+      <blockquote><p>[Testimonio de cliente por confirmar]</p><cite>[Nombre y proyecto por confirmar]</cite></blockquote>
+      <blockquote><p>[Testimonio de cliente por confirmar]</p><cite>[Nombre y proyecto por confirmar]</cite></blockquote>
+      <blockquote><p>[Testimonio de cliente por confirmar]</p><cite>[Nombre y proyecto por confirmar]</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="show" aria-labelledby="h-show">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Showroom</div>
+      <h2 id="h-show">Ven a ver y tocar los materiales</h2>
+      <dl>
+        <dt>Dirección</dt><dd>Centro Comercial El Retiro · Piso 3, Local 204-2 · Bogotá</dd>
+        <dt>Horario</dt><dd><span class="ph">[Horario por confirmar]</span></dd>
+        <dt>Teléfono</dt><dd>319 307 3762</dd>
+      </dl>
+      <a class="btn btn-dark" href="https://wa.me/573193073762?text=Hola%2C%20quiero%20agendar%20una%20visita%20al%20showroom">Agenda tu visita</a>
+    </div>
+    <img src="proj-3.webp" alt="Sala exterior en L con cojines decorativos" loading="lazy">
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><img src="logo.png" alt="Bed Bath &amp; Barrel"><p>Mobiliario, coberturas y accesorios para exterior. Desde 2001.</p>
+      <div class="soc">
+        <a href="https://m.facebook.com/BedBathBarrel/" aria-label="Facebook">Facebook</a>
+        <a href="https://www.instagram.com/bedbathandbarrelterraza/" aria-label="Instagram">Instagram</a>
+        <a href="https://wa.me/573193073762" aria-label="WhatsApp">WhatsApp</a>
+      </div></div>
+    <div><h4>Tienda</h4><ul><li>Mobiliario exterior</li><li>Coberturas</li><li>BBQ y Pizza</li><li>Cocina</li><li>Hogar</li></ul></div>
+    <div><h4>Empresa</h4><ul><li>Sobre nosotros</li><li>Proyectos</li><li>Cómo comprar</li><li>Contacto</li></ul></div>
+    <div><h4>Pagos y envíos</h4><ul><li>Tarjeta, PSE y Nequi con Wompi</li><li>Envío gratis en Bogotá desde $500.000</li></ul></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/573193073762" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.3Z"/></svg>
+  <span>Asesoría por WhatsApp</span>
+</a>
+</body>
+</html>

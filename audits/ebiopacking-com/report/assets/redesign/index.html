@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eBiopacking — Empaques de cartón corrugado | Concepto de rediseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#194414; --green-700:#2E5A28; --logo-green:#4A7147;
+  --lime:#97C61B; --lime-soft:#EEF5DA;
+  --kraft:#B98A55; --kraft-soft:#F3EADF;
+  --paper:#F7F5F0; --white:#fff; --ink:#1F2A1D; --muted:#55604F; --line:#E2DED4;
+  --radius:14px; --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scrollbar-width:none}
+html::-webkit-scrollbar{display:none}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Poppins,sans-serif;color:var(--green-900);line-height:1.15;letter-spacing:-.01em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.ph{font-family:Inter,sans-serif;font-weight:500;font-size:.86em;color:#7A6F5E;background:#EDE7DC;border:1px dashed #C9BCA6;border-radius:6px;padding:1px 8px;white-space:nowrap}
+
+/* Buttons: one system */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-weight:600;font-size:16px;border-radius:10px;padding:14px 24px;transition:transform .15s,background .15s;border:2px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--green-900);color:#fff}
+.btn-primary:hover{background:var(--green-700)}
+.btn-lime{background:var(--lime);color:var(--green-900)}
+.btn-ghost{background:#fff;color:var(--green-900);border-color:var(--green-900)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Header */
+.top{background:var(--green-900);color:#E7F0D8;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:24px}
+.top a{color:#fff;font-weight:500}
+.top .sep{opacity:.45;margin:0 10px}
+header.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header.nav .wrap{display:flex;align-items:center;height:84px;gap:40px}
+.logo img{height:44px;width:auto}
+header nav{display:flex;gap:30px;margin-left:auto}
+header nav a{font-weight:500;color:#2C3A29;font-size:15.5px}
+header nav a:hover{color:var(--green-900)}
+header .btn{padding:12px 20px;font-size:15px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--paper) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:72px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:Poppins,sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-700);background:var(--lime-soft);padding:7px 14px;border-radius:999px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.hero h1{font-size:48px;font-weight:700;margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--logo-green);background:linear-gradient(transparent 62%,#DCEBB0 62%)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:540px}
+.hero .ctas{display:flex;gap:14px;margin:32px 0 30px;flex-wrap:wrap}
+.hero .ticks{display:flex;gap:12px 22px;flex-wrap:wrap;font-size:14.5px;font-weight:500;color:#33402F}
+.hero .ticks span{display:flex;align-items:center;gap:8px}
+.hero .ticks svg{width:18px;height:18px;color:var(--lime);flex:none}
+.hero-img{position:relative}
+.hero-img img{border-radius:22px;box-shadow:0 30px 60px -28px rgba(25,68,20,.45);width:100%;height:auto;aspect-ratio:980/680;object-fit:cover}
+.hero-img .badge{position:absolute;left:-24px;bottom:28px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 14px 34px -14px rgba(0,0,0,.3);display:flex;gap:12px;align-items:center}
+.hero-img .badge b{font-family:Poppins;font-size:28px;color:var(--green-900);line-height:1}
+.hero-img .badge small{font-size:13px;color:var(--muted);line-height:1.3}
+
+/* Proof strip */
+.proof{background:var(--green-900);color:#fff}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof .item{padding:30px 24px;border-left:1px solid rgba(255,255,255,.14)}
+.proof .item:first-child{border-left:0;padding-left:0}
+.proof b{display:block;font-family:Poppins,sans-serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:4px}
+.proof span{font-size:14.5px;color:#D3E2C4}
+.proof .ph{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);color:#E7F0D8;font-size:15px}
+
+/* Sections */
+section.block{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:40px}
+.head h2{font-size:38px;font-weight:700;max-width:640px}
+.head p{color:var(--muted);max-width:420px;font-size:17px}
+.kicker{font-family:Poppins;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--kraft);margin-bottom:12px;display:block}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.cat:hover{box-shadow:0 20px 40px -24px rgba(25,68,20,.35);transform:translateY(-3px)}
+.cat .pic{background:#fff;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
+.cat .pic img{width:100%;height:100%;object-fit:cover}
+.cat .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.cat .tag{font-size:13px;font-weight:600;color:var(--green-700);background:var(--lime-soft);border-radius:6px;padding:3px 10px;align-self:flex-start;margin-bottom:12px}
+.cat h3{font-size:23px;margin-bottom:10px}
+.cat .list{color:var(--muted);font-size:15px;margin-bottom:22px;line-height:1.75}
+.cat .list b{color:var(--kraft);font-weight:700;margin:0 6px}
+.cat .links{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:18px}
+.cat .links a.more{font-weight:600;color:var(--green-900);display:flex;align-items:center;gap:6px}
+.cat .links .btn{padding:10px 16px;font-size:14.5px}
+
+/* Products */
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.prod img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.prod .b{padding:16px 18px 18px}
+.prod small{font-size:12.5px;color:var(--kraft);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.prod h4{font-family:Poppins;font-size:17px;color:var(--green-900);margin:4px 0 12px;font-weight:600}
+.prod a{font-weight:600;font-size:14.5px;color:var(--green-900);display:inline-flex;gap:6px;align-items:center;border-bottom:2px solid var(--lime);padding-bottom:1px}
+
+/* Maker */
+.maker{background:var(--kraft-soft)}
+.maker .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.maker img{border-radius:20px;width:100%;aspect-ratio:1680/1150;object-fit:cover}
+.maker h2{font-size:36px;margin-bottom:18px}
+.maker p{color:var(--muted);font-size:17px;margin-bottom:22px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-bottom:26px}
+.feat b{display:block;font-family:Poppins;color:var(--green-900);font-size:16px;font-weight:600}
+.feat span{font-size:14.5px;color:var(--muted)}
+.quote{background:#fff;border-left:4px solid var(--lime);border-radius:10px;padding:16px 20px;font-size:15px;color:var(--muted)}
+
+/* Quote form */
+.cot .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start}
+.cot h2{font-size:38px;margin-bottom:16px}
+.cot p{color:var(--muted);font-size:17px}
+.contact-list{list-style:none;margin-top:30px;display:grid;gap:14px}
+.contact-list a,.contact-list div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-weight:500}
+.contact-list svg{width:22px;height:22px;color:var(--green-700);flex:none}
+.contact-list small{display:block;font-size:13px;color:var(--muted);font-weight:400}
+form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:0 24px 50px -36px rgba(25,68,20,.4)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-size:14px;font-weight:600;color:#2C3A29;margin-bottom:6px}
+label .req{color:#A33A1F}
+input,select,textarea{width:100%;font:inherit;font-size:15.5px;padding:12px 14px;border:1.5px solid #CFCABD;border-radius:10px;background:#FCFBF8;color:var(--ink)}
+textarea{min-height:92px;resize:vertical}
+.field{margin-bottom:18px}
+form .btn{width:100%;justify-content:center;font-size:17px;padding:16px}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px;text-align:center}
+
+footer{background:var(--green-900);color:#D3E2C4;padding:56px 0 30px;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+footer h5{font-family:Poppins;color:#fff;font-size:15px;margin-bottom:14px;font-weight:600}
+footer a{color:#fff}
+footer li{list-style:none;margin-bottom:8px}
+footer .logo-w{background:#fff;border-radius:10px;padding:8px 12px;display:inline-block;margin-bottom:14px}
+footer .logo-w img{height:34px}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:22px;margin-top:20px;display:flex;justify-content:space-between;font-size:13.5px;flex-wrap:wrap;gap:12px}
+
+.wa{position:fixed;right:24px;bottom:24px;background:#fff;color:var(--green-900);border:2px solid var(--green-900);border-radius:999px;padding:13px 20px 13px 16px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);z-index:20}
+.wa svg{width:22px;height:22px;color:#1F9D55}
+
+/* Responsive */
+@media (max-width:1024px){
+  header nav{display:none}
+  .hero .wrap,.maker .wrap,.cot .wrap{grid-template-columns:1fr}
+  .cats{grid-template-columns:1fr 1fr}
+  .prods{grid-template-columns:repeat(2,1fr)}
+  .proof .wrap{grid-template-columns:1fr 1fr}
+  .proof .item{border-left:0;padding-left:0}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .top{font-size:12.5px}
+  .top .hide-m{display:none}
+  .top .wrap{justify-content:center}
+  header.nav .wrap{height:68px;gap:12px}
+  .logo img{height:32px}
+  header .btn{margin-left:auto;padding:10px 14px;font-size:14px}
+  .hero .wrap{padding-top:30px;padding-bottom:44px;gap:30px}
+  .hero h1{font-size:32px;margin:16px 0 14px}
+  .hero p.lead{font-size:16.5px}
+  .hero .ctas{flex-direction:column;margin:24px 0 22px}
+  .hero .ctas .btn{justify-content:center;width:100%}
+  .hero .ticks{gap:10px 18px;font-size:14px}
+  .hero-img .badge{left:12px;bottom:12px;padding:10px 14px}
+  .hero-img .badge b{font-size:22px}
+  .proof .wrap{grid-template-columns:1fr 1fr;gap:0 16px}
+  .proof .item{padding:20px 0}
+  .proof b{font-size:18px}
+  .proof .ph{white-space:normal;font-size:13px}
+  section.block{padding:56px 0}
+  .head{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:28px}
+  .head h2,.cot h2,.maker h2{font-size:28px}
+  .cats{grid-template-columns:1fr}
+  .prods{gap:12px}
+  .prod .b{padding:12px}
+  .prod h4{font-size:15px}
+  .feats{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr;gap:0}
+  form{padding:22px}
+  footer .wrap{grid-template-columns:1fr}
+  .wa span{display:none}
+  .wa{padding:14px;right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="hide-m">Fabricantes de empaques de cartón corrugado · Mosquera, Cundinamarca</div>
+    <div><a href="tel:+573103250267">+57 310 325 0267</a><span class="sep">|</span><a href="mailto:ventas@ebiopacking.com">ventas@ebiopacking.com</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#"><img src="logo.webp" alt="eBiopacking" width="414" height="120"></a>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#fabricantes">Nosotros</a>
+      <a href="#fabricantes">Sostenibilidad</a>
+      <a href="#cotizar">Contacto</a>
+    </nav>
+    <a class="btn btn-primary" href="#cotizar">Solicita tu cotización</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Fabricantes desde 2006</span>
+      <h1>Empaques de cartón corrugado para la <em>industria, el comercio y el agro</em></h1>
+      <p class="lead">Cajas, bandejas, láminas y separadores fabricados en nuestra planta de Mosquera. Protegemos lo que vendes y exportas, con empaques biodegradables y reciclables.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#cotizar">Solicita tu cotización
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#productos">Ver productos</a>
+      </div>
+      <div class="ticks">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Fabricación propia</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Cajas personalizadas</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Clientes nacionales e internacionales</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="hero-productos.webp" alt="Caja para flores, bandeja para frutas y empaque corrugado para ramo, fabricados por eBiopacking" width="1100" height="763" fetchpriority="high">
+      <div class="badge"><b>2006</b><small>Fabricando<br>empaques en Colombia</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Por qué elegirnos">
+  <div class="wrap">
+    <div class="item"><b>Desde 2006</b><span>Diseñando láminas y empaques de cartón corrugado</span></div>
+    <div class="item"><b>Planta propia</b><span>Parque Industrial San Jorge, Mosquera</span></div>
+    <div class="item"><b><span class="ph">[Certificación por confirmar]</span></b><span>Sellos de calidad o ambientales</span></div>
+    <div class="item"><b><span class="ph">[Capacidad mensual por confirmar]</span></b><span>Producción y tiempos de entrega</span></div>
+  </div>
+</section>
+
+<section class="block" id="productos">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Nuestras líneas</span><h2>Elige el empaque según lo que necesitas proteger</h2></div>
+      <p>16 referencias en tres líneas. Si no ves lo que buscas, cuéntanos qué necesitas empacar.</p>
+    </div>
+    <div class="cats">
+      <article class="cat">
+        <div class="pic"><img src="despacho.webp" alt="Cajas de cartón corrugado apiladas en estiba para despacho" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Industria y logística</span>
+          <h3>Empaques industriales</h3>
+          <p class="list">Caja regular<b>·</b>Caja regular impresa<b>·</b>Tipo bandeja<b>·</b>Telescópica<b>·</b>Particiones<b>·</b>Lámina corrugada</p>
+          <div class="links"><a class="more" href="#">Ver 6 productos →</a><a class="btn btn-lime" href="#cotizar">Cotizar</a></div>
+        </div>
+      </article>
+      <article class="cat">
+        <div class="pic"><img src="cjas-personalizadas.webp" alt="Caja personalizada de cartón corrugado" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Comercio y marca</span>
+          <h3>Empaques regulares</h3>
+          <p class="list">Cajas exhibidoras<b>·</b>Cajas tipo nevera<b>·</b>Cajas personalizadas<b>·</b>Aislador de calor<b>·</b>Caja ready to sell</p>
+          <div class="links"><a class="more" href="#">Ver 5 productos →</a><a class="btn btn-lime" href="#cotizar">Cotizar</a></div>
+        </div>
+      </article>
+      <article class="cat">
+        <div class="pic"><img src="bandejad-para-frutas.webp" alt="Bandeja de cartón corrugado para frutas" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Flores y frutas</span>
+          <h3>Empaques sector agro</h3>
+          <p class="list">Bandejas para frutas<b>·</b>Lámina para flores<b>·</b>Cajas para flores<b>·</b>Separadores de ramos<b>·</b>Caja para hierbas</p>
+          <div class="links"><a class="more" href="#">Ver 5 productos →</a><a class="btn btn-lime" href="#cotizar">Cotizar</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker">Más solicitados</span><h2>Pide precio desde el producto</h2></div>
+      <p>Cada referencia abre la cotización con el producto ya seleccionado.</p>
+    </div>
+    <div class="prods">
+      <div class="prod"><img src="caja-para-flores.webp" alt="Caja para flores" loading="lazy"><div class="b"><small>Sector agro</small><h4>Caja para flores</h4><a href="#cotizar">Cotizar →</a></div></div>
+      <div class="prod"><img src="caja-regular-impresa.webp" alt="Caja regular impresa" loading="lazy"><div class="b"><small>Industrial</small><h4>Caja regular impresa</h4><a href="#cotizar">Cotizar →</a></div></div>
+      <div class="prod"><img src="cajas-exhibidoras.webp" alt="Cajas exhibidoras" loading="lazy"><div class="b"><small>Regular</small><h4>Cajas exhibidoras</h4><a href="#cotizar">Cotizar →</a></div></div>
+      <div class="prod"><img src="separadores-ramos.webp" alt="Separadores de ramos" loading="lazy"><div class="b"><small>Sector agro</small><h4>Separadores de ramos</h4><a href="#cotizar">Cotizar →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block maker" id="fabricantes">
+  <div class="wrap">
+    <img src="planta.webp" alt="Operario de eBiopacking cargando una bobina de papel en la planta de Mosquera" loading="lazy">
+    <div>
+      <span class="kicker">Somos fabricantes</span>
+      <h2>Tu empaque sale de nuestra planta, no de un intermediario</h2>
+      <p>Con maquinaria de última generación producimos de forma eficiente y consistente, cumpliendo las normativas locales de calidad, seguridad y rendimiento.</p>
+      <div class="feats">
+        <div class="feat"><b>Recursos renovables</b><span>Papeles reciclables y con alto contenido reciclado</span></div>
+        <div class="feat"><b>Economía circular</b><span>Acompañamos el ciclo de vida de tus empaques</span></div>
+        <div class="feat"><b>Fibra responsable</b><span>Materia prima de silvicultura sostenible</span></div>
+        <div class="feat"><b>Mercado nacional y exportación</b><span>Clientes de diferentes sectores</span></div>
+      </div>
+      <div class="quote"><span class="ph">[Testimonio de cliente por confirmar]</span> &nbsp;·&nbsp; <span class="ph">[Clientes o sectores atendidos por confirmar]</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block cot" id="cotizar">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Cotización</span>
+      <h2>Cuéntanos qué necesitas empacar</h2>
+      <p>Con estos datos nuestro equipo comercial prepara tu propuesta sin tener que volver a preguntarte. Te respondemos en <span class="ph">[tiempo de respuesta por confirmar]</span>.</p>
+      <ul class="contact-list">
+        <li><a href="tel:+573103250267"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>+57 310 325 0267 · +57 310 451 4510<small>Llámanos con un toque</small></span></a></li>
+        <li><a href="mailto:ventas@ebiopacking.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg><span>ventas@ebiopacking.com<small>Equipo comercial</small></span></a></li>
+        <li><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Parque Industrial San Jorge<small>Mosquera, Cundinamarca, Colombia</small></span></div></li>
+      </ul>
+    </div>
+    <form onsubmit="return false" novalidate>
+      <div class="grid2">
+        <div class="field"><label for="n">Nombre <span class="req">*</span></label><input id="n" required autocomplete="name"></div>
+        <div class="field"><label for="e">Empresa <span class="req">*</span></label><input id="e" required autocomplete="organization"></div>
+        <div class="field"><label for="t">Teléfono <span class="req">*</span></label><input id="t" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="c">Correo <span class="req">*</span></label><input id="c" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="p">Producto de interés <span class="req">*</span></label>
+          <select id="p" required><option>Selecciona un producto</option><optgroup label="Industriales"><option>Caja regular</option><option>Caja regular impresa</option><option>Tipo bandeja</option><option>Telescópica</option><option>Particiones</option><option>Lámina de cartón corrugado</option></optgroup><optgroup label="Regulares"><option>Cajas exhibidoras</option><option>Cajas tipo nevera</option><option>Cajas personalizadas</option><option>Aislador de calor</option><option>Caja ready to sell</option></optgroup><optgroup label="Sector agro"><option>Bandejas para frutas</option><option>Lámina corrugada para flores</option><option>Cajas para flores</option><option>Separadores de ramos</option><option>Caja para verdes hierbas</option></optgroup><option>Otro / diseño a la medida</option></select></div>
+        <div class="field"><label for="q">Cantidad aproximada <span class="req">*</span></label><input id="q" inputmode="numeric" placeholder="Ej.: 2.000 unidades"></div>
+      </div>
+      <div class="field"><label for="m">Medidas o detalles (opcional)</label><textarea id="m" placeholder="Medidas, peso que debe soportar, impresión, fecha en que lo necesitas…"></textarea></div>
+      <button class="btn btn-primary" type="submit">Solicitar cotización</button>
+      <p class="note">Al enviar aceptas el tratamiento de datos personales.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="logo-w"><img src="logo.webp" alt="eBiopacking"></span><p>Empaques de cartón corrugado para la industria, el comercio y el sector agro. Fabricantes desde 2006.</p></div>
+    <div><h5>Productos</h5><ul><li><a href="#productos">Industriales</a></li><li><a href="#productos">Regulares</a></li><li><a href="#productos">Sector agro</a></li></ul></div>
+    <div><h5>Contacto</h5><ul><li><a href="tel:+573103250267">+57 310 325 0267</a></li><li><a href="tel:+573104514510">+57 310 451 4510</a></li><li><a href="mailto:ventas@ebiopacking.com">ventas@ebiopacking.com</a></li><li>Parque Industrial San Jorge, Mosquera</li></ul></div>
+    <div><h5>Síguenos</h5><ul><li><a href="https://www.instagram.com/ebiopacking_/">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61574718148709">Facebook</a></li><li><a href="https://www.tiktok.com/@ebiopacking?lang=es">TikTok</a></li></ul></div>
+    <div class="legal"><span>© <span id="y">2026</span> eBiopacking. Todos los derechos reservados.</span><span><a href="#">Protección de datos personales</a> · <a href="#">Términos y condiciones</a></span></div>
+  </div>
+</footer>
+
+<a class="wa" href="#cotizar" aria-label="Cotiza por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>Cotiza por WhatsApp</span></a>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
