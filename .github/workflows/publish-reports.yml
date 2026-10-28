@@ -42,14 +42,3 @@ jobs:
         working-directory: _site
         run: |
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" reports:reports
-
-      - name: Push to Spacefast
-        working-directory: _site
-        env:
-          SPACEFAST_GIT_URL: ${{ secrets.SPACEFAST_GIT_URL }}
-        run: |
-          if [ -z "$SPACEFAST_GIT_URL" ]; then
-            echo "::warning::SPACEFAST_GIT_URL secret is not set; skipping Spacefast deploy."
-            exit 0
-          fi
-          git push -f "$SPACEFAST_GIT_URL" reports:main

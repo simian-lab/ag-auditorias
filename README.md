@@ -57,7 +57,8 @@ Commit the new `audits/<domain>/` folder and push to `main`. The `Publish report
 
 1. Builds the site with `tools/build_site.py`: every `audits/*/report/` folder plus a generated `index.html` listing each audit with its domain and overall score.
 2. Force-pushes that site to the `reports` branch.
-3. Force-pushes it to Spacefast, if the `SPACEFAST_GIT_URL` repository secret is set.
+
+Spacefast is connected to this repository with `reports` as its production branch, so it rebuilds https://auditorias-simian.space.fast/ on every update of that branch.
 
 Only the `report/` folders are published; `raw/`, `findings/` and `screenshots/` stay in `main`.
 
@@ -67,10 +68,6 @@ To preview the site locally:
 python3 tools/build_site.py _site
 open _site/index.html
 ```
-
-### Spacefast setup
-
-Add the Spacefast Git URL, including its token, as a repository secret named `SPACEFAST_GIT_URL` (**Settings → Secrets and variables → Actions**). It is the URL from the `git remote add spacefast ...` command Spacefast shows, for example `https://t:<token>@git.spacefast.com/<space>`. Spacefast space URLs expire after 30 days, so update the secret when you get a new one.
 
 ## Updating the plugin
 
