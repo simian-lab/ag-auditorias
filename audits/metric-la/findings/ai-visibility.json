@@ -1,0 +1,43 @@
+{
+  "source": "consulta manual en ChatGPT, Gemini y Google (visión general con IA), con capturas de pantalla como respaldo",
+  "date": "4 de noviembre de 2026",
+  "brand": "Metric Real Estate",
+  "answers": [
+    {
+      "engine": "ChatGPT",
+      "prompt": "¿Qué inmobiliarias recomiendas para arrendar o comprar un apartamento en Bogotá, en zonas como Chicó o Cabrera?",
+      "mentioned": false,
+      "named": [
+        "BRIKSS",
+        "deBedout",
+        "Tu Casa Inn",
+        "Selecto"
+      ],
+      "note_es": "Recomienda cuatro inmobiliarias con oferta en Chicó y Cabrera, justo donde tienes inmuebles publicados. Al preguntarle después por metric.la, reconoce que Metric no apareció en su recomendación."
+    },
+    {
+      "engine": "Gemini",
+      "prompt": "¿Qué inmobiliarias recomiendas para arrendar o comprar un apartamento en Bogotá, en zonas como Chicó o Cabrera?",
+      "mentioned": false,
+      "named": [
+        "PADS (Property And Design Store)",
+        "Julio Corredor & Cía",
+        "Luque Ospina Inmobiliaria",
+        "Fonnegra Gerlein"
+      ],
+      "note_es": "Las agrupa como firmas de alta gama del norte de Bogotá. Sin búsqueda web, también dice no tener ninguna información sobre metric.la."
+    },
+    {
+      "engine": "Google (visión general con IA)",
+      "prompt": "¿Qué inmobiliarias recomiendas para arrendar o comprar un apartamento en Bogotá, en zonas como Chicó o Cabrera?",
+      "mentioned": false,
+      "named": [
+        "Engel & Völkers",
+        "Mubrick Inmobiliaria",
+        "Brikss S.A.S."
+      ],
+      "note_es": "Mubrick y Brikss aparecen con su ficha de Google, calificación y botones de llamar y cómo llegar. Sin ficha de negocio, Metric no puede competir en este espacio."
+    }
+  ],
+  "no_answer": []
+}

@@ -1,0 +1,215 @@
+### curl -sI https://metric.la/es
+HTTP/2 103 
+link: </_next/static/media/361dab65036aaa05-s.p.woff2>; as=font; crossorigin=; rel=preload; type=font/woff2, </_next/static/media/a7560406a8617b28-s.p.woff2>; as=font; crossorigin=; rel=preload; type=font/woff2, </_next/static/media/d4d543e2c04cd1cb-s.p.woff2>; as=font; crossorigin=; rel=preload; type=font/woff2
+
+HTTP/2 200 
+date: Wed, 04 Nov 2026 20:19:53 GMT
+content-type: text/html; charset=utf-8
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+link: <https://metric.la/es>; rel="alternate"; hreflang="es", <https://metric.la/en>; rel="alternate"; hreflang="en", <https://metric.la/>; rel="alternate"; hreflang="x-default"
+link: </_next/static/media/361dab65036aaa05-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/media/a7560406a8617b28-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/media/d4d543e2c04cd1cb-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2"
+permissions-policy: camera=(), microphone=(self), geolocation=(self), payment=(), usb=(), interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+rndr-id: 1f141aa2-64c5-4369
+server: cloudflare
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-middleware-rewrite: /es
+x-powered-by: Next.js
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+cf-ray: a55650f13c5e0da0-BOG
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI http://metric.la/es
+HTTP/1.1 301 Moved Permanently
+Date: Wed, 04 Nov 2026 20:19:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Location: https://metric.la/es
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: a55650f618000dd6-MIA
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI http://www.metric.la/
+HTTP/1.1 301 Moved Permanently
+Date: Wed, 04 Nov 2026 20:19:55 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Location: https://www.metric.la/
+cf-cache-status: DYNAMIC
+Server: cloudflare
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NL7iIVos6LBPn2IQQ%2BnhdRKRgzye9Q670z9KQFP%2FPAggCp4%2B%2BDSZXpjq%2BaassqjZRyXaNYkyMm6rcerQYNb%2Bdr4XJec%2FYdSPDI%2B1%2BaD%2FmBU1kIjnYQEXgOHGwiDUem3J0WecFdhqaQltt9i7"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+CF-RAY: a55650fb290fa590-MIA
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI https://www.metric.la/
+HTTP/2 301 
+date: Wed, 04 Nov 2026 20:19:55 GMT
+content-type: text/html; charset=utf-8
+location: https://metric.la/
+cf-cache-status: DYNAMIC
+server: cloudflare
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=2pn2aHCs7KPrMEF9l8rjfu5AtJfUfTdnqCiJCLgTZCEVB6AAdWq%2B64RGgYooJ3x6MIzWjw38pPZAi9EhVXaYZxYTllh1bJxvMa6mmvgZh%2FuHT%2FJ8HPJ0zUZ86jK2H2hJgBXgvOVkpxjiFwqf"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a55650feaf99d1b7-ATL
+alt-svc: h3=":443"; ma=86400
+
+### curl -sI https://metric.la/
+HTTP/2 307 
+date: Wed, 04 Nov 2026 20:19:55 GMT
+link: <https://metric.la/es>; rel="alternate"; hreflang="es", <https://metric.la/en>; rel="alternate"; hreflang="en", <https://metric.la/>; rel="alternate"; hreflang="x-default"
+location: /es
+permissions-policy: camera=(), microphone=(self), geolocation=(self), payment=(), usb=(), interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+rndr-id: 189a8f14-b8c2-440f
+server: cloudflare
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+cf-ray: a5565100abd649e0-BOG
+alt-svc: h3=":443"; ma=86400
+
+### 404 test https://metric.la/es/pagina-que-no-existe-simian-123
+status=404 size=6128
+### CSS https://metric.la/_next/static/css/60d9f8ac480670b0.css
+HTTP/2 200 
+date: Wed, 04 Nov 2026 20:19:56 GMT
+content-type: text/css; charset=UTF-8
+cache-control: public, max-age=31536000, immutable
+etag: W/"8124-1a1a77ce2b0"
+last-modified: Wed, 04 Nov 2026 16:55:42 GMT
+permissions-policy: camera=(), microphone=(self), geolocation=(self), payment=(), usb=(), interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+rndr-id: c68e4682-84de-4943
+server: cloudflare
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+vary: Accept-Encoding
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+cf-ray: a55651045f7f3eeb-BOG
+alt-svc: h3=":443"; ma=86400
+
+### JS https://metric.la/_next/static/chunks/webpack-bd02dd0d4c43618c.js
+HTTP/2 200 
+date: Wed, 04 Nov 2026 20:19:56 GMT
+content-type: application/javascript; charset=UTF-8
+cache-control: public, max-age=31536000, immutable
+etag: W/"e89-1a1a77ce2b0"
+last-modified: Wed, 04 Nov 2026 16:55:42 GMT
+permissions-policy: camera=(), microphone=(self), geolocation=(self), payment=(), usb=(), interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+rndr-id: 6b997a98-9b37-4e73
+server: cloudflare
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+vary: Accept-Encoding
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+cf-ray: a5565106bc15bd01-BOG
+alt-svc: h3=":443"; ma=86400
+
+### IMG
+HTTP/2 200 
+date: Wed, 04 Nov 2026 20:19:57 GMT
+content-type: image/jpeg
+content-length: 72713
+cf-ray: a5565109ca744583-ATL
+cf-cache-status: MISS
+accept-ranges: bytes
+age: 1739
+cache-control: max-age=14400
+etag: "cfZfk82fb57LqrnyWnTlXaSykS9DzkFB7UX7pgjb35DQ:2b1209e5bc829e0ee6fa05765939dec7"
+last-modified: Tue, 03 Nov 2026 20:28:26 GMT
+server: cloudflare
+vary: accept
+cf-resized: internal=ok/h q=0 n=45+0 c=96+140 v=2026.11.0 l=72713 f=false c2=1 wv=2026.10.0
+content-security-policy: default-src 'none'; navigate-to 'none'; form-action 'none'; img-src data:; style-src 'unsafe-inline';
+priority: u=1;i=?0,cf-chb=(260;u=3;i=?0 8227;u=5;i=?0 29520;u=6;i=?0)
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=J%2F5i3acXKyf078MKPUUfxo8HNSQFp2Jw%2FxHDmY%2BC11%2BssKU8mnWEzOKZXG%2FT6%2Fj%2BCmAvjegU7hsKIWm%2FmGr6toVx0kkz0Gh4QZu2XLnMfqsegW0lFU%2BHXqM%2FvoZgfoZ0DA8y0MpYidCaqpEWA48%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+### FONT
+HTTP/2 200 
+date: Wed, 04 Nov 2026 20:19:57 GMT
+content-type: font/woff2
+content-length: 44872
+accept-ranges: bytes
+cache-control: public, max-age=31536000, immutable
+etag: W/"af48-1a1a77ce2b0"
+last-modified: Wed, 04 Nov 2026 16:55:42 GMT
+permissions-policy: camera=(), microphone=(self), geolocation=(self), payment=(), usb=(), interest-cohort=()
+referrer-policy: strict-origin-when-cross-origin
+rndr-id: c22b0f6b-5b1e-4d80
+server: cloudflare
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+cf-ray: a556510d6df2376b-BOG
+alt-svc: h3=":443"; ma=86400
+
+### /api/favorites
+status=401
+### Internal links from home.html (GET, follow redirects)
+200 1 https://metric.la/contacto -> https://metric.la/es/contacto
+200 0 https://metric.la/es -> https://metric.la/es
+200 0 https://metric.la/es/about -> https://metric.la/es/about
+200 0 https://metric.la/es/buscar -> https://metric.la/es/buscar
+200 2 https://metric.la/es/comercial/venta -> https://metric.la/es/buscar?categoria=comercial&estado=Venta
+200 0 https://metric.la/es/contacto -> https://metric.la/es/contacto
+200 0 https://metric.la/es/cuenta/ingresar -> https://metric.la/es/cuenta/ingresar
+200 2 https://metric.la/es/residencial/venta -> https://metric.la/es/buscar?categoria=residencial&estado=Venta
+200 0 https://metric.la/es/servicios -> https://metric.la/es/servicios
+200 1 https://metric.la/privacy -> https://metric.la/es/privacy
+200 1 https://metric.la/propiedades/apartamento-en-cabrera-mvrbtqh3 -> https://metric.la/es/propiedades/apartamento-en-cabrera-mvrbtqh3
+200 1 https://metric.la/propiedades/apartamento-en-chico-reservado-mvvl1l2w -> https://metric.la/es/propiedades/apartamento-en-chico-reservado-mvvl1l2w
+200 1 https://metric.la/propiedades/apartamento-en-chico-virrey-mw15eity -> https://metric.la/es/propiedades/apartamento-en-chico-virrey-mw15eity
+200 1 https://metric.la/propiedades/apartamento-en-manzanillo-mt0af9af -> https://metric.la/es/propiedades/apartamento-en-manzanillo-mt0af9af
+200 1 https://metric.la/propiedades/apartamento-en-palermo-mvv68w04 -> https://metric.la/es/propiedades/apartamento-en-palermo-mvv68w04
+200 1 https://metric.la/propiedades/casa-en-guaymaral-mvkmfz01 -> https://metric.la/es/propiedades/casa-en-guaymaral-mvkmfz01
+200 1 https://metric.la/terminos -> https://metric.la/es/terminos
+200 0 https://metric.la/en -> https://metric.la/en
+200 0 https://metric.la/es -> https://metric.la/es
+### Images from home.html
+200 https://metric.la/_next/static/chunks/1528-4c237f04936bcb9a.js
+200 https://metric.la/_next/static/chunks/1dd3208c-fc5ebc2cd43fa7c9.js
+200 https://metric.la/_next/static/chunks/2680-4b91bfcf355d71c0.js
+200 https://metric.la/_next/static/chunks/3765-413493244ca036dc.js
+200 https://metric.la/_next/static/chunks/4550-535b5a195e919996.js
+200 https://metric.la/_next/static/chunks/5926-e0f58b0563534ef1.js
+200 https://metric.la/_next/static/chunks/6312-5654d7e100db7e82.js
+200 https://metric.la/_next/static/chunks/6337-31a8c0cae546bcdd.js
+200 https://metric.la/_next/static/chunks/6988-bbfdea45cb2751b3.js
+200 https://metric.la/_next/static/chunks/8295-5e81115c70a921c8.js
+200 https://metric.la/_next/static/chunks/8654-272d5af7fdb2c0aa.js
+200 https://metric.la/_next/static/chunks/app/%5Blocale%5D/error-e5b8897ade95cec5.js
+200 https://metric.la/_next/static/chunks/app/%5Blocale%5D/layout-732ebcaf4267ab1e.js
+200 https://metric.la/_next/static/chunks/app/%5Blocale%5D/page-a8e4f8f5cbe0fdcf.js
+200 https://metric.la/_next/static/chunks/app/global-error-3dd737928737d20a.js
+200 https://metric.la/_next/static/chunks/main-app-96a21c0949a75cf5.js
+200 https://metric.la/_next/static/chunks/polyfills-42372ed130431b0a.js
+200 https://metric.la/_next/static/chunks/webpack-bd02dd0d4c43618c.js
+200 https://metric.la/metric-icon.svg
+200 https://metric.la/metric-logo.svg
+200 https://media.metric.la/cdn-cgi/image/width=1600,quality=85,format=auto,fit=scale-down/pexels_artbovich_6908502_be3e08b727.jpg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/1_5ca473b5.jpg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/1_acef3f03.jpg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/201652120261022084239_3772cb49.jpeg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/DJI_20261027_105748_140_cc1ee7ee.jpg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/IMG_5477_e9a6f096.jpg
+200 https://media.metric.la/cdn-cgi/image/width=600,quality=85,format=auto,fit=scale-down/ventaapartamento_en_morros_kai_1749332276-2557_8904_8d25d53b.jpeg

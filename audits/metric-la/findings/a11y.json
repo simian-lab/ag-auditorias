@@ -1,0 +1,132 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Textos del inicio se leen mal sobre la foto",
+      "summary": "La frase que explica tu propuesta (IA, favoritos, alertas, app) se pierde sobre la foto para quien ve menos o mira el celular al sol.",
+      "now": "El subtítulo y la línea \"Gratis · iOS y Android · ES / EN\" están en blanco semitransparente encima de una foto con zonas claras (piso y ventanales). El contraste medido queda entre 2,5:1 y 3,3:1, cuando el mínimo recomendado es 4,5:1.",
+      "fix": "Oscurecer la capa sobre la foto en la zona del texto (o poner el subtítulo sobre una franja sólida) hasta lograr al menos 4,5:1, y subir la línea \"Gratis…\" de 10 px a un tamaño legible.",
+      "why": "Si el visitante no entiende de un vistazo qué ofrece la app, no la descarga ni sigue buscando.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "2,5:1",
+      "evidence": [
+        "Hero <p> subtitle: color rgba(255,255,255,0.9), 16px desktop / 13.5px mobile, over <img> with overlay linear-gradient(rgba(0,0,0,0.58) 0% → rgba(0,0,0,0.16) 66%).",
+        "Caption <p>Gratis · iOS y Android · ES / EN: font-size 10px, color rgba(255,255,255,.9), text-shadow 0 1px 10px rgba(0,0,0,.55).",
+        "Pixel sampling of screenshots/desktop-viewport.png: background around subtitle (x455–985, y268–297) median rgb(127–131,128–133,126–132) → 3,3–3,5:1; 90th percentile rgb(157,163,160) → 2,4:1.",
+        "Background right under the caption (x600–840, y412–416) median rgb(161,157,152) → 2,5:1; 90th percentile → 1,6:1.",
+        "Lighthouse color-contrast audit passes because axe cannot measure text over images (marked incomplete, not failed)."
+      ],
+      "technical_note": "Ratios computed with the WCAG 2.x relative-luminance formula, compositing the 0.9 alpha white over the sampled pixel. H1 (52px serif, pure white) sits on a darker area (median 5,6:1) and passes as large text; the issue is the smaller text below it. Same composition on mobile (screenshots/mobile-fullpage.jpg, hero at top).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 40}
+    },
+    {
+      "id": "a11y-2",
+      "title": "El formulario de contacto no nombra sus campos",
+      "summary": "Una persona que usa lector de pantalla llega a tu formulario de contacto y escucha \"campo de texto\" sin saber qué escribir, y puede abandonar el contacto.",
+      "now": "En /es/contacto se ven las etiquetas \"Nombre\", \"Correo\", \"Asunto (opcional)\" y \"Mensaje\", pero no están conectadas a sus campos. Para la tecnología de asistencia los cuatro campos no tienen nombre. Además, el borde de los campos casi no se distingue del fondo blanco (1,4:1).",
+      "fix": "Conectar cada etiqueta con su campo (for/id), marcar cuáles son obligatorios en el texto y darle a los bordes de los campos un gris más oscuro (al menos 3:1).",
+      "why": "El formulario es una de tus vías directas para captar clientes; si no se puede llenar, ese contacto se pierde.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "4 de 4 campos sin nombre",
+      "evidence": [
+        "raw/a11y-contacto.html: <label style=\"...\">Nombre</label><input maxLength=\"120\" autoComplete=\"name\" required=\"\" ...> — label has no for, input has no id, aria-label, aria-labelledby or placeholder, and is not wrapped by the label.",
+        "Same pattern for Correo (type=email, autocomplete=email), Asunto (opcional) and Mensaje (textarea).",
+        "Input border rgb(216,216,216) on white = 1,43:1 (WCAG 1.4.11 asks 3:1 for component boundaries).",
+        "Positive: autocomplete=name/email and type=email are set correctly; honeypot field is properly hidden with tabindex=-1."
+      ],
+      "technical_note": "Lighthouse only ran on the homepage, so this failure (axe 'label' rule) is not reflected in its 93/100 score. Form error handling was not tested to avoid sending a message; fields rely on native `required` validation.",
+      "pin": null
+    },
+    {
+      "id": "a11y-3",
+      "title": "El buscador principal no se explica a todos",
+      "summary": "El buscador de inmuebles, la herramienta más importante del sitio, tiene controles que un lector de pantalla no puede describir bien.",
+      "now": "El selector de \"Ciudad\" no tiene etiqueta asociada (Lighthouse lo marca como fallo). El campo del código del inmueble solo tiene un texto de ejemplo y abre el teclado numérico aunque el código lleva letras (\"ME-2722\"). Los botones Residencial/Comercial y Comprar/Arrendar/Proyectos indican cuál está activo solo con el color.",
+      "fix": "Asociar la etiqueta \"Ciudad\" al selector, dar una etiqueta real al campo de código, usar un teclado de texto y anunciar qué opción está seleccionada en cada grupo de botones.",
+      "why": "Si alguien no puede filtrar por ciudad u operación, no encuentra el inmueble y se va a otra inmobiliaria.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse (mobile and desktop) audit select-name score 0: selector `div > div.flex > div.dock-field > select.dock-field-select`.",
+        "raw/home.html: the visible text 'Ciudad' is a plain <div>, not a <label>; the <select> has no aria-label.",
+        "Code input: <input type=\"text\" inputMode=\"numeric\" placeholder=\"Ej: ME-2722\" value=\"ME-\"> — no label, preceded by a <span>¿Tienes el código de un inmueble?</span> not linked to it; numeric inputmode cannot type the 'ME-' letters on mobile keyboards.",
+        "Toggle buttons Residencial/Comercial/Comprar/Arrendar/Proyectos: aria-pressed count in home.html = 0; active state shown only by background/color styles.",
+        "Range triggers Alcobas/Metros/Precio open a popover on Enter (tested via CDP) but expose no aria-expanded."
+      ],
+      "technical_note": "The search dock is rendered twice in the DOM (mobile and desktop variants), so each issue appears twice. Lighthouse 'label' passes for the code input only because axe accepts a placeholder as an accessible name.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 24, "y_pct": 70}
+    },
+    {
+      "id": "a11y-4",
+      "title": "Al navegar con teclado, el foco desaparece",
+      "summary": "Quien navega con teclado pierde de vista dónde está justo en el buscador, en el pie de página y en el aviso de cookies.",
+      "now": "El sitio tiene un borde de foco verde muy oscuro que funciona bien sobre fondos claros. Pero el selector de ciudad y el campo de código lo eliminan, y en el pie de página y en el aviso de cookies (fondo verde oscuro) el borde es del mismo color que el fondo: no se ve nada.",
+      "fix": "Restaurar el indicador de foco en el selector y el campo de código, y usar un color de foco claro (o doble anillo claro/oscuro) en las zonas oscuras y sobre la foto.",
+      "why": "Sin ver el foco, quien no usa ratón no puede aceptar cookies, abrir enlaces del pie ni escribir el código de un inmueble con confianza.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "1,0:1",
+      "evidence": [
+        "raw/a11y-css/main.css: `:focus-visible{outline:2px solid var(--me-green-900);outline-offset:2px}` with --me-green-900 = #071a1b.",
+        "Headless Chrome Tab walk (CDP, 1440×900): SELECT.dock-field-select computed outline 'none'; code INPUT computed outline 'none' (inline style outline:none).",
+        "Footer links (Facebook, Instagram, Términos, Privacidad, Contacto, WhatsApp) and cookie banner 'Más información' / 'Entendido': outline rgb(7,26,27) over parent background rgb(7,26,27) → 1,0:1.",
+        "Focus ring on light header/cards: #071a1b on white = 17,9:1 (works).",
+        "App Store / Google Play links in the hero: dark ring drawn over the darkened photo, low visibility."
+      ],
+      "technical_note": "Tab order is logical and there is no focus trap; the cookie banner is reached last, after the footer.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 98}
+    },
+    {
+      "id": "a11y-5",
+      "title": "Las fichas de inmuebles se escuchan como números sueltos",
+      "summary": "Un lector de pantalla anuncia cada inmueble como una lista confusa de números y botones, así que comparar opciones se vuelve casi imposible.",
+      "now": "Los datos de alcobas, baños, área y parqueaderos se muestran con íconos sin texto: se escucha \"3, 3, 203 m², 1\". Además, toda la ficha es un enlace que contiene dentro los botones de WhatsApp, favoritos y flechas de fotos, y su nombre es un texto larguísimo con \"‹ ›\" incluido.",
+      "fix": "Añadir a cada ícono un texto oculto (\"3 alcobas\", \"3 baños\"...) y separar los botones de la ficha del enlace, dejando como enlace el título del inmueble.",
+      "why": "Los datos básicos del inmueble son lo que el comprador necesita para decidir si te contacta.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html card spec row: <span><svg ...></svg>3</span><span><svg ...></svg>3</span><span><svg ...></svg>203 m²</span><span><svg ...></svg>1</span> — svgs have no title/aria-label and there is no visually hidden text (sr-only count = 0).",
+        "Each card is <a class=\"me-card\"> containing 4 <button>s (Consultar por WhatsApp, Agregar a favoritos, Foto anterior, Foto siguiente): 24 buttons nested inside 6 links.",
+        "CDP Tab walk: the card link's accessible text starts 'VENTA ‹ › Apartamento en Chico Virrey 1,500,000,00…'.",
+        "Icon buttons themselves do have aria-labels (WhatsApp, favoritos, foto anterior/siguiente)."
+      ],
+      "technical_note": "Interactive content inside <a> is invalid HTML (nested-interactive); behavior varies across screen readers and some announce the inner buttons as part of the link. Card images have alt = property title, which duplicates the h3 but is acceptable.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 39}
+    },
+    {
+      "id": "a11y-6",
+      "title": "La portada no marca dónde empieza el contenido",
+      "summary": "Quien usa lector de pantalla o teclado debe recorrer todo el menú antes de llegar a buscar, y la nota 93/100 de Lighthouse da una falsa sensación de que todo está bien.",
+      "now": "La página de inicio no tiene la zona \"contenido principal\" (Lighthouse lo marca como fallo) ni un enlace para saltar el menú: hay 11 paradas de teclado antes del primer contenido. La página de contacto sí tiene esa zona.",
+      "fix": "Envolver el contenido del inicio en una zona principal y añadir un enlace \"Saltar al contenido\" al comienzo de cada página.",
+      "why": "Pequeños arreglos de estructura hacen que el sitio sea usable para más personas y reducen el riesgo de reclamos por accesibilidad.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse (mobile and desktop) landmark-one-main score 0: 'Document does not have a main landmark' on html.",
+        "raw/home.html: landmarks found = header, nav, section, footer; no <main>. raw/a11y-contacto.html does have <main>.",
+        "No skip link in home.html ('skip'/'Saltar' count 0); CDP Tab walk: 11 header stops (logo, Residencial, submenu, Comercial, submenu, Servicios, Nosotros, Cambiar país, Idioma, Ingresar, Contacto) before the hero.",
+        "Lighthouse accessibility score 93 (mobile and desktop): it only fails select-name and landmark-one-main; it does not judge text over images, focus visibility on dark backgrounds, unlabeled icon data or pages other than the home."
+      ],
+      "technical_note": "Mobile menu button is labeled in English ('Toggle menu') on a Spanish page; heading order (one H1, H2, H3s) is correct on home and contact.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "partial", "evidence": "Solid-background text passes (e.g. --me-mute #666b70 on white 5,4:1; on #ececea 4,55:1; 'Ver todos' 4,7:1; footer links 7,4:1; contact labels 5,0:1). Text over the hero photo fails: subtitle ~3,3:1 median down to 2,4:1, caption 'Gratis…' (10px) ~2,5:1."},
+    {"id": "a11y-text-not-image", "result": "pass", "evidence": "H1, subtitle, app badges, search and cards are live text; hero <img> has no baked-in copy."},
+    {"id": "a11y-alt", "result": "pass", "evidence": "9 <img>: hero photo alt=\"\" (decorative), header logo alt=\"\" inside link with aria-label 'Metric Real Estate — inicio', card photos alt = property title, footer icon alt 'Metric Real Estate'. No file-name alts."},
+    {"id": "a11y-headings", "result": "pass", "evidence": "Home: one H1 'Tu próximo hogar, en tu bolsillo', H2 'Descubre estos inmuebles', H3 per card. Contact: H1 'Contáctanos', H2 'Escríbenos'. Lighthouse heading-order passes."},
+    {"id": "a11y-names", "result": "pass", "evidence": "Icon-only controls have aria-labels: Consultar por WhatsApp, Agregar a favoritos, Foto anterior/siguiente, Mapa, Facebook, Instagram, Mostrar secciones de…; Lighthouse button-name/link-name pass. Minor: mobile menu labeled 'Toggle menu' in English."},
+    {"id": "a11y-focus", "result": "partial", "evidence": "Global :focus-visible 2px #071a1b ring is visible on light areas (17,9:1 on white). Missing on select.dock-field-select and the code input (computed outline none) and invisible on footer/cookie banner (ring same color as background, 1,0:1)."},
+    {"id": "a11y-keyboard", "result": "pass", "evidence": "CDP Tab walk reached all header, search, card and footer controls with no trap; 'Mostrar secciones de Residencial' opens with Enter (aria-expanded true) and closes with Escape; Alcobas popover opens with Enter and closes with Escape; photo arrows reachable. No chat widget."},
+    {"id": "a11y-form-labels", "result": "fail", "evidence": "Contact form: labels Nombre/Correo/Asunto/Mensaje not associated (no for/id, not wrapping) → 4 unnamed fields. Home search: select-name fails in Lighthouse; code input placeholder-only with inputmode=numeric for alphanumeric 'ME-' codes. Autocomplete and type=email are correct on contact."},
+    {"id": "a11y-motion", "result": "partial", "evidence": "No auto-advancing carousel, video or infinite animation on home. Hover/transition effects are wrapped in prefers-reduced-motion:no-preference, but entrance animations .me-stagger (meRise .48s) and .me-img-in (meImgIn .36s) run regardless of reduced-motion."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> on /es pages; Lighthouse html-has-lang passes."},
+    {"id": "a11y-targets", "result": "pass", "evidence": "Lighthouse target-size passes on mobile and desktop; viewport allows zoom (width=device-width, initial-scale=1). Card icon buttons 32×32, photo arrows 28×28; footer social icons 20×20 rely on the WCAG spacing exception (below the 44px recommendation)."}
+  ]
+}

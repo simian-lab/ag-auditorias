@@ -1,0 +1,132 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "En celular la página tarda en responder al toque",
+      "summary": "En un celular de gama media el sitio se ve pronto, pero tarda varios segundos más en reaccionar cuando el visitante intenta buscar o abrir una propiedad.",
+      "now": "En la prueba de celular (Lighthouse con red y procesador simulados) la página queda lista para usarse a los 8,1 s; el navegador pasa 3,1 s procesando código y queda bloqueado 460 ms. En computador todo está por debajo de 1 s.",
+      "fix": "Reducir y diferir el código que se ejecuta al abrir la página (cargar los rastreadores de publicidad y analítica después de que el visitante interactúe y dividir el código de la página) para que el celular responda al primer toque.",
+      "why": "La mayoría de quienes buscan vivienda empiezan desde el celular, y una página que no responde de inmediato genera abandono antes de ver las propiedades.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "8,1 s",
+      "evidence": [
+        "Lighthouse mobile (simulated slow 4G + 4x CPU): interactive 8,1 s, total-blocking-time 460 ms, mainthread-work-breakdown 3,1 s (Other 1220 ms, Script Evaluation 932 ms, Style & Layout 433 ms)",
+        "Lighthouse mobile performance score 0,68; desktop 0,98 (desktop TTI 0,9 s, TBT 0 ms)",
+        "Lighthouse mobile largest-contentful-paint 4,7 s (lab) vs observedLargestContentfulPaint 2327 ms; LCP element: body.overflow-x-hidden > section.relative > div.relative > img.w-full (hero image)",
+        "lcp-breakdown-insight mobile: TTFB 194 ms, resource load delay 767 ms, load duration 380 ms, element render delay 986 ms",
+        "bootup-time mobile: _next/static/chunks/1528-4c237f04936bcb9a.js 411 ms, 1dd3208c-fc5ebc2cd43fa7c9.js 262 ms, gtag/js 141 ms, Facebook config 84+ ms"
+      ],
+      "technical_note": "Next.js (App Router, x-powered-by: Next.js) behind Cloudflare. The lab LCP of 4,7 s is largely a throttling artifact (observed LCP 2,3 s); the real cost is main-thread time and element render delay (~1 s) from hydration plus third-party scripts. Hero <img> already has fetchpriority=high and loading=eager and is preloaded via <link rel=preload imageSrcSet>, but lcp-discovery-insight still flags priorityHinted=false (the preload link has no fetchpriority). legacy-javascript-insight: ~23 KiB of polyfills (core-js-pure 3.32.2, Array.prototype.at/flat) in chunk 1528.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 8}
+    },
+    {
+      "id": "tech-2",
+      "title": "Los rastreadores de publicidad pesan casi la mitad",
+      "summary": "Casi 4 de cada 10 kilobytes que descarga el visitante son de Facebook y Google, no de tus propiedades, y eso hace más lenta la primera visita en celular.",
+      "now": "La página principal pesa 938 KiB en total; 371,5 KiB corresponden a 5 archivos de Facebook Pixel y Google Analytics. Lighthouse estima que 145 KiB de ese código no se usa al cargar.",
+      "fix": "Revisar qué eventos de Facebook y Google realmente se usan, cargar ambos rastreadores de forma diferida (después de la interacción o del consentimiento de cookies) y evitar duplicar etiquetas.",
+      "why": "Mantener la medición de campañas sin que esta compita con las fotos y la búsqueda de propiedades por la conexión del visitante.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "371,5 KiB",
+      "evidence": [
+        "Lighthouse mobile total-byte-weight: 938 KiB (0,92 MB); 45 requests",
+        "Top 5 by transfer size (mobile): googletagmanager.com/gtag/js?id=G-WK8D24W5SX 162,1 KiB; connect.facebook.net/en_US/fbevents.js 114,5 KiB; connect.facebook.net/signals/config/445316774293717 94,0 KiB; media.metric.la .../DJI_20261027_105748_140_cc1ee7ee.jpg (AVIF) 57,7 KiB; media.metric.la .../IMG_5477_e9a6f096.jpg (AVIF) 56,5 KiB",
+        "Facebook + Google requests: 371,5 KiB across 5 requests (~40 % of 938 KiB)",
+        "unused-javascript (mobile and desktop): est. savings 145 KiB (gtag 72,7 KiB wasted of 165,7 KiB; fbevents 41,8 KiB wasted of 114,3 KiB)",
+        "third-parties-insight: Facebook 213,9 KiB transfer"
+      ],
+      "technical_note": "fbevents.js is served by Facebook with a 20-minute cache lifetime (cache-insight), so it is re-downloaded on most repeat visits; this cannot be fixed on the origin, only mitigated by deferring the pixel (e.g. load on interaction / after cookie consent, or server-side Conversions API).",
+      "pin": null
+    },
+    {
+      "id": "tech-3",
+      "title": "Las fotos de propiedades se guardan solo 4 horas",
+      "summary": "Quien vuelve a tu sitio al día siguiente para comparar propiedades descarga otra vez todas las fotos, y la página se siente más lenta de lo necesario.",
+      "now": "El código y las tipografías se guardan en el navegador por un año, pero las fotos de propiedades (media.metric.la) se guardan solo 4 horas. Lighthouse estima 318 KiB que se podrían evitar en cada visita repetida desde celular.",
+      "fix": "Configurar en Cloudflare que las fotos procesadas se guarden al menos 30 días (las URLs ya cambian cuando cambia la foto, así que es seguro).",
+      "why": "Comprar o arrendar vivienda implica varias visitas al sitio; cada visita repetida debe ser más rápida, no igual de pesada.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "4 horas",
+      "evidence": [
+        "curl -sI https://media.metric.la/cdn-cgi/image/width=800,quality=85,format=auto,fit=scale-down/IMG_5477_e9a6f096.jpg -> cache-control: max-age=14400 (raw/tech-headers.txt)",
+        "curl -sI /_next/static/css/60d9f8ac480670b0.css, /_next/static/chunks/webpack-bd02dd0d4c43618c.js, /_next/static/media/a7560406a8617b28-s.p.woff2 -> cache-control: public, max-age=31536000, immutable",
+        "Lighthouse cache-insight: est. savings 318 KiB (mobile), 332 KiB (desktop); property images listed with cacheLifetimeMs 14400000"
+      ],
+      "technical_note": "Images go through Cloudflare Image Resizing (/cdn-cgi/image/...format=auto) and are already served as AVIF, properly sized (image-delivery-insight savings only 13 KiB mobile / 27 KiB desktop) and lazy-loaded below the fold. Only the Browser Cache TTL / origin Cache-Control for media.metric.la needs raising; filenames carry a content hash suffix (e.g. _e9a6f096), so long TTLs are safe.",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "La página registra errores en cada visita",
+      "summary": "Cada visitante nuevo dispara errores invisibles para él pero que ensucian el diagnóstico técnico y pueden ocultar fallas reales.",
+      "now": "Al abrir el inicio sin haber iniciado sesión, el sitio consulta los favoritos del usuario y el servidor responde con error 401, que queda registrado en la consola. Además, una consulta a un servicio externo de ubicación (ipapi.co) falla dos veces en cada carga.",
+      "fix": "Consultar favoritos solo cuando hay una sesión activa y revisar o reemplazar el servicio de ubicación para que no falle ni frene la página.",
+      "why": "Un sitio sin errores de fondo es más fácil de mantener y evita que una falla real pase desapercibida entre errores de rutina.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "Lighthouse errors-in-console (mobile and desktop), score 0: 'Failed to load resource: the server responded with a status of 401 ()' https://metric.la/api/favorites",
+        "curl https://metric.la/api/favorites without session -> status=401 (raw/tech-headers.txt)",
+        "Lighthouse network-requests (mobile): 2 Fetch requests to https://ipapi.co/json/ with statusCode -1 (failed)"
+      ],
+      "technical_note": "The favorites fetch should be gated on an authenticated session (or the endpoint should return 200 with an empty list for anonymous users). ipapi.co failures may be rate limiting / CORS / blocking in the test environment; worth confirming in production logs since it is a client-side dependency on a third-party geolocation API. Cloudflare already exposes visitor country via the CF-IPCountry header, which would remove the external call.",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "La página de error está en inglés y sin salida",
+      "summary": "Si alguien llega a un enlace viejo o mal escrito, ve una pantalla en blanco en inglés sin menú ni forma de volver a tus propiedades.",
+      "now": "Una dirección que no existe muestra el mensaje genérico '404: This page could not be found.' sin logo, sin menú y sin enlace al buscador.",
+      "fix": "Crear una página de error con la marca Metric, en español, con el buscador de propiedades y enlaces a arriendo, venta y contacto.",
+      "why": "Los enlaces viejos de portales y redes son frecuentes en inmobiliarias; una buena página de error recupera a ese visitante en lugar de perderlo.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "curl https://metric.la/es/pagina-que-no-existe-simian-123 -> status=404, 6128 bytes (raw/tech-404.html)",
+        "raw/tech-404.html <title>: '404: This page could not be found.'; body text only '404 This page could not be found.' (Next.js default not-found, no header/footer/navigation)"
+      ],
+      "technical_note": "Add app/[locale]/not-found.tsx (and a root not-found) rendering inside the locale layout. Related navigation hygiene: several internal links in the homepage omit the locale prefix (/contacto, /privacy, /terminos, /propiedades/<slug>) and each costs one extra redirect to /es/...; /es/residencial/venta and /es/comercial/venta take 2 redirects to /es/buscar?.... Entry chain http://www.metric.la/ -> https://www.metric.la/ -> https://metric.la/ -> /es is 3 hops. All 19 internal links checked resolve to HTTP 200.",
+      "pin": null
+    },
+    {
+      "id": "tech-6",
+      "title": "Seguridad sólida, falta una política de contenido",
+      "summary": "El sitio ya protege bien a tus visitantes; solo falta una capa que limita qué código externo puede ejecutarse en la página.",
+      "now": "El sitio funciona solo con conexión segura, redirige correctamente desde http y tiene 4 de las 5 protecciones estándar activas. Falta la política de seguridad de contenido (CSP).",
+      "fix": "Agregar una política de seguridad de contenido que permita solo tus dominios, Google Analytics y Facebook, empezando en modo de solo reporte para no romper nada.",
+      "why": "Un sitio que maneja datos de contacto y cuentas de usuario gana confianza y reduce el riesgo de que código malicioso se inserte en la página.",
+      "impact": 1,
+      "effort": "Medio",
+      "headline_metric": "4 de 5",
+      "evidence": [
+        "HSTS: present (strict-transport-security: max-age=63072000; includeSubDomains; preload)",
+        "CSP: absent (no content-security-policy on https://metric.la/es)",
+        "X-Frame-Options / frame-ancestors: present (x-frame-options: SAMEORIGIN)",
+        "X-Content-Type-Options: present (nosniff)",
+        "Referrer-Policy: present (strict-origin-when-cross-origin)",
+        "HTTPS: http://metric.la/es -> 301 https://metric.la/es; Lighthouse is-on-https pass (raw/tech-headers.txt)"
+      ],
+      "technical_note": "Also present: permissions-policy (camera=(), microphone=(self), geolocation=(self), payment=(), usb=()). Version disclosure: x-powered-by: Next.js header is sent (can be removed with poweredByHeader: false in next.config). A CSP for Next.js needs nonces or 'unsafe-inline' for inline scripts plus allowances for googletagmanager.com, google-analytics.com, connect.facebook.net, facebook.com and media.metric.la; start with Content-Security-Policy-Report-Only.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "pass", "evidence": "Lighthouse total-byte-weight 938 KiB mobile (0,92 MB), 906 KiB desktop (0,88 MB); below 3 MB."},
+    {"id": "tech-lcp", "result": "pass", "evidence": "observedLargestContentfulPaint mobile 2327 ms (2,3 s) <= 2,5 s; lab LCP 4,7 s is a throttling artifact."},
+    {"id": "tech-images", "result": "pass", "evidence": "Images served as AVIF via Cloudflare Image Resizing (format=auto) with srcset/sizes; image-delivery-insight savings 13 KiB mobile / 27 KiB desktop (< 100 KiB)."},
+    {"id": "tech-lazy", "result": "pass", "evidence": "home.html: 6 property-card images loading=\"lazy\"; hero image loading=\"eager\" fetchpriority=\"high\"; logos are small SVGs."},
+    {"id": "tech-render-blocking", "result": "pass", "evidence": "render-blocking-insight metricSavings FCP 0 ms / LCP 0 ms (single 8,5 KiB CSS file); 3 woff2 font files (17,7 + 44,0 + 30,8 KiB); font-display-insight pass."},
+    {"id": "tech-cache", "result": "partial", "evidence": "JS, CSS and fonts: cache-control public, max-age=31536000, immutable (pass). Property images on media.metric.la: max-age=14400 (4 h, below 7 days) (fail). cache-insight est. savings 318 KiB mobile."},
+    {"id": "tech-https", "result": "pass", "evidence": "http://metric.la/es -> 301 https://metric.la/es; http://www.metric.la/ -> 301 https -> 301 https://metric.la/; HSTS preload; Lighthouse is-on-https pass."},
+    {"id": "tech-security-headers", "result": "pass", "evidence": "4 of 5 present: HSTS, X-Frame-Options SAMEORIGIN, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin; CSP absent."},
+    {"id": "tech-console", "result": "fail", "evidence": "Lighthouse errors-in-console (mobile and desktop): 401 on https://metric.la/api/favorites."},
+    {"id": "tech-links", "result": "pass", "evidence": "19 internal links from home.html all resolve to 200 (some via 1-2 redirects); 7 content images, 2 SVGs and 18 JS chunks all 200 (raw/tech-headers.txt)."},
+    {"id": "tech-404", "result": "partial", "evidence": "Missing URL /es/pagina-que-no-existe-simian-123 returns HTTP 404 (correct status), but the page is the Next.js default in English with no navigation, branding or search (raw/tech-404.html)."}
+  ]
+}

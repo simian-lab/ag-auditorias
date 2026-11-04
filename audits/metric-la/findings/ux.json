@@ -1,0 +1,124 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "La portada invita a descargar la app, no a contactarte",
+      "summary": "El primer botón que ve quien llega es salir del sitio hacia una tienda de apps, no hablar con un asesor.",
+      "now": "Bajo el titular, los botones principales son App Store y Google Play (en celular, solo \"Descargar la app\"). No hay un botón de \"Agendar visita\", \"Hablar con un asesor\" o WhatsApp en esa primera pantalla; en celular el único acceso a Contacto está dentro del menú.",
+      "fix": "Poner como acción principal del encabezado un botón de contacto directo (por ejemplo \"Hablar con un asesor por WhatsApp\") y dejar la descarga de la app como opción secundaria.",
+      "why": "Quien busca vivienda desde Google quiere ver opciones o hablar con alguien ya; pedirle instalar una app antes es un paso que muchos no darán.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html hero: links to https://apps.apple.com/app/id6781863912 and https://play.google.com/store/apps/details?id=la.metric.app; caption 'Gratis · iOS y Android · ES / EN'",
+        "Mobile emulation 412x860 (screenshots/ux-mobile-menu.png run): visible links/buttons in first viewport = logo, 'Toggle menu', 'Descargar la app', search controls, cookie banner; no Contacto or WhatsApp",
+        "screenshots/desktop-viewport.png: App Store / Google Play buttons at ~(650-855, 362); header 'Contacto' button at top-right is the only contact action",
+        "screenshots/mobile-fullpage.jpg: 'Descargar la app' is the only button in the hero"
+      ],
+      "technical_note": "Hero section: section.relative.h-[430px].md:h-[560px]. The per-card WhatsApp buttons (aria-label 'Consultar por WhatsApp') appear only further down, inside property cards.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 40}
+    },
+    {
+      "id": "ux-2",
+      "title": "El titular no dice qué ofreces ni dónde",
+      "summary": "Quien llega no lee en el titular que eres una inmobiliaria de compra y arriendo en Bogotá; lee un mensaje sobre una app.",
+      "now": "El titular es \"Tu próximo hogar, en tu bolsillo\" y el subtítulo habla de \"Búsqueda con IA, favoritos y alertas al instante — en la app de Metric\". No se menciona inmobiliaria, venta o arriendo, ni Bogotá; el selector de ciudad del buscador arranca vacío (\"-\").",
+      "fix": "Reescribir el titular para que diga qué haces y dónde, por ejemplo \"Apartamentos y casas en venta y arriendo en Bogotá\", y mover el mensaje de la app al subtítulo.",
+      "why": "En los primeros segundos el visitante decide si está en el sitio correcto; si no lo entiende rápido, vuelve a Google.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html h1: 'Tu próximo hogar, en tu bolsillo'",
+        "raw/home.html subtitle: 'Búsqueda con IA, favoritos y alertas al instante — en la app de Metric, o aquí mismo en la web.'",
+        "Ciudad select default option '-' (options: Bogotá, Cartagena, Medellín, Santa Marta, Villavicencio)",
+        "screenshots/desktop-viewport.png and screenshots/mobile-fullpage.jpg: headline fully visible, no location or service named"
+      ],
+      "technical_note": "User-supplied screenshot (~1870px wide) showed the headline cut off/covered by property cards with a collapsed hero. NOT reproduced: headless Chrome at 1870x1000, 1870x700 and 2560x1300, including scroll to 300/800/1500 px and back to top via CDP, always measured hero height 560px, h1 at top 145-261px and 'Descubre estos inmuebles' h2 at 788px (screenshots/ux-home-1870x1000.png, ux-home-1870x700-after-scroll.png, ux-home-2560x1300.png). Hero height is fixed in CSS (h-[430px] md:h-[560px]), not viewport-based. Possibly a transient render, browser zoom or extension in the user's session; not reported as a defect.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 23}
+    },
+    {
+      "id": "ux-3",
+      "title": "La portada no muestra ninguna razón para confiar",
+      "summary": "Quien va a comprar o arrendar un inmueble de cientos de millones no encuentra en la portada nada que respalde a Metric.",
+      "now": "La portada tiene solo el buscador y 6 inmuebles destacados. No hay años de experiencia, número de clientes o inmuebles, testimonios ni reseñas. El dato \"más de 300 propiedades\" solo aparece en Servicios, y la licencia de Florida solo en Nosotros.",
+      "fix": "Agregar junto a los inmuebles destacados una franja corta con datos reales (inmuebles disponibles, años, zonas atendidas) y 2 o 3 testimonios de clientes.",
+      "why": "En decisiones grandes como una vivienda, la confianza en la inmobiliaria pesa tanto como el inmueble.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html visible text is ~1,300 characters: header, hero, search, 6 property cards, footer links; no 'años', 'clientes' or testimonial content",
+        "raw/ux-servicios.html: 'contamos con más de 300 propiedades residenciales y comerciales'",
+        "raw/ux-about.html: Florida license CQ1074903 (Metric Real Estate LLC) shown only on /es/about",
+        "screenshots/desktop-fullpage.jpg: page goes from property grid directly to footer"
+      ],
+      "technical_note": "Trust content exists on inner pages (/es/servicios, /es/about) but is not surfaced near the search or the property grid on the home.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 28, "y_pct": 49}
+    },
+    {
+      "id": "ux-4",
+      "title": "El formulario de contacto no pide teléfono",
+      "summary": "Los contactos que llegan por la página de contacto no traen celular ni qué buscan, y el asesor tiene que escribir antes de poder llamar.",
+      "now": "El formulario de Contacto pide Nombre, Correo, Asunto (opcional) y Mensaje. No pide celular, si quiere comprar o arrendar, zona ni presupuesto. La promesa de respuesta es \"te responderemos lo antes posible\", sin un plazo.",
+      "fix": "Agregar celular, una opción de comprar / arrendar / vender, zona y presupuesto, y prometer un tiempo concreto de respuesta (por ejemplo \"te llamamos el mismo día hábil\").",
+      "why": "En inmobiliaria el negocio se cierra por llamada o WhatsApp; un contacto sin teléfono se enfría antes de la primera conversación.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/ux-contacto.html labels: 'Nombre' (required, autocomplete=name), 'Correo' (type=email, required), 'Asunto (opcional)', 'Mensaje' (textarea, required); honeypot 'website'",
+        "raw/ux-contacto.html intro: 'Escríbenos o llámanos y te responderemos lo antes posible.'",
+        "By contrast raw/ux-propiedad.html 'Solicita una cita' form includes 'Celular' (type=tel, optional) and confirmation 'Te contactamos muy pronto.'"
+      ],
+      "technical_note": "Contact form has no tel input; required fields are not visually marked (labels have no asterisk). Servicios 'Me interesa' links to /es/contacto?service=Venta-Arriendo; whether that param pre-fills the Asunto field was not verified.",
+      "pin": null
+    },
+    {
+      "id": "ux-5",
+      "title": "Teléfono y correo no aparecen en el pie de página",
+      "summary": "Quien quiere llamar desde cualquier página tiene que ir hasta Contacto para encontrar el número.",
+      "now": "El pie de página solo tiene Términos, Privacidad, Contacto y WhatsApp. No muestra teléfono, correo, dirección ni ciudad de la oficina. El teléfono +57 311 264 8768 y el correo hello@metric.la solo están en la página de Contacto (el correo también en Nosotros).",
+      "fix": "Mostrar en el pie de todas las páginas el teléfono y el correo como enlaces que se pueden tocar, junto con la ciudad y dirección de la oficina en Bogotá.",
+      "why": "Ver un teléfono y una dirección reales da tranquilidad y permite llamar con un toque desde el celular.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html footer text: 'Términos y Condiciones · Privacidad · Contacto · WhatsApp'; no tel: or mailto: links on home",
+        "raw/ux-servicios.html: no tel:/mailto: links; raw/ux-about.html: mailto:hello@metric.la only",
+        "raw/ux-contacto.html: tel:+573112648768 and mailto:hello@metric.la",
+        "screenshots/desktop-fullpage.jpg footer at y≈1610px of 1654px"
+      ],
+      "technical_note": "Footer WhatsApp link https://api.whatsapp.com/send?phone=573112648768 has no prefilled text (property cards and property pages do prefill).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 80, "y_pct": 97}
+    },
+    {
+      "id": "ux-6",
+      "title": "Quien quiere vender o arrendar su inmueble no encuentra camino",
+      "summary": "Los propietarios, que son la fuente de inventario, no tienen en la portada una invitación a dejar su inmueble con Metric.",
+      "now": "La portada solo habla a quien busca inmueble. No hay mención de vender, consignar o administrar un inmueble. Ese servicio solo aparece dentro de Servicios (\"Administración de inmuebles\", botón \"Me interesa\").",
+      "fix": "Agregar en la portada y en el menú una entrada clara para propietarios, por ejemplo \"¿Quieres vender o arrendar tu inmueble?\", que lleve a un formulario corto o a WhatsApp.",
+      "why": "Sin propietarios que consignen no hay inmuebles que mostrar; captar propietarios es tan importante como captar compradores.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html visible text contains no 'vender', 'propietario' or 'consigna'",
+        "raw/ux-servicios.html: 'Administración de inmuebles' with 'Me interesa →' linking to /es/contacto?service=Venta-Arriendo",
+        "Header nav (desktop and mobile menu): Residencial, Comercial, Servicios, Nosotros, Ingresar, Contacto — no owner entry"
+      ],
+      "technical_note": "Mobile menu items captured via CDP emulation: Residencial (Venta/Arriendo/Proyectos), Comercial (Venta/Arriendo/Proyectos), Servicios, Nosotros, Colombia/US, ES/EN, Ingresar, Contacto.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 32, "y_pct": 3.5}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "partial", "evidence": "First viewport (desktop and mobile) shows real-text h1 'Tu próximo hogar, en tu bolsillo' (category: home) plus Comprar/Arrendar tabs, but no location and the subtitle is about the app; target customer/where is not stated."},
+    {"id": "ux-quote-cta", "result": "partial", "evidence": "Desktop: header 'Contacto →' button visible in first viewport. Mobile (412px emulation): no contact/WhatsApp button in first viewport; Contacto only inside hamburger menu; hero CTA is 'Descargar la app'."},
+    {"id": "ux-catalog-path", "result": "pass", "evidence": "All 6 home cards link to /propiedades/<slug>; /es/residencial/venta has 100 distinct property links; property page has 'Solicitar una visita', WhatsApp, Texto, Llamar and an appointment form."},
+    {"id": "ux-contact-visible", "result": "fail", "evidence": "Footer on all pages shows only Términos, Privacidad, Contacto, WhatsApp; phone and email are not in header or footer (only in the body of /es/contacto; email also in /es/about)."},
+    {"id": "ux-contact-tappable", "result": "pass", "evidence": "Where shown, phone uses tel:+573112648768 and email mailto:hello@metric.la (/es/contacto); property page has tel: 'Llamar'."},
+    {"id": "ux-form-data", "result": "fail", "evidence": "/es/contacto form: Nombre, Correo, Asunto (opcional), Mensaje; no phone, operation type, zone or budget; response promise 'lo antes posible' with no time frame."},
+    {"id": "ux-form-friction", "result": "partial", "evidence": "3 required fields (Nombre, Correo, Mensaje), email uses type=email; required fields are not visually marked; error handling relies on native browser validation (not tested by submitting)."},
+    {"id": "ux-chat-ready", "result": "pass", "evidence": "No floating chat; WhatsApp links use 573112648768, matching the phone on /es/contacto. Card and property-page messages are real and prefilled ('Hola, estoy interesado en Apartamento en Chico Virrey. https://metric.la/p/5015'); only the footer link lacks prefill."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Mobile emulation 412px: 'Toggle menu' opens Residencial (Venta/Arriendo/Proyectos), Comercial (Venta/Arriendo/Proyectos), Servicios, Nosotros, Ingresar, Contacto (screenshots/ux-mobile-menu.png)."},
+    {"id": "ux-trust-near-cta", "result": "fail", "evidence": "Home has no years, client counts, testimonials or reviews near search or property grid; '300 propiedades' only on /es/servicios and Florida license only on /es/about."},
+    {"id": "ux-content-not-hidden", "result": "pass", "evidence": "Key offers (6 featured properties) are real text cards in a static grid; per-card photo carousels are manual (‹ › arrows), not auto-advancing."}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-11-04T20:17:02+00:00",
+  "url": "https://metric.la/es",
+  "domain": "metric.la",
+  "slug": "metric-la",
+  "plugin_version": "0.2.1",
+  "scoring_version": "3",
+  "options": {
+    "load_page": true,
+    "extra": true,
+    "openseo": false
+  }
+}

@@ -1,0 +1,11 @@
+WebSearch runs (2026-11-04, Claude WebSearch tool, US-based index, not a local Google Colombia ranking). metric.la did not appear in any result list.
+
+1. "inmobiliaria Bogotá apartamentos venta Chicó" -> fincaraiz.com.co, engelvoelkers.com, ciencuadras.com, metrocuadrado.com
+2. "apartamentos en arriendo Chicó Virrey Bogotá" -> fincaraiz.com.co, ciencuadras.com, metrocuadrado.com
+3. "casas en venta Guaymaral" -> metrocuadrado.com, fincaraiz.com.co, ciencuadras.com, engelvoelkers.com
+4. "apartamento en venta Cabrera Bogotá" -> fincaraiz.com.co, metrocuadrado.com, ciencuadras.com
+5. "inmobiliaria de lujo Bogotá vivienda alto nivel" -> metrocuadrado.com, fincaraiz.com.co, portafolio.co, luxuryestate.com, vivienda.com.co
+6. "administración de inmuebles en arriendo Bogotá inmobiliaria" -> concejodebogota.gov.co, mercadolibre.com.co, ciencuadras.com, fincaraiz.com.co, portafolio.co, vivienda.com.co
+7. Brand: "Metric Real Estate Bogotá" -> emis.cn (Met Real Estate S.A.S., Grupo Metric SAS: other companies), colombiareports.com, nearshoreamericas.com
+8. Brand: "metric.la inmobiliaria" -> unrelated (eleconomista.es, vistazo.com Métrica Ecuador, etc.)
+Extra: "site:metric.la" -> operator ignored, no metric.la pages. "\"Metric Real Estate\" Colombia inmobiliaria Google Maps" -> no Google Business Profile found.

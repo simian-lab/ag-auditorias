@@ -1,0 +1,226 @@
+{
+  "client": "Metric Real Estate",
+  "domain": "metric.la",
+  "date": "Noviembre 2026",
+  "big_stat": {
+    "value": "4 de cada 10",
+    "count_to": null,
+    "suffix": null,
+    "headline": "4 de cada 10 kilobytes de tu portada son de Facebook y Google, no de tus inmuebles",
+    "explain": "Tu portada pesa 938 KiB en total, y 371,5 KiB son rastreadores de publicidad y analítica que se descargan antes que tus fotos. En computador no se nota, pero en un celular de gama media la página tarda varios segundos más en responder al primer toque. Cargar esos rastreadores después de que el visitante interactúa mantiene la medición de tus campañas sin frenar la búsqueda de inmuebles.",
+    "grid_pct": 40,
+    "grid_legend": [
+      "Rastreadores de Facebook y Google (371,5 KiB)",
+      "Fotos, código y todo lo demás"
+    ],
+    "source": "Lighthouse móvil, noviembre 2026 (total-byte-weight 938 KiB; 5 solicitudes a googletagmanager.com y connect.facebook.net suman 371,5 KiB)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "ux-1",
+        "visual-6"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu portada pide descargar, no contactarte",
+      "t_plain": "La acción principal de la portada es descargar la app; no hay un botón para hablar con un asesor y en celular Contacto queda escondido en el menú",
+      "s": "El primer botón que ve quien llega lo saca del sitio hacia una tienda de apps, y varios botones compiten con el mismo peso, así que nadie sabe cuál es el paso siguiente.",
+      "now": "Bajo el titular, las acciones principales son App Store y Google Play (en celular, solo «Descargar la app»). No hay «Hablar con un asesor» ni WhatsApp en la primera pantalla; en celular, Contacto solo está dentro del menú. Además, cuatro botones oscuros tienen el mismo estilo destacado (Contacto, Residencial, Buscar y Buscar con IA).",
+      "fix": "Dejar un solo botón principal en la primera pantalla, como «Hablar con un asesor por WhatsApp», junto al buscador. Pasar la descarga de la app a un lugar secundario, con insignias del mismo estilo, y mostrar Contacto también en el encabezado del celular.",
+      "why": "Quien busca vivienda desde Google quiere ver opciones o hablar con alguien ya; pedirle instalar una app primero es un paso que muchos no darán.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 40
+      }
+    },
+    {
+      "n": 2,
+      "c": "ux",
+      "src": [
+        "ux-3",
+        "visual-3"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Tu portada no demuestra quién es Metric",
+      "t_plain": "La portada no muestra cifras, testimonios, equipo ni la app funcionando",
+      "s": "Quien va a comprar o arrendar un inmueble de cientos de millones no encuentra en la portada nada que respalde a Metric, y la promesa de inmobiliaria digital con IA no se ve demostrada.",
+      "now": "La portada tiene solo el encabezado, el buscador, 6 inmuebles destacados y el pie de página. No hay años de experiencia, número de inmuebles, testimonios, reseñas, equipo ni capturas de la app. El dato «más de 300 propiedades» solo aparece en Servicios.",
+      "fix": "Agregar después de los destacados una sección corta con datos reales (inmuebles disponibles, zonas atendidas, años), 2 o 3 testimonios de clientes y la app en un celular con un ejemplo real de búsqueda con IA.",
+      "why": "En una decisión tan grande como una vivienda, la confianza en la inmobiliaria pesa tanto como el inmueble; una promesa que no se ve no se cree.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 50,
+        "y": 49
+      }
+    },
+    {
+      "n": 3,
+      "c": "vis",
+      "src": [
+        "visual-1"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu vitrina principal muestra una casa ajena",
+      "t_plain": "La foto del encabezado es una imagen de archivo que no corresponde a ningún inmueble publicado",
+      "s": "La primera imagen que ve un comprador es una foto genérica de internet, así que no le muestra nada de lo que realmente vendes o arriendas.",
+      "now": "El encabezado usa una foto de archivo de un salón con escalera y biblioteca que no corresponde a ninguno de los inmuebles publicados. Tus inmuebles reales, algunos con fotos excelentes, aparecen recién más abajo.",
+      "fix": "Reemplazar la foto del encabezado por una fotografía profesional de un inmueble real de tu portafolio, idealmente del segmento alto, con el barrio en una nota discreta. Basta cambiar la imagen; el diseño no cambia.",
+      "why": "En finca raíz la confianza nace de ver propiedades reales; una foto de banco hace que la marca se sienta genérica frente a otras inmobiliarias.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 20,
+        "y": 35
+      }
+    },
+    {
+      "n": 4,
+      "c": "ux",
+      "src": [
+        "ux-4",
+        "a11y-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus contactos llegan sin número de celular",
+      "t_plain": "El formulario de contacto no pide teléfono ni qué busca la persona, y sus campos no están nombrados para lectores de pantalla",
+      "s": "Los contactos que llegan por la página de contacto no traen celular ni qué buscan, así que el asesor tiene que escribir antes de poder llamar.",
+      "now": "El formulario pide Nombre, Correo, Asunto (opcional) y Mensaje. No pide celular ni si la persona quiere comprar, arrendar o vender, ni zona ni presupuesto. Promete responder «lo antes posible», sin plazo. Además, las 4 etiquetas no están conectadas a sus campos: un lector de pantalla solo anuncia «campo de texto».",
+      "fix": "Agregar celular, una opción de comprar, arrendar o vender, la zona y el presupuesto. Conectar cada etiqueta con su campo, marcar los obligatorios y prometer un tiempo concreto, por ejemplo «te llamamos el mismo día hábil».",
+      "why": "En finca raíz el negocio se cierra por llamada o WhatsApp; un contacto sin teléfono se enfría antes de la primera conversación.",
+      "shot": null
+    },
+    {
+      "n": 5,
+      "c": "a11y",
+      "src": [
+        "a11y-3"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu buscador no deja escribir el código",
+      "t_plain": "En el buscador, el campo del código abre un teclado numérico que no permite escribir «ME-» y los controles no se describen para lectores de pantalla",
+      "s": "El buscador de inmuebles es la herramienta más importante del sitio, pero el campo del código no deja escribir letras en el celular y varios controles no se explican.",
+      "now": "El campo «¿Tienes el código de un inmueble?» abre el teclado numérico, aunque el código lleva letras («ME-2722»). El selector de Ciudad arranca vacío y no tiene etiqueta asociada (Lighthouse lo marca como fallo). Los botones Residencial y Comercial, y Comprar, Arrendar y Proyectos, indican cuál está activo solo con el color.",
+      "fix": "Usar un teclado de texto en el campo del código y darle una etiqueta real. Asociar la etiqueta «Ciudad» al selector y anunciar qué opción está seleccionada en cada grupo de botones.",
+      "why": "Quien ve un código en un portal o en redes y no puede escribirlo, o no logra filtrar por ciudad u operación, se va a otra inmobiliaria.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 70
+      }
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-2"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tu titular vende una app, no hogares",
+      "t_plain": "El titular y el subtítulo no dicen que eres una inmobiliaria de venta y arriendo, ni dónde",
+      "s": "Quien llega no lee en el titular que eres una inmobiliaria de compra y arriendo en Bogotá; lee un mensaje sobre una app.",
+      "now": "El titular es «Tu próximo hogar, en tu bolsillo» y el subtítulo habla de «Búsqueda con IA, favoritos y alertas al instante — en la app de Metric». No menciona venta, arriendo ni Bogotá. Además, el subtítulo, en blanco semitransparente sobre zonas claras de la foto, tiene un contraste de entre 2,5:1 y 3,3:1, por debajo del 4,5:1 recomendado.",
+      "fix": "Reescribir el titular para que diga qué haces y dónde, por ejemplo «Apartamentos y casas en venta y arriendo en Bogotá», y llevar el mensaje de la app al subtítulo. Oscurecer la capa de la foto bajo el texto para que se lea bien.",
+      "why": "En los primeros segundos el visitante decide si está en el sitio correcto; si no lo entiende rápido, vuelve a Google.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 25
+      }
+    },
+    {
+      "n": 7,
+      "c": "ux",
+      "src": [
+        "ux-6"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Los propietarios no encuentran la puerta",
+      "t_plain": "No hay en la portada ni en el menú una entrada para quien quiere vender o arrendar su inmueble",
+      "s": "Los propietarios, que son la fuente de tu inventario, no encuentran en la portada ni en el menú una invitación a dejar su inmueble con Metric.",
+      "now": "La portada solo le habla a quien busca inmueble. No se menciona vender, consignar ni administrar un inmueble; ese servicio solo aparece dentro de Servicios («Administración de inmuebles»). El menú tiene Residencial, Comercial, Servicios, Nosotros, Ingresar y Contacto.",
+      "fix": "Agregar en el menú y en la portada una entrada clara, «¿Quieres vender o arrendar tu inmueble?», que lleve a un formulario corto o a WhatsApp.",
+      "why": "Sin propietarios que consignen no hay inmuebles que mostrar; captar propietarios es tan importante como captar compradores.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 32,
+        "y": 3.5
+      }
+    },
+    {
+      "n": 8,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-2"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "En celular, tu página tarda en reaccionar",
+      "t_plain": "En celular el procesador queda ocupado varios segundos, en buena parte por los rastreadores de Facebook y Google",
+      "s": "En un celular de gama media la página se ve pronto, pero tarda en reaccionar cuando el visitante intenta buscar o abrir un inmueble.",
+      "now": "En la prueba de celular, el navegador pasa 3,1 s procesando código y queda bloqueado 460 ms; en una simulación de red lenta, la página queda lista para usarse a los 8,1 s. 371,5 KiB de los 938 KiB de la portada son de Facebook y Google, y 145 KiB de ese código no se usa al cargar. En computador todo carga en menos de 1 s.",
+      "fix": "Cargar los rastreadores de Facebook y Google después de la primera interacción o del consentimiento de cookies, y dividir el código de la página para que el celular responda al primer toque.",
+      "why": "La mayoría de quienes buscan vivienda empiezan desde el celular, y una página que no responde de inmediato pierde visitantes antes de que vean un inmueble.",
+      "shot": null
+    },
+    {
+      "n": 9,
+      "c": "ux",
+      "src": [
+        "ux-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Para llamarte, primero hay que buscarte",
+      "t_plain": "El pie de página no muestra teléfono, correo ni dirección",
+      "s": "Quien quiere llamar desde cualquier página tiene que ir hasta Contacto para encontrar el número, y no ve una dirección en Colombia en ningún lado.",
+      "now": "El pie de página solo tiene Términos, Privacidad, Contacto y WhatsApp. El teléfono y el correo solo aparecen en la página de Contacto, y no hay dirección ni horario de oficina en Colombia en ninguna página del sitio.",
+      "fix": "Mostrar en el pie de todas las páginas el teléfono y el correo como enlaces que se pueden tocar, junto con la dirección y el horario de la oficina en Bogotá.",
+      "why": "Ver un teléfono y una dirección reales da tranquilidad, y desde el celular permite llamar con un toque.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 80,
+        "y": 97
+      }
+    },
+    {
+      "n": 10,
+      "c": "vis",
+      "src": [
+        "visual-2"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Tu foto más débil define tu portafolio",
+      "t_plain": "Las fotos de los inmuebles destacados tienen calidad muy desigual",
+      "s": "Junto a fotos cuidadas aparecen fotos de celular de espacios vacíos y descuidados, y eso baja la percepción de calidad de todo el portafolio.",
+      "now": "En los destacados, «Apartamento en Cabrera» y «Chico Virrey» tienen fotos luminosas y amobladas. En cambio, «Apartamento en Palermo» muestra un espacio vacío en gran angular, un plástico en el piso y un letrero de «VENDE» al revés en la ventana.",
+      "fix": "Definir un estándar mínimo de fotografía para publicar (luz, encuadre, espacio ordenado, sin letreros) y usar en cada tarjeta la mejor foto del inmueble.",
+      "why": "El comprador juzga la calidad de la inmobiliaria por la foto más débil que ve; un portafolio parejo transmite un servicio profesional.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 74,
+        "y": 57
+      }
+    }
+  ]
+}

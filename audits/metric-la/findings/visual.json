@@ -1,0 +1,122 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "La foto principal es de banco, no un inmueble tuyo",
+      "summary": "La primera imagen que ve un comprador es una foto genérica de internet, así que no le muestra nada de lo que realmente vendes ni arriendas.",
+      "now": "El encabezado de la página de inicio usa una foto de archivo de un salón con escalera y biblioteca que no corresponde a ninguno de los inmuebles publicados; los inmuebles reales aparecen recién más abajo.",
+      "fix": "Reemplazar la foto del encabezado por una fotografía profesional de un inmueble real de tu portafolio (idealmente del segmento alto), con su nombre o barrio en una nota discreta.",
+      "why": "En finca raíz la confianza nace de ver propiedades reales; una foto de banco hace que la marca se sienta genérica frente a otras inmobiliarias.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: hero <img> src = https://media.metric.la/cdn-cgi/image/width=1600,.../pexels_artbovich_6908502_be3e08b727.jpg (file name shows a Pexels stock photo, author 'artbovich'), alt=\"\"",
+        "screenshots/desktop-viewport.png: hero photo (staircase + bookshelves interior) occupies y 65–625 px of the 1440x900 first screen",
+        "None of the 6 featured listings (ME-5015, ME-9304, ME-6067, ME-8322, ME-10730, ME-10977) shows this interior"
+      ],
+      "technical_note": "Hero is <section class=\"relative h-[430px] md:h-[560px]\"> with a single Pexels image served through Cloudflare image resizing (srcset 800–2400w). Swapping the asset needs no layout change.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 20, "y_pct": 35}
+    },
+    {
+      "id": "visual-2",
+      "title": "Fotos de los inmuebles con calidad muy desigual",
+      "summary": "Junto a fotos cuidadas aparecen fotos de celular de espacios vacíos y descuidados, lo que baja la percepción de calidad de todo el portafolio.",
+      "now": "En los destacados, 'Apartamento en Cabrera' y 'Chico Virrey' tienen fotos luminosas y amobladas, pero 'Apartamento en Palermo' muestra un espacio vacío con gran angular, un plástico en el piso y un letrero de 'VENDE' visible al revés en la ventana.",
+      "fix": "Definir un estándar mínimo de fotografía para publicar (luz, encuadre, espacio ordenado, sin letreros) y usar como portada de cada tarjeta la mejor foto de cada inmueble.",
+      "why": "El comprador juzga la calidad de la inmobiliaria por la foto más débil que ve; un portafolio parejo transmite un servicio profesional.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg: card 'Apartamento en Palermo' (ME-6067) at approx x 847–1143, y 865–1035: empty room, wide-angle phone shot, plastic sheet on floor, reversed 'VENDE' sign on the window",
+        "screenshots/desktop-fullpage.jpg: cards 'Apartamento en Chico Virrey' (ME-5015) and 'Apartamento en Cabrera' (ME-8322) show furnished, well-lit interiors, so quality is inconsistent within the same 6-card grid",
+        "screenshots/mobile-fullpage.jpg: the same Palermo photo is shown at full card width on mobile"
+      ],
+      "technical_note": "Listing images come from media.metric.la; the cover image per card is the first carousel slide, so choosing a better first image per listing is a content task, not a code change.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 74, "y_pct": 57}
+    },
+    {
+      "id": "visual-3",
+      "title": "La promesa digital y con IA no se ve demostrada",
+      "summary": "La marca se presenta como inmobiliaria digital con app y búsqueda con IA, pero la página no muestra ninguna prueba visual de eso ni de su trayectoria.",
+      "now": "La página de inicio tiene solo el encabezado con botones de las tiendas de apps, el buscador, seis inmuebles y el pie de página; no hay capturas de la app, cifras, equipo, reseñas ni ejemplos de la búsqueda con IA.",
+      "fix": "Agregar una sección breve que muestre la app en un celular, un ejemplo real de búsqueda con IA y dos o tres datos verificables de la empresa (inmuebles gestionados, años, ciudades) o testimonios de clientes.",
+      "why": "Una promesa que no se ve no se cree; mostrar la app y la experiencia de la empresa convierte el discurso en confianza.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html visible text (scripts stripped): nav, hero ('Tu próximo hogar, en tu bolsillo', 'Búsqueda con IA, favoritos y alertas al instante…'), App Store / Google Play badges, search dock, 'Descubre estos inmuebles' with 6 listings, footer links (Términos y Condiciones, Privacidad, Contacto, WhatsApp). No other sections.",
+        "raw/home.html <meta name=\"description\">: 'Inmobiliaria digital en Colombia…' — the 'digital' claim has no visual support (no app screenshot or mockup found among the 9 <img> elements)",
+        "screenshots/desktop-fullpage.jpg: full page ends at y≈1570 with the footer right after the listing grid"
+      ],
+      "technical_note": "Only 9 <img> on the home: logo/icon, hero, and listing covers. No testimonial, stats or app-mockup components present in the SSR HTML.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 22}
+    },
+    {
+      "id": "visual-4",
+      "title": "En tabletas el menú superior se monta y se corta",
+      "summary": "En pantallas medianas, como una tableta, el menú se ve roto y el botón de Contacto desaparece, lo que da una impresión de sitio descuidado.",
+      "now": "Con una ventana de 800 px de ancho, 'Nosotros' queda pegado a 'Colombia', 'Ingresar' llega al borde y el botón 'Contacto' no aparece en pantalla; a 1024 px y más el menú se ve bien.",
+      "fix": "Mostrar el menú compacto (botón de menú) también en anchos de tableta, o reducir los elementos del menú para que quepan sin montarse.",
+      "why": "Muchos compradores revisan inmuebles en tableta; un menú roto en el primer vistazo resta credibilidad.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/visual-home-800x900-load.png (headless Chrome, 800x900): header y 0–64 px — 'Nosotros' and 'Colombia' touch with no gap at x≈515–635, 'Ingresar' ends at the right edge (x≈793), 'Contacto' button not visible",
+        "screenshots/visual-home-1024x700.png (headless Chrome, 1024x700): header renders correctly with 'Contacto' visible",
+        "raw/home.html: hamburger button has class 'md:hidden' (hidden from 768 px up), so between 768 px and roughly 1000 px the full desktop nav is forced into too little width"
+      ],
+      "technical_note": "Breakpoint issue: desktop nav shown from md (768px) but it needs ~1000px. Switch the toggle to lg:hidden / show desktop nav from lg, or allow wrap/overflow handling in the right-hand group.",
+      "pin": null
+    },
+    {
+      "id": "visual-5",
+      "title": "Tres tipografías y precios en letra de máquina",
+      "summary": "La mezcla de tres familias de letra, con precios y etiquetas en estilo de máquina de escribir, hace que la página se sienta menos elegante de lo que pretende el segmento alto.",
+      "now": "El titular usa una letra con serifa, los textos una letra sin serifa y los precios, etiquetas y botones como 'RESIDENCIAL' o 'CIUDAD' una letra monoespaciada en mayúsculas, a veces de 10 px; además los precios se escriben '1,500,000,000 COP' con comas.",
+      "fix": "Quedarse con dos familias (titulares y texto), usar la letra de texto para precios y etiquetas, y escribir los precios en formato colombiano (por ejemplo, $1.500.000.000).",
+      "why": "Una tipografía sobria y precios en el formato que el cliente usa a diario transmiten orden y confianza en una compra de alto valor.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html: three next/font variables on <html> (__variable_326194 body, __variable_0e6cd4 hero, __variable_0706d7 mono)",
+        "/_next/static/css/60d9f8ac480670b0.css: --me-font-body / --me-font-display = 'Inter Tight' stack, --me-font-hero = Fraunces stack, --me-font-mono = 'JetBrains Mono' stack",
+        "raw/lighthouse-desktop.json network-requests: 3 woff2 font files loaded (18,085 B, 45,025 B, 31,631 B transfer)",
+        "raw/home.html: font-family:var(--me-font-mono) appears 44 times inline (prices, chips, field labels); field labels such as 'Precio' use font-size:10px; letter-spacing:.14em; uppercase; hero line 'Gratis · iOS y Android · ES / EN' is mono 10px uppercase over the photo",
+        "screenshots/desktop-fullpage.jpg: prices rendered as '1,500,000,000 COP', '6,300,000 COP/mes' in monospace"
+      ],
+      "technical_note": "Price formatting likely uses en-US number formatting; use Intl.NumberFormat('es-CO', {style:'currency', currency:'COP', maximumFractionDigits:0}).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 23, "y_pct": 66}
+    },
+    {
+      "id": "visual-6",
+      "title": "La primera pantalla reparte la atención entre muchos botones",
+      "summary": "Al entrar, la vista no sabe si debe ir a descargar la app, a buscar o a contactar, porque varios botones compiten con el mismo peso visual.",
+      "now": "En la primera pantalla hay cuatro botones oscuros con el mismo estilo destacado (Contacto, Residencial, Buscar, Buscar con IA), más los botones de las tiendas, que además son distintos entre sí (App Store blanco, Google Play transparente), y botones con borde (Mapa, Ir).",
+      "fix": "Elegir un solo foco para la primera pantalla (por ejemplo, el buscador), dejar un único botón principal con el estilo oscuro y bajar la descarga de la app a un lugar secundario con insignias del mismo estilo.",
+      "why": "Un foco claro guía la mirada hacia la acción que más vende y hace que el diseño se vea intencional.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-viewport.png: dark textured pill buttons at Contacto (x≈1350,y≈31), RESIDENCIAL tab (x≈333,y≈556), Buscar (x≈853,y≈620), Buscar con IA (x≈1099,y≈620); App Store badge white-filled (x≈649,y≈362) vs Google Play translucent dark (x≈790,y≈362); outline pills Mapa (x≈964,y≈620) and Ir (x≈1148,y≈677)",
+        "raw/home.html: class 'me-glow' (gradient + noise texture + glow shadow) applied to 7 elements; 'dock-pill-map' outline style on Mapa",
+        "main CSS .me-glow: linear-gradient(#1b3e40,#0f2a2b,#0a2223) + feTurbulence noise overlay + multiple box-shadows"
+      ],
+      "technical_note": "Primary style (.me-glow) is reused for navigation tab state, nav CTA and two search actions, so primary emphasis is not reserved for one action.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 62, "y_pct": 55}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "pass", "evidence": "H1 'Tu próximo hogar, en tu bolsillo' is real HTML text with class text-[28px] md:text-[52px] (28px on phone), white over a darkened photo gradient; readable in screenshots/mobile-fullpage.jpg (412px wide). User-reported desktop issue (headline covered by cards, hero collapsed) NOT reproduced: hero is complete in captures at 1440x900, 1920x1080 and 2560x1300 (screenshots/visual-home-1920x1080.png, visual-home-2560x1300.png); via headless Chrome DevTools at 1870x1000 and 1870x720, on load, after scrolling to 400/1200/3000 px and back, and after resizing 1870→900→1870, measured hero section height 560px (fixed class md:h-[560px]), h1 at y 145–261 px, h2 at y 788, first card title at y 1048 (screenshots/visual-home-1870x1000-afterscroll.png, visual-home-1870x720-load.png)."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "Headline is the clear first focal point and the listings section has one heading; but the first screen splits focus between app download badges, the search dock and four identical dark 'me-glow' buttons (see visual-6)."},
+    {"id": "vis-fonts", "result": "fail", "evidence": "3 families: Fraunces (hero), Inter Tight (body/display), JetBrains Mono (prices, labels, chips; 44 inline uses); 3 woff2 files loaded per Lighthouse network-requests."},
+    {"id": "vis-buttons", "result": "partial", "evidence": "Main dark gradient pill (.me-glow) and outline pill are used consistently, but there are extra variants: white App Store badge vs translucent Google Play badge side by side, mono-uppercase tab pills, segmented control; primary style reused for 4 different actions on the first screen."},
+    {"id": "vis-headings", "result": "pass", "evidence": "Single H2 ('Descubre estos inmuebles', 26/32px, display font) and six H3 card titles all with identical inline style (16px, weight 400, display font)."},
+    {"id": "vis-palette", "result": "partial", "evidence": "Defined tokens (--me-green-50/500/700/900, --me-ink #14171a, --me-accent #3b5a7a, neutrals) used with clear roles, but near-duplicate neutrals appear inline outside the tokens: #6f6f6f / rgb(111,111,111) vs --me-mute #666b70, #1a1a1a and #111 vs --me-ink #14171a, #f7f7f7 vs --me-stone #f6f5f2."},
+    {"id": "vis-photos", "result": "fail", "evidence": "Main hero image is a Pexels stock photo (pexels_artbovich_6908502); listing covers are real but uneven (Palermo ME-6067: empty room, plastic on floor, reversed 'VENDE' sign)."},
+    {"id": "vis-products", "result": "pass", "evidence": "Each of the 6 listing cards shows type + neighborhood title, price, operation chip (Venta/Arriendo), code (ME-xxxx) and bedrooms/bathrooms/m²/parking."},
+    {"id": "vis-positioning", "result": "fail", "evidence": "Claims 'Inmobiliaria digital', 'Búsqueda con IA' and app; home shows no app screenshots, no AI example, no figures, team or testimonials — only badges, search, 6 listings and footer."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "Desktop (1440–2560) and mobile layouts are aligned to a centered grid with even gaps; at 800px width the header items collide and 'Contacto' falls off screen (screenshots/visual-home-800x900-load.png)."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "Modern visual style; no copyright year or dated patterns found in home HTML or screenshots."}
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "home",
+        "url": "https://metric.la › es",
+        "canonical": "https://metric.la/es",
+        "title": "Metric Real Estate",
+        "meta_description": "Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena.",
+        "evidence": "raw/home.html <title> and meta[name=description]"
+      },
+      {
+        "page": "buscar (productos)",
+        "url": "https://metric.la › es › buscar",
+        "canonical": "https://metric.la/es/buscar",
+        "title": "Buscar propiedades en Colombia — Metric Real Estate",
+        "meta_description": "Busca apartamentos, casas y oficinas en venta y arriendo en Bogotá y Cartagena. Filtra por precio, alcobas, baños y más, con mapa interactivo.",
+        "evidence": "raw/presence/presence-es_buscar.html; /es/residencial/venta and /es/comercial/venta redirect to /es/buscar?... and share the same title, description and canonical /es/buscar"
+      },
+      {
+        "page": "ficha de propiedad",
+        "url": "https://metric.la › es › propiedades › apartamento-en-chico-virrey-mw15eity",
+        "canonical": "https://metric.la/es/propiedades/apartamento-en-chico-virrey-mw15eity",
+        "title": "Apartamento en Chico Virrey — Metric Real Estate",
+        "meta_description": "Ubicado en uno de los puntos más estratégicos y cotizados de la ciudad, a solo una cuadra del Parque El Virrey y sobre la calle 92, este apartamento ofrece un estilo de vida pri…",
+        "evidence": "raw/presence/presence-propiedades_apartamento-en-chico-virrey-mw15eity.html (description is truncated generic copy; no price, area or rooms)"
+      }
+    ],
+    "proposed": [
+      {
+        "page": "home",
+        "title": "Metric Real Estate | Inmobiliaria en Bogotá y Cartagena",
+        "description": "Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena. Búsqueda con IA, mapa interactivo y atención por WhatsApp."
+      },
+      {
+        "page": "buscar (productos)",
+        "title": "Apartamentos y casas en venta y arriendo en Bogotá | Metric",
+        "description": "Busca apartamentos, casas y oficinas en venta y arriendo en Bogotá y Cartagena. Filtra por precio, alcobas y baños, con mapa interactivo."
+      },
+      {
+        "page": "ficha de propiedad",
+        "title": "Apartamento en venta en Chicó Virrey, Bogotá | Metric",
+        "description": "Apartamento de 203 m², 3 alcobas y 3 baños, a una cuadra del Parque El Virrey sobre la calle 92, Bogotá. Precio: 1.500.000.000 COP. Ref. ME-5015."
+      }
+    ],
+    "notes": "Home <title> is only the brand name ('Metric Real Estate'): it says nothing about what or where. Facts in proposals come from the site: meta descriptions, home hero ('Búsqueda con IA'), /es/buscar ('mapa interactivo'), listing ME-5015 on home (1,500,000,000 COP, 3/3, 203 m²) and its RealEstateListing JSON-LD."
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:title": "Metric Real Estate",
+        "og:description": "Inmobiliaria digital en Colombia",
+        "og:url": "https://metric.la",
+        "og:image": "https://media.metric.la/cdn-cgi/image/width=1200,height=630,fit=cover,quality=85,format=jpeg/pexels_artbovich_6908502_be3e08b727.jpg",
+        "twitter:card": "summary_large_image"
+      },
+      "buscar": {
+        "og:title": "Metric Real Estate",
+        "og:description": "Inmobiliaria digital en Colombia",
+        "og:url": "https://metric.la",
+        "og:image": "https://media.metric.la/cdn-cgi/image/width=1200,height=630,fit=cover,quality=85,format=jpeg/pexels_artbovich_6908502_be3e08b727.jpg"
+      },
+      "propiedad": {
+        "og:title": "Apartamento en Chico Virrey — Metric Real Estate",
+        "og:description": " ",
+        "og:url": "https://metric.la/es/propiedades/apartamento-en-chico-virrey-mw15eity",
+        "og:image": "https://media.metric.la/cdn-cgi/image/width=1200,height=630,fit=cover,quality=85,format=jpeg/IMG_5477_e9a6f096.jpg"
+      }
+    },
+    "what_shows_today": "En WhatsApp y LinkedIn, cualquier página general del sitio (inicio, buscador, contacto, servicios, nosotros) se ve igual: «Metric Real Estate · Inmobiliaria digital en Colombia» con una foto de banco de imágenes (Pexels) de una sala que no es una propiedad de Metric. Las fichas de propiedad sí muestran su propia foto y nombre, pero sin descripción (el texto está vacío).",
+    "issues": [
+      "og:title, og:description and og:image are identical on every non-listing page (home, /es/buscar, /es/contacto, /es/servicios, /es/about, privacy).",
+      "og:url is 'https://metric.la' on every non-listing page instead of the page URL.",
+      "og:image is a Pexels stock photo (pexels_artbovich_6908502), not a Metric property.",
+      "Listing pages have og:description=\" \" (a single space)."
+    ],
+    "proposed": {
+      "og:title": "Metric Real Estate | Inmobiliaria en Bogotá y Cartagena",
+      "og:description": "Apartamentos, casas y oficinas en venta y arriendo en Bogotá y Cartagena. Escríbenos por WhatsApp al +57 311 264 8768.",
+      "og:image": "https://media.metric.la/cdn-cgi/image/width=1200,height=630,fit=cover,quality=85,format=jpeg/IMG_5477_e9a6f096.jpg",
+      "og_image_local": "og-source.jpg",
+      "note": "Image is a real Metric listing photo (Apartamento en Chico Virrey, ME-5015), served by the site's own CDN at 1200×630 (verified: HTTP 200, image/jpeg, 1200×630). Listing pages should reuse their listing description for og:description."
+    }
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Datos de la empresa que la IA pueda leer",
+        "fix": "Agregar a todas las páginas una ficha técnica oculta (datos estructurados Organization / RealEstateAgent) con nombre, teléfono, correo, ciudades donde operas y redes. Hoy el inicio y las páginas generales no tienen ninguna.",
+        "evidence": "0 JSON-LD blocks on home, /es/about, /es/contacto, /es/servicios, /es/buscar; only listing pages carry RealEstateListing."
+      },
+      {
+        "title": "Página de preguntas frecuentes",
+        "fix": "Crear una página de preguntas frecuentes con respuestas cortas: cómo arrendar con Metric, qué documentos piden, cuánto cobran por administrar, cómo funciona la app. Son las preguntas que la IA intenta responder cuando alguien busca inmobiliaria.",
+        "evidence": "No FAQ page in the sitemap (979 URLs; non-listing pages are /es, /es/buscar, /es/servicios, /es/contacto, /es/about, /es/us…)."
+      },
+      {
+        "title": "Una sola versión de dónde operas",
+        "fix": "Unificar las ciudades en todo el sitio. Hoy las descripciones dicen «Bogotá y Cartagena», Servicios suma Santa Marta, Miami y Detroit, y el buscador ofrece Medellín y Villavicencio. Con datos contradictorios la IA no sabe dónde recomendarte.",
+        "evidence": "meta descriptions vs /es/servicios ('Bogotá, Cartagena, Santa Marta, Miami y Detroit') vs home city filter ('Bogotá Cartagena Medellín Santa Marta Villavicencio')."
+      },
+      {
+        "title": "Ficha con cifras verificables",
+        "fix": "Añadir en «Nosotros» una ficha con datos comprobables de la operación en Colombia: razón social y NIT, dirección de oficina, años de operación, número de inmuebles publicados. Hoy esa página solo da credenciales de la licencia de Florida.",
+        "evidence": "/es/about lists Metric Real Estate LLC, Florida license CQ1074903 and a North Miami Beach office; no Colombian address or registration data."
+      },
+      {
+        "title": "Archivo llms.txt",
+        "fix": "Publicar metric.la/llms.txt con un resumen del negocio, ciudades, servicios y enlaces clave, para que los asistentes de IA tengan una fuente directa y ordenada.",
+        "evidence": "https://metric.la/llms.txt returns HTTP 404."
+      },
+      {
+        "title": "Mismo nombre de marca en todas partes",
+        "fix": "Usar siempre «Metric Real Estate». Las páginas de privacidad y términos dicen «Metric Estate», lo que para la IA puede parecer otra empresa.",
+        "evidence": "/es/privacy <title> 'Política de Privacidad | Metric Estate'; 'Metric Estate' strings in privacy and terminos pages."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "nombre",
+        "source": "Sitio: <title> inicio, og:site_name, /es/about",
+        "value": "Metric Real Estate"
+      },
+      {
+        "field": "nombre",
+        "source": "Sitio: /es/privacy (<title> y texto), /es/terminos",
+        "value": "Metric Estate"
+      },
+      {
+        "field": "nombre legal",
+        "source": "Sitio: /es/privacy y /es/terminos",
+        "value": "Metric Real Estate S.A.S."
+      },
+      {
+        "field": "nombre legal",
+        "source": "Sitio: /es/about (Razón social)",
+        "value": "Metric Real Estate LLC (licencia Florida CQ1074903)"
+      },
+      {
+        "field": "teléfono",
+        "source": "Sitio: /es/contacto (tel: y WhatsApp), botón WhatsApp en todas las páginas, ficha de propiedad",
+        "value": "+57 311 264 8768"
+      },
+      {
+        "field": "correo",
+        "source": "Sitio: /es/contacto, /es/about, /es/privacy",
+        "value": "hello@metric.la"
+      },
+      {
+        "field": "dirección",
+        "source": "Sitio: /es/about",
+        "value": "16137 Biscayne Blvd, North Miami Beach, FL 33160 (oficina de Florida)"
+      },
+      {
+        "field": "dirección",
+        "source": "Sitio: /es/contacto y pie de página",
+        "value": "No publicada (sin dirección en Colombia)"
+      },
+      {
+        "field": "horario",
+        "source": "Sitio: todas las páginas revisadas",
+        "value": "No publicado"
+      },
+      {
+        "field": "ciudades",
+        "source": "Sitio: meta descriptions (inicio, buscar, contacto, servicios)",
+        "value": "Bogotá y Cartagena"
+      },
+      {
+        "field": "ciudades",
+        "source": "Sitio: /es/servicios",
+        "value": "Bogotá, Cartagena, Santa Marta, Miami y Detroit"
+      },
+      {
+        "field": "ciudades",
+        "source": "Sitio: filtro de ciudad del inicio",
+        "value": "Bogotá, Cartagena, Medellín, Santa Marta, Villavicencio"
+      },
+      {
+        "field": "ciudades",
+        "source": "Sitio: /en (meta description)",
+        "value": "Miami and Colombia"
+      },
+      {
+        "field": "widget de chat",
+        "source": "Sitio: raw/home.html",
+        "value": "No hay widget de chat; solo enlace a api.whatsapp.com/send?phone=573112648768"
+      },
+      {
+        "field": "datos estructurados",
+        "source": "Sitio: inicio y páginas generales",
+        "value": "Sin Organization/LocalBusiness; solo RealEstateListing en fichas (con dirección Bogotá, CO)"
+      },
+      {
+        "field": "listados públicos",
+        "source": "WebSearch (4 búsquedas: nombre + Bogotá, dominio/teléfono, redes sociales, dirección de Miami)",
+        "value": "No se encontró ningún perfil público confirmado (Google Business, directorios o redes) de Metric Real Estate con estos datos"
+      }
+    ],
+    "inconsistencies": [
+      "El nombre de la marca cambia: el sitio dice «Metric Real Estate», pero las páginas de privacidad y términos dicen «Metric Estate».",
+      "Las ciudades donde operas no coinciden: las descripciones dicen «Bogotá y Cartagena», Servicios menciona además Santa Marta, Miami y Detroit, y el buscador del inicio ofrece Medellín y Villavicencio.",
+      "La única dirección publicada es una oficina en North Miami Beach (Florida); no hay dirección ni horario para el cliente en Colombia, aunque el teléfono y las propiedades son de Bogotá.",
+      "Aparecen dos razones sociales distintas sin explicación: «Metric Real Estate S.A.S.» en privacidad y términos, y «Metric Real Estate LLC» en Nosotros."
+    ],
+    "technical_note": "Public web search (WebSearch) returned no confirmed third-party listing for the brand, domain or phone; an EMIS entry 'Met Real Estate S.A.S.' (Bogotá) exists but could not be tied to metric.la, so it is not used."
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "No apareces cuando un comprador busca inmuebles",
+      "summary": "Quien busca apartamentos o casas en tus zonas encuentra a los portales y a otras inmobiliarias, no a Metric.",
+      "now": "En 6 búsquedas reales de compradores (Chicó, Chicó Virrey, Cabrera, Guaymaral, lujo en Bogotá, administración de arriendos) metric.la no apareció ni una vez; tampoco al buscar \"Metric Real Estate Bogotá\" ni \"metric.la inmobiliaria\".",
+      "fix": "Crear páginas propias por barrio y tipo de inmueble, reforzar el título del home y registrar la ficha de Google del negocio para empezar a competir en esas búsquedas.",
+      "why": "Cada búsqueda en la que no apareces es un cliente que llega primero a Fincaraíz, Metrocuadrado o Engel & Völkers.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "0 de 6 búsquedas",
+      "evidence": [
+        "raw/seo-search-tests.txt: 6 buyer queries + 2 brand queries, metric.la absent from all result lists",
+        "Who appears: fincaraiz.com.co, metrocuadrado.com, ciencuadras.com, engelvoelkers.com, luxuryestate.com",
+        "Brand query 'Metric Real Estate Bogotá' returned other companies (Met Real Estate S.A.S., Grupo Metric SAS on emis.cn)"
+      ],
+      "technical_note": "WebSearch tool, US-based index; not a local Google Colombia ranking. Absence here is a signal, not a measured Google position.",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "La página principal no dice qué vendes ni dónde",
+      "summary": "Google lee tu home como \"Metric Real Estate\" y un eslogan, sin las palabras que usa quien busca vivienda en Bogotá.",
+      "now": "El título del home es solo \"Metric Real Estate\" y el titular principal es \"Tu próximo hogar, en tu bolsillo\"; ninguno menciona inmobiliaria, apartamentos, Bogotá ni tus barrios. El home tiene unas 226 palabras de texto.",
+      "fix": "Usar un título como \"Inmobiliaria en Bogotá: apartamentos y casas en venta y arriendo | Metric\" y un titular que diga qué ofreces y en qué zonas, con un párrafo corto de presentación.",
+      "why": "El título y el titular son lo primero que Google y las IA usan para decidir para qué búsquedas mostrarte.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "raw/home.html <title>Metric Real Estate</title>",
+        "raw/home.html h1: 'Tu próximo hogar, en tu bolsillo' (only H1)",
+        "Visible text word count on home: 226"
+      ],
+      "technical_note": "Meta description on home is good ('Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena.') but title and H1 carry no query terms.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 23
+      }
+    },
+    {
+      "id": "seo-3",
+      "title": "No hay páginas por barrio ni tipo de inmueble",
+      "summary": "Las búsquedas tipo \"apartamentos en venta en Chicó\" no tienen una página tuya que Google pueda mostrar.",
+      "now": "Los menús Residencial y Comercial llevan al buscador con filtros, y esas vistas le dicen a Google que son la misma página genérica \"Buscar propiedades en Colombia\". No existe una página para Chicó, Cabrera, Guaymaral o Cartagena.",
+      "fix": "Crear páginas fijas por barrio y tipo (por ejemplo \"Apartamentos en venta en Chicó\") con texto propio sobre la zona, rangos de precio y los inmuebles disponibles.",
+      "why": "Los portales que te ganan en Google lo hacen justamente con este tipo de páginas por barrio.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": null,
+      "evidence": [
+        "/es/residencial/venta -> 307 to /es/buscar?categoria=residencial&estado=Venta, canonical https://metric.la/es/buscar, title 'Buscar propiedades en Colombia — Metric Real Estate' (raw/seo-buscar-residencial.html)",
+        "/es/comercial/venta -> same canonical and title (raw/seo-buscar-comercial.html)",
+        "raw/seo-sitemap.xml: 980 URLs = 973 property pages + 7 static pages; no neighborhood or category URLs"
+      ],
+      "technical_note": "Sitemap also lists https://metric.la/es/us and /es/us/buscar, which redirect to /en/us (sitemap entries should be final URLs). Property detail pages are good: unique title, description and RealEstateListing JSON-LD with price, rooms and area.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 17,
+        "y_pct": 3.5
+      }
+    },
+    {
+      "id": "seo-4",
+      "title": "Google no tiene tu dirección ni ficha de negocio",
+      "summary": "Sin dirección en Colombia ni datos estructurados de la empresa, es difícil que Google o una IA te ubiquen como inmobiliaria local.",
+      "now": "El sitio no publica una dirección en Colombia (la única oficina mencionada está en North Miami Beach), el teléfono solo aparece en Contacto y no hay datos estructurados de la empresa. No pudimos confirmar que exista una ficha de Google Business para Metric.",
+      "fix": "Publicar dirección y teléfono de la oficina en Colombia en el pie de todas las páginas, añadir la ficha de empresa (LocalBusiness/RealEstateAgent) en el código y crear o reclamar la ficha de Google Business.",
+      "why": "Las búsquedas \"inmobiliaria cerca de mí\" y el mapa de Google dependen de esa dirección y ficha.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "No JSON-LD on home, about, servicios, contacto, buscar (only RealEstateListing on property pages)",
+        "raw/seo-about.html: 'Oficina 16137 Biscayne Blvd North Miami Beach, FL 33160'; no Colombian address on any fetched page",
+        "Phone +57 311 264 8768 only on /es/contacto (tel: link) and WhatsApp link api.whatsapp.com/send?phone=573112648768",
+        "WebSearch '\"Metric Real Estate\" Colombia inmobiliaria Google Maps': no profile found"
+      ],
+      "technical_note": "Recommend Organization + RealEstateAgent schema with name, address, telephone, sameAs (facebook.com/metricestate, instagram.com/metricestate) and areaServed.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Tus datos se contradicen entre páginas",
+      "summary": "Una IA o un cliente no sabe en qué ciudades trabajas ni cuántos inmuebles tienes, así que no puede citarte con confianza.",
+      "now": "Nosotros dice que en Colombia cubres Bogotá y Cartagena; Servicios dice Bogotá, Cartagena, Santa Marta, Miami y Detroit. Servicios habla de \"más de 300 propiedades\" mientras el mapa del sitio lista 973 inmuebles. No hay preguntas frecuentes ni archivo llms.txt.",
+      "fix": "Unificar ciudades y cifras en una sola ficha \"Sobre Metric\" con datos verificables (años, inmuebles activos, zonas, licencias) y añadir una sección de preguntas frecuentes de compra y arriendo.",
+      "why": "Los asistentes de IA recomiendan negocios con datos claros y consistentes que puedan citar.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "raw/seo-about.html: 'En Colombia cubrimos Bogotá y Cartagena'",
+        "raw/seo-servicios.html: '...en Bogotá, Cartagena, Santa Marta, Miami y Detroit' and 'contamos con más de 300 propiedades'",
+        "raw/seo-sitemap.xml: 973 /es/propiedades/ URLs",
+        "https://metric.la/llms.txt -> HTTP 404 (raw/seo-llms-status.txt); no FAQ page or FAQPage schema found"
+      ],
+      "technical_note": "About page does carry a verifiable US fact (Florida license CQ1074903, valid to 2028-09-30); there is no equivalent Colombian registration (e.g., matrícula de arrendador) on the site.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "Al compartir un enlace sale un texto genérico",
+      "summary": "Cuando alguien comparte tus páginas por WhatsApp, la vista previa no describe el inmueble o la sección compartida.",
+      "now": "Nosotros, Servicios, Contacto y Buscar muestran al compartir el mismo título \"Metric Real Estate\" y el texto \"Inmobiliaria digital en Colombia\", y apuntan al home. En las fichas de inmuebles la descripción para compartir está vacía.",
+      "fix": "Generar para cada página y cada inmueble un título, una descripción y una imagen propios al compartir.",
+      "why": "En inmobiliaria muchos inmuebles se comparten por WhatsApp, y una buena vista previa trae más clics.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": null,
+      "evidence": [
+        "og:title 'Metric Real Estate', og:description 'Inmobiliaria digital en Colombia', og:url 'https://metric.la' on raw/seo-about.html, seo-servicios.html, seo-contacto.html, seo-buscar.html",
+        "raw/seo-property-cabrera.html and seo-property-guaymaral.html: og:description content is a single space"
+      ],
+      "technical_note": "Property og:title and og:image are correct per listing; only og:description is blank.",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "inmobiliaria Bogotá apartamentos venta Chicó",
+      "appears": false,
+      "position_or_note": "Not in returned results",
+      "who_appears": [
+        "fincaraiz.com.co",
+        "engelvoelkers.com",
+        "ciencuadras.com",
+        "metrocuadrado.com"
+      ]
+    },
+    {
+      "query": "apartamentos en arriendo Chicó Virrey Bogotá",
+      "appears": false,
+      "position_or_note": "Not in returned results",
+      "who_appears": [
+        "fincaraiz.com.co",
+        "ciencuadras.com",
+        "metrocuadrado.com"
+      ]
+    },
+    {
+      "query": "casas en venta Guaymaral",
+      "appears": false,
+      "position_or_note": "Not in returned results (Metric has a Guaymaral house listing on its site)",
+      "who_appears": [
+        "metrocuadrado.com",
+        "fincaraiz.com.co",
+        "ciencuadras.com",
+        "engelvoelkers.com"
+      ]
+    },
+    {
+      "query": "apartamento en venta Cabrera Bogotá",
+      "appears": false,
+      "position_or_note": "Not in returned results (Metric has a Cabrera listing on its site)",
+      "who_appears": [
+        "fincaraiz.com.co",
+        "metrocuadrado.com",
+        "ciencuadras.com"
+      ]
+    },
+    {
+      "query": "inmobiliaria de lujo Bogotá vivienda alto nivel",
+      "appears": false,
+      "position_or_note": "Not in returned results",
+      "who_appears": [
+        "metrocuadrado.com",
+        "fincaraiz.com.co",
+        "portafolio.co",
+        "luxuryestate.com",
+        "vivienda.com.co"
+      ]
+    },
+    {
+      "query": "administración de inmuebles en arriendo Bogotá inmobiliaria",
+      "appears": false,
+      "position_or_note": "Not in returned results",
+      "who_appears": [
+        "concejodebogota.gov.co",
+        "mercadolibre.com.co",
+        "ciencuadras.com",
+        "fincaraiz.com.co",
+        "portafolio.co",
+        "vivienda.com.co"
+      ]
+    },
+    {
+      "query": "Metric Real Estate Bogotá",
+      "appears": false,
+      "position_or_note": "Brand query; results show other similarly named companies",
+      "who_appears": [
+        "emis.cn (Met Real Estate S.A.S.)",
+        "emis.cn (Grupo Metric SAS)",
+        "colombiareports.com",
+        "nearshoreamericas.com"
+      ]
+    },
+    {
+      "query": "metric.la inmobiliaria",
+      "appears": false,
+      "position_or_note": "Brand query; only unrelated companies returned",
+      "who_appears": [
+        "eleconomista.es",
+        "vistazo.com (Métrica, Ecuador)",
+        "realadvisor.es"
+      ]
+    }
+  ],
+  "search_tests_note": "Búsquedas hechas el 4 de noviembre de 2026 con un buscador web de índice internacional. No es la posición exacta en Google Colombia ni incluye resultados personalizados o de mapas; no aparecer es una señal fuerte, no una posición medida.",
+  "extra_pitch_es": "Hoy, cuando alguien busca apartamentos en Chicó, Cabrera o Guaymaral, encuentra a los portales y no a Metric; con páginas por barrio, una ficha de empresa clara y datos consistentes podemos ponerte frente a ese comprador sin depender solo de los portales.",
+  "lighthouse_note": "Lighthouse gives the home an SEO score of 92 (mobile and desktop), but it only checks basics like having a title, description, crawlable links and alt text. It does not check whether you appear in real searches, have neighborhood pages, business schema or consistent business data, which is where the site falls short.",
+  "checks": [
+    {
+      "id": "seo-appears",
+      "result": "fail",
+      "evidence": "metric.la appeared in 0 of 6 buyer search tests (and 0 of 2 brand tests); see search_tests and raw/seo-search-tests.txt."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "Unique descriptive titles on about, servicios, contacto, buscar and property pages; home title is only 'Metric Real Estate' (no service/location), and residencial/comercial filtered views reuse the buscar title."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "pass",
+      "evidence": "Meta description present on home, about, servicios, contacto, buscar and sampled property pages."
+    },
+    {
+      "id": "seo-h1",
+      "result": "pass",
+      "evidence": "Exactly one H1 on each fetched main page (home, about, servicios, contacto, buscar, 2 property pages)."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "fail",
+      "evidence": "No Organization/LocalBusiness/RealEstateAgent JSON-LD on any main page; only RealEstateListing on property pages."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "pass",
+      "evidence": "973 indexable property pages in sitemap; sampled pages have unique title, meta description, ~315-344 words, specs and RealEstateListing schema. (No category/neighborhood landing pages; see seo-3.)"
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "pass",
+      "evidence": "Sitemap has 980 URLs: 973 properties + 7 static pages; no placeholder/test pages. Minor: /es/us entries redirect to /en/us."
+    },
+    {
+      "id": "seo-share",
+      "result": "partial",
+      "evidence": "og:title and og:image present on all pages; og:description generic on main pages (and og:url always the home) and empty on property pages."
+    },
+    {
+      "id": "seo-nap",
+      "result": "fail",
+      "evidence": "Name consistent, but no Colombian address anywhere, phone only on contacto, service cities differ between about and servicios, and no Google Business Profile could be confirmed."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "partial",
+      "evidence": "No FAQ and llms.txt returns 404; about page has some verifiable facts (Florida license CQ1074903) but Colombian facts are inconsistent (300 vs 973 properties, city lists)."
+    }
+  ]
+}

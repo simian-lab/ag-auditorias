@@ -1,0 +1,127 @@
+{
+  "verdict": "Metric tiene una base elegante, con un verde profundo y algunas fotos excelentes, pero cada botón, título y etiqueta habla con su propia voz, y la portada termina pareciendo el prototipo de una app más que la vitrina de una inmobiliaria de alto nivel.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Diez botones, cinco estilos, ningún protagonista",
+      "explanation": "En la primera pantalla conviven botones oscuros con brillo, insignias de tienda blancas y transparentes, botones con borde y un selector gris, y cuatro de ellos llevan el mismo verde oscuro destacado. Cuando todo parece importante, el visitante no sabe qué tocar y lee el conjunto como improvisado.",
+      "items": [
+        {"label": "Contacto (encabezado, estilo destacado)", "crop": "ui-crop-btn-contacto.png"},
+        {"label": "Residencial (pestaña con el mismo estilo destacado)", "crop": "ui-crop-btn-residencial.png"},
+        {"label": "Buscar (estilo destacado)", "crop": "ui-crop-btn-buscar.png"},
+        {"label": "Buscar con IA (estilo destacado)", "crop": "ui-crop-btn-buscar-ia.png"},
+        {"label": "App Store (insignia blanca)", "crop": "ui-crop-btn-appstore.png"},
+        {"label": "Google Play (insignia transparente)", "crop": "ui-crop-btn-googleplay.png"},
+        {"label": "Mapa (borde)", "crop": "ui-crop-btn-mapa.png"},
+        {"label": "Ir (círculo con borde)", "crop": "ui-crop-btn-ir.png"},
+        {"label": "Comprar / Arrendar / Proyectos (selector gris)", "crop": "ui-crop-btn-comprar.png"},
+        {"label": "Entendido (aviso de cookies)", "crop": "ui-crop-btn-entendido.png"}
+      ],
+      "proposal": "Un solo botón principal verde por pantalla (Buscar), un botón secundario con borde para todo lo demás, y las pestañas y selectores con un estilo propio que no compita con los botones."
+    },
+    {
+      "kind": "headings",
+      "title": "Tres alfabetos para titular una sola página",
+      "explanation": "El titular de portada usa una letra clásica con serifa, el título de sección una letra moderna sin serifa y las etiquetas, el pie y el texto bajo las tiendas una letra de máquina de escribir en mayúsculas espaciadas. El ojo no encuentra un orden de lectura y cada bloque parece diseñado por una persona distinta.",
+      "items": [
+        {"label": "Titular de portada (serifa)", "crop": "ui-crop-h-hero.png"},
+        {"label": "Texto en mayúsculas de máquina sobre la foto", "crop": "ui-crop-h-mono-hero.png"},
+        {"label": "Etiqueta de sección DESTACADOS (máquina, espaciada)", "crop": "ui-crop-h-eyebrow.png"},
+        {"label": "Título de sección (sin serifa)", "crop": "ui-crop-h-section.png"},
+        {"label": "Título de tarjeta (sin serifa, liviano)", "crop": "ui-crop-h-card-title.png"},
+        {"label": "Enlaces del pie (máquina, mayúsculas)", "crop": "ui-crop-h-footer-links.png"}
+      ],
+      "proposal": "Serifa solo en el titular de portada y en los títulos de sección, para dar el tono de alto nivel; todo lo demás en la misma letra sin serifa, con una escala fija de cinco tamaños."
+    },
+    {
+      "kind": "cards",
+      "title": "Cada tarjeta pide atención en más de diez lugares",
+      "explanation": "Una tarjeta de inmueble muestra a la vez etiqueta de operación, WhatsApp, favorito, dos flechas, VIDEO, título, precio, código y cuatro datos con iconos, y el precio en letra de máquina con comas («1,500,000,000 COP») pesa más que el barrio. Además Venta va en verde, Arriendo en azul y Video en gris translúcido, tres lenguajes para un mismo tipo de etiqueta.",
+      "items": [
+        {"label": "Etiqueta VENTA (verde)", "crop": "ui-crop-card-venta.png"},
+        {"label": "Etiqueta ARRIENDO (azul)", "crop": "ui-crop-card-arriendo.png"},
+        {"label": "Etiqueta VIDEO (gris translúcido)", "crop": "ui-crop-card-video.png"},
+        {"label": "WhatsApp y favorito sobre la foto", "crop": "ui-crop-icon-wa-heart.png"},
+        {"label": "Flecha de galería sobre la foto", "crop": "ui-crop-icon-arrow.png"},
+        {"label": "Precio en letra de máquina con comas, y código", "crop": "ui-crop-card-price.png"},
+        {"label": "Datos del inmueble en cápsula", "crop": "ui-crop-card-specs.png"}
+      ],
+      "proposal": "Foto limpia con una sola etiqueta, debajo barrio y tipo como título, el precio en formato colombiano ($1.500.000.000) y una línea discreta con alcobas, baños y área; WhatsApp y favorito aparecen al pasar el cursor."
+    },
+    {
+      "kind": "colors",
+      "title": "Doce colores para una marca de dos",
+      "explanation": "La marca es un verde profundo sobre fondo piedra, pero la hoja de estilos define cuatro verdes, un azul, tres blancos y cremas y cuatro grises, y el azul solo aparece en lo relacionado con arriendo. Cada matiz extra sin un trabajo claro hace que las secciones no se sientan de la misma empresa.",
+      "items": [
+        {"label": "Verde 900", "hex": "#071a1b"},
+        {"label": "Verde 700 (marca)", "hex": "#0f2a2b"},
+        {"label": "Verde 500", "hex": "#2f7072"},
+        {"label": "Verde 50", "hex": "#ecf3f3"},
+        {"label": "Azul de acento (solo Arriendo)", "hex": "#3b5a7a"},
+        {"label": "Piedra (fondo)", "hex": "#f6f5f2"},
+        {"label": "Crema", "hex": "#ececea"},
+        {"label": "Blanco", "hex": "#ffffff"},
+        {"label": "Tinta", "hex": "#14171a"},
+        {"label": "Tinta 2", "hex": "#3a4046"},
+        {"label": "Gris texto", "hex": "#666b70"},
+        {"label": "Gris línea", "hex": "#969489"}
+      ],
+      "proposal": "Quedarse con siete colores, cada uno con un trabajo fijo: verde de marca para la acción principal, verde noche para fondos oscuros, salvia para estados activos, piedra y blanco de fondo, tinta y gris para texto."
+    },
+    {
+      "kind": "fonts",
+      "title": "Una letra de programador para tus precios",
+      "explanation": "La portada carga tres familias, y la monoespaciada, pensada para escribir código, aparece 45 veces en el HTML de la portada: precios, etiquetas, campos del buscador y pie. Junto con diez tamaños de letra distintos, entre 9 y 18 píxeles, el texto se siente técnico y frío donde el comprador espera calidez y confianza.",
+      "items": [
+        {"label": "Titular de portada", "family": "Fraunces"},
+        {"label": "Textos, menú y títulos", "family": "Inter Tight"},
+        {"label": "Precios, etiquetas, campos y pie", "family": "JetBrains Mono"}
+      ],
+      "proposal": "Dos familias: Fraunces para titulares y Inter Tight para todo lo demás, incluidos precios y etiquetas, con cinco tamaños definidos."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {"name": "Verde Metric", "hex": "#0f2a2b", "role": "Único botón principal y titulares, con texto blanco a 15,15:1 de contraste."},
+      {"name": "Verde noche", "hex": "#071a1b", "role": "Pie de página y bandas oscuras, con texto piedra a 16,43:1."},
+      {"name": "Salvia", "hex": "#2f7072", "role": "Enlaces, estado activo y etiqueta de Arriendo (reemplaza al azul), con texto blanco a 5,7:1."},
+      {"name": "Piedra", "hex": "#f6f5f2", "role": "Fondo general, con texto tinta a 16,5:1."},
+      {"name": "Blanco", "hex": "#ffffff", "role": "Tarjetas y buscador, con texto tinta a 17,99:1."},
+      {"name": "Tinta", "hex": "#14171a", "role": "Texto principal, a 16,5:1 sobre piedra."},
+      {"name": "Gris texto", "hex": "#666b70", "role": "Texto secundario y códigos, a 4,94:1 sobre piedra y 5,38:1 sobre blanco."}
+    ],
+    "fonts": [
+      {"role": "Titular de portada y títulos de sección", "family": "Fraunces"},
+      {"role": "Texto, menú, botones, precios y etiquetas", "family": "Inter Tight"}
+    ],
+    "button_primary": "Fondo Verde Metric #0f2a2b liso, texto blanco Inter Tight 16 px seminegrita, esquinas de 14 px, sin brillo ni textura; uno solo por pantalla (Buscar en la portada, Hablar con un asesor en el resto).",
+    "button_secondary": "Fondo transparente con borde de 1,5 px Verde Metric, texto Verde Metric Inter Tight 16 px, mismas medidas que el principal; para Mapa, Ir, Ver todos y la descarga de la app (insignias oficiales del mismo tamaño, ambas en negro).",
+    "heading_scale": [
+      "H1 portada: Fraunces 56/60 px",
+      "H2 sección: Fraunces 36/42 px",
+      "H3 tarjeta: Inter Tight 20/26 px seminegrita",
+      "Etiqueta: Inter Tight 12/16 px mayúsculas, espaciado 0,06 em",
+      "Texto: Inter Tight 16/24 px"
+    ]
+  },
+  "hierarchy_notes": [
+    "Portada (primera pantalla): lo primero que salta es la insignia blanca de App Store, el elemento más claro sobre la foto, y luego el titular sobre «tu bolsillo»; debería verse primero qué vende Metric y dónde, y enseguida el buscador.",
+    "Buscador: cuatro piezas verde oscuro con el mismo peso (Residencial, Buscar, Buscar con IA y, arriba, Contacto) reparten la mirada; debería destacar solo Buscar, con Buscar con IA como opción secundaria.",
+    "Encabezado: Contacto es el único botón relleno del menú y compite con el buscador; debería ser un enlace claro y dejar el peso al botón principal de la página, o ser ese botón único en las páginas sin buscador.",
+    "Destacados: en cada tarjeta manda el precio en letra de máquina, más grueso que el barrio; debería leerse foto, luego barrio y tipo, luego precio en formato colombiano.",
+    "Aviso de cookies: en una ventana de 1440×900 la franja oscura de cookies tapa la parte superior de la primera fila de inmuebles; debería ser una tarjeta pequeña en una esquina.",
+    "Pie de página: solo enlaces en letra de máquina gris sobre verde noche; debería mostrar primero teléfono, WhatsApp y dirección."
+  ],
+  "sharp_headlines": {
+    "1": "Tu portada pide descargar, no contactarte",
+    "2": "Tu portada no demuestra quién es Metric",
+    "3": "Tu vitrina principal muestra una casa ajena",
+    "4": "Tus contactos llegan sin número de celular",
+    "5": "Tu buscador no deja escribir el código",
+    "6": "Tu titular vende una app, no hogares",
+    "7": "Los propietarios no encuentran la puerta",
+    "8": "En celular, tu página tarda en reaccionar",
+    "9": "Para llamarte, primero hay que buscarte",
+    "10": "Tu foto más débil define tu portafolio"
+  }
+}
