@@ -1,0 +1,53 @@
+Google Colombia SERP evidence (BrowserOS, logged-out, https://www.google.com/search?hl=es&gl=co&num=20&q=...), 2026-11-06
+Organic results in order: title || displayed URL. Ads ignored. Page 2 = &start=10. No captcha on any page.
+"has domain" = the string scarlettropayaccesorios appears anywhere in the results page HTML.
+
+1) vestidos de mujer tienda Bogotá — NOT FOUND (pages 1-2, 20 organic results; domain absent from page HTML)
+ p1: ela.com.co | boral.com.co | studiof.com.co | petuniaropa.com | instagram @cardamomo_shop | mercedescampuzano.com | patprimo.com | instagram @petuniaropa | esprit.com.co | bershka.com
+ p2: monastery.com.co | petuniaropa.com | ticketstores.co | xuss.co | primia.com.co | co.hm.com | freestorecol.com | falabella.com.co | ostu.com | pronovias.com
+
+2) vestidos para matrimonio invitada Bogotá — NOT FOUND (pages 1-2, 19 organic results)
+ p1: click2dress.com | lalapita.com | instagram @bguest.co | cameliadress.com | pronovias.com | instagram @galaynoviasboutique | co.pinterest.com | esprit.com.co | petuniaropa.com | giovannamaroso.com
+ p2: petuniaropa.com | giovannamaroso.com | zara.com | victoriascompany.co | catalinaceballos.com | marcelaherrera.com | ela.com.co | listado.mercadolibre.com.co | studiof.com.co
+ Note: the site has a category /categoria-producto/ropa/vestidos/invitada-matrimonio/ (title "Invitada matrimonio Archivos -", no meta description).
+
+3) comprar vestidos largos para mujer online Colombia — NOT FOUND (pages 1-2, 19 organic results)
+ p1: boral.com.co | esprit.com.co | ela.com.co | nafnaf.com.co | aguabendita.com.co | laguapa.com.co | shop.mango.com | tennis.com.co | bershka.com
+ p2: koaj.co | especia.com.co | co.hm.com | freestorecol.com | studiof.com.co | falabella.com.co | zara.com | derek.co | petuniaropa.com | adrissa.com.co
+
+4) tienda de ropa femenina Cedritos Bogotá — FOUND, organic position 5 (page 1)
+ p1: instagram @lala.brandd | instagram @valientestoreco | womensecret.com.co | lalabrand.co | ** Scarlett || https://scarlettropayaccesorios.com ** | facebook/ecla (Nuestras tiendas Cedritos) | boral.com.co | instagram EMMA Women's Store
+ Snippet for the domain: "CEDRITOS. Dirección: Cedritos – Calle 142 Carrera 19 # 142 – 25. Horario: LUNES A SÁBADO DE 10:00 AM – 7:00 PM DOMINGOS 10:00 AM – 6:00 PM ¿Cómo llegar ..."
+ Local results block on the same page (Maps listing, NOT counted in search_tests): Eclá-Cedritos 4.4 (33) | "Scarlett Accesorios & Ropa Cedritos" 4.0 (58), Tienda de ropa de mujer, Dirección: Cra. 19 #142-25, Horario: Lunes a sábado 10:00 a.m.-7:00 p.m., domingos 10:00 a.m.-6:00 p.m., Sitio web: Scarlett Ropa y Accesorios | Valiente 5.0 (3) | ZEPHIR CEDRITOS 4.7 (79) | Zepia Ropa y Accesorios 4.7 (83) | SYNERGY BOUTIQUE 5.0 (5)
+
+5) aretes y brazaletes tienda Bogotá — NOT FOUND (pages 1-2, 17 organic results shown)
+ p1: entrelazos.co | trementinastore.com | quimerajewelry.co | kevins.com.co | stores.pandora.net | florina.com.co | instagram @trementina_accesorios | enigmajoyeria.com
+ p2: plateriaramirez.com | bauer.com.co | lunamar.co | blumart.co | tous.com | floripondia.co | studiof.com.co | elitejoyeria.com.co | esmeraldascolombia.com
+
+6) earcuff y gargantillas comprar online Colombia — NOT FOUND (pages 1-2, 19 organic results)
+ p1: entrelazos.co | joyasdelavilla.com | mucura.com.co | gioiellejewelry.co | instagram @uvamarina_store | daana.com.co | co.fenomena.com | amatistajoyas.com | facebook post
+ p2: mayoristas.floripondia.co | lunamar.co | accesoriosavemaria.com | blunua.com | instagram | quimerajewelry.co | maha-morena.com | lilipink.com | filartecolombia.com | kellybellodesign.com.co
+
+7) vestidos de coctel Bogotá — NOT FOUND (pages 1-2, 14 organic results shown)
+ p1: click2dress.com | especia.com.co | instagram @bguest.co | studiof.com.co | pronovias.com | elianahernandez.com.co | instagram Vestagui | mercedescampuzano.com | boral.com.co | cameliadress.com
+ p2: cameliadress.com | petuniaropa.com | giovannamaroso.com | listado.mercadolibre.com.co
+
+8) [brand] Scarlett ropa y accesorios Bogotá — FOUND, organic position 1
+ 1 "Scarlett" || https://scarlettropayaccesorios.com — snippet: "TIENDA · ACCESORIOS Alternar menú. Aretes · Brazaletes · Cadenitas · Earcuff · Gargantillas · ROPA Alternar menú. Vestidos · Chaquetas · Pantalones · Faldas ..."
+ 2 "Ropa Archivos - - Scarlett" || scarlettropayaccesorios.com › categoria-producto — snippet "... a 200.000⚡ Envío EXPRESS Bogotá, recibe en menos de 24 horas. TIENDA · ACCESORIOS Alternar menú. ..."
+ 3 instagram @scarlettropayaccesorios (Más de 121,3 k seguidores) — "Las casitas rosadas Bogota: Cra 19 # 142 - 25 CC Unicentro ..."
+ 4 "Vestidos Archivos - - Scarlett" || scarlettropayaccesorios.com › Ropa
+ 5 "Vestidos - - Scarlett" || scarlettropayaccesorios.com › vestidos
+ 6 "Nuestras casitas - - Scarlett" || scarlettropayaccesorios.com › nuestras-casitas
+ 7 "Accesorios Archivos - - Scarlett" || scarlettropayaccesorios.com › categoria-producto
+ 8 Scarlett Accesorios | Bogotá (Más de 27 k seguidores)
+ 9 "Scarlett Accesorios & Ropa Cedritos" || waze.com
+
+9) [brand] Scarlett accesorios Unicentro — FOUND, organic position 1
+ 1 "Scarlett" || https://scarlettropayaccesorios.com — snippet: "UNICENTRO. Dirección: Unicentro – Entrada 7 Carrera 13 # 123 – 10. Horario: LUNES A SÁBADO DE 10:00 AM – 8:00 PM DOMINGOS 10:00 AM – 7:00 PM ¿Cómo llegar ..."
+ 2 "Nuestras casitas - - Scarlett" || scarlettropayaccesorios.com › nuestras-casitas
+ 3 instagram @scarlettropayaccesorios — "Las casitas rosadas Bogota: Cra 19 # 142 - 25 CC Unicentro L 1052 CC Salitre plaza L 316 Cra 14 # 79 - 14. Hecho en Colombia ♡."
+ 4 "Accesorios Archivos - - Scarlett" | 5 unicentrobogota.com › service › scarlett | 6 waze.com (Scarlett Accesorios & Ropa Unicentro) | 7 "Vestidos Archivos - - Scarlett" | 8 "Ropa Archivos - - Scarlett" | 9 instagram post | 10 Scarlett Accesorios | Bogotá
+ Business Profile panel (right column, NOT counted in search_tests): "Scarlett Accesorios & Ropa Unicentro" — aria-label "Calificación: 3,9 de 5" — "3,937 opiniones en Google" — "Tienda de ropa de mujer en Bogotá" — "Ubicado en: Unicentro Bogotá Centro Comercial" — "Dirección: Centro Comercial Unicentro, Ak 15 #124-30 Primer piso, entrada 7. Local 1052, Bogotá" — "Teléfono: 304 3958108" — panel shows the link "¿Eres propietario de esta empresa?".
+
+Not searched: Business Profiles for the Salitre Plaza and Zona T stores.

@@ -13,12 +13,12 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "El menú (Vestidos, Ropa, Accesorios) deja claro qué vende y el banner tiene un botón 'Comprar', pero el titular está dentro de la imagen y no hay pruebas de confianza.",
+      "notes_es": "El menú (Vestidos, Ropa, Accesorios) deja claro qué vende y el banner tiene un botón 'Comprar', pero el titular está dentro de la imagen y no hay pruebas de confianza. Su banner rota; la captura es del 27 de octubre.",
       "lighthouse": {
         "performance": 46,
         "accessibility": 82,
         "seo": 100,
-        "total_mb": 4.59
+        "total_mb": 4.53
       },
       "evidence": "screenshots/bench-mercedes-campuzano.png (1440x900); raw/bench-mercedes-campuzano-lh.json (mobile, LCP 23.4 s simulated); hero text 'the ESSENTIALS' not present as DOM text (only the marquee 'NUEVA COLECCIÓN THE ESSENTIALS')."
     },
@@ -35,12 +35,12 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Dice 'Mujer | Girls' arriba y el banner invita con 'Quiero ver más', pero el titular 'Metamorfosis' es imagen y el aviso de cookies tapa parte de la primera pantalla.",
+      "notes_es": "Dice 'Mujer | Girls' arriba y el banner invita con 'Quiero ver más', pero el titular 'Metamorfosis' es imagen y el aviso de cookies tapa parte de la primera pantalla. Su banner rota; la captura es del 27 de octubre.",
       "lighthouse": {
-        "performance": 52,
+        "performance": 47,
         "accessibility": 74,
         "seo": 100,
-        "total_mb": 3.68
+        "total_mb": 3.67
       },
       "evidence": "screenshots/bench-ela.png (cookie banner bottom-left, does not cover the hero headline); raw/bench-ela-lh.json (mobile, LCP 19.5 s simulated); 'METAMORFOSIS' not found as DOM text."
     },
@@ -57,12 +57,12 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "El menú y 'Mujer | Hombre' orientan rápido y hay un botón 'Ver más', pero el titular 'Party Season' es una imagen.",
+      "notes_es": "El menú y 'Mujer | Hombre' orientan rápido y hay un botón 'Ver más', pero el titular 'Party Season' es una imagen. Su banner rota; la captura es del 27 de octubre. Hoy además muestra una pestaña lateral «Suscríbete 20% OFF».",
       "lighthouse": {
-        "performance": 43,
+        "performance": 45,
         "accessibility": 79,
         "seo": 100,
-        "total_mb": 6.22
+        "total_mb": 4.03
       },
       "evidence": "screenshots/bench-studio-f.png; raw/bench-studio-f-lh.json (mobile, LCP 25.2 s simulated); hero is <img alt='Party Season | Studio  F'>."
     }
@@ -79,14 +79,14 @@
       "trust_proof": false,
       "quote_cta": false
     },
-    "notes_es": "El menú (Accesorios, Ropa, Vestidos) y las joyas del banner muestran qué vendes, pero la oferta 'Hasta 60% off' está dentro de la imagen y no hay ningún botón en la primera pantalla.",
+    "notes_es": "El menú (Accesorios, Ropa, Vestidos) y las joyas del banner muestran qué vendes, pero la oferta 'Hasta 60% off' está dentro de la imagen y no hay ningún botón en la primera pantalla. Además, una pantalla de carga rosada tapa la tienda mientras se descargan los archivos.",
     "lighthouse": {
-      "performance": 51,
+      "performance": 55,
       "accessibility": 89,
       "seo": 92,
-      "total_mb": 9.49
+      "total_mb": 10.59
     },
     "evidence": "screenshots/desktop-viewport.png; raw/lighthouse-mobile.json (total-byte-weight 9.49 MB, LCP 17.4 s simulated); 'Hasta 60% off' / 'Love edition' not present as text in raw/home.html."
   },
-  "takeaway_es": "Tu página pesa 9,5 MB en el celular, más que Studio F (6,2 MB), Mercedes Campuzano (4,6 MB) y ela (3,7 MB): tu clienta descarga hasta 2,6 veces más datos antes de ver tus accesorios."
+  "takeaway_es": "Tu página pesa 10,6 MB en el celular, más que Mercedes Campuzano (4,5 MB), Studio F (4,0 MB) y ela (3,7 MB): tu clienta descarga hasta 2,9 veces más datos para cargar la página completa."
 }

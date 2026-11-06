@@ -1,0 +1,11 @@
+HTTP status of https://scarlettropayaccesorios.com/ by user agent (curl from a normal IP, spoofed UA = indication only), 2026-11-06 ~17:31 -05
+GPTBot/1.2         attempt 1: no response (curl 000, timeout); attempts 2-4: 429 Too Many Requests (Apache 429 page, 267 B); attempt 5 (headers only): 200
+OAI-SearchBot/1.0  200 (420,021 B)
+ChatGPT-User/1.0   200 (420,021 B)
+ClaudeBot/1.0      200 (420,021 B); repeated: 200
+PerplexityBot/1.0  200 (420,021 B)
+Googlebot/2.1      200 (418,159 B)
+Chrome 130 desktop 200 (420,021 B)
+Also observed: a normal Chrome UA got 429 once on /categoria-producto/ropa/vestidos/ after several requests in a row (200 after a 20 s pause) -> the server applies a rate limit to bursts of requests.
+robots.txt (raw/seo-robots.txt): no rule blocks AI crawlers (User-agent: * / Disallow: wp-admin, add-to-cart, WooCommerce upload folders).
+llms.txt: HTTP 404 (raw/seo-llms.txt is the 404 page).

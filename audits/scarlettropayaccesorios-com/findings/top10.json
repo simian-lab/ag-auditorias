@@ -3,17 +3,17 @@
   "domain": "scarlettropayaccesorios.com",
   "date": "Octubre 2026",
   "big_stat": {
-    "value": "9,5 MB",
+    "value": "10,6 MB",
     "count_to": null,
     "suffix": null,
-    "headline": "Tu página de inicio pesa 9,5 MB, y 8 de cada 10 de esos megas son fotos",
-    "explain": "Es lo que el celular de la clienta tiene que descargar para ver tu portada. Las fotos están en un formato pesado (PNG): solo la imagen de fondo pesa 1,5 MB y cada foto de vestido entre 290 y 450 KB. Con datos móviles, eso se traduce en espera y en datos gastados antes de ver un solo producto.",
+    "headline": "Tu página de inicio pesa 10,6 MB, y 8 de cada 10 de esos megas son fotos",
+    "explain": "Es lo que el celular de la clienta tiene que descargar para ver tu portada completa: casi el triple que ela (3,7 MB) y bastante más que Mercedes Campuzano (4,5 MB) y Studio F (4,0 MB). Casi todo el peso de las imágenes está en PNG: solo la imagen de fondo pesa 1,5 MB y cada foto de clienta o de categoría pesa entre 250 y 450 KB. Con datos móviles, eso se traduce en espera y en datos gastados.",
     "grid_pct": 81,
     "grid_legend": [
-      "Imágenes (7,7 MB)",
+      "Imágenes (8,6 MB)",
       "Todo lo demás"
     ],
-    "source": "Lighthouse móvil, octubre 2026 (total-byte-weight 9.718 KiB; 47 imágenes suman 7.861 KiB)"
+    "source": "Lighthouse móvil, tres pruebas limpias en noviembre de 2026 (se usa la del medio): total-byte-weight 10.842 KiB; imágenes 8.793 KiB"
   },
   "items": [
     {
@@ -26,9 +26,9 @@
       "eff": "Bajo",
       "stage": 1,
       "t": "Doce segundos de rosado antes de vender",
-      "t_plain": "Una pantalla de carga tapa la tienda durante más de 12 segundos en celular",
-      "s": "En el celular, la clienta mira una pantalla rosada con un «0%» durante más de 12 segundos antes de ver un solo producto.",
-      "now": "Un complemento de «pantalla de carga» cubre toda la página hasta que terminan de descargarse todos los archivos. En la prueba en celular, a los 9 y a los 12,6 segundos todavía solo se ve el fondo rosado con «0%»; el contenido principal aparece a los 15 segundos.",
+      "t_plain": "Una pantalla de carga tapa la tienda varios segundos en celular",
+      "s": "En el celular, la clienta puede mirar una pantalla rosada con un «0%» durante varios segundos antes de ver un solo producto.",
+      "now": "Un complemento de «pantalla de carga» cubre toda la página hasta que terminan de descargarse los archivos (tiene una «X» para cerrarla, pero poca gente la ve). En una prueba de laboratorio que simula un celular, la pantalla rosada con «0%» seguía tapando la tienda a los 12 segundos; es una sola medición y el tiempo varía entre cargas.",
       "fix": "Quitar la pantalla de carga, o limitarla a un instante, para que la tienda se muestre en cuanto el primer banner esté listo, y volver a medir el tiempo de aparición.",
       "why": "Cada segundo de pantalla vacía es tiempo en que una clienta que llegó desde Instagram o un anuncio pagado no ve tu colección.",
       "shot": {
@@ -91,10 +91,10 @@
       "imp": 5,
       "eff": "Medio",
       "stage": 1,
-      "t": "9,5 MB antes del primer vestido",
-      "t_plain": "La página de inicio pesa 9,5 MB, casi todo por fotos en formato pesado",
+      "t": "10,6 MB antes del primer vestido",
+      "t_plain": "La página de inicio pesa 10,6 MB, casi todo por fotos en formato pesado",
       "s": "Las fotos se suben en un formato muy pesado, así que la tienda gasta datos y tarda en abrir en el celular.",
-      "now": "Abrir la página de inicio descarga 9,5 MB; 7,7 MB son imágenes, casi todas PNG. Solo la imagen de fondo pesa 1,5 MB y cada foto de vestido entre 290 y 450 KB.",
+      "now": "Abrir la página de inicio descarga 10,6 MB; 8,6 MB son imágenes y casi todo ese peso está en PNG. Solo la imagen de fondo pesa 1,5 MB y cada foto de clienta o de categoría entre 250 y 450 KB.",
       "fix": "Convertir las fotos a WebP o AVIF, subirlas al tamaño real en que se muestran y activar una optimización automática para las fotos nuevas. La meta es dejar la página de inicio por debajo de 3 MB.",
       "why": "Una página liviana abre rápido aun con datos móviles, y eso mantiene a la clienta mirando productos en vez de esperando.",
       "shot": null
@@ -123,27 +123,6 @@
     },
     {
       "n": 6,
-      "c": "vis",
-      "src": [
-        "visual-3"
-      ],
-      "imp": 4,
-      "eff": "Bajo",
-      "stage": 1,
-      "t": "El «Sale» le gana al vestido",
-      "t_plain": "Una etiqueta «Sale» gigante cubre las fotos de los vestidos en oferta",
-      "s": "En los vestidos con descuento, la etiqueta de oferta cubre la mayor parte de la foto, así que la clienta no ve el producto que le quieres vender.",
-      "now": "En los vestidos Bahamas y Capri aparece un círculo rojo enorme con la palabra en inglés «SALE» que tapa medio vestido en celular y casi toda la tarjeta en computador; el resto de las tarjetas no tiene nada parecido.",
-      "fix": "Cambiar la etiqueta por una insignia pequeña en una esquina (por ejemplo «-20%» u «Oferta», en español) con el rosa o el vino de la marca, y mostrar el precio anterior tachado junto al nuevo.",
-      "why": "Una oferta solo vende si se ve el producto; tapar la foto convierte el descuento en ruido.",
-      "shot": {
-        "img": "mobile-fullpage.jpg",
-        "x": 28,
-        "y": 24
-      }
-    },
-    {
-      "n": 7,
       "c": "a11y",
       "src": [
         "a11y-3",
@@ -166,7 +145,7 @@
       }
     },
     {
-      "n": 8,
+      "n": 7,
       "c": "tec",
       "src": [
         "tech-3",
@@ -178,13 +157,13 @@
       "t": "22 complementos cobran peaje en cada visita",
       "t_plain": "Demasiados complementos y un servidor lento retrasan la primera vista",
       "s": "Antes de mostrar nada, la página carga código de 22 complementos, incluso funciones que la portada no usa, y el servidor tarda casi un segundo y medio en responder.",
-      "now": "En el celular, los archivos que bloquean la vista suman unos 3,6 segundos: se cargan 88 scripts y 58 hojas de estilo, entre ellos calendarios y selectores de hora de las opciones de producto, y tres familias de letra completas. Además, el servidor tarda entre 1,3 y 1,4 segundos en dar la primera respuesta, cuando lo recomendable es menos de 0,6, y no se ven señales de una caché de páginas.",
+      "now": "En el celular se cargan 88 scripts y 58 hojas de estilo de 22 complementos, entre ellos calendarios y selectores de hora de las opciones de producto, y se piden las hojas de tres familias de letra en todos sus grosores, aunque la página solo usa unas pocas. En una simulación, lo que bloquea la primera vista suma unos 3,5 segundos. Además, el servidor tarda entre 1,3 y 1,4 segundos en dar la primera respuesta, cuando lo recomendable es menos de 0,6, y no se ven señales de una caché de páginas.",
       "fix": "Desactivar los complementos que no se usan, cargar cada función solo en la página donde hace falta y dejar solo la tipografía y los grosores que el diseño usa. Activar una caché de páginas o un CDN.",
       "why": "Menos código y un servidor más rápido aceleran todas las páginas a la vez: catálogo, fichas y carrito.",
       "shot": null
     },
     {
-      "n": 9,
+      "n": 8,
       "c": "ux",
       "src": [
         "ux-5",
@@ -196,7 +175,7 @@
       "t": "Tu WhatsApp corta la conversación a medias",
       "t_plain": "El mensaje de WhatsApp sale incompleto y el teléfono no se puede llamar con un toque",
       "s": "Hablar con la tienda, justo cuando la clienta tiene dudas de talla o precio, cuesta más de lo necesario.",
-      "now": "El botón «¿Necesitas ayuda?» abre una ventana que dice «Hola , Bienvenido a Scarlett» y el mensaje que se envía a WhatsApp es «Hola **. Necesito más información sobre», cortado y sin el producto. El teléfono del pie de página es texto simple (no se puede llamar con un toque) y en el menú no hay una opción de contacto: «Universo Scarlett» apunta a una sección que no existe.",
+      "now": "El botón «¿Necesitas ayuda?» abre una ventana que dice «Hola , Bienvenido a Scarlett» y el mensaje que se envía a WhatsApp es «Hola **. Necesito más información sobre», cortado y sin el producto. El teléfono del pie de página es texto simple (no se puede llamar con un toque) y en el menú no hay una opción de Contacto.",
       "fix": "Escribir un saludo completo y hacer que el mensaje incluya automáticamente el producto que se está viendo (por ejemplo «Hola, quiero información sobre el Vestido Creta»). Hacer el teléfono pulsable y agregar «Contacto» al menú.",
       "why": "Un mensaje que ya dice qué producto interesa permite responder más rápido y cerrar la venta en el chat.",
       "shot": {
@@ -206,7 +185,7 @@
       }
     },
     {
-      "n": 10,
+      "n": 9,
       "c": "ux",
       "src": [
         "ux-6",
@@ -218,7 +197,7 @@
       "t": "Tu mejor prueba social está al fondo",
       "t_plain": "Las opiniones de clientas están al final de la página, en un carrusel que no se puede pausar",
       "s": "Tu mejor prueba de confianza, clientas reconocidas usando tus vestidos, aparece cuando la mayoría ya pasó por los productos.",
-      "now": "Las fotos de clientas con cinco estrellas (por ejemplo, la presentadora Laura Acuña) están casi al final de la página, después de las tiendas, en un carrusel que cambia solo cada 5 segundos, sin botón de pausa, y que en celular muestra una a la vez. Las tarjetas de producto no muestran calificaciones ni comentarios.",
+      "now": "Las fotos de clientas con cinco estrellas (por ejemplo, Laura Acuña) están casi al final de la página, después de las tiendas, en un carrusel que cambia solo cada 5 segundos, sin botón de pausa, y que en celular muestra una a la vez. Las tarjetas de producto no muestran calificaciones ni comentarios.",
       "fix": "Subir una franja fija de 3 o 4 testimonios justo debajo de los vestidos, sin rotación automática, y mostrar estas fotos también en la ficha de cada vestido.",
       "why": "Ver a otras clientas con la prenda puesta, cerca del precio, da la seguridad que se necesita para pagar un vestido de precio alto.",
       "shot": {
