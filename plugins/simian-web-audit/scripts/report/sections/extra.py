@@ -100,8 +100,13 @@ def _previews(ctx, pres) -> str:
     return f'<div class="sa-extra-pair">{serp}{share}</div>'
 
 
+ENGINE_NAMES = {"chatgpt": "ChatGPT", "gemini": "Gemini", "perplexity": "Perplexity",
+                "claude": "Claude", "copilot": "Copilot", "google": "Google"}
+
+
 def _ai(ai, brand: str) -> str:
     def card(a):
+        a = {**a, "engine": ENGINE_NAMES.get(a["engine"].strip().lower(), a["engine"])}
         res = ('<span class="sa-extra-res sa-extra-half">Te menciona</span>' if a["mentioned"]
                else '<span class="sa-extra-res">No apareces</span>')
         names = "".join(f'<span class="{"sa-extra-me" if is_brand(n, brand) else ""}">{esc(n)}</span>' for n in a["named"])

@@ -93,6 +93,14 @@ class ExtraTest(unittest.TestCase):
         sec = extra.build(self.ctx(extra=True))
         self.assertIn("Google improvisa", sec.html)
 
+    def test_ai_engine_keys_render_with_brand_names(self):
+        def f(doc):
+            doc["answers"][0]["engine"] = "chatgpt"
+        self._edit("ai-visibility.json", f)
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn("<span>ChatGPT</span>", sec.html)
+        self.assertNotIn("<span>chatgpt</span>", sec.html)
+
     def test_share_image_only_when_local_file_exists(self):
         sec = extra.build(self.ctx(extra=True))
         self.assertNotIn("og-source.jpg", sec.html)
