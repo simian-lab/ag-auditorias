@@ -1,0 +1,7 @@
+Googlebot: 200 400669
+GPTBot: 200 400669
+OAI-SearchBot: 200 400669
+ChatGPT-User: 200 400669
+ClaudeBot: 200 400669
+PerplexityBot: 200 400669
+Fri Nov  6 22:11:46 UTC 2026

@@ -2,9 +2,9 @@
   "ux": 45,
   "a11y": 54,
   "visual": 44,
-  "tech": 56,
-  "overall": 50,
-  "seo": 44,
+  "tech": 61,
+  "overall": 51,
+  "seo": 62,
   "target": 80,
   "version": "3",
   "rubric_version": "1",
@@ -30,7 +30,7 @@
       "total": 11
     },
     "seo": {
-      "passed": 3,
+      "passed": 4,
       "partial": 4,
       "total": 10
     }

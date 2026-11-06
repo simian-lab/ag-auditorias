@@ -13,12 +13,12 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Un pop-up de descuento tapa casi toda la primera pantalla (persiste tras reintentar) y el titular del banner está dentro de la imagen.",
+      "notes_es": "Un pop-up de descuento y un aviso de cookies tapan la primera pantalla, y el titular del banner está dentro de la imagen; su puntaje de velocidad está afectado por esa ventana.",
       "lighthouse": {
-        "performance": 13,
-        "accessibility": 73,
+        "performance": 30,
+        "accessibility": 71,
         "seo": 85,
-        "total_mb": 3.26
+        "total_mb": 3.22
       }
     },
     {
@@ -36,10 +36,10 @@
       },
       "notes_es": "Imagen de campaña a pantalla completa con el mensaje dentro de la foto; el menú está escondido y no dice para quién es.",
       "lighthouse": {
-        "performance": 30,
+        "performance": 39,
         "accessibility": 92,
         "seo": 100,
-        "total_mb": 6.78
+        "total_mb": 7.22
       }
     },
     {
@@ -57,10 +57,10 @@
       },
       "notes_es": "Menú claro por categorías (Hombre, Mujer, Bicicletas) y la página más liviana del grupo, aunque su titular también es una imagen.",
       "lighthouse": {
-        "performance": 50,
-        "accessibility": 87,
+        "performance": 40,
+        "accessibility": 89,
         "seo": 92,
-        "total_mb": 2.36
+        "total_mb": 5.62
       }
     }
   ],
@@ -76,12 +76,12 @@
       "trust_proof": false,
       "quote_cta": false
     },
-    "notes_es": "Foto de grupo potente y menú por público (Hombre, Mujer, Niños), pero el mensaje de la colección está dentro de la imagen y la línea Custom no tiene un botón de cotización visible.",
+    "notes_es": "Foto de grupo potente y menú por público (Hombre, Mujer, Niños), pero el mensaje de la colección está dentro de la imagen, una ventana de suscripción aparece al cargar y la línea Custom no tiene un botón de cotización visible.",
     "lighthouse": {
-      "performance": 37,
+      "performance": 54,
       "accessibility": 93,
       "seo": 100,
-      "total_mb": 3.67
+      "total_mb": 3.54
     }
   },
   "takeaway_es": "Ni Safetti ni Suarez, Go Rigo Go o GW muestran en su primera pantalla un mensaje en texto, una prueba de confianza o un botón para cotizar uniformes personalizados: la primera marca que lo haga se diferencia de inmediato."

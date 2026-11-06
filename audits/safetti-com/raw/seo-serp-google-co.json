@@ -1,0 +1,95 @@
+{
+  "source": "Real Google Colombia in BrowserOS (clean, logged-out profile), https://www.google.com/search?hl=es&gl=co&num=20&q=<query>; organic results from #rso 'a h3', ads (#tads) excluded",
+  "date": "2026-11-06",
+  "note": "Site name | displayed URL | title, in organic order. Google returned 8-10 organic results per page despite num=20.",
+  "queries": {
+    "ropa de ciclismo Colombia (p1)": [
+      "kom sports | komsportswear.com › collections › ropa-de-ciclis... | Ropa de ciclismo en Colombia",
+      "Safetti | safetti.com › collections › ropa-ciclismo | Ropa deportiva ciclismo para hombre y mujer || snippet: En Safetti Colombia encontrarás jerseys de ciclismo, pantalonetas, chaquetas y trajes de ciclismo diseñados con tecnología aerodinámica, ...",
+      "Enjoy Sportswear | enjoy.com.co | Ropa y Accesorios para Ciclismo, Running, Padel, Yoga y más",
+      "Givelo | givelo.co | Givelo: Descubre ropa para ciclismo hecha para rodar",
+      "GO RIGO GO! | gorigogo.com › jersey-de-ciclismo | Jerseys de Ciclismo",
+      "Torralba Sports | trbsports.co | Torralba Sports | TRB - Ropa para ciclismo desde 1976",
+      "Tienda Nairo | nairo.com.co › collections › ciclismo-hombre | Ciclismo Hombre",
+      "CycleWear | cyclewear.com.co | CycleWear | Tienda de Ciclismo | Cyclewear",
+      "Winner Cycling | winnercycling.com | WINNER CYCLING | Ropa de Ciclismo – Winner Cycling"
+    ],
+    "uniformes de ciclismo personalizados Medellín (p1)": [
+      "kom sports | komsportswear.com › collections › custom | Uniformes, jersey y enterizos personalizados de ciclismo",
+      "Taba Sport SAS | tabasport.com › pages › custom-uniformes... | CUSTOM - Uniformes de Ciclismo Personalizados",
+      "GO RIGO GO! | gorigogo.com › pages › personalizados | Personalizados",
+      "Suarez Custom | suarezcustom.com | Suarez Custom - Inicio",
+      "Facebook · Salvatore Cycling Uniformes | Salvatore Cycling Uniformes | Medellín",
+      "Tienda Patacón | tiendapatacon.com › personalizados | Personalizados",
+      "Instagram · sigloxtrainingwear | ¡ SABÍAS QUE TENEMOS PUNTO FÍSICO EN MEDELLÍN ! ...",
+      "Enjoy Sportswear | enjoy.com.co | Ropa y Accesorios para Ciclismo, Running, Padel, Yoga y más",
+      "Regol | deportesregol.com › blogs › ciclismo › uniforme... | Los mejores uniformes de ciclismo - Medellín"
+    ],
+    "uniformes de ciclismo personalizados Medellín (p2, start=10)": [
+      "Regol | deportesregol.com (repeat)", "Xpedition | xpedition.com.co | Xpedition", "Facebook · Salvatore Cycling Uniformes (repeat)",
+      "Torralba Sports | trbsports.co › jersey-ciclismo-personalizado | Jersey ciclismo personalizado", "Mercado Libre Colombia | listado.mercadolibre.com.co › ropa-ciclismo-me... | Ropa Ciclismo Medellin",
+      "Winner Cycling | winnercycling.com", "Suarez Clothing | co.suarezclothing.com | Jersey De Ciclismo Hombre Team Medellin", "Instagram · rmcsportciclismocol", "Arteikos | arteikos.com › Tienda › Uniformes Deportivos | Ciclismo – Uniformes Deportivos"
+    ],
+    "uniformes de ciclismo personalizados Medellín (p3, start=20)": [
+      "Instagram · xpeditioncolombia", "Cycling Gab | cyclinggab.com | Jersey ciclismo Medellín", "CycleWear | cyclewear.com.co", "Suarez Custom | suarezcustom.com › catalogo | Indoor",
+      "Bike House | bikehouse.co | Ropa y accesorios para ciclistas", "Reyes del ciclismo | reyesdelciclismo.com", "Instagram · noxwear", "Facebook · Cicloviajeros de Colombia", "TikTok | Ropa Ciclismo Medellin"
+    ],
+    "tienda ropa deportiva ciclismo Medellín (p1)": [
+      "Enjoy Sportswear | enjoy.com.co | Ropa y Accesorios para Ciclismo, Running, Padel, Yoga y más",
+      "Zerie Ropa de Ciclismo | zerie.com › pages › nuestras-tiendas | Zerie Ropa para ciclistas | Nuestras tiendas",
+      "Safetti | safetti.com | Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón || snippet: Encuentra desde uniformes de ciclistas, bandanas de ciclismo para hombre, shorts de running para mujer y pantalonetas de running para mujer, hasta prendas ...",
+      "Cycling Life | cyclinglifecolombia.com.co | Cycling Life – Bicicletas, repuestos y accesorios en Medellín",
+      "Instagram · winnercyclingwear | Ropa de ciclismo (@winnercyclingwear) · Itagüí",
+      "CycleWear | cyclewear.com.co | CycleWear | Tienda de Ciclismo | Cyclewear",
+      "Givelo | givelo.co", "Regol | deportesregol.com › blogs › ciclismo › uniforme...", "Xpedition | xpedition.com.co", "Instagram · cyclewear | Tienda de ciclismo (@cyclewear) · Sabaneta"
+    ],
+    "trisuit triatlón Colombia (p1)": [
+      "blackmouth.com.co | Trisuit - Blackmouth Sports", "Bikexperts | bikexperts.com › trisuit-hombre-mujer | Trisuits y ropa de triatlón en Colombia",
+      "kom sports | komsportswear.com › collections › enterizos-par... | Enterizos para tri", "Mercado Libre Colombia | Trisuit Triatlon | MercadoLibre",
+      "Suarez Clothing | co.suarezclothing.com › hombre-triatlon | Hombre Triatlón - Suarez Clothing", "Instagram · wetsuits_y_trisuits_colombia",
+      "frenesi.com.co | ENTERIZOS DE TRIATLÓN PARA MUJER - Frenesi", "decathlon.com.co | Trajes triatlón - Trisuits - Decathlon",
+      "Safetti | safetti.com › collections › triatlon-hombre | Trisuit y Trajes de Triatlón Hombre || snippet: Trajes técnicos para triatlón hombre con tejido hidrodinámico y secado rápido. Diseñados para transiciones ágiles entre natación, ciclismo y carrera.",
+      "GO RIGO GO! | gorigogo.com › products › trisuit-platium-... | Trisuit Platium Signature"
+    ],
+    "ropa para pádel mujer Colombia (p1)": [
+      "Colombian Gymwear | colombiangymwear.com › tenis-y-padel", "adidas.co | Ropa de Pádel Mujer | adidas Colombia", "Enjoy Sportswear | enjoy.com.co › collections › padel-coleccion",
+      "OYSHO | oysho.com", "Racketball | racketball.com.co", "Smash Padel Colombia | smashpadel.com.co", "PUNTO BLANCO | puntoblanco.co", "decathlon.com.co | Ropa para pádel - Bogotá - Decathlon", "Sportline.com.co | Ropa de Padel de Mujer"
+    ],
+    "ropa para pádel mujer Colombia (p2, start=10)": [
+      "Sportline.com.co (repeat)", "babalu.com.co | Ropa Tenis y Pádel al por Mayor para Mujer", "Instagram · kaybu.co",
+      "Safetti | safetti.com › collections › padel | Ropa de Pádel | Outfits, Camisas y Faldas || snippet: Descubre la mejor ropa de pádel para hombre y mujer. Outfits, camisetas, faldas y más con tecnología innovadora para un mejor rendimiento en la cancha.",
+      "Reebok Colombia | reebok.co", "vitalitysports.co", "racketcenter.com.co", "ASICS Colombia | asics.com.co", "tiendadepadel.co", "Instagram · padelmasterclub"
+    ],
+    "pantaloneta de ciclismo con cargaderas Colombia (p1)": [
+      "GW Bicycles | gwbicycles.com › products › pantaloneta-con-car...", "CycleWear | cyclewear.com.co › collections › pantalone... | Pantalonetas con Cargadera", "Mercado Libre Colombia | Pantaloneta Gw Con Cargaderas",
+      "ionik.co | Pantaloneta Badana de Ciclismo para hombre con Banda ...",
+      "Safetti | safetti.com › products › pantaloneta-ciclismo-con-... | PANTALONETA CICLISMO CON CARGADERAS ... - Safetti || snippet: Esta pantaloneta, hecha con tejido elástico, ofrece un ajuste perfecto y gran resistencia durante la competencia. La banda antideslizante en las piernas y ...",
+      "Equilibrium Bike | equilibriumbike.com", "GW Bicycles | gwbicycles.com (2nd product)", "Givelo | givelo.co › collections › pantalonetas-ciclismo-ca..."
+    ],
+    "marcas colombianas de ropa de ciclismo (p1)": [
+      "kom sports | komsportswear.com",
+      "Safetti | safetti.com | Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón || snippet: Compra jersey de ciclismo online, shorts de running, trisuit o cualquier prenda técnica directamente en nuestra tienda — con la garantía de una marca colombiana ...",
+      "laclasica.co | Las 5 Mejores Marcas de Ropa de Ciclismo en Colombia", "GO RIGO GO! | gorigogo.com", "Givelo | givelo.co", "SUAREZ cycling | co.suarezclothing.com", "Instagram · condorciclismo", "CycleWear | cyclewear.com.co", "Zueden | zueden.com", "Winner Cycling | winnercycling.com"
+    ],
+    "hospedaje para ciclistas El Retiro Antioquia (p1)": [
+      "Safetti | safetti.com › pages › house | Safetti House: Hospedaje para Ciclistas || snippet: Hospédate en Safetti House, una casa para ciclistas en El Retiro, Antioquia: 4 habitaciones, taller de bicicletas, rutas en Strava y desayuno incluido.",
+      "Booking.com | La Liebre bed and breakfast", "airbnb.com.co | TinyBus único", "tripadvisor.co | LA POSADA DEL ZAGUÁN", "Instagram · equipoelretiro", "Facebook · Rigoberto Urán | casa Rigo Cycling", "Booking.com | The Rolling Suite, El Retiro", "Bubble Sky | bubbleskyhotel.com"
+    ],
+    "safetti (p1)": [
+      "Safetti | safetti.com | Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón || snippet: Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, ...",
+      "Instagram · safetti | SAFETTI (@safetti) · Medellín", "CycleWear | cyclewear.com.co › Collections › Safetti | Safetti | Ropa de Ciclismo Colombiana", "Facebook · Safetti | Medellín",
+      "Safetti USA | safetti.us › pages › safetti-bogota | Ropa deportiva: Running, Ciclismo y más en Bogotá", "Moovil | moovil.com.co › Moda | Safetti"
+    ],
+    "safetti tiendas Medellín (p1)": [
+      "Safetti | safetti.com › pages › ropa-deportiva-medellin | Ropa deportiva en Medellín || snippet: Safetti Medellín: tienda de ropa sport y ropa deportiva para hombre y mujer. Ciclismo, running, triatlón y pádel con tecnología y diseño funcional.",
+      "Safetti | safetti.com | Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón || snippet: Con tiendas en Bogotá, Cali, Medellín, Barranquilla, Bucaramanga, Montería y ... Safetti Store Laureles: Calle 41 # 73 - 29 - PBX 604 444 8461.",
+      "Safetti | safetti.com › collections › ropa-deportiva-medellin | Ropa Deportiva Medellín | Diseño, Tecnología y Confort",
+      "Facebook · Safetti | ¿Ya conoces Safetti Stores en Medellín ...", "Safetti | safetti.com › pages › contact | Contáctanos", "Waze | Safetti Laureles", "Instagram · safetti", "TikTok · Safetti", "Facebook · Safetti"
+    ]
+  },
+  "business_profile_panel": {
+    "query": "safetti tiendas Medellín",
+    "right_panel_text": "Safetti Laureles | Ropa Deportiva Para Ciclismo, Running y Más · Calificación: 4,6 de 5 · 4,651 opiniones en Google · Tienda de equipamiento y ropa para actividades al aire libre en Medellín · Dirección: Tv. 41 #73 - 29, Laureles - Estadio, Medellín, Antioquia · Teléfono: (604) 4448461",
+    "note": "Only the Laureles listing was seen; Indiana, Llanogrande and Bogotá listings were not searched."
+  }
+}

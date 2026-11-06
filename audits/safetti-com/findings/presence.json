@@ -1,5 +1,5 @@
 {
-  "business_inferred": "Inferido del sitio: Safetti, marca colombiana (Medellín) de ropa deportiva técnica para ciclismo, running, triatlón y pádel, con tienda Shopify y tiendas físicas en Medellín (Laureles, Indiana), Llanogrande y Bogotá.",
+  "business_inferred": "Inferido del sitio: Safetti, marca colombiana (Medellín) de ropa deportiva técnica para ciclismo, running, triatlón y pádel, con tienda Shopify y tiendas físicas Laureles, Indiana, Llanogrande y Bogotá [ciudades por confirmar].",
   "serp": {
     "today": [
       {
@@ -40,7 +40,7 @@
         "page": "Inicio",
         "url": "https://safetti.com/",
         "title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
-        "description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005 para ciclismo, running, triatlón y pádel. Tiendas en Medellín, Llanogrande y Bogotá.",
+        "description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005 para ciclismo, running, triatlón y pádel. Cuatro tiendas Safetti Store.",
         "title_chars": 53,
         "description_chars": 145
       },
@@ -64,7 +64,7 @@
         "page": "Contacto",
         "url": "https://safetti.com/pages/contact",
         "title": "Contacto y tiendas Safetti | Safetti",
-        "description": "Escríbenos a servicioalcliente@safetti.com.co o llama al PBX (604) 444 8461. Direcciones y WhatsApp de nuestras tiendas en Medellín, Llanogrande y Bogotá.",
+        "description": "Escríbenos a servicioalcliente@safetti.com.co o llama al PBX (604) 444 8461. Direcciones y WhatsApp de nuestras tiendas.",
         "title_chars": 36,
         "description_chars": 154
       }
@@ -104,8 +104,8 @@
     ],
     "proposed": {
       "og:title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
-      "og:description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005. Conoce la nueva colección NEXO y visita nuestras tiendas en Medellín, Llanogrande y Bogotá.",
-      "og:image": "https://safetti.com/cdn/shop/files/BANNER_NEXO.jpg",
+      "og:description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005. Conoce la nueva colección NEXO y visita nuestras tiendas.",
+      "og:image": "[URL del banner NEXO actual por confirmar]",
       "og:image:width": 1200,
       "og:image:height": 630,
       "og_image_local": "og-source.jpg",
@@ -157,7 +157,7 @@
       },
       {
         "field": "Correo",
-        "source": "Contacto y pie de página",
+        "source": "Página de Contacto (en el pie no aparece)",
         "value": "servicioalcliente@safetti.com.co"
       },
       {
@@ -247,7 +247,8 @@
       "El WhatsApp de servicio al cliente (318 615 0418) solo aparece en el pie de página; la página de contacto no lo menciona.",
       "El enlace 'Personalización' abre un WhatsApp (318 346 8891) que no está escrito en ninguna parte del sitio.",
       "Ninguna página publica horarios de las tiendas, aunque la página de tiendas dice ofrecer 'información actualizada sobre ubicación, horarios y datos de contacto'.",
-      "Las direcciones de Laureles e Indiana no indican la ciudad, y los datos estructurados del sitio no incluyen dirección, teléfono ni horario de ninguna tienda."
+      "Las direcciones de Laureles e Indiana no indican la ciudad, y los datos estructurados del sitio no incluyen dirección, teléfono ni horario de ninguna tienda.",
+      "Tu portada dice «Encuentra tu tienda más cercana en Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Montería y Tunja», pero el pie y Contacto listan cuatro tiendas, y la página «Dónde Estamos» hoy da error 404."
     ],
     "evidence_files": [
       "raw/home.html",
