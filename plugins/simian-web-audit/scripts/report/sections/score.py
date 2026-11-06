@@ -80,7 +80,7 @@ def build(ctx) -> Section | None:
     cfg = ctx["scoring"]
     how = ("¿Cómo calculamos este puntaje? Cada área se evalúa con la misma lista fija de criterios, con peso según su importancia; "
            "el puntaje es el porcentaje que el sitio cumple (un criterio cumplido a medias vale la mitad). En accesibilidad y calidad técnica se promedia con la medición de "
-           f"Google Lighthouse. El total es el promedio de las cuatro áreas. Fórmula v{cfg['version']}.")
+           f"Google Lighthouse. El total es el promedio de las cuatro áreas.")
     criteria = _criteria_list(ctx) if detail else ""
     html = f"""<section id="resultado">
   <div class="wrap">

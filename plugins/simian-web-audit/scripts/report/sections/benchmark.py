@@ -2,7 +2,7 @@
 from report.render import Section, esc
 
 CHECKS = [("¿Se entiende qué vende?", "what"), ("¿Dice para quién?", "for_whom"), ("¿Titular en texto?", "text_headline"),
-          ("¿Pruebas de confianza?", "trust_proof"), ("¿Botón para cotizar?", "quote_cta")]
+          ("¿Pruebas de confianza?", "trust_proof"), ("¿Botón de compra o cotización?", "quote_cta")]
 
 CSS = """
 .sa-bench-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
