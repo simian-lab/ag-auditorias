@@ -13,9 +13,9 @@
         "trust_proof": true,
         "text_headline": true
       },
-      "notes_es": "Titular en texto, 'desde 2010' visible, dirección del almacén y botón 'Cotizar por WhatsApp' en la primera pantalla.",
+      "notes_es": "Titular en texto, 'desde 2010' visible, dirección del almacén y botón 'Cotizar por WhatsApp' en la primera pantalla. La foto de portada cambia en cada visita.",
       "lighthouse": {
-        "performance": 59,
+        "performance": 58,
         "accessibility": 96,
         "seo": 100,
         "total_mb": 2.35
@@ -34,9 +34,9 @@
         "trust_proof": false,
         "text_headline": false
       },
-      "notes_es": "Solo el logo y el menú explican qué vende; el carrusel no tiene mensaje y el contacto depende de un chat flotante.",
+      "notes_es": "Solo el logo y el menú dicen qué vende; el carrusel (cambia en cada visita) no tiene mensaje. Arriba hay un teléfono, pero no hay botón para cotizar.",
       "lighthouse": {
-        "performance": 38,
+        "performance": 64,
         "accessibility": 94,
         "seo": 100,
         "total_mb": 5.32
@@ -55,9 +55,9 @@
         "trust_proof": false,
         "text_headline": true
       },
-      "notes_es": "Titular en texto sobre la foto, pero sin pruebas de confianza ni botón de cotización; un aviso de cookies tapa parte del titular.",
+      "notes_es": "Titular en texto sobre la foto, pero sin pruebas de confianza ni botón de cotización; un aviso de cookies tapa parte del titular. El aviso de cookies puede afectar su medición.",
       "lighthouse": {
-        "performance": 42,
+        "performance": 67,
         "accessibility": 79,
         "seo": 83,
         "total_mb": 1.27
@@ -76,13 +76,13 @@
       "trust_proof": false,
       "text_headline": true
     },
-    "notes_es": "Titular claro en texto ('Lujo de exteriores'), pero sin años, clientes ni números visibles y el único botón es 'Ver productos'.",
+    "notes_es": "Titular claro en texto ('Lujo de exteriores'), pero sin años, clientes ni números visibles; el único botón con texto es 'Ver productos' y solo hay un ícono flotante de WhatsApp.",
     "lighthouse": {
-      "performance": 79,
+      "performance": 76,
       "accessibility": 95,
       "seo": 92,
       "total_mb": 7.53
     }
   },
-  "takeaway_es": "Muebles Exteriores Colombia te dice en cinco segundos qué hace, desde cuándo y cómo cotizar; tu sitio carga más rápido, pero no muestra ninguna prueba de confianza ni un botón para pedir asesoría."
+  "takeaway_es": "Muebles Exteriores Colombia te dice en cinco segundos qué hace, desde cuándo y cómo cotizar; tu sitio carga más rápido, pero no muestra años de trayectoria, proyectos ni clientes, ni un botón para pedir asesoría."
 }

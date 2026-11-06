@@ -39,7 +39,7 @@
       {
         "page": "Producto (ej. Mantinea)",
         "title": "Comedor para exterior Mantinea | Bed Bath & Barrel",
-        "description": "Comedor para exterior Mantinea. Pídelo en línea con envío a todo Colombia o míralo en nuestro showroom de CC El Retiro, Bogotá."
+        "description": "Comedor para exterior Mantinea, hecho a tu medida. Cotízalo por WhatsApp o míralo en nuestro showroom de CC El Retiro, Bogotá."
       }
     ]
   },
@@ -85,8 +85,8 @@
       },
       {
         "title": "Ficha de producto que se pueda citar",
-        "fix": "En cada producto, agregar datos estructurados de producto (precio, disponibilidad, materiales, medidas) y una descripción en texto plano, para que buscadores y asistentes puedan recomendar piezas concretas.",
-        "evidence": "Páginas de producto sin JSON-LD Product ni meta description (ej. /producto/comedor-para-exterior-mantinea/)."
+        "fix": "En las salas y comedores personalizables, que hoy no la tienen, agregar datos estructurados de producto (precio, disponibilidad, materiales, medidas) y una descripción en texto plano, para que buscadores y asistentes puedan recomendar piezas concretas.",
+        "evidence": "Las salas y comedores personalizables no tienen ficha de producto ni descripción (ej. /producto/comedor-para-exterior-mantinea/); otros productos sí la tienen."
       },
       {
         "title": "Conectar el sitio con tus redes",
@@ -138,11 +138,6 @@
         "value": "Lunes 11:00–19:00; martes a viernes 10:00–19:00; sábados 11:00–19:00; domingos y festivos cerrado"
       },
       {
-        "field": "Horario",
-        "source": "Páginas legales, Sobre nosotros",
-        "value": "No publicado"
-      },
-      {
         "field": "Facebook",
         "source": "Pie de página (solo aria-label; href vacío)",
         "value": "m.facebook.com/BedBathBarrel"
@@ -155,11 +150,11 @@
       {
         "field": "Datos estructurados",
         "source": "JSON-LD en inicio, tienda, producto, sobre nosotros",
-        "value": "Ninguno (0 bloques application/ld+json)"
+        "value": "Sin datos de empresa; ficha de producto solo en algunos productos"
       },
       {
         "field": "Fichas públicas",
-        "source": "Búsqueda web (WebSearch, 2 consultas)",
+        "source": "Búsqueda web general (indicio, por confirmar)",
         "value": "No se encontró ninguna ficha ni directorio; Google Business Profile no verificado"
       }
     ],

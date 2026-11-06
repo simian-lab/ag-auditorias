@@ -56,12 +56,12 @@
     },
     {
       "kind": "colors",
-      "title": "Tu color de marca solo aparece al pasar el mouse",
-      "explanation": "El tema define un tostado cálido (#a89279) que encaja con el lujo, pero solo se usa como efecto al pasar el cursor sobre los botones; lo que se ve es blanco, negro y gris. El color más fuerte de la página es el verde de WhatsApp, que no es tuyo.",
+      "title": "Tu color de marca casi no aparece",
+      "explanation": "El tema define un tostado cálido (#a89279) que encaja con el lujo, pero casi no se usa: solo en los íconos de redes del pie y al pasar el cursor sobre los botones; lo que se ve es blanco, negro y gris. El color más fuerte de la página es el verde de WhatsApp, que no es tuyo.",
       "items": [
         {"label": "Negro de texto y botones", "hex": "#1a1a1a"},
         {"label": "Gris oscuro de títulos de beneficio", "hex": "#2e2e2e"},
-        {"label": "Tostado de marca (solo al pasar el cursor)", "hex": "#a89279"},
+        {"label": "Tostado de marca (íconos del pie y al pasar el cursor)", "hex": "#a89279"},
         {"label": "Arena de fondos", "hex": "#e8e1d7"},
         {"label": "Crema del botón principal", "hex": "#f7f4ef"},
         {"label": "Gris de textos secundarios", "hex": "#8a8a8a"},
