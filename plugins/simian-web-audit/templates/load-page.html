@@ -241,7 +241,7 @@ details.strip[open] summary::after{content:"–"}
     <div class="below">
       <div class="card tbl">
         <h3>Los tiempos oficiales de Google Lighthouse</h3>
-        <p class="sub">Simulación de conexión móvil (4G lenta), Lighthouse. Con esa conexión los tiempos son más altos que en la grabación de arriba.</p>
+        <p class="sub">Simulación de conexión móvil (4G lenta), Lighthouse. Con esa conexión simulada los tiempos cambian respecto a la grabación de arriba. Verde: el mejor del grupo.</p>
         <table>
           <thead><tr><th>Sitio</th><th>Primer contenido</th><th>Contenido principal</th><th>Índice de velocidad</th></tr></thead>
           <tbody id="tbody"></tbody>
@@ -324,8 +324,10 @@ details.strip[open] summary::after{content:"–"}
     s.status=el.querySelector(".status"); s.stxt=s.status.querySelector("span");
     s.frames.forEach(function(f){ if(!f[1]){ var i=new Image(); i.src=src(s,f);} });
 
-    var best=Math.min.apply(null,SITES.map(function(x){return x.lab.lcp}));
-    tb.insertAdjacentHTML("beforeend",'<tr class="'+(s.me?"me":"")+'"><td>'+s.name+'</td><td>'+s1(s.lab.fcp)+' s</td><td class="'+(s.me?"bad":(s.lab.lcp===best?"good":""))+'">'+s1(s.lab.lcp)+' s</td><td class="'+(s.me?"bad":"")+'">'+s1(s.lab.si)+' s</td></tr>');
+    // green = best of the group; red only when the client is the slowest on that metric
+    function cls(k){var v=SITES.map(function(x){return x.lab[k]});var x=s.lab[k];
+      return x===Math.min.apply(null,v)?"good":(s.me&&x===Math.max.apply(null,v)?"bad":"");}
+    tb.insertAdjacentHTML("beforeend",'<tr class="'+(s.me?"me":"")+'"><td>'+s.name+'</td><td class="'+cls("fcp")+'">'+s1(s.lab.fcp)+' s</td><td class="'+cls("lcp")+'">'+s1(s.lab.lcp)+' s</td><td class="'+cls("si")+'">'+s1(s.lab.si)+' s</td></tr>');
 
     var r='<div class="r"><b>'+s.name+' · contenido principal a los '+s1(s.lcp)+' s</b><div class="fr">';
     var shownLcp=false;
