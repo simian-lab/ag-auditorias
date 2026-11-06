@@ -13,6 +13,6 @@ The orchestrator does this itself (no agent), after wave 1 validates.
    - `s`, `now`, `fix`, `why`; `c` ∈ `ux|a11y|vis|tec`; `imp`; `eff`.
    - `stage`: 1 = quick wins (≤ 2 weeks, low effort, high impact), 2 = "que entiendan qué vendes" (content/structure), 3 = "que te elijan" (trust, brand, design system).
    - `shot`: `{img, x, y}` pointing to the screenshot and percentage position where the problem is visible (`desktop-fullpage.jpg`, `mobile-fullpage.jpg`, `desktop-viewport.png` or another file in `screenshots/`), or `checks` for non-visual items (e.g. security headers: `[["HSTS","no"], ...]`), or `shot: null`.
-6. `big_stat`: the single most painful MEASURED number (e.g. page weight, LCP), with `value`, optional `count_to`/`suffix`, `headline`, `explain` (plain Spanish "¿Qué significa?"), optional `grid_pct` + `grid_legend` for the 100-cell grid, and `source`.
+6. `big_stat`: the single most painful MEASURED number. It must be stable (confirmed on a second run, or stated as a range or "más de X") and must not be contradicted elsewhere in the report: if the load comparison or benchmark shows competitors doing worse on that same metric, pick another number (e.g. page weight, LCP), with `value`, optional `count_to`/`suffix`, `headline`, `explain` (plain Spanish "¿Qué significa?"), optional `grid_pct` + `grid_legend` for the 100-cell grid, and `source`.
 7. Fill `client` (clean company name), `domain`, `date` ("Mes AAAA" in Spanish).
 8. Validate: `python3 -I <plugin_root>/scripts/validate_findings.py <audit>`.

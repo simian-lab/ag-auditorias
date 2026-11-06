@@ -99,5 +99,18 @@ class LoadPageTest(unittest.TestCase):
         self.assertNotIn("</script><b>x", html)
 
 
+class CopyTest(unittest.TestCase):
+    def site(self, me, fcp, lcp):
+        return {"me": me, "fcp": fcp, "lcp": lcp}
+
+    def test_claims_competition_ahead_only_when_client_slower_on_both(self):
+        h, _ = build_load_page._copy("x.com", [self.site(True, 3000, 8000), self.site(False, 1000, 2000)])
+        self.assertIn("tu competencia ya mostró su oferta", h)
+
+    def test_neutral_headline_when_client_paints_first(self):
+        h, _ = build_load_page._copy("x.com", [self.site(True, 1300, 7700), self.site(False, 1500, 2000)])
+        self.assertEqual(h, "Así carga tu sitio frente a tu competencia.")
+
+
 if __name__ == "__main__":
     unittest.main()

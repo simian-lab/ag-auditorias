@@ -25,6 +25,17 @@ Save any extra evidence under raw/ or screenshots/ with a prefix of your area na
 - Do not edit files outside your own output file and your prefixed evidence files.
 - Scores are computed by a script from the fixed rubric checks (`config/rubric.json`); do not invent an area score.
 
+## Verification rules (past audits failed on each of these)
+- Real source, not a proxy. Visibility in Google is checked on real Google; the site's behavior is checked on the live rendered page. A search tool, a directory or a third-party listing is a lead to confirm, not proof; if you cannot confirm it, mark it `[dato por confirmar]`.
+- Rendered view vs. no-JavaScript view. Users and Google see the page after JavaScript runs (judge it with headless Chrome or the browser). `curl` shows only what link previews and most AI crawlers get. Never describe the `curl` HTML as what users or Google see.
+- Lab metrics are not fixed facts. Lighthouse simulated values (LCP, FCP, TBT) vary between runs: run it at least twice for any number you headline, give a range or "más de X", and say it is a simulation. Observed (unthrottled) values come from a desktop machine emulating a phone; never call them "en un celular" or "usuarios reales".
+- No generalizations from shared CSS. Before writing "todos", "ninguno" or "cada", check each element (e.g. every main button's real colors), and keep exceptions such as the 3:1 contrast minimum for large text.
+- Measure interactions for real. Keyboard order with real Tab presses (CDP `Input.dispatchKeyEvent`), focus styles on the focused element, console errors on more than one load (report a range if the count varies).
+- Root cause from the original asset. Before blaming a file (broken logo, wrong image), open the original asset and compare it with the rendered result; CSS filters, cropping or lazy loading are often the real cause.
+- Business framing must match the evidence. If only one tool or element fails, name it; do not widen it ("tus campañas no se miden" when only one marketing tool fails).
+- Content that changes per visit (carousels, A/B tests, pop-ups) must be stated as such, and a competitor's metric dominated by a pop-up or cookie wall must be flagged.
+- User-supplied screenshots may be stitched; reproduce an artifact live before reporting it.
+
 ## Output — area agents write exactly one JSON file: findings/<area>.json
 {
   "area": "ux | a11y | visual | tech",

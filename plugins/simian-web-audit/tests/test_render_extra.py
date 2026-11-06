@@ -52,6 +52,47 @@ class ExtraTest(unittest.TestCase):
         self.assertIn('class="sa-extra-me">Acme Box S.A.S.', sec.html)
         self.assertNotIn('class="sa-extra-me">Latin Pack', sec.html)
 
+    def _edit(self, name, fn):
+        p = self.audit / "findings" / name
+        doc = json.loads(p.read_text())
+        fn(doc)
+        p.write_text(json.dumps(doc))
+
+    def test_search_row_shows_google_position(self):
+        def f(doc):
+            doc["search_tests"][1]["position_or_note"] = "Puesto 12 (segunda página): «Example»"
+        self._edit("seo.json", f)
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn("Apareces · puesto 12", sec.html)
+        self.assertIn(">No apareces<", sec.html)
+
+    def test_search_row_without_position_keeps_plain_label(self):
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn(">Apareces<", sec.html)
+
+    def test_whatsapp_today_uses_preview_title_when_given(self):
+        self._edit("presence.json", lambda d: d["share_preview"].__setitem__("today_title", "Solo Shell"))
+        sec = extra.build(self.ctx(extra=True))
+        wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):]
+        self.assertIn("Solo Shell", wa)
+        self.assertNotIn("Example – Inicio", wa)
+
+    def test_whatsapp_today_falls_back_to_serp_title(self):
+        sec = extra.build(self.ctx(extra=True))
+        wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):]
+        self.assertIn("Example – Inicio", wa)
+
+    def test_serp_shows_real_google_snippet_when_given(self):
+        self._edit("presence.json", lambda d: d["serp"]["today"][0].__setitem__("google_snippet", "Fundada en 2006."))
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn("Fundada en 2006.", sec.html)
+        self.assertIn("Google toma este texto de tu página", sec.html)
+        self.assertNotIn("Google improvisa", sec.html)
+
+    def test_serp_without_description_or_snippet_keeps_warning(self):
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn("Google improvisa", sec.html)
+
     def test_share_image_only_when_local_file_exists(self):
         sec = extra.build(self.ctx(extra=True))
         self.assertNotIn("og-source.jpg", sec.html)

@@ -68,7 +68,7 @@ def _vision_big(areas: dict) -> str:
 def _copy(meta_domain: str, sites: list[dict]) -> tuple[str, str]:
     me = next(s for s in sites if s["me"])
     others = [s for s in sites if not s["me"]]
-    if others and all(o["lcp"] < me["lcp"] for o in others):
+    if others and all(o["lcp"] < me["lcp"] and o["fcp"] < me["fcp"] for o in others):
         headline = "Mientras tu sitio sigue cargando, tu competencia ya mostró su oferta."
     else:
         headline = "Así carga tu sitio frente a tu competencia."
@@ -77,7 +77,7 @@ def _copy(meta_domain: str, sites: list[dict]) -> tuple[str, str]:
         slowest = max(o["lcp"] for o in others)
         rng = f"{_s(fastest)} s" if fastest == slowest else f"entre {_s(fastest)} y {_s(slowest)} s"
         meaning = (f"<p>Tu competencia muestra su contenido principal {rng}. En {esc(meta_domain)}, el contenido principal "
-                   f"tarda <b>{_s(me['lcp'])} s</b> en aparecer.</p>")
+                   f"tarda <b>{_s(me['lcp'])} s</b> en aparecer en esta grabación.</p>")
     else:
         meaning = f"<p>En {esc(meta_domain)}, el contenido principal tarda <b>{_s(me['lcp'])} s</b> en aparecer.</p>"
     return headline, meaning

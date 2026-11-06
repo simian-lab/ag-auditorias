@@ -53,12 +53,19 @@ def is_brand(name: str, brand: str) -> bool:
     return bool(b) and b in _norm(name)
 
 
+def _result_label(t) -> str:
+    if not t["appears"]:
+        return "No apareces"
+    m = re.search(r"[Pp]uesto (\d+)", t.get("position_or_note") or "")
+    return f"Apareces · puesto {m.group(1)}" if m else "Apareces"
+
+
 def _search(seo, score) -> tuple[str, str]:
     tests = seo.get("search_tests", [])
     hits = sum(1 for t in tests if t["appears"])
     rows = "".join(
         f'<tr><td>«{esc(t["query"])}»<div class="sa-extra-who">Aparecen: {esc(", ".join(t.get("who_appears", [])[:3]))}</div></td>'
-        f'<td class="{"sa-extra-yes" if t["appears"] else "sa-extra-no"}">{"Apareces" if t["appears"] else "No apareces"}</td></tr>'
+        f'<td class="{"sa-extra-yes" if t["appears"] else "sa-extra-no"}">{esc(_result_label(t))}</td></tr>'
         for t in tests)
     headline = ("Buscamos lo que buscan tus compradores. No apareciste ni una vez." if hits == 0
                 else f"Buscamos lo que buscan tus compradores. Apareciste en {hits} de {len(tests)}.")
@@ -72,8 +79,14 @@ def _search(seo, score) -> tuple[str, str]:
 def _previews(ctx, pres) -> str:
     today, prop = pres["serp"]["today"][0], pres["serp"]["proposed"][0]
     sp = pres["share_preview"]["proposed"]
-    desc = (f'<span>{esc(today["meta_description"])}</span>' if today.get("meta_description")
-            else '<span class="sa-extra-miss">Sin descripción: Google improvisa el texto que ve el comprador.</span>')
+    preview_title = pres["share_preview"].get("today_title") or today["title"]
+    if today.get("meta_description"):
+        desc = f'<span>{esc(today["meta_description"])}</span>'
+    elif today.get("google_snippet"):
+        desc = (f'<span>{esc(today["google_snippet"])}</span>'
+                '<span class="sa-extra-miss">No definiste una descripción: Google toma este texto de tu página.</span>')
+    else:
+        desc = '<span class="sa-extra-miss">Sin descripción: Google improvisa el texto que ve el comprador.</span>'
     serp = (f'<div class="card sa-extra-card"><h3>Así apareces en Google</h3><p class="why">Lo primero que ve un comprador nuevo.</p>'
             f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-serp"><p>{esc(today["url"])}</p><b>{esc(today["title"])}</b>{desc}</div>'
             f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div><div class="sa-extra-serp"><p>{esc(today["url"])}</p><b>{esc(prop["title"])}</b>'
@@ -81,7 +94,7 @@ def _previews(ctx, pres) -> str:
     img = ctx["asset"](sp["og_image_local"]) if sp.get("og_image_local") else None
     og_img = f'<img src="{img}" alt="">' if img else ""
     share = (f'<div class="card sa-extra-card"><h3>Así se ve tu enlace en WhatsApp</h3><p class="why">Cada vez que compartes el sitio con un cliente.</p>'
-             f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(today["url"])}</span>{esc(today["title"])}</div></div>'
+             f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(today["url"])}</span>{esc(preview_title)}</div></div>'
              f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div><div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-og">{og_img}'
              f'<div><b>{esc(sp["og:title"])}</b>{esc(sp["og:description"])}</div></div><span class="sa-extra-link">{esc(today["url"])}</span></div></div></div>')
     return f'<div class="sa-extra-pair">{serp}{share}</div>'
