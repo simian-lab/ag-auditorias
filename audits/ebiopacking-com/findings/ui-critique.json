@@ -1,5 +1,5 @@
 {
-  "verdict": "Tu marca tiene una base reconocible, pero cada sección parece diseñada por una persona distinta: seis verdes, cuatro tipografías y botones que no se parecen entre sí.",
+  "verdict": "Tu marca tiene una base reconocible, pero cada sección parece diseñada por una persona distinta: seis verdes, tipografías mezcladas y botones que no se parecen entre sí.",
   "inventory": [
     {
       "kind": "buttons",
@@ -119,8 +119,8 @@
     },
     {
       "kind": "fonts",
-      "title": "Cuatro tipografías para una sola página",
-      "explanation": "El sitio carga Roboto, Roboto Slab y Poppins, y el banner usa una cuarta letra que está dibujada en la imagen. El resultado es que el título del banner, los títulos de sección y los párrafos no parecen de la misma empresa.",
+      "title": "Dos tipografías en uso, una pedida de más y otra dibujada",
+      "explanation": "Tu página usa Roboto y Poppins, pide además Roboto Slab aunque ningún texto la usa, y el banner trae una cuarta letra dibujada en la imagen. El resultado es que el título del banner, los títulos de sección y los párrafos no parecen de la misma empresa.",
       "items": [
         {
           "label": "Roboto: títulos, menú y categorías",
@@ -131,7 +131,7 @@
           "family": "Poppins"
         },
         {
-          "label": "Roboto Slab: cargada como fuente secundaria",
+          "label": "Roboto Slab: se pide, pero ningún texto la usa",
           "family": "Roboto Slab"
         },
         {
@@ -211,7 +211,7 @@
   ],
   "sharp_headlines": {
     "1": "Tu banner no dice qué fabricas",
-    "2": "Tu portada hace esperar 7,7 segundos",
+    "2": "Tu portada pesa más de 13 MB",
     "3": "Tu WhatsApp recibe clientes con texto de prueba",
     "4": "Tus productos se ven, pero no se piden",
     "5": "Tu formulario no pide lo necesario para cotizar",

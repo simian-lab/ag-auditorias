@@ -207,8 +207,8 @@ details.strip[open] summary::after{content:"–"}
 <section id="carga">
   <div class="wrap">
     <div class="eyebrow">Velocidad · Comparativa con tu competencia</div>
-    <h2>Mientras tu sitio sigue cargando, tu competencia ya mostró su oferta.</h2>
-    <p class="lead">Grabamos cómo se abre cada página en un celular, fotograma a fotograma. Dale play y mira las cuatro al mismo tiempo.</p>
+    <h2>Así carga tu sitio frente a tu competencia.</h2>
+    <p class="lead">Grabamos cómo se abre cada página en un computador que simula un celular, con la conexión sin limitar, fotograma a fotograma. Dale play y mira las cuatro al mismo tiempo.</p>
 
     <div class="card player" id="player">
       <div class="ctrl">
@@ -250,8 +250,8 @@ details.strip[open] summary::after{content:"–"}
       </div>
       <div class="card mean">
         <h3>¿Qué significa?</h3>
-        <p>Tu competencia muestra su contenido principal entre 1,5 y 4,1 s. En ebiopacking.com, el contenido principal tarda <b>7,7 s</b> en aparecer.</p>
-        <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / Think with Google</span></div>
+        <p>Tu competencia muestra su contenido principal entre 1,8 y 8,1 s. En ebiopacking.com, el contenido principal tarda <b>3,4 s</b> en aparecer en esta grabación.</p>
+        <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / SOASTA, 2017 (móvil)</span></div>
       </div>
     </div>
 
@@ -296,7 +296,7 @@ details.strip[open] summary::after{content:"–"}
   // Real data. Frames + observed* timings: Lighthouse 13.0.1 mobile trace (raw/*.json, screenshot-thumbnails).
   // "lab" values: Lighthouse simulated slow-4G metrics (first-contentful-paint, largest-contentful-paint, speed-index).
   // blank:true = frame captured before first paint (Lighthouse stores it as an empty/black frame).
-  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "ebiopacking.com", "me": true, "fcp": 1315, "lcp": 7746, "frames": [[968, 1], [1937], [2905], [3874], [4842], [5810], [6779], [7747]], "lab": {"fcp": 2735, "lcp": 65560, "si": 21318}}, {"slug": "ccorrugados", "name": "Compañía Colombiana de Corrugados", "url": "www.ccorrugados.com", "me": false, "fcp": 2408, "lcp": 2438, "frames": [[375, 1], [750, 1], [1125, 1], [1500, 1], [1875, 1], [2250, 1], [2625], [3000]], "lab": {"fcp": 4998, "lcp": 12798, "si": 6400}}, {"slug": "divipack", "name": "Divipack", "url": "www.divipack.com", "me": false, "fcp": 3310, "lcp": 4145, "frames": [[1039, 1], [2077, 1], [3116, 1], [4155], [5193], [6232], [7270], [8309]], "lab": {"fcp": 3627, "lcp": 12338, "si": 9084}}, {"slug": "smurfit-westrock", "name": "Smurfit Westrock Colombia", "url": "www.smurfitwestrock.com.co", "me": false, "fcp": 1497, "lcp": 1533, "frames": [[375, 1], [750, 1], [1125, 1], [1500], [1875], [2250], [2625], [3000]], "lab": {"fcp": 1877, "lcp": 3496, "si": 3622}}];
+  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "ebiopacking.com", "me": true, "fcp": 2333, "lcp": 3396, "frames": [[877, 1], [1755, 1], [2632], [3509], [4386], [5264], [6141], [7018]], "lab": {"fcp": 3741, "lcp": 36102, "si": 20997}}, {"slug": "ccorrugados", "name": "Compañía Colombiana de Corrugados", "url": "www.ccorrugados.com", "me": false, "fcp": 923, "lcp": 1801, "frames": [[375, 1], [750, 1], [1125], [1500], [1875], [2250], [2625], [3000]], "lab": {"fcp": 2441, "lcp": 6613, "si": 5004}}, {"slug": "divipack", "name": "Divipack", "url": "www.divipack.com", "me": false, "fcp": 2349, "lcp": 8117, "frames": [[1275, 1], [2551], [3826], [5102], [6377], [7652], [8928], [10203]], "lab": {"fcp": 4433, "lcp": 20160, "si": 9290}}, {"slug": "smurfit-westrock", "name": "Smurfit Westrock Colombia", "url": "www.smurfitwestrock.com.co", "me": false, "fcp": 1934, "lcp": 1948, "frames": [[531, 1], [1063, 1], [1594, 1], [2126], [2657], [3188], [3720], [4251]], "lab": {"fcp": 3484, "lcp": 4382, "si": 7584}}];
   var END=12000, SPEED=2, t=0, playing=false, last=0;
   function s1(ms){return (ms/1000).toFixed(1).replace(".",",")}
   function pct(ms){return Math.min(100,ms/END*100)}

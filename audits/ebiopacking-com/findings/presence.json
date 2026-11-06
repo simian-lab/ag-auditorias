@@ -7,7 +7,8 @@
         "breadcrumb": "ebiopacking.com",
         "title": "eBiopacking Colombia – Soluciones en Empaques",
         "meta_description": null,
-        "evidence": "raw/home.html: <title>eBiopacking Colombia &#8211; Soluciones en Empaques</title>; no <meta name=\"description\">; canonical https://ebiopacking.com/"
+        "evidence": "raw/home.html: <title>eBiopacking Colombia &#8211; Soluciones en Empaques</title>; no <meta name=\"description\">; canonical https://ebiopacking.com/",
+        "google_snippet": "Ebiopacking es una empresa fundada en el año 2006 con el firme compromiso de brindar soluciones innovadoras en el sector de empaques de cartón corrugado."
       },
       {
         "page": "Productos",
@@ -108,7 +109,7 @@
       {
         "field": "Mensaje WhatsApp",
         "source": "Botón de WhatsApp (todas las páginas)",
-        "value": "¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/... (contacto 'John Doe', etiqueta 'Soporte')"
+        "value": "¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/..."
       },
       {
         "field": "Correo",
@@ -123,7 +124,7 @@
       {
         "field": "Horario",
         "source": "Todo el sitio",
-        "value": "[dato por confirmar] no publicado"
+        "value": "No publicado"
       },
       {
         "field": "Datos estructurados",
@@ -132,15 +133,14 @@
       },
       {
         "field": "Directorios públicos",
-        "source": "Búsqueda web (nombre, teléfonos y correo)",
-        "value": "Figura como «E Biopacking S.A.S.» (Calle 2 #18-93, Parque Industrial San Jorge, Mosquera; tel. 310 325 0267) en directorios empresariales citados por ChatGPT (empresite.eleconomistaamerica.co, informacolombia.com)"
+        "source": "Directorios citados en una respuesta de ChatGPT (por confirmar en la fuente)",
+        "value": "[dato por confirmar] «E Biopacking S.A.S.», Calle 2 #18-93, Parque Industrial San Jorge, Mosquera"
       }
     ],
     "inconsistencies": [
       "El botón de WhatsApp que aparece en todas las páginas lleva a un número (310 311 8117) distinto de los dos que publicas en Contacto (310 325 0267 y 310 451 4510).",
-      "El botón de WhatsApp tiene todavía la configuración de prueba: el mensaje que se envía dice «¡Hola! Estoy probando el plugin Social Chat» y el contacto se llama «John Doe».",
-      "Teléfonos, correo y dirección solo aparecen en la página de Contacto; el resto del sitio no los muestra y no publicas horario de atención.",
-      "En directorios empresariales apareces como «E Biopacking S.A.S.» y en tu sitio como «eBiopacking», sin dirección completa ni datos estructurados; unifica nombre, dirección y teléfono en todas las fuentes para que Google y la IA te reconozcan como la misma empresa."
+      "El botón de WhatsApp tiene todavía la configuración de prueba: al abrirse, el mensaje ya escrito dice «¡Hola! Estoy probando el plugin Social Chat».",
+      "Teléfonos, correo y dirección solo aparecen en la página de Contacto; el resto del sitio no los muestra y no publicas horario de atención."
     ],
     "technical_note": "qlwapp (QuadLayers Social Chat) data-contacts/data-button in every fetched page: phone 573103118117, firstname John, lastname Doe, default plugin test message, timefrom/timeto 00:00, timezone UTC+0, plus a WhatsApp group link. WebSearch queries for 'Ebiopacking Mosquera', '\"ebiopacking\" Colombia empaques' and the phones/email returned no matching listings; however the OpenSEO ChatGPT answer (run eaeeaa5b) cites empresite.eleconomistaamerica.co/BIOPACKING-SAS.html and informacolombia.com/.../biopacking-sas, so directory listings do exist. No Google Business Profile confirmed."
   }

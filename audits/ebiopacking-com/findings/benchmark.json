@@ -6,9 +6,20 @@
       "url": "https://www.ccorrugados.com/",
       "why_competitor": "Bogotá-based maker of custom corrugated cardboard boxes with national dispatch and an online quote tool; same B2B buyer.",
       "screenshot": "screenshots/bench-ccorrugados.png",
-      "five_second": {"what": true, "for_whom": false, "text_headline": true, "trust_proof": false, "quote_cta": true},
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": false,
+        "quote_cta": true
+      },
       "notes_es": "En la primera pantalla dice en texto que fabrica cajas de cartón y ofrece un botón \"Cotiza ahora\" con cotización en dos pasos.",
-      "lighthouse": {"performance": 0.58, "accessibility": 0.96, "seo": 1, "total_mb": 2.75}
+      "lighthouse": {
+        "performance": 0.7,
+        "accessibility": 0.96,
+        "seo": 1,
+        "total_mb": 2.75
+      }
     },
     {
       "name": "Divipack",
@@ -16,9 +27,20 @@
       "url": "https://www.divipack.com/",
       "why_competitor": "Bogotá corrugated box and packaging maker (also sells in Medellín) whose site targets floriculture and export packaging.",
       "screenshot": "screenshots/bench-divipack.png",
-      "five_second": {"what": true, "for_whom": false, "text_headline": false, "trust_proof": false, "quote_cta": false},
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": false,
+        "trust_proof": false,
+        "quote_cta": false
+      },
       "notes_es": "Muestra teléfonos de Bogotá y Medellín arriba, pero su mensaje principal es una imagen de cajas para archivo y no tiene botón para cotizar.",
-      "lighthouse": {"performance": 0.58, "accessibility": 0.86, "seo": 0.92, "total_mb": 4.22}
+      "lighthouse": {
+        "performance": 0.58,
+        "accessibility": 0.86,
+        "seo": 0.92,
+        "total_mb": 4.53
+      }
     },
     {
       "name": "Smurfit Westrock Colombia",
@@ -26,9 +48,20 @@
       "url": "https://www.smurfitwestrock.com.co/",
       "why_competitor": "Big reference: global corrugated packaging leader with operations in Colombia that supplies flower and agro exporters.",
       "screenshot": "screenshots/bench-smurfit-westrock.png",
-      "five_second": {"what": true, "for_whom": false, "text_headline": true, "trust_proof": true, "quote_cta": false},
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": true,
+        "quote_cta": false
+      },
       "notes_es": "Referente grande: su página es la más liviana (0,6 MB) y se presenta como líder mundial que cotiza en bolsa, aunque no ofrece cotizar en la primera pantalla.",
-      "lighthouse": {"performance": 0.88, "accessibility": 0.98, "seo": 0.54, "total_mb": 0.6}
+      "lighthouse": {
+        "performance": 0.59,
+        "accessibility": 0.87,
+        "seo": 0.77,
+        "total_mb": 2.19
+      }
     }
   ],
   "client": {
@@ -36,9 +69,20 @@
     "slug": "client",
     "url": "https://ebiopacking.com/",
     "screenshot": "screenshots/desktop-viewport.png",
-    "five_second": {"what": false, "for_whom": true, "text_headline": false, "trust_proof": false, "quote_cta": false},
+    "five_second": {
+      "what": false,
+      "for_whom": true,
+      "text_headline": false,
+      "trust_proof": false,
+      "quote_cta": false
+    },
     "notes_es": "Dice que sus empaques son para flores y frutas, pero ese mensaje está dentro de una imagen, no dice que fabrica cajas de cartón corrugado y no hay botón para cotizar.",
-    "lighthouse": {"performance": 0.61, "accessibility": 0.93, "seo": 0.92, "total_mb": 13.39}
+    "lighthouse": {
+      "performance": 0.58,
+      "accessibility": 0.93,
+      "seo": 0.92,
+      "total_mb": 13.26
+    }
   },
-  "takeaway_es": "Tu página de inicio pesa 13,4 MB, más del triple que la de cualquier competidor, y en celular tarda 7,7 s en mostrar su contenido principal, cuando ellos lo hacen entre 1,5 y 4,1 s."
+  "takeaway_es": "Tu página de inicio pesa 13,3 MB, casi el triple que el competidor más pesado. Tu encabezado aparece rápido, pero el banner principal llega tarde porque solo él pesa cerca de 10 MB; en la simulación de celular con 4G lenta tarda unos 36 segundos, cuando tus competidores tardan entre 4 y 20."
 }
