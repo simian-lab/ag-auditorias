@@ -41,13 +41,21 @@
       {
         "page": "https://simian.co/portafolio/",
         "title": "Portafolio: casos de desarrollo web e IA | Simian",
-        "description": "Casos reales de Simian: app móvil para la Universidad Externado, aplicación de Elecciones El Tiempo y más proyectos web, WordPress y de IA."
+        "description": "Casos reales de Simian: app móvil Externado, Elecciones El Tiempo, portal Salud Total, agente de IA Veyalthi y más."
       }
     ]
   },
   "share_preview": {
     "today": {
-      "pages_checked": ["/", "/servicios/", "/portafolio/", "/conocenos/", "/contacto/", "/desarrollo-web-movil/", "/app-externado/"],
+      "pages_checked": [
+        "/",
+        "/servicios/",
+        "/portafolio/",
+        "/conocenos/",
+        "/contacto/",
+        "/desarrollo-web-movil/",
+        "/app-externado/"
+      ],
       "og_tags_home": {
         "og:title": "Desarrollo web, UX/UI y automatización con IA | simian.co",
         "og:description": "En Simian creamos productos digitales y automatizaciones con IA: UX/UI, desarrollo y DevOps. Agenda una reunión.",
@@ -72,7 +80,7 @@
     "proposed": {
       "og:title": "Simian: desarrollo web, UX/UI y automatización con IA",
       "og:description": "Diseñamos, construimos y operamos productos digitales: UX/UI, desarrollo web y móvil, automatización con IA y DevOps.",
-      "og:image": "https://simian.co/assets/img/simian-share.webp",
+      "og:image": "https://simian.co/assets/img/simian-share.jpg (por crear, 1200×630 JPEG)",
       "og:url": "https://simian.co/",
       "og:site_name": "Simian",
       "og:locale": "es_CO",
@@ -91,7 +99,7 @@
       },
       {
         "title": "Ficha de datos verificables en Conócenos",
-        "fix": "Publica en /conocenos/ una ficha corta y citable: año de fundación, ciudad, tamaño del equipo, modelo de trabajo remoto, número de proyectos y sectores atendidos. Hoy el sitio no dice ninguno de estos datos y LinkedIn los da por su cuenta (fundada en 2013, 2-10 empleados, Bogotá).",
+        "fix": "Publica en /conocenos/ una ficha corta y citable: año de fundación, ciudad, tamaño del equipo, modelo de trabajo remoto, número de proyectos y sectores atendidos. Hoy el sitio no dice año de fundación, ciudad ni tamaño del equipo (los sectores sí aparecen en Conócenos, pero sin cifras), y LinkedIn los da por su cuenta (fundada en 2013, 2-10 empleados, Bogotá).",
         "evidence": "No founding year, city or team size found in the text of home, /conocenos/ or /servicios/. LinkedIn company page (raw/presence-linkedin.html): Founded 2013, Company size 2-10 employees, Headquarters Bogotá."
       },
       {
@@ -118,24 +126,96 @@
   },
   "nap": {
     "rows": [
-      {"field": "Nombre", "source": "Sitio: footer de todas las páginas", "value": "Simian SAS"},
-      {"field": "Nombre", "source": "Sitio: títulos de página", "value": "simian.co (la mayoría) / Simian (portafolio)"},
-      {"field": "Nombre", "source": "Política de tratamiento de datos (/privacy-policy/)", "value": "Simian SAS, NIT 900.639.528-5"},
-      {"field": "Nombre", "source": "LinkedIn (linkedin.com/company/simian-co)", "value": "Simian"},
-      {"field": "Teléfono", "source": "Sitio: home, contacto, conócenos, servicios, portafolio, casos (footer y botón WhatsApp)", "value": "+57 311 599 2255 (wa.me/573115992255)"},
-      {"field": "Teléfono", "source": "Política de tratamiento de datos y política de cookies", "value": "+57 311 599 2255"},
-      {"field": "Teléfono", "source": "LinkedIn", "value": "No publicado"},
-      {"field": "Correo", "source": "Sitio: todas las páginas revisadas y políticas", "value": "info@simian.co"},
-      {"field": "Dirección", "source": "Sitio: home, contacto, footer", "value": "No publicada"},
-      {"field": "Dirección", "source": "Política de tratamiento de datos (/privacy-policy/)", "value": "Carrera 7b #126-71 (sin ciudad)"},
-      {"field": "Dirección", "source": "Sitio: /conocenos/", "value": "Equipo remoto ('Trabajamos remoto desde el inicio')"},
-      {"field": "Dirección", "source": "LinkedIn", "value": "Bogotá, CO (sin dirección)"},
-      {"field": "Horario", "source": "Sitio y LinkedIn", "value": "No publicado en ninguna fuente"},
-      {"field": "Sitio web", "source": "LinkedIn", "value": "http://simian.co (redirige 301 a https://simian.co/)"},
-      {"field": "Especialidades", "source": "LinkedIn", "value": "Web development, Web design, Mobile applications"},
-      {"field": "Especialidades", "source": "Sitio: footer / servicios", "value": "Estrategia de producto, Automatización con IA, UX/UI, Desarrollo web y móvil, Infraestructura/seguridad/DevOps, Soporte"},
-      {"field": "Datos estructurados", "source": "Sitio: todas las páginas revisadas", "value": "Sin JSON-LD (no hay Organization ni LocalBusiness)"},
-      {"field": "Chat", "source": "Sitio", "value": "No hay widget de chat; solo enlace directo a WhatsApp"}
+      {
+        "field": "Nombre",
+        "source": "Sitio: footer de todas las páginas",
+        "value": "Simian SAS"
+      },
+      {
+        "field": "Nombre",
+        "source": "Sitio: títulos de página",
+        "value": "simian.co (la mayoría) / Simian (portafolio)"
+      },
+      {
+        "field": "Nombre",
+        "source": "Política de tratamiento de datos (/privacy-policy/)",
+        "value": "Simian SAS, NIT 900.639.528-5"
+      },
+      {
+        "field": "Nombre",
+        "source": "LinkedIn (linkedin.com/company/simian-co)",
+        "value": "Simian"
+      },
+      {
+        "field": "Teléfono",
+        "source": "Sitio: home, contacto, conócenos, servicios, portafolio, casos (footer y botón WhatsApp)",
+        "value": "+57 311 599 2255 (wa.me/573115992255)"
+      },
+      {
+        "field": "Teléfono",
+        "source": "Política de tratamiento de datos y política de cookies",
+        "value": "+57 311 599 2255"
+      },
+      {
+        "field": "Teléfono",
+        "source": "LinkedIn",
+        "value": "No publicado"
+      },
+      {
+        "field": "Correo",
+        "source": "Sitio: todas las páginas revisadas y políticas",
+        "value": "info@simian.co"
+      },
+      {
+        "field": "Dirección",
+        "source": "Sitio: home, contacto, footer",
+        "value": "No publicada"
+      },
+      {
+        "field": "Dirección",
+        "source": "Política de tratamiento de datos (/privacy-policy/)",
+        "value": "Carrera 7b #126-71 (sin ciudad)"
+      },
+      {
+        "field": "Dirección",
+        "source": "Sitio: /conocenos/",
+        "value": "Equipo remoto ('Trabajamos remoto desde el inicio')"
+      },
+      {
+        "field": "Dirección",
+        "source": "LinkedIn",
+        "value": "Bogotá, CO (sin dirección)"
+      },
+      {
+        "field": "Horario",
+        "source": "Sitio y LinkedIn",
+        "value": "No publicado en ninguna fuente"
+      },
+      {
+        "field": "Sitio web",
+        "source": "LinkedIn",
+        "value": "http://simian.co (redirige 301 a https://simian.co/)"
+      },
+      {
+        "field": "Especialidades",
+        "source": "LinkedIn",
+        "value": "Web development, Web design, Mobile applications"
+      },
+      {
+        "field": "Especialidades",
+        "source": "Sitio: footer / servicios",
+        "value": "Estrategia de producto, Automatización con IA, UX/UI, Desarrollo web y móvil, Infraestructura/seguridad/DevOps, Soporte"
+      },
+      {
+        "field": "Datos estructurados",
+        "source": "Sitio: todas las páginas revisadas",
+        "value": "Sin JSON-LD (no hay Organization ni LocalBusiness)"
+      },
+      {
+        "field": "Chat",
+        "source": "Sitio",
+        "value": "No hay widget de chat; solo enlace directo a WhatsApp"
+      }
     ],
     "inconsistencies": [
       "La única dirección física del sitio (Carrera 7b #126-71) aparece solo en la política de datos y sin ciudad; el resto del sitio no menciona ciudad y Conócenos dice que el equipo es remoto, mientras LinkedIn ubica la sede en Bogotá.",

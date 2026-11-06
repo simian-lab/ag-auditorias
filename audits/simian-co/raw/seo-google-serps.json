@@ -1,0 +1,48 @@
+{
+  "engine": "Google (BrowserOS, logged-out clean browser)",
+  "url_pattern": "https://www.google.com/search?hl=es&gl=co&num=20&q=<query> (page 2: &start=10)",
+  "date": "2026-11-06",
+  "captcha": false,
+  "note": "Organic results only (ads ignored). Domain = displayed cite URL. Google returned 9-10 organic results per page.",
+  "queries": [
+    {"query": "agencia de desarrollo de software Bogotá", "simian": null,
+     "page1": ["mdccolombia.com", "togrowagencia.com", "geekcorp.co", "sortlist.com", "lars.net.co", "heinsohn.co", "empresadesoftware.com.co", "gintic.com.co", "agenciadigitalamd.com"],
+     "page2": ["empresadesoftware.com.co", "grupotecnologico.org", "tuatara.co", "agenciaidp.com", "itsoftware.com.co", "skillnet.co", "marketingdigital.blog", "pixelia.com.co", "softhian.com", "thinktic.co"]},
+    {"query": "agencia de desarrollo de software Medellín", "simian": null,
+     "page1": ["togrowagencia.com", "rootstack.com", "softwarewebsas.com", "geekcorp.co", "kolau.es", "ceiba.com.co", "instagram.com (iassoftware)", "agenciadesoftwarecolombia.com", "gintic.com.co"],
+     "page2": ["glassdoor.com.mx", "agenciaidp.com", "sortlist.com", "marketingdigital.blog", "itoeste.com", "ingeneo.com.co", "co.computrabajo.com", "cesde.edu.co", "agenciamarketingdigital.com.co", "gintic.com.co"]},
+    {"query": "empresa desarrollo de apps móviles Bogotá", "simian": null,
+     "page1": ["mdccolombia.com", "suweb.org", "sortlist.com", "betacore.pro", "touchdata.co", "itsoftware.com.co", "togrowagencia.com", "ondemand.com.co", "kevsalazar.com"],
+     "page2": ["kevsalazar.com", "slash-digital.io", "ideascol.com", "ruana.com.co", "dysruptia.co", "desarrollo-de-aplicaciones-moviles.com.ar", "appco.com.co", "infinityaistudios.com", "geekcorp.co", "imagecolombia.com"]},
+    {"query": "agencia diseño UX UI Colombia", "simian": null,
+     "page1": ["sortlist.com", "uzer.co", "bluecolombia.co", "cognitios.co", "agencias.marketing", "almasagencia.com", "xperiencedesign.co", "fragtal.co", "sortlist.com"],
+     "page2": ["webbogota.com", "fragtal.co", "legger.co", "branch.com.co", "macgraficas.com", "cognitios.co", "owly.com.co", "aventec.com.co", "witrey.com", "asisomos.co"]},
+    {"query": "agencia de transformación digital para empresas Colombia", "simian": null,
+     "page1": ["kineti.com.co", "sortlist.com", "omnicon.co", "marketerosagencia.com", "agenciaidp.com", "ccb.org.co", "colombiatic.mintic.gov.co", "tuatara.co", "agatadata.com"],
+     "page2": ["ccb.org.co", "marketingdigital.blog", "indexcol.com", "growxco.com", "impactosdigitales.co", "instagram.com (andigital_col)", "paxzu.com", "consentido.com.co", "camaramedellin.com.co", "digitalmindsetco.com"]},
+    {"query": "automatización con inteligencia artificial para empresas Colombia", "simian": null,
+     "page1": ["consolidaciondigital.com", "tintodev.com", "cintel.co", "ventra.enterprises", "kineti.com.co", "microsoft.com", "carlosbetancur.co", "it-nova.co", "neuroagentes.co"],
+     "page2": ["universidadean.edu.co", "ia.cosasinteligentes.co", "indepro.com.co", "ia.saineco.com", "orionai.com.co", "elevatezevenia.com", "adaptive.support", "cintel.co", "ey.com", "factorlogico.com"]},
+    {"query": "partner WordPress VIP Colombia",
+     "simian": {"position": 7, "url": "https://simian.co", "title": "Desarrollo web, UX/UI y automatización con IA | simian.co", "snippet": "Somos partners de WordPress VIP. Contamos con un respaldo excepcional para que tu proyecto escale con confianza, seguridad y alto desempeño. Potenciemos tu ..."},
+     "page1": ["wpvip.com", "wpvip.com", "quodem.com", "40q.agency", "bluecolombia.co", "lemon.digital", "simian.co", "sinergylabs.co", "mejorcms.com", "neliosoftware.com"]},
+    {"query": "empresa desarrollo WordPress Bogotá", "simian": null,
+     "page1": ["pixelpro.com.co", "sortlist.com", "creasotol.com", "agenciadigitalamd.com", "softhian.com", "altwo.com.co", "cangrejodigital.com", "agcseo.com", "branch.com.co"],
+     "page2": ["mouseinteractivo.com", "nexergroup.com", "creasotol.com", "bluecolombia.co", "macgraficas.com", "fabioarboleda.com", "platinoweb.com", "elsasto.com", "co.linkedin.com", "mceagencia.com"]},
+    {"query": "Simian agencia digital",
+     "simian": {"position": 1, "url": "https://simian.co", "title": "Desarrollo web, UX/UI y automatización con IA | simian.co", "snippet": "En Simian diseñamos y construimos sitios Web, PWAs, Apps y automatizaciones con IA que conectan marcas con personas. Agenda una reunión. Desarrollo apps y ...", "also": ["2 simian.co/conocenos «Quiénes somos: equipo, cultura y experiencia | simian.co»", "3 simian.co/desarrollo-web-movil", "7 simian.co/contacto", "9 simian.co/portafolio «Simian: Desarrollo web, WordPress y automatizaciones con IA»"]},
+     "page1": ["simian.co", "simian.co", "simian.co", "linkedin.com (Simian, gosimian.com, Colorado)", "facebook.com (Simian | Bogotá)", "gosimian.com", "simian.co", "linkedin.com (Simian)", "simian.co"],
+     "ai_overview": "Google showed an AI overview starting «Simian es un estudio de diseño y desarrollo web de origen colombiano...»"},
+    {"query": "simian.co",
+     "simian": {"position": 1, "url": "https://simian.co", "title": "Desarrollo web, UX/UI y automatización con IA | simian.co", "snippet": "En Simian diseñamos y construimos sitios Web, PWAs, Apps y automatizaciones con IA que conectan marcas con personas. Agenda una reunión.", "sitelinks": true},
+     "page1": ["simian.co", "facebook.com (Simian | Bogotá)", "linkedin.com (Simian)", "getapp.com.co (Simian video software)", "samsung.bpnww.com (Simian media platform)"]}
+  ],
+  "maps_check": {
+    "query": "https://www.google.com/maps/search/Simian%20SAS%20Bogot%C3%A1?hl=es&gl=co",
+    "note": "Not part of search_tests. No Business Profile panel appeared in the two brand web searches.",
+    "listings": [
+      {"name": "Simian", "rating": "5,0 (1 reseña)", "category": "Empresa de software", "address": "Cra. 7b #126-71 Ofi 503C", "phone": "311 5992255", "status": "Cerrado · Abre a las 9 a. m. del lun", "website": "https://simian.co/"},
+      {"name": "Simian office Pablo VI", "rating": "5,0 (1 reseña)", "category": "Empresa de software", "address": "Cra. 54 #57-40", "phone": "18048634", "status": "Cerrado permanentemente", "website": "http://simian.co/"}
+    ]
+  }
+}

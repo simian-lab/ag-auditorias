@@ -4,7 +4,7 @@
   "visual": 56,
   "tech": 70,
   "overall": 68,
-  "seo": 53,
+  "seo": 56,
   "target": 80,
   "version": "3",
   "rubric_version": "1",
@@ -31,7 +31,7 @@
     },
     "seo": {
       "passed": 4,
-      "partial": 3,
+      "partial": 4,
       "total": 10
     }
   }
