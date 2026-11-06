@@ -1,0 +1,50 @@
+{
+  "source": "Real Google, BrowserOS logged-out browser, https://www.google.com/search?hl=es&gl=co&num=20&q=<query>; organic `a h3` results in DOM order, ads (#tads/#bottomads) excluded",
+  "date": "2026-11-06",
+  "location_note": "Google set the location from the browser IP: 'Medellín, Antioquia' / 'Copacabana, Antioquia' shown on SERPs; one SERP showed 'Tienda cercana (16,5 km)' next to Sajú results",
+  "serps": [
+    {"query": "gafas de sol plástico reciclado Colombia", "organic": [
+      {"pos": 1, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-lentes-plastico-...", "title": "Gafas de plástico reciclado Sajú", "snippet": "Compra Online en Sajú tus Gafas hechas de plástico reciclado al mejor precio | Vive la experiencia Sajú y haz tus propias gafas | 705 días de garantía ..."},
+      {"pos": 2, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-lentes-sol-plast...", "title": "Gafas de Sol de plástico reciclado – Página 3", "snippet": "Gafas de Sol hechas de plástico reciclado | Compra en saju.co | 705 días de garantía | Envíos gratis a toda Colombia a partir de $150.000."},
+      {"pos": 3, "site": "seabelt.co", "title": "Gafas de Goma - SEABELT"},
+      {"pos": 4, "site": "Instagram · polymasters.co", "title": "Únete a la moda sostenible con nuestras gafas hechas con ..."},
+      {"pos": 5, "site": "Forbes Colombia", "cite": "https://forbes.co › 2023/07/24 › negocios", "title": "Esta marca colombiana que hace gafas con plástico ..."},
+      {"pos": 6, "site": "Mercado Libre", "title": "Gafas De Sol De Plástico Reciclado Waxhead ..."}]},
+    {"query": "gafas formuladas Bogotá precio", "organic": [
+      {"pos": 1, "site": "Óptica Santa Lucía", "cite": "https://santalucia.com.co › collections › gafas-formuladas"},
+      {"pos": 2, "site": "folkseyewear.com", "title": "Gafas Formuladas | Bogotá - Medellin - Cali - Colombia - FOLKS"},
+      {"pos": 3, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-formuladas", "title": "Gafas Formuladas", "snippet": "The Oh Effect Formuladas • Marco (4 Estilos) Precio de oferta$199,000 COP ... Soho Mid Brown Formuladas - Sajú Colombia · Soho Mid ..."},
+      {"pos": 4, "site": "Ópticas Lafam"}, {"pos": 5, "site": "Naratodo"}, {"pos": 6, "site": "GMO Colombia"}, {"pos": 7, "site": "Instagram · gafasygafascol"}, {"pos": 8, "site": "Lentesplus"}]},
+    {"query": "examen visual Bogotá óptica cita", "organic": [
+      {"pos": 1, "site": "Ópticas Lafam"}, {"pos": 2, "site": "opticaalemanahsm.com"}, {"pos": 3, "site": "Sociedad de Cirugía Ocular"}, {"pos": 4, "site": "Univer"},
+      {"pos": 5, "site": "Sajú", "cite": "https://www.saju.co › products › examen-visual-calle-82", "title": "Examen Visual - Calle 81", "snippet": "Es importante llegar 10 minutos antes de la cita. La cita tiene una duración de 30 minutos y el tiempo máximo de espera es de 10 minutos. En caso de presentarse ..."},
+      {"pos": 6, "site": "Óptica Apolo"}, {"pos": 7, "site": "Óptica Colombiana"}, {"pos": 8, "site": "Vision Colombia"}, {"pos": 9, "site": "Salud Colsubsidio"}]},
+    {"query": "comprar gafas de sol online Colombia", "organic": [
+      {"pos": 1, "site": "Ópticas Lafam"}, {"pos": 2, "site": "GMO Colombia"}, {"pos": 3, "site": "GafasWorld Colombia"}, {"pos": 4, "site": "folkseyewear.com"}, {"pos": 5, "site": "LENS. Colombia"}, {"pos": 6, "site": "Sunglass Hut"},
+      {"pos": 7, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-de-sol", "title": "Gafas de Sol", "snippet": "Chelsea Midnight Green Precio de oferta$199,000 COP. Color. Gris Verde Rosado. Fresh Original Peppermint - Sajú Colombia. Añadir a la cesta."},
+      {"pos": 8, "site": "La Tienda de Gafas"}, {"pos": 9, "site": "Hawkers"}]},
+    {"query": "gafas sostenibles marca colombiana", "organic": [
+      {"pos": 1, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-lentes-plastico-...", "title": "Gafas de plástico reciclado Sajú", "snippet": "Compra Online en Sajú tus Gafas hechas de plástico reciclado al mejor precio | Vive la experiencia Sajú y haz tus propias gafas | 705 días de garantía ..."},
+      {"pos": 2, "site": "seabelt.com.co"}, {"pos": 3, "site": "Instagram · seabelt.co"}, {"pos": 4, "site": "seabelt.co"}, {"pos": 5, "site": "Forbes Colombia"}, {"pos": 6, "site": "arcaoficial.com"}, {"pos": 7, "site": "Instagram"}, {"pos": 8, "site": "Ecolover"}, {"pos": 9, "site": "seabelt.com.co"}, {"pos": 10, "site": "Publicitar Colombia SAS"}]},
+    {"query": "óptica Medellín gafas formuladas económicas", "pages_read": 3, "organic_count": 25, "saju_present": false, "page1": ["optica-medellin.com", "Instagram · montugafas_medellin", "gafasygafas.com.co", "naratodo.com", "elhueco.com.co", "Facebook · Óptica Lentes Económicos Medellín", "santalucia.com.co", "folkseyewear.com"], "page2": ["colgafas.com", "optica-medellin.com", "Instagram · red.de.accesorioos.optica", "francovisionoptica.com", "naratodo.com", "video", "tiktok.com", "video"], "page3": ["impactooptica.com", "lentesplus.com", "optica-medellin.com", "gmo.com.co", "gafasygafas.com.co", "video", "video", "lafam.com.co", "medellindeluxeoptica"], "ai_overview": "Visión general creada por IA listed Naratodo, Óptica Lentes Económicos Medellín, Óptica Medellín (no Sajú in visible text)"},
+    {"query": "cuelga gafas cordón para gafas Colombia", "organic": [
+      {"pos": 1, "site": "Sajú", "cite": "https://www.saju.co › cuelga-gafas-diferentes-estilos", "title": "Cuelga Gafas (Webpage)", "snippet": "Cordones cuelga gafas hechos a mano y con materiales reciclados al mejor precio | Compra en saju.co | 705 días de garantía | Envíos gratis a toda Colombia a ..."},
+      {"pos": 2, "site": "seabelt.co"}, {"pos": 3, "site": "Mercado Libre Colombia"}, {"pos": 4, "site": "Instagram · yapa.co"}, {"pos": 5, "site": "Colgafas"}, {"pos": 6, "site": "Ópticas Lafam"}, {"pos": 7, "site": "Pinterest"}, {"pos": 8, "site": "Mercado Libre Colombia"}]},
+    {"query": "Sajú gafas", "organic": [
+      {"pos": 1, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-formuladas", "title": "Gafas Formuladas", "snippet": "Somos una marca de gafas comprometida en hacerle la vida más fácil a nuestros clientes y al planeta. Suscríbete para recibir información de nuevos ..."},
+      {"pos": 2, "site": "Sajú", "cite": "https://www.saju.co", "title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD", "snippet": "Páramo Mole — gafas de sol rectangulares de Sajú en TR90 café oscuro con sistema Grip Páramo Mole de Sajú, otra vista — montura TR90 café oscuro con patas Grip ..."},
+      {"pos": 3, "site": "Sajú", "cite": "https://www.saju.co › collections › gafas-de-sol", "title": "Gafas de Sol", "snippet": "Somos una marca de gafas comprometida en hacerle la vida más fácil a nuestros clientes y al planeta. Suscríbete para recibir información de nuevos ..."},
+      {"pos": 4, "site": "Instagram · saju"}, {"pos": 5, "site": "Sajú", "title": "Sajú Grip - Sol"}, {"pos": 6, "site": "Sajú", "title": "TIENDAS"}, {"pos": 7, "site": "Sajú", "title": "Colecciones"}, {"pos": 8, "site": "Sajú", "title": "Sajú Grip - Completas"}]},
+    {"query": "Sajú óptica Bogotá", "local_pack": [
+      {"name": "Sajú - Flagship Store Bogotá & Óptica", "rating": "4,8 (923)", "category": "Óptica", "address": "Cra. 9 #81-25", "phone": "310 3248107"},
+      {"name": "Sajú - Óptica Calle 140", "rating": "4,9 (122)", "category": "Óptica", "address": "Cl. 140 #10A - 53", "phone": "301 1356433"},
+      {"name": "Sajú - Óptica Parque La Colina", "rating": "4,8 (940)", "category": "Óptica", "address": "CC Parque La Colina, Cra. 72 #145", "phone": "323 8089097"}],
+     "organic": [
+      {"pos": 1, "site": "Sajú", "cite": "https://www.saju.co › pages › tiendas-1", "title": "TIENDAS", "snippet": "Nuestras tiendas ; Óptica Calle 81 · Bogotá · Colombia. Cra. 9 #81 - 25. Lun a Sáb: 10am - 7pm Dom & Fest: 10am - 5pm ; Óptica Calle 54 · Bogotá · Colombia. Calle ..."},
+      {"pos": 2, "site": "Sajú", "cite": "https://www.saju.co", "title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD", "snippet": "Confiamos en nuestro producto y por eso tenemos arreglos GRATIS DE POR VIDA* para nuestras gafas hechas de plástico reciclado y 365 días para nuestras gafas de ..."},
+      {"pos": 3, "site": "Sajú", "cite": "https://www.saju.co › products › examen-visual-calle-141", "title": "Examen Visual - Calle 140"},
+      {"pos": 4, "site": "Instagram · saju"},
+      {"pos": 5, "site": "Sajú", "cite": "https://www.saju.co › pages › store-locator", "title": "Store Locator"},
+      {"pos": 6, "site": "Sajú", "title": "Gafas Formuladas"}, {"pos": 7, "site": "Sajú", "title": "Examen Visual - Gran Estación"}, {"pos": 8, "site": "Sajú", "title": "Examen Visual Calle 54 - Walk In"}]}
+  ]
+}

@@ -1,19 +1,19 @@
 {
   "client": "Sajú",
   "domain": "saju.co",
-  "date": "Octubre 2026",
+  "date": "Noviembre 2026",
   "big_stat": {
-    "value": "141",
+    "value": "140",
     "count_to": null,
     "suffix": null,
-    "headline": "Tu página de inicio descarga 141 archivos de código",
-    "explain": "Son etiquetas de medición, publicidad y apps que el celular del visitante debe descargar y ejecutar antes de que la tienda responda bien. Pesan 1,72 MB, casi la mitad de toda la página, y algunas etiquetas de Google se cargan dos veces. En la prueba en celular, la página tardó 22,8 segundos en estar lista para usarse por completo.",
-    "grid_pct": 49,
+    "headline": "Tu página de inicio descarga 140 archivos de código, más que las otras tres ópticas",
+    "explain": "Son etiquetas de medición, publicidad y apps que el celular del visitante debe descargar y ejecutar: Breathe carga 116, Lafam 94 y Ben & Frank 56. En total tu portada hace unas 485 solicitudes, también la cifra más alta del grupo. Algunas etiquetas de Google se cargan dos veces. En la simulación de celular de Google, la página tardó más de 20 segundos en quedar lista para usarse.",
+    "grid_pct": 39,
     "grid_legend": [
-      "Código de scripts (1,72 MB)",
+      "Código (140 archivos, 1,5 MB)",
       "Todo lo demás"
     ],
-    "source": "Lighthouse móvil, octubre 2026 (141 solicitudes de tipo Script, 1.765 KiB de 3.628 KiB; interactive 22,8 s simulado)"
+    "source": "Lighthouse móvil, tres pruebas por sitio en noviembre de 2026 (se usa la del medio): 140 solicitudes de tipo Script y 1.530 KiB de 3.903 KiB; competidores 56–116 scripts"
   },
   "items": [
     {
@@ -30,11 +30,11 @@
       "imp": 5,
       "eff": "Medio",
       "stage": 2,
-      "t": "Tu portada vende un local, no tu marca",
+      "t": "Tu portada no dice qué es Sajú",
       "t_plain": "La primera pantalla no dice qué vende Sajú y su texto está dentro de imágenes",
       "s": "Quien llega por primera vez no lee en texto qué vendes ni por qué elegirte, y Google tampoco puede leerlo.",
-      "now": "Antes de la marca aparecen una franja negra en movimiento, una franja amarilla con otra promoción y una foto de la tienda nueva con «¡Llegamos a Gran Estación! Local 259» y «Agenda aquí» pintados dentro de la imagen. El banner cambia solo cada 5 segundos, sus imágenes no tienen descripción y el único título principal de la página es el logo. En el celular, el banner «Agenda tu examen» queda con letras de unos 6 a 8 px de alto.",
-      "fix": "Usar la primera pantalla para el mensaje de marca, escrito como texto real y marcado como título principal (por ejemplo: gafas de sol y formuladas de marca colombiana, en materiales reciclados y con arreglos gratis de por vida), con un botón claro. Dejar una sola franja de promoción y mover los anuncios de tiendas a una segunda diapositiva.",
+      "now": "La primera pantalla es un banner que rota campañas cada 5 segundos (por ejemplo «Tropical», «Phone Glasses» o el examen en San Roque), y todo su texto está dentro de las imágenes: ninguna diapositiva dice en texto qué es Sajú. Las imágenes no tienen descripción y el único título principal de la página es el logo. En el celular, el banner «Agenda tu examen» queda con letras de unos 6 a 8 px de alto.",
+      "fix": "Usar la primera pantalla para el mensaje de marca, escrito como texto real y marcado como título principal (por ejemplo: gafas de sol y formuladas de marca colombiana, en materiales reciclados y con arreglos gratis de por vida en plástico reciclado), con un botón claro. Dejar las campañas de colección y de tiendas para las diapositivas siguientes.",
       "why": "Si el visitante entiende en tres segundos qué ofreces, sigue navegando en vez de volver a Google.",
       "shot": {
         "img": "desktop-viewport.png",
@@ -54,10 +54,10 @@
       "eff": "Medio",
       "stage": 1,
       "t": "En celular, tu tienda responde tarde",
-      "t_plain": "Exceso de scripts e imágenes sobredimensionadas en el celular",
+      "t_plain": "Exceso de scripts e imágenes que se pueden comprimir en el celular",
       "s": "En celular la tienda tarda en reaccionar a toques y clics, justo cuando llegan los visitantes de tus anuncios.",
-      "now": "La página de inicio pesa 3,54 MB y descarga 141 archivos de código (1,72 MB). Las dos etiquetas de Google se cargan dos veces cada una, y además corren las de Meta, TikTok, Clarity, Omnisend y otras apps. En la prueba en celular, el procesador queda ocupado 12,6 s. Los banners se descargan casi al doble del tamaño con que se muestran, y se podrían ahorrar 0,49 MB en imágenes.",
-      "fix": "Dejar una sola instalación de cada herramienta de Google, quitar las apps que ya no se usan, retrasar las etiquetas de marketing hasta que el visitante interactúe y ajustar el tamaño de las imágenes al que realmente se muestra en pantalla.",
+      "now": "La página de inicio pesa unos 3,8 MB y descarga 140 archivos de código (1,5 MB). Las dos etiquetas de Google se cargan dos veces cada una, y además corren las de Meta, TikTok, Clarity, Omnisend y otras apps. En una prueba simulada en celular, el procesador trabaja más de 12 s, y algunas imágenes se pueden comprimir mejor (ahorro estimado de unos 0,5 MB).",
+      "fix": "Dejar una sola instalación de cada herramienta de Google, quitar las apps que ya no se usan, retrasar las etiquetas de marketing hasta que el visitante interactúe y comprimir mejor las imágenes.",
       "why": "Cada segundo que la tienda tarda en responder en el celular es tráfico pagado que se va antes de ver un producto.",
       "shot": {
         "img": "mobile-fullpage.jpg",
@@ -83,7 +83,7 @@
       "shot": {
         "img": "desktop-viewport.png",
         "x": 44,
-        "y": 20
+        "y": 12.5
       }
     },
     {
@@ -95,16 +95,16 @@
       "imp": 4,
       "eff": "Bajo",
       "stage": 1,
-      "t": "Nadie encuentra tu teléfono ni tu correo",
-      "t_plain": "No hay teléfono ni correo visibles en el sitio",
-      "s": "Un cliente con una duda antes de comprar solo tiene WhatsApp; quien prefiere llamar o escribir un correo no encuentra cómo.",
-      "now": "El encabezado y el pie de página no muestran teléfono ni correo en ninguna página, y la página de contacto da error. El correo de servicio al cliente solo aparece dentro del texto de la política de envíos, y en la página de tiendas solo 2 locales muestran un teléfono, que no se puede pulsar para llamar.",
+      "t": "Tu teléfono y tu correo están escondidos",
+      "t_plain": "El encabezado y el pie no muestran teléfono ni correo, y los teléfonos de las tiendas no se pueden pulsar",
+      "s": "Un cliente con una duda antes de comprar ve el WhatsApp, pero quien prefiere llamar o escribir un correo tiene que buscar mucho.",
+      "now": "El encabezado y el pie de página no muestran teléfono ni correo, y no existe una página de contacto. El correo de servicio al cliente solo aparece dentro del texto de la política de envíos. En la página de tiendas cada local muestra su teléfono, pero no se puede pulsar para llamar.",
       "fix": "Agregar al pie de página de todo el sitio un teléfono, el correo de servicio al cliente y el horario, con enlaces que se puedan pulsar para llamar o escribir, y crear una página de contacto sencilla.",
       "why": "Ver un teléfono y un correo reales da confianza para pagar en línea y recupera a quien no usa WhatsApp.",
       "shot": {
         "img": "mobile-fullpage.jpg",
         "x": 30,
-        "y": 95
+        "y": 92
       }
     },
     {
@@ -118,14 +118,14 @@
       "stage": 2,
       "t": "Tu mejor garantía está escondida al final",
       "t_plain": "Garantías y reseñas lejos de los productos y el precio",
-      "s": "Lo que más convence a un comprador (arreglos gratis de por vida, marca colombiana desde 2017, reseñas) no aparece cerca de los productos ni del precio.",
-      "now": "La garantía de arreglos gratis de por vida y «desde 2017» solo están en la sección «¿Por qué Sajú?», al final de la página y dentro de un carrusel. Las tarjetas de producto de la página de inicio no muestran estrellas ni número de reseñas, aunque hay modelos con 22 reseñas.",
-      "fix": "Poner una franja corta de beneficios justo debajo del banner (arreglos gratis de por vida, envío gratis desde $249.000, número de tiendas) y mostrar estrellas y número de reseñas en las tarjetas de producto.",
+      "s": "Lo que más convence a un comprador (arreglos gratis de por vida en plástico reciclado, marca colombiana desde 2017, reseñas) no aparece cerca de los productos ni del precio.",
+      "now": "La garantía de arreglos gratis de por vida en gafas de plástico reciclado (365 días en acetato y metal) y «desde 2017» solo están en la sección «¿Por qué Sajú?», al final de la página y dentro de un carrusel. Las tarjetas de producto de la página de inicio no muestran estrellas ni número de reseñas, aunque hay modelos con 22 reseñas.",
+      "fix": "Poner una franja corta de beneficios justo debajo del banner (arreglos gratis de por vida en plástico reciclado, aplican condiciones; envío gratis desde $249.000, número de tiendas) y mostrar estrellas y número de reseñas en las tarjetas de producto.",
       "why": "Las pruebas de confianza junto al precio ayudan a decidir la compra en línea sin tener que ir a la tienda.",
       "shot": {
         "img": "mobile-fullpage.jpg",
         "x": 50,
-        "y": 79
+        "y": 81
       }
     },
     {
@@ -146,7 +146,7 @@
       "shot": {
         "img": "desktop-fullpage.jpg",
         "x": 50,
-        "y": 35
+        "y": 40
       }
     },
     {
@@ -161,12 +161,12 @@
       "t": "Tus precios casi no se leen",
       "t_plain": "Precios en gris claro con contraste insuficiente",
       "s": "El precio, el dato que decide la compra, aparece en gris claro y pequeño, difícil de leer para muchos clientes.",
-      "now": "En las 14 tarjetas de producto de la página de inicio, el precio («$299,000 COP») está en gris claro de 12 px sobre blanco, con un contraste de 3,0:1; el mínimo recomendado es 4,5:1. En una óptica, donde muchos clientes tienen problemas de visión, esto pesa más.",
+      "now": "En las tarjetas de producto de la página de inicio, el precio («$299,000 COP») está en gris claro de 12 px sobre blanco, con un contraste de 3,0:1; el mínimo recomendado es 4,5:1. En una óptica, donde muchos clientes tienen problemas de visión, esto pesa más.",
       "fix": "Oscurecer el color del precio al menos al gris de los nombres de producto y subirle un poco el tamaño.",
       "why": "Si el cliente no lee bien el precio, duda o se va; y quien busca gafas es justamente alguien que puede no ver bien.",
       "shot": {
         "img": "desktop-fullpage.jpg",
-        "x": 14,
+        "x": 18,
         "y": 12
       }
     },
@@ -183,13 +183,13 @@
       "t": "Tus botones grises no piden la compra",
       "t_plain": "Botones grises sin color de marca y demasiados tipos de letra",
       "s": "Los botones principales parecen desactivados y la mezcla de estilos hace que la marca se vea menos cuidada que sus fotos.",
-      "now": "Los botones «Ver la colección», «Ver todas» y «Suscribirse» son gris medio, sin el amarillo de la marca, y conviven con enlaces subrayados y botones pintados dentro de fotos. La página carga dos tipos de letra, la franja negra usa un tercero y los banners en foto suman al menos tres estilos más.",
+      "now": "Los botones «Ver todas» y «Suscribirse» son gris medio, sin el amarillo de la marca, y conviven con enlaces subrayados y botones pintados dentro de fotos. La página carga dos tipos de letra, la franja negra usa un tercero y los banners en foto suman al menos tres estilos más.",
       "fix": "Definir un botón principal con el color de marca y uno secundario, y dos tipos de letra (títulos y textos), y aplicarlos igual en franjas, banners y secciones.",
       "why": "Botones visibles y un estilo coherente guían hacia la compra y hacen que la tienda se perciba profesional.",
       "shot": {
         "img": "desktop-fullpage.jpg",
         "x": 49,
-        "y": 21
+        "y": 43
       }
     },
     {
@@ -204,8 +204,8 @@
       "stage": 1,
       "t": "Tus promociones cambian antes de leerlas",
       "t_plain": "Franjas y carruseles automáticos sin pausa y con controles diminutos",
-      "s": "Tres elementos se mueven solos sin forma de detenerlos, y en el celular los puntos para cambiar de banner son casi imposibles de tocar.",
-      "now": "La franja negra de envíos se desplaza sin parar, la barra amarilla cambia cada 3 segundos y los banners grandes cada 5. No hay botón de pausa y la franja ignora la opción del celular de reducir movimiento. Los puntos para pasar de banner miden 6 × 6 px; el mínimo recomendado es 24 × 24.",
+      "s": "Elementos que se mueven solos sin forma de detenerlos, y en el celular los puntos para cambiar de banner son difíciles de tocar.",
+      "now": "La franja negra de envíos se desplaza sin parar y los banners grandes cambian cada 5 segundos. No hay botón de pausa y la franja ignora la opción del celular de reducir movimiento. Los puntos para pasar de banner se ven de 6 px y su área táctil real es de unos 22 × 22 px, por debajo del mínimo de 24 × 24.",
       "fix": "Agregar pausa a los carruseles, detener el movimiento cuando el usuario pide reducirlo, dar más tiempo a cada mensaje y ampliar el área táctil de los controles o usar flechas grandes.",
       "why": "Un cliente que lee despacio no alcanza a ver la promoción del mes antes de que cambie.",
       "shot": {
@@ -227,12 +227,12 @@
       "t_plain": "Las tarjetas de producto no indican tipo ni material",
       "s": "El cliente ve nombres como «Cumbre Gravel» y un precio, pero no sabe si son de sol, formuladas o de qué material.",
       "now": "Cada tarjeta muestra la foto, un nombre de modelo y «$299,000 COP». Todas las fotos son gafas de frente sobre fondo blanco; no se ve el tipo, el material ni una foto de la gafa puesta.",
-      "fix": "Agregar en cada tarjeta una etiqueta corta (Sol o Formulada, y material) y una segunda foto de la gafa puesta al pasar el mouse.",
+      "fix": "Agregar en cada tarjeta una etiqueta corta (Sol o Formulada, y material) y cambiar la segunda foto, que hoy es otra toma del producto, por una de la gafa puesta.",
       "why": "Entender rápido qué es cada producto reduce la duda y acerca la compra.",
       "shot": {
         "img": "desktop-fullpage.jpg",
-        "x": 11,
-        "y": 12
+        "x": 18,
+        "y": 10
       }
     }
   ]

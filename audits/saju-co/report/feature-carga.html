@@ -208,7 +208,7 @@ details.strip[open] summary::after{content:"–"}
   <div class="wrap">
     <div class="eyebrow">Velocidad · Comparativa con tu competencia</div>
     <h2>Así carga tu sitio frente a tu competencia.</h2>
-    <p class="lead">Grabamos cómo se abre cada página en un celular, fotograma a fotograma. Dale play y mira las cuatro al mismo tiempo.</p>
+    <p class="lead">Grabamos cómo se abre cada página en un computador que simula un celular, con la conexión sin limitar, fotograma a fotograma. Dale play y mira las cuatro al mismo tiempo.</p>
 
     <div class="card player" id="player">
       <div class="ctrl">
@@ -218,7 +218,7 @@ details.strip[open] summary::after{content:"–"}
         </button>
         <div class="clock" id="clock" aria-live="off">0,0<small>s</small></div>
         <div class="scrub">
-          <input type="range" id="scrub" min="0" max="36000" step="50" value="0" aria-label="Mover el tiempo de carga">
+          <input type="range" id="scrub" min="0" max="6000" step="50" value="0" aria-label="Mover el tiempo de carga">
           <div class="hint"><span>Arrastra para avanzar a mano</span><span id="speedhint">Reproducción a velocidad ×2</span></div>
         </div>
         <div class="seg" role="group" aria-label="Velocidad">
@@ -241,7 +241,7 @@ details.strip[open] summary::after{content:"–"}
     <div class="below">
       <div class="card tbl">
         <h3>Los tiempos oficiales de Google Lighthouse</h3>
-        <p class="sub">Simulación de conexión móvil (4G lenta), Lighthouse. Con esa conexión los tiempos son más altos que en la grabación de arriba.</p>
+        <p class="sub">Simulación de conexión móvil (4G lenta), Lighthouse. Con esa conexión simulada los tiempos cambian respecto a la grabación de arriba. Verde: el mejor del grupo.</p>
         <table>
           <thead><tr><th>Sitio</th><th>Primer contenido</th><th>Contenido principal</th><th>Índice de velocidad</th></tr></thead>
           <tbody id="tbody"></tbody>
@@ -250,8 +250,8 @@ details.strip[open] summary::after{content:"–"}
       </div>
       <div class="card mean">
         <h3>¿Qué significa?</h3>
-        <p>Tu competencia muestra su contenido principal entre 2,4 y 27,7 s. En saju.co, el contenido principal tarda <b>2,4 s</b> en aparecer.</p>
-        <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / Think with Google</span></div>
+        <p>Tu competencia muestra su contenido principal entre 1,9 y 4,9 s. En saju.co, el contenido principal tarda <b>2,4 s</b> en aparecer en esta grabación.</p>
+        <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / SOASTA, 2017 (móvil)</span></div>
       </div>
     </div>
 
@@ -296,8 +296,8 @@ details.strip[open] summary::after{content:"–"}
   // Real data. Frames + observed* timings: Lighthouse 13.0.1 mobile trace (raw/*.json, screenshot-thumbnails).
   // "lab" values: Lighthouse simulated slow-4G metrics (first-contentful-paint, largest-contentful-paint, speed-index).
   // blank:true = frame captured before first paint (Lighthouse stores it as an empty/black frame).
-  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "saju.co", "me": true, "fcp": 2448, "lcp": 2448, "frames": [[1276, 1], [2551], [3827], [5103], [6378], [7654], [8929], [10205]], "lab": {"fcp": 3486, "lcp": 7294, "si": 9391}}, {"slug": "ben-frank", "name": "Ben & Frank Colombia", "url": "www.benandfrank.co", "me": false, "fcp": 4020, "lcp": 27711, "frames": [[3464, 1], [6928], [10392], [13856], [17320], [20784], [24248], [27712]], "lab": {"fcp": 3168, "lcp": 7143, "si": 33312}}, {"slug": "breathe", "name": "Breathe", "url": "www.breatheeyewear.com", "me": false, "fcp": 1601, "lcp": 2424, "frames": [[1237, 1], [2474], [3710], [4947], [6184], [7421], [8657], [9894]], "lab": {"fcp": 2917, "lcp": 7486, "si": 16390}}, {"slug": "lafam", "name": "Ópticas Lafam", "url": "www.lafam.com.co", "me": false, "fcp": 3548, "lcp": 5591, "frames": [[1368, 1], [2736, 1], [4103], [5471], [6839], [8207], [9574], [10942]], "lab": {"fcp": 6209, "lcp": 35024, "si": 14031}}];
-  var END=36000, SPEED=2, t=0, playing=false, last=0;
+  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "saju.co", "me": true, "fcp": 2427, "lcp": 2427, "frames": [[1271, 1], [2542], [3813], [5085], [6356], [7627], [8898], [10169]], "lab": {"fcp": 3509, "lcp": 12111, "si": 11051}}, {"slug": "ben-frank", "name": "Ben & Frank Colombia", "url": "www.benandfrank.co", "me": false, "fcp": 1278, "lcp": 1929, "frames": [[1445], [2891], [4336], [5781], [7226], [8672], [10117], [11562]], "lab": {"fcp": 2849, "lcp": 3898, "si": 14573}}, {"slug": "breathe", "name": "Breathe", "url": "www.breatheeyewear.com", "me": false, "fcp": 2556, "lcp": 2591, "frames": [[424, 1], [847, 1], [1271, 1], [1695, 1], [2118, 1], [2542, 1], [2965], [3389]], "lab": {"fcp": 6745, "lcp": 18102, "si": 7893}}, {"slug": "lafam", "name": "Ópticas Lafam", "url": "www.lafam.com.co", "me": false, "fcp": 2386, "lcp": 4933, "frames": [[1138, 1], [2276, 1], [3414], [4552], [5690], [6828], [7966], [9104]], "lab": {"fcp": 6116, "lcp": 37887, "si": 13065}}];
+  var END=6000, SPEED=2, t=0, playing=false, last=0;
   function s1(ms){return (ms/1000).toFixed(1).replace(".",",")}
   function pct(ms){return Math.min(100,ms/END*100)}
   function src(s,f){return "assets/film/"+s.slug+"-"+f[0]+".jpg"}
@@ -324,8 +324,10 @@ details.strip[open] summary::after{content:"–"}
     s.status=el.querySelector(".status"); s.stxt=s.status.querySelector("span");
     s.frames.forEach(function(f){ if(!f[1]){ var i=new Image(); i.src=src(s,f);} });
 
-    var best=Math.min.apply(null,SITES.map(function(x){return x.lab.lcp}));
-    tb.insertAdjacentHTML("beforeend",'<tr class="'+(s.me?"me":"")+'"><td>'+s.name+'</td><td>'+s1(s.lab.fcp)+' s</td><td class="'+(s.me?"bad":(s.lab.lcp===best?"good":""))+'">'+s1(s.lab.lcp)+' s</td><td class="'+(s.me?"bad":"")+'">'+s1(s.lab.si)+' s</td></tr>');
+    // green = best of the group; red only when the client is the slowest on that metric
+    function cls(k){var v=SITES.map(function(x){return x.lab[k]});var x=s.lab[k];
+      return x===Math.min.apply(null,v)?"good":(s.me&&x===Math.max.apply(null,v)?"bad":"");}
+    tb.insertAdjacentHTML("beforeend",'<tr class="'+(s.me?"me":"")+'"><td>'+s.name+'</td><td class="'+cls("fcp")+'">'+s1(s.lab.fcp)+' s</td><td class="'+cls("lcp")+'">'+s1(s.lab.lcp)+' s</td><td class="'+cls("si")+'">'+s1(s.lab.si)+' s</td></tr>');
 
     var r='<div class="r"><b>'+s.name+' · contenido principal a los '+s1(s.lcp)+' s</b><div class="fr">';
     var shownLcp=false;

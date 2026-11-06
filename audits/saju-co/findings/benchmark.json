@@ -12,20 +12,20 @@
         "trust_proof": false,
         "quote_cta": true
       },
-      "notes_es": "Botón real «Agendar examen» en la primera pantalla; el titular «Yo y mis Ben & Frank» es una imagen.",
+      "notes_es": "Botón real «Agendar examen» en la primera pantalla; el titular cambia en cada visita (a veces es texto, a veces imagen) y un aviso de cookies tapa la parte baja de la primera pantalla.",
       "screenshot": "screenshots/bench-ben-frank.png",
       "lighthouse": {
-        "performance": 61,
-        "accessibility": 70,
-        "seo": 77,
-        "total_mb": 2.45
+        "performance": 55,
+        "accessibility": 71,
+        "seo": 92,
+        "total_mb": 7.31
       }
     },
     {
       "name": "Breathe",
       "url": "https://www.breatheeyewear.com/",
       "slug": "breathe",
-      "why_competitor": "Marca bogotana de diseño de monturas ópticas y gafas de sol con tiendas propias, comparable en tamaño y público con Sajú.",
+      "why_competitor": "Marca bogotana de diseño de monturas ópticas y gafas de sol con tiendas propias, con público similar al de Sajú.",
       "five_second": {
         "what": true,
         "for_whom": false,
@@ -33,13 +33,13 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Mensaje en texto real («opticals», «sunglasses») y botón de compra, pero sin botón para agendar o contactar.",
+      "notes_es": "Mensaje en texto real («opticals», «sunglasses») y botón de compra, pero sin botón para agendar o contactar; una pestaña pequeña de «10% OFF» aparece en una esquina.",
       "screenshot": "screenshots/bench-breathe.png",
       "lighthouse": {
-        "performance": 52,
+        "performance": 51,
         "accessibility": 84,
         "seo": 100,
-        "total_mb": 3.78
+        "total_mb": 3.33
       }
     },
     {
@@ -54,13 +54,13 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Categorías claras, pero el titular es un banner de imagen y la cita de optometría solo aparece como franja de texto; un popup de cupón tapa la página al entrar.",
+      "notes_es": "Categorías claras, pero el titular es un banner de imagen y la cita de optometría está en una franja-enlace arriba, no como botón en el banner; un popup de cupón tapa la página al entrar (no aparece en la captura).",
       "screenshot": "screenshots/bench-lafam.png",
       "lighthouse": {
         "performance": 8,
         "accessibility": 84,
         "seo": 85,
-        "total_mb": 7.32
+        "total_mb": 7.28
       }
     }
   ],
@@ -78,11 +78,11 @@
     },
     "notes_es": "Se entiende que vende gafas, pero el titular y el botón «Agenda aquí» están pintados dentro de una imagen que rota, y no hay ninguna prueba de confianza (reseñas, años, reciclaje) en la primera pantalla.",
     "lighthouse": {
-      "performance": 39,
+      "performance": 50,
       "accessibility": 93,
-      "seo": 100,
-      "total_mb": 3.54
+      "seo": 92,
+      "total_mb": 3.81
     }
   },
-  "takeaway_es": "Ben & Frank, que vende como tú gafas propias con examen en tienda, muestra un botón real de «Agendar examen» en su primera pantalla; en Sajú ese botón está pintado dentro de una foto que rota y desaparece."
+  "takeaway_es": "Ben & Frank, que vende como tú gafas propias con examen en tienda, muestra un botón real de «Agendar examen» en su primera pantalla; en Sajú la única llamada visible en la portada está pintada en una foto que rota, y en el menú existe, pero como un ítem más."
 }

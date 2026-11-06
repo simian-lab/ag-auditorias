@@ -34,7 +34,7 @@
       },
       {
         "page": "Tiendas",
-        "title": "Tiendas y ópticas Sajú en Colombia y Costa Rica",
+        "title": "Tiendas y ópticas Sajú en Colombia y otros países",
         "description": "Direcciones, horarios y teléfonos de las tiendas y ópticas Sajú en Bogotá, Chía, Medellín, Cartagena, Barranquilla y Costa Rica. Agenda tu cita."
       }
     ]
@@ -63,8 +63,8 @@
       "og:title": "Sajú: gafas de sol y formuladas, ópticas en Colombia",
       "og:description": "Gafas de sol UV400, gafas formuladas y examen visual en ópticas Sajú. Envío a toda Colombia.",
       "og:image": "https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp",
-      "og:image:width": 1200,
-      "og:image:height": 630,
+      "og:image:width": 2400,
+      "og:image:height": 1200,
       "twitter:card": "summary_large_image",
       "og_image_local": "og-source.jpg"
     }
@@ -79,7 +79,7 @@
       },
       {
         "title": "Ficha de marca con datos verificables",
-        "fix": "Crear una página 'Sobre Sajú' con datos comprobables: año de fundación, número de tiendas y ópticas por ciudad, materiales (plástico reciclado, TR90), garantía de 365 días y razón social. Hoy no existe una página así.",
+        "fix": "Crear una página 'Sobre Sajú' con datos comprobables: año de fundación, número de tiendas y ópticas por ciudad, materiales (plástico reciclado, TR90), garantías (reparación de por vida en plástico reciclado, 365 días en acetato y metal) y razón social. Hoy no existe una página así.",
         "evidence": "/pages/nosotros → 404; home links only to collabs, envíos, privacidad, tachalo, términos, tiendas-1"
       },
       {
@@ -123,7 +123,7 @@
       },
       {
         "field": "Teléfono",
-        "source": "Botón flotante de WhatsApp (todas las páginas)",
+        "source": "Enlace del botón flotante de WhatsApp (todas las páginas; el número no se ve escrito)",
         "value": "+57 312 322 5855"
       },
       {
@@ -163,7 +163,7 @@
       },
       {
         "field": "Dirección Parque La Colina",
-        "source": "VisitBogotá (visitbogota.co)",
+        "source": "Directorio VisitBogotá (indicio, por confirmar)",
         "value": "Carrera 58D # 146 - 51 (dirección del centro comercial)"
       },
       {
@@ -189,7 +189,7 @@
       {
         "field": "Horario Medellín",
         "source": "Buscador de tiendas",
-        "value": "Lun a Sáb: 10am - 8pm · Dom: 11am - 6pm"
+        "value": "Lun a Sáb: 10am - 7pm · Dom: 11am - 6pm (en octubre decía 8pm)"
       },
       {
         "field": "Horario Medellín",
@@ -214,10 +214,11 @@
     ],
     "inconsistencies": [
       "La óptica de la Calle 122 aparece con dos direcciones en la misma página de tiendas: «Carrera 58d #146-51» en el buscador y «Calle 122 #17-19» en su ficha; la primera es en realidad la dirección del centro comercial Parque La Colina.",
-      "La óptica de Parque La Colina tiene dos direcciones distintas: «Cra. 72 # 145» en el buscador y «Cra. 58d #146-51» en su ficha (esta última coincide con la dirección pública del centro comercial).",
+      "La óptica de Parque La Colina tiene dos direcciones distintas: «Cra. 72 # 145» en el buscador y «Cra. 58d #146-51» en su ficha (esta última parece ser la del centro comercial [dato por confirmar]).",
       "La tienda La Serrezuela (Cartagena) muestra en el buscador la dirección de la tienda del Centro (Cra. 5 #4-49) y en su ficha otra (Cra. 11 #39-21); además el horario del domingo cambia de 8 p.m. a 9 p.m. según dónde mires.",
       "El horario de domingo de la tienda de Medellín es de 11 a.m. en el buscador y de 10 a.m. en su ficha.",
-      "El sitio no tiene una página de contacto (devuelve error) y el único correo publicado, en la política de envíos, usa otro dominio (sajucompany.com); los datos del sitio para Google no incluyen ni teléfono ni correo."
+      "El sitio no tiene una página de contacto (devuelve error) y el único correo publicado, en la política de envíos, usa otro dominio (sajucompany.com); los datos del sitio para Google no incluyen ni teléfono ni correo.",
+      "La política de envíos dice que tienes tiendas físicas en «Bogotá, Medellín, Cali, Cartagena y Barranquilla», pero el buscador no muestra ninguna en Cali; y San Roque aparece como Chía con una dirección de Cajicá."
     ]
   }
 }

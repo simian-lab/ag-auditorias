@@ -1,260 +1,169 @@
 {
   "area": "seo",
-  "business_note": "Negocio inferido del sitio (no proporcionado): marca colombiana de gafas de sol y gafas formuladas en materiales reciclados, con tiendas/ópticas propias (Bogotá y otras ciudades) donde hace exámenes visuales. Tienda en Shopify.",
+  "business_note": "Negocio inferido del sitio (no proporcionado): marca colombiana de gafas de sol y gafas formuladas en materiales reciclados, con ópticas propias (Bogotá, Chía, Medellín, Barranquilla y otras ciudades) donde hace exámenes visuales. Tienda en Shopify.",
   "findings": [
     {
       "id": "seo-1",
-      "title": "Tu web no sale cuando buscan gafas",
-      "summary": "Quien busca gafas de sol, formuladas o un examen visual encuentra otras tiendas, prensa o directorios, pero no tu tienda en línea.",
-      "now": "En 7 búsquedas reales de compra (por ejemplo, \"gafas de sol plástico reciclado Colombia\", \"gafas formuladas Bogotá precio\", \"examen visual Bogotá óptica cita\") saju.co no apareció ninguna vez. Tu marca sí aparece, pero en artículos de Forbes, Semana y en fichas de Farmatodo: el cliente llega a otro sitio antes que al tuyo.",
-      "fix": "Construir páginas que respondan a lo que la gente busca (gafas de sol recicladas, gafas formuladas en Bogotá, examen visual por tienda) y enlazar desde la prensa que ya habla de ti hacia esas páginas.",
-      "why": "Si el comprador no te encuentra cuando está decidido a comprar, la venta se la lleva otra óptica o Farmatodo.",
-      "impact": 5,
-      "effort": "Alto",
-      "headline_metric": "0 de 7 búsquedas de compra",
+      "title": "Tus categorías clave salen en Google sin descripción",
+      "summary": "Apareces en Google, pero tus páginas de Gafas de Sol y Gafas Formuladas se muestran con un título de dos palabras y un resumen improvisado que no invita a hacer clic.",
+      "now": "Cuando alguien busca \"comprar gafas de sol online Colombia\", Google muestra tu página como «Gafas de Sol» con el texto «Chelsea Midnight Green Precio de oferta$199,000 COP. Color. Gris Verde Rosado… Añadir a la cesta». Al buscar \"Sajú gafas\", tus categorías salen con el texto de suscripción del pie de página («Suscríbete para recibir información…»). Estas páginas no tienen descripción para Google, ni título principal, ni un párrafo de introducción: empiezan directo con los filtros.",
+      "fix": "Escribir para cada categoría principal (Gafas de Sol, Gafas Formuladas, Exámenes Visuales) un título que diga qué y dónde vendes, una descripción para Google y 2-3 párrafos útiles (material reciclado, filtro UV400, precios desde, garantía, cómo pedir con tu fórmula). Ya tienes el modelo: tu página de gafas de plástico reciclado sale primera con una descripción clara («705 días de garantía»).",
+      "why": "El título y el resumen son lo que convence a alguien de hacer clic en ti y no en la óptica de al lado.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "Puesto 7 en \"comprar gafas de sol online Colombia\"",
       "evidence": [
-        "search_tests: 0/7 buyer queries returned a saju.co URL in a general (US-based) web index; Sajú appears through third parties (forbes.co, semana.com, farmatodo.com.co)",
-        "Third parties outrank the store for the brand's own story: forbes.co 'gafas hechas con plastico reciclado en 20 minutos', farmatodo.com.co cordón gafas Saju product pages"
+        "Google Colombia 2026-11-06 (raw/seo-google-serps.json): 'comprar gafas de sol online Colombia' -> pos 7 saju.co/collections/gafas-de-sol, title «Gafas de Sol», snippet «Chelsea Midnight Green Precio de oferta$199,000 COP. Color. Gris Verde Rosado. Fresh Original Peppermint - Sajú Colombia. Añadir a la cesta.»",
+        "Google Colombia: 'gafas formuladas Bogotá precio' -> pos 3 saju.co/collections/gafas-formuladas, title «Gafas Formuladas», snippet built from product prices («The Oh Effect Formuladas • Marco (4 Estilos) Precio de oferta$199,000 COP ...»)",
+        "Google Colombia: 'Sajú gafas' -> Gafas Formuladas and Gafas de Sol shown with footer newsletter text «Somos una marca de gafas comprometida… Suscríbete para recibir información de nuevos ...»",
+        "Rendered view (headless Chrome, raw/seo-sol-rendered.html, raw/seo-formuladas-rendered.html, raw/seo-examenes-rendered.html): no <meta name=description>, 0 <h1>, 0 <h2>, no og:description; first text in <main> is the filter list 'REDONDAS SEMIREDONDAS CUADRADAS…'. No-JS view (raw/seo-sol.html etc.) is identical on these tags.",
+        "Counter-example on Google: 'gafas de sol plástico reciclado Colombia' -> pos 1 «Gafas de plástico reciclado Sajú» with a written description («Compra Online en Sajú tus Gafas hechas de plástico reciclado… 705 días de garantía»)",
+        "Lighthouse SEO = 100 on mobile and desktop (raw/lighthouse-*.json): it audits only basic tags on the homepage and does not see these category gaps"
       ],
-      "technical_note": "Search tool is a general web index (US-based), not a localized Google.com.co ranking; results indicate visibility gaps, not exact Google positions.",
+      "technical_note": "Shopify collection template outputs no collection.title as <h1>; collection description and SEO fields are empty for gafas-de-sol, gafas-formuladas, examenes-visuales. Fill them in Shopify admin and make the theme render an <h1> plus the description above the grid.",
       "pin": null
     },
     {
       "id": "seo-2",
-      "title": "Las categorías clave no tienen título ni descripción",
-      "summary": "Tus páginas más importantes (Gafas de Sol, Gafas Formuladas, Exámenes Visuales) son solo una cuadrícula de productos, sin texto que le diga a Google de qué se tratan.",
-      "now": "Las tres categorías principales no tienen título principal (H1), no tienen descripción para Google y no tienen ningún párrafo de introducción: la página empieza directo con los filtros (\"Redondas, Cuadradas, Filtrar...\"). Google arma el resumen con lo que encuentre.",
-      "fix": "Agregar a cada categoría un título principal, una descripción para Google y 2-3 párrafos útiles (materiales reciclados, filtro UV400, precios desde, cómo pedir con tu fórmula, en qué tiendas probártelas).",
-      "why": "Son las páginas que deberían ganar búsquedas como \"gafas formuladas Bogotá\"; sin texto, Google no tiene con qué posicionarlas.",
-      "impact": 4,
+      "title": "En Google tu inicio sale con un eslogan en inglés",
+      "summary": "Quien busca tu marca ve «FEEL GOOD, LOOK GOOD, DO GOOD» en lugar de lo que vendes y dónde.",
+      "now": "En las búsquedas \"Sajú gafas\" y \"Sajú óptica Bogotá\", tu página de inicio aparece como «Sajú - FEEL GOOD, LOOK GOOD, DO GOOD». El título no menciona gafas, óptica, materiales reciclados ni Colombia, y el título principal de la página es solo el logo («Sajú Colombia»).",
+      "fix": "Cambiar el título del inicio a algo como «Sajú | Gafas de sol y formuladas recicladas y ópticas en Colombia» y llevar el eslogan al contenido de la página.",
+      "why": "El título del inicio es una de las señales más fuertes para que Google te muestre en búsquedas de gafas, no solo en las de tu nombre.",
+      "impact": 3,
       "effort": "Bajo",
       "evidence": [
-        "raw/seo-sol.html (/collections/gafas-de-sol): <title>Gafas de Sol</title>, no <meta name=description>, 0 <h1>, 0 <h2>, no og:description; first main text = filter labels",
-        "raw/seo-formuladas.html (/collections/gafas-formuladas): 0 <h1>, no meta description",
-        "raw/seo-examenes.html (/collections/examenes-visuales): <title>Examenes Visuales</title>, 0 <h1>, no meta description",
-        "Contrast: product page raw/seo-product.html has a good title ('Chelsea Earth · Gafas de sol cuadradas | Sajú') and a descriptive meta description with measures and UV400",
-        "Lighthouse SEO = 100 on mobile and desktop (raw/lighthouse-*.json), which only checks a few basics on the homepage and misses these gaps"
+        "Google Colombia 2026-11-06: 'Sajú gafas' pos 2 and 'Sajú óptica Bogotá' pos 2 show title «Sajú - FEEL GOOD, LOOK GOOD, DO GOOD» for https://www.saju.co",
+        "Rendered view (raw/seo-home-rendered.html) and no-JS view (raw/seo-home.html): <title>Sajú - FEEL GOOD, LOOK GOOD, DO GOOD</title>, og:title identical, single <h1> = logo 'Sajú Colombia'",
+        "Meta description (both views): 'Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta' (no product types, no location)"
       ],
-      "technical_note": "Shopify collection template renders no collection.title as <h1> and collection.description is empty; fill collection description + SEO fields in Shopify admin and ensure the theme outputs an <h1>.",
-      "pin": null
+      "technical_note": "Edit in Shopify admin > Online Store > Preferences (homepage title and meta description).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 6}
     },
     {
       "id": "seo-3",
-      "title": "Tus tiendas físicas son casi invisibles para Google",
-      "summary": "Tienes más de 15 tiendas y ópticas, pero cuando alguien busca una óptica cerca, Google no tiene una página por tienda que mostrar.",
-      "now": "Todas las tiendas están en una sola página titulada \"TIENDAS\", sin título principal ni descripción. Solo 2 tiendas muestran teléfono. No hay una página propia por tienda (con dirección, horario, servicios y mapa), salvo las páginas para reservar el examen visual. No pudimos confirmar en la búsqueda que tus tiendas tengan ficha de Google (Google Business Profile).",
-      "fix": "Crear una página por tienda (por ejemplo, \"Óptica Sajú Calle 122, Bogotá\") con dirección, horario, teléfono, servicios (examen visual, gafas formuladas) y datos estructurados de negocio local, y enlazarla con la ficha de Google de cada tienda.",
-      "why": "Las búsquedas \"óptica cerca de mí\" y \"examen visual en [barrio]\" son de alta intención de compra y se ganan con páginas locales.",
+      "title": "Tus ópticas tienen fichas en Google, pero no página propia",
+      "summary": "Tus ópticas tienen buenas calificaciones en Google, pero tu web no tiene una página por tienda que respalde esas fichas, y quien busca una óptica en Medellín no te encuentra.",
+      "now": "Al buscar \"Sajú óptica Bogotá\", Google muestra tres fichas tuyas con muy buenas calificaciones (Flagship Calle 81: 4,8 con 923 opiniones; Calle 140: 4,9 con 122; Parque La Colina: 4,8 con 940). En tu web, todas las tiendas están en una sola página titulada «TIENDAS», sin descripción ni título principal, y esas tres tiendas aparecen sin teléfono, aunque sus fichas de Google sí muestran uno. En la búsqueda \"óptica Medellín gafas formuladas económicas\" tu web no aparece en los primeros 25 resultados, aunque tienes óptica en Medellín.",
+      "fix": "Crear una página por óptica (por ejemplo, «Óptica Sajú Calle 81, Bogotá») con dirección, horario, el mismo teléfono de su ficha de Google, servicios (examen visual, gafas formuladas), mapa y opiniones, y enlazar cada ficha de Google a su página.",
+      "why": "Las búsquedas de óptica por ciudad o barrio son de compra inmediata; con páginas por tienda puedes aprovechar las calificaciones que ya tienes.",
       "impact": 4,
       "effort": "Medio",
       "evidence": [
-        "raw/seo-tiendas.html (/pages/tiendas-1): <title>TIENDAS</title>, no meta description, 0 <h1>, only BreadcrumbList JSON-LD (no LocalBusiness/Optician)",
-        "Store list text in raw/seo-tiendas.html: ~20 locations (Bogotá Calle 122, Calle 140, Calle 54, Calle 81, Gran Estación, Parque La Colina; Chía/San Roque; Medellín; Barranquilla; Cartagena; Costa Rica; Venezuela; aliados); phone shown only for Gran Estación (3126685593) and San Roque (3126682112)",
-        "Sitemap pages also contain older /pages/store-locator and /pages/la-colina alongside /pages/tiendas-1",
-        "WebSearch 'Sajú óptica Gran Estación Bogotá Google Maps reseñas': no Sajú listing found (cannot confirm Google Business Profile)"
+        "Google Colombia 2026-11-06 'Sajú óptica Bogotá' local pack (raw/seo-google-serps.json): «Sajú - Flagship Store Bogotá & Óptica» 4,8 (923) Cra. 9 #81-25 · 310 3248107; «Sajú - Óptica Calle 140» 4,9 (122) Cl. 140 #10A - 53 · 301 1356433; «Sajú - Óptica Parque La Colina» 4,8 (940) CC Parque La Colina, Cra. 72 #145 · 323 8089097",
+        "Rendered view raw/seo-tiendas-rendered.html (/pages/tiendas-1): <title>TIENDAS</title>, no meta description, 0 <h1>, only BreadcrumbList JSON-LD; 15 'Tienda propia' + aliados; phone shown only for Gran Estación (3126685593) and San Roque (3126682112). Calle 81, Calle 140 and Parque La Colina listed without phone.",
+        "Google Colombia 'óptica Medellín gafas formuladas económicas': saju.co absent from 25 organic results across pages 1-3 (start=0,10,20); the store list includes 'Óptica Medellin, Cra. 25 #4 - 165'",
+        "Google indexes three store pages for the same purpose: /pages/tiendas-1, /pages/store-locator ('Store Locator', pos 5 for 'Sajú óptica Bogotá') and exam-booking product pages (e.g. 'Examen Visual - Calle 81' at /products/examen-visual-calle-82)"
       ],
-      "technical_note": "Exam booking product pages (e.g. /products/examen-visual-gran-estacion) carry the address in meta description and have FAQPage, but are Product-typed; add LocalBusiness/Optician JSON-LD per location.",
+      "technical_note": "Only three listings were shown in the logged-out local pack; other stores' Business Profiles were not checked. Add LocalBusiness/Optician JSON-LD per location page; consolidate /pages/store-locator into /pages/tiendas-1 with a 301.",
       "pin": null
     },
     {
       "id": "seo-4",
-      "title": "El título de tu inicio no dice que vendes gafas",
-      "summary": "En Google, tu página de inicio aparece con un eslogan en inglés en vez de decir qué vendes y dónde.",
-      "now": "El título de la página de inicio es \"Sajú - FEEL GOOD, LOOK GOOD, DO GOOD\". No menciona gafas, ópticas, materiales reciclados ni Colombia. El título principal de la página es solo el logo (\"Sajú Colombia\").",
-      "fix": "Cambiar el título a algo como \"Sajú | Gafas de sol y formuladas recicladas en Colombia\" y mantener el eslogan en el contenido.",
-      "why": "El título es lo primero que la gente lee en Google y una de las señales más fuertes para aparecer en búsquedas de gafas.",
-      "impact": 3,
-      "effort": "Bajo",
-      "evidence": [
-        "raw/seo-home.html: <title>Sajú - FEEL GOOD, LOOK GOOD, DO GOOD</title>; og:title identical",
-        "raw/seo-home.html: single <h1 class=\"header__logo\"> containing 'Sajú Colombia'",
-        "Meta description: 'Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta' (no product types, no location)"
-      ],
-      "technical_note": "Edit in Shopify admin > Online Store > Preferences (homepage title/meta description).",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 50,
-        "y_pct": 6
-      }
-    },
-    {
-      "id": "seo-5",
-      "title": "Google tiene publicadas páginas de prueba y promociones vencidas",
-      "summary": "Tu mapa del sitio le entrega a Google páginas que no venden nada, y eso diluye la atención que Google le da a tus productos.",
-      "now": "El mapa del sitio incluye una página de una app de códigos QR que dice \"Processing QR Code.... Created by QR Code Generator Hub\", 13 productos duplicados con \"-copy\" en la dirección, 23 páginas de términos de campañas ya terminadas y páginas internas como \"mi-perfil\" o \"fastbundles\".",
+      "title": "Google tiene páginas de prueba y promociones vencidas",
+      "summary": "Tu mapa del sitio le entrega a Google páginas que no venden nada, y eso le quita atención a tus productos y categorías.",
+      "now": "El mapa del sitio incluye una página de una app de códigos QR que dice «Processing QR Code.... Created by QR Code Generator Hub», 13 productos duplicados con «-copy» en la dirección, 24 páginas de términos de campañas y páginas internas como «mi-perfil» o «fastbundles». Ninguna está oculta para Google.",
       "fix": "Limpiar el sitio: ocultar a Google las páginas de prueba y de campañas vencidas, borrar o redirigir los productos duplicados y dejar en el mapa solo lo que vende.",
       "why": "Menos ruido hace que Google rastree y muestre más tus productos y categorías.",
       "impact": 3,
       "effort": "Bajo",
       "evidence": [
-        "raw/seo-sitemap-pages.xml: 68 pages, 23 match 'terminos-y-condiciones-*' or '/t-c-*' (e.g. t-c-bananaton, terminos-y-condiciones-hora-loca-saju-18-de-marzo-2026, terminos-y-condiciones-viaje-a-aruba)",
-        "raw/seo-thin-qr.html (/pages/qr-code-scans): title 'Scan this QR Code to visit us', meta description 'Processing QR Code.... Download Created by QR Code Generator Hub', no robots noindex",
-        "raw/seo-sitemap-products.xml: 642 product URLs, 13 with '-copy' handle (e.g. getsemani-copy, rocket-earth-copy, venice-cinnamon-formuladas-copy)",
-        "raw/seo-sitemap-collections.xml: 258 collection URLs, many overlapping (e.g. gafas-formuladas, gafas-formuladas-plastico-reciclado-saju, clear-formuladas, rocket-formuladas)",
-        "raw/seo-thin-fastbundles.html: indexable, empty meta description"
+        "Live sitemap_pages_1.xml (fetched 2026-11-06): 68 URLs, 24 match 'terminos-y-condiciones' or '/t-c-'; includes /pages/qr-code-scans, /pages/fastbundles, /pages/mi-perfil (raw/seo-sitemap-pages.xml is the earlier copy with 23)",
+        "Live /pages/qr-code-scans (HTTP 200, no-JS view): meta description 'Processing QR Code.... Download Created by QR Code Generator Hub', no robots noindex (raw/seo-thin-qr.html)",
+        "Live sitemap_products_1.xml: 641 product URLs, 13 with '-copy' handle (e.g. getsemani-copy, rocket-earth-copy, venice-cinnamon-formuladas-copy)",
+        "raw/seo-sitemap-collections.xml: 258 collection URLs with overlapping topics (gafas-formuladas, gafas-formuladas-plastico-reciclado-saju, clear-formuladas, rocket-formuladas)"
       ],
-      "technical_note": "Shopify auto-includes all published pages/products in sitemap; unpublish, add seo.hidden metafield (noindex) or 301-redirect duplicates.",
+      "technical_note": "Shopify auto-includes published pages/products in the sitemap; unpublish, set the seo.hidden metafield (noindex) or 301-redirect duplicates.",
       "pin": null
     },
     {
-      "id": "seo-6",
-      "title": "La IA no encuentra en tu web datos claros sobre ti",
-      "summary": "ChatGPT o Google con IA cuentan tu historia con datos de la prensa, no de tu web, porque tu sitio no los presenta de forma clara.",
-      "now": "Los datos que te hacen distinto (fundada en 2016, Shark Tank, plástico reciclado, tiendas en varios países) aparecen en artículos de terceros. En tu web, la ficha de empresa para Google solo tiene el nombre y el logo, sin dirección ni teléfono, y su descripción está incompleta (\"...Accesorios para Gafas, !\"). El archivo para IA (llms.txt) es el texto genérico de Shopify, sin información de tu marca. Las preguntas frecuentes solo están en las páginas de examen visual.",
-      "fix": "Publicar una página \"Sobre Sajú\" con datos verificables (año, materiales, kilos reciclados, tiendas, garantías), completar la ficha de empresa con dirección y teléfono, y agregar preguntas frecuentes en categorías clave (gafas formuladas, garantía, cómo enviar tu fórmula).",
-      "why": "Las respuestas de IA recomiendan a quien tiene datos claros y citables; hoy esos datos los tiene la prensa.",
+      "id": "seo-5",
+      "title": "Tu web no le da a la IA datos claros sobre ti",
+      "summary": "Los asistentes de IA cuentan tu historia con lo que dice la prensa, porque tu web no presenta tus datos de forma clara y citable.",
+      "now": "La ficha de empresa que tu web le entrega a Google solo tiene nombre, logo y redes, sin dirección ni teléfono, y su descripción está cortada («...Cuelga Gafas, Accesorios para Gafas, !»). El archivo para IA (llms.txt) es el texto estándar de Shopify sobre cómo comprar, sin datos de tu marca. Las preguntas frecuentes solo están en las páginas de examen visual. La buena noticia: tu web se entrega completa sin JavaScript y los robots de IA pueden leerla.",
+      "fix": "Publicar una página «Sobre Sajú» con datos verificables (año de fundación, materiales, kilos reciclados, número de ópticas, garantías), completar la ficha de empresa con dirección y teléfono, y agregar preguntas frecuentes en las categorías clave (gafas formuladas, garantía, cómo enviar tu fórmula).",
+      "why": "Las respuestas de IA recomiendan a las marcas que tienen datos claros y fáciles de citar en su propia web.",
       "impact": 3,
       "effort": "Medio",
       "evidence": [
-        "raw/seo-home.html Organization JSON-LD: name 'Sajú Colombia', logo, slogan, sameAs (instagram, tiktok), description '¡Visítanos y encuentra Gafas de Sol hechas de plástico reciclado, Cuelga Gafas, Accesorios para Gafas, ! ' — no address, no telephone",
-        "raw/seo-llms.txt: Shopify agent/UCP boilerplate (Shop skill, UCP endpoints, policies), no business facts",
-        "FAQPage JSON-LD found only on exam booking page (raw/ux-examen.html); absent on home, collections and product page",
-        "WebSearch 'Sajú gafas': facts (founded 2016, Shark Tank, 20+ countries) sourced from cbinsights.com and las2orillas.co, not saju.co"
+        "Rendered home (raw/seo-home-rendered.html) Organization JSON-LD: name 'Sajú Colombia', logo, slogan 'Do things that change things', sameAs [instagram, tiktok], description '¡Visítanos y encuentra Gafas de Sol hechas de plástico reciclado, Cuelga Gafas, Accesorios para Gafas, ! ' — no address, no telephone",
+        "Live https://www.saju.co/llms.txt (HTTP 200, saved as raw/seo-llms.txt): 'Agent Instructions — Sajú Colombia', Shop skill / UCP boilerplate, no brand facts",
+        "FAQPage JSON-LD present on exam booking page (raw/ux-examen.html, /products/examen-visual-gran-estacion); absent on home, gafas-de-sol, gafas-formuladas, examenes-visuales, tiendas, product and about pages (rendered view)",
+        "No-JS view: home, collections and product pages carry full content server-side (curl 1,257 words on home vs 1,191 rendered); home returned HTTP 200 for Googlebot, GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot and PerplexityBot user agents; robots.txt has no AI-bot rules",
+        "About page /pages/el-mono-en-el-tanque is a Shark Tank story ('El mono pesca a los tiburones', 405 words rendered), not a fact sheet"
       ],
-      "technical_note": "Extend Organization schema with address, telephone, foundingDate; consider a custom llms.txt section with brand facts if the platform allows.",
+      "technical_note": "Spoofed-UA tests from a normal IP are only an indication. Extend Organization schema with address, telephone, foundingDate; add a brand-facts section to llms.txt if Shopify allows overriding it.",
       "pin": null
     }
   ],
   "search_tests": [
     {
       "query": "gafas de sol plástico reciclado Colombia",
-      "appears": false,
-      "position_or_note": "saju.co not listed; Sajú mentioned in third-party press (semana.com, corresponsables.com, noticiascaracol.com context)",
-      "who_appears": [
-        "extra.ec",
-        "noticiascaracol.com",
-        "expreso.ec",
-        "semana.com",
-        "aim2flourish.com",
-        "corresponsables.com",
-        "portafolio.co"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 1: «Gafas de plástico reciclado Sajú» — «Compra Online en Sajú tus Gafas hechas de plástico reciclado al mejor precio | Vive la experiencia Sajú y haz tus propias gafas | 705 días de garantía ...». También puesto 2: «Gafas de Sol de plástico reciclado – Página 3».",
+      "who_appears": ["saju.co", "seabelt.co", "instagram.com (polymasters.co)", "forbes.co", "mercadolibre.com.co"]
     },
     {
       "query": "gafas formuladas Bogotá precio",
-      "appears": false,
-      "position_or_note": "not listed; results mostly news and marketplaces",
-      "who_appears": [
-        "las2orillas.co",
-        "noticiasrcn.com",
-        "marketplace.addi.com",
-        "portafolio.co",
-        "publimetro.co",
-        "homecenter.com.co"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 3: «Gafas Formuladas» — «The Oh Effect Formuladas • Marco (4 Estilos) Precio de oferta$199,000 COP ... Soho Mid Brown Formuladas - Sajú Colombia · Soho Mid ...»",
+      "who_appears": ["santalucia.com.co", "folkseyewear.com", "saju.co", "lafam.com.co", "naratodo.com", "gmo.com.co", "instagram.com (gafasygafascol)", "lentesplus.com"]
     },
     {
       "query": "examen visual Bogotá óptica cita",
-      "appears": false,
-      "position_or_note": "not listed; Doctoralia directory listings dominate",
-      "who_appears": [
-        "doctoralia.co",
-        "concejodebogota.gov.co",
-        "cundinamarca.gov.co",
-        "dialnet.unirioja.es"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 5: «Examen Visual - Calle 81» — «Es importante llegar 10 minutos antes de la cita. La cita tiene una duración de 30 minutos y el tiempo máximo de espera es de 10 minutos. En caso de presentarse ...»",
+      "who_appears": ["lafam.com.co", "opticaalemanahsm.com", "sociedadcirugiaocular.com", "opticasuniver.com", "saju.co", "opticasapolo.com", "opticacolombiana.com", "visioncolombia.com.co", "salud.colsubsidio.com"]
     },
     {
       "query": "comprar gafas de sol online Colombia",
-      "appears": false,
-      "position_or_note": "not listed",
-      "who_appears": [
-        "elpais.com.co (GafasWorld)",
-        "encarguelo.com",
-        "opticalia.com",
-        "co.shadestation.com",
-        "co.ebay.com",
-        "larepublica.co"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 7: «Gafas de Sol» — «Chelsea Midnight Green Precio de oferta$199,000 COP. Color. Gris Verde Rosado. Fresh Original Peppermint - Sajú Colombia. Añadir a la cesta.»",
+      "who_appears": ["lafam.com.co", "gmo.com.co", "gafasworld.com.co", "folkseyewear.com", "lens.com.co", "latam.sunglasshut.com", "saju.co", "latiendadegafas.com", "hawkersco.com"]
     },
     {
       "query": "gafas sostenibles marca colombiana",
-      "appears": false,
-      "position_or_note": "saju.co not listed, but Sajú is the most cited brand via forbes.co and delfino.cr articles",
-      "who_appears": [
-        "forbes.co",
-        "valoraanalitik.com",
-        "delfino.cr",
-        "larepublica.co",
-        "fashionunited.es",
-        "semana.com"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 1: «Gafas de plástico reciclado Sajú» — «Compra Online en Sajú tus Gafas hechas de plástico reciclado al mejor precio | Vive la experiencia Sajú y haz tus propias gafas | 705 días de garantía ...»",
+      "who_appears": ["saju.co", "seabelt.com.co", "seabelt.co", "forbes.co", "arcaoficial.com", "ecolover.life", "publicitar.com.co"]
     },
     {
       "query": "óptica Medellín gafas formuladas económicas",
       "appears": false,
-      "position_or_note": "not listed",
-      "who_appears": [
-        "opticalia.com",
-        "tiendeo.com (General Óptica)",
-        "marketplace.addi.com",
-        "modaes.com"
-      ]
+      "position_or_note": "No aparece en los 25 resultados orgánicos de las páginas 1 a 3 (resultados cargados sin captcha).",
+      "who_appears": ["optica-medellin.com", "gafasygafas.com.co", "naratodo.com", "elhueco.com.co", "santalucia.com.co", "folkseyewear.com", "colgafas.com", "francovisionoptica.com", "lentesplus.com", "gmo.com.co", "lafam.com.co"]
     },
     {
       "query": "cuelga gafas cordón para gafas Colombia",
-      "appears": false,
-      "position_or_note": "saju.co not listed; Sajú products appear on farmatodo.com.co (retailer) instead",
-      "who_appears": [
-        "farmatodo.com.co",
-        "larepublica.co",
-        "proveedores.com",
-        "patents.google.com"
-      ]
+      "appears": true,
+      "position_or_note": "Puesto 1: «Cuelga Gafas (Webpage)» — «Cordones cuelga gafas hechos a mano y con materiales reciclados al mejor precio | Compra en saju.co | 705 días de garantía | Envíos gratis a toda Colombia a ...»",
+      "who_appears": ["saju.co", "seabelt.co", "mercadolibre.com.co", "instagram.com (yapa.co)", "colgafas.com", "lafam.com.co", "pinterest.com"]
+    },
+    {
+      "query": "Sajú gafas",
+      "appears": true,
+      "position_or_note": "Búsqueda de marca. Puesto 1: «Gafas Formuladas» — «Somos una marca de gafas comprometida en hacerle la vida más fácil a nuestros clientes y al planeta. Suscríbete para recibir información de nuevos ...». saju.co ocupa 7 de los 8 resultados orgánicos (el otro es tu Instagram).",
+      "who_appears": ["saju.co", "instagram.com (saju)"]
+    },
+    {
+      "query": "Sajú óptica Bogotá",
+      "appears": true,
+      "position_or_note": "Búsqueda de marca. Puesto 1: «TIENDAS» — «Nuestras tiendas ; Óptica Calle 81 · Bogotá · Colombia. Cra. 9 #81 - 25. Lun a Sáb: 10am - 7pm Dom & Fest: 10am - 5pm ; Óptica Calle 54 · ...». Arriba aparecen 3 fichas de Google de tus ópticas.",
+      "who_appears": ["saju.co", "instagram.com (saju)"]
     }
   ],
-  "search_tests_note": "Pruebas hechas con una herramienta de búsqueda web general (índice con sede en EE. UU.), no con Google Colombia ni con resultados locales o de mapas. Muestran si el sitio aparece en un índice web amplio, no la posición exacta en Google. 7 búsquedas de compra. No se midieron menciones en respuestas de IA.",
-  "extra_pitch_es": "Tu marca ya es noticia en Forbes y Semana, pero quien busca gafas para comprar no llega a tu tienda: con páginas de categoría y de cada óptica bien hechas, ese interés se puede convertir en ventas en saju.co.",
+  "search_tests_note": "Pruebas hechas en Google Colombia (hl=es, gl=co) con un navegador limpio y sin sesión, el 6 de noviembre de 2026. Google ubicó la búsqueda en Medellín/Copacabana (Antioquia) según la conexión, así que los resultados pueden cambiar según la persona y el lugar. 7 búsquedas de compra y 2 de marca; tu web apareció en 6 de las 7 de compra y en las 2 de marca. Las fichas de Google Maps se revisaron aparte y no cuentan en esta tabla. No se midieron menciones en respuestas de IA.",
+  "extra_pitch_es": "Google ya te pone arriba en gafas recicladas y tus ópticas tienen 4,8 estrellas: con categorías bien escritas y una página por óptica puedes convertir esa ventaja en más clics y más citas en Bogotá, Medellín y el resto del país.",
   "checks": [
-    {
-      "id": "seo-appears",
-      "result": "fail",
-      "evidence": "saju.co appeared in 0 of 7 buyer search tests (and 0 of 2 brand tests)."
-    },
-    {
-      "id": "seo-titles",
-      "result": "partial",
-      "evidence": "Titles are unique; product page title is descriptive ('Chelsea Earth · Gafas de sol cuadradas | Sajú'), but home is a slogan ('Sajú - FEEL GOOD, LOOK GOOD, DO GOOD'), stores page is 'TIENDAS' and collections are bare ('Gafas de Sol', 'Examenes Visuales')."
-    },
-    {
-      "id": "seo-descriptions",
-      "result": "partial",
-      "evidence": "Meta description present on home, product, exam and about pages; missing on /collections/gafas-de-sol, /collections/gafas-formuladas, /collections/examenes-visuales and /pages/tiendas-1."
-    },
-    {
-      "id": "seo-h1",
-      "result": "partial",
-      "evidence": "Exactly one H1 on home (logo 'Sajú Colombia'), product and exam pages; zero H1 on the three main collections and on /pages/tiendas-1."
-    },
-    {
-      "id": "seo-structured-data",
-      "result": "fail",
-      "evidence": "Organization JSON-LD on home has name/logo/sameAs but no address or telephone; no LocalBusiness/Optician on stores page or anywhere checked."
-    },
-    {
-      "id": "seo-product-pages",
-      "result": "pass",
-      "evidence": "642 product URLs in sitemap; sample /products/chelsea-earth is indexable with description, measures (52-19-145 mm), UV400 and ProductGroup/Offer JSON-LD with price and GTIN."
-    },
-    {
-      "id": "seo-clean-index",
-      "result": "fail",
-      "evidence": "Sitemap lists /pages/qr-code-scans ('Processing QR Code.... Created by QR Code Generator Hub'), 13 '-copy' duplicate products, 23 expired campaign T&C pages, /pages/mi-perfil and /pages/fastbundles; none noindexed."
-    },
-    {
-      "id": "seo-share",
-      "result": "partial",
-      "evidence": "og:title/description/image present on home and product; main collections and stores page have og:title and og:image but no og:description."
-    },
-    {
-      "id": "seo-nap",
-      "result": "partial",
-      "evidence": "Name consistent (Sajú / Sajú Colombia) and one WhatsApp +573123225855 site-wide; store addresses only on /pages/tiendas-1, phones for only 2 stores, no address/phone in Organization schema, and no Google Business Profile listing could be confirmed."
-    },
-    {
-      "id": "seo-ai-ready",
-      "result": "partial",
-      "evidence": "llms.txt exists but is Shopify agent boilerplate without business facts; FAQPage only on exam booking pages; no fact sheet with verifiable figures found."
-    }
+    {"id": "seo-appears", "result": "pass", "evidence": "Real Google Colombia 2026-11-06: saju.co appeared in 6 of 7 buyer queries (pos 1, 3, 5, 7, 1, 1; absent from 25 results for 'óptica Medellín gafas formuladas económicas') and in both brand queries."},
+    {"id": "seo-titles", "result": "partial", "evidence": "Rendered view: titles are unique; product page is descriptive ('Chelsea Earth · Gafas de sol cuadradas | Sajú'), but home is a slogan ('Sajú - FEEL GOOD, LOOK GOOD, DO GOOD'), stores page is 'TIENDAS' and main collections are bare ('Gafas de Sol', 'Gafas Formuladas', 'Examenes Visuales') — Google shows them exactly so."},
+    {"id": "seo-descriptions", "result": "partial", "evidence": "Rendered view: meta description present on home, product, exam and about pages; missing on /collections/gafas-de-sol, /collections/gafas-formuladas, /collections/examenes-visuales and /pages/tiendas-1, where Google builds snippets from product prices or footer text."},
+    {"id": "seo-h1", "result": "partial", "evidence": "Rendered view: exactly one H1 on home (logo 'Sajú Colombia'), product ('Chelsea Earth') and about page; zero H1 on the three main collections and on /pages/tiendas-1."},
+    {"id": "seo-structured-data", "result": "fail", "evidence": "Rendered home Organization JSON-LD has name/logo/sameAs but no address or telephone; no LocalBusiness/Optician on the stores page or any page checked."},
+    {"id": "seo-product-pages", "result": "pass", "evidence": "641 product URLs in live sitemap; /products/chelsea-earth is indexable with description, measures (52-19-145 mm), UV400 and ProductGroup/Product JSON-LD; product and collection pages rank on Google for buyer queries."},
+    {"id": "seo-clean-index", "result": "fail", "evidence": "Live sitemap lists /pages/qr-code-scans ('Processing QR Code.... Created by QR Code Generator Hub'), 13 '-copy' duplicate products, 24 campaign T&C pages, /pages/mi-perfil and /pages/fastbundles; none noindexed."},
+    {"id": "seo-share", "result": "partial", "evidence": "og:title/description/image present on home, product and about; main collections and stores page have og:title and og:image but no og:description (same in rendered and no-JS views)."},
+    {"id": "seo-nap", "result": "partial", "evidence": "Brand name consistent (Sajú / Sajú Colombia) and addresses on /pages/tiendas-1 match the Google listings shown (Cra. 9 #81-25, Cl. 140 #10A-53, Parque La Colina), but the site shows no phone for those three stores while their Google listings show 310 3248107, 301 1356433 and 323 8089097; the Calle 81 store is 'Óptica Calle 81' on the site and 'Sajú - Flagship Store Bogotá & Óptica' on Google; no address/phone in Organization schema."},
+    {"id": "seo-ai-ready", "result": "partial", "evidence": "llms.txt exists but is Shopify agent boilerplate without business facts; FAQPage only on exam booking pages; no fact sheet with verifiable figures; content is server-rendered and AI-bot user agents get HTTP 200."}
   ]
 }
