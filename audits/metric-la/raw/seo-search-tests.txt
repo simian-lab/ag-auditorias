@@ -1,11 +1,38 @@
-WebSearch runs (2026-11-04, Claude WebSearch tool, US-based index, not a local Google Colombia ranking). metric.la did not appear in any result list.
+Google Colombia search tests, 2026-11-06 (~21:50 UTC), BrowserOS, clean logged-out browser.
+URL pattern: https://www.google.com/search?hl=es&gl=co&num=20&q=<query>  (page 2: &start=10). No captcha on any load.
+Organic results only (ads ignored). Displayed domain listed in order. metric.la absent from pages 1+2 of every buyer query.
 
-1. "inmobiliaria Bogotá apartamentos venta Chicó" -> fincaraiz.com.co, engelvoelkers.com, ciencuadras.com, metrocuadrado.com
-2. "apartamentos en arriendo Chicó Virrey Bogotá" -> fincaraiz.com.co, ciencuadras.com, metrocuadrado.com
-3. "casas en venta Guaymaral" -> metrocuadrado.com, fincaraiz.com.co, ciencuadras.com, engelvoelkers.com
-4. "apartamento en venta Cabrera Bogotá" -> fincaraiz.com.co, metrocuadrado.com, ciencuadras.com
-5. "inmobiliaria de lujo Bogotá vivienda alto nivel" -> metrocuadrado.com, fincaraiz.com.co, portafolio.co, luxuryestate.com, vivienda.com.co
-6. "administración de inmuebles en arriendo Bogotá inmobiliaria" -> concejodebogota.gov.co, mercadolibre.com.co, ciencuadras.com, fincaraiz.com.co, portafolio.co, vivienda.com.co
-7. Brand: "Metric Real Estate Bogotá" -> emis.cn (Met Real Estate S.A.S., Grupo Metric SAS: other companies), colombiareports.com, nearshoreamericas.com
-8. Brand: "metric.la inmobiliaria" -> unrelated (eleconomista.es, vistazo.com Métrica Ecuador, etc.)
-Extra: "site:metric.la" -> operator ignored, no metric.la pages. "\"Metric Real Estate\" Colombia inmobiliaria Google Maps" -> no Google Business Profile found.
+1. "apartamentos en venta Chicó Bogotá" (p1+p2, 19 organic) -> NOT FOUND
+ p1: fincaraiz, metrocuadrado, engelvoelkers, listado.mercadolibre, casas.mitula, brikss, fincaraiz, puntopropiedad, ciencuadras
+ p2: properati, robertocollins, metrocuadrado, listado.mercadolibre, engelvoelkers, ciencuadras, (social), fincaraiz, metrocuadrado, properati
+2. "apartamentos en arriendo Chicó Virrey Bogotá" (19) -> NOT FOUND
+ p1: fincaraiz, metrocuadrado, metrocuadrado, properati, fincaraiz, puntopropiedad, (social), listado.mercadolibre, aptologia
+ p2: casas.trovit, metrocuadrado, engelvoelkers, casas.mitula, aptologia, casas.waa2, fincaraiz, brikss, nuroa, ciencuadras
+3. "casas en venta Guaymaral" (19) -> NOT FOUND
+ p1: metrocuadrado, fincaraiz, listado.mercadolibre, caminosdeguaymaral.com, casas.mitula, puntopropiedad, fincaraiz, metrocuadrado, guaymaralcasascampestres.com
+ p2: listado.mercadolibre, ciencuadras, casas.mitula, fincaraiz, (social), metrocuadrado, listado.mercadolibre, areacuadrada, casas.mitula, fincaraiz
+4. "apartamento en venta La Cabrera Bogotá" (19) -> NOT FOUND
+ p1: metrocuadrado, fincaraiz, engelvoelkers, listado.mercadolibre, brikss, casas.mitula, puntopropiedad, fincaraiz, ciencuadras
+ p2: metrocuadrado, casas.trovit, listado.mercadolibre, (social), fincaraiz, casas.mitula, (social), engelvoelkers, robertocollins, topliving.com.co
+5. "inmobiliaria de lujo Bogotá" (19) -> NOT FOUND
+ p1: engelvoelkers, somosselecto, luxuryestate, (instagram @sebastianluxuryrealestate), mubrickinmobiliaria, engelvoelkers, urbalia.site, 360luxuryrealestateagency, latinexclusive
+ p2: latinexclusive, pads.com.co, jamesedition, cassaluxury, luxuryestate, casasdelujocolombia.co, (social), micasaymicarro, amarilo, engelvoelkers
+6. "administración de inmuebles en arriendo Bogotá" (19) -> NOT FOUND
+ p1: adeincoinmobiliaria, colegiaturainmobiliaria.edu.co, inmobiliariaospina, bonhabitat, inmobiliariasantafe, epicainmobiliaria, administracion.com.co, grupomaster, albertoalvarez
+ p2: inmobiliariaospina, alquilo.co, inmobiliariacobracs, inmobiliarialaintegracionsas, instagram, polisura.edu.co, epicainmobiliaria, inmobiliariaconfivir, inmobiliarelatam, houm
+7. "apartamentos en arriendo Rosales Bogotá" (18) -> NOT FOUND
+ p1: metrocuadrado, fincaraiz, casas.mitula, engelvoelkers, ciencuadras, listado.mercadolibre, casas.trovit, metrocuadrado
+ p2: brikss, properati, fincaraiz, puntopropiedad, nuroa, arriendo.com, (social), century21colombia, casas.mitula, fincaraiz
+8. "inmobiliaria en Bogotá venta y arriendo" (19) -> NOT FOUND
+ p1: inmobiliariaospina, metrocuadrado, mubrickinmobiliaria, myhome.com.co, inmobiliariasantafe, oikosinmobiliaria, eliteinmo.co, (instagram @inmobogota), epicainmobiliaria
+   right panel: Google Business Profile of ÉPICA Inmobiliaria - Bogotá (4,9, 1.804 opiniones, Cra. 11 #71-41)
+ p2: rvinmobiliaria, tuhogarinmobiliaria, mubrickinmobiliaria, arinmobiliaria.com.co, fincaraiz, pads.com.co, ciencuadras, engelvoelkers, houm, acrecer
+9. BRAND "metric real estate" (p1) -> #1 metric.la › ... | "Featured properties - Metric Real Estate" | snippet "Digital real estate in Miami and Colombia. Buy, sell, and rent homes, apartments, and offices." (English page)
+   #2 metric.la › about | "Sobre Metric Real Estate — Colombia y el sur de Florida" | snippet "Metric Real Estate trabaja dos mercados: Bogotá y Cartagena en Colombia, y Miami a través del MLS. Inmobiliaria con licencia de Florida CQ1074903."
+   then: play.google.com (app), social profile "Metric Estate (@metricestate)", metricrealestate.com (other company), metricsrealestate.com (other company), co.linkedin.com/company/metricrealestate, informacolombia.com ("Metric Real Estate SAS en bogota dc"), metricre.com (other company). No business panel on the right.
+10. BRAND "metric.la" (p1) -> #1 metric.la › ... | "Metric Real Estate" | snippet "Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena."
+   #2 metric.la › privacy | "Política de Privacidad | Metric Estate"
+   then: play.google.com, apps.apple.com, then unrelated (The Metric Hotel, Metric band fan page, ingles.com, tripadvisor, spotify). Right panel = Metric (Canadian band). No business panel.
+
+Google Business Profile: no Metric Real Estate business panel on either brand SERP; Google Maps not queried (10-query cap). Not visible in a logged-out search; confirm with owner.
+All tabs opened for these tests were closed.

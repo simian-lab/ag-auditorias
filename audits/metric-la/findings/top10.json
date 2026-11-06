@@ -3,17 +3,12 @@
   "domain": "metric.la",
   "date": "Noviembre 2026",
   "big_stat": {
-    "value": "4 de cada 10",
+    "value": "0 de 8",
     "count_to": null,
     "suffix": null,
-    "headline": "4 de cada 10 kilobytes de tu portada son de Facebook y Google, no de tus inmuebles",
-    "explain": "Tu portada pesa 938 KiB en total, y 371,5 KiB son rastreadores de publicidad y analítica que se descargan antes que tus fotos. En computador no se nota, pero en un celular de gama media la página tarda varios segundos más en responder al primer toque. Cargar esos rastreadores después de que el visitante interactúa mantiene la medición de tus campañas sin frenar la búsqueda de inmuebles.",
-    "grid_pct": 40,
-    "grid_legend": [
-      "Rastreadores de Facebook y Google (371,5 KiB)",
-      "Fotos, código y todo lo demás"
-    ],
-    "source": "Lighthouse móvil, noviembre 2026 (total-byte-weight 938 KiB; 5 solicitudes a googletagmanager.com y connect.facebook.net suman 371,5 KiB)"
+    "headline": "En 0 de 8 búsquedas de compradores en Google apareces tú",
+    "explain": "Buscamos en Google Colombia lo que escribe alguien que quiere comprar o arrendar en tus zonas: «apartamentos en venta Chicó Bogotá», «casas en venta Guaymaral», «inmobiliaria de lujo Bogotá» y otras cinco. En ninguna aparece metric.la en las dos primeras páginas; ese espacio lo ocupan portales como Finca Raíz, Metrocuadrado y Ciencuadras. Cuando te buscan por tu nombre sí sales primero, así que el problema no es tu sitio sino que Google no lo asocia con lo que buscan tus compradores.",
+    "source": "Google Colombia (hl=es, gl=co) en un navegador sin sesión, 6 de noviembre de 2026; dos primeras páginas de resultados orgánicos"
   },
   "items": [
     {
@@ -70,9 +65,9 @@
       "eff": "Bajo",
       "stage": 1,
       "t": "Tu vitrina principal muestra una casa ajena",
-      "t_plain": "La foto del encabezado es una imagen de archivo que no corresponde a ningún inmueble publicado",
+      "t_plain": "La foto del encabezado es una imagen de archivo que no corresponde a ninguno de tus inmuebles destacados",
       "s": "La primera imagen que ve un comprador es una foto genérica de internet, así que no le muestra nada de lo que realmente vendes o arriendas.",
-      "now": "El encabezado usa una foto de archivo de un salón con escalera y biblioteca que no corresponde a ninguno de los inmuebles publicados. Tus inmuebles reales, algunos con fotos excelentes, aparecen recién más abajo.",
+      "now": "El encabezado usa una foto de archivo de un salón con escalera y biblioteca de un banco de imágenes, que no es ninguno de tus inmuebles destacados. Tus inmuebles reales, algunos con fotos excelentes, aparecen recién más abajo.",
       "fix": "Reemplazar la foto del encabezado por una fotografía profesional de un inmueble real de tu portafolio, idealmente del segmento alto, con el barrio en una nota discreta. Basta cambiar la imagen; el diseño no cambia.",
       "why": "En finca raíz la confianza nace de ver propiedades reales; una foto de banco hace que la marca se sienta genérica frente a otras inmobiliarias.",
       "shot": {
@@ -108,12 +103,12 @@
       "imp": 4,
       "eff": "Bajo",
       "stage": 1,
-      "t": "Tu buscador no deja escribir el código",
-      "t_plain": "En el buscador, el campo del código abre un teclado numérico que no permite escribir «ME-» y los controles no se describen para lectores de pantalla",
-      "s": "El buscador de inmuebles es la herramienta más importante del sitio, pero el campo del código no deja escribir letras en el celular y varios controles no se explican.",
-      "now": "El campo «¿Tienes el código de un inmueble?» abre el teclado numérico, aunque el código lleva letras («ME-2722»). El selector de Ciudad arranca vacío y no tiene etiqueta asociada (Lighthouse lo marca como fallo). Los botones Residencial y Comercial, y Comprar, Arrendar y Proyectos, indican cuál está activo solo con el color.",
-      "fix": "Usar un teclado de texto en el campo del código y darle una etiqueta real. Asociar la etiqueta «Ciudad» al selector y anunciar qué opción está seleccionada en cada grupo de botones.",
-      "why": "Quien ve un código en un portal o en redes y no puede escribirlo, o no logra filtrar por ciudad u operación, se va a otra inmobiliaria.",
+      "t": "Tu buscador no se explica a lectores de pantalla",
+      "t_plain": "El selector de Ciudad y el campo del código no tienen etiqueta, y los botones de opción indican cuál está activo solo con el color",
+      "s": "El buscador de inmuebles es la herramienta más importante del sitio, pero quien usa un lector de pantalla no sabe qué pide cada campo ni qué opción está elegida.",
+      "now": "El selector de Ciudad arranca vacío y no tiene etiqueta asociada (Lighthouse lo marca como fallo), y el campo «¿Tienes el código de un inmueble?» tampoco tiene etiqueta. Los botones Residencial y Comercial, y Comprar, Arrendar y Proyectos, indican cuál está activo solo con el color.",
+      "fix": "Asociar etiquetas reales al selector de Ciudad y al campo del código, y anunciar qué opción está seleccionada en cada grupo de botones.",
+      "why": "Quien no logra filtrar por ciudad u operación se va a otra inmobiliaria.",
       "shot": {
         "img": "desktop-viewport.png",
         "x": 50,
@@ -164,24 +159,6 @@
     },
     {
       "n": 8,
-      "c": "tec",
-      "src": [
-        "tech-1",
-        "tech-2"
-      ],
-      "imp": 3,
-      "eff": "Medio",
-      "stage": 1,
-      "t": "En celular, tu página tarda en reaccionar",
-      "t_plain": "En celular el procesador queda ocupado varios segundos, en buena parte por los rastreadores de Facebook y Google",
-      "s": "En un celular de gama media la página se ve pronto, pero tarda en reaccionar cuando el visitante intenta buscar o abrir un inmueble.",
-      "now": "En la prueba de celular, el navegador pasa 3,1 s procesando código y queda bloqueado 460 ms; en una simulación de red lenta, la página queda lista para usarse a los 8,1 s. 371,5 KiB de los 938 KiB de la portada son de Facebook y Google, y 145 KiB de ese código no se usa al cargar. En computador todo carga en menos de 1 s.",
-      "fix": "Cargar los rastreadores de Facebook y Google después de la primera interacción o del consentimiento de cookies, y dividir el código de la página para que el celular responda al primer toque.",
-      "why": "La mayoría de quienes buscan vivienda empiezan desde el celular, y una página que no responde de inmediato pierde visitantes antes de que vean un inmueble.",
-      "shot": null
-    },
-    {
-      "n": 9,
       "c": "ux",
       "src": [
         "ux-5"
@@ -192,7 +169,7 @@
       "t": "Para llamarte, primero hay que buscarte",
       "t_plain": "El pie de página no muestra teléfono, correo ni dirección",
       "s": "Quien quiere llamar desde cualquier página tiene que ir hasta Contacto para encontrar el número, y no ve una dirección en Colombia en ningún lado.",
-      "now": "El pie de página solo tiene Términos, Privacidad, Contacto y WhatsApp. El teléfono y el correo solo aparecen en la página de Contacto, y no hay dirección ni horario de oficina en Colombia en ninguna página del sitio.",
+      "now": "El pie de página solo tiene Términos, Privacidad, Contacto y WhatsApp. El teléfono y el correo solo aparecen en la página de Contacto, y no encontramos dirección ni horario de oficina en Colombia en Inicio, Nosotros, Servicios ni Contacto.",
       "fix": "Mostrar en el pie de todas las páginas el teléfono y el correo como enlaces que se pueden tocar, junto con la dirección y el horario de la oficina en Bogotá.",
       "why": "Ver un teléfono y una dirección reales da tranquilidad, y desde el celular permite llamar con un toque.",
       "shot": {
@@ -202,7 +179,7 @@
       }
     },
     {
-      "n": 10,
+      "n": 9,
       "c": "vis",
       "src": [
         "visual-2"
@@ -212,8 +189,8 @@
       "stage": 3,
       "t": "Tu foto más débil define tu portafolio",
       "t_plain": "Las fotos de los inmuebles destacados tienen calidad muy desigual",
-      "s": "Junto a fotos cuidadas aparecen fotos de celular de espacios vacíos y descuidados, y eso baja la percepción de calidad de todo el portafolio.",
-      "now": "En los destacados, «Apartamento en Cabrera» y «Chico Virrey» tienen fotos luminosas y amobladas. En cambio, «Apartamento en Palermo» muestra un espacio vacío en gran angular, un plástico en el piso y un letrero de «VENDE» al revés en la ventana.",
+      "s": "Junto a fotos cuidadas aparecen fotos de celular de espacios vacíos y sin preparar, y eso baja la percepción de calidad de todo el portafolio.",
+      "now": "En los destacados, «Apartamento en Cabrera» y «Chico Virrey» tienen fotos luminosas y amobladas. En cambio, «Apartamento en Palermo» muestra un espacio vacío en gran angular, un cable enrollado en el piso y un letrero de «VENDE» al revés en la ventana.",
       "fix": "Definir un estándar mínimo de fotografía para publicar (luz, encuadre, espacio ordenado, sin letreros) y usar en cada tarjeta la mejor foto del inmueble.",
       "why": "El comprador juzga la calidad de la inmobiliaria por la foto más débil que ve; un portafolio parejo transmite un servicio profesional.",
       "shot": {

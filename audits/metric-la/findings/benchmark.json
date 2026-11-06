@@ -13,12 +13,12 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Dice claramente 'Inmobiliaria' y tiene buscador, pero el subtítulo es genérico y casi ilegible sobre la foto; el contacto es solo un número de WhatsApp.",
+      "notes_es": "Dice claramente 'Inmobiliaria' y tiene buscador, pero el subtítulo es genérico y casi ilegible sobre la foto; el contacto visible es un número de WhatsApp y el enlace Contacto del menú.",
       "lighthouse": {
-        "performance": 39,
-        "accessibility": 68,
-        "seo": 85,
-        "total_mb": 6.02
+        "performance": 0.39,
+        "accessibility": 0.68,
+        "seo": 0.85,
+        "total_mb": 6.08
       }
     },
     {
@@ -34,12 +34,12 @@
         "trust_proof": false,
         "quote_cta": true
       },
-      "notes_es": "El mensaje más claro del grupo ('Inmobiliaria de lujo en Bogotá') con botones Vende, Compra y Arrienda; un banner de cookies tapa la esquina inferior derecha y la página pesa más de 40 MB por el video.",
+      "notes_es": "El mensaje más claro del grupo ('Inmobiliaria de lujo en Bogotá') con botones Vende, Compra y Arrienda; un banner de cookies tapa la esquina inferior derecha y la página pesa más de 40 MB por el video. Sus tiempos de carga son aproximados: la medición no terminó del todo y un aviso de cookies tapa casi la mitad de la pantalla en celular.",
       "lighthouse": {
-        "performance": 31,
-        "accessibility": 92,
-        "seo": 92,
-        "total_mb": 42.29
+        "performance": 0.38,
+        "accessibility": 0.92,
+        "seo": 0.92,
+        "total_mb": 13.52
       }
     },
     {
@@ -57,9 +57,9 @@
       },
       "notes_es": "Foto de alto nivel y accesos directos a Comprar, Arrendar y Publicar, pero la primera pantalla no muestra ningún titular que diga quiénes son ni dónde operan.",
       "lighthouse": {
-        "performance": 71,
-        "accessibility": 97,
-        "seo": 100,
+        "performance": 0.75,
+        "accessibility": 0.97,
+        "seo": 1,
         "total_mb": 1.48
       }
     }
@@ -78,10 +78,10 @@
     },
     "notes_es": "Buscador completo (Residencial/Comercial, Comprar/Arrendar, IA) y botón Contacto visible, pero el titular habla de la app y no dice que eres una inmobiliaria de Bogotá ni para qué segmento.",
     "lighthouse": {
-      "performance": 68,
-      "accessibility": 93,
-      "seo": 92,
-      "total_mb": 0.92
+      "performance": 0.98,
+      "accessibility": 0.93,
+      "seo": 0.92,
+      "total_mb": 1.05
     }
   },
   "takeaway_es": "Ni Metric ni Roberto Collins, Luxnia o Selecto muestran en su primera pantalla una sola prueba de confianza (años, inmuebles vendidos o clientes), y Luxnia ya se presenta como 'inmobiliaria de lujo en Bogotá' mientras Metric habla de su app: decir dónde y para quién trabajas, con un número que lo respalde, es la diferencia más rápida de ganar."

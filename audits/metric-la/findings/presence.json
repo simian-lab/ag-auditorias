@@ -102,7 +102,7 @@
       },
       {
         "title": "Ficha con cifras verificables",
-        "fix": "Añadir en «Nosotros» una ficha con datos comprobables de la operación en Colombia: razón social y NIT, dirección de oficina, años de operación, número de inmuebles publicados. Hoy esa página solo da credenciales de la licencia de Florida.",
+        "fix": "Añadir en «Nosotros» una ficha con datos comprobables de la operación en Colombia: razón social y NIT, dirección de oficina, años de operación, número de inmuebles publicados. Hoy esa página da las credenciales de la licencia de Florida y dice que cubres Bogotá y Cartagena, pero no da dirección ni NIT en Colombia.",
         "evidence": "/es/about lists Metric Real Estate LLC, Florida license CQ1074903 and a North Miami Beach office; no Colombian address or registration data."
       },
       {
@@ -112,7 +112,7 @@
       },
       {
         "title": "Mismo nombre de marca en todas partes",
-        "fix": "Usar siempre «Metric Real Estate». Las páginas de privacidad y términos dicen «Metric Estate», lo que para la IA puede parecer otra empresa.",
+        "fix": "Usar siempre «Metric Real Estate». La página de Privacidad se titula «Metric Estate», que es el nombre de tu app; usa «Metric Real Estate» para la empresa.",
         "evidence": "/es/privacy <title> 'Política de Privacidad | Metric Estate'; 'Metric Estate' strings in privacy and terminos pages."
       }
     ]
@@ -126,7 +126,7 @@
       },
       {
         "field": "nombre",
-        "source": "Sitio: /es/privacy (<title> y texto), /es/terminos",
+        "source": "Sitio: /es/privacy (<title> y texto)",
         "value": "Metric Estate"
       },
       {
@@ -196,12 +196,12 @@
       },
       {
         "field": "listados públicos",
-        "source": "WebSearch (4 búsquedas: nombre + Bogotá, dominio/teléfono, redes sociales, dirección de Miami)",
+        "source": "Búsqueda web general (indicio, por confirmar)",
         "value": "No se encontró ningún perfil público confirmado (Google Business, directorios o redes) de Metric Real Estate con estos datos"
       }
     ],
     "inconsistencies": [
-      "El nombre de la marca cambia: el sitio dice «Metric Real Estate», pero las páginas de privacidad y términos dicen «Metric Estate».",
+      "El nombre de la marca cambia: el sitio dice «Metric Real Estate», pero la página de Privacidad se titula «Metric Estate», el nombre de la app.",
       "Las ciudades donde operas no coinciden: las descripciones dicen «Bogotá y Cartagena», Servicios menciona además Santa Marta, Miami y Detroit, y el buscador del inicio ofrece Medellín y Villavicencio.",
       "La única dirección publicada es una oficina en North Miami Beach (Florida); no hay dirección ni horario para el cliente en Colombia, aunque el teléfono y las propiedades son de Bogotá.",
       "Aparecen dos razones sociales distintas sin explicación: «Metric Real Estate S.A.S.» en privacidad y términos, y «Metric Real Estate LLC» en Nosotros."

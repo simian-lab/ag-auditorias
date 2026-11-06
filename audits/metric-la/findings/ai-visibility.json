@@ -25,7 +25,7 @@
         "Luque Ospina Inmobiliaria",
         "Fonnegra Gerlein"
       ],
-      "note_es": "Las agrupa como firmas de alta gama del norte de Bogotá. Sin búsqueda web, también dice no tener ninguna información sobre metric.la."
+      "note_es": "Las agrupa como firmas del norte de Bogotá; la captura corta la lista después de la cuarta, así que puede haber más nombres."
     },
     {
       "engine": "Google (visión general con IA)",
@@ -36,7 +36,7 @@
         "Mubrick Inmobiliaria",
         "Brikss S.A.S."
       ],
-      "note_es": "Mubrick y Brikss aparecen con su ficha de Google, calificación y botones de llamar y cómo llegar. Sin ficha de negocio, Metric no puede competir en este espacio."
+      "note_es": "Mubrick aparece con su ficha de Google, calificación y botones de llamar y cómo llegar. Si Metric no tiene ficha de negocio en Google [dato por confirmar], no puede aparecer en este espacio."
     }
   ],
   "no_answer": []
