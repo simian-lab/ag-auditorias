@@ -101,7 +101,8 @@ def _previews(ctx, pres) -> str:
 
 
 ENGINE_NAMES = {"chatgpt": "ChatGPT", "gemini": "Gemini", "perplexity": "Perplexity",
-                "claude": "Claude", "copilot": "Copilot", "google": "Google"}
+                "claude": "Claude", "copilot": "Copilot", "google": "Google",
+                "google_ai_overview": "Google (visión general con IA)", "google_ai_mode": "Google (modo IA)"}
 
 
 def _ai(ai, brand: str) -> str:
@@ -115,7 +116,7 @@ def _ai(ai, brand: str) -> str:
     return ('<h3 style="margin-top:56px">Le preguntamos a la IA lo que preguntaría un comprador</h3>'
             '<p class="lead" style="margin-top:8px">Respuestas reales, consultadas desde el país del cliente.</p>'
             f'<div class="sa-extra-ai">{"".join(card(a) for a in ai["answers"])}</div>'
-            f'<p class="src">Consulta del {esc(ai["date"])} ({esc(ai["source"])}). Las respuestas de la IA cambian con el tiempo.</p>')
+            f'<p class="src">Fecha de la consulta: {esc(ai["date"])}. Fuente: {esc(ai["source"])}. Las respuestas de la IA cambian con el tiempo.</p>')
 
 
 def enabled(ctx) -> bool:
@@ -145,7 +146,7 @@ def build(ctx) -> Section | None:
     fixes = (pres or {}).get("ai_answer", {}).get("aeo_fixes", [])
     if fixes:
         parts.append('<h3 style="margin-top:56px">Cómo hacemos que la IA te recomiende</h3>'
-                     '<p class="lead" style="margin-top:8px">ChatGPT, Gemini y Perplexity recomiendan empresas que pueden entender y citar.</p>'
+                     '<p class="lead" style="margin-top:8px">Los asistentes de IA recomiendan empresas que pueden entender y citar.</p>'
                      '<ul class="sa-extra-aeo">' + "".join(f'<li class="card"><b>{esc(x["title"])}</b>{esc(x["fix"])}</li>' for x in fixes) + "</ul>")
     note = seo.get("search_tests_note", "")
     html = f"""<section id="extra">

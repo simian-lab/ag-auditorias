@@ -33,7 +33,7 @@ Rules:
 - `appears: false` is allowed only when the results page actually loaded and the domain is absent from the first 20 organic results.
 - If Google shows a captcha or the browser is unavailable, do not record the query as "not appearing". Fall back to WebSearch only if you must, mark those tests in `position_or_note` as "WebSearch, no es Google", and do not use them for the `seo-appears` check (use `na` if no real Google test succeeded).
 - `search_tests_note` (Spanish): say the tests were run on Google <country> in a clean browser, on <date>, and that results vary by person and location.
-- Never estimate AI mention counts.
+- Never estimate AI mention counts. If `findings/ai-visibility.json` exists, do not write in `search_tests_note` that AI answers were not measured; the report shows them in their own block.
 
 Also write `extra_pitch_es`: one sentence for the owner. Do not set any score; the script computes it from your rubric checks.
 
