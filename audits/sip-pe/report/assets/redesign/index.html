@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sip · Concepto de portada (Simian)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sip:#00B1FF;          /* brand celeste */
+    --sip-soft:#E3F6FF;
+    --sip-ink:#00618F;      /* accessible celeste for text on white (6.4:1) */
+    --ink:#1B1B1D;          /* brand black */
+    --ink-2:#4A4D55;
+    --line:#E6E8EC;
+    --bg:#FFFFFF;
+    --mint:#13B26B;
+    --ph:#8A6D00; --ph-bg:#FFF6D6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scrollbar-width:none}
+  ::-webkit-scrollbar{display:none}
+  body{font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+  .skip{position:absolute;left:-999px}
+  .skip:focus{left:16px;top:8px;background:#fff;padding:8px 12px;z-index:10;outline:3px solid var(--ink)}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+  .ph{display:inline-block;font-size:.78em;font-weight:500;color:var(--ph);background:var(--ph-bg);border:1px dashed #E2C766;border-radius:6px;padding:1px 7px;white-space:nowrap}
+
+  /* top bar */
+  .topbar{background:var(--ink);color:#fff;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px}
+  .topbar b{font-weight:600}
+  .topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sip);margin-right:8px;vertical-align:middle}
+  .topbar nav{display:flex;gap:22px;color:#D5D7DC}
+
+  /* header */
+  header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+  header.site .wrap{display:flex;align-items:center;height:78px;gap:36px}
+  .logo svg{height:40px;width:auto}
+  .menu{display:flex;gap:28px;font-weight:500;font-size:15px;flex:1}
+  .menu a:hover{color:var(--sip-ink)}
+  .actions{display:flex;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;border-radius:12px;padding:13px 22px;border:2px solid transparent;transition:transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-line{border-color:var(--ink);color:var(--ink);background:#fff}
+  .btn-sip{background:var(--sip);color:var(--ink)}
+  .link{font-weight:600;font-size:15px}
+  .burger{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;align-items:center;justify-content:center}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#F5FBFF 100%)}
+  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;min-height:660px;padding-top:44px;padding-bottom:48px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sip-ink);background:var(--sip-soft);border-radius:999px;padding:7px 14px}
+  h1{font-size:60px;line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:20px 0 20px}
+  h1 em{font-style:normal;color:var(--sip-ink);position:relative;white-space:nowrap}
+  h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;background:var(--sip);opacity:.28;z-index:-1;border-radius:4px}
+  .lead{font-size:19px;color:var(--ink-2);max-width:560px}
+  .lead strong{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .cta-row .btn{font-size:16px;padding:17px 26px}
+  .micro{margin-top:14px;font-size:14px;color:var(--ink-2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .trust{display:flex;gap:20px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .trust div{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink)}
+  .trust .ic{width:34px;height:34px;border-radius:10px;background:var(--sip-soft);display:grid;place-items:center;flex:none}
+  .trust .ic svg{width:18px;height:18px;stroke:var(--sip-ink);fill:none;stroke-width:2}
+
+  .visual{position:relative;height:560px}
+  .blob{position:absolute;right:10px;top:20px;width:500px;height:500px;border-radius:50%;background:var(--sip)}
+  .blob img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%}
+  .chip{position:absolute;background:#fff;border-radius:18px;box-shadow:0 18px 40px -12px rgba(16,40,60,.28);padding:16px 18px;display:flex;gap:12px;align-items:center}
+  .chip .big{font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1}
+  .chip small{display:block;font-size:12.5px;color:var(--ink-2);line-height:1.35}
+  .chip-1{left:0;top:360px;max-width:250px}
+  .chip-2{right:0;bottom:22px;max-width:260px}
+  .chip-2 .lock{width:40px;height:40px;border-radius:12px;background:var(--ink);display:grid;place-items:center;flex:none}
+  .chip-2 .lock svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2}
+  .chip b{font-weight:600;font-size:14px;display:block}
+
+  /* categories */
+  section{padding:84px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
+  h2{font-size:40px;line-height:1.1;letter-spacing:-.025em;font-weight:700}
+  .sec-head p{color:var(--ink-2);max-width:460px}
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .cat{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+  .cat:hover{box-shadow:0 20px 40px -18px rgba(16,40,60,.3);transform:translateY(-2px)}
+  .cat .img{aspect-ratio:16/10;background:var(--sip-soft);overflow:hidden}
+  .cat .img img{width:100%;height:100%;object-fit:cover}
+  .cat .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .cat .tag{font-size:12px;font-weight:600;color:var(--sip-ink);text-transform:uppercase;letter-spacing:.05em}
+  .cat h3{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+  .cat p{font-size:14.5px;color:var(--ink-2);flex:1}
+  .cat .go{margin-top:8px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+  .cat .go svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2}
+  .cats-more{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:500;background:#fff}
+
+  /* proof */
+  .proof{background:var(--ink);color:#fff;border-radius:32px;margin:0 40px;padding:64px 0}
+  .proof .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+  .proof h2{color:#fff}
+  .proof .lead{color:#C9CCD3;margin-top:14px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:#26272B;border-radius:20px;padding:22px}
+  .stat .k{font-size:15px;font-weight:600;color:#fff}
+  .stat .v{font-size:13.5px;color:#B8BBC3;margin-top:6px}
+  .stat .accent{color:var(--sip);font-size:28px;font-weight:800;letter-spacing:-.02em;display:block;margin-bottom:6px}
+  .quote{margin-top:28px;border-left:3px solid var(--sip);padding-left:18px;color:#E7E9ED;font-size:17px}
+  .quote .ph{margin-top:10px}
+  .stat .accent .ph{font-size:15px}
+  .proof .ph{background:#3A3420;color:#F5D97A;border-color:#7A6A2A}
+
+  /* merchants */
+  .merchants{padding:72px 0 40px}
+  .mrow{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;margin-top:26px}
+  .m{border:1px solid var(--line);border-radius:16px;height:74px;display:grid;place-items:center;font-weight:700;font-size:16px;letter-spacing:-.01em;color:#2B2D33;background:#fff}
+  .back{display:flex;align-items:center;gap:20px;background:var(--sip-soft);border-radius:22px;padding:22px 26px;margin-top:20px}
+  .back .pct{font-size:40px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+  .back p{color:var(--ink-2);font-size:15px}
+  .back p strong{color:var(--ink)}
+
+  /* app */
+  .app .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .phone{width:340px;height:340px;margin:0 auto;border-radius:50%;background:var(--sip);overflow:hidden}
+  .feats{display:grid;gap:14px;margin:26px 0 30px}
+  .feat{display:flex;gap:14px;align-items:flex-start}
+  .feat .n{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center;flex:none}
+  .feat b{display:block;font-weight:600}
+  .feat span{color:var(--ink-2);font-size:15px}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--ink-2)}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  /* mobile */
+  @media (max-width:900px){
+    .wrap{padding:0 20px}
+    .topbar nav,.topbar .sbs{display:none}
+    .topbar{font-size:12px}
+    header.site .wrap{height:64px;gap:12px}
+    .logo svg{height:32px}
+    .menu,.actions .link,.actions .btn-line{display:none}
+    .actions{margin-left:auto}
+    .actions .btn{padding:10px 14px;font-size:14px;border-radius:10px}
+    .burger{display:inline-flex}
+    .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:28px;padding-bottom:36px;gap:8px}
+    h1{font-size:38px;margin:16px 0 14px}
+    h1 em::after{height:8px;bottom:3px}
+    .lead{font-size:16px}
+    .cta-row{flex-direction:column;margin-top:22px}
+    .cta-row .btn{justify-content:center;width:100%}
+    .micro{font-size:13px}
+    .trust{gap:14px;margin-top:24px;padding-top:18px}
+    .trust div{width:100%;font-size:13.5px}
+    .visual{height:320px;order:-1;margin-top:-4px}
+    .blob{width:290px;height:290px;right:50%;transform:translateX(50%);top:6px}
+    .chip{padding:11px 13px;border-radius:14px}
+    .chip .big{font-size:22px}
+    .chip-1{left:0;top:auto;bottom:6px;max-width:190px}
+    .chip-2{display:none}
+    section{padding:56px 0}
+    h2{font-size:29px}
+    .sec-head{flex-direction:column;align-items:flex-start;margin-bottom:22px}
+    .cats{grid-template-columns:1fr;gap:14px}
+    .cat{flex-direction:row}
+    .cat .img{aspect-ratio:auto;width:116px;flex:none}
+    .cat .body{padding:14px 16px}
+    .cat h3{font-size:17px}
+    .cat p{font-size:13.5px}
+    .proof{margin:0 12px;border-radius:24px;padding:40px 0}
+    .proof .grid,.app .grid{grid-template-columns:1fr;gap:28px}
+    .stats{grid-template-columns:1fr 1fr;gap:10px}
+    .stat{padding:16px}
+    .stat .accent{font-size:22px}
+    .mrow{grid-template-columns:repeat(4,1fr);gap:8px}
+    .m{height:56px;font-size:13px}
+    .back{flex-direction:column;align-items:flex-start;gap:6px}
+    .phone{width:240px;height:240px}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="dot"></span><b>Empresa del Grupo Intercorp</b><span class="sbs"> · Supervisada por la SBS <span class="ph">[por confirmar]</span></span></span>
+    <nav aria-label="Comercios del grupo"><a href="#">plazaVea</a><a href="#">Inkafarma</a><a href="#">Oechsle</a><a href="#">Promart</a><a href="#">Real Plaza</a></nav>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Sip, ir al inicio">
+      <svg viewBox="0 0 60 40" aria-hidden="true"><g > <path d="M14.8173 14.5192C13.7018 13.9227 12.1554 13.5198 10.9245 13.5198C10.0936 13.5198 8.66265 13.8762 8.66265 14.9221C8.66265 16.3244 10.9245 16.5258 11.9169 16.7195C15.2943 17.4013 17.8331 18.9973 17.8331 22.8012C17.8331 28.2012 12.9478 30.4402 8.22413 30.4402C5.32376 30.4402 2.46185 29.6035 0 28.0772L2.62341 22.9949C4.09283 24.0331 6.55469 25.0712 8.33953 25.0712C9.25503 25.0712 10.6014 24.6296 10.6014 23.514C10.6014 21.918 8.33953 21.8328 6.07001 21.2363C3.80049 20.6397 1.53866 19.5163 1.53866 15.8363C1.53866 10.8005 6.07001 8.55371 10.5167 8.55371C12.817 8.55371 15.125 8.91009 17.233 9.87077L14.8096 14.5115L14.8173 14.5192Z" fill="#1B1B1D"/> <path d="M26.8879 29.7579H19.6562V9.24268H26.8879V29.7579Z" fill="#1B1B1D"/> <path d="M42.5902 8.56104C40.2053 8.56104 37.7434 9.52172 36.4356 11.5593H36.3586V9.24281H29.127V40.0001H36.3586V27.7979C37.905 29.5953 40.3284 30.4398 42.6748 30.4398C48.7141 30.4398 52.8838 25.4814 52.8838 19.5624C52.8838 13.6434 48.6756 8.56104 42.5979 8.56104H42.5902ZM40.7592 24.1179C38.2281 24.1179 36.174 22.0493 36.174 19.5004C36.174 16.9515 38.2281 14.8829 40.7592 14.8829C43.2903 14.8829 45.3444 16.9515 45.3444 19.5004C45.3444 22.0493 43.2903 24.1179 40.7592 24.1179Z" fill="#1B1B1D"/> <path d="M55.4055 9.23494C57.9379 9.23494 59.9907 7.16763 59.9907 4.61747C59.9907 2.06731 57.9379 0 55.4055 0C52.8732 0 50.8203 2.06731 50.8203 4.61747C50.8203 7.16763 52.8732 9.23494 55.4055 9.23494Z" fill="#00B1FF"/> </g></svg>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#productos">Tarjetas</a>
+      <a href="#productos">Ahorro</a>
+      <a href="#productos">Préstamos</a>
+      <a href="#productos">Seguros</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#">Ayuda</a>
+    </nav>
+    <div class="actions">
+      <a class="link" href="#">Mi cuenta</a>
+      <a class="btn btn-dark" href="#solicitar">Solicita tu tarjeta</a>
+      <button class="burger" aria-label="Abrir menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B1B1D" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Tarjeta Visa · App Sip</span>
+        <h1>La tarjeta que te <em>devuelve plata</em> cada vez que compras</h1>
+        <p class="lead">Con Sip recibes <strong>1% de vuelta</strong> en plazaVea, Inkafarma, Mass, Makro, Oechsle y Promart, y <strong>0.5%</strong> en miles de comercios que aceptan Visa. Todo desde tu app.</p>
+        <div class="cta-row" id="solicitar">
+          <a class="btn btn-dark" href="#">Consulta tu tarjeta con tu DNI
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="#productos">Ver todos los productos</a>
+        </div>
+        <p class="micro">Paso 1 de <span class="ph">[N.º de pasos por confirmar]</span> · Respuesta en <span class="ph">[tiempo por confirmar]</span></p>
+        <div class="trust">
+          <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span>Respaldo del Grupo Intercorp</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>CVV dinámico que cambia cada 5 minutos</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8M21 20v-2a4 4 0 0 0-3-3.87"/></svg></span><span class="ph">[Clientes por confirmar]</span></div>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="blob"><img src="hero-cris.webp" alt="" width="500" height="500"></div>
+        <div class="chip chip-1"><div><span class="big">1%</span><small>de vuelta en tu app al comprar en comercios del grupo</small></div></div>
+        <div class="chip chip-2"><span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><b>CVV dinámico</b><small>Cambia cada 5 minutos para que no se reutilice.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>¿Qué necesitas hoy?</h2>
+        <p>Elige por lo que quieres lograr. Cada categoría te muestra sus productos y cómo solicitarlos.</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#">
+          <div class="img"><img src="tarjeta-cero.webp" alt="Mujer comprando por internet con su tarjeta Sip" loading="lazy" width="400" height="220"></div>
+          <div class="body"><span class="tag">Tarjetas de crédito</span><h3>Compra en cuotas y gana devolución</h3><p>Sip, Plus, Cero (sin membresía), Básica y con Garantía.</p><span class="go">Compara tarjetas <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="img"><img src="tarjeta-debito.webp" alt="Mujer mostrando su tarjeta de débito Sip" loading="lazy" width="400" height="220"></div>
+          <div class="body"><span class="tag">Tarjeta de débito</span><h3>Visa recargable, sin mantenimiento</h3><p>Transfiere desde Plin y Yape y obtén descuentos. 100% digital.</p><span class="go">Pídela en la app <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="img"><img src="ahorramas-soles.webp" alt="Hombre revisando su ahorro en el celular" loading="lazy" width="400" height="220"></div>
+          <div class="body"><span class="tag">Ahorro</span><h3>Depósito a plazo fijo 100% digital</h3><p>TREA de 5.50% en soles y 3.00% en dólares.</p><span class="go">Abre tu depósito <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="cat" href="#">
+          <div class="img"><img src="credito-garantia.webp" alt="Hombre usando su tarjeta Sip frente a su laptop" loading="lazy" width="400" height="220"></div>
+          <div class="body"><span class="tag">Préstamos</span><h3>Crédito efectivo y reprogramación</h3><p>Desembolso por WhatsApp para clientes con oferta y deuda en las cuotas que elijas.</p><span class="go">Ver opciones <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+      </div>
+      <div class="cats-more">
+        <a class="pill" href="#">Seguros</a><a class="pill" href="#">CTS</a><a class="pill" href="#">Tarjetas adicionales</a><a class="pill" href="#">Compras en cuotas</a><a class="pill" href="#">Dónde solicitar en tienda</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="proof">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h2>Tu dinero, con el respaldo de un grupo que ya conoces</h2>
+          <p class="lead">Sip es una empresa de Infinance XP, del Grupo Intercorp: el mismo grupo de plazaVea, Inkafarma y Oechsle.</p>
+          <p class="quote">«<span class="ph">[Testimonio real de cliente por confirmar]</span>»<br><span class="ph">[Nombre y ciudad del cliente por confirmar]</span></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="accent">Intercorp</span><div class="k">Grupo que respalda a Sip</div><div class="v">Infinance XP S.A.</div></div>
+          <div class="stat"><span class="accent">SBS</span><div class="k">Supervisión</div><div class="v"><span class="ph">[Registro SBS por confirmar]</span></div></div>
+          <div class="stat"><span class="accent"><span class="ph">[por confirmar]</span></span><div class="k">Clientes que usan Sip</div><div class="v">Cifra real a validar</div></div>
+          <div class="stat"><span class="accent"><span class="ph">[por confirmar]</span></span><div class="k">Calificación de la app</div><div class="v">App Store y Google Play</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="merchants" id="beneficios">
+    <div class="wrap">
+      <h2>Más plata de vuelta donde ya compras</h2>
+      <div class="mrow" role="list">
+        <div class="m" role="listitem">plazaVea</div><div class="m" role="listitem">Inkafarma</div><div class="m" role="listitem">Mifarma</div><div class="m" role="listitem">Oechsle</div>
+        <div class="m" role="listitem">Promart</div><div class="m" role="listitem">Makro</div><div class="m" role="listitem">Real Plaza</div><div class="m" role="listitem">Vivanda</div>
+      </div>
+      <div class="back"><span class="pct">1% + 0.5%</span><p><strong>1% de vuelta</strong> en plazaVea, Inkafarma, Mass, Makro, Oechsle y Promart, y <strong>0.5%</strong> en miles de comercios Visa. Lo ves en tu app.</p></div>
+    </div>
+  </section>
+
+  <section class="app">
+    <div class="wrap">
+      <div class="grid">
+        <div class="phone"><img src="app-cvv.webp" alt="Pantalla de la app Sip mostrando el CVV dinámico de la tarjeta" loading="lazy" width="500" height="500"></div>
+        <div>
+          <h2>Todo tu Sip en una app</h2>
+          <div class="feats">
+            <div class="feat"><span class="n">1</span><div><b>Paga y transfiere</b><span>Transfiere a tu débito desde Plin y Yape y paga con Visa.</span></div></div>
+            <div class="feat"><span class="n">2</span><div><b>Mira tu devolución</b><span>La plata que te devolvemos por comprar aparece en tu app.</span></div></div>
+            <div class="feat"><span class="n">3</span><div><b>Compra online seguro</b><span>Tu CVV dinámico cambia para que nadie lo reutilice.</span></div></div>
+          </div>
+          <div class="cta-row" style="margin-top:0">
+            <a class="btn btn-dark" href="#">Descargar para Android</a>
+            <a class="btn btn-line" href="#">Descargar para iOS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Sip · Infinance XP S.A. · Grupo Intercorp</span><span>Concepto de rediseño preparado por Simian · Datos entre corchetes por confirmar con Sip</span></div>
+</footer>
+
+</body>
+</html>
