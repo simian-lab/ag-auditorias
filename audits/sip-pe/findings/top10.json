@@ -1,0 +1,231 @@
+{
+  "client": "Sip",
+  "domain": "sip.pe",
+  "date": "Noviembre 2026",
+  "big_stat": {
+    "value": "2 de cada 3",
+    "count_to": null,
+    "suffix": null,
+    "headline": "2 de cada 3 kilobytes de tu portada son código, no contenido",
+    "explain": "Tu portada pesa 2,4 MB, y 1,6 MB de eso son 52 archivos de código que vienen de 11 servidores (10 de ellos externos: publicidad, analítica y monitoreo). Además, el sitio llega vacío y se arma en el teléfono del visitante. En la simulación móvil de Google con 4G lenta, el mensaje principal tardó más de 13 segundos en aparecer, y con buena conexión no se ve nada antes de 2,4 s. Quitar y retrasar ese código es lo que más rápido devuelve velocidad en el celular.",
+    "grid_pct": 66,
+    "grid_legend": [
+      "Código: 52 archivos (1,6 MB)",
+      "Imágenes, fuentes y todo lo demás"
+    ],
+    "source": "Lighthouse móvil, noviembre 2026: total-byte-weight 2.471 KiB; 52 scripts suman 1.643 KiB de 11 hosts (repetido en dos pruebas adicionales con 52 y 53 scripts)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "ux-1",
+        "visual-1",
+        "a11y-4"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu portada grita diez cosas a la vez",
+      "t_plain": "La primera pantalla es un carrusel automático de 10 ofertas que cambia cada 3 segundos",
+      "s": "Quien llega no alcanza a leer ni a elegir una oferta antes de que cambie, así que la mayoría de tus productos pasan sin que nadie los vea.",
+      "now": "La primera pantalla es un carrusel de 10 mensajes distintos (tarjeta de crédito, débito, plazo fijo, deuda, cuotas, crédito por WhatsApp y otros) que avanza solo cada 3 segundos aproximadamente. Todos usan el mismo titular gigante, así que ninguno se ve como el principal, y uno ni siquiera tiene botón. Además, el único título principal (H1) de la página es «Conoce nuestro blog».",
+      "fix": "Dejar fija en la primera pantalla una sola propuesta: qué es Sip y su producto estrella con un botón. Las demás ofertas pasan a tarjetas visibles más abajo, sin rotación automática, y ese mensaje se convierte en el título principal de la página.",
+      "why": "Un mensaje claro y estable convierte más que diez que el cliente no termina de leer, y en finanzas además transmite seriedad.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 25,
+        "y": 40
+      }
+    },
+    {
+      "n": 2,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "ux-3",
+        "ux-5"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu botón principal felicita a desconocidos",
+      "t_plain": "«Solicita tu Tarjeta Sip» lleva a una campaña para clientes seleccionados y la promesa de S/50 no aparece en el formulario",
+      "s": "El botón más visible del sitio lleva a cualquier visitante a una página que lo felicita como si ya estuviera preaprobado, y quien llega por los S/50 no los encuentra. Esa confusión llega justo antes de pedirle su DNI.",
+      "now": "«Solicita tu Tarjeta Sip», fijo en el menú de todas las páginas, lleva a /afiliacion-digital/, que dice «¡Felicitaciones! Descubre hoy la tarjeta de crédito que tenemos para ti» y aclara abajo que es una campaña exclusiva para quienes recibieron la comunicación. El slide de «recibe S/50» lleva a una página idéntica, donde el titular grande habla del 1% de devolución y los S/50 solo aparecen en la letra pequeña. El formulario pide DNI, celular y correo sin decir cuántos pasos faltan ni cuándo hay respuesta.",
+      "fix": "Que el botón general lleve a un primer paso abierto para todos, como «Consulta con tu DNI si tienes una tarjeta preaprobada», y reservar la página de campaña para quienes llegan desde la invitación. Repetir el beneficio prometido (S/50 y sus condiciones) en texto junto al formulario y añadir «Paso 1 de 4 · respuesta en minutos», con el tiempo real.",
+      "why": "Cuando la página de destino confirma lo que prometió el botón y dice cuánto falta, más personas completan la solicitud.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 79,
+        "y": 8
+      }
+    },
+    {
+      "n": 3,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-5"
+      ],
+      "imp": 4,
+      "eff": "Alto",
+      "stage": 3,
+      "t": "En celular, tu portada llega en blanco",
+      "t_plain": "En celulares el contenido tarda en aparecer porque la página se arma en el navegador",
+      "s": "Quien entra a la portada desde el celular ve la pantalla vacía varios segundos y puede irse antes de conocer tu oferta.",
+      "now": "El sitio entrega una página vacía y arma todo el contenido en el teléfono del visitante. En la simulación móvil de Google con 4G lenta, el mensaje principal del carrusel tardó más de 13 segundos en aparecer (entre 13 y 18 s según la prueba), y con buena conexión no se ve nada antes de 2,4 s. Las fuentes se cargan en un formato antiguo y pesado, y algunas imágenes son más grandes de lo que se muestran.",
+      "fix": "Entregar la página de inicio ya armada desde el servidor, con prerenderizado o renderizado en servidor, para que el titular aparezca de inmediato. Convertir las fuentes a WOFF2 dejando solo los grosores que se usan, y servir las imágenes a su tamaño real con carga diferida.",
+      "why": "La mayoría de quienes buscan una tarjeta o un crédito llegan desde el celular, y cada segundo en blanco aumenta el abandono.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 50,
+        "y": 8
+      }
+    },
+    {
+      "n": 4,
+      "c": "a11y",
+      "src": [
+        "a11y-1"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus botones de compra casi no se leen",
+      "t_plain": "Los botones principales tienen texto blanco sobre celeste con un contraste de 2,4:1",
+      "s": "«Solicítala aquí», «¡Lo quiero!» y «Descarga la app» tienen tan poco contraste que adultos mayores, personas con baja visión o quien mira el celular al sol los leen con dificultad.",
+      "now": "Los botones de acción del contenido usan texto blanco sobre celeste, y las palabras destacadas de los titulares van en celeste sobre blanco. Ambos llegan solo a 2,4:1, por debajo del mínimo de 4,5:1 para botones y de 3:1 para títulos grandes. La etiqueta verde de las tarjetas llega a 2,8:1.",
+      "fix": "Oscurecer el celeste de botones y textos destacados, o usar texto oscuro sobre el celeste como ya hace tu menú (7,2:1), hasta cumplir 4,5:1 sin perder la identidad de marca.",
+      "why": "Si el botón para pedir la tarjeta no se lee bien, menos personas llegan a pedirla.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 12,
+        "y": 74
+      }
+    },
+    {
+      "n": 5,
+      "c": "tec",
+      "src": [
+        "tech-2"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "Tu portada carga más código que contenido",
+      "t_plain": "La página carga 1,6 MB de código de 11 servidores distintos, incluidas varias herramientas de marketing y monitoreo",
+      "s": "Tanto código hace que en celulares el sitio se sienta lento y tarde en responder al primer toque.",
+      "now": "El inicio descarga 52 archivos de código, que suman 1,6 MB de los 2,4 MB totales, desde 11 servidores, 10 de ellos externos: Google Tag Manager, TikTok, Criteo, Teads, Lucky Orange, dos herramientas de monitoreo de rendimiento y otros. Unos 459 KB de ese código no se usan en la página, y en la prueba de laboratorio para celular el procesador queda ocupado entre 3 y 5 s.",
+      "fix": "Revisar qué etiquetas de marketing y monitoreo siguen siendo necesarias, quitar las duplicadas, cargarlas después de que la página sea visible y dividir el código propio para que el inicio cargue solo lo que muestra.",
+      "why": "Un sitio que tarda en responder transmite poca solidez, algo delicado para una marca que maneja dinero.",
+      "shot": null
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-7",
+        "visual-4"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Escondes tu mejor aval: Intercorp",
+      "t_plain": "La pertenencia al Grupo Intercorp, la supervisión de la SBS y la app real no se muestran donde se decide",
+      "s": "Quien va a pedir una tarjeta o depositar su dinero decide por confianza, y hoy las pruebas de respaldo no están junto al botón de solicitar.",
+      "now": "Cerca de la portada solo se ven logos de comercios con descuentos. El Grupo Intercorp y la SBS aparecen solo como enlaces en el pie de página, y no hay testimonios ni cifras de clientes. La sección «Mundo digital», que presenta la app, usa un globo terráqueo cubierto de árboles en vez de mostrar la app.",
+      "fix": "Poner junto a la propuesta principal y al formulario un bloque corto: «Empresa del Grupo Intercorp · supervisada por la SBS», más una cifra o un testimonio real de clientes. En «Mundo digital», mostrar capturas reales de la app en un teléfono (pagos, devolución de dinero, CVV dinámico).",
+      "why": "En servicios financieros, ver quién respalda la marca y cómo funciona la app reduce el miedo a dar datos personales.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 50,
+        "y": 20
+      }
+    },
+    {
+      "n": 7,
+      "c": "a11y",
+      "src": [
+        "a11y-3",
+        "a11y-2",
+        "a11y-5"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu menú en celular no tiene voz",
+      "t_plain": "Menú, flechas, logos y redes sin nombre accesible, imágenes descritas con su URL y sin atajo de teclado",
+      "s": "Una persona ciega oye solo «botón» en el menú del celular, sin saber qué hace, ni qué muestra cada banner. Y quien navega con teclado pasa 17 enlaces y botones antes de llegar a tu oferta.",
+      "now": "El botón de menú del celular, las flechas de los carruseles, el logo y los íconos de redes sociales no tienen nombre para lectores de pantalla. Las 10 imágenes del carrusel se describen con su dirección web («https://cms.sip.pe/wp-content/uploads/…»). Con la tecla Tab, el botón del banner es la parada 18, y en las flechas del carrusel no se ve dónde está el foco.",
+      "fix": "Dar a cada ícono un nombre que diga su acción («Abrir menú», «Banner anterior», «Sip en Facebook»), escribir una descripción breve por imagen desde el gestor de contenidos, agregar un enlace «Saltar al contenido» y mostrar un borde de foco visible.",
+      "why": "Si alguien no sabe qué hace cada botón ni puede moverse bien por la página, es muy difícil que solicite la tarjeta.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 8,
+        "y": 90
+      }
+    },
+    {
+      "n": 8,
+      "c": "ux",
+      "src": [
+        "ux-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tu «¡Lo quiero!» no deja pedirlo",
+      "t_plain": "El botón «¡Lo quiero!» lleva a un código QR o a una lista de oficinas en vez de a la solicitud",
+      "s": "El cliente que ya decidió se encuentra con un código QR o una lista de oficinas en vez de un paso para solicitar, y muchos se quedan ahí.",
+      "now": "En la tarjeta de débito, «¡Lo quiero!» baja a un código QR para descargar la app, que desde el propio celular no se puede escanear. En Sip Plus, Cero y Básica, el mismo botón lleva a la lista de puntos de atención.",
+      "fix": "En celular, que «¡Lo quiero!» abra directamente la tienda de apps. En los productos que solo se tramitan en oficina, cambiar el texto a «Ver dónde solicitarla» o permitir dejar los datos para que un asesor contacte al cliente.",
+      "why": "Si el botón de decisión no cumple lo que promete, el interés del cliente se pierde.",
+      "shot": {
+        "img": "mobile-fullpage.jpg",
+        "x": 49,
+        "y": 80
+      }
+    },
+    {
+      "n": 9,
+      "c": "tec",
+      "src": [
+        "tech-3"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu herramienta de marketing está caída",
+      "t_plain": "La herramienta de automatización de marketing (Mautic) no carga y la consola muestra varios errores en cada visita",
+      "s": "El seguimiento y los mensajes automáticos de tu herramienta de marketing no se ejecutan, aunque Google Ads y Analytics sí registran las visitas.",
+      "now": "Cada visita al inicio genera varios errores en la consola (entre 7 y 11, según la visita). El script de marketing alojado en marketing.tarjetaoh.pe no carga porque ese servidor tiene la conexión segura mal configurada, y el navegador bloquea dos consultas: una al gestor de contenidos (cms.sip.pe) y otra a un servicio de autenticación.",
+      "fix": "Corregir el certificado del servidor de marketing, o retirar la etiqueta si ya no se usa. Permitir en el gestor de contenidos la cabecera que envía el sitio y dejar la consola sin errores.",
+      "why": "Si una herramienta de marketing falla en silencio, los seguimientos y mensajes que configuraste no llegan a nadie.",
+      "shot": null
+    },
+    {
+      "n": 10,
+      "c": "vis",
+      "src": [
+        "visual-2",
+        "visual-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Un logo roto y noticias de 2024",
+      "t_plain": "El logo de plazaVea se lee «plaza ea» y el blog de la portada muestra notas de octubre de 2024",
+      "s": "Dos detalles a la vista hacen que el sitio parezca descuidado, justo donde muestras tus alianzas y tu contenido.",
+      "now": "En la fila de comercios aliados, el logo de plazaVea se lee «plaza ea» porque no se ve la «V», tanto en computador como en celular. La sección «Conoce nuestro blog» muestra cuatro artículos fechados entre el 2 y el 24 de octubre de 2024.",
+      "fix": "Reemplazar el logo por una versión monocroma correcta y revisar el resto de la fila. Hacer que el blog muestre solo lo último publicado, de forma automática, o quitar las fechas si el contenido es atemporal.",
+      "why": "En servicios financieros, si el contenido parece viejo el cliente duda de que las tasas y los beneficios estén al día.",
+      "shot": {
+        "img": "desktop-fullpage.jpg",
+        "x": 15,
+        "y": 20
+      }
+    }
+  ]
+}

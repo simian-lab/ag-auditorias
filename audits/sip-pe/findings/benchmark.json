@@ -1,0 +1,88 @@
+{
+  "competitors": [
+    {
+      "name": "Banco Falabella (Tarjetas CMR)",
+      "slug": "banco-falabella",
+      "url": "https://www.bancofalabella.pe/",
+      "why_competitor": "Retail-group bank (Grupo Falabella) issuing CMR credit/debit cards, loans, savings and insurance with points and discounts in group stores (Falabella, Tottus, Sodimac); the closest mirror of Sip's retail-group card model in Peru.",
+      "screenshot": "screenshots/bench-banco-falabella.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": false,
+        "quote_cta": true
+      },
+      "notes_es": "El menú deja claro que es un banco con Tarjetas CMR y tiene el botón 'Hazte cliente', pero un pop-up de sorteo tapa el titular al entrar (persistió en dos capturas) y la página pesa más de 14 MB. Su tiempo de carga medido corresponde a ese pop-up, no a su contenido.",
+      "lighthouse": {
+        "performance": 47,
+        "accessibility": 87,
+        "seo": 100,
+        "total_mb": 14.65
+      }
+    },
+    {
+      "name": "Banco Ripley",
+      "slug": "banco-ripley",
+      "url": "https://www.bancoripley.com.pe/",
+      "why_competitor": "Retail-group bank (Ripley) offering Ripley credit cards, cash loans, savings and insurance with RipleyPuntos Go rewards in its stores; competes directly with Sip for retail customers seeking a card and credit.",
+      "screenshot": "screenshots/bench-banco-ripley.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": true,
+        "quote_cta": true
+      },
+      "notes_es": "Botón destacado '¡Obtén tu tarjeta!' y la frase 'Más de 20 años simplificando tu vida' visible sin hacer scroll; el mensaje de la derecha ('Súmate a comprar en cuotas sin Tarjeta') es una imagen, no texto.",
+      "lighthouse": {
+        "performance": 41,
+        "accessibility": 63,
+        "seo": 92,
+        "total_mb": 3.97
+      }
+    },
+    {
+      "name": "Ligo",
+      "slug": "ligo",
+      "url": "https://ligo.pe/",
+      "why_competitor": "Peruvian fintech digital wallet (e-money issuer) with a free interbank account and virtual/physical Visa or Mastercard card, interoperable with Plin; competes with Sip's wallet-plus-card offer for people outside traditional banking.",
+      "screenshot": "screenshots/bench-ligo.png",
+      "five_second": {
+        "what": true,
+        "for_whom": false,
+        "text_headline": true,
+        "trust_proof": false,
+        "quote_cta": true
+      },
+      "notes_es": "El mensaje más claro del grupo: titular en texto que explica cuenta gratis más tarjeta Visa o Mastercard, con botones de descarga a Google Play y App Store; no muestra ninguna cifra o prueba de confianza en la primera pantalla.",
+      "lighthouse": {
+        "performance": 53,
+        "accessibility": 89,
+        "seo": 100,
+        "total_mb": 7.18
+      }
+    }
+  ],
+  "client": {
+    "name": "Sip",
+    "slug": "client",
+    "url": "https://sip.pe/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {
+      "what": true,
+      "for_whom": false,
+      "text_headline": true,
+      "trust_proof": false,
+      "quote_cta": true
+    },
+    "notes_es": "Titular grande en texto ('Solicita tu Tarjeta de Crédito Sip y recibe S/50') y dos botones para solicitarla, pero no dice para quién es la tarjeta ni muestra una cifra que genere confianza.",
+    "lighthouse": {
+      "performance": 37,
+      "accessibility": 78,
+      "seo": 85,
+      "total_mb": 2.41
+    }
+  },
+  "takeaway_es": "Sip tiene la página más liviana del grupo (2,4 MB) pero la nota de velocidad móvil más baja (37/100 frente a 41–53 de Ripley, Falabella y Ligo), y es Banco Ripley quien se lleva la confianza al mostrar 'Más de 20 años' en su primera pantalla: un dato propio y una carga más rápida son la ventaja más directa que Sip puede ganar."
+}

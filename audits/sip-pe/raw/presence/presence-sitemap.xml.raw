@@ -1,0 +1,15 @@
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://sip.pe/sitemap/blog.xml</loc>
+        <lastmod>2026-04-23</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://sip.pe/sitemap/product.xml</loc>
+        <lastmod>2026-04-23</lastmod>
+    </sitemap>
+        <sitemap>
+        <loc>https://sip.pe/sitemap/category.xml</loc>
+        <lastmod>2026-04-23</lastmod>
+    </sitemap>
+</sitemapindex>

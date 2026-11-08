@@ -1,0 +1,189 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "La portada cambia de mensaje cada pocos segundos",
+      "summary": "Diez titulares con el mismo peso compiten por la primera mirada, así que el visitante no se queda con ninguno.",
+      "now": "La primera pantalla es un carrusel de 10 diapositivas que avanza solo (unos 3 segundos por diapositiva). Todas usan el mismo titular gigante en mayúsculas negras y una foto circular, y ninguna se ve como la principal.",
+      "fix": "Dejar un solo mensaje fijo en la primera pantalla (por ejemplo, la tarjeta de crédito Sip y su beneficio) y pasar las demás ofertas a tarjetas visibles más abajo, con jerarquía clara entre principal y secundarias.",
+      "why": "En un producto financiero la primera impresión debe ser clara y estable; un mensaje que cambia sin parar se percibe como publicidad y no como una marca segura.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "10 titulares en rotación",
+      "evidence": [
+        "CDP capture, 1440x900, 45 frames at 1 s intervals (scratch sequence): hero cycled through all 10 slides; counter '1…10' visible under the CTA",
+        "All hero headings are H2 at 64px Poppins-Black uppercase (computed style), identical weight for every offer",
+        "screenshots/desktop-viewport.png shows slide 4/10; screenshots/desktop-fullpage.jpg shows slide 3/10: different first impression on every visit"
+      ],
+      "technical_note": "Slick slider (.slick-slider, 38 .slick-slide nodes incl. clones), autoplay ~3 s per slide. The user-supplied capture raw/user/user-1.webp shows slides overlapped with cut text ('¡Pag…', 'de Crédito Sip a cuotas…'). This did NOT reproduce: 45 sequential live captures show clean horizontal transitions only (one mid-slide frame, normal for slick). user-1.webp is a scroll-and-stitch capture (the footer band is duplicated around y≈5080-5160), so the overlap is a stitching seam caught during an autoplay transition, not a site defect. It is still a symptom of the rotating hero: any capture or screen recording of the page can catch it mid-move.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 25,
+        "y_pct": 40
+      }
+    },
+    {
+      "id": "visual-2",
+      "title": "El logo de plazaVea se ve incompleto",
+      "summary": "Un logo de socio roto en la franja de beneficios resta seriedad justo donde Sip muestra su respaldo comercial.",
+      "now": "En la fila de comercios aliados del inicio, el logo de plazaVea se lee \"plaza ea\": la \"V\" no se ve, en escritorio y en celular.",
+      "fix": "Quitar el filtro gris que el sitio aplica a esa fila (vuelve casi blanca la «V» amarilla) o usar versiones monocromas correctas de cada logo (todas las letras visibles sobre fondo blanco) y revisar el resto de logos de la fila con el mismo criterio.",
+      "why": "Los logos de los comercios del grupo son la prueba visual de los beneficios; uno defectuoso hace que la sección parezca descuidada.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg at ~x 210, y 1200 (1350x5902): logo reads 'plaza ea'",
+        "screenshots/mobile-fullpage.jpg at ~x 60, y 1320: same 'plaza ea' rendering",
+        "raw/user/user-1.webp (user capture) shows the same missing 'V'"
+      ],
+      "technical_note": "Likely a greyscale/monochrome logo where the 'V' is white or transparent and disappears on the white background. The logos in the /beneficios page (raw/user/user-4.png) use colored tiles and render correctly. Verified: the source file 01-plazavea.png is correct (yellow V); the site applies CSS filter: grayscale(1) to the partner row, which turns the yellow V almost white on white. Same effect fades the Mass checkmark. Fix: remove the filter or use monochrome logo files.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 15.5,
+        "y_pct": 20.3
+      }
+    },
+    {
+      "id": "visual-3",
+      "title": "Títulos del mismo nivel sin una escala común",
+      "summary": "Cada sección parece diseñada por separado, y eso hace ver el sitio menos cuidado que la marca.",
+      "now": "Hay títulos de sección en mayúsculas negras de 64px (\"MUNDO DIGITAL\", \"¿TIENES DUDAS…?\") junto a otros en minúsculas de 40px (\"Elige el producto que prefieres\"). El único título principal de la página es \"Conoce nuestro blog\", más pequeño (32px) que los demás.",
+      "fix": "Definir una escala fija: un estilo para el titular de portada, uno para todos los títulos de sección y uno para tarjetas, y aplicarla igual en todo el sitio.",
+      "why": "Una tipografía ordenada transmite control y rigor, algo que el cliente espera de quien maneja su dinero.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Computed styles (desktop 1440): H2 section titles at 64px Poppins-Black uppercase ('MUNDO DIGITAL', '¿TIENES DUDAS SOBRE NUESTROS PRODUCTOS?') vs 40px Poppins-Bold sentence case ('Elige el producto que prefieres', 'Toda la información de tu Tarjeta Sip…')",
+        "Only H1 on the page is 'Conoce nuestro blog' at 32px; H2 also used at 18px for blog cards",
+        "Mobile 390px: section H2s at 40px vs 28px with the same mismatch"
+      ],
+      "technical_note": "Heading level misuse (H1 on the blog block) also affects a11y/SEO; here the point is visual: same tag, three sizes and two case styles.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 27,
+        "y_pct": 44
+      }
+    },
+    {
+      "id": "visual-4",
+      "title": "Imágenes genéricas que no muestran el producto",
+      "summary": "La sección que presenta la app usa un planeta de banco de imágenes, una oportunidad perdida para mostrar la app de verdad.",
+      "now": "\"MUNDO DIGITAL\" presenta la App Sip y Sip en línea con un globo terráqueo cubierto de árboles, que no tiene relación con una billetera digital. El mismo globo reaparece en la tarjeta de \"Tarjeta de Crédito Sip\", y el blog usa fotos de stock genéricas.",
+      "fix": "Usar capturas reales de la app Sip en un teléfono (pantalla de pagos, cashback, CVV dinámico) en esa sección y en las tarjetas de producto, con el mismo estilo de fotos de personas que ya usa el carrusel.",
+      "why": "Ver la app real genera confianza y reduce la duda de \"¿cómo funciona?\" antes de descargarla.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "screenshots/desktop-fullpage.jpg ~x 990, y 2890: 3D forest-covered globe next to 'App Sip' and 'Sip en línea'",
+        "Same globe in the 'Tarjeta de Crédito Sip' product card image (desktop-fullpage.jpg ~x 600, y 1820)",
+        "Blog card images (desktop-fullpage.jpg y≈3430) are generic stock (calculator, travel jar, papers)"
+      ],
+      "technical_note": "By contrast, the hero slides already use a coherent set of brand photos (person in a colored circle) and an actual app screenshot in the WhatsApp and CVV slides; that style is the one to extend.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 73,
+        "y_pct": 49
+      }
+    },
+    {
+      "id": "visual-5",
+      "title": "El blog del inicio muestra publicaciones de 2024",
+      "summary": "Las notas más recientes que ve el visitante tienen dos años, lo que sugiere un sitio poco mantenido.",
+      "now": "La sección \"Conoce nuestro blog\" muestra cuatro artículos fechados entre el 02 y el 24 de octubre de 2024.",
+      "fix": "Mostrar solo artículos recientes (o quitar las fechas si el contenido es atemporal) y conectar la sección para que se actualice sola con lo último publicado.",
+      "why": "En servicios financieros, un contenido desactualizado hace dudar de si la información de tasas y beneficios también lo está.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "Oct 2024",
+      "evidence": [
+        "Live DOM (CDP, 2026-11-06): blog dates '02 Oct 2024', '18 Oct 2024', '21 Oct 2024', '24 Oct 2024'",
+        "screenshots/desktop-fullpage.jpg ~x 340, y 3660: date labels on blog cards"
+      ],
+      "technical_note": "Audit date 2026-11-06. Footer shows '© Todos los derechos reservados' without a year, so no outdated copyright.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 25,
+        "y_pct": 62
+      }
+    },
+    {
+      "id": "visual-6",
+      "title": "Espacios vacíos y cortes en la versión celular",
+      "summary": "En el celular la página se ve con huecos y tarjetas cortadas, lo que da una impresión menos pulida que en escritorio.",
+      "now": "Bajo el carrusel principal queda una franja blanca vacía de unos 190px antes de \"Con Sip tienes beneficios…\", y en \"Elige el producto que prefieres\" las tarjetas y pestañas quedan cortadas a los lados.",
+      "fix": "Ajustar el alto del carrusel en celular para eliminar el hueco y mostrar las tarjetas de producto completas (una por fila o con un indicador claro de deslizamiento).",
+      "why": "La mayoría de las primeras visitas llegan desde el celular; un diseño con huecos se percibe como hecho a medias.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/mobile-fullpage.jpg (412x5973) y≈990–1180: empty white band between slider counter '4 — 10' and the benefits heading",
+        "mobile-fullpage.jpg y≈1830–2300: product cards and tabs ('Se…') clipped at both screen edges",
+        "Desktop fullpage also clips the third product card at the right edge (desktop-fullpage.jpg ~x 1350, y 1950)"
+      ],
+      "technical_note": "Slick slider keeps a fixed-height track sized to the tallest slide; on mobile the active slide is shorter, leaving dead space. Arrows are hidden on mobile but their space remains.",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 18
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "vis-headline-legible",
+      "result": "pass",
+      "evidence": "Hero headline is real HTML text (H2), 40px Poppins-Black at 390px mobile emulation; 64px on desktop."
+    },
+    {
+      "id": "vis-focal-point",
+      "result": "partial",
+      "evidence": "Inner sections (products, Mundo digital, help banner) each have one clear focus, but the first screen rotates 10 equally weighted headlines (~3 s each), so there is no stable focal point."
+    },
+    {
+      "id": "vis-fonts",
+      "result": "pass",
+      "evidence": "One family in use: Poppins (Regular, SemiBold, Bold, Black) per computed styles; Roboto is declared inline but no visible text uses it; no mixed fonts inside images seen."
+    },
+    {
+      "id": "vis-buttons",
+      "result": "partial",
+      "evidence": "Primary blue (#00B1FF) filled button is used consistently with 8px radius, but there are 4 filled styles (blue, white, black, white-on-blue banner) plus text links, and heights vary 50/58/74px."
+    },
+    {
+      "id": "vis-headings",
+      "result": "fail",
+      "evidence": "Section H2s appear at 64px uppercase Black and at 40px sentence-case Bold; the page H1 'Conoce nuestro blog' is 32px, smaller than the H2s."
+    },
+    {
+      "id": "vis-palette",
+      "result": "pass",
+      "evidence": "Visible palette is small with fixed roles: brand blue #00B1FF (CTAs/accents), near-black #1B1B1D (text, dark sections), white/light grey backgrounds. Extra hex values in the CSS come from Bootstrap/Material defaults not seen on the page."
+    },
+    {
+      "id": "vis-photos",
+      "result": "partial",
+      "evidence": "Hero and help banner use coherent, well-lit brand photos of people; 'Mundo digital' uses a generic 3D forest globe (also reused in a product card) and the blog uses stock photos."
+    },
+    {
+      "id": "vis-products",
+      "result": "pass",
+      "evidence": "Home product cards and /productos list show each product with name, one-line use and CTA (raw/user/user-2.webp, desktop-fullpage.jpg)."
+    },
+    {
+      "id": "vis-positioning",
+      "result": "partial",
+      "evidence": "Group backing is shown via partner logos and Interbank/Intercorp imagery on /quienes-somos, plus Great Place to Work seals; but the 'digital' promise is shown with a stock globe instead of the real app, and one partner logo (plazaVea) renders broken."
+    },
+    {
+      "id": "vis-spacing",
+      "result": "partial",
+      "evidence": "Desktop aligns to a consistent grid; mobile has a ~190px empty band under the hero and clipped product cards/tabs (mobile-fullpage.jpg)."
+    },
+    {
+      "id": "vis-up-to-date",
+      "result": "partial",
+      "evidence": "Modern visual style and no dated copyright year, but the home blog block shows only posts from October 2024 (two years old at audit date)."
+    }
+  ]
+}

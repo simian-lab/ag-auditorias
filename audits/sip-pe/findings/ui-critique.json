@@ -1,0 +1,301 @@
+{
+  "verdict": "Sip tiene una marca reconocible, con su celeste y su tinta casi negra, pero cada sección de la portada usa sus propios botones, títulos e íconos, y el conjunto se siente armado por campañas sueltas más que por una entidad financiera que cuida cada detalle.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Ocho botones, tres alturas y el principal en blanco",
+      "explanation": "En una sola página hay botones celestes de tres alturas distintas (50, 58 y 74 px), unos con flecha y otros sin ella, un botón negro, dos blancos y un enlace con flecha, y el botón que más importa, «Solicita tu Tarjeta Sip», es el blanco del menú, que pesa menos que «Mi cuenta» en negro a su lado. Cuando el botón de venta es el más discreto y los secundarios gritan, el visitante no sabe cuál es el paso importante y lee el sitio como improvisado.",
+      "items": [
+        {
+          "label": "Solicita tu Tarjeta Sip (menú, blanco: la acción de venta, la más discreta)",
+          "crop": "ui-crop-btn-header-solicita.png"
+        },
+        {
+          "label": "Mi cuenta (menú, negro: pesa más que la venta)",
+          "crop": "ui-crop-btn-header-micuenta.png"
+        },
+        {
+          "label": "Solicítala aquí (portada, celeste 74 px con flecha)",
+          "crop": "ui-crop-btn-hero-solicitala.png"
+        },
+        {
+          "label": "¡Lo quiero! (tarjeta de producto, celeste 50 px sin flecha)",
+          "crop": "ui-crop-btn-lo-quiero.png"
+        },
+        {
+          "label": "Descubre más (enlace con flecha, otro estilo)",
+          "crop": "ui-crop-btn-descubre-mas.png"
+        },
+        {
+          "label": "Todos los productos (celeste 58 px sin flecha)",
+          "crop": "ui-crop-btn-todos-productos.png"
+        },
+        {
+          "label": "Descarga la app (celeste 74 px con flecha)",
+          "crop": "ui-crop-btn-descarga-app.png"
+        },
+        {
+          "label": "Ir al Centro de Ayuda (blanco sobre celeste)",
+          "crop": "ui-crop-btn-centro-ayuda.png"
+        }
+      ],
+      "proposal": "Un solo botón principal azul oscuro con texto blanco para pedir la tarjeta, en el menú y en cada pantalla; un botón secundario con borde tinta para Mi cuenta, Descubre más y Ver todos los productos; una sola altura (52 px) y la flecha solo en los enlaces de texto."
+    },
+    {
+      "kind": "headings",
+      "title": "La ayuda grita más fuerte que tus productos",
+      "explanation": "El estilo más ruidoso de la página, mayúsculas negras de 64 px, se usa para la oferta del carrusel, para «MUNDO DIGITAL» y para «¿TIENES DUDAS SOBRE NUESTROS PRODUCTOS?», mientras que «Elige el producto que prefieres», la sección donde se vende, va más pequeña en minúsculas y el único título principal de la página es «Conoce nuestro blog». Además las antetítulas cambian de tamaño en cada bloque, así que el ojo no encuentra un orden y salta de un grito a otro.",
+      "items": [
+        {
+          "label": "Oferta del carrusel (64 px, mayúsculas, Poppins Black)",
+          "crop": "ui-crop-h-hero.png"
+        },
+        {
+          "label": "Con Sip tienes beneficios… (20 px, el título de tus alianzas casi no se ve)",
+          "crop": "ui-crop-h-beneficios.png"
+        },
+        {
+          "label": "Elige el producto que prefieres (40 px, minúsculas: la sección de venta)",
+          "crop": "ui-crop-h-elige.png"
+        },
+        {
+          "label": "Te presentamos nuestro / MUNDO DIGITAL (antetítulo 18 px + 64 px mayúsculas)",
+          "crop": "ui-crop-h-mundo.png"
+        },
+        {
+          "label": "Conoce nuestro blog (32 px, el único título principal H1 de la página)",
+          "crop": "ui-crop-h-blog.png"
+        },
+        {
+          "label": "¿TIENES DUDAS SOBRE NUESTROS PRODUCTOS? (64 px mayúsculas, cuatro líneas)",
+          "crop": "ui-crop-h-dudas.png"
+        }
+      ],
+      "proposal": "Reservar el tamaño grande en mayúsculas solo para la propuesta principal de la portada; todos los títulos de sección a 40 px en minúsculas con la misma antetítula de 14 px, y la sección de ayuda con un título de tarjeta, no de portada."
+    },
+    {
+      "kind": "colors",
+      "title": "Un celeste estrella que no se deja leer",
+      "explanation": "Tu marca vive en un celeste (#00b1ff) y una tinta (#1b1b1d), pero la portada suma dos celestes claros, dos verdes de etiqueta y uno de barra de progreso, dos grises y un negro puro distinto de la tinta, y cada etiqueta usa su propia pareja de colores. Lo más delicado: el celeste se usa como fondo de botones con texto blanco (2,4:1) y como color de texto sobre blanco (2,4:1), así que el color que identifica a Sip es justo el que peor se lee.",
+      "items": [
+        {
+          "label": "Celeste Sip (botones, bandas, palabras destacadas)",
+          "hex": "#00b1ff"
+        },
+        {
+          "label": "Tinta (textos y fondos oscuros)",
+          "hex": "#1b1b1d"
+        },
+        {
+          "label": "Negro puro (textos del menú, otro negro)",
+          "hex": "#000000"
+        },
+        {
+          "label": "Celeste claro (flechas, íconos y etiquetas del blog)",
+          "hex": "#def2ff"
+        },
+        {
+          "label": "Celeste banda («¡Conoce más de Sip aquí!»)",
+          "hex": "#b6e7ff"
+        },
+        {
+          "label": "Verde barra de progreso del carrusel",
+          "hex": "#09ca6d"
+        },
+        {
+          "label": "Verde texto de etiqueta «100% digital» (2,79:1)",
+          "hex": "#1da552"
+        },
+        {
+          "label": "Verde claro fondo de etiqueta",
+          "hex": "#c4fcd8"
+        },
+        {
+          "label": "Gris texto",
+          "hex": "#4b4d53"
+        },
+        {
+          "label": "Gris claro texto (2,84:1 sobre blanco)",
+          "hex": "#9799a1"
+        },
+        {
+          "label": "Gris fondo del blog",
+          "hex": "#f1f3f4"
+        }
+      ],
+      "proposal": "Siete colores con un trabajo fijo: el celeste Sip para fondos y detalles con texto tinta encima, un azul más profundo que ya existe en tu hoja de estilos (#007dba) para botones y enlaces con texto blanco, tinta y un gris para texto, y un solo verde reservado para mensajes de éxito."
+    },
+    {
+      "kind": "fonts",
+      "title": "Una sola letra, cargada como cuatro distintas",
+      "explanation": "Toda la portada usa Poppins, una buena elección, pero cada grosor se carga como una familia aparte (Regular, SemiBold, Bold y Black; la hoja de estilos declara 18 variantes de Poppins) y en pantalla aparecen nueve tamaños distintos entre 12 y 64 px. El resultado es que un título de tarjeta, una antetítula y un botón pueden tener casi el mismo peso, y la página no marca qué leer primero.",
+      "items": [
+        {
+          "label": "Titulares en mayúsculas (64 px)",
+          "family": "Poppins-Black"
+        },
+        {
+          "label": "Títulos de sección, botones y antetítulos (16–40 px)",
+          "family": "Poppins-Bold"
+        },
+        {
+          "label": "Títulos de tarjeta y del pie (18–20 px)",
+          "family": "Poppins-SemiBold"
+        },
+        {
+          "label": "Texto, descripciones y fechas (12–16 px)",
+          "family": "Poppins-Regular"
+        }
+      ],
+      "proposal": "Una sola familia Poppins con tres grosores (regular, seminegrita y negrita) cargados como una misma letra en formato moderno, y una escala fija de cinco tamaños."
+    },
+    {
+      "kind": "cards",
+      "title": "Tres tarjetas de producto, tres fotógrafos distintos",
+      "explanation": "La tarjeta de débito usa una foto de estudio sobre amarillo, la de crédito un montaje con globo terráqueo y alcancía sobre celeste, y la de Sip Plus una foto de stock en un centro comercial; además la etiqueta verde «100% digital» y las etiquetas celestes del blog («Mis finanzas») hablan dos lenguajes. Cuando cada tarjeta parece de una campaña distinta, el cliente no percibe una familia de productos y le cuesta compararlos.",
+      "items": [
+        {
+          "label": "Tarjeta de producto completa (dos acciones, mucho espacio vacío)",
+          "crop": "ui-crop-card-producto.png"
+        },
+        {
+          "label": "Imagen de Tarjeta de Crédito Sip (montaje 3D con globo y alcancía)",
+          "crop": "ui-crop-card-img-credito.png"
+        },
+        {
+          "label": "Imagen de Sip Plus (foto de stock en centro comercial)",
+          "crop": "ui-crop-card-img-plus.png"
+        },
+        {
+          "label": "Etiqueta «100% digital» (verde)",
+          "crop": "ui-crop-card-tag-digital.png"
+        },
+        {
+          "label": "Etiqueta «Mis finanzas» y fecha 2024 (celeste)",
+          "crop": "ui-crop-card-tag-blog.png"
+        },
+        {
+          "label": "Tarjeta de blog (otro estilo de tarjeta)",
+          "crop": "ui-crop-card-blog.png"
+        }
+      ],
+      "proposal": "Una misma dirección de foto para todos los productos, la que ya usa tu carrusel (persona real dentro de un círculo celeste con la tarjeta Sip en la mano), una sola forma de etiqueta y una tarjeta con un beneficio concreto, una acción principal y un enlace."
+    },
+    {
+      "kind": "icons",
+      "title": "Seis familias de íconos en una sola página",
+      "explanation": "Conviven flechas finas dentro de círculos celestes, chevrones dentro de los botones, flechas largas en los enlaces, un ícono de ojo para «Leer más», logos de tiendas en azul y un libro en 3D con sombra en el pie. Cada estilo extra es una pista de que las piezas se hicieron por separado, y en finanzas esa sensación resta seriedad.",
+      "items": [
+        {
+          "label": "Flechas del carrusel en círculos celestes",
+          "crop": "ui-crop-icon-flechas.png"
+        },
+        {
+          "label": "Barra de progreso verde del carrusel (4 de 10)",
+          "crop": "ui-crop-icon-progreso.png"
+        },
+        {
+          "label": "Ícono de línea de App Sip en círculo celeste",
+          "crop": "ui-crop-icon-app.png"
+        },
+        {
+          "label": "Ojo para «Leer más» en el blog",
+          "crop": "ui-crop-icon-leer-mas.png"
+        },
+        {
+          "label": "Para android / Para iOS (glifos azules en el pie)",
+          "crop": "ui-crop-icon-tiendas.png"
+        },
+        {
+          "label": "Libro de reclamaciones (ilustración 3D)",
+          "crop": "ui-crop-icon-libro.png"
+        },
+        {
+          "label": "Volver arriba (círculo celeste con borde blanco)",
+          "crop": "ui-crop-icon-volver.png"
+        }
+      ],
+      "proposal": "Una sola familia de íconos de línea, del mismo grosor que el de App Sip, en tinta o azul; flecha a la derecha solo para enlaces, chevrones solo para menús, e insignias oficiales de App Store y Google Play."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {
+        "name": "Azul acción",
+        "hex": "#007dba",
+        "role": "Botón principal y enlaces (ya existe en tu hoja de estilos), con texto blanco a 4,52:1."
+      },
+      {
+        "name": "Celeste Sip",
+        "hex": "#00b1ff",
+        "role": "Fondos de marca, bandas y círculos de las fotos, siempre con texto tinta encima a 7,15:1; nunca texto blanco."
+      },
+      {
+        "name": "Tinta",
+        "hex": "#1b1b1d",
+        "role": "Texto principal, botón secundario y fondos oscuros; texto blanco encima a 17,2:1."
+      },
+      {
+        "name": "Gris texto",
+        "hex": "#4b4d53",
+        "role": "Texto secundario, fechas y descripciones, a 8,45:1 sobre blanco (reemplaza al gris claro de 2,84:1)."
+      },
+      {
+        "name": "Celeste claro",
+        "hex": "#def2ff",
+        "role": "Fondo de etiquetas, íconos y tarjetas destacadas, con texto tinta a 14,95:1."
+      },
+      {
+        "name": "Blanco",
+        "hex": "#ffffff",
+        "role": "Fondo general y tarjetas, con texto tinta a 17,2:1."
+      },
+      {
+        "name": "Verde éxito",
+        "hex": "#09ca6d",
+        "role": "Solo indicadores y mensajes de éxito, con texto tinta a 7,93:1; no como color de texto."
+      }
+    ],
+    "fonts": [
+      {
+        "role": "Titulares, títulos y botones",
+        "family": "Poppins (seminegrita y negrita)"
+      },
+      {
+        "role": "Texto, descripciones y etiquetas",
+        "family": "Poppins (regular)"
+      }
+    ],
+    "button_primary": "Fondo Azul acción #007dba liso, texto blanco Poppins 16 px negrita, 52 px de alto, esquinas de 8 px, sin flecha; uno solo por pantalla: «Solicita tu Tarjeta Sip» en el menú y la acción principal de cada bloque.",
+    "button_secondary": "Fondo blanco con borde de 1,5 px Tinta, texto Tinta Poppins 16 px negrita, mismas medidas que el principal; para Mi cuenta, Descubre más, Ver todos los productos e Ir al Centro de Ayuda.",
+    "heading_scale": [
+      "H1 propuesta de portada: Poppins Black 56/60 px (único texto en mayúsculas)",
+      "H2 título de sección: Poppins Bold 40/48 px, minúsculas",
+      "Antetítulo: Poppins SemiBold 14/20 px, Azul acción",
+      "H3 título de tarjeta: Poppins SemiBold 20/28 px",
+      "Texto: Poppins Regular 16/24 px; nota y fecha 14/20 px"
+    ]
+  },
+  "hierarchy_notes": [
+    "Encabezado: la vista recorre primero tres franjas (comercios del grupo en negro, menú celeste y la banda «¡Conoce más de Sip aquí!») y dentro del menú gana «Mi cuenta» en negro; debería verse primero el logo y «Solicita tu Tarjeta Sip» como el único botón de color, con la banda integrada o retirada.",
+    "Portada (carrusel): manda el titular gigante en mayúsculas y la foto, pero el texto de apoyo «Exclusivo para clientes seleccionados» en gris restringe la oferta y el contador «4 — 10» con barra verde anuncia que viene otra; debería leerse titular, beneficio concreto y botón, sin contador.",
+    "Beneficios: los logos de comercios aparecen en gris pequeño bajo un título de 20 px que casi no se nota; debería leerse primero el beneficio («Descuentos en Plaza Vea, Oechsle, Promart e Inkafarma») y después los logos, más grandes y completos.",
+    "Elige el producto: en el fondo oscuro el ojo va a los cuatro botones celestes (tres «¡Lo quiero!» y «Todos los productos») antes que al nombre o al beneficio de cada tarjeta; debería verse nombre, beneficio principal y una sola acción por tarjeta.",
+    "Mundo digital: el globo terráqueo de árboles es el elemento más grande de la sección y el titular en mayúsculas compite con él; lo primero debería ser la app funcionando en un teléfono, junto a los dos botones.",
+    "Blog: el único título principal (H1) de la página está aquí, sobre notas de octubre de 2024; debería ser un título de sección secundario o desaparecer de la portada.",
+    "¿Tienes dudas?: el bloque celeste más grande de la página, con el titular más largo en mayúsculas, se lleva la atención de toda la mitad inferior; debería ser una franja compacta con el enlace a ayuda y los teléfonos.",
+    "Pie de página: los teléfonos de atención en celeste sobre tinta son lo más visible, junto al libro en 3D; debería destacar además «Empresa del Grupo Intercorp · supervisada por la SBS»."
+  ],
+  "sharp_headlines": {
+    "1": "Tu portada grita diez cosas a la vez",
+    "2": "Tu botón principal felicita a desconocidos",
+    "3": "En celular, tu portada llega en blanco",
+    "4": "Tus botones de compra casi no se leen",
+    "5": "Tu portada carga más código que contenido",
+    "6": "Escondes tu mejor aval: Intercorp",
+    "7": "Tu menú en celular no tiene voz",
+    "8": "Tu «¡Lo quiero!» no deja pedirlo",
+    "9": "Tu herramienta de marketing está caída",
+    "10": "Un logo roto y noticias de 2024"
+  }
+}

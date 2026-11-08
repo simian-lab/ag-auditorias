@@ -1,0 +1,134 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "En celulares el contenido principal tarda en aparecer",
+      "summary": "Con una conexión móvil normal, quien entra desde el celular ve la pantalla vacía varios segundos y puede irse antes de conocer la oferta.",
+      "now": "El sitio entrega una página vacía y arma todo el contenido en el navegador del visitante. En la prueba móvil de Lighthouse (4G lenta simulada) el primer texto aparece a los 6,7 s y el mensaje principal del carrusel a los 13,4 s; incluso con conexión rápida no se ve nada hasta los 2,4 s.",
+      "fix": "Entregar la página de inicio ya armada desde el servidor (pre-renderizado o renderizado en servidor) para que el titular y la primera diapositiva se vean de inmediato, y cargar el resto del carrusel después.",
+      "why": "La mayoría de quienes buscan una tarjeta o crédito llegan desde el celular, y cada segundo de pantalla en blanco aumenta el abandono antes de ver la propuesta.",
+      "impact": 4,
+      "effort": "Alto",
+      "headline_metric": "13,4 s",
+      "evidence": [
+        "Lighthouse mobile: performance 37/100; largest-contentful-paint 13.4 s; first-contentful-paint 6.7 s; speed-index 9.9 s (simulated slow 4G).",
+        "Lighthouse mobile audits.metrics: observedFirstContentfulPaint 2415 ms = observedLargestContentfulPaint 2415 ms (unthrottled run): nothing paints before 2.4 s even on a fast connection.",
+        "Lighthouse desktop: performance 69/100; LCP 3.5 s; FCP 1.2 s.",
+        "lcp-breakdown-insight (mobile): TTFB 294 ms, element render delay 2121 ms; LCP element: article.slider__item > div.row > div.col-12 > h2.sip-font__title--4xl-bl ('¡BIENVENIDOS A LA BILLETERA DIGITAL QUE TE DEVUELVE PLATA!') inside ngx-slick-carousel, boundingRect left -728 px (an off-screen slide).",
+        "raw/home.html: the served HTML contains an empty <app-root> (Angular client-side app); all content is rendered by JS (raw/tech-home-rendered.html is the rendered DOM)."
+      ],
+      "technical_note": "Angular SPA (app-root/app-layout/app-home, ngx-slick-carousel) with headless WordPress at cms.sip.pe (wp-json/acf/v3) served via Express behind Cloudflare (cf-cache-status: DYNAMIC on the HTML). The 13.4 s is a Lighthouse lab value under simulated slow 4G; the observed unthrottled LCP is 2.4 s, so present it as 'con conexión móvil lenta'. The LCP candidate being an off-screen slide (left -728 px) suggests slick initialises all slides before positioning them, consistent with the overlapping hero slides reported in the brief. Angular SSR/prerender (@angular/ssr) plus rendering only the first slide eagerly would remove the 2.1 s render delay.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "tech-2",
+      "title": "La página carga demasiado código y rastreadores",
+      "summary": "Dos tercios del peso de la página son código, y eso hace que en celulares el sitio se sienta lento y tarde en responder a los toques.",
+      "now": "La página de inicio descarga 52 archivos de código (1,6 MB de los 2,4 MB totales) desde 11 servidores distintos: Google Tag Manager, TikTok, Criteo, Teads, Lucky Orange, Instana, Dynatrace, Cloudflare y otros. Unos 459 KB de ese código no se usan en la página, y en móvil el procesador queda ocupado 4,8 s.",
+      "fix": "Revisar qué etiquetas de marketing y monitoreo siguen siendo necesarias, quitar las duplicadas (hay dos herramientas de monitoreo de rendimiento), cargarlas después de que la página sea visible y dividir el código propio para que el inicio solo cargue lo que muestra.",
+      "why": "Un sitio que tarda en responder al primer toque transmite poca solidez, algo delicado para una marca de servicios financieros.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "1,6 MB",
+      "evidence": [
+        "Lighthouse mobile network-requests: 119 requests, 2471 KiB transferred; 52 scripts = 1643 KiB (1,6 MB), of which 35 first-party (sip.pe) = 838 KiB.",
+        "Script hosts: sip.pe (35), googletagmanager.com (3), analytics.tiktok.com (3), marketing.tarjetaoh.pe (2), dynamic.criteo.com (2), itc-client-analytic.web.app (2), eum.instana.io, static.cloudflareinsights.com, cloudfront.net, p.teads.tv, googleads.g.doubleclick.net.",
+        "Top resources: gtag/js G-2TC33254GM 196 KiB; gtm.js GTM-NQLJMDW 181 KiB; main-DQTWEG5W.js 176 KiB; gtag/destination AW-787445638 166 KiB; TikTok pixel 116 KiB.",
+        "unused-javascript (mobile): est. savings 459 KiB; total-blocking-time 690 ms; mainthread-work-breakdown 4.8 s; bootup-time 2.6 s.",
+        "render-blocking-insight (mobile): ruxitagentjs_ICA7NVfqrux_10347260902154543.js (Dynatrace RUM, 79 KiB) blocks rendering, est. 659 ms."
+      ],
+      "technical_note": "Two RUM agents run in parallel: Dynatrace (ruxitagentjs, render-blocking in <head>) and Instana (eum.instana.io). Cloudflare Bot Management JS (cdn-cgi/challenge-platform main.js) costs ~536 ms of main-thread time on mobile. Third-party summary: Google Tag Manager 543 KiB. Legacy JS polyfills (polyfills-DHHU6LMO.js ~400 ms bootup; legacy-javascript-insight 19 KiB).",
+      "pin": null
+    },
+    {
+      "id": "tech-3",
+      "title": "Errores en la página: una herramienta de marketing no carga",
+      "summary": "Parte de la medición de marketing no está funcionando, así que hay visitas y campañas que no quedan registradas.",
+      "now": "Cada vez que alguien abre el inicio aparecen 7 errores. El script de marketing de marketing.tarjetaoh.pe no carga porque ese servidor tiene la conexión segura mal configurada, y una consulta al gestor de contenidos (cms.sip.pe) es bloqueada por el navegador.",
+      "fix": "Corregir el certificado del servidor de marketing (o retirar la etiqueta si ya no se usa), permitir la cabecera que envía el sitio en el gestor de contenidos y dejar la consola sin errores.",
+      "why": "Si la herramienta que mide campañas falla en silencio, se invierte en publicidad sin saber qué funciona.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "7 errores",
+      "evidence": [
+        "Lighthouse errors-in-console (mobile and desktop identical, 7 items):",
+        "network: Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH https://marketing.tarjetaoh.pe/mtc.js and https://marketing.tarjetaoh.pe/focus/1.js",
+        "javascript: Access to XMLHttpRequest at 'https://cms.sip.pe/wp-json/acf/v3/pages/8651' from origin 'https://sip.pe' has been blocked by CORS policy: Request header field x-device-ip is not allowed by Access-Control-Allow-Headers in preflight response.",
+        "console.error 'ERROR [object Lo]' from https://sip.pe/chunk-KBJBHCZX.js; 2x 'Refused to set unsafe header \"Cookie\"' from ruxitagentjs.",
+        "curl https://marketing.tarjetaoh.pe/mtc.js → TLS handshake failure (curl exit 35), confirmed independently."
+      ],
+      "technical_note": "mtc.js / focus/1.js are Mautic tracking and focus-item scripts; with the TLS failure no Mautic tracking or popups run. cms.sip.pe page 8651 returns ACF fields {texto, tipo, estado, bitacora} (looks like a notice/status toggle); it is fetched with a custom x-device-ip header that the CORS preflight rejects, so that feature never works in the browser. Lighthouse inspector-issues also flags third-party cookie issues (TikTok, Criteo, DoubleClick).",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "Las direcciones que no existen muestran el inicio",
+      "summary": "Quien llega por un enlace roto o viejo ve el inicio sin ninguna explicación, y Google puede indexar páginas falsas como si fueran reales.",
+      "now": "Al abrir una dirección inventada (sip.pe/esta-pagina-no-existe-xyz) el servidor responde que la página existe y muestra el inicio completo, sin un mensaje de 'página no encontrada'.",
+      "fix": "Crear una página de 'no encontrada' que oriente al visitante (buscar producto, ir a tarjetas, contactar) y que el servidor responda con el código correcto 404.",
+      "why": "Un visitante que esperaba un producto concreto y aterriza en el inicio sin aviso suele pensar que el enlace falló y se va.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "curl https://sip.pe/esta-pagina-no-existe-xyz → HTTP/2 200, 113683 bytes (raw/tech-headers.txt).",
+        "Rendered DOM (raw/tech-404-rendered.html): title 'Empieza a ahorrar Hoy | Sip' and the full home carousel; no '404', 'no existe' or 'no encontrada' text."
+      ],
+      "technical_note": "Angular router wildcard ('**') falls back to the home component and the Express server returns 200 for every path (soft 404). Because every SPA route returns 200, HTTP status checks on internal links cannot detect broken routes either. Fix: a NotFound component on '**' plus Express returning 404 for unknown routes (or via SSR response status).",
+      "pin": null
+    },
+    {
+      "id": "tech-5",
+      "title": "Fuentes, imágenes y caché sin terminar de optimizar",
+      "summary": "Archivos más pesados de lo necesario retrasan la primera vista y obligan a volver a descargarlos en cada visita.",
+      "now": "La página carga 6 archivos de fuentes en formato antiguo (cuatro grosores de Poppins de unos 70 KB cada uno), las imágenes del blog son más grandes de lo que se muestran y se descargan aunque estén al final de la página, y las imágenes del gestor de contenidos se guardan en el navegador solo 4 horas.",
+      "fix": "Convertir las fuentes a WOFF2 y dejar solo los grosores usados, servir las imágenes del blog a su tamaño real con carga diferida y ampliar el tiempo de caché de las imágenes a varias semanas.",
+      "why": "Son ajustes de bajo costo que hacen que el sitio aparezca antes, sobre todo en planes de datos móviles limitados.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "440 ms",
+      "evidence": [
+        "render-blocking-insight (mobile): est. savings 440 ms; font-display-insight: est. savings 120 ms mobile / 220 ms desktop (IconsSip.ttf).",
+        "Fonts (mobile): Poppins-Regular.ttf 70 KiB, Poppins-Bold.ttf 69 KiB, Poppins-SemiBold.ttf 69 KiB, Poppins-Black.ttf 67 KiB, IconsSip.ttf 26 KiB, plus a Google Fonts Roboto file 43 KiB (TTF, not WOFF2).",
+        "image-delivery-insight: est. savings 123 KiB mobile / 60 KiB desktop; e.g. Claves-para-viajar-barato-con-poco-presupuesto.jpg 384x311 displayed at 257x200. Image formats are fine: 24 of 32 images served as WebP.",
+        "Rendered DOM: 17 of 60 <img> use loading=\"lazy\" (product cards); the 4 blog thumbnails (top ≈3516 px) and Cintillo.png load eagerly.",
+        "cache-insight: est. savings 303 KiB mobile; cms.sip.pe/wp-content/uploads images cache-control: public, max-age=14400 (4 h); first-party JS and fonts max-age=31536000 (raw/tech-headers.txt)."
+      ],
+      "technical_note": "Cloudflare already converts CMS PNGs to WebP (Polish), so formats pass; the gap is sizing/compression of blog JPGs. Set a Cloudflare Cache Rule / Edge TTL and Browser TTL ≥ 30 days for /wp-content/uploads. Third-party scripts (Criteo ld.js 3 h, Teads ~10 min) also have short TTLs but are outside the site's control.",
+      "pin": null
+    },
+    {
+      "id": "tech-6",
+      "title": "Seguridad del servidor bien configurada, con detalles menores",
+      "summary": "El sitio ya tiene las protecciones básicas que espera un cliente de una entidad financiera; solo quedan ajustes finos.",
+      "now": "El sitio usa HTTPS en todas sus páginas, redirige las visitas sin cifrar y tiene activas las cinco protecciones básicas del servidor. La política de contenido solo controla quién puede insertar el sitio en otra página.",
+      "fix": "Ampliar la política de contenido para limitar desde dónde se pueden cargar scripts y ocultar la información técnica del servidor en las respuestas.",
+      "why": "Mantener al día estas protecciones reduce el riesgo de que terceros usen el sitio para engañar a tus clientes.",
+      "impact": 1,
+      "effort": "Medio",
+      "evidence": [
+        "HSTS: present (strict-transport-security: max-age=15552000; includeSubDomains; preload)",
+        "CSP: present (only frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe)",
+        "X-Frame-Options/frame-ancestors: present (x-frame-options: SAMEORIGIN + CSP frame-ancestors)",
+        "X-Content-Type-Options: present (nosniff)",
+        "Referrer-Policy: present (same-origin)",
+        "HTTPS: http://sip.pe/ → 301 https://sip.pe/; http://www.sip.pe/ → 301 https://www.sip.pe/ → 301 https://sip.pe; Lighthouse is-on-https pass."
+      ],
+      "technical_note": "Version/stack disclosure: responses include 'x-powered-by: Express' and Dynatrace server-timing headers (dtTrId, dtRpid). CSP has no script-src/default-src, so it gives no XSS mitigation; given ~11 third-party script hosts a report-only CSP first is advisable. Headers saved in raw/tech-headers.txt.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "pass", "evidence": "Lighthouse total-byte-weight 2471 KiB mobile = 2,41 MB; 2613 KiB desktop = 2,55 MB (below 3 MB). Note 1,6 MB of it is JavaScript."},
+    {"id": "tech-lcp", "result": "pass", "evidence": "Mobile audits.metrics observedLargestContentfulPaint 2415 ms (≤ 2.5 s). Simulated slow-4G lab LCP is 13.4 s and FCP 6.7 s (see tech-1)."},
+    {"id": "tech-images", "result": "partial", "evidence": "Formats pass (24/32 images WebP, rest SVG/GIF), but image-delivery-insight still estimates 123 KiB savings on mobile (above 100 KiB) from oversized/under-compressed blog JPGs; desktop 60 KiB."},
+    {"id": "tech-lazy", "result": "partial", "evidence": "17 of 60 <img> use loading=lazy (product cards), but the 4 below-the-fold blog thumbnails (≈3516 px) and Cintillo.png load eagerly."},
+    {"id": "tech-render-blocking", "result": "fail", "evidence": "render-blocking-insight est. savings 440 ms on mobile (Dynatrace ruxitagent script, 659 ms); 4 Poppins weights + icon font + Roboto loaded as TTF."},
+    {"id": "tech-cache", "result": "partial", "evidence": "First-party JS and fonts: max-age=31536000 (pass). CMS images on cms.sip.pe: max-age=14400 (4 h, below 7 days); cache-insight est. savings 303 KiB."},
+    {"id": "tech-https", "result": "pass", "evidence": "https://sip.pe/ 200 with HSTS; http://sip.pe/ and http://www.sip.pe/ 301 to HTTPS; Lighthouse is-on-https pass."},
+    {"id": "tech-security-headers", "result": "pass", "evidence": "5 of 5 present: HSTS, CSP (frame-ancestors only), X-Frame-Options SAMEORIGIN, X-Content-Type-Options nosniff, Referrer-Policy same-origin."},
+    {"id": "tech-console", "result": "fail", "evidence": "errors-in-console: 7 errors (Mautic scripts on marketing.tarjetaoh.pe fail with ERR_SSL_VERSION_OR_CIPHER_MISMATCH, CORS block on cms.sip.pe/wp-json/acf/v3/pages/8651, console.error in chunk-KBJBHCZX.js, unsafe Cookie header)."},
+    {"id": "tech-links", "result": "pass", "evidence": "60 homepage URLs checked (internal routes, sub-domains, CMS images and PDF, retail partner links): all returned 200 after redirects (raw/tech-headers.txt). Caveat: SPA routes return 200 for any path (see tech-4)."},
+    {"id": "tech-404", "result": "fail", "evidence": "https://sip.pe/esta-pagina-no-existe-xyz returns HTTP 200 and renders the full homepage, with no not-found message (soft 404)."}
+  ]
+}

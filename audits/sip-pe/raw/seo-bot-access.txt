@@ -1,0 +1,13 @@
+200 113682 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KH
+403 25 | Mozilla/5.0 (compatible; GPTBot/1.2; +https://openai.com/gptbot)
+200 113393 | Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/search
+200 113392 | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ChatGPT
+403 25 | Mozilla/5.0 (compatible; ClaudeBot/1.0; +claudebot@anthropic.com)
+403 25 | Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplex
+200 113683 | Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.htm
+200 113683 | Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm
+200 113683 | facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.p
+200 113682 | LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://ww
+200 113683 | WhatsApp/2.23.20.0
+200 113682 | Twitterbot/1.0
+200 113260 | curl/8.7.1

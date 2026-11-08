@@ -1,0 +1,142 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "Diez ofertas rotan cada tres segundos en la portada",
+      "summary": "Tu visitante no alcanza a leer ni elegir una oferta antes de que cambie, y la mayoría de tus productos nunca los ve.",
+      "now": "La primera pantalla es un carrusel automático con 10 mensajes distintos (tarjeta de crédito, débito, plazo fijo, deuda, cuotas, crédito por WhatsApp...) que avanza solo cada ~3 segundos; uno de ellos ('Compra online con más seguridad') ni siquiera tiene botón.",
+      "fix": "Deja una sola propuesta fija arriba (qué es Sip y el producto estrella con su botón) y lleva las demás ofertas a tarjetas visibles debajo, sin rotación automática.",
+      "why": "Un mensaje claro y quieto convierte más que diez mensajes que el cliente no termina de leer.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "10 ofertas cada ~3 s",
+      "evidence": [
+        "Live DOM (https://sip.pe/, 1440px): hero is ngx-slick-carousel with 10 non-cloned .slick-slide items; counter '4 — 10' visible in screenshots/desktop-viewport.png.",
+        "Sampled .slick-track transform with requestAnimationFrame: slide moves started at t=2099 ms and t=5408 ms (about 3.3 s per slide, 300 ms transition), autoplay without user action.",
+        "Slide headings: '¡Bienvenidos a la billetera digital que te devuelve plata!', 'Te devolvemos plata por comprar', 'Ahora desembolsa tu crédito efectivo por WhatsApp', 'Solicita tu tarjeta de crédito Sip y recibe S/50', 'Usa tus tarjetas Sip en todos lados', 'Compra online con más seguridad' (no link/button), 'Débito Sip', 'Depósito a plazo fijo', 'Te ayudamos a fraccionar tu deuda', '¿Pasar tus compras a cuotas?'.",
+        "Each capture shows a different first slide: desktop-viewport.png = S/50 card offer, desktop-fullpage.jpg = 'Crédito efectivo por WhatsApp', raw/user/user-1.webp = 'Fraccionar tu deuda'."
+      ],
+      "technical_note": "User-reported overlap (raw/user/user-1.webp: cut text '¡Pag…', mixed slide images) was NOT reproduced. Carousel is slick in slide mode (track translate3d, transition transform 300ms, .slick-list overflow:hidden). Pausing the CSS transition mid-way (track.getAnimations()[0].currentTime=150) shows slides 0 and 1 side by side (left -605→691 and 691→1987 px) clipped by the list, not stacked. The mixed horizontal strips in user-1.webp (and the duplicated footer bar in the same image) are consistent with a stitched scroll capture taken while the carousel was moving, so it is not reported as a visual defect. The real problem is the fast autoplay with 10 messages.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 50}
+    },
+    {
+      "id": "ux-2",
+      "title": "El botón principal lleva a una campaña para seleccionados",
+      "summary": "Quien llega por primera vez y pulsa 'Solicita tu Tarjeta Sip' cae en una página que le da 'Felicitaciones' como si ya estuviera preaprobado, y puede abandonar por confusión o desconfianza.",
+      "now": "El botón fijo del menú 'Solicita tu Tarjeta Sip' (en todas las páginas) y el slide de S/50 llevan a /afiliacion-digital/, que dice '¡Felicitaciones! Descubre hoy la tarjeta de crédito que tenemos para ti' y aclara abajo que es una 'Campaña exclusiva para clientes que hayan recibido esta comunicación'. La consulta de tarjeta preaprobada con DNI existe, pero solo dentro de la ficha de tarjeta de crédito.",
+      "fix": "Haz que el botón general lleve a un primer paso para todos ('Consulta con tu DNI si tienes una tarjeta preaprobada') y reserva la página de campaña para quienes llegan desde la comunicación directa.",
+      "why": "El botón más visible del sitio debe servir a cualquier visitante, no solo a quien recibió una invitación.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "Header link a.sip-button--quinary 'Solicita tu Tarjeta Sip' → https://sip.pe/afiliacion-digital/ (target=_blank), present on home, /productos/tarjeta-de-credito and benefits page (raw/user/user-4.png).",
+        "Hero slide 'Solicita tu tarjeta de crédito Sip y recibe S/50': 'Exclusivo para clientes seleccionados que soliciten por la web' → https://sip.pe/afiliacion-digital/campanha?utm_source=web&utm_medium=home&utm_campaign=home.",
+        "/afiliacion-digital/ rendered text: '¡Felicitaciones! Descubre hoy la tarjeta de crédito que tenemos para ti' and 'Campaña exclusiva para clientes que hayan recibido esta comunicación oficial de Sip a través de sus canales oficiales y de manera directa.' (screenshots/ux-afiliacion-desktop.png).",
+        "/productos/tarjeta-de-credito has 'Entérate si tienes una Tarjeta de Crédito preaprobada' with DNI/CE field and 'Consultar' button (screenshots/ux-tarjeta-credito-desktop.png)."
+      ],
+      "technical_note": "The /afiliacion-digital/ landing has no site navigation (logo only), so a confused visitor has no path back to products except the browser.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 79, "y_pct": 8}
+    },
+    {
+      "id": "ux-3",
+      "title": "La promesa de S/50 desaparece al llegar al formulario",
+      "summary": "El cliente hace clic por 'Recibe S/50' y la página siguiente le habla de otra cosa, lo que rompe la confianza justo antes de dar sus datos.",
+      "now": "El slide dice 'Solicita tu tarjeta de crédito Sip y recibe S/50'; la página de solicitud muestra en grande 'Te devolvemos hasta el 1% de tus compras' (dentro de una imagen) y el S/50 solo aparece en la letra pequeña de términos al final.",
+      "fix": "Repite el mismo beneficio (S/50) y sus condiciones clave en texto junto al formulario, para que el cliente confirme que está en el lugar correcto.",
+      "why": "Cuando la página de destino repite lo que prometió el anuncio, más personas completan la solicitud.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Home hero slide (screenshots/desktop-viewport.png): 'SOLICITA TU TARJETA DE CRÉDITO SIP Y RECIBE S/50' + 'Solicítala aquí'.",
+        "Destination (screenshots/ux-afiliacion-desktop.png): left panel image text 'TE DEVOLVEMOS HASTA EL 1% DE TUS COMPRAS'; form heading '¡Felicitaciones! Descubre hoy la tarjeta de crédito que tenemos para ti'.",
+        "S/50 appears only in body text 'Términos y Condiciones \"Campaña S/50\"…' below the form."
+      ],
+      "technical_note": "The landing's main offer message is rasterized in an image, not real text.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 22, "y_pct": 40}
+    },
+    {
+      "id": "ux-4",
+      "title": "'¡Lo quiero!' no siempre lleva a pedir el producto",
+      "summary": "El cliente que ya decidió se encuentra con un código QR o una lista de oficinas en vez de un paso para solicitar, y muchos se quedan ahí.",
+      "now": "En la tarjeta de Débito, '¡Lo quiero!' baja a un código QR para descargar la app (en el celular no se puede escanear la propia pantalla). En Sip Plus, Cero y Básica, '¡Lo quiero!' lleva a la lista de puntos de atención.",
+      "fix": "En celular, que '¡Lo quiero!' abra directamente la tienda de apps; en los productos que solo se tramitan en oficina, cambia el texto a 'Ver dónde solicitarla' o permite dejar los datos para que un asesor contacte.",
+      "why": "El botón de decisión debe cumplir lo que promete; si no, el interés del cliente se pierde.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Home product carousel and /productos/tarjeta-de-credito: 'Tarjeta de Débito Sip' → '¡Lo quiero!' href='#app-qr' (element #app-qr.qr-code, 'Escanea para descargar la app Sip').",
+        "The QR block is rendered in the mobile layout: screenshots/mobile-fullpage.jpg near the bottom ('Escanea para descargar la app Sip').",
+        "'¡Lo quiero!' → https://sip.pe/puntos-de-atencion for Tarjeta de Crédito Sip Plus, Tarjeta de Crédito Cero and Tarjeta de Crédito Sip Básica.",
+        "Home 'Descarga la app' (Mundo digital) → https://appsip.pe/web_footer_android."
+      ],
+      "technical_note": "The single 'Descarga la app' button points to the Android link; whether appsip.pe redirects iOS users was not tested.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 49, "y_pct": 80}
+    },
+    {
+      "id": "ux-5",
+      "title": "El formulario no explica qué pasa después de enviar",
+      "summary": "El cliente entrega su DNI, celular y correo sin saber cuántos pasos faltan ni cuándo tendrá respuesta, y eso frena a quien duda.",
+      "now": "La solicitud pide DNI, celular, correo y dos casillas de consentimiento, con un botón 'Continuar' gris hasta completarlo. No indica pasos restantes, tiempo de respuesta ni qué se necesitará después.",
+      "fix": "Añade una línea junto al botón como 'Paso 1 de 4 · respuesta en minutos' (con el tiempo real) y marca qué campos son obligatorios desde el inicio.",
+      "why": "Saber cuánto falta y cuándo habrá respuesta reduce el abandono en solicitudes financieras.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "https://sip.pe/afiliacion-digital/ inputs: Tipo (DNI), 'Número de DNI' (type=text inputmode=numeric), 'Celular' (type=text inputmode=numeric), 'Correo electrónico' (type=text inputmode=text), 2 consent checkboxes, reCAPTCHA.",
+        "Button 'Continuar' disabled until valid; messages 'Documento obligatorio', 'Número obligatorio', 'Correo obligatorio' appear only after leaving each field; no required marker beforehand.",
+        "No step count or response-time text on the page; the 4-step process ('Paso 01' to 'Paso 04') is only explained on /productos/tarjeta-de-credito."
+      ],
+      "technical_note": "Email field uses type=text/inputmode=text instead of type=email (no email keyboard on mobile).",
+      "pin": null
+    },
+    {
+      "id": "ux-6",
+      "title": "No hay correo y el WhatsApp llega sin mensaje",
+      "summary": "Quien quiere escribir en vez de llamar solo encuentra un número de WhatsApp sin contexto al final de la página, y el equipo recibe chats sin saber qué producto interesa.",
+      "now": "Los datos de contacto están solo en el pie de página: WhatsApp +51 989 157 775 (sin mensaje preescrito) y dos teléfonos. No hay correo ni botón de chat visible mientras se navega, y el slide de Crédito Efectivo menciona otro número de WhatsApp (+51 989 395 768).",
+      "fix": "Agrega un botón de WhatsApp visible en las fichas de producto con un mensaje listo ('Hola, quiero información sobre la Tarjeta de Crédito Sip'), aclara para qué sirve cada número y ofrece un correo o formulario de contacto.",
+      "why": "Un mensaje prellenado por producto acelera la atención y ayuda a vender en el primer contacto.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Footer 'Contacto': WhatsApp → https://wa.me/51989157775 (no ?text= parameter); Lima → tel:016194800; Provincias → tel:080100002.",
+        "No a[href^='mailto:'] on home or /productos/tarjeta-de-credito; no floating chat/WhatsApp widget.",
+        "Hero slide text: 'Recibirás una invitación del +51 989 395 768. Solo para clientes seleccionados con oferta.' (desktop-fullpage.jpg).",
+        "Same footer on products (raw/user/user-2.webp) and benefits (raw/user/user-4.png) pages."
+      ],
+      "technical_note": "Two different WhatsApp numbers on the home: 989 157 775 (service, footer) and 989 395 768 (outbound invitations, hero copy).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 76, "y_pct": 97}
+    },
+    {
+      "id": "ux-7",
+      "title": "El respaldo de Intercorp y la SBS queda escondido",
+      "summary": "Para alguien que va a pedir una tarjeta o depositar dinero la confianza decide, y hoy las pruebas de respaldo no están junto al botón de solicitar.",
+      "now": "Cerca de la portada solo se ven logos de comercios con descuentos. La pertenencia al Grupo Intercorp y la supervisión de la SBS aparecen solo como enlaces en el pie de página; no hay testimonios ni cifras de clientes.",
+      "fix": "Coloca junto a la propuesta principal y al formulario un bloque corto: 'Empresa del Grupo Intercorp · supervisada por la SBS', más una cifra o testimonio real de clientes.",
+      "why": "En servicios financieros, mostrar quién respalda la marca en el momento de decidir reduce el miedo a dar datos personales.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Home: hero carousel, then 'Con Sip tienes beneficios en estos establecimientos y más' with store logos (desktop-fullpage.jpg).",
+        "'Grupo Intercorp' and 'Superintendencia de Banca y Seguros' appear only as footer links (→ /quienes-somos and https://www.sbs.gob.pe/usuarios/).",
+        "No testimonials, ratings or customer counts in the rendered home text; /afiliacion-digital/ shows none beside the form."
+      ],
+      "technical_note": "",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 20}
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "partial", "evidence": "First viewport depends on which of 10 autoplay slides shows; the S/50 slide names 'Tarjeta de crédito Sip' for 'clientes seleccionados', but no fixed text says what Sip is and for whom; the strip above only says '¡Conoce más de Sip aquí!'."},
+    {"id": "ux-quote-cta", "result": "partial", "evidence": "Desktop: 'Solicita tu Tarjeta Sip' always in header. Mobile header shows only 'Mi cuenta' (request button is d-none d-xl-block); hero CTA varies by slide and 'Compra online con más seguridad' has none."},
+    {"id": "ux-catalog-path", "result": "pass", "evidence": "Home product cards and /productos items link to detail pages ('Descubre más' → /productos/...) plus '¡Lo quiero!'; insurance items have 'Más información'. Some '¡Lo quiero!' go to #app-qr or /puntos-de-atencion (ux-4) but no card is dead."},
+    {"id": "ux-contact-visible", "result": "partial", "evidence": "Phones (01) 619 4800 and 0801 00002 plus WhatsApp in footer on home, products and benefits pages; no email anywhere."},
+    {"id": "ux-contact-tappable", "result": "partial", "evidence": "Phones use tel:016194800 and tel:080100002; WhatsApp uses wa.me; there is no email/mailto link."},
+    {"id": "ux-form-data", "result": "partial", "evidence": "/afiliacion-digital/ asks DNI, celular and correo (enough for evaluation; product is implicit) but states no response time or next steps."},
+    {"id": "ux-form-friction", "result": "partial", "evidence": "3 fields + 2 consent checkboxes, numeric inputmode for DNI/celular, clear 'obligatorio' errors on blur; required fields not marked beforehand and email is type=text."},
+    {"id": "ux-chat-ready", "result": "partial", "evidence": "No chat widget; footer WhatsApp wa.me/51989157775 is consistent across pages but has no prefilled message, and the hero mentions a second number (+51 989 395 768)."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "At 412px device emulation the hamburger (button.header__row__button-burguer) opens Productos, Beneficios, Canales digitales, Ayuda, Comercios Asociados, Blog, 'Solicita tu Tarjeta Sip' and 'Mi cuenta'; burger visible in mobile-fullpage.jpg."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Partner store logos sit right below the hero; Grupo Intercorp/SBS backing only in footer; no testimonials or customer numbers near the CTA or on the request form."},
+    {"id": "ux-content-not-hidden", "result": "fail", "evidence": "10 key offers live only in the hero autoplay carousel (~3.3 s per slide); the home product list is also a carousel; the request landing's main offer ('hasta el 1%') is inside an image."}
+  ]
+}

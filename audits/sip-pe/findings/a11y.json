@@ -1,0 +1,174 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Los botones celestes con texto blanco casi no se leen",
+      "summary": "Tus botones de \"Solicítala aquí\", \"¡Lo quiero!\" y \"Descarga la app\" tienen un contraste tan bajo que personas con baja visión, adultos mayores o quien mira el celular al sol los leen con dificultad.",
+      "now": "Todos los botones principales usan texto blanco sobre celeste (#00B1FF) y las palabras destacadas de los titulares van en celeste sobre blanco: ambos llegan solo a 2,4:1, cuando el mínimo recomendado es 4,5:1 (3:1 en títulos grandes). La etiqueta verde de las tarjetas llega a 2,8:1.",
+      "fix": "Oscurecer el celeste de los botones y textos destacados (o usar texto oscuro sobre el celeste, que ya da 7,2:1 en tu menú) hasta cumplir 4,5:1, manteniendo la identidad de marca.",
+      "why": "Si el botón de solicitar la tarjeta no se lee bien, menos personas llegan a pedirla.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "2,4:1",
+      "evidence": [
+        "Lighthouse mobile audit color-contrast (score 0): a.sip-button.sip-button--primary — foreground #ffffff on background #00b1ff, ratio 2.4 (expected 4.5); 7 primary CTAs listed (hero, beneficios, cards '¡Lo quiero!', '/productos', app download).",
+        "Lighthouse: h2.sip-font__title--4xl-bl > span.sip-font--accent — #00b1ff on #ffffff, 2.4:1 at 40px normal weight (large-text minimum is 3:1).",
+        "Lighthouse: article.card span.badge.badge--success — #1da552 on #c4fcd8, 12px bold, 2.78:1.",
+        "Computed with WCAG formula: #00B1FF/#FFFFFF = 2.40:1; #1B1B1D/#00B1FF (nav text) = 7.15:1.",
+        "screenshots/desktop-viewport.png: CTA 'Solicítala aquí' at ~x 178, y 663 (1440x900); 'Crea tu Tarjeta de crédito Sip Virtual…' white on blue in raw/user/user-4.png."
+      ],
+      "technical_note": "Shared .sip-button--primary token (white on #00b1ff) drives all failures; changing the token or the text color fixes every instance at once. Accent span uses the same #00b1ff. CSS saved at raw/a11y-css/styles.css.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 12.4,
+        "y_pct": 73.7
+      }
+    },
+    {
+      "id": "a11y-2",
+      "title": "Las imágenes del carrusel se describen con direcciones web",
+      "summary": "Quien usa un lector de pantalla escucha una dirección web larga en lugar de saber qué muestra cada banner, y el logo de Sip no tiene descripción alguna.",
+      "now": "Las 10 imágenes del carrusel principal tienen como descripción su propia dirección (por ejemplo \"https://cms.sip.pe/wp-content/uploads/2026/01/dpf-mobile.png\"); lo mismo en el banner de Beneficios. Los 4 logos de Sip (cabecera y pie) no tienen descripción.",
+      "fix": "Escribir una descripción breve y útil por imagen desde el gestor de contenidos (o dejarla vacía si es decorativa) y poner \"Sip, ir al inicio\" en el logo.",
+      "why": "Un banco digital que quiere llegar a más personas no puede dejar fuera a quienes navegan con lector de pantalla.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/a11y-home-rendered.html: hero <img> alt values equal the image URL, e.g. alt='https://cms.sip.pe/wp-content/uploads/2026/01/compras-a-1-cuota-mobil…', '…/Billetera-digital-mobil…', '…/dpf-mobile.png', '…/reprogramar-deuda-mobil…' (10 distinct slides, 21 img nodes).",
+        "raw/a11y-beneficios-rendered.html: alt='https://cms.sip.pe/wp-content/uploads/2026/01/Sip-beneficios.png'.",
+        "Lighthouse image-alt (score 0): img.header__row__logo (assets/images/logo-sip.svg) and img.footer__header__content-logo__img without alt; 4 img without alt on every page checked (home, productos, quienes-somos, beneficios)."
+      ],
+      "technical_note": "Angular template likely binds [alt] to the image URL field from the WordPress CMS (cms.sip.pe). Fix at component level: bind to the media alt_text field, fallback to empty alt. Lighthouse passes the URL alts, which is one reason its 78/100 accessibility score overstates real accessibility (it only runs automated checks).",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 72.5,
+        "y_pct": 58
+      }
+    },
+    {
+      "id": "a11y-3",
+      "title": "Menú, flechas y redes sociales no dicen qué hacen",
+      "summary": "Botones que solo tienen un ícono quedan mudos para lectores de pantalla, así que una persona ciega oye solo «botón» en el menú del celular, sin saber qué hace, ni saber a qué red social va.",
+      "now": "El botón de menú del celular, las flechas de los carruseles, el logo-enlace al inicio y los íconos de Facebook, Instagram, LinkedIn y YouTube no tienen nombre; el indicador \"1 de 10\" del carrusel tampoco.",
+      "fix": "Dar a cada ícono un nombre invisible que diga su acción (\"Abrir menú\", \"Banner anterior\", \"Sip en Facebook\") y nombrar la barra de progreso del carrusel.",
+      "why": "Si el menú del celular no se puede abrir, esa persona no llega a ningún producto.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse button-name (score 0): header button#btn-menu (hamburger, mobile) has no accessible name.",
+        "Lighthouse link-name (score 0): 2 logo links a.sip-link-container[href='/'] and 4 social links (facebook.com/sip.peru.billetera, instagram.com/sip.peru.oficial, linkedin.com/company/sip-perú, youtube.com/@sip_peru) contain only <em class='icon-icono-…'>.",
+        "raw/a11y-home-rendered.html: <button class='controls__item'><em class='icon-icono-arrow_left1'></em></button> — 20 carousel arrow buttons, none with aria-label.",
+        "Lighthouse aria-progressbar-name (score 0): div.progress-bar[role=progressbar] without aria-label."
+      ],
+      "technical_note": "Add aria-label to #btn-menu (plus aria-expanded), to .controls__item buttons, to app-oh-link-container anchors (social + logo) and to the progressbar; mark <em> icons aria-hidden='true'.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 8,
+        "y_pct": 90.5
+      }
+    },
+    {
+      "id": "a11y-4",
+      "title": "El único título principal del inicio es del blog",
+      "summary": "Para lectores de pantalla y buscadores, tu página de inicio trata del blog y no de tu billetera ni tus tarjetas, y la lista de títulos es confusa.",
+      "now": "El inicio tiene un solo H1 y es \"Conoce nuestro blog\", a mitad de página. Los 10 titulares del carrusel aparecen repetidos (21 títulos de nivel 2) y los nombres de las tarjetas usan el nivel más bajo (H6), saltándose niveles.",
+      "fix": "Usar como H1 el mensaje principal del inicio, dejar el blog como H2, evitar duplicar los titulares del carrusel y ordenar los niveles de título.",
+      "why": "Quien navega por títulos con lector de pantalla no encuentra rápido tus productos y se va.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/a11y-home-rendered.html heading outline: h2 x21 (hero slides, repeated by slider clones) … h1 'Conoce nuestro blog' (only H1).",
+        "Product names as h6 (e.g. 'Tarjeta de Crédito Sip', 'Tarjeta de Débito Sip') directly after h2 'Elige el producto que prefieres'.",
+        "Lighthouse heading-order (score 0): h6.mx-3, h6.card-title-padding, h6.sip-font__title--md, footer h4.d-xl-none.",
+        "Other pages are correct: productos H1 'Nuestros productos', quiénes somos H1 'SOMOS PARTE DEL GRUPO INTERCORP', beneficios H1 'LOS MEJORES BENEFICIOS Y PROMOCIONES'."
+      ],
+      "technical_note": "Slider clones duplicate slide headings; mark clones aria-hidden or render slide headings once. Footer has h2 and h3 duplicates (desktop/mobile variants) — hide the inactive variant with display:none rather than only visually.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 25,
+        "y_pct": 37
+      }
+    },
+    {
+      "id": "a11y-5",
+      "title": "Con teclado hay que pasar 17 enlaces antes del banner",
+      "summary": "Quien no usa mouse (por ejemplo, por una discapacidad motriz) debe recorrer toda la barra superior para llegar a tu oferta, y en las flechas del carrusel no ve dónde está.",
+      "now": "No hay enlace para saltar al contenido ni zona principal marcada: el botón \"Conoce más aquí\" del banner es la parada 18 con la tecla Tab. Al llegar a las flechas del carrusel no aparece ningún marco de foco, porque el sitio lo elimina.",
+      "fix": "Agregar un enlace \"Saltar al contenido\", marcar la zona principal y el menú, y mostrar un borde de foco visible en flechas y pestañas.",
+      "why": "Si alguien no puede moverse por la página con teclado, no puede solicitar la tarjeta.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "18 pulsaciones de Tab",
+      "evidence": [
+        "CDP keyboard probe on https://sip.pe/ (1440x900): Tab stops 1–20 = 8 group-store links (Promart…Vivanda), logo, 5 nav buttons, 'Solicita tu Tarjeta Sip', 'Mi cuenta', 'aquí' (plus one body stop); stop 21 = hero CTA 'Conoce más aquí'.",
+        "Same probe: stops 22–23 button.controls__item → computed outline-style none, box-shadow none (no visible focus). Material tab div.mdc-tab (stop 25) also outline none. screenshots/a11y-focus-tab14.png shows the default focus ring on nav does work.",
+        "raw/a11y-css/styles.css: '.controls button{border:0;outline:none;background:transparent}', '.slick-prev:focus,.slick-next:focus{outline:none}', '.carousel-content-img__link{outline:none}'.",
+        "Lighthouse landmark-one-main (score 0): no <main>; rendered DOM of 4 pages has 0 <main> and 0 <nav>; no skip link found."
+      ],
+      "technical_note": "Nav items are <button> wrapping an <a> (nested interactive content) — keep one interactive element. Wrap router-outlet in <main id='contenido'>, header menu in <nav aria-label='Principal'>, add a visually-hidden-until-focus skip link, replace outline:none with a :focus-visible ring.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 2
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "a11y-contrast",
+      "result": "fail",
+      "evidence": "Primary CTAs white on #00B1FF = 2.4:1 (7 instances, Lighthouse color-contrast); accent headline text #00B1FF on white 2.4:1 at 40px (<3:1); badge #1da552/#c4fcd8 2.78:1. Nav text #1B1B1D on #00B1FF passes at 7.15:1."
+    },
+    {
+      "id": "a11y-text-not-image",
+      "result": "pass",
+      "evidence": "Hero headlines, product names and section titles are real HTML text (h1/h2/h6) on home, productos, quiénes somos and beneficios; images carry photos, merchant logos and small card tags only."
+    },
+    {
+      "id": "a11y-alt",
+      "result": "fail",
+      "evidence": "Hero slide images use their URL as alt (10 slides on home, banner on beneficios); 4 logo <img> without alt on every page (Lighthouse image-alt). Tracking pixels correctly have empty alt."
+    },
+    {
+      "id": "a11y-headings",
+      "result": "fail",
+      "evidence": "Home's only H1 is 'Conoce nuestro blog' mid-page; 21 duplicated h2 from slider; product titles h6 after h2 (Lighthouse heading-order). Inner pages (productos, quiénes somos, beneficios) each have one correct H1."
+    },
+    {
+      "id": "a11y-names",
+      "result": "fail",
+      "evidence": "Unnamed: #btn-menu hamburger (button-name), logo links and 4 social icon links (link-name), 20 carousel arrow buttons (icon <em> only), progressbar (aria-progressbar-name)."
+    },
+    {
+      "id": "a11y-focus",
+      "result": "partial",
+      "evidence": "Links and nav buttons show the browser default focus ring (outline auto, measured via CDP; screenshots/a11y-focus-tab14.png). Carousel arrows (.controls button outline:none), slick arrows and Material tabs show no focus indicator."
+    },
+    {
+      "id": "a11y-keyboard",
+      "result": "partial",
+      "evidence": "Header, nav, CTAs and carousel arrows are reachable with Tab and no trap was found in 30 stops; but there is no skip link or <main>/<nav> landmark (hero CTA is stop 21), nav items nest <a> inside <button>, and carousel arrows have no visible focus."
+    },
+    {
+      "id": "a11y-form-labels",
+      "result": "pass",
+      "evidence": "No forms on home; the only fields found (product filter checkboxes on /productos) each have a <label for> matching the input id. Application flows live on external domains, not audited."
+    },
+    {
+      "id": "a11y-motion",
+      "result": "pass",
+      "evidence": "Hero carousel did not auto-advance in a 12 s headless observation (progress stayed '1 / 10', width 10%); it advances via arrows. No other auto-moving element observed. Not verified on a real device."
+    },
+    {
+      "id": "a11y-lang",
+      "result": "pass",
+      "evidence": "<html lang=\"es\"> on all pages (Lighthouse html-has-lang passes)."
+    },
+    {
+      "id": "a11y-targets",
+      "result": "pass",
+      "evidence": "Lighthouse mobile target-size audit passes (score 1); carousel arrows measure 42x42 px and header CTAs 50 px tall on desktop."
+    }
+  ]
+}

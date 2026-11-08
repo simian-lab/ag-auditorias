@@ -1,0 +1,234 @@
+## https://sip.pe/
+HTTP/2 200 
+date: Fri, 06 Nov 2026 20:27:40 GMT
+content-type: text/html;charset=UTF-8
+x-powered-by: Express
+server-timing: dtTrId;desc="f4152ef66c0b6ea0ae5be758f1b66a88", dtSInfo;desc="0", dtRpid;desc="-172415291"
+speculation-rules: "/cdn-cgi/speculation"
+x-oneagent-js-injection: true
+x-ruxit-js-agent: true
+via: 1.1 google
+alt-svc: h3=":443"; ma=86400
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: dtCookie7mwrjmek=v_4_srv_12_sn_6373C922A810DE5D0DB950CF75AB5139_perc_100000_ol_0_mul_1_app-3Aea7c4b59f27d43eb_1; Path=/; Domain=.sip.pe
+set-cookie: __cf_bm=9zyGfEpyY4tu2VitCOwYgqrXyLAWbrTuVAEWr5b4TPQ-1793996860.379112-1.0.1.1-pA3JEgieDDonRlMkXhbwhZadbtUbqz.YYr8Q6bUs9U5FSk7FJ4o1dScDHuMtCVrX1j_AhG6J7EXkjleV3.hOGyO3LNtW9xIr44gy8YVEuW.JGiJwPEuG5PDQjc63KxEn; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=sip.pe; Expires=Fri, 06 Nov 2026 20:57:40 GMT
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+server: cloudflare
+cf-ray: a566d7195de85c6a-MIA
+
+## http://sip.pe/
+HTTP/1.1 301 Moved Permanently
+Date: Fri, 06 Nov 2026 20:27:40 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Location: https://sip.pe/
+x-content-type-options: nosniff
+Speculation-Rules: "/cdn-cgi/speculation"
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+Content-Security-Policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+Server: cloudflare
+CF-RAY: a566d71d19e1c594-MIA
+alt-svc: h3=":443"; ma=86400
+
+## http://www.sip.pe/
+HTTP/1.1 301 Moved Permanently
+Date: Fri, 06 Nov 2026 20:27:41 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Location: https://www.sip.pe/
+x-content-type-options: nosniff
+Speculation-Rules: "/cdn-cgi/speculation"
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+Content-Security-Policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+Server: cloudflare
+CF-RAY: a566d72158e95f20-MIA
+alt-svc: h3=":443"; ma=86400
+
+## 404 https://sip.pe/esta-pagina-no-existe-xyz
+status 200 size 113683
+HTTP/2 200 
+date: Fri, 06 Nov 2026 20:27:42 GMT
+content-type: text/html;charset=UTF-8
+x-powered-by: Express
+server-timing: dtTrId;desc="69e807bf1824ea618c64b1a810077f8b", dtSInfo;desc="0", dtRpid;desc="-1484514218"
+speculation-rules: "/cdn-cgi/speculation"
+x-oneagent-js-injection: true
+x-ruxit-js-agent: true
+via: 1.1 google
+alt-svc: h3=":443"; ma=86400
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: dtCookie7mwrjmek=v_4_srv_7_sn_8C41EE59061819F7E633D92622BCE5C5_perc_100000_ol_0_mul_1_app-3Aea7c4b59f27d43eb_1; Path=/; Domain=.sip.pe
+set-cookie: __cf_bm=cwy_o29Paw6emMaWGBa8QuXRCW1edvQq6eBoNzHh5Mw-1793996862.5629144-1.0.1.1-Hf.5l46SrXBX6B_K8ncE_Hk_GCLUTFrYliFeeeMgT3Fv5vhfP2FlMHyvuaGnnOtWyrR_hAnDwDrnYWcowI8bzOCgKgz3hKQfxdjg8riFdShJL6YfuLXAmyZqYWc5Fc22; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=sip.pe; Expires=Fri, 06 Nov 2026 20:57:42 GMT
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+server: cloudflare
+cf-ray: a566d7270f62e716-MIA
+
+## main js
+HTTP/2 200 
+date: Fri, 06 Nov 2026 20:27:43 GMT
+content-type: text/javascript; charset=utf-8
+content-length: 855976
+x-powered-by: Express
+accept-ranges: bytes
+cache-control: public, max-age=31536000
+last-modified: Thu, 29 Oct 2026 03:09:42 GMT
+etag: W/"d0fa8-1a185a280f0"
+server-timing: dtTrId;desc="324fe31e6a8e787ddb9b4b2c3e8fbae0", dtSInfo;desc="0", dtRpid;desc="2050951089"
+alt-svc: h3=":443"; ma=86400
+via: 1.1 google
+age: 51265
+expires: Sat, 06 Nov 2027 20:27:43 GMT
+cf-cache-status: HIT
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+speculation-rules: "/cdn-cgi/speculation"
+vary: accept-encoding
+set-cookie: __cf_bm=okEMnwKScUYUe6XQutRdynVa5gE85cYpv0pEI67Ojxk-1793996863.0107224-1.0.1.1-xCsmjMratSD52QsCr.S1FXIwFqobM2ULT_wEJiU5ZQyXpMKihEmqNCZYcSPbK2hmZDa_K9HK6kIwQk5uSOuc6wBoR4SVHLIdfqcYo3wjoK7OfpB9N71TD0DsnvreWn4C; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=sip.pe; Expires=Fri, 06 Nov 2026 20:57:43 GMT
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+server: cloudflare
+cf-ray: a566d729cf412439-MIA
+
+## font
+HTTP/2 200 
+date: Fri, 06 Nov 2026 20:27:43 GMT
+content-type: font/ttf
+content-length: 158240
+x-powered-by: Express
+accept-ranges: bytes
+cache-control: public, max-age=31536000
+last-modified: Thu, 29 Oct 2026 03:09:45 GMT
+etag: W/"26a20-1a185a29090:dtagent10347260902154543b22K"
+server-timing: dtTrId;desc="e55d42e058cd44eb35172e5cf72f46ef", dtSInfo;desc="0", dtRpid;desc="-797809933"
+via: 1.1 google
+alt-svc: h3=":443"; ma=86400
+age: 53951
+expires: Sat, 06 Nov 2027 20:27:43 GMT
+cf-cache-status: HIT
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+speculation-rules: "/cdn-cgi/speculation"
+vary: accept-encoding
+set-cookie: __cf_bm=1GOrv41De0lC0wNkQ_mrwmGF6qFn9nOpIaA3A9MrlcU-1793996863.4769237-1.0.1.1-vw7GvMZJGR1DV7Ut8PGDSnmUgNsL7IyLsZdSe8YESIn0WH60YeOkrQrYVcEZE3NAIzyrF1hkXyMC13VVROxVkOH83on5Fj8dW.bpJjRMQgWacBdQzbqSi5PHi1zDgVKd; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=sip.pe; Expires=Fri, 06 Nov 2026 20:57:43 GMT
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+server: cloudflare
+cf-ray: a566d72c7c7b257a-MIA
+
+## cms image
+HTTP/2 200 
+date: Fri, 06 Nov 2026 20:27:43 GMT
+content-type: image/png
+content-length: 137832
+server: cloudflare
+last-modified: Tue, 27 Jan 2026 15:58:28 GMT
+etag: "28b0d-64960b1be7100"
+accept-ranges: bytes
+server-timing: dtTrId;desc="d71b6b984145cd006f2ce4ed3eb05075", dtSInfo;desc="0", dtRpid;desc="1442211361"
+via: 1.1 google
+alt-svc: h3=":443"; ma=86400
+speculation-rules: "/cdn-cgi/speculation"
+cf-polished: ok, orig_size=166669
+priority: u=4;i=?0,cf-chb=(74;u=5;i)
+cf-bgj: imgq:85,h2pri
+vary: accept, accept-encoding
+age: 3335
+expires: Sat, 07 Nov 2026 00:27:43 GMT
+cache-control: public, max-age=14400
+cf-cache-status: HIT
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=IEWTTXfxMMBpTpUKx07Z6B_OJ.0K3pOzwbajvCZzqKE-1793996863.8438945-1.0.1.1-CcmJDnet8XB3bRKq_Eyu2kHr5IopfUDfKGm5rL9c_t3uiJqcpvUUC7WZFwPzdgiyB.._H2c80BNA5sFdgWmQtBA.na9sh7pbFXfFKoz.HfMfTGnYvPNIAvlJLKVMSbCn; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=sip.pe; Expires=Fri, 06 Nov 2026 20:57:43 GMT
+expect-ct: max-age=86400, enforce
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://enlinea.sip.pe https://inkafarma.pe;
+cf-ray: a566d72ef8d0695e-MIA
+
+## link/image status (GET, follow redirects)
+200 https://beneficios.sip.pe/ <- http://beneficiossip.pe
+200 https://bienvenidos.sip.pe/ <- http://Bienvenidos.sip.pe
+200 https://enlinea.sip.pe/ <- http://enlinea.sip.pe
+200 https://play.google.com/store/apps/details?id=pe.solera.tarjetaoh&hl=es_PE&_branch_match_id=1647349351693568695&utm_source=web&utm_campaign=sip_descarga&utm_medium=boton_android&_branch_referrer=H4sIAAAAAAAAAwXBQQ6AIAwEwB%2FJ3cR48CENhEV6gDZLE26%2B3Zke4etMKbsv9cORNoo0swAlz0rTen9EA6nzlULbC7yeThv4AeHSqcY%2BAAAA <- https://appsip.pe/web_footer_android
+200 https://apps.apple.com/es/app/sip-tu-billetera-digital/id1117151689 <- https://appsip.pe/web_footer_ios
+200 https://beneficios.sip.pe/ <- https://beneficios.sip.pe/
+200 https://cloud.em.sip.pe/reprogramaciones <- https://cloud.em.sip.pe/reprogramaciones
+200 https://cms.sip.pe/wp-content/documentos/terminos-condiciones/TyC-Canales-digitales.pdf <- https://cms.sip.pe/wp-content/documentos/terminos-condiciones/TyC-Canales-digitales.pdf
+200 https://cms.sip.pe/wp-content/uploads/2024/11/Claves-para-viajar-barato-con-poco-presupuesto.jpg <- https://cms.sip.pe/wp-content/uploads/2024/11/Claves-para-viajar-barato-con-poco-presupuesto.jpg
+200 https://cms.sip.pe/wp-content/uploads/2024/11/planificacion-financiera-blog-og.jpg <- https://cms.sip.pe/wp-content/uploads/2024/11/planificacion-financiera-blog-og.jpg
+200 https://cms.sip.pe/wp-content/uploads/2024/11/ventajas-pagos-sin-contacto-era-digital-thumbnail.jpg <- https://cms.sip.pe/wp-content/uploads/2024/11/ventajas-pagos-sin-contacto-era-digital-thumbnail.jpg
+200 https://cms.sip.pe/wp-content/uploads/2024/12/como-saber-si-estoy-en-infocorp-thumbnail.jpg <- https://cms.sip.pe/wp-content/uploads/2024/12/como-saber-si-estoy-en-infocorp-thumbnail.jpg
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Ahorramas-soles.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Ahorramas-soles.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Cintillo.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Cintillo.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Credito-garantia.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Credito-garantia.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Credito-plus.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Credito-plus.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/credito-sip.png <- https://cms.sip.pe/wp-content/uploads/2026/01/credito-sip.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-adicional.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-adicional.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-cero.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-cero.png
+200 https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-debito.png <- https://cms.sip.pe/wp-content/uploads/2026/01/Tarjeta-debito.png
+200 https://enlinea.sip.pe/ <- https://enlinea.sip.pe
+200 https://www.google.com.co/pagead/1p-user-list/787445638/?random=1793996896942&amp;cv=11&amp;fst=1793996896942&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6b41v9104171588z8813148038za20gzb813148038zd813148038xeaxf1&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191153~121246026~121246034~123814185&amp;u_w=800&amp;u_h=600&amp;url=https%3A%2F%2Fsip.pe%2F&amp;rcb=6&amp;frm=0&amp;tiba=Sip&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1862433581.1793996896&amp;uaa=arm&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.80%7CGoogle%2520Chrome%3B156.0.8078.80&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=27.0.1&amp;uaw=0&amp;_tu=CA&amp;ept=9&amp;rfmt=3&amp;fmt=4&is_vtc=1&cid=CAQS6wEAogo4dSUcfeQhxk5zg-m0Ttn_axZCZTW3_qcxAYrc7bn5Z91YWarutaCp01eOqwgTywlRz1ljJFH_aGT309ODSxd9si9q0lqZguZLZWwg2toUrJWfPxpTRPnGA49uWMUOgT93qxWjt8xgzOhCIEpFxzSrZrwrX7LedDP4roiAiaojhlejwB2PCzXPj61aA8-dJfBaJFUkZJxWjgIjcrvW26ufr30GNO_2l3ip-_Y71CnPx6qS0PRjuDPBuYlAVWA3OaaF45IFXW9VrsHcrhEDWGKGj0eOmYEWT9-Pi1OedjjRvQNVud4z2Vvk&random=1880634309&ipr=y <- https://googleads.g.doubleclick.net/pagead/viewthroughconversion/787445638/?random=1793996896942&amp;cv=11&amp;fst=1793996896942&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6b41v9104171588z8813148038za20gzb813148038zd813148038xeaxf1&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191153~121246026~121246034~123814185&amp;u_w=800&amp;u_h=600&amp;url=https%3A%2F%2Fsip.pe%2F&amp;rcb=6&amp;frm=0&amp;tiba=Sip&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1862433581.1793996896&amp;uaa=arm&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.80%7CGoogle%2520Chrome%3B156.0.8078.80&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=27.0.1&amp;uaw=0&amp;_tu=CA&amp;ept=9&amp;rfmt=3&amp;fmt=4
+ <- https://gum.criteo.com/syncframe?topUrl=sip.pe&amp;origin=onetag&amp;ceid=a76887d8-b976-46a9-90a9-6a479ee3155c#{%22bundle%22:{%22identifierExtractor%22:{%22origin%22:0},%22value%22:null},%22cw%22:true,%22optout%22:{%22identifierExtractor%22:{%22origin%22:0},%22value%22:null},%22origin%22:%22onetag%22,%22tld%22:%22sip.pe%22,%22topUrl%22:%22sip.pe%22,%22version%22:%225_52_0%22,%22ifa%22:{%22identifierExtractor%22:{%22origin%22:0},%22value%22:null},%22lsw%22:true,%22pm%22:0,%22requestId%22:%22d04d8dd8-2f45-42aa-841d-2740ea4ffaf9%22}
+200 https://inkafarma.pe/ <- https://inkafarma.pe/
+200 https://libro-reclamos.sip.pe/Quejasyreclamos <- https://libro-reclamos.sip.pe/Quejasyreclamos
+200 https://sip.pe/ <- https://sip.pe/
+200 https://sip.pe/afiliacion-digital/ <- https://sip.pe/afiliacion-digital/
+200 https://sip.pe/afiliacion-digital/campanha?utm_source=web&utm_medium=home&utm_campaign=home <- https://sip.pe/afiliacion-digital/campanha?utm_source=web&utm_medium=home&utm_campaign=home
+200 https://sip.pe/blog <- https://sip.pe/blog
+200 https://sip.pe/blog/mis-ahorros/como-viajar-barato-con-poco-presupuesto <- https://sip.pe/blog/mis-ahorros/como-viajar-barato-con-poco-presupuesto
+200 https://sip.pe/blog/mis-finanzas/como-saber-si-estoy-en-infocorp <- https://sip.pe/blog/mis-finanzas/como-saber-si-estoy-en-infocorp
+200 https://sip.pe/blog/mis-finanzas/por-que-es-esencial-la-planificacion-financiera <- https://sip.pe/blog/mis-finanzas/por-que-es-esencial-la-planificacion-financiera
+200 https://sip.pe/blog/mundo-digital/ventajas-pagos-sin-contacto-era-digital <- https://sip.pe/blog/mundo-digital/ventajas-pagos-sin-contacto-era-digital
+200 https://sip.pe/deposito-plazo-fijo/ <- https://sip.pe/deposito-plazo-fijo/
+200 https://sip.pe/documentos-importantes <- https://sip.pe/documentos-importantes
+200 https://sip.pe/preguntas-frecuentes <- https://sip.pe/preguntas-frecuentes
+200 https://sip.pe/productos <- https://sip.pe/productos
+200 https://sip.pe/productos/credito-efectivo <- https://sip.pe/productos/credito-efectivo
+200 https://sip.pe/productos/tarjeta-basica <- https://sip.pe/productos/tarjeta-basica
+200 https://sip.pe/productos/tarjeta-cero <- https://sip.pe/productos/tarjeta-cero
+200 https://sip.pe/productos/tarjeta-de-credito <- https://sip.pe/productos/tarjeta-de-credito
+200 https://sip.pe/productos/tarjeta-debito <- https://sip.pe/productos/tarjeta-debito
+200 https://sip.pe/productos/tarjeta-garantia <- https://sip.pe/productos/tarjeta-garantia
+200 https://sip.pe/productos/tarjeta-plus <- https://sip.pe/productos/tarjeta-plus
+200 https://sip.pe/productos/tarjetas-adicionales <- https://sip.pe/productos/tarjetas-adicionales
+200 https://sip.pe/puntos-de-atencion <- https://sip.pe/puntos-de-atencion
+200 https://sip.pe/quienes-somos <- https://sip.pe/quienes-somos
+200 https://sip.pe/reclamos <- https://sip.pe/reclamos
+200 https://libro-reclamos.sip.pe/Quejasyreclamos/ <- https://somosoh.my.salesforce-sites.com/Quejasyreclamos
+200 https://sslwidget.criteo.com/event?a=%5B122728%5D&amp;v=5.52.0&amp;p0=e%3Dvpg&amp;sc=%7B%22ttp%22%3A%2201M6S8REBBRYV97MKF5DK5W108_.tt.1.1793996896620%22%7D&amp;tld=sip.pe&amp;dy=1&amp;fu=https%253A%252F%252Fsip.pe%252F&amp;ceid=a76887d8-b976-46a9-90a9-6a479ee3155c <- https://sslwidget.criteo.com/event?a=%5B122728%5D&amp;v=5.52.0&amp;p0=e%3Dvpg&amp;sc=%7B%22ttp%22%3A%2201M6S8REBBRYV97MKF5DK5W108_.tt.1.1793996896620%22%7D&amp;tld=sip.pe&amp;dy=1&amp;fu=https%253A%252F%252Fsip.pe%252F&amp;ceid=a76887d8-b976-46a9-90a9-6a479ee3155c
+200 https://t.teads.tv/track?action=pageView&amp;env=js-web&amp;tag_version=8.15.10_667551a&amp;provider=tag&amp;advertiser_id=44156&amp;referer=https%3A%2F%2Fsip.pe%2F&amp;user_session_id=e774ef6d-84db-49f2-95ba-8050fd09fd44&amp;hasConsent=true&amp;cht=timeout <- https://t.teads.tv/track?action=pageView&amp;env=js-web&amp;tag_version=8.15.10_667551a&amp;provider=tag&amp;advertiser_id=44156&amp;referer=https%3A%2F%2Fsip.pe%2F&amp;user_session_id=e774ef6d-84db-49f2-95ba-8050fd09fd44&amp;hasConsent=true&amp;cht=timeout
+200 https://www.jumpin.pe/es/jobs?businessUnitIds=e560ea91-ca65-8f50-907f-6894e2f8c31f <- https://www.jumpin.pe/es/jobs?businessUnitIds=e560ea91-ca65-8f50-907f-6894e2f8c31f
+200 https://www.makro.pe/ <- https://www.makro.pe/
+200 https://www.mifarma.com.pe/ <- https://www.mifarma.com.pe/
+200 https://www.oechsle.pe/ <- https://www.oechsle.pe/
+200 https://www.plazavea.com.pe/ <- https://www.plazavea.com.pe/
+200 https://www.promart.pe/ <- https://www.promart.pe/
+200 https://www.realplaza.com/ <- https://www.realplaza.com/
+200 https://www.sbs.gob.pe/usuarios/ <- https://www.sbs.gob.pe/usuarios/
+200 https://www.gob.pe/smv?data=AD9B68B2E29CA75EB8F101021837C4&op=bq1 <- https://www.smv.gob.pe/Bp_LisDatosGenerales?data=AD9B68B2E29CA75EB8F101021837C4&op=bq1
+200 https://www.vivanda.com.pe/ <- https://www.vivanda.com.pe/

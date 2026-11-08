@@ -1,0 +1,223 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "home",
+        "url": "https://sip.pe",
+        "canonical": "https://sip.pe/",
+        "title": "Empieza a ahorrar Hoy | Sip",
+        "meta_description": "Ahorra con promociones y descuentos exclusivos diarios en PlazaVea, Oechsle, Promart, Inkafarma, Mifarma y más. Descubre las orfertas con Sip",
+        "evidence": "Read from the rendered page (raw/presence/presence-home-rendered.html); Google renders JavaScript, so this is the title/description it can show. Note: the no-JS server HTML (<title>Sip</title>, no description, canonical https://www.sip.pe/) only affects link previews and AI crawlers, not Google."
+      },
+      {
+        "page": "productos",
+        "url": "https://sip.pe › productos",
+        "canonical": "https://sip.pe/productos",
+        "title": "Nuestros productos, tarjetas de crédito ahorros y más | Sip",
+        "meta_description": "Conoce los productos de Sip, solicita tu tarjeta Sip, tarjeta cero, seguros, créditos en efectivo, CTS y mucho más, ingresa aquí.",
+        "evidence": "Read from the rendered page (raw/presence/presence-productos-rendered.html). The identical no-JS shell only matters for link previews and AI crawlers."
+      },
+      {
+        "page": "tarjeta de crédito",
+        "url": "https://sip.pe › Productos",
+        "canonical": "https://sip.pe/productos/tarjeta-de-credito",
+        "title": "Tarjeta de Crédito Sip | Beneficios",
+        "meta_description": "Accede a un mundo de beneficios y facilidades con tu tarjeta Sip. Conoce los requisitos y entérate si tienes una tarjeta de crédito pre aprobada.",
+        "evidence": "Rendered page raw/presence/presence-tarjeta-de-credito-rendered.html (BreadcrumbList, HowTo, FinancialProduct, CreditCard JSON-LD). Confirmed on real Google Peru: result shows «Tarjeta de Crédito Sip | Beneficios» with breadcrumb sip.pe › Productos (observation supplied by the audit lead)."
+      },
+      {
+        "page": "afiliación digital",
+        "url": "https://sip.pe › afiliacion-digital",
+        "canonical": "https://sip.pe/afiliacion-digital",
+        "title": "Solicitar Tarjeta de Crédito Sip",
+        "meta_description": "Afíliate de manera rápida y segura, disfruta de increíbles beneficios y promociones en tus compras. ¡Solicita tu tarjeta online y empieza a ahorrar ahora!",
+        "evidence": "Copied from a real Google Peru result for sip.pe/afiliacion-digital (observation supplied by the audit lead). Own BrowserOS check (google.com/search?hl=es&gl=pe&q=site:sip.pe and q=tarjeta sip) returned an empty page, so no additional SERP text was captured."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "home",
+        "title": "Sip | Tarjeta de crédito, débito y ahorro digital en Perú",
+        "description": "Tarjeta Sip con descuentos diarios en plazaVea, Oechsle, Promart, Inkafarma y Mifarma. Créditos, ahorro, CTS y seguros desde la app Sip."
+      },
+      {
+        "page": "productos",
+        "title": "Productos Sip: tarjetas, créditos, ahorro, CTS y seguros",
+        "description": "Tarjeta de crédito, Tarjeta Cero, crédito efectivo, préstamo personal, depósito a plazo fijo, CTS y seguros de Sip. Elige el tuyo y solicítalo aquí."
+      },
+      {
+        "page": "tarjeta de crédito",
+        "title": "Tarjeta de Crédito Sip | Requisitos y cómo solicitarla",
+        "description": "Solicita tu Tarjeta de Crédito Sip: registra tus datos y te evaluamos. Revisa requisitos, beneficios y si tienes una oferta preaprobada."
+      }
+    ],
+    "notes": "Google renders JavaScript, so it indexes and shows the real per-page titles and descriptions (confirmed on Google Peru for /afiliacion-digital and /productos/tarjeta-de-credito). The no-JS server shell (<title>Sip</title>, no meta description, canonical https://www.sip.pe/ on every route, including /llms.txt) only affects link previews (WhatsApp, LinkedIn) and AI crawlers that do not run JavaScript; see share_preview and ai_answer. Real SERP issues: home description has a typo ('orfertas'); /quienes-somos description says 'quiénes comos'; /contactanos renders the home page (same title and canonical https://sip.pe/). Proposal facts come from the site: home meta description (stores), /productos description and product sitemap (Tarjeta Cero, crédito efectivo, préstamo personal, depósito a plazo fijo, CTS, seguros), credit-card page description and HowTo ('Registra tus datos y te evaluaremos')."
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:title": null,
+        "og:description": null,
+        "og:image": null,
+        "twitter:card": null
+      },
+      "productos": {
+        "og:title": null,
+        "og:description": null,
+        "og:image": null,
+        "twitter:card": null
+      },
+      "tarjeta-de-credito": {
+        "og:title": null,
+        "og:description": null,
+        "og:image": null,
+        "twitter:card": null
+      }
+    },
+    "what_shows_today": "Al compartir cualquier página de Sip por WhatsApp o LinkedIn, la vista previa solo muestra la palabra «Sip» y la dirección web: sin descripción ni imagen. Da igual si compartes el inicio, los productos o la tarjeta de crédito: todas se ven igual.",
+    "issues": [
+      "No og:* or twitter:* tags on any checked page, neither in server HTML nor after JS rendering (home, /productos, /productos/tarjeta-de-credito, /quienes-somos, /preguntas-frecuentes, /puntos-de-atencion).",
+      "Link-preview crawlers (WhatsApp, LinkedIn, Facebook) do not run JavaScript, so they read the server shell: <title>Sip</title> and no description on every URL. Google is not affected: it renders JavaScript and shows the real titles.",
+      "No image on the site is 1200x630; home banners are 500x500 or 400x220 PNGs, so a dedicated share image is needed."
+    ],
+    "proposed": {
+      "og:title": "Sip | Tarjeta de crédito, débito y ahorro digital en Perú",
+      "og:description": "Tarjeta Sip con descuentos diarios en plazaVea, Oechsle, Promart, Inkafarma y Mifarma. Créditos, ahorro y seguros desde la app Sip.",
+      "og:image": "https://cms.sip.pe/wp-content/uploads/2026/01/Billetera-digital.png",
+      "og_image_local": "og-source.jpg",
+      "note": "Source image is the site's own 'Billetera digital' home banner (HTTP 200, image/png, 500x500, circular crop). og-source.jpg is that image placed on a white 1200x630 canvas as a preview; Sip should export a dedicated 1200x630 JPEG with logo and publish it in the server HTML of each route (not via JS)."
+    },
+    "today_title": "Sip"
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Que asistentes de IA y vistas previas lean el sitio sin JavaScript",
+        "fix": "Hacer que cada página entregue su propio título, descripción y contenido desde el primer momento (prerenderizado). Google sí ve los títulos reales, pero los asistentes de IA y las vistas previas de enlaces que no ejecutan código ven en todas las páginas solo la palabra «Sip».",
+        "evidence": "No-JS server HTML of /, /productos, /quienes-somos, /preguntas-frecuentes is the same shell: <title>Sip</title>, no meta description, canonical https://www.sip.pe/. Relevant to AI crawlers and link-preview bots, not to Google (which renders JS)."
+      },
+      {
+        "title": "Ficha de la empresa completa y con un solo nombre",
+        "fix": "Completar los datos estructurados de la empresa con el nombre «Sip», la razón social Infinance XP S.A., RUC, teléfonos de Lima y provincias, WhatsApp, horario y todas las redes (falta LinkedIn). Hoy la ficha se llama «Tarjeta Sip» y no trae teléfonos ni dirección; la versión sin JavaScript se llama «Blog de Sip».",
+        "evidence": "Rendered JSON-LD Organization name 'Tarjeta Sip', no telephone/address, sameAs without linkedin.com/company/sip-per%C3%BA (shown in footer). Server-HTML JSON-LD: Organization 'Blog de Sip', url https://sip.pe/blog/."
+      },
+      {
+        "title": "Preguntas frecuentes que la IA pueda citar",
+        "fix": "Marcar la página de Preguntas Frecuentes con datos estructurados de preguntas y respuestas, y redactar respuestas cortas sobre requisitos, costos y cómo solicitar cada producto.",
+        "evidence": "/preguntas-frecuentes exists (in sitemap) but has no JSON-LD (no FAQPage) in rendered HTML."
+      },
+      {
+        "title": "Una página clara por producto",
+        "fix": "Que cada producto (tarjeta, Tarjeta Cero, préstamo, plazo fijo, CTS, seguros) tenga título, descripción y datos estructurados propios, como ya tiene la tarjeta de crédito. La página de productos hoy declara un tipo de dato que no existe.",
+        "evidence": "/productos JSON-LD {\"@type\":\"Products\"} (not a schema.org type); /productos/tarjeta-de-credito has BreadcrumbList, HowTo, FinancialProduct, CreditCard."
+      },
+      {
+        "title": "Ficha con datos verificables de la empresa",
+        "fix": "Agregar en «Quiénes somos» una ficha con datos comprobables: razón social, RUC, grupo al que pertenece, entidad que la supervisa y dirección de la oficina principal. Hoy la página habla de propósito y valores, pero no da estos datos.",
+        "evidence": "/quienes-somos text covers purpose and values; legal name and RUC only appear in the footer; no address anywhere on the site."
+      },
+      {
+        "title": "Archivo llms.txt real",
+        "fix": "Publicar sip.pe/llms.txt con un resumen de Sip, sus productos, canales de atención y enlaces clave. Hoy esa dirección devuelve la página de inicio en vez de un archivo de texto.",
+        "evidence": "https://sip.pe/llms.txt returns HTTP 200 with the SPA HTML shell (soft 404), raw/presence/presence-llms.txt.raw."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "nombre",
+        "source": "Sitio: títulos de página y pie de página",
+        "value": "Sip"
+      },
+      {
+        "field": "nombre",
+        "source": "Sitio: datos estructurados del inicio (Organization) y migas de pan de la tarjeta de crédito",
+        "value": "Tarjeta Sip"
+      },
+      {
+        "field": "nombre",
+        "source": "Sitio: datos estructurados en el HTML sin JavaScript (lo que leen vistas previas y robots de IA)",
+        "value": "Blog de Sip"
+      },
+      {
+        "field": "nombre legal",
+        "source": "Sitio: pie de página (todas las páginas)",
+        "value": "Infinance XP S.A. — RUC 20522291201"
+      },
+      {
+        "field": "teléfono",
+        "source": "Sitio: pie de página (todas las páginas)",
+        "value": "Lima (01) 619 4800 · Provincias 0801 00002"
+      },
+      {
+        "field": "teléfono",
+        "source": "Listado público: SBS (por confirmar en la fuente oficial)",
+        "value": "619-4800 (Lima) · 0801-00002 (Provincias)"
+      },
+      {
+        "field": "WhatsApp",
+        "source": "Sitio: pie de página y enlace wa.me",
+        "value": "+51 989 157 775"
+      },
+      {
+        "field": "WhatsApp",
+        "source": "Sitio: inicio, banner de Crédito Efectivo",
+        "value": "+51 989 395 768 (invitaciones para clientes con oferta)"
+      },
+      {
+        "field": "correo",
+        "source": "Sitio: todas las páginas revisadas",
+        "value": "No publicado"
+      },
+      {
+        "field": "dirección",
+        "source": "Sitio: todas las páginas revisadas y datos estructurados",
+        "value": "No publicada"
+      },
+      {
+        "field": "dirección",
+        "source": "Directorio EMIS (por confirmar en la fuente oficial)",
+        "value": "Av. Aviación 2405, piso 9, San Borja, Lima [dato por confirmar]"
+      },
+      {
+        "field": "horario",
+        "source": "Sitio: pie de página (call center)",
+        "value": "Lunes a sábado de 9am a 9pm"
+      },
+      {
+        "field": "horario",
+        "source": "Sitio: título de /puntos-de-atencion",
+        "value": "«Nuestros Locales de Atención las 24 horas del día»"
+      },
+      {
+        "field": "sitio web",
+        "source": "Directorio EMIS (por confirmar en la fuente oficial)",
+        "value": "tarjetaoh.com.pe (marca anterior)"
+      },
+      {
+        "field": "widget de chat",
+        "source": "Sitio: HTML renderizado del inicio",
+        "value": "Sin widget de chat; solo enlace a WhatsApp (wa.me/51989157775)"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: pie de página",
+        "value": "Facebook, Instagram, LinkedIn, YouTube"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: datos estructurados (sameAs)",
+        "value": "Facebook, Instagram, YouTube (sin LinkedIn)"
+      }
+    ],
+    "inconsistencies": [
+      "El nombre de la marca cambia según dónde se lea: «Sip» en títulos y pie de página, «Tarjeta Sip» en la ficha técnica para buscadores y «Blog de Sip» en la versión sin JavaScript que leen las vistas previas y los asistentes de IA.",
+      "El horario no coincide: el pie de página dice que el call center atiende de lunes a sábado de 9am a 9pm, pero el título de Puntos de Atención promete «atención las 24 horas del día» sin aclarar que se refiere a los locales y no al call center.",
+      "El sitio no publica ninguna dirección, mientras que directorios públicos muestran una oficina en San Borja y todavía enlazan al sitio de la marca anterior (tarjetaoh.com.pe).",
+      "Hay dos números de WhatsApp en el sitio (uno de atención y otro para ofertas de crédito), lo que puede confundir a un cliente que quiere verificar si un mensaje es oficial."
+    ],
+    "technical_note": "WebSearch (2 queries: brand + Infinance XP contact; RUC). SBS contact page confirms 619-4800 / 0801-00002 (consistent with site). EMIS lists Av. Aviación 2405 piso 9, San Borja and website tarjetaoh.com.pe; not verified against SUNAT, so marked as to-confirm. No Google Business profile was checked. Home also loads a tracking script from marketing.tarjetaoh.pe (old brand domain)."
+  }
+}

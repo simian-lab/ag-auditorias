@@ -1,0 +1,294 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "Google te muestra por tu marca, no por tus productos",
+      "summary": "Quien ya conoce Sip te encuentra primero, pero quien busca un préstamo, una CTS o un plazo fijo sin nombrarte termina en bancos, cajas y comparadores.",
+      "now": "En Google Perú, al buscar \"Sip tarjeta de crédito Perú\" ocupas los primeros cinco puestos. Pero en 7 búsquedas de personas que todavía no te conocen solo apareces en 3: puesto 2 para \"tarjeta de crédito con descuentos en Plaza Vea y Oechsle\", y recién en la segunda página (puestos 10 y 12) para \"billetera digital Perú tarjeta de débito Visa gratis\" y \"tarjeta de crédito sin costo de mantenimiento Perú\". Para \"préstamo personal online rápido Perú\", \"cuenta CTS con buena tasa Perú\", \"depósito a plazo fijo mejores tasas Perú\" y \"tarjeta de crédito sin historial crediticio Perú\" no apareces en las dos primeras páginas, aunque tienes páginas para esos productos.",
+      "fix": "Trabajar cada página de producto alrededor de la búsqueda real que la gente hace (préstamo personal online, CTS con buena tasa, plazo fijo, tarjeta sin historial), con tasas, requisitos y preguntas frecuentes en texto, enlazarlas desde el inicio y el blog, y medir el avance en Google Search Console.",
+      "why": "En productos financieros la gente compara en Google antes de decidir: si no estás en la primera página, la solicitud se la lleva el banco o el comparador que sí aparece.",
+      "impact": 5,
+      "effort": "Medio",
+      "headline_metric": "3 de 7 búsquedas",
+      "evidence": [
+        "Google view (real Google, BrowserOS, https://www.google.com/search?hl=es&gl=pe, 2026-11-06): 9 queries recorded in search_tests, 7 non-brand buyer queries",
+        "Brand 'Sip tarjeta de crédito Perú': sip.pe organic positions 1-5 and 8 (afiliacion-digital, productos/tarjeta-de-credito, pagar-tu-tarjeta, productos/tarjeta-basica, productos/tarjeta-garantia, app-tarjeta)",
+        "Buyer queries where sip.pe appears: Plaza Vea/Oechsle #2, billetera digital débito Visa gratis #10 (page 2), tarjeta sin costo de mantenimiento #12 (page 2)",
+        "Buyer queries absent from 17-19 organic results across pages 1-2: préstamo personal online, cuenta CTS, plazo fijo, tarjeta sin historial crediticio",
+        "Sitemap product.xml lists /productos/prestamo-personal, /productos/cts, /productos/deposito-plazo-fijo: the pages exist and Google renders them (rendered titles e.g. 'Préstamos Personales | Al Instante | Sip', 'Cuenta CTS a una super tasa | Sip')"
+      ],
+      "technical_note": "Google showed ~9 organic results per page despite num=20, so pages 1-2 (start=10) were read; video/social carousels counted as organic positions. Screenshots could not be saved to screenshots/seo-serp-<n>.png: the BrowserOS run/screenshot API returns images inline only (no file path); the extracted titles/URLs/snippets are recorded in search_tests. Rankings are a single clean-profile sample; verify with Search Console (Performance by query) before quoting positions."
+    },
+    {
+      "id": "seo-2",
+      "title": "La IA y los enlaces compartidos ven una página vacía",
+      "summary": "Google sí lee tus páginas completas, pero los asistentes de IA y las vistas previas de WhatsApp, Facebook o LinkedIn reciben una hoja casi en blanco, sin título ni descripción ni imagen.",
+      "now": "Google ejecuta el código del sitio y ve tus páginas bien armadas. En cambio, un robot que no ejecuta ese código (como los de la mayoría de asistentes de IA o el que genera la vista previa de un enlace en WhatsApp) recibe en todas las páginas la misma respuesta: título \"Sip\", sin descripción, sin texto visible, sin imagen para compartir y con la dirección oficial apuntando siempre al inicio. Además, ninguna página tiene las etiquetas de imagen y texto para compartir, ni siquiera después de cargar.",
+      "fix": "Hacer que el servidor entregue cada página ya armada (título, descripción, texto, dirección oficial e imagen para compartir propios de cada producto), para que cualquier robot o red social la lea completa sin depender del navegador.",
+      "why": "Muchas recomendaciones de productos financieros pasan por WhatsApp y por asistentes de IA: si el enlace llega sin imagen ni beneficio, o la IA no puede leer la página, Sip pierde ese clic y esa mención.",
+      "impact": 4,
+      "effort": "Alto",
+      "headline_metric": "1 palabra visible sin JavaScript",
+      "evidence": [
+        "No-JS view (curl, browser UA, 2026-11-06): raw/seo-home.html, seo-productos.html, seo-tarjeta-de-credito.html, seo-prestamo-personal.html, seo-cts.html, seo-quienes-somos.html, seo-preguntas-frecuentes.html, seo-puntos-de-atencion.html, seo-tarjeta-cero.html are the same ~111 KB shell: <title>Sip</title>, no meta description, 0 <h1>, 1 visible word, <link rel=canonical href=\"https://www.sip.pe/\">, JSON-LD Organization 'Blog de Sip'",
+        "Same shell returned to facebookexternalhit, LinkedInBot, WhatsApp and Twitterbot user agents (HTTP 200, ~113 KB) (raw/seo-bot-access.txt)",
+        "Rendered view (headless Chrome, raw/seo-*-rendered.html): each page has its own title, description, H1 and 360-1,550 words, which matches the titles Google shows in its results",
+        "0 og:* and 0 twitter:* tags in both views on all 9 pages checked"
+      ],
+      "technical_note": "Angular SPA. Enable SSR or route prerendering so each route emits title, meta description, self canonical, H1, body copy, JSON-LD and og:title/og:description/og:image (1200x630)/og:url/twitter:card in the initial HTML; link-preview scrapers never run JS. Remove the hardcoded canonical https://www.sip.pe/ (301 to https://sip.pe/) and the 'Blog de Sip' Organization from index.html. Also: unknown URLs and /llms.txt return 200 text/html with the shell (soft 404)."
+    },
+    {
+      "id": "seo-3",
+      "title": "ChatGPT, Claude y Perplexity tienen la puerta cerrada",
+      "summary": "Tu archivo de reglas para robots invita a todos a leer el sitio, pero el firewall bloquea a tres de los principales robots de IA, así que esos asistentes tienen menos datos propios de Sip para recomendarte.",
+      "now": "Cuando pedimos una página de tarjetas de crédito identificándonos como el robot de entrenamiento de OpenAI (GPTBot), el de Anthropic (ClaudeBot) o el de Perplexity, el servidor respondió \"Your request was blocked\". Con un navegador normal, Googlebot, Bingbot o los robots de búsqueda de ChatGPT, la misma página sí responde. Tu archivo robots.txt no bloquea a esos tres robots.",
+      "fix": "Decidir con tu equipo de seguridad qué robots de IA quieres permitir y alinear el firewall con esa decisión; si quieres que la IA te recomiende, abrir el acceso a los robots verificados de OpenAI, Anthropic y Perplexity.",
+      "why": "Cada vez más personas preguntan a un asistente de IA qué tarjeta o préstamo les conviene; si su robot no puede leer tu sitio, la respuesta se arma con lo que dicen comparadores y bancos.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "No-JS view: curl https://sip.pe/productos/tarjeta-de-credito with GPTBot/1.2, ClaudeBot/1.0 and PerplexityBot/1.0 user agents -> HTTP 403, 25 bytes 'Your request was blocked.' (server: cloudflare) (raw/seo-bot-access.txt)",
+        "Same URL -> HTTP 200 for desktop Chrome, OAI-SearchBot, ChatGPT-User, Googlebot, bingbot, facebookexternalhit, LinkedInBot, WhatsApp, Twitterbot",
+        "raw/seo-robots-txt: 'User-agent: * Allow: /'; only Amazonbot, Applebot-Extended, Bytespider, CCBot, CloudflareBrowserRenderingCrawler and meta-externalagent are disallowed"
+      ],
+      "technical_note": "Tested with spoofed user agents from a non-bot IP, so Cloudflare could treat real verified bots differently; the 403 pattern (training/answer crawlers blocked, OAI-SearchBot allowed) matches Cloudflare's 'Block AI bots' / AI Crawl Control setting or a WAF UA rule. Confirm in Cloudflare > AI Crawl Control / Security events. It may be a deliberate policy (e.g. blocking training crawlers): present as a decision to review, not a bug."
+    },
+    {
+      "id": "seo-4",
+      "title": "Tu inicio aparece en Google solo como «Sip»",
+      "summary": "La página principal, la que más gente ve al buscarte, sale en Google con un título de una palabra y un texto armado con el menú, sin decir qué ofreces.",
+      "now": "Al buscar \"Sip billetera digital\", tu inicio sale primero, pero como «Sip» y con el texto «App Sip Mi cuenta. Inicio; Canales Digitales; App de Tarjeta Sip…». En la página cargada, el título de la pestaña es «Empieza a ahorrar Hoy | Sip», el título principal de la página es «Conoce nuestro blog» y la descripción tiene un error («Descubre las orfertas con Sip»). La página de puntos de atención no tiene título principal y su título de pestaña tiene 106 caracteres.",
+      "fix": "Darle al inicio un título y una descripción que digan qué eres (billetera digital con tarjetas Visa de crédito y débito que te devuelven plata en Plaza Vea, Oechsle y más), un título principal con ese mensaje, y una sola dirección oficial (sip.pe) en todas las señales.",
+      "why": "Ese título y ese texto son tu aviso gratuito en Google: con «Sip» y el menú no convences a quien todavía duda entre varias opciones.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Google view (real Google Peru, 2026-11-06): query 'Sip billetera digital' -> #1 URL www.sip.pe, title 'Sip', snippet 'App Sip Mi cuenta. Inicio; Canales Digitales; App de Tarjeta Sip ... Tarjeta de Débito Sip Descarga la app Sip...'",
+        "Rendered view raw/seo-home-rendered.html: <title>Empieza a ahorrar Hoy | Sip</title>; exactly 1 <h1> 'Conoce nuestro blog'; meta description ends 'Descubre las orfertas con Sip'; canonical https://sip.pe/",
+        "No-JS view raw/seo-home.html: canonical https://www.sip.pe/, which 301-redirects to https://sip.pe/ (conflicting canonical signals between views)",
+        "Home URL https://sip.pe/ is not listed in any sitemap (sitemap blog/product/category)",
+        "Rendered view raw/seo-puntos-de-atencion-rendered.html: 0 <h1>; title 106 characters"
+      ],
+      "technical_note": "Google showing the www host and the bare brand title is consistent with the shell's hardcoded canonical to www.sip.pe/ and a weak home title; this cause is a hypothesis to confirm with URL Inspection in Search Console. Demote the home blog heading to <h2>, add a descriptive <h1>, add https://sip.pe/ to the sitemap, fix 'orfertas' (home), 'quiénes comos' (/quienes-somos), 'requisitios' (/productos/tarjeta-cero). Sitemap lists /productos/cts while its rendered canonical is /productos/cuenta-cts."
+    },
+    {
+      "id": "seo-5",
+      "title": "Faltan datos claros de la empresa para Google e IA",
+      "summary": "Los buscadores y asistentes de IA no encuentran en el código del sitio una ficha única de la empresa con nombre, dirección y teléfono, lo que reduce la confianza con la que te pueden citar.",
+      "now": "La ficha técnica de la empresa que lee Google se llama «Tarjeta Sip» en el inicio y no incluye dirección ni teléfono; la versión sin JavaScript la llama «Blog de Sip», y el pie de página dice «Infinance XP S.A.». La página de productos usa un tipo de ficha que no existe. No hay un archivo llms.txt (esa dirección muestra el inicio) y no pudimos confirmar un perfil de Google Business de Sip.",
+      "fix": "Publicar una ficha única de la empresa con nombre comercial y razón social, RUC, dirección de la oficina en Lima, teléfonos y WhatsApp de atención y redes; agregar un llms.txt con tus productos y datos verificables, y revisar o crear el perfil de Google Business.",
+      "why": "Una respuesta de IA o un panel de Google recomienda con más seguridad a una empresa cuyos datos coinciden en todas partes.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "Rendered view raw/seo-home-rendered.html JSON-LD: Organization name 'Tarjeta Sip', no address, telephone or contactPoint",
+        "No-JS view (all routes): JSON-LD Organization name 'Blog de Sip'",
+        "Rendered footer on home, quienes-somos and puntos-de-atencion: 'Lima (01) 619 4800', 'Provincias 0801 00002', 'WhatsApp +51 989 157 775', 'Infinance XP S.A.'; no street address in footer or schema",
+        "Rendered view raw/seo-productos-rendered.html JSON-LD '@type': 'Products' (not a schema.org type)",
+        "https://sip.pe/llms.txt -> 200 text/html app shell",
+        "Google Business Profile: not confirmed in the Google results reviewed"
+      ],
+      "technical_note": "Replace both Organization blocks with one FinancialService/Organization node (@id https://sip.pe/#organization) with legalName 'Infinance XP S.A.', taxID, PostalAddress, contactPoint (phones, WhatsApp), parentOrganization Intercorp, sameAs. Remove '@type: Products'. Keep the good product schema already present (CreditCard/FinancialProduct on tarjeta-de-credito and tarjeta-cero, FAQPage/BankAccount on CTS)."
+    },
+    {
+      "id": "seo-6",
+      "title": "Las imágenes de productos no tienen descripción",
+      "summary": "Google no sabe qué muestran las imágenes de tus tarjetas, beneficios y comercios aliados, así que no aportan a tu visibilidad ni a la búsqueda de imágenes.",
+      "now": "En la página de la tarjeta de crédito ninguna de las 26 imágenes tiene texto descriptivo; en la de productos, ninguna de las 38; en el inicio, 37 de 59 no lo tienen.",
+      "fix": "Describir en una frase corta cada imagen que muestra un producto, un beneficio o un comercio aliado, y dejar vacías solo las decorativas.",
+      "why": "El texto de las imágenes es una señal más para que te encuentren y ayuda a quien usa lector de pantalla.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "Rendered view: raw/seo-tarjeta-de-credito-rendered.html 26/26 <img> without non-empty alt; raw/seo-productos-rendered.html 38/38; raw/seo-home-rendered.html 37/59; raw/seo-puntos-de-atencion-rendered.html 52/56",
+        "Lighthouse mobile and desktop: image-alt score 0, link-text score 0"
+      ],
+      "technical_note": "Overlaps with the accessibility area. Lighthouse also flags generic link texts ('Ver más')."
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "Sip tarjeta de crédito Perú",
+      "appears": true,
+      "position_or_note": "Marca. Puesto 1: «Solicitar Tarjeta de Crédito Sip» — «Afíliate de manera rápida y segura, disfruta de increíbles beneficios y promociones en tus compras…» (sip.pe/afiliacion-digital). sip.pe ocupa los puestos 1 a 5 y el 8.",
+      "who_appears": [
+        "sip.pe",
+        "plazavea.com.pe",
+        "intercorp.com.pe",
+        "facebook.com (video)"
+      ]
+    },
+    {
+      "query": "Sip billetera digital",
+      "appears": true,
+      "position_or_note": "Marca. Puesto 1: «Sip» (www.sip.pe), con un fragmento armado con textos del menú: «App Sip Mi cuenta. Inicio; Canales Digitales; App de Tarjeta Sip…».",
+      "who_appears": [
+        "sip.pe",
+        "play.google.com",
+        "apps.apple.com",
+        "intercorp.com.pe",
+        "instagram.com",
+        "plazavea.com.pe",
+        "elcomercio.pe"
+      ]
+    },
+    {
+      "query": "tarjeta de crédito con descuentos en Plaza Vea y Oechsle",
+      "appears": true,
+      "position_or_note": "Puesto 2: «Tarjeta de Crédito Sip | Beneficios» — «Solicítala aquí de manera virtual… o acércate a nuestros Módulos de atención Sip ubicados en las tiendas Oechsle y plazaVea…» (sip.pe/productos/tarjeta-de-credito). El puesto 1 es la Tarjeta Oh! en oechsle.pe.",
+      "who_appears": [
+        "oechsle.pe",
+        "sip.pe",
+        "plazavea.com.pe",
+        "tiktok.com",
+        "scribd.com"
+      ]
+    },
+    {
+      "query": "billetera digital Perú tarjeta de débito Visa gratis",
+      "appears": true,
+      "position_or_note": "Puesto 10 (primer resultado de la segunda página): «se puede disfrutar beneficios exclusivos con tu débito - sip» (sip.pe/productos/tarjeta-debito). En la primera página no aparece.",
+      "who_appears": [
+        "efectibank.pe",
+        "ligo.pe",
+        "interbank.pe",
+        "visa.com.pe",
+        "global66.com",
+        "gob.pe",
+        "maximo.pe",
+        "bbva.pe"
+      ]
+    },
+    {
+      "query": "tarjeta de crédito sin costo de mantenimiento Perú",
+      "appears": true,
+      "position_or_note": "Puesto 12 (segunda página): «Tarjeta Cero solicítala hoy - requisitos» (sip.pe/productos/tarjeta-cero). En la primera página no aparece.",
+      "who_appears": [
+        "bbva.pe",
+        "bn.com.pe",
+        "scotiabank.com.pe",
+        "banbif.com.pe",
+        "bancofalabella.pe",
+        "interbank.pe",
+        "viabcp.com"
+      ]
+    },
+    {
+      "query": "préstamo personal online rápido Perú",
+      "appears": false,
+      "position_or_note": "sip.pe no aparece en los 19 resultados orgánicos de las dos primeras páginas.",
+      "who_appears": [
+        "bbva.pe",
+        "solventa.pe",
+        "alfinbanco.pe",
+        "chapacash.com.pe",
+        "cajaarequipa.pe",
+        "merite.pe",
+        "efectibank.pe",
+        "scotiabank.com.pe",
+        "comparabien.com.pe",
+        "interbank.pe"
+      ]
+    },
+    {
+      "query": "cuenta CTS con buena tasa Perú",
+      "appears": false,
+      "position_or_note": "sip.pe no aparece en los 17 resultados orgánicos de las dos primeras páginas.",
+      "who_appears": [
+        "comparabien.com.pe",
+        "banbif.com.pe",
+        "cajapiura.pe",
+        "cajaarequipa.pe",
+        "bancofalabella.pe",
+        "bancoripley.com.pe",
+        "comparabancaperu.com",
+        "scotiabank.com.pe"
+      ]
+    },
+    {
+      "query": "depósito a plazo fijo mejores tasas Perú",
+      "appears": false,
+      "position_or_note": "sip.pe no aparece en los 18 resultados orgánicos de las dos primeras páginas.",
+      "who_appears": [
+        "bbva.com",
+        "comparabien.com.pe",
+        "pichincha.pe",
+        "sbs.gob.pe",
+        "cajaarequipa.pe",
+        "scotiabank.com.pe",
+        "comparabancaperu.com",
+        "interbank.pe"
+      ]
+    },
+    {
+      "query": "tarjeta de crédito sin historial crediticio Perú",
+      "appears": false,
+      "position_or_note": "sip.pe no aparece en los 18 resultados orgánicos de las dos primeras páginas, aunque tiene una página de Tarjeta de Crédito Sip con Garantía.",
+      "who_appears": [
+        "bbva.pe",
+        "interbank.pe",
+        "banbif.com.pe",
+        "io.pe",
+        "reddit.com",
+        "bancofalabella.pe",
+        "viabcp.com",
+        "sbs.gob.pe"
+      ]
+    }
+  ],
+  "search_tests_note": "Pruebas hechas en Google Perú (google.com, idioma español, país Perú) en un navegador limpio, el 6 de noviembre de 2026, revisando las dos primeras páginas de resultados orgánicos sin contar anuncios. Los resultados varían según la persona, su ubicación y su historial. No se consultaron asistentes de IA ni se estiman menciones en sus respuestas.",
+  "extra_pitch_es": "Google ya te pone primero cuando te buscan por nombre; el siguiente paso es aparecer cuando buscan un préstamo, una CTS o una tarjeta sin nombrarte, y abrirle la puerta a la IA y a WhatsApp para que también te recomienden.",
+  "checks": [
+    {
+      "id": "seo-appears",
+      "result": "fail",
+      "evidence": "Real Google Peru (hl=es&gl=pe, 2026-11-06): sip.pe appears in 3 of 7 buyer tests (#2, #10, #12; only one on page 1) and is absent from pages 1-2 for préstamo personal, CTS, plazo fijo and tarjeta sin historial. Brand tests: #1 in both."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "Google/rendered view: unique descriptive titles on productos, quienes-somos, tarjeta-de-credito, prestamo-personal, cts, preguntas-frecuentes, tarjeta-cero; home title is vague ('Empieza a ahorrar Hoy | Sip') and Google shows the home as just 'Sip'; puntos-de-atencion title is 106 chars. No-JS view: <title>Sip</title> on every URL."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "pass",
+      "evidence": "Google/rendered view: meta description present on all 9 main pages checked (typos on home 'orfertas', quienes-somos 'comos', tarjeta-cero 'requisitios'); Google uses them in snippets. Absent in the no-JS view (affects AI/link previews, see seo-2)."
+    },
+    {
+      "id": "seo-h1",
+      "result": "partial",
+      "evidence": "Rendered view: 8 of 9 pages have exactly one H1; puntos-de-atencion has none; home H1 is 'Conoce nuestro blog'. No-JS view: 0 H1."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "fail",
+      "evidence": "Rendered home Organization 'Tarjeta Sip' has url, logo, sameAs but no address or telephone; no-JS Organization is 'Blog de Sip'; no LocalBusiness/FinancialService with NAP."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "pass",
+      "evidence": "Sitemap lists 18 product URLs; rendered product pages have own title, description, H1, 690-1,020 words and FinancialProduct/CreditCard/BankAccount schema; Google indexes them (e.g. tarjeta-basica, tarjeta-garantia, tarjeta-cero, tarjeta-debito seen in results)."
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "pass",
+      "evidence": "Sitemaps (blog 6, product 18, category 15 URLs) contain no placeholder pages or empty archives. Minor: home not in sitemap, /productos/cts listed while canonical is /productos/cuenta-cts, unknown URLs return 200 (soft 404)."
+    },
+    {
+      "id": "seo-share",
+      "result": "fail",
+      "evidence": "0 og:title/og:description/og:image tags on all 9 pages in both the no-JS and rendered views; link-preview bots get the empty shell."
+    },
+    {
+      "id": "seo-nap",
+      "result": "partial",
+      "evidence": "Rendered footer phones consistent on home, quienes-somos and puntos-de-atencion ((01) 619 4800, 0801 00002, WhatsApp 989 157 775), but business name varies ('Sip', 'Tarjeta Sip', 'Blog de Sip', 'Infinance XP S.A.'), no street address in footer or schema, Google Business Profile not confirmed."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "partial",
+      "evidence": "FAQ page exists (/preguntas-frecuentes) and /productos/cts has FAQPage schema; but no llms.txt (200 HTML shell), the no-JS view is empty, and GPTBot/ClaudeBot/PerplexityBot user agents get HTTP 403."
+    }
+  ]
+}
