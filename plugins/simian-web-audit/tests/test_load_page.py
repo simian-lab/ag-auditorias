@@ -90,6 +90,18 @@ class LoadPageTest(unittest.TestCase):
             html = build_report.build_report(self.audit).read_text(encoding="utf-8")
         self.assertIn('href="feature-carga.html"', html)
 
+    def test_load_caveat_from_benchmark_is_shown_escaped(self):
+        bench = self.audit / "findings" / "benchmark.json"
+        b = json.loads(bench.read_text())
+        b["load_caveat_es"] = "Ojo: una animación <tapa> la portada."
+        bench.write_text(json.dumps(b))
+        html = self.run_build().read_text(encoding="utf-8")
+        self.assertIn("Ojo: una animación &lt;tapa&gt; la portada.", html)
+
+    def test_no_caveat_paragraph_without_field(self):
+        html = self.run_build().read_text(encoding="utf-8")
+        self.assertNotIn('class="caveat"', html)
+
     def test_script_injection_is_escaped(self):
         bench = self.audit / "findings" / "benchmark.json"
         b = json.loads(bench.read_text())

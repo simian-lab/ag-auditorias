@@ -108,8 +108,9 @@ def build_load_page(audit_dir: Path) -> Path | None:
     sites = [site_data(lh, "client", "Tu sitio", domain, True)]
     _write_frames(lh, "client", film)
     bench_path = f / "benchmark.json"
-    if bench_path.exists():
-        for c in json.loads(bench_path.read_text(encoding="utf-8")).get("competitors", []):
+    bench = json.loads(bench_path.read_text(encoding="utf-8")) if bench_path.exists() else {}
+    if bench:
+        for c in bench.get("competitors", []):
             p = audit_dir / "raw" / f"bench-{c.get('slug', '')}-lh.json"
             if c.get("slug") and p.exists():
                 clh = json.loads(p.read_text(encoding="utf-8"))
@@ -118,10 +119,13 @@ def build_load_page(audit_dir: Path) -> Path | None:
     end = timeline_end([s["lcp"] for s in sites])
     areas = {a: json.loads((f / f"{a}.json").read_text(encoding="utf-8")) for a in ["a11y"] if (f / f"{a}.json").exists()}
     headline, meaning = _copy(domain, sites)
+    # optional caveat when splash screens or pop-ups make "contenido principal" misleading
+    if bench.get("load_caveat_es"):
+        meaning += f'<p class="caveat">{esc(bench["load_caveat_es"])}</p>'
     date = meta.get("created_at", "")[:10]
     html = (TEMPLATE.read_text(encoding="utf-8")
             .replace("{{DOMAIN}}", esc(domain)).replace("{{HEADLINE}}", esc(headline)).replace("{{END}}", str(end))
-            .replace("{{FRAMES_CAPTION}}", esc(f"Fotogramas reales capturados por Google Lighthouse en móvil, {date}."))
+            .replace("{{FRAMES_CAPTION}}", esc(f"Fotogramas reales capturados por Google Lighthouse en un computador que simula un celular, {date}."))
             .replace("{{MEANING_HTML}}", meaning).replace("{{RINGS}}", "").replace("{{VISION_BIG}}", _vision_big(areas))
             .replace("{{SITES_JSON}}", _js(sites)).replace("{{VISION_TXT_JSON}}", _js(VISION_TXT)))
     assets = report / "assets"

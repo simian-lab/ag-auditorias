@@ -16,3 +16,5 @@ Read `BRIEF.md` first. Output: `findings/benchmark.json` (schema `benchmark`), s
 6. `takeaway_es`: one sharp, truthful Spanish sentence a business owner would feel.
 
 Reply only with the file path and the takeaway.
+
+If a splash screen, loading screen, pop-up or modal covers the page for any site (client included), the measured "contenido principal" time may not match what a visitor sees. In that case add a top-level `load_caveat_es` (one or two plain Spanish sentences) explaining it; the load page shows it under «¿Qué significa?».
