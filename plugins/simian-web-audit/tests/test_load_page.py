@@ -10,6 +10,7 @@ from pathlib import Path
 from tests._helpers import FIXTURES
 import build_load_page
 import build_report
+import measure_load
 
 JPEG = base64.b64encode(b"\xff\xd8\xff\xe0fakejpeg").decode()
 
@@ -117,6 +118,34 @@ class LoadPageTest(unittest.TestCase):
         bench.write_text(json.dumps(b))
         html = self.run_build().read_text(encoding="utf-8")
         self.assertNotIn("</script><b>x", html)
+
+
+class MeasureTest(unittest.TestCase):
+    setUp, tearDown, set_option, run_build = LoadPageTest.setUp, LoadPageTest.tearDown, LoadPageTest.set_option, LoadPageTest.run_build
+
+    def fake_run(self, lcps):
+        calls = []
+
+        def run(cmd, **_):
+            url, out = cmd[1], Path(cmd[-1].split("=", 1)[1])
+            calls.append(url)
+            out.write_text(json.dumps(lh(100, lcps[url].pop(0), [500, 1000])), encoding="utf-8")
+        return run, calls
+
+    def test_same_step_rounds_keep_median_and_drive_the_page(self):
+        b = json.loads((self.audit / "findings" / "benchmark.json").read_text())
+        comp = b["competitors"][0]["url"]
+        run, calls = self.fake_run({"https://example.com": [900, 5000, 700], comp: [3000, 2000, 2500]})
+        with contextlib.redirect_stdout(io.StringIO()):
+            summary = measure_load.measure(self.audit, 3, run=run)
+        self.assertEqual(calls[:2], ["https://example.com", comp])  # rotates order each round
+        self.assertEqual(calls[2:4], [comp, "https://example.com"])
+        self.assertEqual(summary["client"]["median_ms"], 900)
+        self.assertEqual(summary["uno"]["median_ms"], 2500)
+        self.assertFalse((self.audit / "raw" / "load-tmp").exists())
+        # client 900 ms vs competitor 2500 ms -> page built but not linked
+        self.run_build()
+        self.assertFalse(build_load_page.show_in_report(self.audit))
 
 
 class CopyTest(unittest.TestCase):

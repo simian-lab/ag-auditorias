@@ -12,3 +12,5 @@ Use the same `slug` as in `findings/benchmark.json`. Then run `build_load_page.p
 - recorded times drive the clock; the simulated (slow 4G) Lighthouse metrics appear only in the captioned table.
 
 Reply only with the file path and the observed LCP per site.
+
+The comparison and the show/hide decision use `raw/load-<slug>.json` from `scripts/measure_load.py` (same-step median runs) when present, so client and competitors are measured under the same conditions.

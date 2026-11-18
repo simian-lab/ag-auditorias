@@ -72,6 +72,14 @@ def client_loads_slower(sites: list[dict]) -> bool:
     return not others or sum(o["lcp"] < me["lcp"] for o in others) * 2 > len(others)
 
 
+def _lh_path(audit_dir: Path, slug: str) -> Path:
+    """Prefer the same-step median run from measure_load.py; fall back to the audit's own Lighthouse files."""
+    paired = audit_dir / "raw" / f"load-{slug}.json"
+    if paired.exists():
+        return paired
+    return audit_dir / "raw" / ("lighthouse-mobile.json" if slug == "client" else f"bench-{slug}-lh.json")
+
+
 def _bench(audit_dir: Path) -> dict:
     p = audit_dir / "findings" / "benchmark.json"
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
@@ -80,7 +88,7 @@ def _bench(audit_dir: Path) -> dict:
 def _collect(audit_dir: Path, lh: dict, domain: str, bench: dict) -> list[tuple[dict, dict]]:
     out = [(site_data(lh, "client", "Tu sitio", domain, True), lh)]
     for c in bench.get("competitors", []):
-        p = audit_dir / "raw" / f"bench-{c.get('slug', '')}-lh.json"
+        p = _lh_path(audit_dir, c.get("slug", ""))
         if c.get("slug") and p.exists():
             clh = json.loads(p.read_text(encoding="utf-8"))
             out.append((site_data(clh, c["slug"], c["name"], c["url"].split("://")[-1].rstrip("/"), False), clh))
@@ -89,7 +97,7 @@ def _collect(audit_dir: Path, lh: dict, domain: str, bench: dict) -> list[tuple[
 
 def show_in_report(audit_dir: Path) -> bool:
     """The page is always built (it is part of the audit); the report links it only when the client loads slower."""
-    client_lh = audit_dir / "raw" / "lighthouse-mobile.json"
+    client_lh = _lh_path(audit_dir, "client")
     if not (audit_dir / "report" / "feature-carga.html").exists() or not client_lh.exists():
         return False
     lh = json.loads(client_lh.read_text(encoding="utf-8"))
@@ -126,7 +134,7 @@ def _js(value) -> str:
 def build_load_page(audit_dir: Path) -> Path | None:
     f = audit_dir / "findings"
     meta = json.loads((f / "meta.json").read_text(encoding="utf-8"))
-    client_lh = audit_dir / "raw" / "lighthouse-mobile.json"
+    client_lh = _lh_path(audit_dir, "client")
     if not meta.get("options", {}).get("load_page") or not client_lh.exists():
         return None
     report = audit_dir / "report"
