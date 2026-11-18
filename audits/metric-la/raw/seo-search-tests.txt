@@ -1,38 +1,42 @@
-Google Colombia search tests, 2026-11-06 (~21:50 UTC), BrowserOS, clean logged-out browser.
-URL pattern: https://www.google.com/search?hl=es&gl=co&num=20&q=<query>  (page 2: &start=10). No captcha on any load.
+Google USA search tests, 2026-11-18, Claude in Chrome (user's Chrome; &pws=0 to turn off personalization, so not a fully clean logged-out browser).
+Re-run because Metric's target market for these tests is Miami/USA, not Colombia. Previous Colombia run kept at raw/seo-search-tests-co-2026-11-06.txt.
+URL pattern: https://www.google.com/search?hl=<es|en>&gl=us&num=20&pws=0&q=<query>  (page 2: &start=10). No captcha on any load.
 Organic results only (ads ignored). Displayed domain listed in order. metric.la absent from pages 1+2 of every buyer query.
 
-1. "apartamentos en venta Chicó Bogotá" (p1+p2, 19 organic) -> NOT FOUND
- p1: fincaraiz, metrocuadrado, engelvoelkers, listado.mercadolibre, casas.mitula, brikss, fincaraiz, puntopropiedad, ciencuadras
- p2: properati, robertocollins, metrocuadrado, listado.mercadolibre, engelvoelkers, ciencuadras, (social), fincaraiz, metrocuadrado, properati
-2. "apartamentos en arriendo Chicó Virrey Bogotá" (19) -> NOT FOUND
- p1: fincaraiz, metrocuadrado, metrocuadrado, properati, fincaraiz, puntopropiedad, (social), listado.mercadolibre, aptologia
- p2: casas.trovit, metrocuadrado, engelvoelkers, casas.mitula, aptologia, casas.waa2, fincaraiz, brikss, nuroa, ciencuadras
-3. "casas en venta Guaymaral" (19) -> NOT FOUND
- p1: metrocuadrado, fincaraiz, listado.mercadolibre, caminosdeguaymaral.com, casas.mitula, puntopropiedad, fincaraiz, metrocuadrado, guaymaralcasascampestres.com
- p2: listado.mercadolibre, ciencuadras, casas.mitula, fincaraiz, (social), metrocuadrado, listado.mercadolibre, areacuadrada, casas.mitula, fincaraiz
-4. "apartamento en venta La Cabrera Bogotá" (19) -> NOT FOUND
- p1: metrocuadrado, fincaraiz, engelvoelkers, listado.mercadolibre, brikss, casas.mitula, puntopropiedad, fincaraiz, ciencuadras
- p2: metrocuadrado, casas.trovit, listado.mercadolibre, (social), fincaraiz, casas.mitula, (social), engelvoelkers, robertocollins, topliving.com.co
-5. "inmobiliaria de lujo Bogotá" (19) -> NOT FOUND
- p1: engelvoelkers, somosselecto, luxuryestate, (instagram @sebastianluxuryrealestate), mubrickinmobiliaria, engelvoelkers, urbalia.site, 360luxuryrealestateagency, latinexclusive
- p2: latinexclusive, pads.com.co, jamesedition, cassaluxury, luxuryestate, casasdelujocolombia.co, (social), micasaymicarro, amarilo, engelvoelkers
-6. "administración de inmuebles en arriendo Bogotá" (19) -> NOT FOUND
- p1: adeincoinmobiliaria, colegiaturainmobiliaria.edu.co, inmobiliariaospina, bonhabitat, inmobiliariasantafe, epicainmobiliaria, administracion.com.co, grupomaster, albertoalvarez
- p2: inmobiliariaospina, alquilo.co, inmobiliariacobracs, inmobiliarialaintegracionsas, instagram, polisura.edu.co, epicainmobiliaria, inmobiliariaconfivir, inmobiliarelatam, houm
-7. "apartamentos en arriendo Rosales Bogotá" (18) -> NOT FOUND
- p1: metrocuadrado, fincaraiz, casas.mitula, engelvoelkers, ciencuadras, listado.mercadolibre, casas.trovit, metrocuadrado
- p2: brikss, properati, fincaraiz, puntopropiedad, nuroa, arriendo.com, (social), century21colombia, casas.mitula, fincaraiz
-8. "inmobiliaria en Bogotá venta y arriendo" (19) -> NOT FOUND
- p1: inmobiliariaospina, metrocuadrado, mubrickinmobiliaria, myhome.com.co, inmobiliariasantafe, oikosinmobiliaria, eliteinmo.co, (instagram @inmobogota), epicainmobiliaria
-   right panel: Google Business Profile of ÉPICA Inmobiliaria - Bogotá (4,9, 1.804 opiniones, Cra. 11 #71-41)
- p2: rvinmobiliaria, tuhogarinmobiliaria, mubrickinmobiliaria, arinmobiliaria.com.co, fincaraiz, pads.com.co, ciencuadras, engelvoelkers, houm, acrecer
-9. BRAND "metric real estate" (p1) -> #1 metric.la › ... | "Featured properties - Metric Real Estate" | snippet "Digital real estate in Miami and Colombia. Buy, sell, and rent homes, apartments, and offices." (English page)
-   #2 metric.la › about | "Sobre Metric Real Estate — Colombia y el sur de Florida" | snippet "Metric Real Estate trabaja dos mercados: Bogotá y Cartagena en Colombia, y Miami a través del MLS. Inmobiliaria con licencia de Florida CQ1074903."
-   then: play.google.com (app), social profile "Metric Estate (@metricestate)", metricrealestate.com (other company), metricsrealestate.com (other company), co.linkedin.com/company/metricrealestate, informacolombia.com ("Metric Real Estate SAS en bogota dc"), metricre.com (other company). No business panel on the right.
-10. BRAND "metric.la" (p1) -> #1 metric.la › ... | "Metric Real Estate" | snippet "Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena."
-   #2 metric.la › privacy | "Política de Privacidad | Metric Estate"
-   then: play.google.com, apps.apple.com, then unrelated (The Metric Hotel, Metric band fan page, ingles.com, tripadvisor, spotify). Right panel = Metric (Canadian band). No business panel.
+--- Spanish (hl=es, gl=us) ---
+1. "apartamentos en venta en Miami" (19) -> NOT FOUND
+ p1: zillow, realtor, miamiresidential, movoto, casasyapartamentosmiami, trulia, globaltyinvestment, jamesedition, miamiinmuebles
+ p2: tranio.es, miamicondolifestyle, zillow, costamiamihomes, pfsrealty, luxuryestate, leven.re, mansionesmiami, miamiresidential, utgmiami
+2. "comprar casa en Miami" (19) -> NOT FOUND
+ p1: zillow, movoto, realtor, redfin, trulia, miamiinmuebles, homes.com, miamiresidential, zillow
+ p2: jamesedition, zonaprop.com.ar, sothebysrealty, tranio.es, remax, properstar.cl, barnes-international, century21, ppartnersgroup, luxuryestate
+3. "inmobiliaria en Miami que hable español" (19) -> NOT FOUND
+ p1: montesolrealty, reroot.app, miaminmobiliario, miamirealtors, javiergramirez, gabyfruchteam, globalghomes, rafaelzuzolo, (instagram)
+ p2: reroot.app, santanasalesgroup, century21, miamiresidential, adrirealtor, labradarealty, pfsrealty, rangelyadames, (facebook), bienvenidoaflorida
+4. "condominios en venta North Miami Beach" (19) -> NOT FOUND
+ p1: zillow, trulia, movoto, redfin, realtor, miamiresidential, discoverhomesmiami, redfin, zillow
+ p2: costamiamihomes, condoblackbook, ezhomesearch, homes.com, trulia, subdivisions, bestofluxuryrealty, miamicondolifestyle, discoverhomesmiami, jamesedition
 
-Google Business Profile: no Metric Real Estate business panel on either brand SERP; Google Maps not queried (10-query cap). Not visible in a logged-out search; confirm with owner.
+--- English (hl=en, gl=us) ---
+5. "condos for sale Miami" (19) -> NOT FOUND
+ p1: zillow, miamicondoinvestments, realtor, trulia, redfin, sothebysrealty, homes.com, compass, miamicondos
+ p2: miamiresidence, ppartnersgroup, condo.net, lauriereader, redfin, movewithmomentum, bonadomus, discoverhomesmiami, ezhomesearch, miamicondolifestyle
+6. "homes for sale North Miami Beach" (17) -> NOT FOUND
+ p1: zillow, trulia, redfin, homes.com, movoto, zillow, sothebysrealty, century21
+ p2: compass, exprealty, realtor, zillow, prevu, coldwellbanker, lauriereader, trulia, movoto
+7. "apartments for rent Miami" (19) -> NOT FOUND
+ p1: zillow, apartments.com, miamicondoinvestments, realtor, redfin, trulia, rentcafe, homeclub, compass
+ p2: rent.com, yelp, theblueground, zillow, apartmentrentals.miami, apartmentlist, apartments.com, hotpads, apartmentguide, airbnb
+8. "Miami real estate agency" (19) -> NOT FOUND
+ p1: miamirealestate.agency, zillow, compass, (instagram), cervera, realestate.usnews, realtor, metro1, barnes-miami
+ p2: yelp, (facebook), (reddit), linkedin, homes.com, miamirealestate.com, barnes-international, jillszeder, theagencyre, onesothebysrealty
+
+--- Brand ---
+9. BRAND "metric real estate miami" (hl=en, p1) -> #1 metric.la/en/us | "Metric Real Estate — Miami" | snippet "South Florida real estate — buy, sell, or rent every MLS listing with Metric Real Estate, a full-service, technology-driven brokerage."
+   then: metricrealestate.com (other company), realtor.com agency page "Metric Real Estate LLC" North Miami Beach, linkedin (founder), #5 metric.la/en/servicios "Services — Metric Real Estate", metricrealassets.com (other company), realtor.com agency page Metric Real Estate LLC Aventura, apps.apple.com (app), valuealpha.ai. No business panel.
+10. BRAND "metric.la" (hl=es, p1) -> #3 metric.la/es | "Metric Real Estate" | snippet "Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena."
+   #4 metric.la/es/mls/building/1455-west-33139 | "BAYSHORE TERRACE CONDO — Miami Beach" (MLS building page indexed)
+   #1-2: themetrichotel.com, tripadvisor (The Metric hotel, Los Angeles); later metric.la/privacy, Wikipedia Metric (band). Right panel = The Metric Hotel (Hilton). No Metric Real Estate business panel.
+
+Google Business Profile: no Metric Real Estate business panel on either brand SERP; Google Maps not queried. Not visible in this search; confirm with owner.
 All tabs opened for these tests were closed.

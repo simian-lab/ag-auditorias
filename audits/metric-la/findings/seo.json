@@ -4,20 +4,20 @@
     {
       "id": "seo-1",
       "title": "No apareces cuando un comprador busca inmuebles",
-      "summary": "Quien busca en Google apartamentos o casas en tus barrios encuentra a los portales y a otras inmobiliarias, no a Metric.",
-      "now": "Hicimos 8 búsquedas reales de compradores en Google Colombia (venta en Chicó, arriendo en Chicó Virrey y Rosales, casas en Guaymaral, La Cabrera, lujo, administración de arriendos e inmobiliaria en Bogotá) y metric.la no salió en las dos primeras páginas de ninguna, aunque tienes inmuebles publicados en esos barrios. Solo apareces cuando buscan tu nombre.",
-      "fix": "Crear páginas por barrio y tipo de inmueble, reforzar el título del home y completar los datos de la empresa para empezar a competir en esas búsquedas.",
-      "why": "Cada búsqueda en la que no apareces es un cliente que llega primero a Fincaraíz, Metrocuadrado o Engel & Völkers.",
+      "summary": "Quien busca en Google apartamentos o casas en Miami encuentra a los portales y a otras inmobiliarias, no a Metric.",
+      "now": "Hicimos 8 búsquedas reales de compradores en Google Estados Unidos, cuatro en español («apartamentos en venta en Miami», «comprar casa en Miami», «inmobiliaria en Miami que hable español», «condominios en venta North Miami Beach») y cuatro en inglés (condos y casas en venta, apartamentos en arriendo e inmobiliaria en Miami), y metric.la no salió en las dos primeras páginas de ninguna, aunque publicas inmuebles del MLS de Miami. Solo apareces cuando buscan tu nombre.",
+      "fix": "Crear páginas por zona de Miami y tipo de inmueble, en español y en inglés, reforzar el título de la página de Estados Unidos y completar los datos de la empresa para empezar a competir en esas búsquedas.",
+      "why": "Cada búsqueda en la que no apareces es un cliente que llega primero a Zillow, Realtor.com o a otra inmobiliaria de Miami.",
       "impact": 5,
       "effort": "Medio",
       "headline_metric": "0 de 8 búsquedas",
       "evidence": [
-        "raw/seo-search-tests.txt: 8 buyer queries on google.com hl=es&gl=co, pages 1 and 2 read (18-19 organic results each), metric.la absent from all",
-        "Recurring domains: fincaraiz.com.co, metrocuadrado.com, engelvoelkers.com, ciencuadras.com, listado.mercadolibre.com.co, casas.mitula.com.co, puntopropiedad.com",
-        "Brand queries 'metric real estate' and 'metric.la': metric.la is organic #1 and #2",
-        "raw/seo-sitemap.xml: Metric lists properties in these zones (URL slugs: 22 'apartamento-en-chico', 24 'chico-norte', 23 'chico-navarra', 25 'la-cabrera', 15 'casa-en-guaymaral', 35 'rosales' + 28 'los-rosales')"
+        "raw/seo-search-tests.txt: 8 buyer queries on google.com gl=us (4 hl=es, 4 hl=en), pages 1 and 2 read (17-19 organic results each), metric.la absent from all",
+        "Recurring domains: zillow.com, realtor.com, trulia.com, redfin.com, movoto.com, homes.com, compass.com, miamiresidential.com",
+        "Brand query 'metric real estate miami': metric.la/en/us is organic #1; 'metric.la': metric.la/es is #3 behind The Metric Hotel",
+        "Google indexes Metric MLS building pages (metric.la/es/mls/building/1455-west-33139, 'BAYSHORE TERRACE CONDO — Miami Beach')"
       ],
-      "technical_note": "Real Google Colombia, logged-out BrowserOS browser, 2026-11-06, no captcha. Results vary by person and location. Absent = not in the first ~19 organic results (Google showed 8-10 per page despite num=20, so page 2 was read).",
+      "technical_note": "Real Google USA via Claude in Chrome with &pws=0, 2026-11-18, no captcha. Results vary by person and location. Absent = not in the first ~19 organic results (Google showed 8-10 per page despite num=20, so page 2 was read). Earlier Google Colombia run (0 of 8) kept in raw/seo-search-tests-co-2026-11-06.txt.",
       "pin": null
     },
     {
@@ -125,154 +125,158 @@
   ],
   "search_tests": [
     {
-      "query": "apartamentos en venta Chicó Bogotá",
+      "query": "apartamentos en venta en Miami",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "fincaraiz.com.co",
-        "metrocuadrado.com",
-        "engelvoelkers.com",
-        "listado.mercadolibre.com.co",
-        "casas.mitula.com.co",
-        "brikss.com",
-        "puntopropiedad.com",
-        "ciencuadras.com"
+        "zillow.com",
+        "realtor.com",
+        "miamiresidential.com",
+        "movoto.com",
+        "casasyapartamentosmiami.com",
+        "trulia.com",
+        "jamesedition.com",
+        "miamiinmuebles.com"
       ]
     },
     {
-      "query": "apartamentos en arriendo Chicó Virrey Bogotá",
+      "query": "comprar casa en Miami",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "fincaraiz.com.co",
-        "metrocuadrado.com",
-        "properati.com.co",
-        "puntopropiedad.com",
-        "listado.mercadolibre.com.co",
-        "aptologia.com"
+        "zillow.com",
+        "movoto.com",
+        "realtor.com",
+        "redfin.com",
+        "trulia.com",
+        "miamiinmuebles.com",
+        "homes.com",
+        "miamiresidential.com"
       ]
     },
     {
-      "query": "casas en venta Guaymaral",
+      "query": "inmobiliaria en Miami que hable español",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "metrocuadrado.com",
-        "fincaraiz.com.co",
-        "listado.mercadolibre.com.co",
-        "caminosdeguaymaral.com",
-        "casas.mitula.com.co",
-        "puntopropiedad.com",
-        "guaymaralcasascampestres.com"
+        "montesolrealty.com",
+        "reroot.app",
+        "miaminmobiliario.com",
+        "miamirealtors.com",
+        "javiergramirez.com",
+        "gabyfruchteam.com",
+        "globalghomes.com",
+        "rafaelzuzolo.com"
       ]
     },
     {
-      "query": "apartamento en venta La Cabrera Bogotá",
+      "query": "condominios en venta North Miami Beach",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "metrocuadrado.com",
-        "fincaraiz.com.co",
-        "engelvoelkers.com",
-        "listado.mercadolibre.com.co",
-        "brikss.com",
-        "casas.mitula.com.co",
-        "puntopropiedad.com",
-        "ciencuadras.com"
+        "zillow.com",
+        "trulia.com",
+        "movoto.com",
+        "redfin.com",
+        "realtor.com",
+        "miamiresidential.com",
+        "discoverhomesmiami.com"
       ]
     },
     {
-      "query": "inmobiliaria de lujo Bogotá",
+      "query": "condos for sale Miami",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "engelvoelkers.com",
-        "somosselecto.com",
-        "luxuryestate.com",
-        "mubrickinmobiliaria.com",
-        "urbalia.site",
-        "360luxuryrealestateagency.com",
-        "latinexclusive.com"
+        "zillow.com",
+        "miamicondoinvestments.com",
+        "realtor.com",
+        "trulia.com",
+        "redfin.com",
+        "sothebysrealty.com",
+        "homes.com",
+        "compass.com"
       ]
     },
     {
-      "query": "administración de inmuebles en arriendo Bogotá",
+      "query": "homes for sale North Miami Beach",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "adeincoinmobiliaria.com",
-        "colegiaturainmobiliaria.edu.co",
-        "inmobiliariaospina.com",
-        "bonhabitat.com.co",
-        "inmobiliariasantafe.co",
-        "epicainmobiliaria.com",
-        "administracion.com.co",
-        "grupomaster.co"
+        "zillow.com",
+        "trulia.com",
+        "redfin.com",
+        "homes.com",
+        "movoto.com",
+        "sothebysrealty.com",
+        "century21.com"
       ]
     },
     {
-      "query": "apartamentos en arriendo Rosales Bogotá",
+      "query": "apartments for rent Miami",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "metrocuadrado.com",
-        "fincaraiz.com.co",
-        "casas.mitula.com.co",
-        "engelvoelkers.com",
-        "ciencuadras.com",
-        "listado.mercadolibre.com.co",
-        "casas.trovit.com.co"
+        "zillow.com",
+        "apartments.com",
+        "miamicondoinvestments.com",
+        "realtor.com",
+        "redfin.com",
+        "trulia.com",
+        "rentcafe.com",
+        "compass.com"
       ]
     },
     {
-      "query": "inmobiliaria en Bogotá venta y arriendo",
+      "query": "Miami real estate agency",
       "appears": false,
-      "position_or_note": "No aparece en las páginas 1 y 2 de Google (≈19 resultados orgánicos); a la derecha, ficha de Google de ÉPICA Inmobiliaria (4,9, 1.804 opiniones)",
+      "position_or_note": "No aparece en las páginas 1 y 2 de Google EE.UU. (≈19 resultados orgánicos)",
       "who_appears": [
-        "inmobiliariaospina.com",
-        "metrocuadrado.com",
-        "mubrickinmobiliaria.com",
-        "myhome.com.co",
-        "inmobiliariasantafe.co",
-        "oikosinmobiliaria.com",
-        "eliteinmo.co",
-        "epicainmobiliaria.com"
+        "miamirealestate.agency",
+        "zillow.com",
+        "compass.com",
+        "cervera.com",
+        "realestate.usnews.com",
+        "realtor.com",
+        "metro1.com",
+        "barnes-miami.com"
       ]
     },
     {
-      "query": "metric real estate",
+      "query": "metric real estate miami",
       "appears": true,
-      "position_or_note": "Búsqueda de marca. Puesto 1: «Featured properties - Metric Real Estate» (versión en inglés: «Digital real estate in Miami and Colombia. Buy, sell, and rent homes, apartments, and offices.»); puesto 2: «Sobre Metric Real Estate — Colombia y el sur de Florida». Sin panel de negocio.",
+      "position_or_note": "Búsqueda de marca. Puesto 1: «Metric Real Estate — Miami» («South Florida real estate — buy, sell, or rent every MLS listing with Metric Real Estate…»); puesto 5: «Services — Metric Real Estate». Sin panel de negocio.",
       "who_appears": [
         "metric.la",
-        "play.google.com",
         "metricrealestate.com (otra empresa)",
-        "metricsrealestate.com (otra empresa)",
-        "co.linkedin.com",
-        "informacolombia.com"
+        "realtor.com (ficha de Metric Real Estate LLC)",
+        "linkedin.com",
+        "metricrealassets.com (otra empresa)",
+        "apps.apple.com"
       ]
     },
     {
       "query": "metric.la",
       "appears": true,
-      "position_or_note": "Búsqueda de marca. Puesto 1: «Metric Real Estate» («Inmobiliaria digital en Colombia. Compra, venta y arriendo de apartamentos, casas y oficinas en Bogotá y Cartagena.»); puesto 2: «Política de Privacidad | Metric Estate». El panel lateral es de la banda Metric.",
+      "position_or_note": "Búsqueda de marca. Puesto 3: «Metric Real Estate» («Inmobiliaria digital en Colombia…»); puesto 4: la ficha de un edificio del MLS («BAYSHORE TERRACE CONDO — Miami Beach»). Los puestos 1 y 2 y el panel lateral son del hotel The Metric de Los Ángeles.",
       "who_appears": [
-        "metric.la",
-        "play.google.com",
-        "apps.apple.com",
         "themetrichotel.com",
-        "open.spotify.com"
+        "tripadvisor.com",
+        "metric.la",
+        "expedia.com",
+        "hilton.com",
+        "en.wikipedia.org"
       ]
     }
   ],
-  "search_tests_note": "Búsquedas hechas en Google Colombia (google.com, en español, país Colombia) con un navegador limpio y sin sesión, el 6 de noviembre de 2026, leyendo las dos primeras páginas de resultados. Los resultados varían según la persona, su historial y su ubicación.",
-  "extra_pitch_es": "Hoy, cuando alguien busca en Google apartamentos en Chicó, Rosales, La Cabrera o Guaymaral, encuentra a los portales y no a Metric, aunque tú tienes esos inmuebles; con páginas por barrio, una ficha de empresa clara y datos consistentes podemos ponerte frente a ese comprador sin depender solo de los portales.",
+  "search_tests_note": "Búsquedas hechas en Google Estados Unidos (país EE.UU.), cuatro en español y cuatro en inglés, el 18 de noviembre de 2026, con la personalización de Google desactivada, leyendo las dos primeras páginas de resultados. Los resultados varían según la persona, su historial y su ubicación.",
+  "extra_pitch_es": "Hoy, cuando alguien busca en Google un apartamento o una casa en Miami, en español o en inglés, encuentra a Zillow, Realtor y otras inmobiliarias, no a Metric, aunque tú trabajas todo el MLS de Miami; con páginas por zona, una ficha de empresa clara y datos consistentes podemos ponerte frente a ese comprador.",
   "lighthouse_note": "Lighthouse le da al home un puntaje SEO de 92 (celular y escritorio), pero solo revisa lo básico: que haya título, descripción, enlaces rastreables y textos alternativos. No mide si apareces en búsquedas reales, si tienes páginas por barrio, datos de empresa o información consistente, que es donde el sitio se queda corto.",
   "checks": [
     {
       "id": "seo-appears",
       "result": "fail",
-      "evidence": "Real Google CO (hl=es, gl=co), 2026-11-06: metric.la in 0 of 8 buyer queries (pages 1-2 read for each); appears #1 only on the 2 brand queries. See search_tests and raw/seo-search-tests.txt."
+      "evidence": "Real Google USA (gl=us; 4 queries hl=es, 4 hl=en), 2026-11-18: metric.la in 0 of 8 buyer queries (pages 1-2 read for each); appears only on the 2 brand queries (#1 and #3). See search_tests and raw/seo-search-tests.txt."
     },
     {
       "id": "seo-titles",

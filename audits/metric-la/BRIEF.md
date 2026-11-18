@@ -2,7 +2,7 @@
 
 Audit folder: the folder that contains this file. All paths below are relative to it.
 Site: https://metric.la/es
-Business context: business: Inmobiliaria (Metric Real Estate) con propiedades residenciales y comerciales en arriendo y venta; audience: Personas que buscan arrendar o comprar vivienda (incluido segmento alto) en Bogotá y alrededores; location: Bogotá y alrededores (Chicó, Cabrera, Guaymaral), Colombia (ciudad inferida del sitio); competitors: buscar: inmobiliarias en Bogotá y alrededores; notes: Captura del home aportada por el usuario: el titular del hero ('en tu bolsillo') queda cortado/tapado por las tarjetas de propiedades; banner de cookies en la parte inferior.
+Business context: business: Inmobiliaria (Metric Real Estate) con propiedades residenciales y comerciales en arriendo y venta; audience: Personas que buscan arrendar o comprar vivienda (incluido segmento alto) en Bogotá y alrededores; location: Bogotá y alrededores (Chicó, Cabrera, Guaymaral), Colombia, y Miami / sur de Florida, EE.UU. (oficina en North Miami Beach, MLS de Miami); las búsquedas de compradores en Google se hacen para Miami/EE.UU. (gl=us, mitad en español y mitad en inglés), por indicación del cliente; competitors: buscar: inmobiliarias en Bogotá y alrededores; notes: Captura del home aportada por el usuario: el titular del hero ('en tu bolsillo') queda cortado/tapado por las tarjetas de propiedades; banner de cookies en la parte inferior.
 
 ## Purpose
 Simian produces a short "Top N improvements" micrositio for a prospect, presented in person. The reader is the business owner, non-technical. Each finding must be explainable in one plain sentence about business impact.
