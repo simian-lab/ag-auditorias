@@ -139,7 +139,8 @@ def build_load_page(audit_dir: Path) -> Path | None:
         return None
     report = audit_dir / "report"
     film = report / "assets" / "film"
-    film.mkdir(parents=True, exist_ok=True)
+    shutil.rmtree(film, ignore_errors=True)  # drop frames from earlier runs
+    film.mkdir(parents=True)
     domain = meta.get("domain", "")
     lh = json.loads(client_lh.read_text(encoding="utf-8"))
     if not extract_frames(lh):
