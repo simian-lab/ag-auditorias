@@ -1,10 +1,10 @@
 {
-  "ux": 57,
-  "a11y": 84,
-  "visual": 56,
-  "tech": 87,
-  "overall": 71,
-  "seo": 50,
+  "ux": 55,
+  "a11y": 82,
+  "visual": 64,
+  "tech": 85,
+  "overall": 72,
+  "seo": 47,
   "target": 80,
   "version": "3",
   "rubric_version": "1",
@@ -15,23 +15,23 @@
       "total": 11
     },
     "a11y": {
-      "passed": 7,
-      "partial": 3,
+      "passed": 6,
+      "partial": 4,
       "total": 11
     },
     "visual": {
-      "passed": 4,
+      "passed": 5,
       "partial": 4,
       "total": 11
     },
     "tech": {
-      "passed": 8,
-      "partial": 2,
+      "passed": 7,
+      "partial": 3,
       "total": 11
     },
     "seo": {
-      "passed": 4,
-      "partial": 3,
+      "passed": 3,
+      "partial": 5,
       "total": 10
     }
   }

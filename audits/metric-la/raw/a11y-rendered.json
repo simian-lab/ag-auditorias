@@ -1,0 +1,5523 @@
+{
+ "home-mobile": {
+  "lang": "es",
+  "title": "Metric Real Estate",
+  "headings": [
+   {
+    "t": "H1",
+    "txt": "Tu próximo hogar, en tu bolsillo",
+    "vis": true
+   },
+   {
+    "t": "H2",
+    "txt": "Descubre estos inmuebles",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Estudio en Chapinero",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Lote en Tenjo",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en Cabrera",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Lote en Las Palmas",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en El Poblado",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en Envigado - Loma Del Chocho",
+    "vis": true
+   }
+  ],
+  "landmarks": [
+   "header:1",
+   "nav:1",
+   "main:0",
+   "footer:1",
+   "[role=main]:0",
+   "aside:0"
+  ],
+  "skip": [
+   " -> /es",
+   "Residencial -> /es/residencial/venta",
+   "Comercial -> /es/comercial/venta",
+   "Servicios -> /es/servicios",
+   "Nosotros -> /es/about"
+  ],
+  "imgs": [
+   {
+    "src": "metric-logo.svg",
+    "alt": "",
+    "vis": true,
+    "w": 114
+   },
+   {
+    "src": "pexels_artbovich_6908502_be3e08b727.jpg",
+    "alt": "",
+    "vis": true,
+    "w": 412
+   },
+   {
+    "src": "se_vende_apartaestudio_en_chap_1794171863-6764_5077_f2d35891.jpeg",
+    "alt": "Estudio en Chapinero",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "lote_en_tenjo_1794170612-9251_5787_0e02e3e7.jpeg",
+    "alt": "Lote en Tenjo",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "lujoso_apto_para_arriendo_en_c_1794102067-7859_6164_9e9534b9.jpeg",
+    "alt": "Apartamento en Cabrera",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "73319820261107044352_51a64f87.jpeg",
+    "alt": "Lote en Las Palmas",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "73319120261107012002_07de66dd.jpeg",
+    "alt": "Apartamento en El Poblado",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "73319420261106084856_9b24f4dc.png",
+    "alt": "Apartamento en Envigado - Loma Del Chocho",
+    "vis": true,
+    "w": 378
+   },
+   {
+    "src": "metric-icon.svg",
+    "alt": "Metric Real Estate",
+    "vis": true,
+    "w": 36
+   }
+  ],
+  "svgs_role_img": 0,
+  "controls": [
+   {
+    "s": "a.flex.items-center.mr-9",
+    "name": "Metric Real Estate — inicio",
+    "aria": "Metric Real Estate — inicio",
+    "txt": "",
+    "w": 114,
+    "h": 40,
+    "href": "/es"
+   },
+   {
+    "s": "button.md:hidden.ml-auto.p-2",
+    "name": "Toggle menu",
+    "aria": "Toggle menu",
+    "txt": "",
+    "w": 40,
+    "h": 40,
+    "href": null
+   },
+   {
+    "s": "a",
+    "name": "Descargar la app",
+    "aria": null,
+    "txt": "Descargar la app",
+    "w": 154,
+    "h": 38,
+    "href": "https://play.google.com/store/apps/details?id=la.metric.app"
+   },
+   {
+    "s": "button.me-glow",
+    "name": "RESIDENCIAL",
+    "aria": null,
+    "txt": "RESIDENCIAL",
+    "w": 122,
+    "h": 33,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "COMERCIAL",
+    "aria": null,
+    "txt": "COMERCIAL",
+    "w": 105,
+    "h": 33,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Comprar",
+    "aria": null,
+    "txt": "Comprar",
+    "w": 75,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Arrendar",
+    "aria": null,
+    "txt": "Arrendar",
+    "w": 74,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Proyectos",
+    "aria": null,
+    "txt": "Proyectos",
+    "w": 81,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "select.dock-field-select",
+    "name": "- Bogotá Cartagena Medellín Santa Marta Villavicen",
+    "aria": null,
+    "txt": "- Bogotá Cartagena Medellín Santa Marta ",
+    "w": 342,
+    "h": 23,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "ALCOBAS",
+    "aria": null,
+    "txt": "ALCOBAS",
+    "w": 378,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "METROS",
+    "aria": null,
+    "txt": "METROS",
+    "w": 378,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "PRECIO",
+    "aria": null,
+    "txt": "PRECIO",
+    "w": 378,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.me-press.me-glow.dock-pill-primary",
+    "name": "Buscar",
+    "aria": null,
+    "txt": "Buscar",
+    "w": 137,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "button.me-press.dock-pill-map.flex",
+    "name": "Mapa",
+    "aria": "Mapa",
+    "txt": "",
+    "w": 46,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "button.me-press.me-glow.flex",
+    "name": "Buscar con IA",
+    "aria": null,
+    "txt": "Buscar con IA",
+    "w": 155,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 301,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Ir",
+    "aria": null,
+    "txt": "Ir",
+    "w": 37,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "a.me-cta.text-sm.text-[rgb(111,111,111)]",
+    "name": "Ver todos →",
+    "aria": null,
+    "txt": "Ver todos →",
+    "w": 75,
+    "h": 20,
+    "href": "/es/buscar"
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Estudio en Chapinero 240,000,000 COP ME-",
+    "aria": null,
+    "txt": "VENTA ‹ › Estudio en Chapinero 240,000,0",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/estudio-en-chapinero-mw8wwljq"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA Lote en Tenjo 360,000,000 COP ME-11018 0 0 2",
+    "aria": null,
+    "txt": "VENTA Lote en Tenjo 360,000,000 COP ME-1",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/lote-en-tenjo-mw8wwg2k"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "ARRIENDO ‹ › Apartamento en Cabrera 10,960,000 COP",
+    "aria": null,
+    "txt": "ARRIENDO ‹ › Apartamento en Cabrera 10,9",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/apartamento-en-cabrera-mw7hhrlz"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Lote en Las Palmas 1,800,000,000 COP ME-",
+    "aria": null,
+    "txt": "VENTA ‹ › Lote en Las Palmas 1,800,000,0",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/lote-en-las-palmas-mw7hhfme"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Apartamento en El Poblado 958,000,000 CO",
+    "aria": null,
+    "txt": "VENTA ‹ › Apartamento en El Poblado 958,",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/apartamento-en-el-poblado-mw7hh6mq"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Apartamento en Envigado - Loma Del Choch",
+    "aria": null,
+    "txt": "VENTA ‹ › Apartamento en Envigado - Loma",
+    "w": 380,
+    "h": 352,
+    "href": "/propiedades/apartamento-en-envigado-loma-del-chocho-mw624nq2"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a",
+    "name": "Facebook",
+    "aria": "Facebook",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.facebook.com/metricestate"
+   },
+   {
+    "s": "a",
+    "name": "Instagram",
+    "aria": "Instagram",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.instagram.com/metricestate/"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "TÉRMINOS Y CONDICIONES",
+    "aria": null,
+    "txt": "TÉRMINOS Y CONDICIONES",
+    "w": 179,
+    "h": 17,
+    "href": "/terminos"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "PRIVACIDAD",
+    "aria": null,
+    "txt": "PRIVACIDAD",
+    "w": 81,
+    "h": 17,
+    "href": "/privacy"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "CONTACTO",
+    "aria": null,
+    "txt": "CONTACTO",
+    "w": 65,
+    "h": 17,
+    "href": "/contacto"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "WHATSAPP",
+    "aria": null,
+    "txt": "WHATSAPP",
+    "w": 65,
+    "h": 17,
+    "href": "https://api.whatsapp.com/send?phone=573112648768"
+   },
+   {
+    "s": "a",
+    "name": "Más información",
+    "aria": null,
+    "txt": "Más información",
+    "w": 92,
+    "h": 16,
+    "href": "/es/privacy"
+   },
+   {
+    "s": "button.me-press",
+    "name": "Entendido",
+    "aria": null,
+    "txt": "Entendido",
+    "w": 96,
+    "h": 33,
+    "href": null
+   }
+  ],
+  "fields": [
+   {
+    "s": "select.dock-field-select",
+    "type": "select-one",
+    "name": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": false,
+    "vis": false
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "type": "text",
+    "name": "",
+    "ph": "Ej: ME-2722",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": "numeric",
+    "req": false,
+    "vis": false
+   },
+   {
+    "s": "select.dock-field-select",
+    "type": "select-one",
+    "name": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": false,
+    "vis": true
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "type": "text",
+    "name": "",
+    "ph": "Ej: ME-2722",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": "numeric",
+    "req": false,
+    "vis": true
+   }
+  ],
+  "contrast": [
+   {
+    "txt": "Tu próximo hogar,",
+    "s": "h1.text-[28px].md:text-[52px]",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 28,
+    "fw": 400,
+    "large": true,
+    "y": 117,
+    "x": 16
+   },
+   {
+    "txt": "en tu bolsillo",
+    "s": "span",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 28,
+    "fw": 400,
+    "large": true,
+    "y": 146,
+    "x": 122
+   },
+   {
+    "txt": "Búsqueda con IA, favoritos y alertas al instante —",
+    "s": "p.text-[13.5px].md:text-[16px]",
+    "fg": "rgba(255, 255, 255, 0.9)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.2,
+    "fs": 13.5,
+    "fw": 400,
+    "large": false,
+    "y": 190,
+    "x": 16
+   },
+   {
+    "txt": "Descargar la app",
+    "s": "b",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "A.",
+    "ratio": 17.91,
+    "fs": 13,
+    "fw": 600,
+    "large": false,
+    "y": 253,
+    "x": 171
+   },
+   {
+    "txt": "Gratis · iOS y Android · ES / EN",
+    "s": "p",
+    "fg": "rgba(255, 255, 255, 0.9)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.2,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 294,
+    "x": 84
+   },
+   {
+    "txt": "Residencial",
+    "s": "button.me-glow",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 394,
+    "x": 33
+   },
+   {
+    "txt": "Comercial",
+    "s": "button",
+    "fg": "rgb(58, 64, 70)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 9.62,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 394,
+    "x": 159
+   },
+   {
+    "txt": "Comprar",
+    "s": "button",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BUTTON.",
+    "ratio": 16.43,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 442,
+    "x": 36
+   },
+   {
+    "txt": "Arrendar",
+    "s": "button",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex gap-1 self-start md:self-auto shrin",
+    "ratio": 4.55,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 442,
+    "x": 115
+   },
+   {
+    "txt": "Proyectos",
+    "s": "button",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex gap-1 self-start md:self-auto shrin",
+    "ratio": 4.55,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 442,
+    "x": 193
+   },
+   {
+    "txt": "Ciudad",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 4.94,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 500,
+    "x": 35
+   },
+   {
+    "txt": "Alcobas",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 574,
+    "x": 35
+   },
+   {
+    "txt": "Metros",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 634,
+    "x": 35
+   },
+   {
+    "txt": "Precio",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 694,
+    "x": 35
+   },
+   {
+    "txt": "Buscar",
+    "s": "button.me-press.me-glow.dock-pill-primary",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 14,
+    "fw": 500,
+    "large": false,
+    "y": 739,
+    "x": 29
+   },
+   {
+    "txt": "Buscar con IA",
+    "s": "button.me-press.me-glow.flex",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 14,
+    "fw": 500,
+    "large": false,
+    "y": 739,
+    "x": 228
+   },
+   {
+    "txt": "¿Tienes el código de un inmueble?",
+    "s": "span",
+    "fg": "rgb(58, 64, 70)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex flex-col md:flex-row md:items-cente",
+    "ratio": 8.87,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 803,
+    "x": 33
+   },
+   {
+    "txt": "Ir",
+    "s": "button",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex flex-col md:flex-row md:items-cente",
+    "ratio": 12.81,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 829,
+    "x": 342
+   },
+   {
+    "txt": "Destacados",
+    "s": "div.mb-2",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 14.14,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 923,
+    "x": 16
+   },
+   {
+    "txt": "Descubre estos inmuebles",
+    "s": "h2.text-[26px].md:text-[32px].font-normal",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 14.14,
+    "fs": 26,
+    "fw": 400,
+    "large": true,
+    "y": 948,
+    "x": 16
+   },
+   {
+    "txt": "Ver todos",
+    "s": "a.me-cta.text-sm.text-[rgb(111,111,111)]",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 4.69,
+    "fs": 14,
+    "fw": 400,
+    "large": false,
+    "y": 920,
+    "x": 321
+   },
+   {
+    "txt": "→",
+    "s": "span",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 4.69,
+    "fs": 14,
+    "fw": 400,
+    "large": false,
+    "y": 920,
+    "x": 382
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1028,
+    "x": 29
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1128,
+    "x": 25
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1128,
+    "x": 359
+   },
+   {
+    "txt": "Estudio en Chapinero",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1253,
+    "x": 31
+   },
+   {
+    "txt": "240,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1277,
+    "x": 31
+   },
+   {
+    "txt": "ME-11019",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1286,
+    "x": 319
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1325,
+    "x": 36
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1325,
+    "x": 120
+   },
+   {
+    "txt": "32 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1325,
+    "x": 206
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1325,
+    "x": 291
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1400,
+    "x": 29
+   },
+   {
+    "txt": "Lote en Tenjo",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1625,
+    "x": 31
+   },
+   {
+    "txt": "360,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1649,
+    "x": 31
+   },
+   {
+    "txt": "ME-11018",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1658,
+    "x": 319
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1697,
+    "x": 36
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1697,
+    "x": 117
+   },
+   {
+    "txt": "2374.92 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1697,
+    "x": 200
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1697,
+    "x": 294
+   },
+   {
+    "txt": "Arriendo",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(59, 90, 122)",
+    "bgEl": "SPAN.",
+    "ratio": 6.58,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1772,
+    "x": 29
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1872,
+    "x": 25
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1872,
+    "x": 359
+   },
+   {
+    "txt": "Apartamento en Cabrera",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1997,
+    "x": 31
+   },
+   {
+    "txt": "10,960,000 COP/mes",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 2021,
+    "x": 31
+   },
+   {
+    "txt": "ME-11017",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 2030,
+    "x": 319
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2069,
+    "x": 36
+   },
+   {
+    "txt": "2",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2069,
+    "x": 120
+   },
+   {
+    "txt": "85 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2069,
+    "x": 206
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2069,
+    "x": 291
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 2144,
+    "x": 29
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2244,
+    "x": 25
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2244,
+    "x": 359
+   },
+   {
+    "txt": "Lote en Las Palmas",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 2369,
+    "x": 31
+   },
+   {
+    "txt": "1,800,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 2393,
+    "x": 31
+   },
+   {
+    "txt": "ME-11016",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 2402,
+    "x": 319
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2441,
+    "x": 36
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2441,
+    "x": 120
+   },
+   {
+    "txt": "3278 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2441,
+    "x": 206
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2441,
+    "x": 291
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 2516,
+    "x": 29
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2616,
+    "x": 25
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2616,
+    "x": 359
+   },
+   {
+    "txt": "Apartamento en El Poblado",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 2741,
+    "x": 31
+   },
+   {
+    "txt": "958,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 2765,
+    "x": 31
+   },
+   {
+    "txt": "ME-11015",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 2774,
+    "x": 319
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2813,
+    "x": 36
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2813,
+    "x": 120
+   },
+   {
+    "txt": "33.67 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2813,
+    "x": 206
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 2813,
+    "x": 291
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 2888,
+    "x": 29
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2988,
+    "x": 25
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 2988,
+    "x": 359
+   },
+   {
+    "txt": "Apartamento en Envigado - Loma Del Chocho",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 3113,
+    "x": 31
+   },
+   {
+    "txt": "703,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 3137,
+    "x": 31
+   },
+   {
+    "txt": "ME-11014",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 3146,
+    "x": 319
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 3185,
+    "x": 36
+   },
+   {
+    "txt": "2",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 3185,
+    "x": 120
+   },
+   {
+    "txt": "68.32 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 3185,
+    "x": 206
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 3185,
+    "x": 291
+   },
+   {
+    "txt": "Términos y Condiciones",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3351,
+    "x": 50
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3351,
+    "x": 241
+   },
+   {
+    "txt": "Privacidad",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3351,
+    "x": 261
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3351,
+    "x": 354
+   },
+   {
+    "txt": "Contacto",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3375,
+    "x": 125
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3375,
+    "x": 202
+   },
+   {
+    "txt": "WhatsApp",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 3375,
+    "x": 222
+   },
+   {
+    "txt": "Usamos cookies para medir el tráfico del sitio y s",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 736,
+    "x": 28
+   },
+   {
+    "txt": "Más información",
+    "s": "a",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 756,
+    "x": 142
+   },
+   {
+    "txt": "Entendido",
+    "s": "button.me-press",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 784,
+    "x": 158
+   }
+  ],
+  "docH": 3420,
+  "docW": 412,
+  "errors": [
+   "Failed to load resource: the server responded with a status of 401 ()"
+  ],
+  "tabs": [
+   {
+    "s": "a.flex.items-center",
+    "txt": "Metric Real Estate — inicio",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.md:hidden.ml-auto",
+    "txt": "Toggle menu",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Descargar la app",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.45) 0px 10px 30px -12px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-glow",
+    "txt": "RESIDENCIAL",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "COMERCIAL",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Comprar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 2px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Arrendar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Proyectos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "select.dock-field-select",
+    "txt": "- Bogotá Cartagena Medellín Santa M",
+    "outline": "none 3px rgb(20, 23, 26)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "ALCOBAS",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "METROS",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "PRECIO",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Buscar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.dock-pill-map",
+    "txt": "Mapa",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Buscar con IA",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "txt": "",
+    "outline": "none 3px rgb(58, 64, 70)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Ir",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-cta.text-sm",
+    "txt": "Ver todos →",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA ‹ › Estudio en Chapinero 240,",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto siguiente",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA Lote en Tenjo 360,000,000 COP",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "ARRIENDO ‹ › Apartamento en Cabrera",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto siguiente",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA ‹ › Lote en Las Palmas 1,800,",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto siguiente",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA ‹ › Apartamento en El Poblado",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   }
+  ]
+ },
+ "home-desktop": {
+  "lang": "es",
+  "title": "Metric Real Estate",
+  "headings": [
+   {
+    "t": "H1",
+    "txt": "Tu próximo hogar, en tu bolsillo",
+    "vis": true
+   },
+   {
+    "t": "H2",
+    "txt": "Descubre estos inmuebles",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Estudio en Chapinero",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Lote en Tenjo",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en Cabrera",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Lote en Las Palmas",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en El Poblado",
+    "vis": true
+   },
+   {
+    "t": "H3",
+    "txt": "Apartamento en Envigado - Loma Del Chocho",
+    "vis": true
+   }
+  ],
+  "landmarks": [
+   "header:1",
+   "nav:1",
+   "main:0",
+   "footer:1",
+   "[role=main]:0",
+   "aside:0"
+  ],
+  "skip": [
+   " -> /es",
+   "Residencial -> /es/residencial/venta",
+   "Comercial -> /es/comercial/venta",
+   "Servicios -> /es/servicios",
+   "Nosotros -> /es/about"
+  ],
+  "imgs": [
+   {
+    "src": "metric-logo.svg",
+    "alt": "",
+    "vis": true,
+    "w": 114
+   },
+   {
+    "src": "pexels_artbovich_6908502_be3e08b727.jpg",
+    "alt": "",
+    "vis": true,
+    "w": 1440
+   },
+   {
+    "src": "se_vende_apartaestudio_en_chap_1794171863-6764_5077_f2d35891.jpeg",
+    "alt": "Estudio en Chapinero",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "lote_en_tenjo_1794170612-9251_5787_0e02e3e7.jpeg",
+    "alt": "Lote en Tenjo",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "lujoso_apto_para_arriendo_en_c_1794102067-7859_6164_9e9534b9.jpeg",
+    "alt": "Apartamento en Cabrera",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "73319820261107044352_51a64f87.jpeg",
+    "alt": "Lote en Las Palmas",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "73319120261107012002_07de66dd.jpeg",
+    "alt": "Apartamento en El Poblado",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "73319420261106084856_9b24f4dc.png",
+    "alt": "Apartamento en Envigado - Loma Del Chocho",
+    "vis": true,
+    "w": 297
+   },
+   {
+    "src": "metric-icon.svg",
+    "alt": "Metric Real Estate",
+    "vis": true,
+    "w": 36
+   }
+  ],
+  "svgs_role_img": 0,
+  "controls": [
+   {
+    "s": "a.flex.items-center.mr-9",
+    "name": "Metric Real Estate — inicio",
+    "aria": "Metric Real Estate — inicio",
+    "txt": "",
+    "w": 114,
+    "h": 40,
+    "href": "/es"
+   },
+   {
+    "s": "a.pt-2.pr-1.pb-2",
+    "name": "Residencial",
+    "aria": null,
+    "txt": "Residencial",
+    "w": 90,
+    "h": 38,
+    "href": "/es/residencial/venta"
+   },
+   {
+    "s": "button.flex.items-center.pt-2",
+    "name": "Mostrar secciones de Residencial",
+    "aria": "Mostrar secciones de Residencial",
+    "txt": "",
+    "w": 29,
+    "h": 27,
+    "href": null
+   },
+   {
+    "s": "a.pt-2.pr-1.pb-2",
+    "name": "Comercial",
+    "aria": null,
+    "txt": "Comercial",
+    "w": 82,
+    "h": 38,
+    "href": "/es/comercial/venta"
+   },
+   {
+    "s": "button.flex.items-center.pt-2",
+    "name": "Mostrar secciones de Comercial",
+    "aria": "Mostrar secciones de Comercial",
+    "txt": "",
+    "w": 29,
+    "h": 27,
+    "href": null
+   },
+   {
+    "s": "a.pt-2.pr-1.pb-2",
+    "name": "Servicios",
+    "aria": null,
+    "txt": "Servicios",
+    "w": 76,
+    "h": 38,
+    "href": "/es/servicios"
+   },
+   {
+    "s": "a.pt-2.pr-1.pb-2",
+    "name": "Nosotros",
+    "aria": null,
+    "txt": "Nosotros",
+    "w": 76,
+    "h": 38,
+    "href": "/es/about"
+   },
+   {
+    "s": "button.flex.items-center.gap-1",
+    "name": "Cambiar país",
+    "aria": "Cambiar país",
+    "txt": "Colombia",
+    "w": 70,
+    "h": 20,
+    "href": null
+   },
+   {
+    "s": "button.flex.items-center.gap-1",
+    "name": "Idioma",
+    "aria": "Idioma",
+    "txt": "Español",
+    "w": 60,
+    "h": 20,
+    "href": null
+   },
+   {
+    "s": "a.no-underline",
+    "name": "Ingresar",
+    "aria": null,
+    "txt": "Ingresar",
+    "w": 47,
+    "h": 20,
+    "href": "/es/cuenta/ingresar"
+   },
+   {
+    "s": "a.me-press.me-cta.me-glow",
+    "name": "Contacto →",
+    "aria": null,
+    "txt": "Contacto →",
+    "w": 114,
+    "h": 44,
+    "href": "/es/contacto"
+   },
+   {
+    "s": "a",
+    "name": "Descárgala en el App Store",
+    "aria": null,
+    "txt": "Descárgala en el App Store",
+    "w": 131,
+    "h": 43,
+    "href": "https://apps.apple.com/app/id6781863912"
+   },
+   {
+    "s": "a",
+    "name": "Disponible en Google Play",
+    "aria": null,
+    "txt": "Disponible en Google Play",
+    "w": 132,
+    "h": 43,
+    "href": "https://play.google.com/store/apps/details?id=la.metric.app"
+   },
+   {
+    "s": "button.me-glow",
+    "name": "RESIDENCIAL",
+    "aria": null,
+    "txt": "RESIDENCIAL",
+    "w": 122,
+    "h": 33,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "COMERCIAL",
+    "aria": null,
+    "txt": "COMERCIAL",
+    "w": 105,
+    "h": 33,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Comprar",
+    "aria": null,
+    "txt": "Comprar",
+    "w": 75,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Arrendar",
+    "aria": null,
+    "txt": "Arrendar",
+    "w": 74,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Proyectos",
+    "aria": null,
+    "txt": "Proyectos",
+    "w": 81,
+    "h": 30,
+    "href": null
+   },
+   {
+    "s": "select.dock-field-select",
+    "name": "- Bogotá Cartagena Medellín Santa Marta Villavicen",
+    "aria": null,
+    "txt": "- Bogotá Cartagena Medellín Santa Marta ",
+    "w": 135,
+    "h": 23,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "ALCOBAS",
+    "aria": null,
+    "txt": "ALCOBAS",
+    "w": 121,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "METROS",
+    "aria": null,
+    "txt": "METROS",
+    "w": 121,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "name": "PRECIO",
+    "aria": null,
+    "txt": "PRECIO",
+    "w": 121,
+    "h": 60,
+    "href": null
+   },
+   {
+    "s": "button.me-press.me-glow.dock-pill-primary",
+    "name": "Buscar",
+    "aria": null,
+    "txt": "Buscar",
+    "w": 107,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "button.me-press.dock-pill-map.flex",
+    "name": "Mapa",
+    "aria": "Mapa",
+    "txt": "Mapa",
+    "w": 98,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "button.me-press.me-glow.flex",
+    "name": "Buscar con IA",
+    "aria": null,
+    "txt": "Buscar con IA",
+    "w": 155,
+    "h": 46,
+    "href": null
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 120,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Ir",
+    "aria": null,
+    "txt": "Ir",
+    "w": 37,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "a.me-cta.text-sm.text-[rgb(111,111,111)]",
+    "name": "Ver todos →",
+    "aria": null,
+    "txt": "Ver todos →",
+    "w": 75,
+    "h": 20,
+    "href": "/es/buscar"
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Estudio en Chapinero 240,000,000 COP ME-",
+    "aria": null,
+    "txt": "VENTA ‹ › Estudio en Chapinero 240,000,0",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/estudio-en-chapinero-mw8wwljq"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA Lote en Tenjo 360,000,000 COP ME-11018 0 0 2",
+    "aria": null,
+    "txt": "VENTA Lote en Tenjo 360,000,000 COP ME-1",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/lote-en-tenjo-mw8wwg2k"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "ARRIENDO ‹ › Apartamento en Cabrera 10,960,000 COP",
+    "aria": null,
+    "txt": "ARRIENDO ‹ › Apartamento en Cabrera 10,9",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/apartamento-en-cabrera-mw7hhrlz"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Lote en Las Palmas 1,800,000,000 COP ME-",
+    "aria": null,
+    "txt": "VENTA ‹ › Lote en Las Palmas 1,800,000,0",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/lote-en-las-palmas-mw7hhfme"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Apartamento en El Poblado 958,000,000 CO",
+    "aria": null,
+    "txt": "VENTA ‹ › Apartamento en El Poblado 958,",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/apartamento-en-el-poblado-mw7hh6mq"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a.me-card",
+    "name": "VENTA ‹ › Apartamento en Envigado - Loma Del Choch",
+    "aria": null,
+    "txt": "VENTA ‹ › Apartamento en Envigado - Loma",
+    "w": 299,
+    "h": 298,
+    "href": "/propiedades/apartamento-en-envigado-loma-del-chocho-mw624nq2"
+   },
+   {
+    "s": "button",
+    "name": "Consultar por WhatsApp",
+    "aria": "Consultar por WhatsApp",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Agregar a favoritos",
+    "aria": "Agregar a favoritos",
+    "txt": "",
+    "w": 32,
+    "h": 32,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto anterior",
+    "aria": "Foto anterior",
+    "txt": "‹",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "button",
+    "name": "Foto siguiente",
+    "aria": "Foto siguiente",
+    "txt": "›",
+    "w": 28,
+    "h": 28,
+    "href": null
+   },
+   {
+    "s": "a",
+    "name": "Facebook",
+    "aria": "Facebook",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.facebook.com/metricestate"
+   },
+   {
+    "s": "a",
+    "name": "Instagram",
+    "aria": "Instagram",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.instagram.com/metricestate/"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "TÉRMINOS Y CONDICIONES",
+    "aria": null,
+    "txt": "TÉRMINOS Y CONDICIONES",
+    "w": 179,
+    "h": 17,
+    "href": "/terminos"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "PRIVACIDAD",
+    "aria": null,
+    "txt": "PRIVACIDAD",
+    "w": 81,
+    "h": 17,
+    "href": "/privacy"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "CONTACTO",
+    "aria": null,
+    "txt": "CONTACTO",
+    "w": 65,
+    "h": 17,
+    "href": "/contacto"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "WHATSAPP",
+    "aria": null,
+    "txt": "WHATSAPP",
+    "w": 65,
+    "h": 17,
+    "href": "https://api.whatsapp.com/send?phone=573112648768"
+   },
+   {
+    "s": "a",
+    "name": "Más información",
+    "aria": null,
+    "txt": "Más información",
+    "w": 92,
+    "h": 16,
+    "href": "/es/privacy"
+   },
+   {
+    "s": "button.me-press",
+    "name": "Entendido",
+    "aria": null,
+    "txt": "Entendido",
+    "w": 96,
+    "h": 33,
+    "href": null
+   }
+  ],
+  "fields": [
+   {
+    "s": "select.dock-field-select",
+    "type": "select-one",
+    "name": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": false,
+    "vis": true
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "type": "text",
+    "name": "",
+    "ph": "Ej: ME-2722",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": "numeric",
+    "req": false,
+    "vis": true
+   },
+   {
+    "s": "select.dock-field-select",
+    "type": "select-one",
+    "name": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": false,
+    "vis": false
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "type": "text",
+    "name": "",
+    "ph": "Ej: ME-2722",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": "numeric",
+    "req": false,
+    "vis": false
+   }
+  ],
+  "contrast": [
+   {
+    "txt": "Residencial",
+    "s": "a.pt-2.pr-1.pb-2",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 14.5,
+    "fw": 500,
+    "large": false,
+    "y": 13,
+    "x": 182
+   },
+   {
+    "txt": "Comercial",
+    "s": "a.pt-2.pr-1.pb-2",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 14.5,
+    "fw": 500,
+    "large": false,
+    "y": 13,
+    "x": 305
+   },
+   {
+    "txt": "Servicios",
+    "s": "a.pt-2.pr-1.pb-2",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 14.5,
+    "fw": 500,
+    "large": false,
+    "y": 13,
+    "x": 421
+   },
+   {
+    "txt": "Nosotros",
+    "s": "a.pt-2.pr-1.pb-2",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 14.5,
+    "fw": 500,
+    "large": false,
+    "y": 13,
+    "x": 501
+   },
+   {
+    "txt": "Colombia",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 13,
+    "fw": 600,
+    "large": false,
+    "y": 22,
+    "x": 1058
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgb(150, 148, 137)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 2.79,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 22,
+    "x": 1136
+   },
+   {
+    "txt": "Español",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 13,
+    "fw": 600,
+    "large": false,
+    "y": 22,
+    "x": 1147
+   },
+   {
+    "txt": "Ingresar",
+    "s": "a.no-underline",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "HEADER.flex items-center py-[10px] px-8 sticky ",
+    "ratio": 16.5,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 22,
+    "x": 1228
+   },
+   {
+    "txt": "Contacto",
+    "s": "span",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "A",
+    "ratio": null,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 22,
+    "x": 1314
+   },
+   {
+    "txt": "→",
+    "s": "span",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "A",
+    "ratio": null,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 22,
+    "x": 1375
+   },
+   {
+    "txt": "Tu próximo hogar,",
+    "s": "h1.text-[28px].md:text-[52px]",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 52,
+    "fw": 400,
+    "large": true,
+    "y": 145,
+    "x": 340
+   },
+   {
+    "txt": "en tu bolsillo",
+    "s": "span",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 52,
+    "fw": 400,
+    "large": true,
+    "y": 200,
+    "x": 564
+   },
+   {
+    "txt": "Búsqueda con IA, favoritos y alertas al instante —",
+    "s": "p.text-[13.5px].md:text-[16px]",
+    "fg": "rgba(255, 255, 255, 0.9)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.2,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 271,
+    "x": 440
+   },
+   {
+    "txt": "Descárgala en el",
+    "s": "span",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "A.",
+    "ratio": 17.91,
+    "fs": 9,
+    "fw": 400,
+    "large": false,
+    "y": 351,
+    "x": 627
+   },
+   {
+    "txt": "App Store",
+    "s": "b",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "A.",
+    "ratio": 17.91,
+    "fs": 13,
+    "fw": 600,
+    "large": false,
+    "y": 360,
+    "x": 627
+   },
+   {
+    "txt": "Disponible en",
+    "s": "span",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 9,
+    "fw": 400,
+    "large": false,
+    "y": 351,
+    "x": 770
+   },
+   {
+    "txt": "Google Play",
+    "s": "b",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.23,
+    "fs": 13,
+    "fw": 600,
+    "large": false,
+    "y": 360,
+    "x": 770
+   },
+   {
+    "txt": "Gratis · iOS y Android · ES / EN",
+    "s": "p",
+    "fg": "rgba(255, 255, 255, 0.9)",
+    "bg": "rgb(232, 232, 232)",
+    "bgEl": "SECTION.relative h-[430px] md:h-[560px] overflow",
+    "ratio": 1.2,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 396,
+    "x": 583
+   },
+   {
+    "txt": "Residencial",
+    "s": "button.me-glow",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 540,
+    "x": 273
+   },
+   {
+    "txt": "Comercial",
+    "s": "button",
+    "fg": "rgb(58, 64, 70)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 9.62,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 540,
+    "x": 399
+   },
+   {
+    "txt": "Comprar",
+    "s": "button",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BUTTON.",
+    "ratio": 16.43,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 542,
+    "x": 926
+   },
+   {
+    "txt": "Arrendar",
+    "s": "button",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex gap-1 self-start md:self-auto shrin",
+    "ratio": 4.55,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 542,
+    "x": 1005
+   },
+   {
+    "txt": "Proyectos",
+    "s": "button",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex gap-1 self-start md:self-auto shrin",
+    "ratio": 4.55,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 542,
+    "x": 1083
+   },
+   {
+    "txt": "Ciudad",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 4.94,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 600,
+    "x": 269
+   },
+   {
+    "txt": "Alcobas",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 612,
+    "x": 441
+   },
+   {
+    "txt": "Metros",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 612,
+    "x": 563
+   },
+   {
+    "txt": "Precio",
+    "s": "div",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' ",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 612,
+    "x": 686
+   },
+   {
+    "txt": "Buscar",
+    "s": "button.me-press.me-glow.dock-pill-primary",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 14,
+    "fw": 500,
+    "large": false,
+    "y": 598,
+    "x": 801
+   },
+   {
+    "txt": "Mapa",
+    "s": "span.hidden.md:inline",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 13.89,
+    "fs": 14,
+    "fw": 500,
+    "large": false,
+    "y": 610,
+    "x": 958
+   },
+   {
+    "txt": "Buscar con IA",
+    "s": "button.me-press.me-glow.flex",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 14,
+    "fw": 500,
+    "large": false,
+    "y": 598,
+    "x": 1022
+   },
+   {
+    "txt": "¿Tienes el código de un inmueble?",
+    "s": "span",
+    "fg": "rgb(58, 64, 70)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex flex-col md:flex-row md:items-cente",
+    "ratio": 8.87,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 669,
+    "x": 273
+   },
+   {
+    "txt": "Ir",
+    "s": "button",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(236, 236, 234)",
+    "bgEl": "DIV.flex flex-col md:flex-row md:items-cente",
+    "ratio": 12.81,
+    "fs": 12,
+    "fw": 500,
+    "large": false,
+    "y": 662,
+    "x": 1130
+   },
+   {
+    "txt": "Destacados",
+    "s": "div.mb-2",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 14.14,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 764,
+    "x": 250
+   },
+   {
+    "txt": "Descubre estos inmuebles",
+    "s": "h2.text-[26px].md:text-[32px].font-normal",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 14.14,
+    "fs": 32,
+    "fw": 400,
+    "large": true,
+    "y": 788,
+    "x": 250
+   },
+   {
+    "txt": "Ver todos",
+    "s": "a.me-cta.text-sm.text-[rgb(111,111,111)]",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 4.69,
+    "fs": 14,
+    "fw": 400,
+    "large": false,
+    "y": 761,
+    "x": 1115
+   },
+   {
+    "txt": "→",
+    "s": "span",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(247, 247, 247)",
+    "bgEl": "SECTION.py-10 px-4 md:px-8 md:pt-[136px] md:pb-1",
+    "ratio": 4.69,
+    "fs": 14,
+    "fw": 400,
+    "large": false,
+    "y": 761,
+    "x": 1176
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 877,
+    "x": 263
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 950,
+    "x": 259
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 950,
+    "x": 512
+   },
+   {
+    "txt": "Estudio en Chapinero",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1048,
+    "x": 265
+   },
+   {
+    "txt": "240,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1072,
+    "x": 265
+   },
+   {
+    "txt": "ME-11019",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1081,
+    "x": 471
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 270
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 334
+   },
+   {
+    "txt": "32 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 399
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 464
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 877,
+    "x": 584
+   },
+   {
+    "txt": "Lote en Tenjo",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1048,
+    "x": 586
+   },
+   {
+    "txt": "360,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1072,
+    "x": 586
+   },
+   {
+    "txt": "ME-11018",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1081,
+    "x": 792
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 591
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 645
+   },
+   {
+    "txt": "2374.92 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 700
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 794
+   },
+   {
+    "txt": "Arriendo",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(59, 90, 122)",
+    "bgEl": "SPAN.",
+    "ratio": 6.58,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 877,
+    "x": 904
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 950,
+    "x": 900
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 950,
+    "x": 1153
+   },
+   {
+    "txt": "Apartamento en Cabrera",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1048,
+    "x": 906
+   },
+   {
+    "txt": "10,960,000 COP/mes",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1072,
+    "x": 906
+   },
+   {
+    "txt": "ME-11017",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1081,
+    "x": 1113
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 911
+   },
+   {
+    "txt": "2",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 975
+   },
+   {
+    "txt": "85 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 1040
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1120,
+    "x": 1105
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1197,
+    "x": 263
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 259
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 512
+   },
+   {
+    "txt": "Lote en Las Palmas",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1368,
+    "x": 265
+   },
+   {
+    "txt": "1,800,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1392,
+    "x": 265
+   },
+   {
+    "txt": "ME-11016",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1401,
+    "x": 471
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 270
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 331
+   },
+   {
+    "txt": "3278 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 394
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 466
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1197,
+    "x": 584
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 580
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 832
+   },
+   {
+    "txt": "Apartamento en El Poblado",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1368,
+    "x": 586
+   },
+   {
+    "txt": "958,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1392,
+    "x": 586
+   },
+   {
+    "txt": "ME-11015",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1401,
+    "x": 792
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 591
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 650
+   },
+   {
+    "txt": "33.67 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 710
+   },
+   {
+    "txt": "0",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 789
+   },
+   {
+    "txt": "Venta",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "SPAN.",
+    "ratio": 16.43,
+    "fs": 10,
+    "fw": 400,
+    "large": false,
+    "y": 1197,
+    "x": 904
+   },
+   {
+    "txt": "‹",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 900
+   },
+   {
+    "txt": "›",
+    "s": "button",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgba(255, 255, 255, 0.92)",
+    "bgEl": "BUTTON.",
+    "ratio": 17.99,
+    "fs": 18,
+    "fw": 400,
+    "large": false,
+    "y": 1270,
+    "x": 1153
+   },
+   {
+    "txt": "Apartamento en Envigado - Loma Del Chocho",
+    "s": "h3",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 17.99,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1368,
+    "x": 906
+   },
+   {
+    "txt": "703,000,000 COP",
+    "s": "span",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 15.15,
+    "fs": 18,
+    "fw": 600,
+    "large": false,
+    "y": 1392,
+    "x": 906
+   },
+   {
+    "txt": "ME-11014",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(255, 255, 255)",
+    "bgEl": "DIV.",
+    "ratio": 5.38,
+    "fs": 10.5,
+    "fw": 400,
+    "large": false,
+    "y": 1401,
+    "x": 1113
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 911
+   },
+   {
+    "txt": "2",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 970
+   },
+   {
+    "txt": "68.32 m²",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 1030
+   },
+   {
+    "txt": "1",
+    "s": "span",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "DIV.",
+    "ratio": 16.5,
+    "fs": 12,
+    "fw": 400,
+    "large": false,
+    "y": 1440,
+    "x": 1110
+   },
+   {
+    "txt": "Términos y Condiciones",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 921
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1112
+   },
+   {
+    "txt": "Privacidad",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1132
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1225
+   },
+   {
+    "txt": "Contacto",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1246
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1323
+   },
+   {
+    "txt": "WhatsApp",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1579,
+    "x": 1343
+   },
+   {
+    "txt": "Usamos cookies para medir el tráfico del sitio y s",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 852,
+    "x": 399
+   },
+   {
+    "txt": "Más información",
+    "s": "a",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 853,
+    "x": 836
+   },
+   {
+    "txt": "Entendido",
+    "s": "button.me-press",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 845,
+    "x": 945
+   }
+  ],
+  "docH": 1630,
+  "docW": 1440,
+  "errors": [
+   "Failed to load resource: the server responded with a status of 401 ()"
+  ],
+  "tabs": [
+   {
+    "s": "a.flex.items-center",
+    "txt": "Metric Real Estate — inicio",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.pt-2.pr-1",
+    "txt": "Residencial",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.flex.items-center",
+    "txt": "Mostrar secciones de Residencial",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.pt-2.pr-1",
+    "txt": "Comercial",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.flex.items-center",
+    "txt": "Mostrar secciones de Comercial",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.pt-2.pr-1",
+    "txt": "Servicios",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.pt-2.pr-1",
+    "txt": "Nosotros",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.flex.items-center",
+    "txt": "Cambiar país",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.flex.items-center",
+    "txt": "Idioma",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "Ingresar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-press.me-cta",
+    "txt": "Contacto →",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Descárgala en el App Store",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.45) 0px 10px 30px -12px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Disponible en Google Play",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.45) 0px 10px 30px -12px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-glow",
+    "txt": "RESIDENCIAL",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "COMERCIAL",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Comprar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 2px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Arrendar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Proyectos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "select.dock-field-select",
+    "txt": "- Bogotá Cartagena Medellín Santa M",
+    "outline": "none 3px rgb(20, 23, 26)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "ALCOBAS",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "METROS",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.dock-range-trigger",
+    "txt": "PRECIO",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Buscar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.dock-pill-map",
+    "txt": "Mapa",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Buscar con IA",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.flex-1.md:flex-none",
+    "txt": "",
+    "outline": "none 3px rgb(58, 64, 70)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Ir",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-cta.text-sm",
+    "txt": "Ver todos →",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA ‹ › Estudio en Chapinero 240,",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto siguiente",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "VENTA Lote en Tenjo 360,000,000 COP",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.me-card",
+    "txt": "ARRIENDO ‹ › Apartamento en Cabrera",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.04) 0px 1px 0px 0px, rgba(0, 0, 0, 0.18) 0px",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Consultar por WhatsApp",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Agregar a favoritos",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.",
+    "txt": "Foto anterior",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(0, 0, 0, 0.18) 0px 1px 4px 0px",
+    "visible": true,
+    "fv": true
+   }
+  ]
+ },
+ "contacto-mobile": {
+  "lang": "es",
+  "title": "Contacto — Metric Real Estate",
+  "headings": [
+   {
+    "t": "H1",
+    "txt": "Contáctanos",
+    "vis": true
+   },
+   {
+    "t": "H2",
+    "txt": "Escríbenos",
+    "vis": true
+   }
+  ],
+  "landmarks": [
+   "header:1",
+   "nav:1",
+   "main:1",
+   "footer:1",
+   "[role=main]:0",
+   "aside:0"
+  ],
+  "skip": [
+   " -> /es",
+   "Residencial -> /es/residencial/venta",
+   "Comercial -> /es/comercial/venta",
+   "Servicios -> /es/servicios",
+   "Nosotros -> /es/about"
+  ],
+  "imgs": [
+   {
+    "src": "metric-logo.svg",
+    "alt": "",
+    "vis": true,
+    "w": 114
+   },
+   {
+    "src": "metric-icon.svg",
+    "alt": "Metric Real Estate",
+    "vis": true,
+    "w": 36
+   }
+  ],
+  "svgs_role_img": 0,
+  "controls": [
+   {
+    "s": "a.flex.items-center.mr-9",
+    "name": "Metric Real Estate — inicio",
+    "aria": "Metric Real Estate — inicio",
+    "txt": "",
+    "w": 114,
+    "h": 40,
+    "href": "/es"
+   },
+   {
+    "s": "button.md:hidden.ml-auto.p-2",
+    "name": "Toggle menu",
+    "aria": "Toggle menu",
+    "txt": "",
+    "w": 40,
+    "h": 40,
+    "href": null
+   },
+   {
+    "s": "input#website-hp",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 168,
+    "h": 24,
+    "href": null
+   },
+   {
+    "s": "input",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 348,
+    "h": 45,
+    "href": null
+   },
+   {
+    "s": "input",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 348,
+    "h": 45,
+    "href": null
+   },
+   {
+    "s": "input",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 348,
+    "h": 45,
+    "href": null
+   },
+   {
+    "s": "textarea",
+    "name": "",
+    "aria": null,
+    "txt": "",
+    "w": 348,
+    "h": 157,
+    "href": null
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "name": "Enviar",
+    "aria": null,
+    "txt": "Enviar",
+    "w": 94,
+    "h": 52,
+    "href": null
+   },
+   {
+    "s": "a",
+    "name": "hello@metric.la",
+    "aria": null,
+    "txt": "hello@metric.la",
+    "w": 105,
+    "h": 24,
+    "href": "mailto:hello@metric.la"
+   },
+   {
+    "s": "a",
+    "name": "+57 311 264 8768",
+    "aria": null,
+    "txt": "+57 311 264 8768",
+    "w": 122,
+    "h": 24,
+    "href": "tel:+573112648768"
+   },
+   {
+    "s": "a",
+    "name": "+57 311 264 8768",
+    "aria": null,
+    "txt": "+57 311 264 8768",
+    "w": 122,
+    "h": 24,
+    "href": "https://api.whatsapp.com/send?phone=573112648768&text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20inmuebles."
+   },
+   {
+    "s": "a",
+    "name": "Facebook",
+    "aria": "Facebook",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.facebook.com/metricestate"
+   },
+   {
+    "s": "a",
+    "name": "Instagram",
+    "aria": "Instagram",
+    "txt": "",
+    "w": 20,
+    "h": 20,
+    "href": "https://www.instagram.com/metricestate/"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "TÉRMINOS Y CONDICIONES",
+    "aria": null,
+    "txt": "TÉRMINOS Y CONDICIONES",
+    "w": 179,
+    "h": 17,
+    "href": "/terminos"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "PRIVACIDAD",
+    "aria": null,
+    "txt": "PRIVACIDAD",
+    "w": 81,
+    "h": 17,
+    "href": "/privacy"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "CONTACTO",
+    "aria": null,
+    "txt": "CONTACTO",
+    "w": 65,
+    "h": 17,
+    "href": "/contacto"
+   },
+   {
+    "s": "a.no-underline",
+    "name": "WHATSAPP",
+    "aria": null,
+    "txt": "WHATSAPP",
+    "w": 65,
+    "h": 17,
+    "href": "https://api.whatsapp.com/send?phone=573112648768"
+   },
+   {
+    "s": "a",
+    "name": "Más información",
+    "aria": null,
+    "txt": "Más información",
+    "w": 92,
+    "h": 16,
+    "href": "/es/privacy"
+   },
+   {
+    "s": "button.me-press",
+    "name": "Entendido",
+    "aria": null,
+    "txt": "Entendido",
+    "w": 96,
+    "h": 33,
+    "href": null
+   }
+  ],
+  "fields": [
+   {
+    "s": "input#website-hp",
+    "type": "text",
+    "name": "website",
+    "ph": "",
+    "label": "Website (do not fill)",
+    "aria": null,
+    "ac": "off",
+    "im": null,
+    "req": false,
+    "vis": true
+   },
+   {
+    "s": "input",
+    "type": "text",
+    "name": "",
+    "ph": "",
+    "label": null,
+    "aria": null,
+    "ac": "name",
+    "im": null,
+    "req": true,
+    "vis": true
+   },
+   {
+    "s": "input",
+    "type": "email",
+    "name": "",
+    "ph": "",
+    "label": null,
+    "aria": null,
+    "ac": "email",
+    "im": null,
+    "req": true,
+    "vis": true
+   },
+   {
+    "s": "input",
+    "type": "text",
+    "name": "",
+    "ph": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": false,
+    "vis": true
+   },
+   {
+    "s": "textarea",
+    "type": "textarea",
+    "name": "",
+    "ph": "",
+    "label": null,
+    "aria": null,
+    "ac": null,
+    "im": null,
+    "req": true,
+    "vis": true
+   }
+  ],
+  "contrast": [
+   {
+    "txt": "Contáctanos",
+    "s": "h1",
+    "fg": "rgb(7, 26, 27)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 16.43,
+    "fs": 32,
+    "fw": 400,
+    "large": true,
+    "y": 141,
+    "x": 32
+   },
+   {
+    "txt": "Estamos disponibles para resolver tus dudas sobre ",
+    "s": "p",
+    "fg": "rgb(58, 64, 70)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 9.62,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 196,
+    "x": 32
+   },
+   {
+    "txt": "Website (do not fill)",
+    "s": "label",
+    "fg": "rgb(20, 23, 26)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 16.5,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 341,
+    "x": -9999
+   },
+   {
+    "txt": "Escríbenos",
+    "s": "h2",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 13.89,
+    "fs": 22,
+    "fw": 400,
+    "large": false,
+    "y": 339,
+    "x": 32
+   },
+   {
+    "txt": "Nombre",
+    "s": "label",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.61,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 392,
+    "x": 32
+   },
+   {
+    "txt": "Correo",
+    "s": "label",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.61,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 478,
+    "x": 32
+   },
+   {
+    "txt": "Asunto (opcional)",
+    "s": "label",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.61,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 564,
+    "x": 32
+   },
+   {
+    "txt": "Mensaje",
+    "s": "label",
+    "fg": "rgb(111, 111, 111)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.61,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 650,
+    "x": 32
+   },
+   {
+    "txt": "Enviar",
+    "s": "button.me-press.me-glow",
+    "fg": "rgb(255, 255, 255)",
+    "bg": "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' heig",
+    "bgEl": "BUTTON",
+    "ratio": null,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 848,
+    "x": 32
+   },
+   {
+    "txt": "O contáctanos directamente:",
+    "s": "p",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.94,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 981,
+    "x": 32
+   },
+   {
+    "txt": "Correo:",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.94,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1022,
+    "x": 32
+   },
+   {
+    "txt": "hello@metric.la",
+    "s": "a",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 13.89,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1016,
+    "x": 134
+   },
+   {
+    "txt": "Teléfono:",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.94,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1060,
+    "x": 32
+   },
+   {
+    "txt": "+57 311 264 8768",
+    "s": "a",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 13.89,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1054,
+    "x": 134
+   },
+   {
+    "txt": "WhatsApp:",
+    "s": "span",
+    "fg": "rgb(102, 107, 112)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 4.94,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1098,
+    "x": 32
+   },
+   {
+    "txt": "+57 311 264 8768",
+    "s": "a",
+    "fg": "rgb(15, 42, 43)",
+    "bg": "rgb(246, 245, 242)",
+    "bgEl": "BODY.overflow-x-hidden",
+    "ratio": 13.89,
+    "fs": 16,
+    "fw": 400,
+    "large": false,
+    "y": 1092,
+    "x": 134
+   },
+   {
+    "txt": "Términos y Condiciones",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1320,
+    "x": 50
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1320,
+    "x": 241
+   },
+   {
+    "txt": "Privacidad",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1320,
+    "x": 261
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1320,
+    "x": 354
+   },
+   {
+    "txt": "Contacto",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1344,
+    "x": 125
+   },
+   {
+    "txt": "·",
+    "s": "span",
+    "fg": "rgba(247, 244, 238, 0.3)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 2.55,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1344,
+    "x": 202
+   },
+   {
+    "txt": "WhatsApp",
+    "s": "a.no-underline",
+    "fg": "rgba(247, 244, 238, 0.65)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "FOOTER.px-5 py-7 md:px-8 md:py-6 flex flex-col ",
+    "ratio": 7.4,
+    "fs": 11,
+    "fw": 400,
+    "large": false,
+    "y": 1344,
+    "x": 222
+   },
+   {
+    "txt": "Usamos cookies para medir el tráfico del sitio y s",
+    "s": "span",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 736,
+    "x": 28
+   },
+   {
+    "txt": "Más información",
+    "s": "a",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 400,
+    "large": false,
+    "y": 756,
+    "x": 142
+   },
+   {
+    "txt": "Entendido",
+    "s": "button.me-press",
+    "fg": "rgb(246, 245, 242)",
+    "bg": "rgb(7, 26, 27)",
+    "bgEl": "DIV.",
+    "ratio": 16.43,
+    "fs": 13,
+    "fw": 500,
+    "large": false,
+    "y": 784,
+    "x": 158
+   }
+  ],
+  "docH": 1389,
+  "docW": 412,
+  "errors": [
+   "Failed to load resource: the server responded with a status of 401 ()"
+  ],
+  "tabs": [
+   {
+    "s": "a.flex.items-center",
+    "txt": "Metric Real Estate — inicio",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.md:hidden.ml-auto",
+    "txt": "Toggle menu",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "textarea.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Enviar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "hello@metric.la",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "+57 311 264 8768",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "+57 311 264 8768",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Facebook",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Instagram",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "TÉRMINOS Y CONDICIONES",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "PRIVACIDAD",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "CONTACTO",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "WHATSAPP",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Más información",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press",
+    "txt": "Entendido",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "body"
+   },
+   {
+    "s": "a.flex.items-center",
+    "txt": "Metric Real Estate — inicio",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": false,
+    "fv": true
+   },
+   {
+    "s": "button.md:hidden.ml-auto",
+    "txt": "Toggle menu",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "textarea.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press.me-glow",
+    "txt": "Enviar",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "rgba(255, 255, 255, 0.16) 0px 1px 0px 0px inset, rgba(0, 0, ",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "hello@metric.la",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "+57 311 264 8768",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "+57 311 264 8768",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Facebook",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Instagram",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "TÉRMINOS Y CONDICIONES",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "PRIVACIDAD",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "CONTACTO",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.no-underline",
+    "txt": "WHATSAPP",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.",
+    "txt": "Más información",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "button.me-press",
+    "txt": "Entendido",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "a.flex.items-center",
+    "txt": "Metric Real Estate — inicio",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": false,
+    "fv": true
+   },
+   {
+    "s": "button.md:hidden.ml-auto",
+    "txt": "Toggle menu",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   },
+   {
+    "s": "input.",
+    "txt": "",
+    "outline": "solid 2px rgb(7, 26, 27)",
+    "shadow": "none",
+    "visible": true,
+    "fv": true
+   }
+  ]
+ }
+}

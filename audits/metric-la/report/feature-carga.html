@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- Retries images the host rejects with 429; same snippet as report/render.py IMG_RETRY_JS -->
 <script>addEventListener('error',function(e){var i=e.target;if(!i||i.tagName!=='IMG')return;var n=+(i.dataset.retry||0);if(n>=4)return;i.dataset.retry=n+1;setTimeout(function(){i.src=i.getAttribute('src').split('?')[0]+'?retry='+(n+1)},600*Math.pow(2,n)+Math.random()*600)},true)</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mira cómo carga · metric.la</title>
@@ -235,7 +236,7 @@ details.strip[open] summary::after{content:"–"}
         <span><i style="background:var(--amber)"></i>Cargando (competencia)</span>
         <span><i style="background:var(--ember)"></i>Cargando (tu sitio)</span>
         <span><i style="background:var(--mint)"></i>Contenido principal visible</span>
-        <span class="cap" style="margin-left:auto">Fotogramas reales capturados por Google Lighthouse en móvil, 2026-11-04.</span>
+        <span class="cap" style="margin-left:auto">Fotogramas reales capturados por Google Lighthouse en un computador que simula un celular, 2026-11-18.</span>
       </div>
     </div>
 
@@ -251,7 +252,7 @@ details.strip[open] summary::after{content:"–"}
       </div>
       <div class="card mean">
         <h3>¿Qué significa?</h3>
-        <p>Tu competencia muestra su contenido principal entre 1,3 y 9,7 s. En metric.la, el contenido principal tarda <b>1,7 s</b> en aparecer en esta grabación.</p>
+        <p>Tu competencia muestra su contenido principal entre 0,4 y 8,1 s. En metric.la, el contenido principal tarda <b>1,2 s</b> en aparecer en esta grabación.</p><p class="caveat">En Luxnia un aviso de cookies tapa casi media pantalla en celular y su video de fondo es tan pesado que la medición no alcanzó a terminar, así que sus tiempos son aproximados. En Roberto Collins el titular aparece con una animación después de que la foto ya cargó, y en tu sitio un aviso de cookies ocupa la parte de abajo de la pantalla.</p>
         <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / SOASTA, 2017 (móvil)</span></div>
       </div>
     </div>
@@ -286,7 +287,7 @@ details.strip[open] summary::after{content:"–"}
           <button data-m="cvd">Daltonismo</button>
         </div>
         <p class="say" id="say"></p>
-        <div class="big"><span>2,5</span>:1</div><p class="cap">La frase que explica tu propuesta (IA, favoritos, alertas, app) se pierde sobre la foto para quien ve menos o mira el celular al sol. El mínimo recomendado es 4,5:1 (WCAG).</p>
+        <div class="big"><span>1,8</span>:1</div><p class="cap">La frase que explica la app y la línea «Gratis · iOS y Android» quedan con poco contraste sobre la foto, así que muchos visitantes no captan la propuesta de valor. El mínimo recomendado es 4,5:1 (WCAG).</p>
       </div>
     </div>
   </div>
@@ -297,7 +298,7 @@ details.strip[open] summary::after{content:"–"}
   // Real data. Frames + observed* timings: Lighthouse 13.0.1 mobile trace (raw/*.json, screenshot-thumbnails).
   // "lab" values: Lighthouse simulated slow-4G metrics (first-contentful-paint, largest-contentful-paint, speed-index).
   // blank:true = frame captured before first paint (Lighthouse stores it as an empty/black frame).
-  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "metric.la", "me": true, "fcp": 1609, "lcp": 1658, "frames": [[375, 1], [750, 1], [1125, 1], [1500, 1], [1875], [2250], [2625], [3000]], "lab": {"fcp": 1389, "lcp": 1941, "si": 2893}}, {"slug": "roberto-collins", "name": "Roberto Collins S.A.S.", "url": "robertocollins.com", "me": false, "fcp": 2985, "lcp": 9661, "frames": [[1576, 1], [3151], [4727], [6302], [7878], [9453], [11029], [12604]], "lab": {"fcp": 14434, "lcp": 40339, "si": 24654}}, {"slug": "luxnia", "name": "Luxnia Inmobiliaria", "url": "inmobiliarialuxnia.com", "me": false, "fcp": 2486, "lcp": 4879, "frames": [[733, 1], [1467, 1], [2200, 1], [2934], [3667], [4400], [5134], [5867]], "lab": {"fcp": 6044, "lcp": 34911, "si": 15827}}, {"slug": "selecto", "name": "Selecto", "url": "www.somosselecto.com", "me": false, "fcp": 1329, "lcp": 1329, "frames": [[375, 1], [750, 1], [1125, 1], [1500], [1875], [2250], [2625], [3000]], "lab": {"fcp": 3468, "lcp": 4115, "si": 4178}}];
+  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "metric.la", "me": true, "fcp": 1164, "lcp": 1164, "frames": [[375, 1], [750, 1], [1125, 1], [1500], [1875], [2250], [2625], [3000]], "lab": {"fcp": 1605, "lcp": 2774, "si": 2317}}, {"slug": "roberto-collins", "name": "Roberto Collins S.A.S.", "url": "robertocollins.com", "me": false, "fcp": 3915, "lcp": 8101, "frames": [[1402, 1], [2804, 1], [4206], [5608], [7010], [8412], [9814], [11216]], "lab": {"fcp": 14787, "lcp": 41156, "si": 22014}}, {"slug": "luxnia", "name": "Luxnia Inmobiliaria", "url": "inmobiliarialuxnia.com", "me": false, "fcp": 2570, "lcp": 3534, "frames": [[1454, 1], [2908], [4362], [5817], [7271], [8725], [10179], [11633]], "lab": {"fcp": 4222, "lcp": 30355, "si": 16964}}, {"slug": "selecto", "name": "Selecto", "url": "www.somosselecto.com", "me": false, "fcp": 386, "lcp": 417, "frames": [[375, 1], [750], [1125], [1500], [1875], [2250], [2625], [3000]], "lab": {"fcp": 2313, "lcp": 3989, "si": 2612}}];
   var END=12000, SPEED=2, t=0, playing=false, last=0;
   function s1(ms){return (ms/1000).toFixed(1).replace(".",",")}
   function pct(ms){return Math.min(100,ms/END*100)}

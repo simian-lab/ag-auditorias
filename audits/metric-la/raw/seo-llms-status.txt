@@ -1,2 +1,2 @@
-llms.txt 404
-2026-11-06T21:48:22Z
+llms.txt 404 text/html; charset=utf-8
+llms-full.txt 404 text/html; charset=utf-8

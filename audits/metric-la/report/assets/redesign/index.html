@@ -235,13 +235,28 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
   footer .legal{flex-direction:column;gap:8px}
   .wa-float{display:inline-flex;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
 }
+select.control{appearance:none;-webkit-appearance:none;width:100%;font:inherit;font-size:15.5px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c6166' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/16px;padding-right:36px!important;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--green-500);outline-offset:2px}
+.markets{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:56px}
+.market{display:grid;grid-template-columns:42% 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-height:230px;transition:.2s}
+.market:hover{transform:translateY(-2px);box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.market img{width:100%;height:100%;object-fit:cover}
+.market>div{padding:28px 28px 26px;display:flex;flex-direction:column;gap:8px}
+.market h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1;color:var(--green-700)}
+.market p{color:var(--ink-2);font-size:15.5px}
+.market .go{margin-top:auto;font-weight:600;color:var(--green-700)}
+.market.miami{grid-template-columns:1fr;background:var(--green-700);border-color:var(--green-700)}
+.market.miami h2,.market.miami .go{color:#fff}.market.miami p{color:#d5e3e2}.market.miami .eyebrow{color:#9fd0cc}
+.proof{padding-top:40px}
+@media (max-width:900px){.markets{grid-template-columns:1fr;gap:16px;padding-top:36px}.market{grid-template-columns:1fr;min-height:0}.market img{height:150px}.market h2{font-size:26px}}
+.menu a,.tel span,.store span{white-space:nowrap}
 </style>
 </head>
 <body>
 
 <div class="top">
   <div class="wrap">
-    <span>Inmobiliaria en Colombia y el sur de Florida · Venta, arriendo y administración</span>
+    <span>Inmobiliaria en Bogotá y Miami · Venta, arriendo y administración</span>
     <span><a href="tel:+573112648768">+57 311 264 8768</a><span class="sep">|</span><a href="mailto:hello@metric.la">hello@metric.la</a><span class="sep">|</span>Español · English</span>
   </div>
 </div>
@@ -250,11 +265,12 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
   <div class="wrap">
     <a class="logo" href="#" aria-label="Metric Real Estate, inicio"><img src="metric-logo.svg" alt="Metric Real Estate" width="113" height="40"></a>
     <nav class="menu" aria-label="Principal">
+      <a href="#mercados">Bogotá</a>
+      <a href="#mercados">Miami</a>
       <a href="#">Comprar</a>
       <a href="#">Arrendar</a>
-      <a href="#">Proyectos</a>
       <a href="#">Comercial</a>
-      <a href="#propietarios" class="owner">Vende o arrienda tu inmueble</a>
+      <a href="#propietarios" class="owner">Vende tu inmueble</a>
       <a href="#">Nosotros</a>
     </nav>
     <div class="nav-right">
@@ -269,9 +285,9 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Metric Real Estate · Bogotá</span>
-      <h1>Apartamentos y casas en venta y arriendo en <em>Bogotá</em></h1>
-      <p class="lead">Más de <strong>300 propiedades residenciales y comerciales</strong> en las mejores zonas, con acompañamiento personal en cada etapa: desde la primera visita hasta la firma.</p>
+      <span class="eyebrow">Metric Real Estate · Bogotá · Miami</span>
+      <h1>Compra o arrienda vivienda en <em>Bogotá</em> y&nbsp;<em>Miami</em></h1>
+      <p class="lead">Más de <strong>300 propiedades residenciales y comerciales</strong>, una oficina con licencia en North Miami Beach para comprar en el sur de Florida. Un asesor te acompaña desde la primera visita hasta la firma.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=573112648768&amp;text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20inmuebles.">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
@@ -298,25 +314,25 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
   <div class="wrap" style="padding:0">
     <form class="search" role="search" aria-label="Buscar inmuebles" onsubmit="return false">
       <div class="search-head">
+        <div class="seg" role="group" aria-label="Mercado">
+          <button type="button" aria-pressed="true">Bogotá</button>
+          <button type="button" aria-pressed="false">Miami</button>
+        </div>
         <div class="seg" role="group" aria-label="Operación">
           <button type="button" aria-pressed="true">Comprar</button>
           <button type="button" aria-pressed="false">Arrendar</button>
           <button type="button" aria-pressed="false">Proyectos</button>
         </div>
-        <div class="seg" role="group" aria-label="Tipo de inmueble">
-          <button type="button" aria-pressed="true">Residencial</button>
-          <button type="button" aria-pressed="false">Comercial</button>
-        </div>
       </div>
       <div class="search-body">
-        <div class="field"><label for="f-city">Ciudad</label><div class="control" id="f-city">Bogotá <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div>
-        <div class="field"><label>Alcobas</label><div class="control muted">Cualquiera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div>
-        <div class="field"><label>Metros</label><div class="control muted">Cualquiera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div>
-        <div class="field"><label>Precio</label><div class="control muted">Cualquiera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div>
+        <div class="field"><label for="f-type">Tipo de inmueble</label><select class="control" id="f-type"><option>Apartamento o casa</option><option>Oficina o local</option><option>Bodega</option><option>Lote</option></select></div>
+        <div class="field"><label for="f-beds">Alcobas mínimas</label><select class="control" id="f-beds"><option>Cualquiera</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select></div>
+        <div class="field"><label for="f-area">Área mínima</label><select class="control" id="f-area"><option>Cualquiera</option><option>60 m²+</option><option>100 m²+</option><option>200 m²+</option></select></div>
+        <div class="field"><label for="f-price">Precio máximo</label><select class="control" id="f-price"><option>Cualquiera</option><option>Hasta $500 millones</option><option>Hasta $1.000 millones</option><option>Hasta $3.000 millones</option></select></div>
         <button class="btn btn-primary" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar inmuebles</button>
       </div>
       <div class="search-foot">
-        <div class="code-box"><label for="f-code">¿Tienes un código?</label><input id="f-code" class="control" type="text" inputmode="text" autocapitalize="characters" placeholder="Ej. ME-8322" style="font:inherit;font-family:var(--mono);font-size:14px"></div>
+        <div class="code-box"><label for="f-code">Código del inmueble</label><input id="f-code" class="control" type="text" inputmode="text" autocapitalize="characters" placeholder="Ej. ME-8322" style="font:inherit;font-family:var(--mono);font-size:14px"></div>
         <a class="ai-link" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg>Describe lo que buscas y busca con IA</a>
         <a class="ai-link" href="#">Ver en el mapa →</a>
       </div>
@@ -324,13 +340,18 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
   </div>
 </section>
 
+<section class="markets wrap" id="mercados" aria-label="Mercados">
+  <a class="market" href="#"><img src="card-chico-virrey.webp" alt="" width="760" height="570"><div><span class="eyebrow">Colombia</span><h2>Propiedades en Bogotá</h2><p>Venta y arriendo en Chicó, Cabrera, Guaymaral y alrededores.</p><span class="go">Ver inmuebles en Bogotá →</span></div></a>
+  <a class="market miami" href="#"><div><span class="eyebrow">Estados Unidos · MLS de Miami</span><h2>Propiedades en Miami</h2><p>Compra en el sur de Florida con una inmobiliaria con licencia y oficina en North Miami Beach. Precios en USD, atención en español.</p><span class="go">Ver inmuebles en Miami →</span></div></a>
+</section>
+
 <section class="proof" aria-label="Por qué Metric">
   <div class="wrap">
     <div class="proof-grid">
       <div class="stat"><div class="n">+300</div><p>propiedades residenciales y comerciales</p></div>
-      <div class="stat"><div class="n">2 países</div><p>Colombia (Bogotá y Cartagena) y Miami, Florida</p></div>
+      <div class="stat"><div class="n">CQ1074903</div><p>licencia inmobiliaria en Florida, vigente hasta 2028</p></div>
+      <div class="stat"><div class="n">2 oficinas</div><p>Bogotá y North Miami Beach, Florida</p></div>
       <div class="stat"><div class="n"><span class="ph">[Años en el mercado]</span></div><p>acompañando a compradores, arrendatarios y propietarios</p></div>
-      <div class="stat"><div class="n"><span class="ph">[N.º de clientes / cierres]</span></div><p>familias y empresas que ya encontraron su inmueble</p></div>
     </div>
   </div>
 </section>
@@ -362,12 +383,12 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
         </div>
       </article>
       <article class="card">
-        <div class="img"><img src="card-chico-virrey.webp" alt="Sala amoblada, apartamento en Chicó Virrey" loading="lazy" width="760" height="570"><span class="badge">Venta</span></div>
+        <div class="img"><img src="card-lote-tenjo.webp" alt="Lote rodeado de vegetación con vista a las montañas, Tenjo" loading="lazy" width="760" height="570"><span class="badge">Venta</span></div>
         <div class="body">
-          <h3>Apartamento en Chicó Virrey</h3>
-          <div class="price">$1.500.000.000 <small>COP</small></div>
-          <div class="specs"><span>3 alcobas</span><span>3 baños</span><span>203 m²</span><span>1 parqueadero</span></div>
-          <div class="row"><span class="code">ME-5015</span><a href="#">Ver inmueble →</a></div>
+          <h3>Lote en Tenjo</h3>
+          <div class="price">$360.000.000 <small>COP</small></div>
+          <div class="specs"><span>Lote</span><span>2.374 m²</span><span>Tenjo, Cundinamarca</span></div>
+          <div class="row"><span class="code">ME-11018</span><a href="#">Ver inmueble →</a></div>
         </div>
       </article>
       <article class="card">
@@ -428,10 +449,10 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
       <div class="field"><label for="c-name">Nombre <span class="req">*</span></label><input id="c-name" type="text" autocomplete="name" required></div>
       <div class="field"><label for="c-tel">Celular <span class="req">*</span></label><input id="c-tel" type="tel" autocomplete="tel" placeholder="300 000 0000" required></div>
       <div class="field full"><label>¿Qué quieres hacer? <span class="req">*</span></label>
-        <div class="chips" role="group" aria-label="Qué quieres hacer"><span class="on">Comprar</span><span>Arrendar</span><span>Vender mi inmueble</span><span>Arrendar mi inmueble</span></div>
+        <div class="chips" role="group" aria-label="Qué quieres hacer"><span class="on">Comprar</span><span>Arrendar</span><span>Vender mi inmueble</span><span>Administrar mi inmueble</span></div>
       </div>
-      <div class="field"><label for="c-zone">Zona o barrio</label><input id="c-zone" type="text" placeholder="Ej. Chicó, Cabrera"></div>
-      <div class="field"><label for="c-budget">Presupuesto aproximado</label><div class="control" id="c-budget" style="display:flex;align-items:center;justify-content:space-between;color:var(--mute)">Selecciona un rango <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="field"><label for="c-city">Ciudad</label><select id="c-city" class="control"><option>Bogotá</option><option>Miami / sur de Florida</option></select></div>
+      <div class="field"><label for="c-budget">Presupuesto aproximado</label><select id="c-budget" class="control"><option>Selecciona un rango</option><option>Hasta $1.000 millones COP</option><option>$1.000 a $3.000 millones COP</option><option>Más de $3.000 millones COP</option><option>En USD (Miami)</option></select></div>
       <div class="field full form-foot">
         <p>Al enviar aceptas nuestros Términos y la Política de privacidad.</p>
         <button class="btn btn-primary" type="submit">Quiero que me llamen</button>
@@ -445,7 +466,7 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
   <div class="wrap">
     <div>
       <a class="logo" href="#"><img src="metric-logo.svg" alt="Metric Real Estate" width="108" height="38"></a>
-      <p style="margin-top:16px;max-width:300px">Venta, arriendo y administración de inmuebles residenciales y comerciales en Colombia y el sur de Florida.</p>
+      <p style="margin-top:16px;max-width:300px">Venta, arriendo y administración de inmuebles residenciales y comerciales en Bogotá y Miami.</p><p style="margin-top:10px;font-size:13px">Metric Real Estate LLC · Licencia de Florida CQ1074903</p>
     </div>
     <div>
       <h4>Contacto</h4>
@@ -456,10 +477,10 @@ footer .ph{color:#f1dc9b;background:rgba(241,220,155,.08);border-color:rgba(241,
       </ul>
     </div>
     <div>
-      <h4><span class="ph">[Oficina en Colombia por confirmar]</span></h4>
+      <h4>Oficinas</h4>
       <ul>
-        <li><span class="ph">[Dirección por confirmar]</span></li>
-        <li><span class="ph">[Horario por confirmar]</span></li>
+        <li><b style="color:#fff">Miami</b><br><a href="https://maps.google.com/?q=16137+Biscayne+Blvd+North+Miami+Beach+FL+33160">16137 Biscayne Blvd, North Miami Beach, FL 33160</a></li>
+        <li><b style="color:#fff">Bogotá</b><br><span class="ph">[Dirección por confirmar]</span></li>
       </ul>
     </div>
     <div>

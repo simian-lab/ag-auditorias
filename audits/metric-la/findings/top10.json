@@ -7,197 +7,226 @@
     "count_to": null,
     "suffix": null,
     "headline": "En 0 de 8 búsquedas de compradores en Google apareces tú",
-    "explain": "Buscamos en Google Estados Unidos lo que escribe alguien que quiere comprar o arrendar en Miami, en español y en inglés: «apartamentos en venta en Miami», «inmobiliaria en Miami que hable español», «condos for sale Miami» y otras cinco. En ninguna aparece metric.la en las dos primeras páginas; ese espacio lo ocupan portales como Zillow, Realtor.com y Trulia. Cuando te buscan por tu nombre sí sales, así que el problema no es tu sitio sino que Google no lo asocia con lo que buscan tus compradores.",
-    "source": "Google Estados Unidos (gl=us; 4 búsquedas en español y 4 en inglés), 18 de noviembre de 2026, personalización desactivada; dos primeras páginas de resultados orgánicos"
+    "explain": "Buscamos en Google Estados Unidos lo que escribe alguien que quiere comprar o arrendar en Miami, cuatro veces en español y cuatro en inglés. En ninguna aparece metric.la en las dos primeras páginas; ese espacio lo ocupan portales como Zillow, Realtor.com y Trulia. Cuando te buscan por tu nombre sí sales de primero, así que el problema no es tu sitio sino que Google no lo asocia con lo que buscan tus compradores.",
+    "source": "Google Estados Unidos (gl=us; 4 búsquedas en español y 4 en inglés), 18 de noviembre de 2026; dos primeras páginas de resultados orgánicos. Mismo resultado en dos corridas."
   },
   "items": [
     {
-      "n": 1,
       "c": "ux",
       "src": [
         "ux-1",
-        "visual-6"
+        "visual-1",
+        "visual-2"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tu portada vende la app, no tus casas",
+      "t_plain": "La portada vende la app, no la inmobiliaria",
+      "s": "Quien llega desde Google ve primero una invitación a descargar una app sobre una foto genérica, y no lee que eres una inmobiliaria que vende y arrienda en Bogotá y Miami.",
+      "now": "El titular dice «Tu próximo hogar, en tu bolsillo», el texto habla de la app y los botones principales son App Store y Google Play. Debajo, un buscador con tres botones del mismo peso compite por la atención. La foto de fondo viene de un banco de imágenes gratuito y no es un inmueble tuyo. No aparecen las palabras inmobiliaria, Bogotá ni Miami.",
+      "fix": "Cambiar el titular por una frase que diga qué haces y dónde, por ejemplo «Compra o arrienda vivienda en Bogotá y Miami»; dejar el buscador como única acción principal; pasar la app a una franja propia más abajo, y usar de fondo la foto profesional de una de tus mejores propiedades.",
+      "why": "Si el visitante no reconoce en segundos lo que busca, regresa a Google y entra al siguiente resultado.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 22
+      },
+      "n": 1
+    },
+    {
+      "c": "ux",
+      "src": [
+        "ux-6",
+        "visual-3"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu portada esconde Miami detrás de un selector",
+      "t_plain": "Miami no aparece en la portada en español",
+      "s": "El comprador que busca en Miami entra y solo ve ciudades y precios de Colombia, aunque operas en el sur de Florida.",
+      "now": "La portada abre en «Colombia»: el buscador solo ofrece Bogotá, Cartagena, Medellín, Santa Marta y Villavicencio, y los destacados están en pesos. Para ver Miami hay que cambiar un selector pequeño «Colombia/US». Además, cada página nombra mercados distintos: Nosotros dice «Bogotá y Cartagena»; Servicios, «Bogotá, Cartagena, Santa Marta, Miami y Detroit».",
+      "fix": "Mostrar en la portada dos entradas claras, «Propiedades en Bogotá» y «Propiedades en Miami», también en el menú, y usar la misma lista de ciudades en todas las páginas.",
+      "why": "Si el comprador de Miami no ve Miami de inmediato, supone que no trabajas ese mercado y se va.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 76,
+        "y": 3.5
+      },
+      "n": 2
+    },
+    {
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "ux-3"
       ],
       "imp": 4,
       "eff": "Bajo",
       "stage": 1,
-      "t": "Tu portada pide descargar, no contactarte",
-      "t_plain": "La acción principal de la portada es descargar la app; no hay un botón para hablar con un asesor y en celular Contacto queda escondido en el menú",
-      "s": "El primer botón que ve quien llega lo saca del sitio hacia una tienda de apps, y varios botones compiten con el mismo peso, así que nadie sabe cuál es el paso siguiente.",
-      "now": "Bajo el titular, las acciones principales son App Store y Google Play (en celular, solo «Descargar la app»). No hay «Hablar con un asesor» ni WhatsApp en la primera pantalla; en celular, Contacto solo está dentro del menú. Además, cuatro botones oscuros tienen el mismo estilo destacado (Contacto, Residencial, Buscar y Buscar con IA).",
-      "fix": "Dejar un solo botón principal en la primera pantalla, como «Hablar con un asesor por WhatsApp», junto al buscador. Pasar la descarga de la app a un lugar secundario, con insignias del mismo estilo, y mostrar Contacto también en el encabezado del celular.",
-      "why": "Quien busca vivienda desde Google quiere ver opciones o hablar con alguien ya; pedirle instalar una app primero es un paso que muchos no darán.",
+      "t": "Tu sitio no invita a hablar contigo",
+      "t_plain": "No hay botón para hablar con un asesor",
+      "s": "La única invitación a contactar está en una esquina del menú y el teléfono solo aparece en la página de Contacto; los botones grandes llevan a descargar la app.",
+      "now": "En computador, «Contacto» es un botón pequeño arriba a la derecha; en celular queda escondido dentro del menú y la primera pantalla solo muestra «Descargar la app» y el buscador. El pie de página solo trae «Términos y Condiciones · Privacidad · Contacto · WhatsApp»: el teléfono y el correo solo están en /es/contacto, y no aparece la oficina de North Miami Beach.",
+      "fix": "Poner junto al titular un botón principal «Habla con un asesor» (WhatsApp o formulario), un botón fijo de contacto en celular, y en el pie de todas las páginas el teléfono, el correo y la dirección de cada oficina, todos pulsables.",
+      "why": "Quien compra o arrienda en el segmento alto quiere hablar con una persona antes de decidir, y hoy no encuentra ese camino a la vista.",
       "shot": {
         "img": "desktop-viewport.png",
-        "x": 50,
-        "y": 40
-      }
+        "x": 94,
+        "y": 3.5
+      },
+      "n": 3
     },
     {
-      "n": 2,
-      "c": "ux",
+      "c": "vis",
       "src": [
-        "ux-3",
+        "ux-5",
         "visual-3"
       ],
       "imp": 4,
       "eff": "Medio",
       "stage": 3,
-      "t": "Tu portada no demuestra quién es Metric",
-      "t_plain": "La portada no muestra cifras, testimonios, equipo ni la app funcionando",
-      "s": "Quien va a comprar o arrendar un inmueble de cientos de millones no encuentra en la portada nada que respalde a Metric, y la promesa de inmobiliaria digital con IA no se ve demostrada.",
-      "now": "La portada tiene solo el encabezado, el buscador, 6 inmuebles destacados y el pie de página. No hay años de experiencia, número de inmuebles, testimonios, reseñas, equipo ni capturas de la app. El dato «más de 300 propiedades» solo aparece en Servicios.",
-      "fix": "Agregar después de los destacados una sección corta con datos reales (inmuebles disponibles, zonas atendidas, años), 2 o 3 testimonios de clientes y la app en un celular con un ejemplo real de búsqueda con IA.",
-      "why": "En una decisión tan grande como una vivienda, la confianza en la inmobiliaria pesa tanto como el inmueble; una promesa que no se ve no se cree.",
+      "t": "Tu licencia en Florida está escondida",
+      "t_plain": "Tus credenciales no aparecen donde el cliente decide",
+      "s": "La licencia en Florida, la oficina en Miami y las más de 300 propiedades están escondidas en páginas secundarias, y la portada no da ninguna razón para confiar.",
+      "now": "La portada solo tiene el encabezado, el buscador, seis inmuebles y un pie con cuatro enlaces: no hay años de experiencia, equipo, testimonios, número de propiedades, licencia ni oficinas. La licencia de Florida (CQ1074903, vigente hasta 2028) y la dirección de Miami solo están en Nosotros, y las «más de 300 propiedades», solo en Servicios.",
+      "fix": "Agregar bajo el buscador una franja con 3 o 4 pruebas reales: licencia inmobiliaria en Florida, oficinas en Bogotá y North Miami Beach, más de 300 propiedades, fotos del equipo y 2 o 3 testimonios de clientes.",
+      "why": "En compras de alto valor y a distancia, el cliente necesita ver pruebas de que eres una empresa real y regulada antes de dejar sus datos.",
       "shot": {
         "img": "desktop-fullpage.jpg",
         "x": 50,
-        "y": 49
-      }
+        "y": 93
+      },
+      "n": 4
     },
     {
-      "n": 3,
-      "c": "vis",
+      "c": "a11y",
       "src": [
-        "visual-1"
+        "a11y-2",
+        "a11y-4"
       ],
       "imp": 4,
       "eff": "Bajo",
       "stage": 1,
-      "t": "Tu vitrina principal muestra una casa ajena",
-      "t_plain": "La foto del encabezado es una imagen de archivo que no corresponde a ninguno de tus inmuebles destacados",
-      "s": "La primera imagen que ve un comprador es una foto genérica de internet, así que no le muestra nada de lo que realmente vendes o arriendas.",
-      "now": "El encabezado usa una foto de archivo de un salón con escalera y biblioteca de un banco de imágenes, que no es ninguno de tus inmuebles destacados. Tus inmuebles reales, algunos con fotos excelentes, aparecen recién más abajo.",
-      "fix": "Reemplazar la foto del encabezado por una fotografía profesional de un inmueble real de tu portafolio, idealmente del segmento alto, con el barrio en una nota discreta. Basta cambiar la imagen; el diseño no cambia.",
-      "why": "En finca raíz la confianza nace de ver propiedades reales; una foto de banco hace que la marca se sienta genérica frente a otras inmobiliarias.",
+      "t": "Tus campos no tienen nombre para todos",
+      "t_plain": "Tus formularios no dicen qué pide cada campo",
+      "s": "Quien usa lector de pantalla oye «campo de texto» sin saber si es nombre, correo, ciudad o código, y puede abandonar el contacto o la búsqueda.",
+      "now": "En /es/contacto los textos «Nombre», «Correo», «Asunto» y «Mensaje» se ven encima de cada campo, pero no están conectados en el código, así que para un lector de pantalla los cuatro campos no tienen nombre. En el buscador de la portada pasa lo mismo con «Ciudad» y con la casilla del código del inmueble, que además no muestran dónde está el cursor al usar el teclado.",
+      "fix": "Conectar cada etiqueta con su campo, nombrar la casilla del código («Código del inmueble»), darles el mismo borde de foco que ya usan los demás botones y anunciar los errores al enviar.",
+      "why": "Son los dos caminos para convertir una visita en cliente; si una persona no puede llenarlos, ese contacto se pierde.",
       "shot": {
         "img": "desktop-viewport.png",
-        "x": 20,
-        "y": 35
-      }
+        "x": 23,
+        "y": 70
+      },
+      "n": 5
     },
     {
-      "n": 4,
-      "c": "ux",
+      "c": "a11y",
       "src": [
-        "ux-4",
-        "a11y-2"
+        "a11y-1",
+        "visual-4"
       ],
-      "imp": 4,
+      "imp": 3,
       "eff": "Bajo",
       "stage": 1,
-      "t": "Tus contactos llegan sin número de celular",
-      "t_plain": "El formulario de contacto no pide teléfono ni qué busca la persona, y sus campos no están nombrados para lectores de pantalla",
-      "s": "Los contactos que llegan por la página de contacto no traen celular ni qué buscan, así que el asesor tiene que escribir antes de poder llamar.",
-      "now": "El formulario pide Nombre, Correo, Asunto (opcional) y Mensaje. No pide celular ni si la persona quiere comprar, arrendar o vender, ni zona ni presupuesto. Promete responder «lo antes posible», sin plazo. Además, las 4 etiquetas no están conectadas a sus campos: un lector de pantalla solo anuncia «campo de texto».",
-      "fix": "Agregar celular, una opción de comprar, arrendar o vender, la zona y el presupuesto. Conectar cada etiqueta con su campo, marcar los obligatorios y prometer un tiempo concreto, por ejemplo «te llamamos el mismo día hábil».",
-      "why": "En finca raíz el negocio se cierra por llamada o WhatsApp; un contacto sin teléfono se enfría antes de la primera conversación.",
-      "shot": null
+      "t": "Tu mensaje principal se pierde en la foto",
+      "t_plain": "El texto bajo el titular casi no se lee",
+      "s": "La frase que explica la app y la línea «Gratis · iOS y Android» quedan con poco contraste sobre la foto, así que muchos visitantes no captan el mensaje.",
+      "now": "El subtítulo blanco y la línea de 10 px «GRATIS · iOS Y ANDROID · ES / EN», en letra tipo máquina de escribir, van directamente sobre la foto clara del salón, sin capa oscura. En computador el subtítulo queda en 3,6:1 y la línea pequeña baja hasta 1,8:1; el mínimo recomendado es 4,5:1.",
+      "fix": "Añadir un degradado oscuro suave detrás del texto del encabezado, subir la línea «Gratis…» a 12–13 px en blanco pleno y en la misma letra del resto del texto, hasta llegar a 4,5:1 en toda la foto.",
+      "why": "Es lo primero que ve un comprador; si no se lee, el mensaje pasa desapercibido, sobre todo en el celular al sol.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 44.8
+      },
+      "n": 6
     },
     {
-      "n": 5,
+      "c": "ux",
+      "src": [
+        "ux-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 2,
+      "t": "Tus contactos llegan sin celular ni intención",
+      "t_plain": "El formulario de contacto no pide lo que necesita ventas",
+      "s": "Los mensajes llegan sin teléfono, sin saber si la persona quiere comprar o arrendar, ni dónde ni con qué presupuesto, y el asesor tiene que volver a preguntar.",
+      "now": "/es/contacto pide Nombre, Correo, Asunto (opcional) y Mensaje. No hay campo de celular, tipo de operación, ciudad ni presupuesto, y la promesa de respuesta es «te responderemos lo antes posible», sin un plazo concreto.",
+      "fix": "Agregar celular o WhatsApp, «¿Qué buscas?» (comprar, arrendar, vender, administrar), ciudad y rango de presupuesto, y prometer un plazo concreto de respuesta.",
+      "why": "Un contacto que llega con teléfono e intención se puede atender el mismo día; uno que llega solo con correo se enfría.",
+      "shot": {
+        "img": "ux-contacto-desktop.png",
+        "x": 50,
+        "y": 52
+      },
+      "n": 7
+    },
+    {
       "c": "a11y",
       "src": [
         "a11y-3"
       ],
-      "imp": 4,
-      "eff": "Bajo",
-      "stage": 1,
-      "t": "Tu buscador no se explica a lectores de pantalla",
-      "t_plain": "El selector de Ciudad y el campo del código no tienen etiqueta, y los botones de opción indican cuál está activo solo con el color",
-      "s": "El buscador de inmuebles es la herramienta más importante del sitio, pero quien usa un lector de pantalla no sabe qué pide cada campo ni qué opción está elegida.",
-      "now": "El selector de Ciudad arranca vacío y no tiene etiqueta asociada (Lighthouse lo marca como fallo), y el campo «¿Tienes el código de un inmueble?» tampoco tiene etiqueta. Los botones Residencial y Comercial, y Comprar, Arrendar y Proyectos, indican cuál está activo solo con el color.",
-      "fix": "Asociar etiquetas reales al selector de Ciudad y al campo del código, y anunciar qué opción está seleccionada en cada grupo de botones.",
-      "why": "Quien no logra filtrar por ciudad u operación se va a otra inmobiliaria.",
-      "shot": {
-        "img": "desktop-viewport.png",
-        "x": 50,
-        "y": 70
-      }
-    },
-    {
-      "n": 6,
-      "c": "ux",
-      "src": [
-        "ux-2"
-      ],
-      "imp": 3,
-      "eff": "Bajo",
-      "stage": 2,
-      "t": "Tu titular vende una app, no hogares",
-      "t_plain": "El titular y el subtítulo no dicen que eres una inmobiliaria de venta y arriendo, ni dónde",
-      "s": "Quien llega no lee en el titular que eres una inmobiliaria de compra y arriendo en Bogotá; lee un mensaje sobre una app.",
-      "now": "El titular es «Tu próximo hogar, en tu bolsillo» y el subtítulo habla de «Búsqueda con IA, favoritos y alertas al instante — en la app de Metric». No menciona venta, arriendo ni Bogotá. Además, el subtítulo, en blanco semitransparente sobre zonas claras de la foto, tiene un contraste de entre 2,5:1 y 3,3:1, por debajo del 4,5:1 recomendado.",
-      "fix": "Reescribir el titular para que diga qué haces y dónde, por ejemplo «Apartamentos y casas en venta y arriendo en Bogotá», y llevar el mensaje de la app al subtítulo. Oscurecer la capa de la foto bajo el texto para que se lea bien.",
-      "why": "En los primeros segundos el visitante decide si está en el sitio correcto; si no lo entiende rápido, vuelve a Google.",
-      "shot": {
-        "img": "desktop-viewport.png",
-        "x": 50,
-        "y": 25
-      }
-    },
-    {
-      "n": 7,
-      "c": "ux",
-      "src": [
-        "ux-6"
-      ],
       "imp": 3,
       "eff": "Medio",
       "stage": 2,
-      "t": "Los propietarios no encuentran la puerta",
-      "t_plain": "No hay en la portada ni en el menú una entrada para quien quiere vender o arrendar su inmueble",
-      "s": "Los propietarios, que son la fuente de tu inventario, no encuentran en la portada ni en el menú una invitación a dejar su inmueble con Metric.",
-      "now": "La portada solo le habla a quien busca inmueble. No se menciona vender, consignar ni administrar un inmueble; ese servicio solo aparece dentro de Servicios («Administración de inmuebles»). El menú tiene Residencial, Comercial, Servicios, Nosotros, Ingresar y Contacto.",
-      "fix": "Agregar en el menú y en la portada una entrada clara, «¿Quieres vender o arrendar tu inmueble?», que lleve a un formulario corto o a WhatsApp.",
-      "why": "Sin propietarios que consignen no hay inmuebles que mostrar; captar propietarios es tan importante como captar compradores.",
+      "t": "Tus filtros ignoran a quien usa teclado",
+      "t_plain": "Los filtros de alcobas, metros y precio no funcionan con teclado",
+      "s": "Quien navega sin mouse puede abrir el filtro pero no ajustar el rango, así que no puede afinar su búsqueda de inmuebles.",
+      "now": "Al pulsar Enter sobre «Alcobas» se abre el control deslizante, pero la siguiente pulsación de Tab salta a «Metros» y el panel se cierra. Lo mismo pasa con «Metros» y «Precio». Además, los deslizantes no tienen nombre, así que un lector de pantalla no dice cuál es el mínimo y cuál el máximo.",
+      "fix": "Mover el foco al primer deslizante al abrir el panel, devolverlo al botón al cerrarlo con Escape y nombrar cada deslizante («Alcobas mínimas», «Alcobas máximas»).",
+      "why": "El buscador es la herramienta principal del sitio; si una parte no responde al teclado, esos visitantes no llegan a los inmuebles que buscan.",
       "shot": {
         "img": "desktop-viewport.png",
-        "x": 32,
-        "y": 3.5
-      }
+        "x": 33.5,
+        "y": 69
+      },
+      "n": 8
     },
     {
-      "n": 8,
-      "c": "ux",
-      "src": [
-        "ux-5"
-      ],
-      "imp": 3,
-      "eff": "Bajo",
-      "stage": 1,
-      "t": "Para llamarte, primero hay que buscarte",
-      "t_plain": "El pie de página no muestra teléfono, correo ni dirección",
-      "s": "Quien quiere llamar desde cualquier página tiene que ir hasta Contacto para encontrar el número, y no ve una dirección en Colombia en ningún lado.",
-      "now": "El pie de página solo tiene Términos, Privacidad, Contacto y WhatsApp. El teléfono y el correo solo aparecen en la página de Contacto, y no encontramos dirección ni horario de oficina en Colombia en Inicio, Nosotros, Servicios ni Contacto.",
-      "fix": "Mostrar en el pie de todas las páginas el teléfono y el correo como enlaces que se pueden tocar, junto con la dirección y el horario de la oficina en Bogotá.",
-      "why": "Ver un teléfono y una dirección reales da tranquilidad, y desde el celular permite llamar con un toque.",
-      "shot": {
-        "img": "desktop-fullpage.jpg",
-        "x": 80,
-        "y": 97
-      }
-    },
-    {
-      "n": 9,
       "c": "vis",
       "src": [
-        "visual-2"
+        "visual-5"
       ],
-      "imp": 3,
-      "eff": "Medio",
-      "stage": 3,
-      "t": "Tu foto más débil define tu portafolio",
-      "t_plain": "Las fotos de los inmuebles destacados tienen calidad muy desigual",
-      "s": "Junto a fotos cuidadas aparecen fotos de celular de espacios vacíos y sin preparar, y eso baja la percepción de calidad de todo el portafolio.",
-      "now": "En los destacados, «Apartamento en Cabrera» y «Chico Virrey» tienen fotos luminosas y amobladas. En cambio, «Apartamento en Palermo» muestra un espacio vacío en gran angular, un cable enrollado en el piso y un letrero de «VENDE» al revés en la ventana.",
-      "fix": "Definir un estándar mínimo de fotografía para publicar (luz, encuadre, espacio ordenado, sin letreros) y usar en cada tarjeta la mejor foto del inmueble.",
-      "why": "El comprador juzga la calidad de la inmobiliaria por la foto más débil que ve; un portafolio parejo transmite un servicio profesional.",
+      "imp": 2,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus lotes parecen fichas a medio llenar",
+      "t_plain": "Los lotes muestran «0 alcobas, 0 baños»",
+      "s": "Las tarjetas de lotes parecen fichas con datos faltantes, lo que hace dudar de la calidad de la información.",
+      "now": "Los lotes de Tenjo y Las Palmas muestran la misma fila de iconos que un apartamento, con 0 alcobas, 0 baños y 0 parqueaderos; además la foto del lote de Tenjo es de un día nublado donde el cielo ocupa casi toda la imagen.",
+      "fix": "Mostrar en los lotes solo lo que aplica (área, uso del suelo, ubicación), ocultar los campos en cero y usar para cada destacado una foto luminosa y bien encuadrada.",
+      "why": "Las tarjetas son la vitrina: cada detalle descuidado reduce la confianza en el resto del inventario.",
       "shot": {
         "img": "desktop-fullpage.jpg",
-        "x": 74,
-        "y": 57
-      }
+        "x": 50,
+        "y": 69
+      },
+      "n": 9
+    },
+    {
+      "c": "tec",
+      "src": [
+        "tech-5"
+      ],
+      "imp": 2,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Un enlace viejo termina en callejón sin salida",
+      "t_plain": "La página de error está en inglés y sin salida",
+      "s": "Quien llega a un enlace viejo o mal escrito ve un mensaje técnico en inglés, sin menú ni forma de volver a las propiedades.",
+      "now": "Una dirección que no existe, por ejemplo un inmueble ya vendido que alguien compartió, muestra solo «404: This page could not be found.», sin logo, menú ni buscador.",
+      "fix": "Crear una página de error con tu marca, en español e inglés, con el buscador de propiedades y enlaces a arriendo, venta y contacto.",
+      "why": "Los anuncios de propiedades se comparten y caducan; una página de error útil convierte ese visitante perdido en una nueva búsqueda.",
+      "shot": {
+        "img": "tech-404-desktop.png",
+        "x": 50,
+        "y": 50
+      },
+      "n": 10
     }
   ]
 }

@@ -1,25 +1,25 @@
 {
-  "verdict": "Metric tiene una base elegante, con un verde profundo y algunas fotos excelentes, pero cada botón, título y etiqueta habla con su propia voz, y la portada termina pareciendo el prototipo de una app más que la vitrina de una inmobiliaria de alto nivel.",
+  "verdict": "Metric tiene una base elegante, con un verde profundo y buenas fotos de sus inmuebles, pero cada botón, título y etiqueta habla con su propia voz, y la portada termina pareciendo la promoción de una app más que la vitrina de una inmobiliaria de alto nivel.",
   "inventory": [
     {
       "kind": "buttons",
       "title": "Diez botones, cinco estilos, ningún protagonista",
-      "explanation": "En la primera pantalla conviven botones oscuros con brillo, insignias de tienda blancas y transparentes, botones con borde y un selector gris, y cuatro de ellos llevan el mismo verde oscuro destacado. Cuando todo parece importante, el visitante no sabe qué tocar y lee el conjunto como improvisado.",
+      "explanation": "En la primera pantalla conviven botones verde oscuro con textura, insignias de tienda blanca y translúcida, botones con borde, un selector gris y la franja de cookies, y cuatro piezas llevan el mismo verde destacado (Contacto, Residencial, Buscar y Buscar con IA). Cuando todo parece importante, el visitante no sabe qué tocar y lee el conjunto como improvisado.",
       "items": [
         {
-          "label": "Contacto (encabezado, estilo destacado)",
+          "label": "Contacto (encabezado, verde destacado)",
           "crop": "ui-crop-btn-contacto.png"
         },
         {
-          "label": "Residencial (pestaña con el mismo estilo destacado)",
+          "label": "Residencial (pestaña con el mismo verde destacado)",
           "crop": "ui-crop-btn-residencial.png"
         },
         {
-          "label": "Buscar (estilo destacado)",
+          "label": "Buscar (verde destacado)",
           "crop": "ui-crop-btn-buscar.png"
         },
         {
-          "label": "Buscar con IA (estilo destacado)",
+          "label": "Buscar con IA (verde destacado)",
           "crop": "ui-crop-btn-buscar-ia.png"
         },
         {
@@ -27,7 +27,7 @@
           "crop": "ui-crop-btn-appstore.png"
         },
         {
-          "label": "Google Play (insignia transparente)",
+          "label": "Google Play (insignia translúcida)",
           "crop": "ui-crop-btn-googleplay.png"
         },
         {
@@ -47,31 +47,31 @@
           "crop": "ui-crop-btn-entendido.png"
         }
       ],
-      "proposal": "Un solo botón principal verde por pantalla (Buscar), un botón secundario con borde para todo lo demás, y las pestañas y selectores con un estilo propio que no compita con los botones."
+      "proposal": "Un solo botón principal verde por pantalla (Buscar en la portada, Habla con un asesor en el resto), un botón secundario con borde para todo lo demás, y pestañas y selectores con un estilo propio que no compita con los botones."
     },
     {
       "kind": "headings",
       "title": "Tres alfabetos para titular una sola página",
-      "explanation": "El titular de portada usa una letra clásica con serifa, el título de sección una letra moderna sin serifa y las etiquetas, el pie y el texto bajo las tiendas una letra de máquina de escribir en mayúsculas espaciadas. El ojo no encuentra un orden de lectura y cada bloque parece diseñado por una persona distinta.",
+      "explanation": "El titular de portada usa una letra clásica con serifa, el título de sección una letra moderna sin serifa y las etiquetas, el pie y la línea bajo las tiendas una letra de máquina de escribir en mayúsculas espaciadas. El ojo no encuentra un orden de lectura y cada bloque parece diseñado por una persona distinta.",
       "items": [
         {
-          "label": "Titular de portada (serifa)",
+          "label": "Titular de portada (serifa, 52 px)",
           "crop": "ui-crop-h-hero.png"
         },
         {
-          "label": "Texto en mayúsculas de máquina sobre la foto",
+          "label": "Línea en mayúsculas de máquina sobre la foto (10 px)",
           "crop": "ui-crop-h-mono-hero.png"
         },
         {
-          "label": "Etiqueta de sección DESTACADOS (máquina, espaciada)",
+          "label": "Etiqueta DESTACADOS (máquina, espaciada)",
           "crop": "ui-crop-h-eyebrow.png"
         },
         {
-          "label": "Título de sección (sin serifa)",
+          "label": "Título de sección (sin serifa, 32 px)",
           "crop": "ui-crop-h-section.png"
         },
         {
-          "label": "Título de tarjeta (sin serifa, liviano)",
+          "label": "Título de tarjeta (sin serifa, 16 px liviano)",
           "crop": "ui-crop-h-card-title.png"
         },
         {
@@ -83,8 +83,8 @@
     },
     {
       "kind": "cards",
-      "title": "Cada tarjeta pide atención en más de diez lugares",
-      "explanation": "Una tarjeta de inmueble muestra a la vez etiqueta de operación, WhatsApp, favorito, dos flechas, VIDEO, título, precio, código y cuatro datos con iconos, y el precio en letra de máquina con comas («1,500,000,000 COP») pesa más que el barrio. Además Venta va en verde, Arriendo en azul y Video en gris translúcido, tres lenguajes para un mismo tipo de etiqueta.",
+      "title": "Cada tarjeta pide atención en diez lugares",
+      "explanation": "Una tarjeta de inmueble muestra a la vez etiqueta de operación, WhatsApp, favorito, dos flechas, título, precio, código y cuatro datos con iconos, y el precio en letra de máquina con comas («240,000,000 COP», 18 px seminegrita) pesa más que el barrio (16 px liviano). Además Venta va en verde y Arriendo en azul, y los datos en cero (0 parqueaderos) se muestran igual que los reales.",
       "items": [
         {
           "label": "Etiqueta VENTA (verde)",
@@ -93,10 +93,6 @@
         {
           "label": "Etiqueta ARRIENDO (azul)",
           "crop": "ui-crop-card-arriendo.png"
-        },
-        {
-          "label": "Etiqueta VIDEO (gris translúcido)",
-          "crop": "ui-crop-card-video.png"
         },
         {
           "label": "WhatsApp y favorito sobre la foto",
@@ -111,16 +107,16 @@
           "crop": "ui-crop-card-price.png"
         },
         {
-          "label": "Datos del inmueble en cápsula",
+          "label": "Datos del inmueble en cápsula, con «0» visible",
           "crop": "ui-crop-card-specs.png"
         }
       ],
-      "proposal": "Foto limpia con una sola etiqueta, debajo barrio y tipo como título, el precio en formato colombiano ($1.500.000.000) y una línea discreta con alcobas, baños y área; WhatsApp y favorito aparecen al pasar el cursor."
+      "proposal": "Foto limpia con una sola etiqueta, debajo barrio y tipo como título, el precio en formato colombiano ($240.000.000) y una línea discreta con alcobas, baños y área que oculte los ceros; WhatsApp y favorito aparecen al pasar el cursor."
     },
     {
       "kind": "colors",
       "title": "Doce colores para una marca de dos",
-      "explanation": "La marca es un verde profundo sobre fondo piedra, pero la hoja de estilos define cuatro verdes, un azul, tres blancos y cremas y cuatro grises, y el azul solo aparece en lo relacionado con arriendo. Cada matiz extra sin un trabajo claro hace que las secciones no se sientan de la misma empresa.",
+      "explanation": "La marca es un verde profundo sobre fondo piedra, pero la hoja de estilos define cuatro verdes, un azul, tres blancos y cremas y cuatro grises, y el azul solo aparece en la etiqueta de Arriendo. Cada matiz extra sin un trabajo claro hace que las secciones no se sientan de la misma empresa.",
       "items": [
         {
           "label": "Verde 900",
@@ -171,12 +167,12 @@
           "hex": "#969489"
         }
       ],
-      "proposal": "Quedarse con siete colores, cada uno con un trabajo fijo: verde de marca para la acción principal, verde noche para fondos oscuros, salvia para estados activos, piedra y blanco de fondo, tinta y gris para texto."
+      "proposal": "Quedarse con siete colores, cada uno con un trabajo fijo: verde de marca para la acción principal, verde noche para fondos oscuros, salvia para estados activos y Arriendo, piedra y blanco de fondo, tinta y gris para texto."
     },
     {
       "kind": "fonts",
       "title": "Una letra de programador para tus precios",
-      "explanation": "La portada carga tres familias, y la monoespaciada, pensada para escribir código, aparece 45 veces en el HTML de la portada: precios, etiquetas, campos del buscador y pie. Junto con diez tamaños de letra distintos, entre 9 y 18 píxeles, el texto se siente técnico y frío donde el comprador espera calidez y confianza.",
+      "explanation": "La portada carga tres familias, y la monoespaciada, pensada para escribir código, se aplica 42 veces en el HTML de la portada: precios, etiquetas, campos del buscador y pie. Junto con doce tamaños de letra distintos, de 9 a 52 píxeles, el texto se siente técnico y frío donde el comprador espera calidez y confianza.",
       "items": [
         {
           "label": "Titular de portada",
@@ -242,8 +238,8 @@
         "family": "Inter Tight"
       }
     ],
-    "button_primary": "Fondo Verde Metric #0f2a2b liso, texto blanco Inter Tight 16 px seminegrita, esquinas de 14 px, sin brillo ni textura; uno solo por pantalla (Buscar en la portada, Hablar con un asesor en el resto).",
-    "button_secondary": "Fondo transparente con borde de 1,5 px Verde Metric, texto Verde Metric Inter Tight 16 px, mismas medidas que el principal; para Mapa, Ir, Ver todos y la descarga de la app (insignias oficiales del mismo tamaño, ambas en negro).",
+    "button_primary": "Fondo Verde Metric #0f2a2b liso, texto blanco Inter Tight 16 px seminegrita, esquinas de 14 px, sin brillo ni textura; uno solo por pantalla (Buscar en la portada, Habla con un asesor en el resto).",
+    "button_secondary": "Fondo transparente con borde de 1,5 px Verde Metric, texto Verde Metric Inter Tight 16 px, mismas medidas que el principal; para Mapa, Ir, Ver todos y Buscar con IA. Las insignias de App Store y Google Play, oficiales, del mismo tamaño y ambas en negro, en una franja propia más abajo.",
     "heading_scale": [
       "H1 portada: Fraunces 56/60 px",
       "H2 sección: Fraunces 36/42 px",
@@ -253,22 +249,23 @@
     ]
   },
   "hierarchy_notes": [
-    "Portada (primera pantalla): lo primero que salta es la insignia blanca de App Store, el elemento más claro sobre la foto, y luego el titular sobre «tu bolsillo»; debería verse primero qué vende Metric y dónde, y enseguida el buscador.",
-    "Buscador: cuatro piezas verde oscuro con el mismo peso (Residencial, Buscar, Buscar con IA y, arriba, Contacto) reparten la mirada; debería destacar solo Buscar, con Buscar con IA como opción secundaria.",
-    "Encabezado: Contacto es el único botón relleno del menú y compite con el buscador; debería ser un enlace claro y dejar el peso al botón principal de la página, o ser ese botón único en las páginas sin buscador.",
+    "Portada (primera pantalla): lo primero que salta es la insignia blanca de App Store, el elemento más claro sobre la foto, junto al titular sobre «tu bolsillo»; debería verse primero qué vende Metric y dónde (Bogotá y Miami), y enseguida el buscador.",
+    "Buscador: tres piezas verde oscuro con el mismo peso (Residencial, Buscar y Buscar con IA) más Contacto arriba reparten la mirada; debería destacar solo Buscar, con Buscar con IA y Mapa como opciones secundarias.",
+    "Encabezado: Contacto es el único botón relleno del menú pero es pequeño (13 px) y en una esquina; el selector «Colombia», que decide si se ve Miami, pasa desapercibido. Debería haber un botón claro de asesor junto al titular y entradas visibles a Bogotá y Miami.",
     "Destacados: en cada tarjeta manda el precio en letra de máquina, más grueso que el barrio; debería leerse foto, luego barrio y tipo, luego precio en formato colombiano.",
-    "Aviso de cookies: en una ventana de 1440×900 la franja oscura de cookies tapa la parte superior de la primera fila de inmuebles; debería ser una tarjeta pequeña en una esquina.",
-    "Pie de página: solo enlaces en letra de máquina gris sobre verde noche; debería mostrar primero teléfono, WhatsApp y dirección."
+    "Aviso de cookies: en una ventana de 1440×900 la franja oscura de cookies (y≈835–888) tapa la parte superior de la primera fila de inmuebles; debería ser una tarjeta pequeña en una esquina.",
+    "Pie de página: solo cuatro enlaces en letra de máquina gris sobre verde noche; debería mostrar primero teléfono, WhatsApp, correo y las oficinas de Bogotá y North Miami Beach."
   ],
   "sharp_headlines": {
-    "1": "Tu portada pide descargar, no contactarte",
-    "2": "Tu portada no demuestra quién es Metric",
-    "3": "Tu vitrina principal muestra una casa ajena",
-    "4": "Tus contactos llegan sin número de celular",
-    "5": "Tu buscador no se explica a lectores de pantalla",
-    "6": "Tu titular vende una app, no hogares",
-    "7": "Los propietarios no encuentran la puerta",
-    "8": "Para llamarte, primero hay que buscarte",
-    "9": "Tu foto más débil define tu portafolio"
+    "1": "Tu portada vende la app, no tus casas",
+    "2": "Tu portada esconde Miami detrás de un selector",
+    "3": "Tu sitio no invita a hablar contigo",
+    "4": "Tu licencia en Florida está escondida",
+    "5": "Tus campos no tienen nombre para todos",
+    "6": "Tu mensaje principal se pierde en la foto",
+    "7": "Tus contactos llegan sin celular ni intención",
+    "8": "Tus filtros ignoran a quien usa teclado",
+    "9": "Tus lotes parecen fichas a medio llenar",
+    "10": "Un enlace viejo termina en callejón sin salida"
   }
 }

@@ -4,64 +4,31 @@
       "name": "Roberto Collins S.A.S.",
       "slug": "roberto-collins",
       "url": "https://robertocollins.com/",
-      "why_competitor": "Bogotá real estate agency with rent and sale listings in Chicó Norte, La Cabrera, Rosales and Santa Bárbara, plus houses, fincas, offices/locales and bodegas (residential and commercial); same zones and mixed residential/commercial offer as Metric.",
+      "why_competitor": "Given by the user. Bogotá real estate agency with rent and sale listings (Arriendos, Ventas, Proyectos incl. Cerros de los Alpes), residential and commercial; same city and mixed offer as Metric.",
       "screenshot": "screenshots/bench-roberto-collins.png",
-      "five_second": {
-        "what": true,
-        "for_whom": false,
-        "text_headline": true,
-        "trust_proof": false,
-        "quote_cta": false
-      },
-      "notes_es": "Dice claramente 'Inmobiliaria' y tiene buscador, pero el subtítulo es genérico y casi ilegible sobre la foto; el contacto visible es un número de WhatsApp y el enlace Contacto del menú.",
-      "lighthouse": {
-        "performance": 0.39,
-        "accessibility": 0.68,
-        "seo": 0.85,
-        "total_mb": 6.08
-      }
+      "five_second": {"what": true, "for_whom": false, "text_headline": true, "trust_proof": false, "quote_cta": false},
+      "notes_es": "Dice 'Inmobiliaria' y tiene buscador, pero el titular entra con animación (a los 6 segundos la foto aún se veía en blanco y sin texto), el subtítulo es genérico y el contacto visible es solo un número de WhatsApp y el enlace Contacto del menú.",
+      "lighthouse": {"performance": 0.38, "accessibility": 0.69, "seo": 0.85, "total_mb": 6.05}
     },
     {
       "name": "Luxnia Inmobiliaria",
       "slug": "luxnia",
       "url": "https://inmobiliarialuxnia.com/",
-      "why_competitor": "Boutique luxury agency in Bogotá (Rosales, La Cabrera, El Nogal, Chicó, Santa Bárbara) that also lists houses in the Sabana de Bogotá (Chía); buy, sell and rent in the same high-end segment as Metric.",
+      "why_competitor": "Given by the user. Boutique luxury agency in Bogotá ('Inmobiliaria de lujo en Bogotá con presencia en Colombia'); buy, sell and rent in the same high-end segment as Metric.",
       "screenshot": "screenshots/bench-luxnia.png",
-      "five_second": {
-        "what": true,
-        "for_whom": true,
-        "text_headline": true,
-        "trust_proof": false,
-        "quote_cta": true
-      },
-      "notes_es": "El mensaje más claro del grupo ('Inmobiliaria de lujo en Bogotá') con botones Vende, Compra y Arrienda; un banner de cookies tapa la esquina inferior derecha y la página pesa más de 40 MB por el video. Sus tiempos de carga son aproximados: la medición no terminó del todo y un aviso de cookies tapa casi la mitad de la pantalla en celular.",
-      "lighthouse": {
-        "performance": 0.38,
-        "accessibility": 0.92,
-        "seo": 0.92,
-        "total_mb": 13.52
-      }
+      "five_second": {"what": true, "for_whom": true, "text_headline": true, "trust_proof": false, "quote_cta": true},
+      "notes_es": "El mensaje más claro del grupo ('Inmobiliaria de lujo en Bogotá') con botones Vende, Compra y Arrienda, pero un aviso de cookies tapa la esquina inferior derecha (casi media pantalla en celular) y la página pesa unos 30 MB por el video; su medición de carga no alcanzó a terminar.",
+      "lighthouse": {"performance": 0.45, "accessibility": 0.91, "seo": 0.92, "total_mb": 30.43}
     },
     {
       "name": "Selecto",
       "slug": "selecto",
       "url": "https://www.somosselecto.com/",
-      "why_competitor": "Luxury brokerage based in Bogotá (Cra 14 # 77a-61) selling and renting high-value apartments and penthouses in Chicó, La Cabrera and Santa Ana; direct competitor in Metric's luxury residential segment.",
+      "why_competitor": "Given by the user. Luxury brokerage based in Bogotá selling and renting high-value apartments and penthouses; direct competitor in Metric's luxury residential segment.",
       "screenshot": "screenshots/bench-selecto.png",
-      "five_second": {
-        "what": true,
-        "for_whom": false,
-        "text_headline": false,
-        "trust_proof": false,
-        "quote_cta": true
-      },
-      "notes_es": "Foto de alto nivel y accesos directos a Comprar, Arrendar y Publicar, pero la primera pantalla no muestra ningún titular que diga quiénes son ni dónde operan.",
-      "lighthouse": {
-        "performance": 0.75,
-        "accessibility": 0.97,
-        "seo": 1,
-        "total_mb": 1.48
-      }
+      "five_second": {"what": true, "for_whom": false, "text_headline": false, "trust_proof": false, "quote_cta": true},
+      "notes_es": "Foto de alto nivel y accesos directos a Comprar, Arrendar y Publicar, y carga rápida, pero la primera pantalla no tiene ningún titular que diga quiénes son ni dónde operan.",
+      "lighthouse": {"performance": 0.85, "accessibility": 0.97, "seo": 1, "total_mb": 1.47}
     }
   ],
   "client": {
@@ -69,20 +36,10 @@
     "slug": "client",
     "url": "https://metric.la/es",
     "screenshot": "screenshots/desktop-viewport.png",
-    "five_second": {
-      "what": true,
-      "for_whom": false,
-      "text_headline": true,
-      "trust_proof": false,
-      "quote_cta": true
-    },
-    "notes_es": "Buscador completo (Residencial/Comercial, Comprar/Arrendar, IA) y botón Contacto visible, pero el titular habla de la app y no dice que eres una inmobiliaria de Bogotá ni para qué segmento.",
-    "lighthouse": {
-      "performance": 0.98,
-      "accessibility": 0.93,
-      "seo": 0.92,
-      "total_mb": 1.05
-    }
+    "five_second": {"what": true, "for_whom": false, "text_headline": true, "trust_proof": false, "quote_cta": true},
+    "notes_es": "El más rápido y liviano del grupo, con buscador completo y botón Contacto visible, pero el titular ('Tu próximo hogar, en tu bolsillo') vende la app y no dice que eres una inmobiliaria de Bogotá y Miami ni para qué segmento.",
+    "lighthouse": {"performance": 0.95, "accessibility": 0.96, "seo": 0.92, "total_mb": 1.02}
   },
-  "takeaway_es": "Ni Metric ni Roberto Collins, Luxnia o Selecto muestran en su primera pantalla una sola prueba de confianza (años, inmuebles vendidos o clientes), y Luxnia ya se presenta como 'inmobiliaria de lujo en Bogotá' mientras Metric habla de su app: decir dónde y para quién trabajas, con un número que lo respalde, es la diferencia más rápida de ganar."
+  "load_caveat_es": "En Luxnia un aviso de cookies tapa casi media pantalla en celular y su video de fondo es tan pesado que la medición no alcanzó a terminar, así que sus tiempos son aproximados. En Roberto Collins el titular aparece con una animación después de que la foto ya cargó, y en tu sitio un aviso de cookies ocupa la parte de abajo de la pantalla.",
+  "takeaway_es": "Tu página carga más rápido y pesa menos que las de tus tres competidores, pero Luxnia le dice en una frase al visitante que es «la inmobiliaria de lujo en Bogotá» y la tuya le habla de una app."
 }

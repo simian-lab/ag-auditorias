@@ -1,7 +1,14 @@
-Googlebot 200 212925
-GPTBot 200 212925
-OAI-SearchBot 200 212925
-ChatGPT-User 200 212925
-ClaudeBot 200 212925
-PerplexityBot 200 212925
-2026-11-06T21:52:57Z
+# Bot UA tests, 2026-11-18T18:46:30Z, from a normal residential IP (spoofed UA = indication only)
+Googlebot /es -> 200 redirect=
+Googlebot /es/us -> 200 redirect=
+GPTBot /es -> 200 redirect=
+GPTBot /es/us -> 200 redirect=
+OAI-SearchBot /es -> 200 redirect=
+OAI-SearchBot /es/us -> 200 redirect=
+ChatGPT-User /es -> 200 redirect=
+ChatGPT-User /es/us -> 200 redirect=
+ClaudeBot /es -> 200 redirect=
+ClaudeBot /es/us -> 200 redirect=
+PerplexityBot /es -> 200 redirect=
+PerplexityBot /es/us -> 200 redirect=
+cookie NEXT_LOCALE=es /es/us -> 307 https://metric.la/en/us
