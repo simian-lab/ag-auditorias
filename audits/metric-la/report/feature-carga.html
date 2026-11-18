@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<script>addEventListener('error',function(e){var i=e.target;if(!i||i.tagName!=='IMG')return;var n=+(i.dataset.retry||0);if(n>=4)return;i.dataset.retry=n+1;setTimeout(function(){i.src=i.getAttribute('src').split('?')[0]+'?retry='+(n+1)},600*Math.pow(2,n)+Math.random()*600)},true)</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mira cómo carga · metric.la</title>
 <style>@font-face{font-family:"Source Sans 3";src:url(assets/fonts/SourceSans3-latin-wght.woff2) format("woff2");font-weight:200 900;font-display:swap}@font-face{font-family:Vollkorn;src:url(assets/fonts/Vollkorn-latin-wght.woff2) format("woff2");font-weight:400 900;font-display:swap}</style>
