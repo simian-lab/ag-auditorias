@@ -77,6 +77,22 @@ class ExtraTest(unittest.TestCase):
         self.assertIn("Solo Shell", wa)
         self.assertNotIn("Example – Inicio", wa)
 
+    def test_whatsapp_today_shows_real_og_preview(self):
+        def f(d):
+            d["share_preview"]["today"] = {"home": {"og:title": "Example Hoy", "og:description": "Desc real de hoy"}}
+            d["share_preview"]["today_og_image_local"] = "og-today.jpg"
+        self._edit("presence.json", f)
+        shutil.copy(self.audit / "screenshots" / "desktop-fullpage.jpg", self.audit / "screenshots" / "og-today.jpg")
+        sec = extra.build(self.ctx(extra=True))
+        wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):sec.html.index("Propuesta", sec.html.index("Así se ve tu enlace en WhatsApp"))]
+        self.assertIn("Desc real de hoy", wa)
+        self.assertIn("og-today.jpg", wa)
+
+    def test_serp_site_name_only_when_given(self):
+        self.assertNotIn('class="sa-extra-site"', extra.build(self.ctx(extra=True)).html)
+        self._edit("presence.json", lambda d: d["serp"]["today"][0].__setitem__("site_name", "example.com"))
+        self.assertIn('class="sa-extra-site"', extra.build(self.ctx(extra=True)).html)
+
     def test_whatsapp_today_falls_back_to_serp_title(self):
         sec = extra.build(self.ctx(extra=True))
         wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):]

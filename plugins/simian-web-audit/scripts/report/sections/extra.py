@@ -18,7 +18,8 @@ CSS = """
 .sa-extra-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin:16px 0 8px}
 .sa-extra-lnow{color:var(--ember-ink)}.sa-extra-lnew{color:var(--mint-ink)}
 .sa-extra-serp{border:1px solid var(--fog);border-radius:12px;padding:16px;font-family:Arial,sans-serif;letter-spacing:0}
-.sa-extra-serp p{font-size:12px;color:#4d5156}.sa-extra-serp b{display:block;font-size:19px;font-weight:400;color:#1a0dab;margin:4px 0}
+.sa-extra-serp p{font-size:12px;color:#4d5156}
+.sa-extra-serp .sa-extra-site{display:flex;align-items:center;gap:8px;font-size:14px;color:#202124;margin-bottom:2px}.sa-extra-site i{width:22px;height:22px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-size:11px;font-style:normal;font-weight:700;color:#202124}.sa-extra-serp b{display:block;font-size:19px;font-weight:400;color:#1a0dab;margin:4px 0}
 .sa-extra-serp span{font-size:13px;color:#4d5156}.sa-extra-serp .sa-extra-miss{color:var(--ember-ink);font-style:italic}
 .sa-extra-wa{background:#e5ddd5;border-radius:12px;padding:16px}
 .sa-extra-bubble{background:#dcf8c6;border-radius:10px;padding:6px;max-width:320px;margin-left:auto;font-family:Arial,sans-serif;letter-spacing:0;font-size:12px;color:#555}
@@ -87,16 +88,31 @@ def _previews(ctx, pres) -> str:
                 '<span class="sa-extra-miss">No definiste una descripción: Google toma este texto de tu página.</span>')
     else:
         desc = '<span class="sa-extra-miss">Sin descripción: Google improvisa el texto que ve el comprador.</span>'
+    domain = ctx["meta"].get("domain", "")
+    # Google shows the site name (with its icon) above the breadcrumb
+    sn = today.get("site_name")
+    site = f'<p class="sa-extra-site"><i>{esc(sn[:1].upper())}</i>{esc(sn)}</p>' if sn else ""
     serp = (f'<div class="card sa-extra-card"><h3>Así apareces en Google</h3><p class="why">Lo primero que ve un comprador nuevo.</p>'
-            f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-serp"><p>{esc(today["url"])}</p><b>{esc(today["title"])}</b>{desc}</div>'
-            f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div><div class="sa-extra-serp"><p>{esc(today["url"])}</p><b>{esc(prop["title"])}</b>'
+            f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-serp">{site}<p>{esc(today["url"])}</p><b>{esc(today["title"])}</b>{desc}</div>'
+            f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div><div class="sa-extra-serp">{site}<p>{esc(today["url"])}</p><b>{esc(prop["title"])}</b>'
             f'<span>{esc(prop["description"])}</span></div></div>')
-    img = ctx["asset"](sp["og_image_local"]) if sp.get("og_image_local") else None
-    og_img = f'<img src="{img}" alt="">' if img else ""
+
+    def bubble(img_local, title, desc):
+        img = ctx["asset"](img_local) if img_local else None
+        og_img = f'<img src="{img}" alt="">' if img else ""
+        return (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-og">{og_img}'
+                f'<div><b>{esc(title)}</b>{esc(desc or "")}</div></div><span class="sa-extra-link">{esc(domain or today["url"])}</span></div></div>')
+    # today's real link preview (og tags read without JavaScript); plain title only when the site has no og image/description
+    th = (pres["share_preview"].get("today") or {}).get("home") or {}
+    t_img = pres["share_preview"].get("today_og_image_local")
+    if t_img or (th.get("og:description") or "").strip():
+        wa_today = bubble(t_img, th.get("og:title") or preview_title, (th.get("og:description") or "").strip())
+    else:
+        wa_today = (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(domain or today["url"])}</span>'
+                    f'{esc(preview_title)}</div></div>')
     share = (f'<div class="card sa-extra-card"><h3>Así se ve tu enlace en WhatsApp</h3><p class="why">Cada vez que compartes el sitio con un cliente.</p>'
-             f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div><div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(today["url"])}</span>{esc(preview_title)}</div></div>'
-             f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div><div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-og">{og_img}'
-             f'<div><b>{esc(sp["og:title"])}</b>{esc(sp["og:description"])}</div></div><span class="sa-extra-link">{esc(today["url"])}</span></div></div></div>')
+             f'<div class="sa-extra-lbl sa-extra-lnow">Hoy</div>{wa_today}'
+             f'<div class="sa-extra-lbl sa-extra-lnew">Propuesta</div>{bubble(sp.get("og_image_local"), sp["og:title"], sp["og:description"])}</div>')
     return f'<div class="sa-extra-pair">{serp}{share}</div>'
 
 
