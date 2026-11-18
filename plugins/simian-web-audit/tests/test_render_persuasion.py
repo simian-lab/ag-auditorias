@@ -67,6 +67,14 @@ class PersuasionTest(unittest.TestCase):
         self._set_client(for_whom=True, quote_cta=True, trust_proof=True, text_headline=True, total_mb=1.0)
         self.assertIsNone(benchmark.build(self.ctx()))
 
+    def test_showcase_tip_opens_toward_free_side(self):
+        from report.sections import showcase
+        ctx = self.ctx()
+        f = next(f for a in ctx["areas"].values() for f in a.get("findings", []) if f.get("pin"))
+        f["pin"].update(screenshot="desktop-viewport.png", x_pct=90, y_pct=80)
+        ctx["top10"]["items"][0]["src"] = [f["id"]]
+        self.assertIn('class="sa-show-hot sa-show-l sa-show-u"', showcase._pins(ctx))
+
     def test_critique_skips_missing_crop(self):
         sec = critique.build(self.ctx())
         self.assertIn("ui-crop-btn.png", sec.html)

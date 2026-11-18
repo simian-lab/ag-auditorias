@@ -28,7 +28,8 @@ CSS = """
 .sa-show-pins .sa-show-hot{opacity:1;transform:scale(1);pointer-events:auto}
 .sa-show-dot{width:30px;height:30px;border-radius:50%;background:var(--ember);color:#fff;font-weight:600;font-size:13px;display:grid;place-items:center;box-shadow:0 0 0 7px rgba(255,62,0,.2);cursor:pointer}
 .sa-show-tip{position:absolute;left:40px;top:-4px;width:220px;background:var(--carbon);color:#fff;font-size:12.5px;line-height:1.4;padding:10px 12px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s}
-.sa-show-hot:hover .sa-show-tip{opacity:1}
+.sa-show-hot:hover{z-index:4}.sa-show-hot:hover .sa-show-tip{opacity:1}
+.sa-show-l .sa-show-tip{left:auto;right:40px}.sa-show-u .sa-show-tip{top:auto;bottom:-4px}
 .sa-show-tip b{display:block;font-size:13px;margin-bottom:2px}
 .sa-show-cap{position:relative;z-index:2;text-align:center;color:#fff;margin-top:20px;font-size:14px}
 @media(max-width:860px){.sa-show-browser{margin:32px 16px 0}.sa-show-notch button{padding:6px 10px;font-size:13px}}
@@ -51,7 +52,9 @@ def _pins(ctx) -> str:
         if not pin:
             continue
         x, y = min(max(pin["x_pct"], 2), 92), min(max(pin["y_pct"], 2), 92)
-        out.append(f'<div class="sa-show-hot" style="left:{x}%;top:{y}%"><div class="sa-show-dot">{it["n"]}</div>'
+        # open the tip toward the side with room: the browser frame clips anything that overflows
+        flip = (" sa-show-l" if x > 55 else "") + (" sa-show-u" if y > 60 else "")
+        out.append(f'<div class="sa-show-hot{flip}" style="left:{x}%;top:{y}%"><div class="sa-show-dot">{it["n"]}</div>'
                    f'<div class="sa-show-tip"><b>{esc(it["t_plain"])}</b>{esc(it["s"])}</div></div>')
     return "".join(out)
 
