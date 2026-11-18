@@ -1,0 +1,41 @@
+{
+  "rounds": 3,
+  "sites": {
+    "client": {
+      "lcp_ms": [
+        1529,
+        1531,
+        1671
+      ],
+      "median_ms": 1531,
+      "spread_ms": 66
+    },
+    "roberto-collins": {
+      "lcp_ms": [
+        7383,
+        8819,
+        9338
+      ],
+      "median_ms": 8819,
+      "spread_ms": 827
+    },
+    "luxnia": {
+      "lcp_ms": [
+        3184,
+        3597,
+        3671
+      ],
+      "median_ms": 3597,
+      "spread_ms": 214
+    },
+    "selecto": {
+      "lcp_ms": [
+        587,
+        592,
+        653
+      ],
+      "median_ms": 592,
+      "spread_ms": 30
+    }
+  }
+}
