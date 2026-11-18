@@ -65,6 +65,37 @@ def _vision_big(areas: dict) -> str:
     return ""
 
 
+def client_loads_slower(sites: list[dict]) -> bool:
+    """True when the client's main content appears later than in most competitors (or there are none to compare)."""
+    me = next(s for s in sites if s["me"])
+    others = [s for s in sites if not s["me"]]
+    return not others or sum(o["lcp"] < me["lcp"] for o in others) * 2 > len(others)
+
+
+def _bench(audit_dir: Path) -> dict:
+    p = audit_dir / "findings" / "benchmark.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def _collect(audit_dir: Path, lh: dict, domain: str, bench: dict) -> list[tuple[dict, dict]]:
+    out = [(site_data(lh, "client", "Tu sitio", domain, True), lh)]
+    for c in bench.get("competitors", []):
+        p = audit_dir / "raw" / f"bench-{c.get('slug', '')}-lh.json"
+        if c.get("slug") and p.exists():
+            clh = json.loads(p.read_text(encoding="utf-8"))
+            out.append((site_data(clh, c["slug"], c["name"], c["url"].split("://")[-1].rstrip("/"), False), clh))
+    return out
+
+
+def show_in_report(audit_dir: Path) -> bool:
+    """The page is always built (it is part of the audit); the report links it only when the client loads slower."""
+    client_lh = audit_dir / "raw" / "lighthouse-mobile.json"
+    if not (audit_dir / "report" / "feature-carga.html").exists() or not client_lh.exists():
+        return False
+    lh = json.loads(client_lh.read_text(encoding="utf-8"))
+    return client_loads_slower([s for s, _ in _collect(audit_dir, lh, "", _bench(audit_dir))])
+
+
 def _copy(meta_domain: str, sites: list[dict]) -> tuple[str, str]:
     me = next(s for s in sites if s["me"])
     others = [s for s in sites if not s["me"]]
@@ -105,17 +136,11 @@ def build_load_page(audit_dir: Path) -> Path | None:
     lh = json.loads(client_lh.read_text(encoding="utf-8"))
     if not extract_frames(lh):
         return None
-    sites = [site_data(lh, "client", "Tu sitio", domain, True)]
-    _write_frames(lh, "client", film)
-    bench_path = f / "benchmark.json"
-    bench = json.loads(bench_path.read_text(encoding="utf-8")) if bench_path.exists() else {}
-    if bench:
-        for c in bench.get("competitors", []):
-            p = audit_dir / "raw" / f"bench-{c.get('slug', '')}-lh.json"
-            if c.get("slug") and p.exists():
-                clh = json.loads(p.read_text(encoding="utf-8"))
-                sites.append(site_data(clh, c["slug"], c["name"], c["url"].split("://")[-1].rstrip("/"), False))
-                _write_frames(clh, c["slug"], film)
+    bench = _bench(audit_dir)
+    collected = _collect(audit_dir, lh, domain, bench)
+    for site, slh in collected:
+        _write_frames(slh, site["slug"], film)
+    sites = [s for s, _ in collected]
     end = timeline_end([s["lcp"] for s in sites])
     areas = {a: json.loads((f / f"{a}.json").read_text(encoding="utf-8")) for a in ["a11y"] if (f / f"{a}.json").exists()}
     headline, meaning = _copy(domain, sites)

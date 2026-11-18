@@ -20,14 +20,18 @@ def _mb(v: float) -> str:
     return f"{v:.1f}".replace(".", ",") + " MB"
 
 
-def _card(ctx, site, me: bool) -> str:
+HEAVY_MB = 5
+
+
+def _card(ctx, site, me: bool, checks, show_weight: bool) -> str:
     src = ctx["asset"](site["screenshot"].split("/")[-1])
     img = f'<img src="{src}" alt="Primera pantalla de {esc(site.get("name", ""))}">' if src else ""
     rows = "".join(f'<div class="sa-bench-ck"><span>{q}</span>'
                    f'{"<span class=sa-bench-y>Sí</span>" if site["five_second"][k] else "<span class=sa-bench-n>No</span>"}</div>'
-                   for q, k in CHECKS)
-    mb = site["lighthouse"]["total_mb"]
-    rows += f'<div class="sa-bench-ck"><span>Peso de la página</span><span class="{"sa-bench-n" if mb > 5 else "sa-bench-y"}">{_mb(mb)}</span></div>'
+                   for q, k in checks)
+    if show_weight:
+        mb = site["lighthouse"]["total_mb"]
+        rows += f'<div class="sa-bench-ck"><span>Peso de la página</span><span class="{"sa-bench-n" if mb > HEAVY_MB else "sa-bench-y"}">{_mb(mb)}</span></div>'
     name = "Tu sitio" if me else site["name"]
     return f'<div class="card sa-bench-card{" sa-bench-me" if me else ""}">{img}<div class="sa-bench-bd"><h4>{esc(name)}</h4>{rows}</div></div>'
 
@@ -36,7 +40,14 @@ def build(ctx) -> Section | None:
     b = ctx["benchmark"]
     if not b:
         return None
-    cards = _card(ctx, b["client"], True) + "".join(_card(ctx, c, False) for c in b["competitors"])
+    # Only show what the client has wrong: the checks it fails and its weight if heavy; same rows on every card.
+    client = b["client"]
+    checks = [(q, k) for q, k in CHECKS if not client["five_second"][k]]
+    show_weight = client["lighthouse"]["total_mb"] > HEAVY_MB
+    if not checks and not show_weight:
+        return None
+    cards = (_card(ctx, client, True, checks, show_weight)
+             + "".join(_card(ctx, c, False, checks, show_weight) for c in b["competitors"]))
     html = f"""<section id="competencia">
   <div class="wrap">
     <div class="eyebrow">La prueba de los 5 segundos</div>

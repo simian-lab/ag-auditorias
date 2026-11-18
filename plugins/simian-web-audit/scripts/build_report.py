@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import build_load_page  # noqa: E402
 from lib import paths  # noqa: E402
 from report import render  # noqa: E402
 from report.sections import benchmark, bigstat, critique, extra, hero, plan, redesign, score, showcase, simian, top10  # noqa: E402
@@ -59,7 +60,7 @@ def load_ctx(audit_dir: Path) -> dict:
         "rubric": paths.config("rubric"),
         "settings": paths.config("settings"),
         "logo": paths.asset("simian", "logo.svg"),
-        "has_load_page": (report / "feature-carga.html").exists(),
+        "has_load_page": build_load_page.show_in_report(audit_dir),
         "asset": asset,
         "plugin_asset": plugin_asset,
         "_used": used,

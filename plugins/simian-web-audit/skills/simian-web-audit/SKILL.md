@@ -47,7 +47,7 @@ If OpenSEO was selected: follow `references/openseo.md` → `findings/ai-visibil
 
 ## 7. Score and build
 1. `python3 -I "$PLUGIN/scripts/score.py" "$AUDIT"`
-2. If the load page was selected: `python3 -I "$PLUGIN/scripts/build_load_page.py" "$AUDIT"` (run it BEFORE the report so the teaser link appears; see `references/agents/load-film.md` if a competitor has no frames).
+2. If the load page was selected: `python3 -I "$PLUGIN/scripts/build_load_page.py" "$AUDIT"` (run it BEFORE the report so the teaser link appears; see `references/agents/load-film.md` if a competitor has no frames). The page is always built (it is part of the audit), but the report does not link it when the client loads faster than most competitors (the report only shows what the client has wrong); say so in the hand-off. The same rule trims the benchmark cards to the checks the client fails.
 3. `python3 -I "$PLUGIN/scripts/build_report.py" "$AUDIT"` — a warning about fewer than 5 items is acceptable; never pad.
 
 ## 8. Render check

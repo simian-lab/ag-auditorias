@@ -102,6 +102,14 @@ class LoadPageTest(unittest.TestCase):
         html = self.run_build().read_text(encoding="utf-8")
         self.assertNotIn('class="caveat"', html)
 
+    def test_page_kept_but_not_linked_when_client_is_faster(self):
+        (self.audit / "raw" / "lighthouse-mobile.json").write_text(json.dumps(lh(300, 600, [500, 1000])), encoding="utf-8")
+        self.assertTrue(self.run_build().exists())
+        self.assertFalse(build_load_page.show_in_report(self.audit))
+        with contextlib.redirect_stdout(io.StringIO()):
+            html = build_report.build_report(self.audit).read_text(encoding="utf-8")
+        self.assertNotIn("feature-carga.html", html)
+
     def test_script_injection_is_escaped(self):
         bench = self.audit / "findings" / "benchmark.json"
         b = json.loads(bench.read_text())
@@ -118,6 +126,13 @@ class CopyTest(unittest.TestCase):
     def test_claims_competition_ahead_only_when_client_slower_on_both(self):
         h, _ = build_load_page._copy("x.com", [self.site(True, 3000, 8000), self.site(False, 1000, 2000)])
         self.assertIn("tu competencia ya mostró su oferta", h)
+
+    def test_client_slower_than_majority(self):
+        s = lambda lcp, me=False: self.site(me, 0, lcp)  # noqa: E731
+        self.assertTrue(build_load_page.client_loads_slower([s(5000, True), s(1000), s(2000), s(9000)]))
+        # Metric's case: only one of three competitors is faster -> hide
+        self.assertFalse(build_load_page.client_loads_slower([s(1658, True), s(1329), s(4879), s(9661)]))
+        self.assertTrue(build_load_page.client_loads_slower([s(1000, True)]))
 
     def test_neutral_headline_when_client_paints_first(self):
         h, _ = build_load_page._copy("x.com", [self.site(True, 1300, 7700), self.site(False, 1500, 2000)])

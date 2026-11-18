@@ -49,6 +49,24 @@ class PersuasionTest(unittest.TestCase):
         self.assertLess(sec.html.index("Tu sitio"), sec.html.index("Competidor Uno"))
         self.assertIn("13,4 MB", sec.html)
 
+    def _set_client(self, **changes):
+        p = self.audit / "findings" / "benchmark.json"
+        b = json.loads(p.read_text())
+        for k, v in changes.items():
+            (b["client"]["lighthouse"] if k == "total_mb" else b["client"]["five_second"])[k] = v
+        p.write_text(json.dumps(b))
+
+    def test_benchmark_shows_only_client_failures(self):
+        self._set_client(total_mb=1.0)  # fixture client fails for_whom, quote_cta, trust_proof, text_headline
+        html = benchmark.build(self.ctx()).html
+        self.assertNotIn("¿Se entiende qué vende?", html)  # client passes it
+        self.assertIn("¿Dice para quién?", html)
+        self.assertNotIn("Peso de la página", html)  # light client page
+
+    def test_benchmark_hidden_when_client_has_nothing_wrong(self):
+        self._set_client(for_whom=True, quote_cta=True, trust_proof=True, text_headline=True, total_mb=1.0)
+        self.assertIsNone(benchmark.build(self.ctx()))
+
     def test_critique_skips_missing_crop(self):
         sec = critique.build(self.ctx())
         self.assertIn("ui-crop-btn.png", sec.html)
