@@ -32,11 +32,27 @@ DOCK_CSS = """
 """
 
 
+# The host (Spacefast) answers 429 when a page fires many image requests at once, so a failed
+# <img> is retried with backoff (up to 4 times). Same snippet lives in templates/load-page.html.
+IMG_RETRY_JS = (
+    "<script>addEventListener('error',function(e){var i=e.target;if(!i||i.tagName!=='IMG')return;"
+    "var n=+(i.dataset.retry||0);if(n>=4)return;i.dataset.retry=n+1;"
+    "setTimeout(function(){i.src=i.getAttribute('src').split('?')[0]+'?retry='+(n+1)},"
+    "600*Math.pow(2,n)+Math.random()*600)},true)</script>\n"
+)
+
+
+def _lazy_images(body: str) -> str:
+    """Lazy-load every image but the first, so the page does not request them all at once."""
+    first, sep, rest = body.partition("<img ")
+    return first + sep + rest.replace("<img ", '<img loading="lazy" ') if sep else body
+
+
 def page(sections: list[Section], title: str) -> str:
     css = BASE_CSS.read_text(encoding="utf-8") + DOCK_CSS + "".join(s.css for s in sections)
-    body = "\n".join(s.html for s in sections)
+    body = _lazy_images("\n".join(s.html for s in sections))
     return (
         "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n<meta charset=\"utf-8\">\n"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
-        f"<title>{esc(title)}</title>\n<style>{css}</style>\n</head>\n<body>\n{body}\n{_dock(sections)}\n</body>\n</html>\n"
+        f"<title>{esc(title)}</title>\n{IMG_RETRY_JS}<style>{css}</style>\n</head>\n<body>\n{body}\n{_dock(sections)}\n</body>\n</html>\n"
     )
