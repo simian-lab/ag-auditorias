@@ -82,9 +82,12 @@ class RenderCoreTest(unittest.TestCase):
         (f / "scores.json").write_text(json.dumps(s))
         html, _ = self.build()
         self.assertIn("8 de 11 criterios", html)  # ux fixture: 3 fails
-        self.assertNotIn("parcial", html.split("Ver los criterios evaluados")[0])
-        self.assertIn("Hay un botón visible para cotizar o contactar ventas", html)
-        self.assertIn("Ver los criterios evaluados", html)
+        crit = html.split("Ver los criterios por mejorar")
+        self.assertNotIn("parcial", crit[0])
+        ux = json.loads((f / "ux.json").read_text())["checks"]
+        labels = {c["id"]: c["label"] for c in paths.config("rubric")["areas"]["ux"]}
+        for c in ux:  # failed checks listed, passed ones hidden
+            (self.assertIn if c["result"] != "pass" else self.assertNotIn)(labels[c["id"]], crit[1])
 
     def test_partial_criteria_shown(self):
         import score as score_mod

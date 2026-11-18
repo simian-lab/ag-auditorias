@@ -45,14 +45,18 @@ MARK = {"pass": ("sa-score-ok", "✓"), "partial": ("sa-score-pa", "◐"), "fail
 
 
 def _criteria_list(ctx) -> str:
+    # Only show what the client has wrong: passed checks stay in the findings and the counts, not in this list.
     cols = []
     for k, a, _ in ROWS:
         results = {c["id"]: c["result"] for c in (ctx["areas"].get(k) or {}).get("checks", [])}
         items = "".join(
             f'<li class="{MARK[results.get(c["id"], "na")][0]}"><span>{MARK[results.get(c["id"], "na")][1]}</span>{esc(c["label"])}</li>'
-            for c in ctx["rubric"]["areas"][k])
-        cols.append(f'<div><h4>{esc(a)}</h4><ul>{items}</ul></div>')
-    return (f'<details class="card sa-score-crit"><summary>Ver los criterios evaluados</summary>'
+            for c in ctx["rubric"]["areas"][k] if results.get(c["id"], "na") != "pass")
+        if items:
+            cols.append(f'<div><h4>{esc(a)}</h4><ul>{items}</ul></div>')
+    if not cols:
+        return ""
+    return (f'<details class="card sa-score-crit"><summary>Ver los criterios por mejorar</summary>'
             f'<div class="sa-score-cols">{"".join(cols)}</div></details>')
 
 
