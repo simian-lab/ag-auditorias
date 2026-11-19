@@ -74,7 +74,7 @@
         "twitter:card": null
       }
     },
-    "what_shows_today": "Al compartir cualquier página de Sip por WhatsApp o LinkedIn, la vista previa solo muestra la palabra «Sip» y la dirección web: sin descripción ni imagen. Da igual si compartes el inicio, los productos o la tarjeta de crédito: todas se ven igual.",
+    "what_shows_today": "Al compartir cualquier página de Sip por WhatsApp, la vista previa solo muestra el ícono del sitio en miniatura, la palabra «Sip» y la dirección web, sin descripción ni una imagen que muestre lo que ofreces. Da igual si compartes el inicio, los productos o la tarjeta de crédito: todas se ven igual.",
     "issues": [
       "No og:* or twitter:* tags on any checked page, neither in server HTML nor after JS rendering (home, /productos, /productos/tarjeta-de-credito, /quienes-somos, /preguntas-frecuentes, /puntos-de-atencion).",
       "Link-preview crawlers (WhatsApp, LinkedIn, Facebook) do not run JavaScript, so they read the server shell: <title>Sip</title> and no description on every URL. Google is not affected: it renders JavaScript and shows the real titles.",
