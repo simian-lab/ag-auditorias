@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- Retries images the host rejects with 429; same snippet as report/render.py IMG_RETRY_JS -->
+<script>addEventListener('error',function(e){var i=e.target;if(!i||i.tagName!=='IMG')return;var n=+(i.dataset.retry||0);if(n>=4)return;i.dataset.retry=n+1;setTimeout(function(){i.src=i.getAttribute('src').split('?')[0]+'?retry='+(n+1)},600*Math.pow(2,n)+Math.random()*600)},true)</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mira cómo carga · safetti.com</title>
 <style>@font-face{font-family:"Source Sans 3";src:url(assets/fonts/SourceSans3-latin-wght.woff2) format("woff2");font-weight:200 900;font-display:swap}@font-face{font-family:Vollkorn;src:url(assets/fonts/Vollkorn-latin-wght.woff2) format("woff2");font-weight:400 900;font-display:swap}</style>
@@ -207,7 +209,7 @@ details.strip[open] summary::after{content:"–"}
 <section id="carga">
   <div class="wrap">
     <div class="eyebrow">Velocidad · Comparativa con tu competencia</div>
-    <h2>Así carga tu sitio frente a tu competencia.</h2>
+    <h2>Mientras tu sitio sigue cargando, tu competencia ya mostró su oferta.</h2>
     <p class="lead">Grabamos cómo se abre cada página en un computador que simula un celular, con la conexión sin limitar, fotograma a fotograma. Dale play y mira las cuatro al mismo tiempo.</p>
 
     <div class="card player" id="player">
@@ -234,7 +236,7 @@ details.strip[open] summary::after{content:"–"}
         <span><i style="background:var(--amber)"></i>Cargando (competencia)</span>
         <span><i style="background:var(--ember)"></i>Cargando (tu sitio)</span>
         <span><i style="background:var(--mint)"></i>Contenido principal visible</span>
-        <span class="cap" style="margin-left:auto">Fotogramas reales capturados por Google Lighthouse en móvil, 2026-10-25.</span>
+        <span class="cap" style="margin-left:auto">Fotogramas reales capturados por Google Lighthouse en un computador que simula un celular, 2026-11-19.</span>
       </div>
     </div>
 
@@ -250,7 +252,7 @@ details.strip[open] summary::after{content:"–"}
       </div>
       <div class="card mean">
         <h3>¿Qué significa?</h3>
-        <p>Tu competencia muestra su contenido principal entre 2,6 y 5,8 s. En safetti.com, el contenido principal tarda <b>3,5 s</b> en aparecer en esta grabación.</p>
+        <p>Tu competencia muestra su contenido principal entre 1,0 y 3,6 s. En safetti.com, el contenido principal tarda <b>10,0 s</b> en aparecer en esta grabación.</p><p class="caveat">En el celular, lo más grande que aparece al cargar Safetti y Suarez es una ventana emergente de suscripción, no la tienda, así que su tiempo de «contenido principal» mide esa ventana. Además, los banners de todos rotan y cambian entre visitas.</p>
         <div class="quote">La probabilidad de rebote (que el visitante se vaya sin hacer nada) aumenta 32 % cuando el tiempo de carga pasa de 1 a 3 segundos.<span class="src">Google / SOASTA, 2017 (móvil)</span></div>
       </div>
     </div>
@@ -285,7 +287,7 @@ details.strip[open] summary::after{content:"–"}
           <button data-m="cvd">Daltonismo</button>
         </div>
         <p class="say" id="say"></p>
-        <div class="big"><span>1,64</span>:1</div><p class="cap">El menú, el botón &quot;Descubre NEXO&quot; y las etiquetas &quot;New&quot; se pierden sobre fondos claros, y los clientes con baja visión o en la calle con el celular no los leen. El mínimo recomendado es 4,5:1 (WCAG).</p>
+        <div class="big"><span>1,65</span>:1</div><p class="cap">La marca de producto nuevo, que es justo lo que quieres destacar, es letra blanca muy pequeña sobre dorado claro y muchas personas no la alcanzan a leer. El mínimo recomendado es 4,5:1 (WCAG).</p>
       </div>
     </div>
   </div>
@@ -296,7 +298,7 @@ details.strip[open] summary::after{content:"–"}
   // Real data. Frames + observed* timings: Lighthouse 13.0.1 mobile trace (raw/*.json, screenshot-thumbnails).
   // "lab" values: Lighthouse simulated slow-4G metrics (first-contentful-paint, largest-contentful-paint, speed-index).
   // blank:true = frame captured before first paint (Lighthouse stores it as an empty/black frame).
-  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "safetti.com", "me": true, "fcp": 1107, "lcp": 3507, "frames": [[1255], [2510], [3765], [5020], [6275], [7530], [8785], [10040]], "lab": {"fcp": 2122, "lcp": 23167, "si": 6177}}, {"slug": "suarez", "name": "Suarez", "url": "www.suarezclothing.com.co", "me": false, "fcp": 2316, "lcp": 5767, "frames": [[721, 1], [1442, 1], [2163, 1], [2885], [3606], [4327], [5048], [5769]], "lab": {"fcp": 4857, "lcp": 24263, "si": 10476}}, {"slug": "gorigogo", "name": "Go Rigo Go!", "url": "www.gorigogo.com", "me": false, "fcp": 975, "lcp": 2831, "frames": [[1185], [2371], [3556], [4741], [5926], [7112], [8297], [9482]], "lab": {"fcp": 1757, "lcp": 12993, "si": 13410}}, {"slug": "gw", "name": "GW", "url": "gwbicycles.com", "me": false, "fcp": 380, "lcp": 2617, "frames": [[1063], [2126], [3189], [4252], [5314], [6377], [7440], [8503]], "lab": {"fcp": 1213, "lcp": 19378, "si": 12546}}];
+  var SITES=[{"slug": "client", "name": "Tu sitio", "url": "safetti.com", "me": true, "fcp": 855, "lcp": 9969, "frames": [[1004], [2009], [3013], [4018], [5022], [6026], [7031], [8035]], "lab": {"fcp": 2864, "lcp": 26864, "si": 10711}}, {"slug": "suarez", "name": "Suarez", "url": "www.suarezclothing.com.co", "me": false, "fcp": 791, "lcp": 3591, "frames": [[449, 1], [899], [1348], [1798], [2247], [2696], [3146], [3595]], "lab": {"fcp": 5293, "lcp": 26919, "si": 8246}}, {"slug": "go-rigo-go", "name": "Go Rigo Go!", "url": "www.gorigogo.com", "me": false, "fcp": 590, "lcp": 960, "frames": [[1082], [2165], [3247], [4329], [5411], [6494], [7576], [8658]], "lab": {"fcp": 1596, "lcp": 7607, "si": 12187}}, {"slug": "gw", "name": "GW", "url": "gwbicycles.com", "me": false, "fcp": 675, "lcp": 1621, "frames": [[1016], [2032], [3047], [4063], [5079], [6095], [7110], [8126]], "lab": {"fcp": 2086, "lcp": 18060, "si": 7236}}];
   var END=12000, SPEED=2, t=0, playing=false, last=0;
   function s1(ms){return (ms/1000).toFixed(1).replace(".",",")}
   function pct(ms){return Math.min(100,ms/END*100)}

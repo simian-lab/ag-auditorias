@@ -1,0 +1,1551 @@
+{
+ "desktop": {
+  "fam": [
+   "Inter, sans-serif"
+  ],
+  "wt": [
+   "Inter 400",
+   "Inter 700",
+   "Inter 600",
+   "Inter 500",
+   "Inter 300"
+  ],
+  "heads": [
+   [
+    "H1",
+    "Safetti",
+    "32px",
+    "600",
+    "Inter",
+    "uppercase",
+    71
+   ],
+   [
+    "H2",
+    "Buscar productos",
+    "18px",
+    "500",
+    "Inter",
+    "uppercase",
+    30
+   ],
+   [
+    "H2",
+    "Descubre NEXO",
+    "20px",
+    "500",
+    "Inter",
+    "uppercase",
+    1369
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1879
+   ],
+   [
+    "H2",
+    "Descubre tu universo",
+    "20px",
+    "500",
+    "Inter",
+    "uppercase",
+    2522
+   ],
+   [
+    "H2",
+    "TOP CICLISMO NEXO BEACON PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3097
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA LARGA TRACE PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3097
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA TRACE PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3097
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA TRACE PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3097
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA SIGNAL PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3699
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA SIGNAL PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3699
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA BEACON PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3699
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA BEACON PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3699
+   ],
+   [
+    "H3",
+    "SUSCRÍBETE",
+    "30px",
+    "600",
+    "Inter",
+    "uppercase",
+    4661
+   ]
+  ],
+  "btns": [
+   [
+    "btn s_submit",
+    "Buscar",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "25px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    80
+   ],
+   [
+    "video-hero__button",
+    "Conocer más",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)",
+    "0px",
+    "1px rgb(255, 255, 255)",
+    "13px",
+    527
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1793
+   ],
+   [
+    "btn mt10 btn-md dib mb20",
+    "VER TODO CICLISMO",
+    "rgb(212, 202, 159)",
+    "rgb(0, 0, 0)",
+    "25px",
+    "1px rgba(0, 0, 0, 0)",
+    "13px",
+    3890
+   ],
+   [
+    "btn newsl_btn",
+    "Suscribir",
+    "rgb(0, 0, 0)",
+    "rgb(255, 255, 255)",
+    "0px 25px 25px 0px",
+    "0px rgb(255, 255, 255)",
+    "13px",
+    4751
+   ],
+   [
+    "btn mb20",
+    "Continuar comprando",
+    "rgb(212, 202, 159)",
+    "rgb(0, 0, 0)",
+    "25px",
+    "1px rgba(0, 0, 0, 0)",
+    "13px",
+    445
+   ]
+  ],
+  "fonts": [
+   "Inter 300 normal",
+   "Inter 400 normal",
+   "Inter 500 normal",
+   "Inter 600 normal",
+   "Inter 700 normal",
+   "swiper-icons 400 normal"
+  ],
+  "h": 5563,
+  "copy": [
+   "© 2026 Create by Safetti",
+   "© 2026 Create by Safetti",
+   "© 2026 Create by Safetti"
+  ]
+ },
+ "mobile": {
+  "fam": [
+   "Inter, sans-serif",
+   "RobotoOmnisend, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+  ],
+  "wt": [
+   "Inter 400",
+   "Inter 700",
+   "Inter 600",
+   "Inter 500",
+   "Inter 300",
+   "RobotoOmnisend 700",
+   "RobotoOmnisend 400"
+  ],
+  "heads": [
+   [
+    "H1",
+    "Safetti",
+    "27px",
+    "600",
+    "Inter",
+    "uppercase",
+    62
+   ],
+   [
+    "H2",
+    "Buscar productos",
+    "18px",
+    "500",
+    "Inter",
+    "uppercase",
+    30
+   ],
+   [
+    "H2",
+    "Descubre NEXO",
+    "16px",
+    "500",
+    "Inter",
+    "uppercase",
+    1304
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Chaqueta rompevientos de ciclismo Aqualite verde p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Blue p",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Outland Code Green ",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero South verde",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para m",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Jersey de ciclismo manga corta Leggero Mesh para h",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    1660
+   ],
+   [
+    "H2",
+    "Descubre tu universo",
+    "16px",
+    "500",
+    "Inter",
+    "uppercase",
+    2968
+   ],
+   [
+    "H2",
+    "TOP CICLISMO NEXO BEACON PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3343
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA LARGA TRACE PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3343
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA TRACE PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3745
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA TRACE PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    3745
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA SIGNAL PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    4147
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA SIGNAL PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    4147
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA BEACON PARA MUJER",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    4549
+   ],
+   [
+    "H2",
+    "CAMISA CICLISMO MANGA CORTA BEACON PARA HOMBRE",
+    "14px",
+    "400",
+    "Inter",
+    "uppercase",
+    4549
+   ],
+   [
+    "H3",
+    "SUSCRÍBETE",
+    "20px",
+    "600",
+    "Inter",
+    "uppercase",
+    5206
+   ]
+  ],
+  "btns": [
+   [
+    "btn s_submit",
+    "Buscar",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "25px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    80
+   ],
+   [
+    "video-hero__button",
+    "Conocer más",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)",
+    "0px",
+    "1px rgb(255, 255, 255)",
+    "13px",
+    616
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "button-set",
+    "Agregar a favoritos COMPRARVIS",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "13px",
+    1599
+   ],
+   [
+    "btn mt10 btn-md dib mb20",
+    "VER TODO CICLISMO",
+    "rgb(212, 202, 159)",
+    "rgb(0, 0, 0)",
+    "25px",
+    "1px rgba(0, 0, 0, 0)",
+    "13px",
+    4727
+   ],
+   [
+    "btn newsl_btn",
+    "Suscribir",
+    "rgb(0, 0, 0)",
+    "rgb(255, 255, 255)",
+    "25px",
+    "0px rgb(255, 255, 255)",
+    "13px",
+    5345
+   ],
+   [
+    "btn mb20",
+    "Continuar comprando",
+    "rgb(212, 202, 159)",
+    "rgb(0, 0, 0)",
+    "25px",
+    "1px rgba(0, 0, 0, 0)",
+    "13px",
+    461
+   ],
+   [
+    "omnisend-form-68f7eccb75b6b2576ebc50f6-close-button",
+    ".omnisend-form-68f7eccb75b6b25",
+    "rgba(0, 0, 0, 0)",
+    "rgb(51, 51, 51)",
+    "0px",
+    "0px rgb(51, 51, 51)",
+    "16px",
+    120
+   ]
+  ],
+  "fonts": [
+   "Inter 300 normal",
+   "Inter 400 normal",
+   "Inter 500 normal",
+   "Inter 600 normal",
+   "Inter 700 normal",
+   "swiper-icons 400 normal",
+   "RobotoOmnisend 400 normal",
+   "RobotoOmnisend 700 normal"
+  ],
+  "h": 6253,
+  "copy": [
+   "© 2026 Create by Safetti",
+   "© 2026 Create by Safetti",
+   "© 2026 Create by Safetti"
+  ]
+ }
+}

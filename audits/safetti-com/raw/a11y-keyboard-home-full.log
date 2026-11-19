@@ -1,0 +1,188 @@
+SUBMENUS [
+ "HOMBRE | expanded=null | haspopup=null | sub=grid rwcols-5 fl1 display=flex vis=hidden opacity=1",
+ " | expanded=null | haspopup=null | sub=subLinks display=block vis=hidden opacity=1",
+ " | expanded=null | haspopup=null | sub=subLinks display=block vis=hidden opacity=1",
+ " | expanded=null | haspopup=null | sub=subLinks display=block vis=hidden opacity=1",
+ " | expanded=null | haspopup=null | sub=subLinks display=block vis=hidden opacity=1",
+ " | expanded=null | haspopup=null | sub=subLinks display=block vis=hidden opacity=1",
+ "COMPLEMENTOS | expanded=null | haspopup=null | sub=ddmenu display=block vis=hidden opacity=0",
+ "MUJER | expanded=null | haspopup=null | sub=grid rwcols-5 fl1 display=flex vis=hidden opacity=1"
+]
+HOMBRE focused submenu {"display":"flex","vis":"hidden","op":"1","h":375}
+1 A||COMPLEMENTOS|
+2 A||MUJER|
+3 A||COLECCIONES|
+4 A||CUSTOM|
+5 A||SAFETTI EXPERIENCE|
+6 A||DEPORTES|
+7 A||ULTIMAS PRENDAS|
+8 A|hdicon searchIcn hide-sm hide-||
+9 A|hdicon user-menu|Cuenta|
+10 A|hdicon|Favoritos|
+11 A|hdicon|0|
+12 INPUT|s_input w_100|¿Qué estás buscando?|OFFSCREEN
+13 BUTTON|btn s_submit|BUSCAR|OFFSCREEN
+14 A|db|PANTALONETA CICLISMO ULTIMATE |OFFSCREEN
+15 A|pr_list_ttl|PANTALONETA CICLISMO ULTIMATE |OFFSCREEN
+16 A|db|CAMISA CICLISMO MANGA CORTA SO|OFFSCREEN
+17 A|pr_list_ttl|CAMISA CICLISMO MANGA CORTA SO|OFFSCREEN
+18 A|db|CHAQUETA RUNNING MOVA BLACK PA|OFFSCREEN
+19 A|pr_list_ttl|CHAQUETA RUNNING MOVA BLACK PA|OFFSCREEN
+20 A|db|PANTALONETA CICLISMO TOSCANA 2|OFFSCREEN
+21 A|pr_list_ttl|PANTALONETA CICLISMO TOSCANA 2|OFFSCREEN
+22 A|db|PANTALONETA CICLISMO TOSCANA S|OFFSCREEN
+23 A|pr_list_ttl|PANTALONETA CICLISMO TOSCANA S|OFFSCREEN
+24 A|video-hero__button|CONOCER MÁS|
+25 A||NO TODOS LOS DÍAS SE MUEVEN IG|
+26 A|cg-card||
+27 A|cg-card||
+28 A|cg-card||
+29 A|cg-card||
+30 A|grid_lnk|Chaqueta rompevientos de cicli|
+31 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+32 A|grid_lnk|Chaqueta rompevientos de cicli|
+33 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+34 A|grid_lnk|Jersey de ciclismo manga corta|
+35 A||JERSEY DE CICLISMO MANGA CORTA|
+36 A|grid_lnk|Jersey de ciclismo manga corta|
+37 A||JERSEY DE CICLISMO MANGA CORTA|
+38 A|grid_lnk|Jersey de ciclismo manga corta|
+39 A||JERSEY DE CICLISMO MANGA CORTA|
+40 A|grid_lnk|Jersey de ciclismo manga corta|
+41 A||JERSEY DE CICLISMO MANGA CORTA|
+42 A|grid_lnk|Jersey de ciclismo manga corta|
+43 A||JERSEY DE CICLISMO MANGA CORTA|
+44 A|grid_lnk|Jersey de ciclismo manga corta|
+45 A||JERSEY DE CICLISMO MANGA CORTA|
+46 A|grid_lnk|Jersey de ciclismo manga corta|
+47 A||JERSEY DE CICLISMO MANGA CORTA|
+48 A|grid_lnk|Jersey de ciclismo manga corta|
+49 A||JERSEY DE CICLISMO MANGA CORTA|
+50 A|grid_lnk|Chaqueta rompevientos de cicli|
+51 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+52 A|grid_lnk|Chaqueta rompevientos de cicli|
+53 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+54 A|grid_lnk|Jersey de ciclismo manga corta|
+55 A||JERSEY DE CICLISMO MANGA CORTA|
+56 A|grid_lnk|Jersey de ciclismo manga corta|
+57 A||JERSEY DE CICLISMO MANGA CORTA|
+58 A|grid_lnk|Jersey de ciclismo manga corta|
+59 A||JERSEY DE CICLISMO MANGA CORTA|
+60 A|grid_lnk|Jersey de ciclismo manga corta|
+61 A||JERSEY DE CICLISMO MANGA CORTA|
+62 A|grid_lnk|Jersey de ciclismo manga corta|
+63 A||JERSEY DE CICLISMO MANGA CORTA|
+64 A|grid_lnk|Jersey de ciclismo manga corta|
+65 A||JERSEY DE CICLISMO MANGA CORTA|
+66 A|grid_lnk|Jersey de ciclismo manga corta|
+67 A||JERSEY DE CICLISMO MANGA CORTA|
+68 A|grid_lnk|Jersey de ciclismo manga corta|
+69 A||JERSEY DE CICLISMO MANGA CORTA|
+70 A|grid_lnk|Chaqueta rompevientos de cicli|
+71 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+72 A|grid_lnk|Chaqueta rompevientos de cicli|
+73 A||CHAQUETA ROMPEVIENTOS DE CICLI|
+74 A|grid_lnk|Jersey de ciclismo manga corta|
+75 A||JERSEY DE CICLISMO MANGA CORTA|
+76 A|grid_lnk|Jersey de ciclismo manga corta|
+77 A||JERSEY DE CICLISMO MANGA CORTA|
+78 A|grid_lnk|Jersey de ciclismo manga corta|
+79 A||JERSEY DE CICLISMO MANGA CORTA|
+80 A|grid_lnk|Jersey de ciclismo manga corta|
+81 A||JERSEY DE CICLISMO MANGA CORTA|
+82 A|grid_lnk|Jersey de ciclismo manga corta|
+83 A||JERSEY DE CICLISMO MANGA CORTA|
+84 A|grid_lnk|Jersey de ciclismo manga corta|
+85 A||JERSEY DE CICLISMO MANGA CORTA|
+86 A|grid_lnk|Jersey de ciclismo manga corta|
+87 A||JERSEY DE CICLISMO MANGA CORTA|
+88 A|grid_lnk|Jersey de ciclismo manga corta|
+89 A||JERSEY DE CICLISMO MANGA CORTA|
+90 DIV|swarw swntemplate--27793839620|Next slide|
+91 DIV|swarw swptemplate--27793839620|Previous slide|
+92 A|cg-card|CICLISMO|
+93 A|cg-card|TRIATLÓN|
+94 A|cg-card|RUNNING|
+95 A|tablink db pr|CICLISMO|
+96 A|tablink db pr|RUNNING|
+97 A|tablink db pr|TRIATLÓN|
+98 A|grid_lnk|TOP CICLISMO NEXO BEACON PARA |
+99 A||TOP CICLISMO NEXO BEACON PARA |
+100 A|gbtn pr btn-options quickShop|COMPRAR|
+101 A|grid_lnk|CAMISA CICLISMO MANGA LARGA TR|
+102 A||CAMISA CICLISMO MANGA LARGA TR|
+103 A|gbtn pr btn-options quickShop|COMPRAR|
+104 A|grid_lnk|CAMISA CICLISMO MANGA CORTA TR|
+105 A||CAMISA CICLISMO MANGA CORTA TR|
+106 A|gbtn pr btn-options quickShop|COMPRAR|
+107 A|grid_lnk|CAMISA CICLISMO MANGA CORTA TR|
+108 A||CAMISA CICLISMO MANGA CORTA TR|
+109 A|gbtn pr btn-options quickShop|COMPRAR|
+110 A|grid_lnk|CAMISA CICLISMO MANGA CORTA SI|
+111 A||CAMISA CICLISMO MANGA CORTA SI|
+112 A|gbtn pr btn-options quickShop|COMPRAR|
+113 A|grid_lnk|CAMISA CICLISMO MANGA CORTA SI|
+114 A||CAMISA CICLISMO MANGA CORTA SI|
+115 A|gbtn pr btn-options quickShop|COMPRAR|
+116 A|grid_lnk|CAMISA CICLISMO MANGA CORTA BE|
+117 A||CAMISA CICLISMO MANGA CORTA BE|
+118 A|gbtn pr btn-options quickShop|COMPRAR|
+119 A|grid_lnk|CAMISA CICLISMO MANGA CORTA BE|
+120 A||CAMISA CICLISMO MANGA CORTA BE|
+121 A|gbtn pr btn-options quickShop|COMPRAR|
+122 A|btn mt10 btn-md dib mb20|VER TODO CICLISMO|
+123 INPUT|newstxt w_100|Dirección de correo electrónic|
+124 INPUT|||
+125 A||Acepto política de tratamiento|
+126 A|scIcn|Facebook|
+127 A|scIcn|Instagram|
+128 A|scIcn|YouTube|
+129 A|scIcn|Linkedin|
+130 A|scIcn|TikTok|
+131 A|scIcn|Whatsapp|
+132 A||(+57) 3186150418|
+133 A||(+57) 317 3806060|
+134 A||(+57) 316 5282644|
+135 A||(+57) 314 8302201|
+136 A||(+57) 318 3516417|
+137 A||(+57) 318 2340082|
+138 A||Preguntas frecuentes|
+139 A||Política de privacidad|
+140 A||Términos y condiciones|
+141 A||Política de cambios y devoluci|
+142 A||Políticas de garantía|
+143 A||Guías de tallas|
+144 A||Términos y condiciones promoci|
+145 A||Medios de pago|
+146 A||Personalización|
+147 A||Tienda Online Cali|
+148 A||Tienda Online Bogotá|
+149 A||Tienda Online Bucaramanga|
+150 A||Tienda Online Monteria|
+151 A||Tienda online Barranquilla|
+152 A||Tienda online Tunja|
+153 A||Tienda deportiva Medellín|
+154 A||Somos Safetti|
+155 A||Dónde Estamos|
+156 A||Ropa para Gym|
+157 A||Blog|
+158 A||Safetti|
+159 A|gmk-widget||
+160 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+161 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+162 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+163 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+164 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+165 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+166 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+167 IFRAME|WizybotShopifyWidget__iframe__|wizybot-chat-iframe|
+168 A|skip-to-content-link button hi|Ir directamente al contenido|OFFSCREEN
+169 A|fl f-jcc f-aic promo_msg tc ft|NUEVA COLECCIÓN | NEXO|
+170 A|fl f-jcc f-aic promo_msg tc ft|NUESTRAS TIENDAS|
+171 A|fl f-jcc f-aic promo_msg tc ft|NUEVA COLECCIÓN | NEXO|
+172 A|fl f-jcc f-aic promo_msg tc ft|NUESTRAS TIENDAS|
+173 A|fl f-jcc f-aic promo_msg tc ft|NUEVA COLECCIÓN | NEXO|
+174 A|fl f-jcc f-aic promo_msg tc ft|NUESTRAS TIENDAS|
+175 A|hdr_logo_lnk|SAFETTI|
+176 A||HOMBRE|
+177 A||COMPLEMENTOS|

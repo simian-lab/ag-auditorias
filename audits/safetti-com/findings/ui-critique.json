@@ -1,221 +1,122 @@
 {
-  "verdict": "Safetti tiene fotografía de marca premium, pero la página que la rodea parece armada por piezas: cada sección trae su propio botón, su propio título y su propia letra.",
+  "verdict": "Safetti tiene producto y fotografía de marca premium, pero la portada está armada con piezas sueltas: cinco botones distintos, títulos sin orden y un dorado de marca que aparece sin un papel fijo.",
   "inventory": [
     {
       "kind": "buttons",
-      "title": "Siete botones, siete personalidades",
-      "explanation": "En una sola página conviven píldoras con borde, una píldora arena, una gris, círculos negros, pestañas grises y hasta un botón pintado dentro de la foto. El cliente no aprende cuál es «el botón para comprar», y cada sección se siente hecha por alguien distinto.",
+      "title": "Cinco botones, y el de comprar es el más tímido",
+      "explanation": "Cada sección estrena un botón: cuadrado blanco, cápsula con borde, cápsula dorada, pestañas grises y un botón de suscripción que se ve apagado hasta marcar la casilla. El único botón lleno de color es «Ver todo ciclismo», mientras «Comprar» es un simple contorno, así que la mirada no sabe cuál es la acción importante.",
       "items": [
-        {
-          "label": "«COMPRAR»: píldora blanca, borde negro de 1 px, letra 13 px normal",
-          "crop": "ui-crop-btn-comprar.png"
-        },
-        {
-          "label": "«VER TODO CICLISMO»: píldora rellena arena #d4ca9f, el único botón de color",
-          "crop": "ui-crop-btn-ver-todo-ciclismo.png"
-        },
-        {
-          "label": "«VER TODOS»: píldora con borde y letra en negrita (otro componente)",
-          "crop": "ui-crop-btn-ver-todos.png"
-        },
-        {
-          "label": "Tallas: círculos negros rellenos",
-          "crop": "ui-crop-btn-tallas.png"
-        },
-        {
-          "label": "Pestañas de deportes: la activa en gris #cbcbcb, parece desactivada",
-          "crop": "ui-crop-btn-tabs-deportes.png"
-        },
-        {
-          "label": "«SUSCRIBIR»: píldora gris con texto blanco",
-          "crop": "ui-crop-btn-suscribir.png"
-        },
-        {
-          "label": "«DESCUBRE NEXO»: botón translúcido dibujado dentro de la foto",
-          "crop": "ui-crop-btn-descubre-nexo.png"
-        }
+        {"label": "Portada: «Conocer más», blanco y cuadrado (radio 0)", "crop": "ui-crop-btn-hero.png"},
+        {"label": "Tarjeta: «Comprar», solo contorno negro (radio 30 px)", "crop": "ui-crop-btn-comprar.png"},
+        {"label": "«Ver todo ciclismo», dorado #D4CA9F relleno (radio 25 px)", "crop": "ui-crop-btn-vertodo.png"},
+        {"label": "Pestañas: activa gris #CBCBCB, inactivas con borde", "crop": "ui-crop-btn-tabs.png"},
+        {"label": "«Suscribir», negro al 40 % de opacidad: parece desactivado", "crop": "ui-crop-btn-suscribir.png"}
       ],
-      "proposal": "Dos botones y nada más: uno principal negro relleno para comprar y uno secundario con borde para explorar, con la misma forma, tamaño y letra en todo el sitio."
+      "proposal": "Dos botones para toda la tienda: principal negro relleno con texto blanco para comprar, y secundario con contorno para explorar, ambos con la misma forma de cápsula y la misma altura."
     },
     {
       "kind": "headings",
-      "title": "El título más grande está al final de la página",
-      "explanation": "Los títulos de sección miden 20 px, los del bloque de tallas 15 px en negrita, «SUSCRÍBETE» 30 px y el texto más grande de toda la portada (32 px) está justo encima del pie. El ojo no encuentra un orden: lo que más grita no es lo más importante.",
+      "title": "El título más grande es para el boletín",
+      "explanation": "El texto más grande después del logo es «SUSCRÍBETE» (30 px, peso 600) y la franja en movimiento (25 px), mientras los títulos de las colecciones «Descubre NEXO» y «Descubre tu universo» miden 20 px y los nombres de deporte sobre las fotos solo 13 px. La página grita más fuerte para pedir el correo que para mostrar la ropa.",
       "items": [
-        {
-          "label": "«CATEGORÍAS»: título de sección, 20 px, peso medio",
-          "crop": "ui-crop-h-categorias.png"
-        },
-        {
-          "label": "«COMPRA TUS PRENDAS POR TALLA»: más pequeño y en negrita",
-          "crop": "ui-crop-h-talla.png"
-        },
-        {
-          "label": "«JERSEYS DE CICLISMO»: 15 px, peso 700, más grueso que el título de sección",
-          "crop": "ui-crop-h-jerseys-ciclismo.png"
-        },
-        {
-          "label": "Nombre de producto marcado como título (h2) de 14 px",
-          "crop": "ui-crop-h-producto.png"
-        },
-        {
-          "label": "«SUSCRÍBETE»: 30 px, peso 600",
-          "crop": "ui-crop-h-suscribete.png"
-        },
-        {
-          "label": "Título principal (h1) de 32 px, al pie de la página",
-          "crop": "ui-crop-h-seo.png"
-        }
+        {"label": "«SUSCRÍBETE»: 30 px, peso 600", "crop": "ui-crop-h-suscribete.png"},
+        {"label": "Franja en movimiento: 25 px, peso 300", "crop": "ui-crop-h-marquee.png"},
+        {"label": "«Descubre NEXO»: 20 px, peso 500", "crop": "ui-crop-h-nexo.png"},
+        {"label": "«Descubre tu universo»: 20 px, peso 500", "crop": "ui-crop-h-universo.png"},
+        {"label": "Nombre del deporte sobre la foto: 13 px", "crop": "ui-crop-h-tile.png"}
       ],
-      "proposal": "Una escala de cuatro tamaños fijos: titular de portada, título de sección, subtítulo y texto de producto; el titular grande va arriba y dice qué vende Safetti."
-    },
-    {
-      "kind": "fonts",
-      "title": "Una letra en el código, tres en pantalla",
-      "explanation": "Todo el texto real del sitio está en Inter, pero los banners y mosaicos usan otras dos letras pintadas en la foto: una ancha y espaciada y otra condensada y gruesa. Como viven dentro de imágenes, no se pueden reutilizar, traducir ni corregir sin rediseñar cada pieza.",
-      "items": [
-        {
-          "label": "Inter: todo el texto real del sitio",
-          "family": "Inter"
-        },
-        {
-          "label": "Letra ancha y espaciada, solo dentro del banner NEXO",
-          "crop": "ui-crop-h-img-nexo.png"
-        },
-        {
-          "label": "Letra condensada gruesa, solo dentro de los mosaicos",
-          "crop": "ui-crop-h-img-ciclismo.png"
-        }
-      ],
-      "proposal": "Elegir una letra de titulares (la condensada de los mosaicos funciona con la marca), cargarla como fuente web y usarla en texto real; Inter queda para todo lo demás."
-    },
-    {
-      "kind": "colors",
-      "title": "Tres negros, tres grises y un arena sin trabajo fijo",
-      "explanation": "La hoja de estilos usa #000000, #111111 y #333333 para lo mismo (texto y fondos oscuros), y tres grises distintos para fondos y bordes. El arena, el único color propio de la marca, aparece a la vez como botón, etiqueta «New», títulos del pie y efecto al pasar el mouse, y con letra blanca encima casi no se lee (1,65:1).",
-      "items": [
-        {
-          "label": "Negro de la barra superior (--bg)",
-          "hex": "#000000"
-        },
-        {
-          "label": "Negro de textos y pie de página",
-          "hex": "#111111"
-        },
-        {
-          "label": "Gris oscuro de textos de beneficios y botón de promoción",
-          "hex": "#333333"
-        },
-        {
-          "label": "Arena: botón, etiqueta «New», títulos del pie, hover",
-          "hex": "#d4ca9f"
-        },
-        {
-          "label": "Gris de la pestaña activa y bordes",
-          "hex": "#cbcbcb"
-        },
-        {
-          "label": "Gris del fondo del bloque de suscripción",
-          "hex": "#efefef"
-        },
-        {
-          "label": "Gris de bordes del pie",
-          "hex": "#eeeeee"
-        }
-      ],
-      "proposal": "Un negro, un blanco, un fondo cálido y el arena como único acento, siempre con texto negro encima; cada color con un trabajo fijo."
+      "proposal": "Una escala fija: el mensaje de portada es el texto más grande, los títulos de colección van en segundo lugar y el boletín y la franja en movimiento quedan por debajo."
     },
     {
       "kind": "cards",
-      "title": "Cada mosaico habla un idioma distinto",
-      "explanation": "Los mosaicos de deporte ponen el nombre sobre un degradado; los de prenda, sobre una franja negra; algunas fotos de producto traen «BEST SELLER» pintado y otras la etiqueta «New» en inglés, en arena con letra blanca. Son cuatro formas distintas de presentar lo mismo: un producto o una categoría.",
+      "title": "Tres tarjetas distintas para el mismo producto",
+      "explanation": "En una misma portada la prenda aparece como foto suelta sin nombre ni precio, como tarjeta con nombre y precio sin botón, y como tarjeta con nombre, precio y botón «Comprar». El comprador tiene que reaprender en cada sección cómo se compra.",
       "items": [
-        {
-          "label": "Mosaico de deporte: nombre sobre degradado",
-          "crop": "ui-crop-card-tile-ciclismo.png"
-        },
-        {
-          "label": "Mosaico de prenda: nombre sobre franja negra",
-          "crop": "ui-crop-card-tile-tops.png"
-        },
-        {
-          "label": "Tarjeta de producto con etiqueta «New»",
-          "crop": "ui-crop-card-producto.png"
-        },
-        {
-          "label": "Etiqueta «New» en inglés: blanco sobre arena",
-          "crop": "ui-crop-card-badge-new.png"
-        },
-        {
-          "label": "«BEST SELLER» pintado dentro de la foto del producto",
-          "crop": "ui-crop-card-badge-bestseller.png"
-        }
+        {"label": "Primera fila: solo foto, sin nombre ni precio", "crop": "ui-crop-card-bare.png"},
+        {"label": "Descubre NEXO: nombre y precio, sin botón", "crop": "ui-crop-card-nexo.png"},
+        {"label": "Descubre tu universo: nombre, precio y «Comprar»", "crop": "ui-crop-card-universo.png"}
       ],
-      "proposal": "Un solo mosaico de categoría con el nombre en texto real y una sola tarjeta de producto con etiquetas en español («Nuevo», «Más vendido») generadas por la tienda, no pintadas en la foto."
+      "proposal": "Una sola tarjeta de producto en toda la tienda: foto con el mismo fondo, nombre corto en dos líneas como máximo, precio en negrita y el mismo botón de compra."
+    },
+    {
+      "kind": "icons",
+      "title": "Íconos de tres familias distintas",
+      "explanation": "En el encabezado la lupa tiene un trazo grueso y la bolsa del carrito es más pequeña que los otros tres íconos; en las tarjetas del celular la lupa mide 38×30 px junto a un corazón y una bolsa de 13×13 px; en el pie los íconos son círculos dorados con contorno. Se ven tomados de bibliotecas distintas, y eso se lee como descuido.",
+      "items": [
+        {"label": "Encabezado: lupa gruesa, bolsa más pequeña", "crop": "ui-crop-icons-header.png"},
+        {"label": "Tarjeta en celular: lupa casi 3 veces más grande", "crop": "ui-crop-icons-card-mobile.png"},
+        {"label": "Pie: círculos con borde dorado", "crop": "ui-crop-icons-footer.png"}
+      ],
+      "proposal": "Un solo juego de íconos de línea, con el mismo grosor de trazo y el mismo tamaño (20 a 24 px) en el encabezado, las tarjetas y el pie."
+    },
+    {
+      "kind": "colors",
+      "title": "Seis negros y un dorado sin papel fijo",
+      "explanation": "El código usa seis tonos de negro y gris oscuro para el texto, que el ojo no distingue pero que muestran que nadie definió una paleta. El dorado de la marca sirve a la vez de etiqueta «New» ilegible, de botón, de efecto al pasar el mouse y de velo sobre el video, así que no significa nada concreto.",
+      "items": [
+        {"label": "Negro de títulos y franja", "hex": "#000000"},
+        {"label": "Negro de nombres de producto y menú", "hex": "#111111"},
+        {"label": "Negro de enlaces del menú y fondo del pie", "hex": "#141414"},
+        {"label": "Negro del menú de categorías", "hex": "#1A1A1A"},
+        {"label": "Negro de la ventana de suscripción (Omnisend)", "hex": "#202223"},
+        {"label": "Gris del texto general", "hex": "#333333"},
+        {"label": "Dorado: etiqueta New, botón, hover y velo del video", "hex": "#D4CA9F"},
+        {"label": "Gris de la pestaña activa", "hex": "#CBCBCB"},
+        {"label": "Arena del texto del pie", "hex": "#CFCBBB"}
+      ],
+      "proposal": "Cinco colores con un papel cada uno: un solo negro para texto y botones, el dorado solo como acento sobre negro o con texto negro encima, y blanco, arena clara y negro noche como fondos."
+    },
+    {
+      "kind": "fonts",
+      "title": "Una buena fuente usada en cinco pesos",
+      "explanation": "Toda la tienda usa Inter, lo que es un acierto, pero en cinco grosores (300 a 700) sin regla: la franja va en 300, los títulos en 500, el boletín en 600 y los deportes en 700. A eso se suman el lema de portada dibujado dentro de una imagen y Roboto en la ventana de suscripción del celular.",
+      "items": [
+        {"label": "Inter 300: franja en movimiento", "family": "Inter"},
+        {"label": "Inter 500: títulos de colección", "family": "Inter"},
+        {"label": "Inter 600: «SUSCRÍBETE» y menú", "family": "Inter"},
+        {"label": "Inter 700: nombres de deporte", "family": "Inter"},
+        {"label": "RobotoOmnisend: ventana de suscripción en celular", "family": "Roboto"}
+      ],
+      "proposal": "Mantener Inter con solo dos pesos, 400 para leer y 600 para títulos y botones, y escribir el lema de portada como texto real con esa misma fuente."
     }
   ],
   "proposed_system": {
     "colors": [
-      {
-        "name": "Negro Safetti",
-        "hex": "#111111",
-        "role": "Texto principal y botón principal. Blanco sobre este negro: 18,9:1 (cumple AA y AAA)."
-      },
-      {
-        "name": "Arena",
-        "hex": "#d4ca9f",
-        "role": "Único acento: etiquetas y un detalle por sección. Siempre con texto #111111 encima: 11,5:1 (blanco sobre arena es 1,65:1 y no se usa)."
-      },
-      {
-        "name": "Lino",
-        "hex": "#f4f2ee",
-        "role": "Fondo de secciones alternas (tono ya presente en el bloque de tallas). Texto #111111 encima: 16,9:1."
-      },
-      {
-        "name": "Blanco",
-        "hex": "#ffffff",
-        "role": "Fondo principal de páginas y tarjetas. Texto #111111 encima: 18,9:1."
-      },
-      {
-        "name": "Gris texto",
-        "hex": "#555555",
-        "role": "Texto secundario (descripciones, notas legales). Sobre blanco: 7,5:1."
-      }
+      {"name": "Tinta Safetti", "hex": "#111111", "role": "Todo el texto, títulos y botón principal. Sobre blanco: 18,88:1. Texto blanco encima: 18,88:1."},
+      {"name": "Dorado Safetti", "hex": "#D4CA9F", "role": "Acento de marca: etiqueta «Nuevo», precio rebajado de fondo, hover del botón. Siempre con texto Tinta encima (11,46:1), nunca blanco (1,65:1, ilegible)."},
+      {"name": "Noche", "hex": "#141414", "role": "Fondo del pie y de bandas de marca. Texto Arena encima: 11,33:1; Dorado encima: 11,18:1."},
+      {"name": "Arena clara", "hex": "#EFEFEF", "role": "Fondo de secciones de apoyo (boletín, beneficios). Texto Tinta encima: 16,42:1."},
+      {"name": "Blanco", "hex": "#FFFFFF", "role": "Fondo de página y de fotos de producto, igual en todas las tarjetas. Texto Tinta encima: 18,88:1."}
     ],
     "fonts": [
-      {
-        "name": "Letra de titulares",
-        "role": "La condensada gruesa de los mosaicos, cargada como fuente web y usada en texto real para titulares de portada y de sección."
-      },
-      {
-        "name": "Inter",
-        "family": "Inter",
-        "role": "Menú, textos, precios, botones y formularios (ya está cargada en el sitio, pesos 300 a 700)."
-      }
+      {"family": "Inter", "weight": 400, "role": "Texto de lectura, nombres de producto, descripciones"},
+      {"family": "Inter", "weight": 600, "role": "Títulos, precios, botones y menú"}
     ],
-    "button_primary": "Relleno #111111, texto blanco, Inter 14 px peso 600 en mayúsculas, píldora (radio 30 px), 48 px de alto; al pasar el mouse, fondo arena #d4ca9f con texto #111111.",
-    "button_secondary": "Fondo transparente, borde 1 px #111111, texto #111111, misma forma, letra y alto que el principal.",
-    "heading_scale": "Titular de portada 56 px (letra de titulares) · Título de sección 32 px (letra de titulares) · Subtítulo 18 px Inter 600 · Nombre de producto 14 px Inter 400. El titular más grande va solo una vez, arriba."
+    "button_primary": "Relleno Tinta #111111, texto blanco, Inter 600 13 px en mayúsculas con 1 px de espaciado, cápsula (radio 999 px), alto 48 px. Al pasar el mouse: fondo Dorado #D4CA9F con texto Tinta (11,46:1). Uso: Comprar, Agregar al carrito, Suscribir.",
+    "button_secondary": "Fondo transparente, borde 1 px Tinta, texto Tinta, misma forma y alto que el principal. Uso: Ver todo, Conocer más, pestañas de deporte (la activa pasa a principal).",
+    "heading_scale": "Mensaje de portada 40 px desktop / 28 px celular, Inter 600 · Título de sección 28 / 22 px, 600 · Nombre de deporte sobre foto 22 / 18 px, 600 · Nombre de producto 14 px, 400, máximo 2 líneas · Precio 15 px, 600 · Etiqueta 11 px, 600 · Franja en movimiento y boletín nunca por encima del título de sección."
   },
   "hierarchy_notes": [
-    "Portada: el ojo ve primero la palabra «NEXO» y los ciclistas; debería ver qué vende Safetti y un botón real para comprar. El menú, blanco y pequeño sobre la foto, casi desaparece.",
-    "Esquina inferior derecha: el punto rojo «!» del chat es el único rojo saturado de la página y atrae la mirada antes que los productos; debería dominar el producto.",
-    "Categorías: los nombres pintados en las fotos (CICLISMO, RUNNING…) pesan mucho más que el título «CATEGORÍAS»; está bien que domine la foto, pero el nombre debería ser texto real y clicable.",
-    "Compra por talla: lo primero que se ve son 18 círculos negros iguales; debería verse primero el tipo de prenda y luego la talla.",
-    "Deportes: el botón arena «VER TODO CICLISMO» es el elemento con más color de la sección y compite con los «COMPRAR» de cada producto; la pestaña activa en gris parece desactivada.",
-    "Grillas de producto: nombre, precio y «COMPRAR» tienen el mismo peso visual; el ojo debería ir foto → precio → botón.",
-    "Final de la página: el texto más grande de toda la portada («SAFETTI ROPA DEPORTIVA DE ALTO RENDIMIENTO…») y «SUSCRÍBETE» compiten justo antes del pie; ese mensaje debería abrir la página, no cerrarla."
+    "Encabezado: lo primero que se ve es «Ultimas prendas» sola en una segunda fila del menú; debería verse el logo, las categorías principales y el carrito en una sola línea.",
+    "Portada: el ojo va a la persona del video y al logo NEXO; el lema en inglés va en letra fina y el botón «Conocer más» no dice qué se compra. Debería leerse primero una frase en español sobre qué vendes y un botón «Comprar ciclismo».",
+    "Franja en movimiento: con 25 px es más grande que cualquier título de colección (20 px) y se mueve, así que compite con la portada. Debería ser un texto secundario o desaparecer.",
+    "Primera fila de productos: cuatro fotos grandes sin título, nombre ni precio; el ojo ve ropa pero no tiene dónde seguir. Debería tener un título de sección y el precio bajo cada prenda.",
+    "Descubre NEXO: el título mide 20 px y los nombres de producto ocupan dos líneas en mayúsculas, con el mismo peso visual que el precio; la etiqueta «New» casi no se ve. Debería destacar el precio y una etiqueta legible.",
+    "Fotos por deporte: son la navegación más clara de la página, pero el nombre del deporte mide 13 px sobre fotos con mucho movimiento. Debería ser el texto más visible del bloque.",
+    "Descubre tu universo: ocho botones «Comprar» de contorno iguales y una pestaña activa gris que parece desactivada; el único color fuerte es «Ver todo ciclismo». La acción de compra debería ser la más visible.",
+    "Foto acrobática: imagen grande sin texto ni botón visibles que separa los productos del boletín; debería llevar un mensaje o un enlace a la colección.",
+    "Boletín: «SUSCRÍBETE» es el título más grande de la página y el botón se ve gris hasta marcar la casilla. Debería tener un tamaño de sección normal y un botón que se vea activo."
   ],
   "sharp_headlines": {
-    "1": "Tu portada esconde qué vendes",
-    "2": "Tu portada carga más código que fotos",
-    "3": "Tu portada móvil anuncia una oferta vencida",
-    "4": "Tu WhatsApp del pie tiene un número errado",
-    "5": "Tu envío gratis dice dos montos distintos",
-    "6": "Tres ventanas compiten con tus productos",
-    "7": "Tu menú se pierde sobre la foto",
-    "8": "Ninguna opinión respalda tu alto rendimiento",
-    "9": "Cada sección parece de otra marca",
-    "10": "Tu portada arranca con más de 20 errores"
+    "1": "Tu talla solo se elige con mouse",
+    "2": "Tu portada descarga dos videos, muestra uno",
+    "3": "Tu portada no dice qué vendes",
+    "4": "En celular, una ventana tapa tus productos",
+    "5": "Con teclado, tu tienda es un laberinto",
+    "6": "Nada prueba lo que vale tu ropa",
+    "7": "Tu pie de página muestra un WhatsApp equivocado",
+    "8": "Tus primeras prendas no tienen nombre ni precio",
+    "9": "Cinco botones distintos en una sola página",
+    "10": "Tu tienda carga código repetido y con errores"
   }
 }

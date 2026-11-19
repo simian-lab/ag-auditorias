@@ -3,221 +3,152 @@
   "findings": [
     {
       "id": "a11y-1",
-      "title": "Los banners y categorías son solo imágenes con texto",
-      "summary": "Quien usa lector de pantalla o traductor no se entera de la colección NEXO, del Hot Sale ni de las categorías, que son la puerta de entrada a la tienda.",
-      "now": "El banner principal (\"NUEVA COLECCIÓN NEXO… DESCUBRE NEXO\") y las fichas de categoría (CICLISMO, RUNNING, TRIATLÓN, LIFESTYLE, TOPS, JERSEYS…) son fotos con el texto pintado encima y sin descripción. Los íconos de beneficios (envío gratis, devoluciones) sí tienen descripción, pero se lee con código visible: \"<b>Envío gratis</b>\".",
-      "fix": "Escribir los títulos y botones del banner y de las categorías como texto real sobre la foto, y dar a cada imagen una descripción útil (por ejemplo \"Colección NEXO de ciclismo\"); limpiar las etiquetas <b> de los textos de los íconos.",
-      "why": "Si el mensaje principal no se puede leer, tampoco lo entienden los buscadores, los traductores automáticos ni los asistentes de IA que recomiendan tiendas.",
+      "title": "Quien no puede usar el mouse no puede elegir talla",
+      "summary": "En la página de producto las tallas no se pueden seleccionar con el teclado, así que esa persona solo puede comprar la talla que viene marcada por defecto.",
+      "now": "Al recorrer la ficha de producto con la tecla Tab, el foco pasa de «Guía de tallas» directo al selector de cantidad: los botones S, M, L, XL y 2XL nunca reciben el foco. Los botones de menos y más de la cantidad tampoco tienen nombre para un lector de pantalla.",
+      "fix": "Hacer que las tallas sean botones o casillas reales que se puedan alcanzar con Tab y marcar con las flechas o con Enter, y ponerles nombre («Disminuir cantidad», «Aumentar cantidad») a los botones de cantidad.",
+      "why": "Elegir la talla es el paso sin el que no hay venta: si alguien no puede hacerlo, se va a comprar a otra tienda.",
       "impact": 5,
-      "effort": "Medio",
-      "headline_metric": "15 de 25 imágenes con descripción vacía",
-      "evidence": [
-        "raw/home.html: hero slides img.ssimg src BANNER_NEXO / BANNER_HOT_SALE (desktop and mobile versions) all alt=\"\"; the overlay text container div.ss_txt is empty, so all copy is baked into the JPG",
-        "raw/home.html: category tiles img src IMAGENES_DEPORTE_ESPANOL-01..04 alt=\"\" inside a.cl_item_link with title=\"\" (labels CICLISMO/RUNNING/TRIATLON/LIFESTYLE only exist in the pixels, see screenshots/desktop-fullpage.jpg y≈1100-1330)",
-        "raw/home.html: 25 <img> on the home, 15 with alt=\"\" and 1 without alt",
-        "raw/home.html: trust icons alt=\"&lt;b&gt;Envío gratis&lt;/b&gt;\", \"&lt;b&gt;Devoluciones gratuitas&lt;/b&gt;\", \"&lt;b&gt;Eco amigables&lt;/b&gt;\", \"&lt;b&gt;DISEÑADO PARA CADA DISCIPLiNA&lt;/b&gt;\" (escaped markup is read aloud)",
-        "Product photos are CSS background images (div.grid_img data-bgset), not <img>; the product link carries aria-label with the product name, so products are named but photos are invisible to assistive tech"
-      ],
-      "technical_note": "Lighthouse a11y score is 93 (mobile) / 92 (desktop) because axe passes alt=\"\" as 'decorative' and cannot read text inside pixels; the score only covers automated checks and overstates real accessibility. Fix in the slideshow and collection-list section settings (use the theme's heading/button text fields instead of baked banners) and edit image alt texts in Shopify Files.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 50,
-        "y_pct": 31
-      }
-    },
-    {
-      "id": "a11y-2",
-      "title": "Treinta enlaces e íconos no dicen a dónde llevan",
-      "summary": "Una persona ciega que navega con lector de pantalla oye \"enlace\" sin destino en la lupa de búsqueda, el banner y las categorías, y abandona la compra.",
-      "now": "Lighthouse encontró 30 enlaces sin nombre: la lupa de búsqueda, una pestaña del menú móvil, los banners principales y todas las fichas de categoría. Además, todos los botones \"COMPRAR\" se anuncian igual, sin decir qué producto compran.",
-      "fix": "Poner un nombre a cada ícono y enlace de imagen (\"Buscar\", \"Ver colección NEXO\", \"Ropa de ciclismo\"…) y que cada botón diga \"Comprar\" más el nombre del producto.",
-      "why": "Son los caminos principales hacia el catálogo; si no se entienden, esa persona no llega a ningún producto.",
-      "impact": 4,
       "effort": "Bajo",
-      "headline_metric": "30 enlaces sin nombre",
+      "headline_metric": "0 de 5 tallas",
       "evidence": [
-        "raw/lighthouse-mobile.json audit link-name: score 0, 30 items",
-        "header#header a.hdicon.searchIcn[href=/search] (icon only, title=\"\")",
-        "div.mob_nav_wr a.fl1.mnvTtl[href=#mobCtnav] (empty text; raw/a11y-home-rendered.html)",
-        "slideshow a.ss_link[href=/collections/nexo], a.ss_link[href=/collections/sale] (image with alt=\"\" only)",
-        "a.cl_item_link to /collections/ropa-ciclismo, running, triatlon, lifestyle, jersey-ciclismo, pantalonetas-ciclismo, shorts-running, top-mujer (image with alt=\"\", title=\"\")",
-        "raw/home.html: every product button a.gbtn.quickShop has aria-label=\"COMPRAR\" (identical, no product name)"
+        "raw/a11y-keyboard-product.log: real Tab presses (CDP Input.dispatchKeyEvent) on /products/camisa-ciclismo-manga-corta-beacon-para-hombre; step 41 = a.sizelink 'Guia de tallas', step 42 = button.qtyBtn.minus. No size option is ever focused.",
+        "raw/a11y-product-rendered.html: size options are input[type=radio][name=swtalla] with computed display:none; their label[for] elements have tabIndex -1 and no role. Only 'S' is checked by default.",
+        "button.qtyBtn.minus / button.qtyBtn.plus have aria-label=\"\" and only an SVG inside (no accessible name).",
+        "screenshots/a11y-cart-after-enter.png: product page with the size row S M L XL 2XL."
       ],
-      "technical_note": "Positive: footer social icons have visually hidden .fallback_txt names, Swiper adds role=button + aria-label to arrows/bullets at runtime (in English: 'Next slide'). Cart drawer button text reads 'Translation missing: es.sections.cart.update' (missing locale key in theme). Chat iframe title is 'wizybot-chat-iframe'.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 84.5,
-        "y_pct": 11.6
-      }
-    },
-    {
-      "id": "a11y-3",
-      "title": "Textos claros sobre fotos y etiquetas casi ilegibles",
-      "summary": "El menú, el botón \"Descubre NEXO\" y las etiquetas \"New\" se pierden sobre fondos claros, y los clientes con baja visión o en la calle con el celular no los leen.",
-      "now": "La etiqueta \"New\" de los productos es texto blanco sobre dorado claro, con un contraste de 1,64:1 y letra de 9 px. El menú superior blanco sobre la foto del banner queda en torno a 2,2:1 en \"HOMBRE\" y \"DEPORTES\", y el botón \"DESCUBRE NEXO\" del banner también ronda 2,2:1. El mínimo recomendado es 4,5:1.",
-      "fix": "Usar texto oscuro (o un dorado más oscuro) en las etiquetas, subirlas a 11-12 px, y poner una franja o sombra oscura detrás del menú y de los textos del banner.",
-      "why": "Si no se lee el menú ni la novedad, se navega menos y se compra menos, sobre todo en celular con sol.",
-      "impact": 4,
-      "effort": "Bajo",
-      "headline_metric": "1,64:1",
-      "evidence": [
-        "raw/lighthouse-mobile.json audit color-contrast: label.lbl.pr_lbl2 'New' — #ffffff on #d4ca9f, 1.64:1, 9px (4 items)",
-        "raw/a11y-css/theme.css: .pr_lbl .lbl{color:#fff;font-size:9px} .pr_lbl2{background-color:#d4ca9f}",
-        "screenshots/desktop-viewport.png pixel sampling (WCAG formula): nav 'HOMBRE' #fff vs avg background rgb(176,173,168) = 2.24:1; 'DEPORTES' vs rgb(177,176,174) = 2.17:1; 'COMPLEMENTOS' brightest 10% background = 3.10:1",
-        "screenshots/desktop-viewport.png: 'DESCUBRE NEXO' (baked in image) white vs rgb(198,169,160) = 2.17:1",
-        "home.html: .hdicon and top-level menu links forced to #ffffff!important while header is transparent over the hero"
-      ],
-      "technical_note": "Body text #333 on #fff (12.6:1) and .btn black on #d4ca9f pass. Lighthouse does not test text over images (axe marks them 'incomplete'), so the nav/hero failures are absent from its report. Pixel ratios are approximations from the 1440x900 screenshot.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 31.7,
-        "y_pct": 11.8
-      }
-    },
-    {
-      "id": "a11y-4",
-      "title": "Con teclado no se ve dónde estás",
-      "summary": "Quien no puede usar mouse (lesiones, temblores, usuarios avanzados) se pierde en la página y no llega a las subcategorías del menú.",
-      "now": "El tema borra a propósito el recuadro de foco en todos los enlaces y campos, así que al usar Tab no se ve qué está seleccionado. Además, los submenús de escritorio (Hombre, Mujer, Deportes…) solo se abren al pasar el mouse.",
-      "fix": "Restaurar un recuadro de foco visible (por ejemplo, contorno dorado de 2 px) y hacer que los submenús se abran también con teclado.",
-      "why": "Es una corrección pequeña en el código del tema que deja la tienda usable para todos y cumple la norma WCAG que se exige cada vez más en ventas online.",
-      "impact": 4,
-      "effort": "Bajo",
-      "evidence": [
-        "raw/home.html inline CSS: a,img{outline:0!important} a:focus,a:hover{outline:0!important} button,input,optgroup,select,textarea{outline:0}",
-        "raw/a11y-css/theme.css: .btn{outline:none}; input:focus{border-color:#bbb} (1.9:1 vs white, too faint); .btn:focus changes background to black (only visible focus cue)",
-        "raw/home.html: #main_nav li:hover>div.mgmenu, #main_nav li:hover>.ddmenu reveal submenus; no :focus-within rule and no aria-expanded anywhere",
-        "Positive: skip link 'Ir directamente al contenido' exists; Swiper arrows/bullets are tabindex=0 role=button (raw/a11y-home-rendered.html)"
-      ],
-      "technical_note": "Replace outline:0!important with a :focus-visible style (e.g. outline:2px solid #111; outline-offset:2px, or the gold #d4ca9f on dark backgrounds) and add #main_nav li:focus-within > .mgmenu/.ddmenu to mirror the hover rule.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 46,
-        "y_pct": 11.8
-      }
-    },
-    {
-      "id": "a11y-5",
-      "title": "El formulario de contacto no tiene etiquetas visibles",
-      "summary": "Al empezar a escribir desaparece la pista de qué va en cada campo, y quien usa lector de pantalla o autocompletar tiene más fricción para escribirte.",
-      "now": "En /pages/contact los campos Nombre, Correo, Teléfono y Mensaje solo tienen texto de ejemplo dentro de la casilla, sin etiqueta y sin autocompletar. El boletín y el buscador funcionan igual.",
-      "fix": "Añadir etiquetas visibles encima de cada campo y activar el autocompletado (nombre, correo, teléfono) para que el navegador los llene solo.",
-      "why": "Cada pequeña fricción en el formulario es un mensaje de cliente que no llega a tu equipo.",
-      "impact": 3,
-      "effort": "Bajo",
-      "headline_metric": "0 de 4 campos con etiqueta",
-      "evidence": [
-        "raw/a11y-contact.html form#contact_form: input#ContactFormName type=text placeholder=\"Nombre\"; input#ContactFormEmail type=email placeholder=\"Correo electrónico\"; input#ContactFormPhone type=tel pattern=\"[0-9\\-]*\" placeholder=\"Número de teléfono\"; textarea#ContactFormMessage placeholder=\"Mensaje\"; no <label for>, no autocomplete attributes",
-        "raw/home.html footer newsletter: input#Email- type=email placeholder only, no label",
-        "raw/home.html search: input.s_input type=search placeholder=\"¿Qué estás buscando?\" autocomplete=off, no label",
-        "Positive: input types email/tel are correct"
-      ],
-      "technical_note": "Lighthouse 'label' passes because axe accepts the placeholder as accessible name; WCAG 3.3.2 still requires a persistent visible label. Add autocomplete=name/email/tel. Phone pattern rejects '+57' and spaces without an error message.",
+      "technical_note": "Hidden native radios (display:none) are removed from the tab order and from the accessibility tree; use a visually-hidden pattern (clip/opacity on the input) so the radio group stays focusable and arrow keys work, and keep a visible focus style on the label. The cart drawer itself works by keyboard: after Enter on 'AGREGAR AL CARRITO' focus moves into div.drawer__inner[role=dialog] and Escape closes it and returns focus (tested, cart cleared afterwards with /cart/clear.js). Its close control is a span without tabindex or name (Escape is the only keyboard way out). No order was placed.",
       "pin": null
     },
     {
-      "id": "a11y-6",
-      "title": "El título principal de la página es el logo",
-      "summary": "Los lectores de pantalla y los buscadores toman \"Safetti\" como tema principal de la portada, en lugar de lo que vendes.",
-      "now": "La portada tiene dos títulos principales: el logo \"Safetti\" y un texto al final de la página. Los nombres de 40 productos están marcados como subtítulos del mismo nivel que las secciones, y la página de contacto no tiene título principal.",
-      "fix": "Dejar un único título principal arriba que diga qué vendes (ropa deportiva de ciclismo, running y triatlón), y ordenar secciones y productos por niveles.",
-      "why": "Una estructura clara permite saltar entre secciones con lector de pantalla y ayuda a que Google entienda la tienda.",
-      "impact": 2,
+      "id": "a11y-2",
+      "title": "Con teclado no se ve dónde estás en la página",
+      "summary": "Quien navega con teclado no ve qué enlace o botón tiene seleccionado, así que se pierde en el menú y en las fichas de producto.",
+      "now": "Ningún enlace, botón o campo del sitio muestra un recuadro o cambio visible al recibir el foco: medimos 9 tipos de elementos (logo, menú, iconos, botón «Conocer más», tarjetas, productos, botón «Comprar», campo de correo, redes sociales) y se ven exactamente igual con y sin foco. Los botones «COMPRAR» de los productos siguen invisibles cuando el teclado llega a ellos.",
+      "fix": "Agregar un estilo de foco claro y consistente (por ejemplo un borde de 2 px de un color con buen contraste) a todos los enlaces, botones y campos, y mostrar los botones «Comprar» cuando reciben el foco, no solo al pasar el mouse.",
+      "why": "Sin ver el foco, comprar con teclado es adivinar, y eso afecta a personas con discapacidad motriz, baja visión o simplemente a quien usa el tabulador por rapidez.",
+      "impact": 4,
       "effort": "Bajo",
-      "headline_metric": "2 títulos H1",
+      "headline_metric": "9 de 9 sin foco visible",
       "evidence": [
-        "raw/home.html: <h1 class=\"header-logo\"> wraps the logo img alt=\"Safetti\"; second <h1> 'Safetti ropa deportiva de alto rendimiento para cada disciplina' near the footer (Ver más block)",
-        "raw/home.html: 53 headings; ~40 product titles are <h2> at the same level as section titles (CATEGORÍAS, DEPORTES, LO MÁS VENDIDO)",
-        "raw/lighthouse-mobile.json audit heading-order: h5 'COMPRA TUS PRENDAS POR TALLA' skips levels",
-        "raw/a11y-contact.html: no <h1>; page title is <h2>CONTÁCTANOS</h2>"
+        "raw/a11y-focus-style-diff.json: for #header a.hdr_logo_lnk, #header li a, a.hdicon.user-menu, a.video-hero__button, a.cg-card, a.grid_lnk, a.quickShop, input.newstxt, a.scIcn the computed color, background, outline, box-shadow, text-decoration, border and ::after are identical before and after focus (all match :focus-visible except a.quickShop). Outline computes to 'none 0px' on all of them.",
+        "a.quickShop ('COMPRAR') has computed opacity 0 and stays at opacity 0 when focused; it is in the tab order (raw/a11y-keyboard-home-full.log steps 100-121).",
+        "raw/a11y-keyboard-home-desktop.log: 45 real Tab presses on the home, every focused element reports outline 'none' and box-shadow 'none'.",
+        "screenshots/a11y-focus-tab12.png: 'COLECCIONES' has keyboard focus and looks identical to the other menu items.",
+        "raw/a11y-css/theme.css: .btn{outline:none}, input styles with outline:none!important; a:focus only changes color to var(--cla), which renders the same as the default."
       ],
-      "technical_note": "Change the logo wrapper to <div> (keep <h1> only on the template title), product card titles to <h3>, and the size-guide h5 to h2.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 9.9,
-        "y_pct": 11.7
-      }
+      "technical_note": "Only the third-party size-chart links on the product page (span.ks-chart-modal-link) show a 2px solid outline. Lighthouse gives 89 (mobile) / 88 (desktop) in accessibility because it only runs automated rules; it does not test focus visibility, keyboard order, the size selector, motion or placeholder-only labels, so the score overstates how usable the store is without a mouse. Related (WCAG 2.4.11): on mobile the floating WhatsApp button (a.gmk-widget, fixed) covers the right end of the 'CONOCER MÁS' hero button (screenshots/a11y-mobile-viewport.png), and on the product page on desktop it overlaps the right edge of 'AGREGAR AL CARRITO' / 'COMPRAR AHORA' (screenshots/a11y-cart-after-enter.png).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 46.8, "y_pct": 8.4}
+    },
+    {
+      "id": "a11y-3",
+      "title": "El menú y el inicio son un laberinto con teclado",
+      "summary": "Quien usa teclado no llega a las subcategorías del menú y tiene que pasar por decenas de enlaces invisibles o repetidos antes de llegar a los productos.",
+      "now": "Las subcategorías de «Hombre», «Mujer» y «Complementos» solo se abren con el mouse. Después de los iconos del encabezado, el tabulador entra en el buscador cerrado y recorre 12 elementos que están fuera de la pantalla. Luego el carrusel de «Descubre Nexo» exige 60 pulsaciones porque cada producto aparece tres veces. El enlace para saltar al contenido existe, pero nunca se hace visible.",
+      "fix": "Abrir los submenús con Enter o con la flecha abajo y marcar el estado abierto/cerrado; sacar del recorrido del teclado el buscador mientras está cerrado y las copias del carrusel; y mostrar el enlace «Ir directamente al contenido» cuando recibe el foco.",
+      "why": "Si llegar al catálogo cuesta decenas de pulsaciones a ciegas, el cliente que navega con teclado abandona antes de ver un producto.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "12 pasos invisibles",
+      "evidence": [
+        "raw/a11y-keyboard-home-full.log: real Tab presses from the top of https://safetti.com/ (1440x900). Steps 12-23 land on input.s_input, button.s_submit and 10 product links inside the closed search drawer (div.searchDrawer at x=1425-1875, outside the 1440 px viewport).",
+        "Same log, steps 30-89: 60 tab stops for the 'DESCUBRE NEXO' slider (10 products x 3 Swiper loop copies, a.grid_lnk + title link each) before the slider arrows at steps 90-91.",
+        "Submenus: focusing the 'HOMBRE' link keeps its mega menu (div.grid.rwcols-5) at visibility:hidden; links have no aria-expanded or aria-haspopup (raw/a11y-keyboard-home-full.log header lines). Hidden submenu links are not in the tab order.",
+        "Step 1 on both home and product page is a.skip-to-content-link 'Ir directamente al contenido', but its rect stays 1x1 px at (-1,-1) when focused (raw/a11y-keyboard-home-desktop.log).",
+        "The promo bar adds 6 tab stops (2 messages x 3 copies) before the logo.",
+        "screenshots/a11y-focus-menu-hombre.png: 'HOMBRE' focused, no submenu shown."
+      ],
+      "technical_note": "Positive results: the slider arrows (div.swarw role=button tabindex=0) move the slider on Enter (transform -7125px -> -7617px); the Wizybot chat iframe and the WhatsApp link are reachable and Tab exits them, so no focus trap was found. 'DEPORTES' is an a[href=#]. Search drawer: set inert or visibility:hidden while closed. Swiper loop clones: add aria-hidden + tabindex=-1 to duplicate slides or disable loop. The scrolling text is wrapped in a[href=\"\"] that reloads the home page.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 22.6, "y_pct": 8.4}
+    },
+    {
+      "id": "a11y-4",
+      "title": "El mensaje de Nexo es una imagen y todo se mueve",
+      "summary": "La frase principal de la portada no la lee un lector de pantalla ni Google, y el video y el texto en movimiento no se pueden detener.",
+      "now": "«NEXO — Every movement creates a connection…» está dentro de una imagen PNG marcada como decorativa, así que para un lector de pantalla la portada solo dice «Conocer más». Detrás corre un video en bucle sin botón de pausa y debajo una franja de texto que se desplaza sin parar; ambos siguen moviéndose aunque la persona haya pedido en su teléfono o computador reducir el movimiento.",
+      "fix": "Poner la frase como texto real sobre el video (o al menos como texto alternativo de la imagen), agregar un botón visible de pausa al video y a la franja, y detenerlos cuando el sistema pide reducir el movimiento.",
+      "why": "Es el primer mensaje de la colección que estás lanzando: si una parte de tus clientes no puede leerlo, o el movimiento constante les marea o distrae, pierdes la primera impresión.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Hero image: img src=NEXO_ELEMENTOS_GRAFICOS-52.png alt=\"\" inside section[id^=VideoHero]; the original asset (raw/a11y-img/nexo-hero.png, rendered on black in raw/a11y-img/nexo-hero-on-black.png) contains the NEXO logo and the four-line tagline as white pixels. innerText of the hero section is only 'CONOCER MÁS'.",
+        "Video: video.video-hero__desktop/mobile with autoplay, loop, muted, controls=false; no pause button found on the page (no button matching paus/stop/play).",
+        "Marquee: CSS animation 'tscrol27793839620314__scroling_text_fW7MpU' on .scrlTxt, duration 12000 ms, infinite iterations.",
+        "With Emulation.setEmulatedMedia prefers-reduced-motion: reduce (matchMedia confirmed true), after 9 s the video was at currentTime 8.7 s and not paused, and the marquee animation was 'running' (screenshots/a11y-home-reduced-motion.png). The only reduced-motion CSS rules found affect .cg-card image transitions and smooth scrolling.",
+        "Lighthouse image-alt also flags the hero video fallback img (video.video-hero__mobile > img, no alt)."
+      ],
+      "technical_note": "WCAG 1.1.1, 1.4.5 (images of text), 2.2.2 (pause, stop, hide for motion lasting >5 s). The WhatsApp float image (wp-con-texto_300x300.png) also bakes the text 'Contactar a un asesor' into the image; its alt is only 'Whatsapp'.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 18, "y_pct": 41}
+    },
+    {
+      "id": "a11y-5",
+      "title": "Productos, iconos y botones sin nombre para lectores",
+      "summary": "Una persona ciega escucha «enlace» sin saber a qué producto o función lleva, así que no puede elegir qué abrir.",
+      "now": "Las cuatro tarjetas de producto de la colección Nexo en la portada son solo una foto sin descripción. El icono de búsqueda, el menú del celular y los botones de cantidad no tienen nombre, el carrito se anuncia solo como «0», y la flecha del carrusel dice «Next slide» en inglés. El título principal (H1) de la portada es el logo, cada nombre de producto se repite como título tres veces y la página de contacto no tiene título principal.",
+      "fix": "Escribir una descripción corta en cada foto de producto (por ejemplo «Enterizo triatlón manga corta Aerocooler azul, hombre»), poner nombre en español a cada icono («Buscar», «Menú», «Carrito, 0 productos») y usar como título principal de cada página lo que la página ofrece.",
+      "why": "Lo que un lector de pantalla no puede nombrar, el cliente no lo puede comprar; las mismas descripciones también ayudan a que Google entienda tus fotos.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "7 imágenes sin descripción",
+      "evidence": [
+        "Lighthouse (raw/lighthouse-mobile.json) link-name fails: a.hdicon.searchIcn[href=/search], a.fl1.mnvTtl[href=#mobCtnav] (mobile menu), and 4 x a.cg-card linking to /collections/nexo-2/products/... (enterizo-triatlon..., camiseta-running..., vestido-bano-natacion-mujer, jersey-ciclismo...).",
+        "Lighthouse image-alt fails: 7 img inside a.cg-card with no alt attribute; 4 have only machine file names (magnific__viewing-direction-completely-frontal-view-referenc__56521.png...) and 3 are DSC0889.jpg, DSC1537.jpg, DSC1131.jpg (those 3 cards do show the text CICLISMO / TRIATLÓN / RUNNING).",
+        "Cart link a#cartLink accessible name is '0'; quantity buttons button.qtyBtn have aria-label=\"\"; slider arrows are labelled 'Next slide' / 'Previous slide' (English); the Wizybot chat iframe title is 'wizybot-chat-iframe'.",
+        "Headings (raw/a11y-rendered-dom.json): home H1 = h1.header-logo (logo image alt 'Safetti'); 30 H2 product titles in the 'DESCUBRE NEXO' slider (10 products x 3 copies) and an empty hidden H3; /pages/contact has no H1 (raw/a11y-contact.html). Product page has one correct H1 with the product name.",
+        "No <nav> element or role=navigation on the home (header, main and footer exist)."
+      ],
+      "technical_note": "Lighthouse image-redundant-alt also flags the logo inside the H1 link and the language flag 'Español'. Use the product title as alt on product photos (Shopify image alt from the product media), aria-label on icon links, aria-hidden on Swiper duplicate slides, and wrap the main menu in <nav aria-label=\"Principal\">.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 84.5, "y_pct": 11.6}
+    },
+    {
+      "id": "a11y-6",
+      "title": "Formularios con la etiqueta dentro del campo",
+      "summary": "En contacto y en el boletín, el nombre de cada campo desaparece al empezar a escribir, lo que causa errores y abandono, sobre todo en el celular.",
+      "now": "El formulario de contacto (nombre, correo, teléfono y mensaje) y el campo de correo del boletín no tienen etiqueta: solo un texto gris dentro del campo que se borra al escribir. Ningún campo le permite al navegador autocompletar nombre, correo o teléfono, y la casilla de aceptar el tratamiento de datos mide 13 × 13 píxeles.",
+      "fix": "Poner una etiqueta visible encima de cada campo, activar el autocompletado (nombre, correo, teléfono) y agrandar la casilla de aceptación a por lo menos 24 × 24 píxeles.",
+      "why": "Cada dato que el cliente tiene que volver a escribir es una oportunidad de que no te envíe el mensaje o no se suscriba.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/a11y-contact.html (https://safetti.com/pages/contact, rendered): input#ContactFormName[name=contact[name]] placeholder 'Nombre', contact[email] type=email placeholder 'Correo electrónico', contact[phone] type=tel placeholder 'Número de teléfono', textarea contact[body] placeholder 'Mensaje'; no label[for], no aria-label, no autocomplete attribute on any of them.",
+        "Home footer newsletter: input#Email-[name=contact[email]] type=email, placeholder 'Dirección de correo electrónico', no label[for=Email-], no autocomplete (raw/a11y-rendered-dom.json, forms).",
+        "Consent checkbox input#checkout_accept_terms measures 13x13 CSS px at 412 px width (mobile emulation); its wrapping label contains a link, so tapping the text opens the policy instead of ticking the box.",
+        "screenshots/a11y-contact.png"
+      ],
+      "technical_note": "Input types are correct (email, tel). The search field has only a placeholder too (input.s_input name=q). Add autocomplete=name / email / tel. Error messages were not tested to avoid sending real contact requests.",
+      "pin": null
     },
     {
       "id": "a11y-7",
-      "title": "Carruseles que se mueven solos sin botón de pausa",
-      "summary": "El banner y la barra de promociones cambian cada 4-5 segundos y no dejan terminar de leer; a personas con TDAH, dislexia o mareo por movimiento les distrae.",
-      "now": "Tres carruseles avanzan solos (barra superior de promociones, banner principal y una lista de colecciones) y no hay botón de pausa. Las animaciones de entrada (zoom en 42 elementos) tampoco se desactivan cuando el usuario pidió reducir el movimiento en su teléfono.",
-      "fix": "Añadir un botón de pausa visible, detener el avance al pasar el mouse o al usar el teclado, y respetar la opción \"reducir movimiento\" del sistema.",
-      "why": "Mensajes como \"Envío gratis\" o \"Compra a crédito\" solo convencen si alcanzan a leerse.",
+      "title": "La etiqueta «New» casi no se lee",
+      "summary": "La marca de producto nuevo, que es justo lo que quieres destacar, es letra blanca muy pequeña sobre dorado claro y muchas personas no la alcanzan a leer.",
+      "now": "En la portada hay 38 etiquetas «New» en blanco sobre dorado (#D4CA9F) con letra de 9 píxeles: el contraste es de 1,65 a 1, cuando lo mínimo recomendado es 4,5 a 1. En la ficha de producto, el enlace azul «Bancos aliados» queda en 3,98 a 1. El resto de textos y botones que medimos sí cumple.",
+      "fix": "Usar texto oscuro sobre el dorado (o un dorado más oscuro con texto blanco) y subir la etiqueta a por lo menos 11–12 píxeles; oscurecer un poco el azul de «Bancos aliados».",
+      "why": "Si tus clientes no notan qué es nuevo, la colección que acabas de lanzar pasa desapercibida.",
       "impact": 2,
       "effort": "Bajo",
-      "headline_metric": "3 carruseles automáticos",
+      "headline_metric": "1,65:1",
       "evidence": [
-        "raw/home.html: #Quotes-promotion-bar_top data-autoplay='{ \"delay\":\"5000\" }' (rotates 'COMPRA A CREDITO…', 'ENVÍO GRATIS…')",
-        "raw/home.html: hero slideshow data-autoplay='{ \"delay\":\"4000\" }' data-loop=\"true\" data-effect=\"fade\"",
-        "raw/home.html: #swptemplate--19284316881114__collection_list_3Rkmcr data-autoplay='{ \"delay\":\"5000\" }'",
-        "No pause control or pauseOnMouseEnter found in raw/home.html or raw/a11y-home-rendered.html",
-        "42 elements with class 'wow zoomIn'; the only prefers-reduced-motion rule in theme.css is for scroll-behavior"
+        "Lighthouse color-contrast (raw/lighthouse-mobile.json): div.grid_bx > div.grid_img_wr > div.pr_lbl > label.lbl.pr_lbl2, foreground #ffffff, background #d4ca9f, 9px normal weight, ratio 1.64 (required 4.5).",
+        "raw/a11y-contrast-home.json: rendered sweep of all visible text nodes on the home computed with the WCAG formula; the only failure is label.pr_lbl2 'New' at 1.65:1; 38 visible instances counted.",
+        "Product page sweep: a.mp-popup-toggle 'Bancos aliados' rgb(0,123,255) on white, 12.8px, 3.98:1. Contact page sweep: no failures.",
+        "screenshots/a11y-new-badge.png: 'New' badges on the product cards."
       ],
-      "technical_note": "Swiper supports autoplay.pauseOnMouseEnter and disableOnInteraction; add a play/pause button and wrap WOW.js init in matchMedia('(prefers-reduced-motion: reduce)') check.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 50,
-        "y_pct": 2.3
-      }
+      "technical_note": "Sweep skips text over background images; the hero tagline is an image (see a11y-4) and the CICLISMO / TRIATLÓN / RUNNING labels are white 13px bold over photos, not measured numerically.",
+      "pin": null
     }
   ],
   "checks": [
-    {
-      "id": "a11y-contrast",
-      "result": "fail",
-      "evidence": "'New' labels #fff on #d4ca9f = 1.64:1 at 9px (Lighthouse color-contrast); nav links white over hero photo ≈2.2:1 and baked 'DESCUBRE NEXO' ≈2.2:1 (pixel sampling). Body text #333/#fff and gold buttons pass."
-    },
-    {
-      "id": "a11y-text-not-image",
-      "result": "fail",
-      "evidence": "Hero headline/CTA (NEXO, Hot Sale) and all category tile labels are baked into JPGs; slideshow text container div.ss_txt is empty."
-    },
-    {
-      "id": "a11y-alt",
-      "result": "fail",
-      "evidence": "15 of 25 <img> have alt=\"\" including informative hero and category images; trust icons have alt with escaped '<b>' markup; product photos are CSS backgrounds. Logo alt 'Safetti' and WhatsApp alt are fine."
-    },
-    {
-      "id": "a11y-headings",
-      "result": "fail",
-      "evidence": "Home has 2 H1 (logo and footer SEO text); h5 skips levels (Lighthouse heading-order); contact page has no H1."
-    },
-    {
-      "id": "a11y-names",
-      "result": "fail",
-      "evidence": "Lighthouse link-name: 30 links without name (search icon, mobile tab, hero and category links). Social icons and Swiper arrows do have names."
-    },
-    {
-      "id": "a11y-focus",
-      "result": "fail",
-      "evidence": "Inline CSS a:focus{outline:0!important} and outline:0 on button/input; inputs only change border to #bbb; only .btn changes background on focus."
-    },
-    {
-      "id": "a11y-keyboard",
-      "result": "partial",
-      "evidence": "Carousel arrows/bullets are focusable role=button (Swiper a11y) and a skip link exists; desktop submenus open only on :hover (no :focus-within/aria-expanded), so subcategories are unreachable by keyboard. Chat widget not tested."
-    },
-    {
-      "id": "a11y-form-labels",
-      "result": "fail",
-      "evidence": "Contact form (Nombre, Correo, Teléfono, Mensaje), newsletter and search use placeholder only, no <label>, no autocomplete; input types email/tel are correct."
-    },
-    {
-      "id": "a11y-motion",
-      "result": "fail",
-      "evidence": "3 autoplay carousels (4-5 s) with no pause control; 42 WOW zoomIn animations without prefers-reduced-motion handling."
-    },
-    {
-      "id": "a11y-lang",
-      "result": "pass",
-      "evidence": "<html lang=\"es\"> on home and contact; Lighthouse html-has-lang pass."
-    },
-    {
-      "id": "a11y-targets",
-      "result": "pass",
-      "evidence": "Lighthouse target-size pass on mobile; header icons have 10px padding around 18px icons, size buttons 40px; footer social icons 16px with 14px spacing meet the spacing exception. Viewport allows zoom."
-    }
+    {"id": "a11y-contrast", "result": "partial", "evidence": "Rendered contrast sweep of home, product and contact pages: body text and buttons pass; 38 'New' badges fail at 1.65:1 (white on #D4CA9F, 9px) and 'Bancos aliados' at 3.98:1. Text over photos not measured numerically."},
+    {"id": "a11y-text-not-image", "result": "fail", "evidence": "The hero headline 'NEXO' and its four-line tagline are white pixels in NEXO_ELEMENTOS_GRAFICOS-52.png (alt=\"\"); hero text content is only 'CONOCER MÁS'. 'Contactar a un asesor' is baked into the WhatsApp image."},
+    {"id": "a11y-alt", "result": "fail", "evidence": "7 images in a.cg-card have no alt attribute (file names like magnific__viewing-direction...png, DSC0889.jpg); the hero text image has alt=\"\"; video fallback img has no alt. Logo alt 'Safetti' is fine."},
+    {"id": "a11y-headings", "result": "partial", "evidence": "Home has exactly one H1 but it is the logo; 30 H2 product titles from triplicated slider copies; /pages/contact has no H1. Product page has one correct H1."},
+    {"id": "a11y-names", "result": "fail", "evidence": "No accessible name on the search icon, mobile menu link, 4 product cards, quantity +/- buttons, cart drawer close; cart link reads '0'; chat iframe title 'wizybot-chat-iframe'. Social icons, account, favorites and WhatsApp float are named."},
+    {"id": "a11y-focus", "result": "fail", "evidence": "9 of 9 sampled element types (header, menu, icons, hero button, cards, products, COMPRAR, newsletter input, social) show no visual change on :focus-visible; outline none. Only third-party size-chart links show an outline."},
+    {"id": "a11y-keyboard", "result": "partial", "evidence": "Top-level menu links, slider arrows (Enter works), chat iframe and cart drawer (Escape closes, focus returns) work without traps; mega-menu subcategories never open by keyboard, size options on the product page are unreachable, 12 off-screen tab stops in the closed search drawer, 60 stops for triplicated slider items."},
+    {"id": "a11y-form-labels", "result": "fail", "evidence": "Contact form (name, email, phone, message) and newsletter email are placeholder-only with no label and no autocomplete; input types email/tel are correct."},
+    {"id": "a11y-motion", "result": "fail", "evidence": "Autoplay looping hero video with no controls and an infinite 12 s marquee; both keep running with prefers-reduced-motion: reduce; no pause control."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> on the home; content is Spanish."},
+    {"id": "a11y-targets", "result": "partial", "evidence": "Header icons 45x55 px and main buttons are large; consent checkbox is 13x13 px; category tabs 21 px tall (spaced); floating WhatsApp button covers part of the 'CONOCER MÁS' button on mobile and the right edge of add-to-cart on desktop product page. Zoom is not disabled (viewport width=device-width,initial-scale=1)."}
   ]
 }

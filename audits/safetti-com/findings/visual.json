@@ -3,140 +3,122 @@
   "findings": [
     {
       "id": "visual-1",
-      "title": "El mensaje principal está pegado dentro de una foto",
-      "summary": "Lo primero que ve el cliente es una imagen con texto incrustado, así que en celular el mensaje se achica, no se puede leer bien y Google no lo entiende.",
-      "now": "La portada es un carrusel de 2 banners (NEXO y ofertas) donde el título, el subtítulo y hasta el botón «DESCUBRE NEXO» son parte de la foto. En celular el banner de ofertas incluye una letra legal diminuta dentro de la imagen, imposible de leer.",
-      "fix": "Dejar la foto limpia y escribir encima el título, la frase de apoyo y el botón como texto real (título de al menos 28 px en celular), con una versión pensada para pantalla vertical.",
-      "why": "La primera impresión decide si el visitante sigue mirando; un mensaje nítido y grande en el celular transmite una marca cuidada.",
+      "title": "El mensaje principal es una imagen pequeña en inglés",
+      "summary": "Quien entra desde el celular no alcanza a leer qué es NEXO ni por qué le conviene, y el mensaje está en otro idioma que el resto de la tienda.",
+      "now": "Sobre el video de portada, el logo NEXO y la frase \"Every movement creates a connection…\" son una sola imagen. En un celular esa frase se ve con letras de unos 12 píxeles, encima de un video que cambia de cuadro, y está en inglés mientras todo lo demás está en español.",
+      "fix": "Escribir el titular y la frase como texto real en español (por ejemplo, el beneficio de la colección en una línea), de al menos 28 px en celular y con un fondo o sombra que garantice que se lea sobre cualquier cuadro del video. El logo NEXO puede seguir como imagen.",
+      "why": "Es lo primero que ve el comprador; si no lo lee en dos segundos, la portada no vende la colección.",
       "impact": 4,
-      "effort": "Medio",
+      "effort": "Bajo",
+      "headline_metric": "≈12 px de letra en celular",
       "evidence": [
-        "raw/home.html: hero slides are only <a class=\"ss_link\" href=\"/collections/nexo\"> and <a class=\"ss_link\" href=\"/collections/sale\"> wrapping img.ssimg (BANNER_NEXO / BANNER-PEQ-NEXO / BANNER_HOT_SALE-02 / BANNER-PEQ-HOT_SALE); no text nodes inside the slideshow",
-        "screenshots/desktop-viewport.png: 'NUEVA COLECCIÓN', 'NEXO', 'CADA MOVIMIENTO GENERA UNA CONEXIÓN' and 'DESCUBRE NEXO →' button are pixels in the photo (center, y≈190–775 of 900)",
-        "Lighthouse mobile final-screenshot (412x823): 'ÚLTIMAS UNIDADES / Del 20% al 50% de descuento' banner with multi-line legal fine print baked into the image below the button",
-        "The only <h1> on the page is the logo (<h1 class=\"header-logo\">)"
+        "raw/home.html: .video-hero__content contains only <img class=\"video-hero__logo\" src=\"…/NEXO_ELEMENTOS_GRAFICOS-52.png\" alt=\"\"> (1200x780 PNG) plus the button CONOCER MÁS; no heading text in the hero.",
+        "Rendered (headless Chrome, puppeteer, 412x915 @2x mobile emulation): img.video-hero__logo = 180x117 CSS px; the 4 tagline lines span ~95 device px = ~12.5 CSS px per line (screenshots/visual-mobile-hero-tagline.png). Desktop 1440: same image at 360x234 CSS px.",
+        "The only <h1> on the page is the logo text \"Safetti\" (27px mobile / 32px desktop), not a value message (raw/visual-dom.json).",
+        "screenshots/visual-desktop-viewport.png and visual-mobile-viewport.png: tagline in English; the hero is a video, so the frame behind the text differs per visit and per device (desktop showed a cyclist, mobile a woman with sunglasses)."
       ],
-      "technical_note": "Move hero copy to HTML overlay (h1 + p + a.button) over a text-free image; keep separate art direction via <picture> for mobile. Legal terms belong in a real-text line or a link to T&C.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 31}
+      "technical_note": "Hero headline baked into NEXO_ELEMENTOS_GRAFICOS-52.png with empty alt. Replace the tagline part with live text (h1/h2) using the site font or a web font for the campaign face; keep the NEXO mark as an <img> with meaningful alt. Add a gradient overlay behind text for contrast on variable video frames.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 21, "y_pct": 48}
     },
     {
       "id": "visual-2",
-      "title": "Varias tipografías mezcladas dentro de las imágenes",
-      "summary": "El sitio usa una sola letra (Inter), pero cada banner y mosaico trae otra distinta pegada en la imagen, y eso hace que la marca se vea armada por partes.",
-      "now": "El texto del sitio está en Inter; el banner NEXO usa una letra ancha y espaciada; los mosaicos de categorías (CICLISMO, RUNNING, TRIATLÓN, LIFESTYLE) y de prendas (TOPS, JERSEYS, PANTALONETA, SHORTS) usan una letra condensada y gruesa, con dos tratamientos diferentes (degradado vs franja negra). En pantalla de 1440 px el mosaico «PANTALONETA» se corta como «PANTALONE».",
-      "fix": "Definir dos tipografías de marca (una para títulos y otra para textos) y usarlas también en los nombres de los mosaicos, escritos como texto real sobre la foto con un único estilo.",
-      "why": "Una tipografía constante es de lo que más hace que una marca deportiva se perciba premium y confiable.",
+      "title": "Cuatro productos sin nombre ni precio en portada",
+      "summary": "La primera fila de productos que ve el cliente no le dice qué es cada prenda ni cuánto cuesta, así que tiene que adivinar o abandonar la fila.",
+      "now": "Justo debajo de la franja de texto en movimiento aparecen cuatro fotos de prendas sueltas (enterizo, esqueleto, vestido de baño, jersey) sin título de sección, sin nombre y sin precio. Además, algunas fotos tienen un fondo gris claro distinto del blanco de la página, y se nota el recuadro.",
+      "fix": "Agregar a esa fila un título de sección y, debajo de cada foto, el nombre corto de la prenda y su precio, con el mismo formato de tarjeta que usan las secciones siguientes; igualar el fondo de esas fotos al blanco de la página.",
+      "why": "Un producto sin nombre ni precio no despierta la decisión de compra y hace ver la portada sin terminar.",
       "impact": 3,
-      "effort": "Medio",
+      "effort": "Bajo",
       "evidence": [
-        "raw/home.html + raw/visual-theme.css: --ft1/--ft2/--ft3 all = Inter,sans-serif; only @font-face family loaded is Inter (weights 300–700)",
-        "screenshots/desktop-viewport.png: 'NEXO' wide display face + letter-spaced caps inside hero image",
-        "screenshots/desktop-fullpage.jpg y≈393: TOPS / JERSEYS / PANTALONETA / SHORTS in condensed bold inside images (IMAGENES_CATEGORIA-0x.jpg) on a black band",
-        "screenshots/visual-desktop-tall.png: CICLISMO / RUNNING / TRIATLÓN / LIFESTYLE tiles (IMAGENES_DEPORTE_ESPANOL-0x.jpg) with a different gradient treatment; 4th tile of the second carousel cropped to 'PANTALONE' at the right edge"
+        "Section #shopify-section-template--27793839620314__category_grid_mMcUAN (desktop y=883–1349, mobile y=759–1294): 4 <img>, innerText empty; links go to product pages (enterizo-triatlon…aerocooler-north, camiseta-running…levit-south, vestido-bano-natacion-mujer, jersey…leggero-south).",
+        "screenshots/visual-desktop-bare-products.png: no names/prices; the 4th image (jersey) shows a lighter rectangular background box against the page white.",
+        "By contrast the next sections (Descubre NEXO, Descubre tu universo) show name + price under every card."
       ],
-      "technical_note": "Typefaces visible: Inter (HTML), script logo, extended display (hero image), condensed grotesk (tile images). Render tile labels as HTML text with a single brand display font.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 12, "y_pct": 6}
+      "technical_note": "category_grid block configured with product images but no captions. Either switch to a product grid/slider block or enable title/price captions. Re-export ghost-mannequin images on pure #FFFFFF or transparent background.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 21}
     },
     {
       "id": "visual-3",
-      "title": "Los botones cambian de estilo en cada sección",
-      "summary": "Cuando cada botón se ve distinto, el cliente no reconoce de inmediato cuál es la acción principal y la página se siente menos cuidada.",
-      "now": "En el inicio conviven al menos cinco estilos: píldora blanca con borde negro («COMPRAR», «VER TODOS»), píldora dorada rellena («VER TODO CICLISMO»), píldora gris («SUSCRIBIR»), rectángulo negro («OBTENER 10% OFF» en la ventana emergente) y un botón translúcido dibujado dentro de la foto de portada («DESCUBRE NEXO»).",
-      "fix": "Dejar solo dos estilos: uno principal (relleno, color de marca) para comprar y uno secundario (con borde) para ver más, aplicados igual en toda la página.",
-      "why": "Botones consistentes guían la vista hacia la compra y dan sensación de tienda profesional.",
-      "impact": 2,
-      "effort": "Bajo",
-      "evidence": [
-        "screenshots/desktop-fullpage.jpg y≈2426: 'VER TODO CICLISMO' beige filled pill (#d4ca9f is the theme accent) vs outlined 'COMPRAR' pills above it",
-        "screenshots/desktop-fullpage.jpg y≈5800: 'SUSCRIBIR' grey filled pill; y≈1032: 'OBTENER 10% OFF' black rectangle in popup",
-        "screenshots/desktop-viewport.png y≈747: 'DESCUBRE NEXO →' translucent button baked into hero image",
-        "screenshots/visual-desktop-tall.png: 'VER TODOS' outlined pills + black circular size chips in 'Compra tus prendas por talla'"
-      ],
-      "technical_note": "Theme defines several --btnbg/--btncl sets per section (#fff, #333, #000) plus accent #d4ca9f; consolidate into primary/secondary button tokens.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 37}
-    },
-    {
-      "id": "visual-4",
-      "title": "El pie de página dice © 2024",
-      "summary": "Un año de copyright viejo hace pensar que el sitio no se actualiza, justo en el lugar donde el cliente busca datos de confianza.",
-      "now": "El pie de página muestra «© 2024 Powered by Gomonke», aunque la portada anuncia una colección nueva y ofertas vigentes de este mes de octubre.",
-      "fix": "Hacer que el año se actualice solo y revisar el pie de página para que muestre información de la marca en lugar del crédito del proveedor.",
-      "why": "Las señales de abandono, por pequeñas que sean, restan confianza al momento de pagar.",
-      "impact": 2,
-      "effort": "Bajo",
-      "headline_metric": "© 2024",
-      "evidence": [
-        "raw/home.html: footer text '© 2024 Powered by'",
-        "screenshots/desktop-fullpage.jpg y≈6558 (bottom center): '© 2024 Powered by Gomonke'",
-        "Lighthouse mobile final-screenshot: banner '16 – 23 OCTUBRE' shows current campaigns, contrasting with the 2024 footer"
-      ],
-      "technical_note": "Shopify Liquid: {{ 'now' | date: '%Y' }}.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 99}
-    },
-    {
-      "id": "visual-5",
-      "title": "La promesa ecológica no se demuestra visualmente",
-      "summary": "La marca dice ser «eco amigable» y de «alto rendimiento», pero la página no muestra ninguna prueba que el cliente pueda ver, así que la promesa pasa desapercibida.",
-      "now": "En la franja «Lo que nos hace iguales a ninguno» el punto ecológico es un ícono genérico de reciclaje con el texto «El 23% de nuestro portafolio… tejidos EKO y/o biodegradables», en letra pequeña y sin sello, certificado, foto del material ni enlace. Tampoco se ve en el inicio ningún detalle técnico de las prendas (tejido, costuras, ventilación).",
-      "fix": "Mostrar la prueba: sello o nombre del tejido certificado, foto de cerca del material, una marca «EKO» en las prendas que lo son y una sección corta de detalle técnico con imágenes reales.",
-      "why": "Una promesa con evidencia visual justifica precios de $300.000 o más y diferencia a la marca frente a ropa deportiva genérica.",
+      "title": "Botones con cinco estilos distintos en una página",
+      "summary": "Cada sección usa un botón diferente, lo que hace ver la tienda armada por partes y le quita claridad a cuál es la acción principal.",
+      "now": "En la portada conviven un botón blanco cuadrado (\"Conocer más\"), botones de borde negro redondeados (\"Comprar\"), un botón beige relleno (\"Ver todo ciclismo\"), pestañas grises redondeadas (Ciclismo/Running/Triatlón) y un botón gris de suscripción. Además, las tarjetas de \"Descubre NEXO\" no tienen botón de compra y las de \"Descubre tu universo\" sí.",
+      "fix": "Definir dos estilos de botón (uno principal y uno secundario) con la misma forma y aplicarlos en todas las secciones; dar a todas las tarjetas de producto el mismo esquema de nombre, precio y acción.",
+      "why": "Un sistema de botones coherente se percibe como marca cuidada y guía la mirada hacia comprar.",
       "impact": 3,
       "effort": "Medio",
       "evidence": [
-        "raw/home.html: only sustainability mention is '23% de nuestro portafolio está compuesto por prendas confeccionadas con tejidos EKO y/o biodegradables' in a benefits list item",
-        "screenshots/desktop-fullpage.jpg y≈4515: generic line icon (recycling) with grey small text; no seal/certification image or link",
-        "screenshots/desktop-fullpage.jpg y≈5533: 'SAFETTI ROPA DEPORTIVA DE ALTO RENDIMIENTO PARA CADA DISCIPLINA' claim with no technical imagery on the home",
-        "Product cards show prices from $96,000 to $437,500 with no material/tech badge"
+        "Computed styles (raw/visual-dom.json, desktop 1440): .video-hero__button bg #fff, color #000, radius 0, 1px white border; product-card COMPRAR: transparent bg, 1px black border, pill radius (screenshot); .btn.btn-md (VER TODO CICLISMO) bg rgb(212,202,159) #d4ca9f, radius 25px; .btn.newsl_btn (Suscribir) radius 0 25px 25px 0 on desktop / 25px on mobile, rendered gray in screenshots; collection tabs: active pill filled #cbcbcb, inactive outlined.",
+        "screenshots/visual-desktop-clean-full.png: Descubre NEXO cards (y≈1880–2040) show name + price only; Descubre tu universo cards (y≈3100–4000) show name + price + COMPRAR.",
+        "Lighthouse captures (desktop-fullpage.jpg, mobile-fullpage.jpg) also show an Omnisend pop-up with a sixth, square black button \"OBTENER 10% OFF\"; the pop-up appears on some loads only."
       ],
-      "technical_note": "Whether 'EKO' corresponds to a third-party certification was not verified; do not claim one in the proposal without the client confirming it.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 61, "y_pct": 69}
+      "technical_note": "Theme CSS vars include --btnbg #000/#333/#fff and --btnh #d4ca9f; consolidate into primary (filled) + secondary (outline) tokens with one radius. Pop-up is Omnisend form 68f7eccb75b6b2576ebc50f6 with its own styles.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 62}
+    },
+    {
+      "id": "visual-4",
+      "title": "En celular las tarjetas de producto se ven descuadradas",
+      "summary": "En el celular las tarjetas se ven improvisadas y dos prendas distintas parecen la misma.",
+      "now": "En la sección \"Descubre NEXO\" el ícono de lupa es casi tres veces más grande que los de favorito y carrito, y el nombre se corta en tres líneas: \"Chaqueta rompevientos de ciclismo Aqualite\" aparece igual en la versión de hombre y la de mujer, porque se pierde el final. En las pestañas, \"Triatlón\" queda cortada por el borde derecho y la página se desplaza unos píxeles hacia el lado.",
+      "fix": "Unificar el tamaño de los íconos de la tarjeta, usar nombres cortos que quepan completos (o mostrar la línea de género aparte) y ajustar las pestañas para que quepan o se desplacen con una señal clara.",
+      "why": "Los detalles descuadrados en celular hacen dudar de la seriedad de la tienda justo antes de comprar.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Rendered mobile 412 CSS px (puppeteer emulation): .button-set icons measured 13x13, 13x13 and 38x30 CSS px (heart, bag, search) — screenshots/visual-mobile-card-icons.png.",
+        "Same crop: both cards read \"CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE\" — the DOM names are \"…verde prado para hombre\" / \"…para mujer\" (raw/visual-dom.json), clipped to 3 lines.",
+        "screenshots/visual-mobile-tabs.png: TRIATLÓN pill cut at the right edge; document.documentElement.scrollWidth = 418 vs clientWidth 412 (6 px horizontal overflow)."
+      ],
+      "technical_note": "Quick-view search SVG in .button-set lacks the width/height applied to the other two icons on mobile. Product title line-clamp: 3 in the slider. Tabs container needs overflow-x:auto with padding or smaller pills; find the element causing the 6px overflow (likely the floating WhatsApp widget, cut at the right edge in visual-mobile-viewport.png).",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 39, "y_pct": 26}
+    },
+    {
+      "id": "visual-5",
+      "title": "La portada no muestra la tecnología que promete",
+      "summary": "La marca dice ofrecer tecnología avanzada, pero el visitante no ve ninguna prueba, así que compara solo por precio y foto.",
+      "now": "La descripción del sitio habla de \"diseño de vanguardia y tecnología avanzada\", pero en la portada no hay nada que lo demuestre: ni íconos o datos de las telas (Aqualite, Aerocooler aparecen solo dentro del nombre), ni opiniones de clientes, ni atletas o equipos que la usen. Lo que sí da confianza, las cinco tiendas físicas, está escondido en el pie de página.",
+      "fix": "Agregar una franja corta con 3 o 4 pruebas visuales: qué hace cada tela (con ícono y una cifra si la tienen), calificación o reseñas de clientes, y tus tiendas físicas como sello de respaldo.",
+      "why": "En ropa técnica de precio alto, la prueba visible de calidad es lo que justifica pagar más que la competencia.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/home.html <meta name=\"description\"> and og:description: \"Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados…\".",
+        "screenshots/visual-desktop-clean-full.png: sections in order are hero video, marquee, 4 bare product images, Descubre NEXO slider, 3 sport tiles, Descubre tu universo tabs, acrobatic photo, newsletter, footer — no fabric/technology block, no ratings, no badges.",
+        "Footer lists 5 physical stores (Laureles, Indiana, Llanogrande, Bogotá + WhatsApp Shopping) in small text only.",
+        "Prices shown on home range $96,000–$353,400 COP (product cards)."
+      ],
+      "technical_note": "No review app markup visible in the rendered home (no star ratings on cards). A benefits/features section with icons can be built from existing theme blocks.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 82}
     },
     {
       "id": "visual-6",
-      "title": "Ventanas y botones flotantes tapan el producto",
-      "summary": "Al llegar, el cliente ve una ventana de suscripción y dos burbujas de chat encima de la portada, y el producto pierde protagonismo.",
-      "now": "Sobre la foto principal aparecen dos botones flotantes apilados (WhatsApp y un chat con alerta roja «!»), y al bajar se abre una ventana «SUSCRÍBETE HOY» que oscurece toda la página. En celular la ventana ocupa casi todo el ancho y su «X» de cierre queda pegada al borde.",
-      "fix": "Dejar un solo botón de contacto flotante y retrasar la ventana de suscripción (por ejemplo, al intentar salir o tras ver varios productos), con un diseño más compacto en celular.",
-      "why": "Una portada despejada se percibe más premium y deja que la colección haga el trabajo de vender.",
+      "title": "El primer pantallazo tiene elementos que compiten entre sí",
+      "summary": "La mirada se reparte entre el menú, el video, la franja en movimiento y dos burbujas de chat, en vez de ir directo a la colección.",
+      "now": "En computador el menú no cabe en una línea y deja \"Ultimas prendas\" sola en una segunda fila. Debajo del video, una franja de texto grande en movimiento (con un error de tilde: \"SÍGUE\") compite con el titular, y en la esquina se apilan dos botones flotantes, el de WhatsApp y el de chat, que en celular tapan parte de la franja y de los productos.",
+      "fix": "Dejar el menú en una sola línea (agrupar o acortar opciones), bajar el tamaño de la franja en movimiento o quitarla, corregir \"SIGUE\" y dejar un solo botón flotante de contacto.",
+      "why": "Un primer pantallazo ordenado transmite marca premium; uno recargado se ve improvisado.",
       "impact": 2,
       "effort": "Bajo",
       "evidence": [
-        "screenshots/desktop-viewport.png (1384,710) WhatsApp bubble and (1384,845) chat bubble with red '!' badge, overlapping the hero photo",
-        "screenshots/desktop-fullpage.jpg y≈480–1170: 'SUSCRÍBETE HOY' modal over a dimmed page",
-        "screenshots/mobile-fullpage.jpg: modal spans ~395 of 412 px width, close 'X' clipped at the right edge (x≈405)"
+        "screenshots/visual-desktop-viewport.png (1440x900): nav wraps to 2 rows, \"ULTIMAS PRENDAS\" alone at x≈705, y≈136; header block spans y=42–171.",
+        "Marquee section .scrolTxt: font-size 25px (desktop and mobile), text \"NO TODOS LOS DÍAS SE MUEVEN IGUAL. TÚ TAMPOCO POR ESO NEXO SÍGUE CRECIENDO.\" (raw/visual-dom.json, raw/home.html).",
+        "visual-desktop-viewport.png: WhatsApp widget (x≈1385, y≈725) and chat bubble (x≈1385, y≈845) stacked; chat bubble overlaps the marquee text. visual-mobile-viewport.png: chat bubble covers the second product image, WhatsApp label cut at the right edge.",
+        "On some loads an Omnisend pop-up with dark overlay covers the page (visible in Lighthouse desktop-fullpage.jpg / mobile-fullpage.jpg, not in our own captures) — content varies per visit."
       ],
-      "technical_note": "Two separate contact widgets are loaded (WhatsApp float + chat app). Visual scope only; conversion impact of the popup belongs to UX.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 96, "y_pct": 87}
-    },
-    {
-      "id": "visual-7",
-      "title": "Los títulos no siguen una misma escala",
-      "summary": "Títulos de igual importancia se ven de tamaños y pesos distintos, lo que hace la página más difícil de recorrer con la vista.",
-      "now": "Los títulos de sección son mayúsculas finas y medianas («CATEGORÍAS», «DEPORTES», «LO MÁS VENDIDO»), pero «Compra tus prendas por talla» es más pequeño y en negrita, «SUSCRÍBETE» es grande y grueso, y el título más grande de toda la página es un texto al final («SAFETTI ROPA DEPORTIVA DE ALTO RENDIMIENTO…»), no el de la portada.",
-      "fix": "Definir una escala de 3 niveles (título de portada, título de sección, nombre de producto) y aplicarla igual en todas las secciones.",
-      "why": "Una jerarquía clara ayuda a que el cliente encuentre rápido lo que busca y transmite orden.",
-      "impact": 2,
-      "effort": "Bajo",
-      "evidence": [
-        "raw/home.html: 6 × <h2 class=\"sttl\">, 3 × bare <h2>, 31 × <h2 style=\"font-size: 14px;font-weight: 400;\"> used for product names",
-        "screenshots/desktop-fullpage.jpg y≈5533: bottom SEO heading is the largest, boldest text on the page",
-        "screenshots/visual-desktop-tall.png: 'COMPRA TUS PRENDAS POR TALLA' small bold vs 'DEPORTES' light medium"
-      ],
-      "technical_note": "Product names should not be h2; use a styled p/h3. Unify .sttl sizing across sections.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 47, "y_pct": 84}
+      "technical_note": "Header nav: 8 top-level items at 13px letter-spaced uppercase overflow the centered nav width at 1440. Two third-party floating widgets (WhatsApp button + a chat app) both bottom-right.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 49, "y_pct": 15}
     }
   ],
   "checks": [
-    {"id": "vis-headline-legible", "result": "fail", "evidence": "Hero headline on desktop and mobile is baked into slideshow images (BANNER_NEXO, BANNER-PEQ-NEXO, BANNER-PEQ-HOT_SALE); no real-text headline in the first viewport; the only h1 is the logo."},
-    {"id": "vis-focal-point", "result": "partial", "evidence": "Hero has a clear focal point (NEXO wordmark) and product sections are orderly, but two stacked floating chat widgets overlap the hero and a full-page newsletter modal competes with content."},
-    {"id": "vis-fonts", "result": "fail", "evidence": "CSS loads only Inter, but images add an extended display face (hero) and a condensed bold face (category and garment tiles), plus the script logo: 3+ families counting text in images."},
-    {"id": "vis-buttons", "result": "fail", "evidence": "At least 5 button styles on the home: outlined pill (COMPRAR/VER TODOS), beige filled pill (VER TODO CICLISMO), grey pill (SUSCRIBIR), black rectangle (OBTENER 10% OFF), translucent image button (DESCUBRE NEXO)."},
-    {"id": "vis-headings", "result": "partial", "evidence": "Most section titles share h2.sttl styling, but 'Compra tus prendas por talla', 'SUSCRÍBETE' and the bottom 'SAFETTI ROPA DEPORTIVA…' heading differ in size/weight; product names use inline-styled h2 at 14px."},
-    {"id": "vis-palette", "result": "pass", "evidence": "Brand palette is black, white and one beige-gold accent (#d4ca9f, 34 uses in HTML+theme.css) with neutral greys; accent used consistently for hover/secondary highlights."},
-    {"id": "vis-photos", "result": "pass", "evidence": "Real, well-lit lifestyle photos (hero group of cyclists in a town plaza, sport tiles) and consistent studio product photos on light grey background; no generic stock observed."},
-    {"id": "vis-products", "result": "pass", "evidence": "Every product card shows a full name including the sport and gender (e.g. 'CAMISA CICLISMO MANGA LARGA TRACE PARA MUJER'), price and COMPRAR button."},
-    {"id": "vis-positioning", "result": "partial", "evidence": "Sport-specific positioning is backed by real athlete photography, but the eco claim (23% EKO/biodegradable) and 'alto rendimiento' have no visible proof (seal, material close-ups, technical details), only a generic icon."},
-    {"id": "vis-spacing", "result": "partial", "evidence": "Grid alignment is mostly consistent on desktop and mobile, but the second tile carousel crops 'PANTALONETA' to 'PANTALONE' at 1440 px, and there is an empty ~85 px band between the category carousel and the size section."},
-    {"id": "vis-up-to-date", "result": "fail", "evidence": "Footer reads '© 2024 Powered by Gomonke' while the hero banners advertise a current October campaign ('16 – 23 OCTUBRE'); audit date 2026-10-25."}
+    {"id": "vis-headline-legible", "result": "fail", "evidence": "Hero headline/tagline is an image (NEXO_ELEMENTOS_GRAFICOS-52.png, alt=\"\"), not text; on 412px mobile the tagline renders at ~12 CSS px per line (image 180x117). Only H1 is the logo \"Safetti\"."},
+    {"id": "vis-focal-point", "result": "partial", "evidence": "Hero video + CONOCER MÁS is a clear focus and the product sections have headings; but the first screen competes with a wrapped 2-row nav, a 25px marquee and two floating widgets, and the 4-image row after the marquee has no heading or focus."},
+    {"id": "vis-fonts", "result": "partial", "evidence": "All HTML text uses Inter (weights 300–700). Hero tagline inside the image uses a second geometric face (2 total). A third family, RobotoOmnisend, loads with the Omnisend pop-up on some visits (seen on mobile load)."},
+    {"id": "vis-buttons", "result": "fail", "evidence": "At least 5 button styles: white square (Conocer más), black-outline pill (Comprar), beige #d4ca9f filled pill (Ver todo ciclismo), gray pill tabs (#cbcbcb active), gray/black pill-right Suscribir; plus square black pop-up button. Descubre NEXO cards lack the Comprar button others have."},
+    {"id": "vis-headings", "result": "partial", "evidence": "Section titles Descubre NEXO and Descubre tu universo match (20px/500 uppercase desktop); SUSCRÍBETE is 30px/600 bold, and product names reuse H2 at 14px/400."},
+    {"id": "vis-palette", "result": "partial", "evidence": "Core palette is coherent (black, white, beige #d4ca9f), but CSS defines near-duplicate blacks (#000, #050505, #111, #1a1a1a, #202223, #333) and grays (#cbcbcb, #eee, #efefef, #ede9e9); subscribe button renders gray while other dark buttons are black."},
+    {"id": "vis-photos", "result": "partial", "evidence": "Lifestyle photos (ciclismo/triatlón/running tiles) and model shots are real and well lit; ghost-mannequin row and the acrobatic banner show visible off-white background boxes against the page white, so the set is not fully consistent."},
+    {"id": "vis-products", "result": "partial", "evidence": "Descubre NEXO and Descubre tu universo cards show name + price; the first product row (category_grid_mMcUAN, 4 items) shows bare photos with no name or price; on mobile names are clipped so men/women versions look identical."},
+    {"id": "vis-positioning", "result": "fail", "evidence": "Site description claims \"tecnología avanzada\"; homepage shows no fabric/technology proof, ratings, seals or athlete endorsements. Physical stores appear only in footer text."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "Desktop grid and section spacing are mostly even; but desktop nav wraps with one orphan item on row 2, and mobile has 6px horizontal overflow (scrollWidth 418 vs 412) with the Triatlón tab and WhatsApp label clipped."},
+    {"id": "vis-up-to-date", "result": "pass", "evidence": "Footer shows © 2026; flat, current styling with no heavy shadows or clip-art; new NEXO collection featured."}
   ]
 }

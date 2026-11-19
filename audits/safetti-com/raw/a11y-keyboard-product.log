@@ -1,0 +1,73 @@
+{
+ "h1": [
+  "CAMISA CICLISMO MANGA CORTA BEACON PARA HOMBRE"
+ ],
+ "opts": [
+  "INPUT type=hidden name=form_type id= for= tabindex=null disp=none w=0 txt=product",
+  "INPUT type=hidden name=utf8 id= for= tabindex=null disp=none w=0 txt=✓",
+  "INPUT type=radio name=swtalla id=15265087389914-1-s for= tabindex=null disp=none w=0 txt=S",
+  "LABEL type= name= id= for=15265087389914-1-s tabindex=null disp=block w=40 txt=S",
+  "INPUT type=radio name=swtalla id=15265087389914-1-m for= tabindex=null disp=none w=0 txt=M",
+  "LABEL type= name= id= for=15265087389914-1-m tabindex=null disp=block w=40 txt=M",
+  "INPUT type=radio name=swtalla id=15265087389914-1-l for= tabindex=null disp=none w=0 txt=L",
+  "LABEL type= name= id= for=15265087389914-1-l tabindex=null disp=block w=40 txt=L",
+  "INPUT type=radio name=swtalla id=15265087389914-1-xl for= tabindex=null disp=none w=0 txt=XL",
+  "LABEL type= name= id= for=15265087389914-1-xl tabindex=null disp=block w=40 txt=XL",
+  "INPUT type=radio name=swtalla id=15265087389914-1-2xl for= tabindex=null disp=none w=0 txt=2XL",
+  "LABEL type= name= id= for=15265087389914-1-2xl tabindex=null disp=block w=47 txt=2XL",
+  "SELECT type=select-one name=id id=ProductSelect-template--27793841455322__main for= tabindex=null disp=none w=0 txt=SMLXL2XL - Agotado",
+  "BUTTON type=button name=minus id= for= tabindex=null disp=flex w=40 txt=",
+  "INPUT type=number name=quantity id=quantity15265087389914 for= tabindex=null disp=flex w=60 txt=1",
+  "BUTTON type=button name=plus id= for= tabindex=null disp=flex w=40 txt=",
+  "BUTTON type=submit name=add id=AddToCart-template--27793841455322__main for= tabindex=null disp=inline-block w=481 txt=AGREGAR AL CARRITO",
+  "BUTTON type=button name= id= for= tabindex=null disp=block w=481 txt=COMPRAR AHORA",
+  "INPUT type=hidden name=product-id id= for= tabindex=null disp=none w=0 txt=15265087389914",
+  "INPUT type=hidden name=section-id id= for= tabindex=null disp=none w=0 txt=template--27793841455322_"
+ ]
+}
+1 {"tag":"A","type":"","name":"Ir directamente al contenido","id":"","cls":"skip-to-content-link button hi","outline":"none 0px","shadow":"none","off":true}
+2 {"tag":"A","type":"","name":"NUEVA COLECCIÓN | NEXO","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+3 {"tag":"A","type":"","name":"NUESTRAS TIENDAS","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+4 {"tag":"A","type":"","name":"NUEVA COLECCIÓN | NEXO","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+5 {"tag":"A","type":"","name":"NUESTRAS TIENDAS","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+6 {"tag":"A","type":"","name":"NUEVA COLECCIÓN | NEXO","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+7 {"tag":"A","type":"","name":"NUESTRAS TIENDAS","id":"","cls":"fl f-jcc f-aic promo_msg tc ft","outline":"none 2px","shadow":"none","off":false}
+8 {"tag":"A","type":"","name":"SAFETTI","id":"","cls":"hdr_logo_lnk","outline":"none 0px","shadow":"none","off":false}
+9 {"tag":"A","type":"","name":"HOMBRE","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+10 {"tag":"A","type":"","name":"COMPLEMENTOS","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+11 {"tag":"A","type":"","name":"MUJER","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+12 {"tag":"A","type":"","name":"COLECCIONES","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+13 {"tag":"A","type":"","name":"CUSTOM","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+14 {"tag":"A","type":"","name":"SAFETTI EXPERIENCE","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+15 {"tag":"A","type":"","name":"DEPORTES","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+16 {"tag":"A","type":"","name":"ULTIMAS PRENDAS","id":"","cls":"","outline":"none 0px","shadow":"none","off":false}
+17 {"tag":"A","type":"","name":"","id":"","cls":"hdicon searchIcn hide-sm hide-","outline":"none 0px","shadow":"none","off":false}
+18 {"tag":"A","type":"","name":"","id":"","cls":"hdicon user-menu","outline":"none 0px","shadow":"none","off":false}
+19 {"tag":"A","type":"","name":"","id":"","cls":"hdicon","outline":"none 0px","shadow":"none","off":false}
+20 {"tag":"A","type":"","name":"0","id":"cartLink","cls":"hdicon","outline":"none 0px","shadow":"none","off":false}
+21 {"tag":"INPUT","type":"search","name":"","id":"","cls":"s_input w_100","outline":"none 0px","shadow":"none","off":true}
+22 {"tag":"BUTTON","type":"submit","name":"BUSCAR","id":"","cls":"btn s_submit","outline":"none 3px","shadow":"none","off":true}
+23 {"tag":"A","type":"","name":"","id":"","cls":"db","outline":"none 0px","shadow":"none","off":true}
+24 {"tag":"A","type":"","name":"PANTALONETA CICLISMO ULTIMATE ","id":"","cls":"pr_list_ttl","outline":"none 0px","shadow":"none","off":true}
+25 {"tag":"A","type":"","name":"","id":"","cls":"db","outline":"none 0px","shadow":"none","off":true}
+26 {"tag":"A","type":"","name":"CAMISA CICLISMO MANGA CORTA SO","id":"","cls":"pr_list_ttl","outline":"none 0px","shadow":"none","off":true}
+27 {"tag":"A","type":"","name":"","id":"","cls":"db","outline":"none 0px","shadow":"none","off":true}
+28 {"tag":"A","type":"","name":"CHAQUETA RUNNING MOVA BLACK PA","id":"","cls":"pr_list_ttl","outline":"none 0px","shadow":"none","off":true}
+29 {"tag":"A","type":"","name":"","id":"","cls":"db","outline":"none 0px","shadow":"none","off":true}
+30 {"tag":"A","type":"","name":"PANTALONETA CICLISMO TOSCANA 2","id":"","cls":"pr_list_ttl","outline":"none 0px","shadow":"none","off":true}
+31 {"tag":"A","type":"","name":"","id":"","cls":"db","outline":"none 0px","shadow":"none","off":true}
+32 {"tag":"A","type":"","name":"PANTALONETA CICLISMO TOSCANA S","id":"","cls":"pr_list_ttl","outline":"none 0px","shadow":"none","off":true}
+33 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+34 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+35 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+36 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+37 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+38 {"tag":"A","type":"","name":"","id":"","cls":"swiper-slide pr_photo p2 pswip","outline":"none 0px","shadow":"none","off":false}
+39 {"tag":"SPAN","type":"","name":"Guía de tallas","id":"","cls":"ks-chart-modal-link sizing-cha","outline":"solid 2px","shadow":"none","off":false}
+40 {"tag":"SPAN","type":"","name":"Calcular mi talla","id":"","cls":"ks-calculator-modal-link sizin","outline":"solid 2px","shadow":"none","off":false}
+41 {"tag":"A","type":"","name":"Guia de tallas","id":"","cls":"mfp sizelink","outline":"none 0px","shadow":"none","off":false}
+42 {"tag":"BUTTON","type":"button","name":"","id":"","cls":"qtyBtn minus","outline":"none 0px","shadow":"none","off":false}
+43 {"tag":"INPUT","type":"number","name":"Cantidad","id":"quantity15265087389914","cls":"pr_input qty mianQty","outline":"none 0px","shadow":"none","off":false}
+44 {"tag":"BUTTON","type":"button","name":"","id":"","cls":"qtyBtn plus","outline":"none 0px","shadow":"none","off":false}
+45 {"tag":"A","type":"","name":"Agregar a favoritos","id":"","cls":"wishlist addto-wishlist","outline":"none 0px","shadow":"none","off":false}
+46 {"tag":"BUTTON","type":"submit","name":"AGREGAR AL CARRITO","id":"AddToCart-template--27793841455322__main","cls":"btn btn1 pr_btn product-form__","outline":"none 3px","shadow":"none","off":false}

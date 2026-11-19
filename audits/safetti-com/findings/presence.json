@@ -1,263 +1,275 @@
 {
-  "business_inferred": "Inferido del sitio: Safetti, marca colombiana (Medellín) de ropa deportiva técnica para ciclismo, running, triatlón y pádel, con tienda Shopify y tiendas físicas Laureles, Indiana, Llanogrande y Bogotá [ciudades por confirmar].",
   "serp": {
     "today": [
       {
-        "page": "Inicio",
-        "url": "https://safetti.com/",
+        "page": "inicio",
+        "url": "https://safetti.com",
+        "canonical": "https://safetti.com/",
         "title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón– Safetti",
         "meta_description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón.",
-        "breadcrumb": "safetti.com",
-        "notes": "El título tiene un error de escritura ('runnig') y supera los 60 caracteres, así que Google lo corta. La descripción también es más larga de lo recomendado y no dice dónde estás ni desde cuándo."
+        "site_name": "Safetti",
+        "evidence": "Rendered DOM (headless Chrome --dump-dom, raw/presence-rendered-home.html): <title> and meta[name=description]; identical in no-JS HTML (raw/home.html). Title has the typo 'runnig' and no space before the dash. Description is 171 characters, so Google cuts it around 155. og:site_name and WebSite schema name are 'Safetti'."
       },
       {
-        "page": "Categoría Ciclismo",
-        "url": "https://safetti.com/collections/ropa-ciclismo",
-        "title": "Ropa deportiva ciclismo para hombre y mujer– Safetti",
-        "meta_description": "Descubre nuestra selección de ropa de ciclismo: buzos, camisas, chaquetas impermeables y pantalones diseñados para comodidad y rendimiento en cada ruta.",
-        "breadcrumb": "safetti.com › collections › ropa-ciclismo",
-        "notes": "Correcta en lo básico. /collections/ciclismo declara como canónica /collections/ropa-ciclismo."
+        "page": "producto (jersey Code Green hombre)",
+        "url": "https://safetti.com › products › jersey-ciclismo-manga-corta-outland-code-green-hombre",
+        "canonical": "https://safetti.com/products/jersey-ciclismo-manga-corta-outland-code-green-hombre",
+        "title": "Jersey ciclismo Code Green manga corta hombre | SAFETTI– Safetti",
+        "meta_description": "Jersey de ciclismo Code Green manga corta para hombre. Fit Regular, secado rápido, control de olores y bolsillo trasero. Descubre Nexo en SAFETTI.",
+        "evidence": "raw/presence-rendered-product.html: the brand appears twice in the title ('| SAFETTI– Safetti') because the theme appends '– Safetti' to a title that already ends in '| SAFETTI'. Product linked from the home 'Nexo' block."
       },
       {
-        "page": "Producto (ejemplo)",
-        "url": "https://safetti.com/products/vestido-de-bano-triatlon-seatide-para-mujer",
-        "title": "VESTIDO DE BAÑO TRIATLON SEATIDE PARA MUJER– Safetti",
-        "meta_description": "Diseñado para competencias de natación y triatlón, este traje ergonómico es la mejor elección para deportistas que buscan comodidad, tecnología y un rendimiento superior. Su diseño con espalda olímpica proporciona mayor confort, permitiendo libertad de movimiento y soporte durante la competencia. Su tejido AquaZero™ of",
-        "breadcrumb": "safetti.com › products › vestido-de-bano-triatlon-seatide-para-mujer",
-        "notes": "Título en mayúsculas sostenidas. La descripción es el texto del producto cortado automáticamente a mitad de palabra ('AquaZero™ of')."
-      },
-      {
-        "page": "Contacto",
-        "url": "https://safetti.com/pages/contact",
-        "title": "Contáctanos– Safetti",
-        "meta_description": null,
-        "breadcrumb": "safetti.com › pages › contact",
-        "notes": "No tiene meta descripción: Google improvisa el texto del resultado con lo que encuentre en la página."
+        "page": "colección hombre",
+        "url": "https://safetti.com › collections › hombre",
+        "canonical": "https://safetti.com/collections/hombre",
+        "title": "Ropa deportiva para hombre | Ciclismo, Running y Triatlón– Safetti",
+        "meta_description": "Descubre Safetti ropa deportiva para hombre, diseñada para ciclismo, running y triatlón. Prendas de alta calidad tecnología y estilo para mejorar tu",
+        "evidence": "raw/presence-curl-collection-hombre.html: description ends mid-sentence ('para mejorar tu'), and the title is 67 characters (Google cuts it around 60)."
       }
     ],
     "proposed": [
       {
-        "page": "Inicio",
-        "url": "https://safetti.com/",
-        "title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
-        "description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005 para ciclismo, running, triatlón y pádel. Cuatro tiendas Safetti Store.",
-        "title_chars": 53,
-        "description_chars": 145
+        "page": "inicio",
+        "title": "Safetti | Ropa para ciclismo, running, pádel y triatlón",
+        "description": "Ropa deportiva de alto rendimiento para ciclismo, running, pádel y triatlón desde 2005. Envío gratis, crédito con Addi y tiendas en Medellín y Bogotá."
       },
       {
-        "page": "Categoría Ciclismo",
-        "url": "https://safetti.com/collections/ropa-ciclismo",
-        "title": "Ropa de ciclismo para hombre y mujer | Safetti",
-        "description": "Jerseys, pantalonetas, chaquetas y buzos de ciclismo diseñados por Safetti para cada ruta. Envío gratis en compras superiores a $250.000.",
-        "title_chars": 46,
-        "description_chars": 137
+        "page": "producto (jersey Code Green hombre)",
+        "title": "Jersey ciclismo Code Green manga corta hombre | Safetti",
+        "description": "Jersey de ciclismo Code Green manga corta para hombre, colección Nexo: fit regular, secado rápido, control de olores y bolsillo trasero. Compra en Safetti."
       },
       {
-        "page": "Producto (ejemplo)",
-        "url": "https://safetti.com/products/vestido-de-bano-triatlon-seatide-para-mujer",
-        "title": "Vestido de baño triatlón Seatide para mujer | Safetti",
-        "description": "Traje para natación y triatlón con espalda olímpica y tejido AquaZero™. Diseñado por Safetti para competir con comodidad y libertad de movimiento.",
-        "title_chars": 53,
-        "description_chars": 146
-      },
-      {
-        "page": "Contacto",
-        "url": "https://safetti.com/pages/contact",
-        "title": "Contacto y tiendas Safetti | Safetti",
-        "description": "Escríbenos a servicioalcliente@safetti.com.co o llama al PBX (604) 444 8461. Direcciones y WhatsApp de nuestras tiendas.",
-        "title_chars": 36,
-        "description_chars": 154
+        "page": "colección hombre",
+        "title": "Ropa deportiva hombre: ciclismo y running | Safetti",
+        "description": "Ropa de ciclismo, running y triatlón para hombre: jerseys, pantalonetas y chaquetas Safetti de alto rendimiento. Envío gratis y compra a crédito con Addi."
       }
-    ]
+    ],
+    "notes": "Facts used come from the site: 'Desde 2005' (WebPage JSON-LD description on every page), free shipping from $189,900 (cart drawer: 'Agrega $189,900 más y disfruta de envío GRATIS' with an empty cart), stores in Medellín and Bogotá (/pages/tiendas text and footer), Nexo collection (/collections/nexo-2, product description). findings/seo.json was not available when this ran and this agent ran no Google searches, so no google_snippet is used (all three pages have their own meta description). The site name Google shows is assumed from og:site_name/WebSite schema 'Safetti' [dato por confirmar en Google]. Free-shipping amount left out of the proposals: the site states two thresholds ($250.000 top bar vs $189.900 cart); confirm with the client."
   },
   "share_preview": {
     "today": {
       "home": {
+        "og:site_name": "Safetti",
+        "og:url": "https://safetti.com/",
         "og:title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón",
+        "og:type": "website",
         "og:description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón.",
-        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422",
-        "og:image_size": "4000x2250",
+        "og:image": "http://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422",
+        "og:image:secure_url": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422",
+        "og:image:width": "4000",
+        "og:image:height": "2250",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón",
+        "twitter:description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón."
+      },
+      "producto_jersey_code_green_hombre": {
+        "og:title": "Jersey ciclismo Code Green manga corta hombre | SAFETTI",
+        "og:type": "product",
+        "og:description": "Jersey de ciclismo Code Green manga corta para hombre. Fit Regular, secado rápido, control de olores y bolsillo trasero. Descubre Nexo en SAFETTI.",
+        "og:image": "http://safetti.com/cdn/shop/files/Mesadetrabajo1copia24.webp?v=1794020005",
+        "og:image:width": "2160",
+        "og:image:height": "2160",
+        "og:price:amount": "353,400",
+        "og:price:currency": "COP",
         "twitter:card": "summary_large_image"
       },
-      "collection_ciclismo": {
-        "og:title": "Ropa deportiva ciclismo para hombre y mujer",
-        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422"
-      },
-      "product_example": {
-        "og:title": "VESTIDO DE BAÑO TRIATLON SEATIDE PARA MUJER",
-        "og:image": "https://safetti.com/cdn/shop/files/59776H_VESTIDO_BANO_SEATIDE_1.jpg?v=1776980503",
-        "og:image_size": "2251x2251",
-        "og:price": "180,400 COP"
-      },
-      "contact": {
-        "og:title": "Contáctanos",
-        "og:description": "Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. Descubre nuestra gama de ropa y accesorios para ciclismo, pádel, running y triatlón. (descripción genérica del inicio)",
-        "og:image": "https://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422"
+      "coleccion_hombre": {
+        "og:title": "Ropa deportiva para hombre | Ciclismo, Running y Triatlón",
+        "og:type": "product.group",
+        "og:description": "Descubre Safetti ropa deportiva para hombre, diseñada para ciclismo, running y triatlón. Prendas de alta calidad tecnología y estilo para mejorar tu",
+        "og:image": "http://safetti.com/cdn/shop/files/SAFETTI-WB-URL.jpg?v=1792437422"
       }
     },
-    "what_people_see": "Cuando alguien comparte safetti.com por WhatsApp o LinkedIn aparece solo el logo blanco de Safetti sobre fondo negro, con el título que dice 'runnig' en lugar de 'running'. Las páginas de categoría y contacto muestran esa misma imagen del logo. Las fichas de producto sí muestran la foto del producto, pero con el título en mayúsculas.",
+    "today_title": "Ropa y accesorios para ciclismo, runnig, pádel y triatlón",
+    "today_og_image_local": "og-today.jpg",
+    "what_shows_today": "Si compartes el inicio por WhatsApp o LinkedIn, sale una imagen grande con el logo «Safetti» en blanco sobre fondo negro, y debajo «Ropa y accesorios para ciclismo, runnig, pádel y triatlón» (con «running» mal escrito) y el texto «Diseño de vanguardia y tecnología avanzada…». La imagen no muestra ni una prenda ni un deportista, y es la misma que sale al compartir cualquier colección, como la de hombre.",
     "issues": [
-      "La imagen para compartir del inicio es solo el logo sobre negro: no muestra producto, deporte ni personas.",
-      "El título para compartir del inicio tiene el error 'runnig'.",
-      "La página de contacto reutiliza la descripción genérica del inicio.",
-      "og:image se declara con http:// (og:image:secure_url sí usa https)."
+      "Home og:title has the typo 'runnig' and no brand name (raw/home.html, raw/presence-curl-home-whatsapp.html fetched with a WhatsApp user agent: same tags).",
+      "Home and /collections/hombre share the same og:image SAFETTI-WB-URL.jpg: a logo-only black card (screenshots/og-today.jpg, 1200x675 copy); the original is declared as 4000x2250, a heavy file for a link preview.",
+      "og:image uses http:// (og:image:secure_url has https://).",
+      "/collections/hombre og:description is cut mid-sentence ('para mejorar tu').",
+      "Product og:image is a .webp (Mesadetrabajo1copia24.webp, 2160x2160 square); some preview crawlers handle WebP and square images worse than a 1200x630 JPEG [compatibility per app not tested]. Product tags read from the rendered DOM (raw/presence-rendered-product.html); two no-JS curl attempts got HTTP 429 from Shopify, but these tags are Liquid server output, the same in both views on the home and collection pages."
     ],
     "proposed": {
-      "og:title": "Safetti | Ropa de ciclismo, running, triatlón y pádel",
-      "og:description": "Ropa deportiva técnica que diseñamos y fabricamos desde 2005. Conoce la nueva colección NEXO y visita nuestras tiendas.",
-      "og:image": "[URL del banner NEXO actual por confirmar]",
-      "og:image:width": 1200,
-      "og:image:height": 630,
+      "og:title": "Safetti | Ropa para ciclismo, running, pádel y triatlón",
+      "og:description": "Ropa deportiva de alto rendimiento desde 2005. Envío gratis, crédito con Addi y tiendas en Medellín y Bogotá.",
+      "og:image": "https://safetti.com/cdn/shop/files/DSC0889.jpg",
       "og_image_local": "og-source.jpg",
-      "note": "Banner real de la colección NEXO publicado en el inicio (4000x2250), recortado al centro a 1200x630."
+      "note": "DSC0889.jpg is a home-page lifestyle photo (two cyclists in Safetti kits), HTTP 200 image/jpeg, 2880x3600. screenshots/og-source.jpg is that photo cropped to its upper-middle band (offset y=700) and resized to 1200x630 JPEG (about 166 KB). Best: upload this crop (or a designed 1200x630 with logo over the photo) as its own file and point og:image to its https URL."
     }
   },
   "ai_answer": {
     "status": "not_collected",
-    "note": "No consultamos motores de IA en este paso; las respuestas reales vienen del módulo OpenSEO.",
     "aeo_fixes": [
       {
-        "title": "Convierte tu llms.txt en una ficha de la marca",
-        "fix": "Hoy tu archivo llms.txt solo trae las instrucciones de compra que Shopify genera por defecto. Agrega quién es Safetti, desde cuándo existe, qué deportes cubre, dónde están las tiendas y cómo contactarlos, para que los asistentes de IA tengan datos oficiales que citar.",
-        "evidence": "https://safetti.com/llms.txt (HTTP 200): contenido genérico 'Agent Instructions — Safetti' sobre Shop skill/UCP, sin datos de la marca. Guardado en raw/presence-llms.txt."
+        "title": "Un solo número para cada canal",
+        "fix": "Corregir el número de «WhatsApp Shopping» del pie (dice 318 2340082 y el enlace lleva al 318 2430082) y decidir cuál es el WhatsApp de servicio al cliente: el pie dice 318 6150418, las preguntas frecuentes 317 6380107 y la ficha para Google 318 2430082. Con datos que se contradicen, Google y la IA no saben cuál recomendar.",
+        "evidence": "Footer text vs href on every page (raw/home.html, raw/ux-pages-contact.html); FAQ text 'o al WhatsApp +57 317 6380107' (raw/presence-faq-text.txt); ContactPoint telephone '+57 318 2430082' contactType 'Customer Service' in JSON-LD (raw/ux-pages-tiendas.html)."
       },
       {
-        "title": "Marca cada tienda física con datos estructurados",
-        "fix": "Agrega un bloque de datos de tienda (LocalBusiness / ClothingStore) para Laureles, Indiana, Llanogrande y Bogotá con dirección completa, ciudad, teléfono, WhatsApp y horario, para que Google y las IA respondan bien a 'tienda Safetti cerca de mí'.",
-        "evidence": "Ninguna página revisada (inicio, contacto, tiendas, categoría, producto) contiene LocalBusiness/Store; solo Organization, WebSite, WebPage y Product."
+        "title": "Ficha de cada tienda física para Google",
+        "fix": "Agregar a la página Dónde Estamos la ficha de cada tienda (LocalBusiness/ClothingStore) con dirección, teléfono y horario de Laureles, Indiana, Llanogrande y Bogotá, y mostrar ahí mismo esos horarios, que hoy solo aparecen dentro de las preguntas frecuentes.",
+        "evidence": "/pages/tiendas has no LocalBusiness/Store schema (0 matches) and shows only 4 WhatsApp buttons, though its own text says it has 'información actualizada sobre ubicación, horarios y datos de contacto'. Hours appear only in /pages/preguntas-frecuentes."
       },
       {
-        "title": "Completa la ficha de empresa con contacto y redes limpias",
-        "fix": "El dato de empresa (Organization) no tiene teléfono, correo ni dirección, y su lista de redes trae entradas vacías. Complétalo con el PBX, el correo de servicio al cliente, la dirección principal y solo los enlaces reales a redes.",
-        "evidence": "Organization JSON-LD en el inicio: solo name, logo, url; sameAs = ['', facebook, '', instagram, '', null, linkedin, tiktok, youtube, '']."
+        "title": "Ficha de producto que la IA pueda leer",
+        "fix": "Hacer que cada producto publique su ficha técnica (Product) con nombre, precio, tallas, disponibilidad y marca, para que Google muestre precio y estrellas y los asistentes de compra puedan citar el producto con datos exactos.",
+        "evidence": "raw/presence-rendered-product.html (jersey Code Green hombre): JSON-LD types found are WebPage, WebSite, Organization, ContactPoint, Thing; no Product. Price exists only as og:price:amount 353,400 COP."
       },
       {
-        "title": "Publica una ficha de datos verificables de la marca",
-        "fix": "Crea una sección 'Safetti en cifras' en Conoce nuestra marca con datos que puedas respaldar: año de fundación (2005, según tu propio sitio), deportes, tiendas y países donde tienes distribuidores. Las IA prefieren citar cifras concretas y consistentes.",
-        "evidence": "El dato 'Desde 2005' solo aparece dentro del JSON-LD WebPage, no como texto visible. La página /pages/tiendas lista distribuidores en Canadá, México, Brasil, Argentina, USA y Costa Rica."
+        "title": "Datos de la empresa ordenados",
+        "fix": "Limpiar la ficha de empresa (Organization): quitar los enlaces vacíos de la lista de redes, escribir bien la razón social (hoy dice «EspÍritu S.A.S») y poner el teléfono y el correo de servicio al cliente como contacto de la empresa, no como «parte de» ella.",
+        "evidence": "Organization sameAs on every page has 5 empty/null entries; second Organization block has legalName 'EspÍritu S.A.S' and the ContactPoint nested under 'isPartOf' (raw/ux-pages-tiendas.html)."
       },
       {
-        "title": "Amplía tus preguntas frecuentes con dudas de tienda",
-        "fix": "Tu página de preguntas frecuentes ya tiene 21 preguntas marcadas para Google, lo cual está bien. Súmale preguntas sobre horarios y direcciones de tiendas, envíos internacionales y personalización de uniformes, y dale una descripción propia en Google.",
-        "evidence": "/pages/preguntas-frecuentes: FAQPage JSON-LD con 21 Question; sin meta description. Guardado en raw/presence-faq.html."
+        "title": "Un archivo llms.txt con tu negocio",
+        "fix": "Ampliar safetti.com/llms.txt, que hoy solo trae las instrucciones genéricas de compra de Shopify, con un párrafo de quién eres (marca desde 2005, ciclismo, running, pádel y triatlón), tus tiendas, canales de contacto y enlaces a guía de tallas, cambios y garantía.",
+        "evidence": "https://safetti.com/llms.txt HTTP 200 (2026-11-19), content 'Agent Instructions — Safetti' about Shop skill and UCP only (raw/presence-llms.txt)."
       },
       {
-        "title": "Escribe descripciones propias en cada producto",
-        "fix": "Las descripciones que ven Google y las IA son el texto del producto cortado a mitad de palabra. Redacta una frase corta por producto con deporte, tecnología de la tela y para quién es.",
-        "evidence": "Producto vestido-de-bano-triatlon-seatide-para-mujer: meta description termina en 'Su tejido AquaZero™ of'."
+        "title": "Distribuidores internacionales al día",
+        "fix": "Unificar la lista de distribuidores en el mundo: en Dónde Estamos Chile es Alexbike y en las preguntas frecuentes es otro contacto, y Corea solo aparece en las preguntas frecuentes. Una sola lista vigente evita que la IA mande clientes a un contacto viejo.",
+        "evidence": "/pages/tiendas: Chile contacto@alexbike.cl (56) 9 7878 2508; /pages/preguntas-frecuentes: Chile bettydroguett@hotmail.com (56) 9 9159 9837 and Corea dfk-hsyoo@realx1.com (raw/presence-ux-pages-tiendas-text.txt, raw/presence-faq-text.txt)."
       }
     ]
   },
   "nap": {
     "rows": [
       {
-        "field": "Nombre",
-        "source": "Sitio (todas las páginas) y Organization JSON-LD",
+        "field": "nombre",
+        "source": "Sitio: <title>, og:site_name, schema WebSite/Organization",
         "value": "Safetti"
       },
       {
-        "field": "Correo",
-        "source": "Página de Contacto (en el pie no aparece)",
-        "value": "servicioalcliente@safetti.com.co"
+        "field": "razón social",
+        "source": "Sitio: JSON-LD publisher Organization (/pages/tiendas y demás páginas)",
+        "value": "EspÍritu S.A.S"
       },
       {
-        "field": "Teléfono fijo",
-        "source": "Contacto (cuerpo)",
-        "value": "PBX (604) 4448461"
-      },
-      {
-        "field": "Teléfono fijo",
-        "source": "Pie de página (Laureles)",
-        "value": "PBX 604 444 8461"
-      },
-      {
-        "field": "WhatsApp servicio al cliente",
-        "source": "Pie de página",
-        "value": "(+57) 3186150418 → wa.me/573186150418"
-      },
-      {
-        "field": "WhatsApp servicio al cliente",
-        "source": "Contacto (cuerpo)",
-        "value": "No aparece"
-      },
-      {
-        "field": "WhatsApp compras",
-        "source": "Pie de página (texto visible)",
+        "field": "WhatsApp Shopping",
+        "source": "Sitio: texto del pie (todas las páginas)",
         "value": "(+57) 318 2340082"
       },
       {
-        "field": "WhatsApp compras",
-        "source": "Pie de página (enlace) y botón flotante de WhatsApp",
-        "value": "wa.me/573182430082"
+        "field": "WhatsApp Shopping",
+        "source": "Sitio: enlace del mismo texto en el pie, botón flotante de WhatsApp (wa.me/573182430082) y bloque de /pages/contact («Shopping Safetti: 318 2430082»)",
+        "value": "318 2430082"
       },
       {
-        "field": "WhatsApp compras",
-        "source": "Contacto (cuerpo)",
-        "value": "Shopping Safetti: 318 2430082"
+        "field": "WhatsApp servicio al cliente",
+        "source": "Sitio: pie («Whatsapp Servicio al cliente»)",
+        "value": "(+57) 318 6150418"
+      },
+      {
+        "field": "WhatsApp servicio al cliente",
+        "source": "Sitio: /pages/preguntas-frecuentes (cuenta, garantías, cotizaciones)",
+        "value": "+57 317 6380107"
+      },
+      {
+        "field": "teléfono servicio al cliente",
+        "source": "Sitio: JSON-LD ContactPoint (contactType Customer Service)",
+        "value": "+57 318 2430082"
       },
       {
         "field": "WhatsApp personalización",
-        "source": "Pie de página, enlace 'Personalización'",
-        "value": "wa.me/573183468891 (número no visible en ninguna página)"
+        "source": "Sitio: pie, enlace «Personalización»",
+        "value": "wa.me/573183468891"
       },
       {
-        "field": "Tienda Laureles",
-        "source": "Pie de página",
-        "value": "Calle 41 # 73 - 29 – PBX 604 444 8461 – Celular (+57) 317 3806060 (enlace wa.me/message/EJ7UQ2MOSIQVI1)"
+        "field": "WhatsApp general",
+        "source": "Sitio: ícono WhatsApp junto a las redes del pie",
+        "value": "wa.me/message/2FHIRWSHVWBGB1 (enlace corto, número no visible)"
       },
       {
-        "field": "Tienda Laureles",
-        "source": "Contacto (cuerpo)",
-        "value": "Calle 41 # 73 - 29 – PBX 604 444 8461 (sin celular)"
+        "field": "Safetti Store Laureles",
+        "source": "Sitio: pie y /pages/contact",
+        "value": "Calle 41 # 73 - 29, PBX 604 444 8461, celular (+57) 317 3806060 (enlace wa.me/message/EJ7UQ2MOSIQVI1)"
       },
       {
-        "field": "Tienda Indiana",
-        "source": "Contacto y pie de página",
-        "value": "Carrera 6 # 24a sur 285 local 156 – (+57) 316 5282644"
+        "field": "Safetti Store Laureles",
+        "source": "Sitio: /pages/preguntas-frecuentes",
+        "value": "calle 41 # 73 - 29, PBX (+57) 4 4448461 (formato antiguo sin el 60), lunes a viernes 9:00 a.m.–6:00 p.m., sábados 9:00 a.m.–1:00 p.m."
       },
       {
-        "field": "Tienda Llanogrande",
-        "source": "Contacto y pie de página",
-        "value": "Km 1.7 desde Don Diego hacia Llanogrande frente a Sierra Blanca – (+57) 314 8302201"
+        "field": "Safetti Store Laureles",
+        "source": "Directorio vymaps.com (creado por un usuario en 2016) — por confirmar",
+        "value": "Calle 41 #73-29, tel. +57 4 4110246, lunes a viernes 8:00 a.m.–6:00 p.m."
       },
       {
-        "field": "Tienda Bogotá",
-        "source": "Contacto y pie de página",
-        "value": "Carrera 5 #69A 30 Zona G Chapinero – (+57) 318 3516417"
+        "field": "Safetti Store Indiana",
+        "source": "Sitio: pie, /pages/contact, /pages/tiendas",
+        "value": "Carrera 6 # 24a sur 285 local 156, (+57) 316 5282644"
       },
       {
-        "field": "Tiendas",
-        "source": "/pages/tiendas (cuerpo)",
-        "value": "Solo nombres de tienda con botón de WhatsApp; sin dirección ni horario en texto"
+        "field": "Safetti Store Indiana",
+        "source": "Sitio: /pages/preguntas-frecuentes",
+        "value": "mismo dato, rotulado «PBX»; lunes y martes 9:00 a.m.–6:00 p.m., miércoles a viernes 7:00 a.m.–6:30 p.m., sábado 7:00 a.m.–4:00 p.m., domingo 7:00 a.m.–1:30 p.m."
       },
       {
-        "field": "Horario",
-        "source": "Todo el sitio revisado",
-        "value": "No publicado"
+        "field": "Safetti Store Llanogrande",
+        "source": "Sitio: pie, /pages/contact, /pages/tiendas",
+        "value": "Km 1.7 desde Don Diego hacia Llanogrande frente a Sierra Blanca, (+57) 314 8302201"
       },
       {
-        "field": "Dirección / teléfono / horario",
-        "source": "Datos estructurados (JSON-LD)",
-        "value": "No declarados (Organization solo con name, logo, url)"
+        "field": "Safetti Store Llanogrande",
+        "source": "Sitio: /pages/preguntas-frecuentes",
+        "value": "nombrada «Safetti House Llanogrande»; martes a sábado 8:00 a.m.–5:00 p.m., domingos y festivos 8:00 a.m.–1:00 p.m., lunes cerrado"
+      },
+      {
+        "field": "Safetti Store Bogotá",
+        "source": "Sitio: pie, /pages/contact, /pages/tiendas, /pages/preguntas-frecuentes",
+        "value": "Carrera 5 #69A 30 Zona G Chapinero, (+57) 318 3516417; martes a viernes 10:00 a.m.–7:00 p.m., sábado 10:00 a.m.–4:00 p.m., domingo 9:00 a.m.–2:00 p.m. (horario solo en preguntas frecuentes)"
+      },
+      {
+        "field": "horarios",
+        "source": "Sitio: /pages/tiendas y /pages/contact",
+        "value": "No se publican, aunque /pages/tiendas dice tener «información actualizada sobre ubicación, horarios y datos de contacto»"
+      },
+      {
+        "field": "correo",
+        "source": "Sitio: pie, /pages/contact, /pages/preguntas-frecuentes",
+        "value": "servicioalcliente@safetti.com.co (dominio .com.co; la tienda está en safetti.com)"
+      },
+      {
+        "field": "distribuidor Chile",
+        "source": "Sitio: /pages/tiendas",
+        "value": "Alexbike, contacto@alexbike.cl, (56) 9 7878 2508"
+      },
+      {
+        "field": "distribuidor Chile",
+        "source": "Sitio: /pages/preguntas-frecuentes",
+        "value": "bettydroguett@hotmail.com, (56) 9 9159 9837"
+      },
+      {
+        "field": "distribuidor Corea",
+        "source": "Sitio: solo /pages/preguntas-frecuentes",
+        "value": "Cheonan, dfk-hsyoo@realx1.com, (82) 10 5424 4716"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: pie",
+        "value": "facebook.com/SafettiOficial, instagram.com/safetti, youtube.com/user/safetycol, linkedin.com/company/safetti, tiktok.com/@safetticolombia"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: JSON-LD Organization sameAs",
+        "value": "las mismas 5 más 5 entradas vacías o null; el segundo bloque Organization omite LinkedIn"
+      },
+      {
+        "field": "widget de chat",
+        "source": "Sitio: botón flotante de WhatsApp",
+        "value": "wa.me/573182430082"
       }
     ],
     "inconsistencies": [
-      "El WhatsApp de compras aparece escrito como 318 2340082 en el pie de página, pero el enlace, el botón flotante y la página de contacto usan 318 2430082: quien copie el número a mano escribe a un número equivocado.",
-      "La tienda de Laureles muestra un celular (317 3806060) en el pie de página que no aparece en la página de contacto.",
-      "El WhatsApp de servicio al cliente (318 615 0418) solo aparece en el pie de página; la página de contacto no lo menciona.",
-      "El enlace 'Personalización' abre un WhatsApp (318 346 8891) que no está escrito en ninguna parte del sitio.",
-      "Ninguna página publica horarios de las tiendas, aunque la página de tiendas dice ofrecer 'información actualizada sobre ubicación, horarios y datos de contacto'.",
-      "Las direcciones de Laureles e Indiana no indican la ciudad, y los datos estructurados del sitio no incluyen dirección, teléfono ni horario de ninguna tienda.",
-      "Tu portada dice «Encuentra tu tienda más cercana en Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Montería y Tunja», pero el pie y Contacto listan cuatro tiendas, y la página «Dónde Estamos» hoy da error 404."
+      "El pie de todas las páginas muestra el WhatsApp Shopping como 318 2340082, pero el enlace, la página de contacto, el botón flotante y la ficha para Google usan 318 2430082 (dos dígitos invertidos): quien copie el número escrito le escribe a otra persona.",
+      "El WhatsApp de servicio al cliente tiene tres versiones: el pie dice 318 6150418, las preguntas frecuentes dicen 317 6380107 y la ficha que lee Google marca como servicio al cliente el 318 2430082.",
+      "El distribuidor de Chile cambia según la página: en Dónde Estamos es Alexbike (contacto@alexbike.cl) y en las preguntas frecuentes es otro contacto con otro teléfono; además, Corea aparece solo en las preguntas frecuentes.",
+      "La tienda de Llanogrande se llama «Safetti Store» en el pie, el contacto y Dónde Estamos, pero «Safetti House» en las preguntas frecuentes.",
+      "El teléfono fijo de Laureles aparece como 604 444 8461 en el pie y el contacto, pero en el formato antiguo (+57) 4 4448461 en las preguntas frecuentes.",
+      "Los horarios de las cuatro tiendas solo están en las preguntas frecuentes; la página Dónde Estamos dice tenerlos pero no los muestra.",
+      "El envío gratis tiene dos montos: la barra superior de la portada dice «compras superiores a $250.000», pero el carrito vacío dice «Agrega $189.900 más y disfruta de envío GRATIS»."
     ],
-    "evidence_files": [
-      "raw/home.html",
-      "raw/ux-pages-contact.html",
-      "raw/ux-pages-tiendas.html",
-      "raw/presence-product.html",
-      "raw/presence-collection-ciclismo.html",
-      "raw/presence-faq.html",
-      "raw/presence-llms.txt"
-    ]
+    "technical_note": "Evidence: raw/home.html, raw/ux-pages-{contact,contacto,contactanos,tiendas,preguntas-frecuentes}.html (collected by ux agent) converted to text in raw/presence-*-text.txt; raw/presence-rendered-{home,product}.html (headless Chrome --dump-dom), raw/presence-curl-collection-hombre.html, raw/presence-curl-home-whatsapp.html (WhatsApp UA), raw/presence-llms.txt. Footer lists 7 WhatsApp numbers in text (318 6150418, 317 3806060, 316 5282644, 314 8302201, 318 3516417, 318 2340082 [href 3182430082], plus Personalización 318 3468891 as link only) and 4 physical stores (Laureles, Indiana, Llanogrande, Bogotá), not 5; the 7 'Tienda Online <city>' links are landing pages, not stores. wa.me/message short links (2FHIRWSHVWBGB1, EJ7UQ2MOSIQVI1) redirect to api.whatsapp.com without exposing the number, so the Laureles 317 3806060 mapping is unverified. The vymaps listing (https://vymaps.com/CO/safetti-128924/) is a 2016 user-added directory lead only, kept out of inconsistencies; no Google Business Profile was confirmed (no Google searches by this agent). Product page curl got HTTP 429 twice (Shopify rate limit)."
   }
 }

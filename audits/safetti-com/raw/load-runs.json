@@ -1,0 +1,41 @@
+{
+  "rounds": 3,
+  "sites": {
+    "client": {
+      "lcp_ms": [
+        9865,
+        9969,
+        9984
+      ],
+      "median_ms": 9969,
+      "spread_ms": 53
+    },
+    "suarez": {
+      "lcp_ms": [
+        3494,
+        3591,
+        3644
+      ],
+      "median_ms": 3591,
+      "spread_ms": 62
+    },
+    "go-rigo-go": {
+      "lcp_ms": [
+        865,
+        960,
+        1343
+      ],
+      "median_ms": 960,
+      "spread_ms": 207
+    },
+    "gw": {
+      "lcp_ms": [
+        1538,
+        1621,
+        1642
+      ],
+      "median_ms": 1621,
+      "spread_ms": 45
+    }
+  }
+}

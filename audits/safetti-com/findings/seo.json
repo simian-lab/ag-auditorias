@@ -1,153 +1,306 @@
 {
-  "area": "seo",
-  "findings": [
-    {
-      "id": "seo-1",
-      "title": "No apareces cuando buscan uniformes de ciclismo personalizados",
-      "summary": "Es tu pedido de mayor valor (clubes y equipos) y es la única búsqueda de compra probada en la que Google no te muestra.",
-      "now": "En Google Colombia, «uniformes de ciclismo personalizados Medellín» muestra a Kom Sports, Taba Sport, Go Rigo Go, Suarez Custom y otros en las tres primeras páginas, pero no a Safetti. Tu página de Personalización solo tiene la palabra «Personalización», no tiene descripción para Google y el enlace del pie de página manda directo a WhatsApp.",
-      "fix": "Convertir la página de Personalización en una página completa: qué prendas personalizas, pedido mínimo, tiempos, proceso de diseño, fotos de equipos vestidos por Safetti, preguntas frecuentes y un botón de cotización. Enlazarla desde el menú y el pie de página en lugar de ir directo a WhatsApp.",
-      "why": "Los clubes buscan proveedor en Google antes de escribir; si no te encuentran, la cotización empieza con tu competencia.",
-      "impact": 5,
-      "effort": "Medio",
-      "headline_metric": "3 palabras",
-      "evidence": [
-        "Real Google Colombia (hl=es&gl=co, clean BrowserOS profile, 2026-11-06), query 'uniformes de ciclismo personalizados Medellín': safetti.com absent from pages 1, 2 and 3 (start=0/10/20, about 25 unique organic results); raw/seo-serp-google-co.json",
-      "Competitors ranking with a dedicated page: komsportswear.com/collections/custom (#1), tabasport.com/pages/custom-uniformes (#2), gorigogo.com/pages/personalizados (#3), suarezcustom.com (#4)",
-      "Rendered view (headless Chrome, raw/seo-personalizacion-rendered.html) and no-JS view (raw/seo-personalizacion.html) are the same: <main> text = 'Home Personalización Personalización' (3 words), 1 H1 'Personalización', no <meta name=description>; og:description falls back to the generic site text",
-      "Rendered home (raw/seo-home-rendered.html): footer link 'Personalización' -> https://wa.me/573183468891"
-    ],
-    "technical_note": "/pages/personalizacion is listed in sitemap_pages_1.xml (raw/seo-sitemap-pages.xml, fetched 2026-11-06). Content is not injected by JavaScript: rendered DOM text equals the server HTML. This is the only one of 8 buyer queries where the domain was not in the first 20 organic results.",
-      "pin": null
-    },
-    {
-      "id": "seo-2",
-      "title": "El enlace «Nuestras tiendas» lleva a una página de error",
-      "summary": "Quien busca dónde comprarte en persona termina en «404 No encontrado», y Google pierde la página que debía explicar dónde están tus tiendas.",
-      "now": "Los enlaces «NUESTRAS TIENDAS» y «Dónde Estamos» del sitio (presentes en inicio, contacto, producto y la página de Medellín) apuntan a safetti.com/pages/tiendas, que hoy responde «404 No encontrado». Las direcciones de tus 4 tiendas solo aparecen en la página de Contacto.",
-      "fix": "Volver a publicar la página de tiendas (o redirigir ese enlace a una página que exista) con dirección, horario, teléfono, mapa y fotos de cada tienda, y revisar que todos los enlaces del menú y del pie de página lleguen a una página real.",
-      "why": "Tus tiendas físicas son una ventaja frente a las marcas solo online; un enlace roto la esconde justo cuando el cliente quiere visitarte.",
-      "impact": 4,
-      "effort": "Bajo",
-      "evidence": [
-        "curl https://safetti.com/pages/tiendas -> HTTP 404 (2026-11-06, raw/seo-stores.html); rendered view in headless Chrome: <title>404 No encontrado– Safetti</title> (raw/seo-stores-rendered.html)",
-        "Rendered DOM: links with href='/pages/tiendas' and text 'NUESTRAS TIENDAS' (x3) and 'Dónde Estamos' on raw/seo-home-rendered.html; href='/pages/tiendas' also present on raw/seo-contact-rendered.html, raw/seo-product-rendered.html, raw/seo-medellin-rendered.html",
-        "/pages/tiendas is no longer in sitemap_pages_1.xml (25 URLs, raw/seo-sitemap-pages.xml), so the page was removed but the links were not updated",
-        "Store addresses only on /pages/contact (rendered): Laureles Calle 41 # 73 - 29, Indiana Carrera 6 # 24a sur 285 local 156, Llanogrande Km 1.7 desde Don Diego, Bogotá Carrera 5 #69A 30"
-      ],
-      "technical_note": "Previous audit run (2026-10-25) found /pages/tiendas live with store names and WhatsApp links; it now returns 404. /pages/safetti-black-friday also returns 404 and was also dropped from the sitemap. Possible overlap with tech/ux broken-link findings; merge if they report the same URL.",
-      "pin": null
-    },
-    {
-      "id": "seo-3",
-      "title": "Tu sitio no le dice a Google dónde están tus tiendas",
-      "summary": "Google y los asistentes de IA no reciben del sitio la dirección ni el teléfono de tus tiendas, y la dirección de Laureles no coincide con la de tu ficha de Google.",
-      "now": "Los datos estructurados del sitio solo dicen «Safetti», el logo y las redes sociales (con varios campos vacíos); no hay dirección, teléfono ni horario de ninguna tienda. Además, la ficha de Google de Safetti Laureles dice «Tv. 41 #73 - 29» y tu página de Contacto dice «Calle 41 # 73 - 29».",
-      "fix": "Agregar datos estructurados por tienda (nombre, dirección, teléfono, horario, ubicación) y escribir la dirección exactamente igual en el sitio y en cada ficha de Google. Revisar con el equipo las fichas de Indiana, Llanogrande y Bogotá.",
-      "why": "Cuando el nombre, la dirección y el teléfono coinciden en todas partes, Google y la IA confían más en tus datos y te recomiendan con más facilidad en búsquedas locales.",
-      "impact": 3,
-      "effort": "Bajo",
-      "evidence": [
-        "Rendered view (raw/seo-home-rendered.html) Organization JSON-LD: name, logo, url, sameAs only; sameAs contains '' (x4) and null; no address, telephone, openingHours; no LocalBusiness/Store node on any of the 10 sampled pages (same in no-JS view)",
-        "Google Colombia, query 'safetti tiendas Medellín' (2026-11-06): Business Profile panel 'Safetti Laureles | Ropa Deportiva Para Ciclismo, Running y Más', Calificación 4,6 de 5, «4,651 opiniones en Google», Dirección: Tv. 41 #73 - 29, Laureles - Estadio, Teléfono: (604) 4448461",
-        "raw/seo-contact-rendered.html: 'Safetti Store Laureles: Calle 41 # 73 - 29 PBX 604 444 8461' (phone matches the listing, street type does not)"
-      ],
-      "technical_note": "Add one ClothingStore/SportingGoodsStore node per store with address (PostalAddress), telephone, openingHoursSpecification, geo, and link it to the Organization; remove '' and null from Organization.sameAs. Only the Laureles listing was observed; the other three listings were not searched, so their status is [dato por confirmar].",
-      "pin": null
-    },
-    {
-      "id": "seo-4",
-      "title": "Google muestra tu marca con un error de ortografía",
-      "summary": "Tu resultado principal en Google dice «runnig» en vez de «running», y varias páginas clave no tienen una descripción propia.",
-      "now": "En 4 de las búsquedas probadas Google mostró tu página de inicio como «Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón». Contacto, Preguntas frecuentes y Personalización no tienen descripción para Google; títulos como «Contáctanos– Safetti» o «Conoce nuestra Marca– Safetti» no dicen qué vendes, y los productos van en MAYÚSCULAS.",
-      "fix": "Corregir «runnig» en el título de inicio, escribir título y descripción propios para Contacto, Preguntas frecuentes, Personalización y Conoce Safetti, y usar mayúsculas normales en los nombres de producto.",
-      "why": "El título y la descripción son tu anuncio gratuito en Google: un error de ortografía resta confianza a una marca premium.",
-      "impact": 3,
-      "effort": "Bajo",
-      "evidence": [
-        "Google Colombia 2026-11-06: home shown as 'Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón' for 'tienda ropa deportiva ciclismo Medellín' (#3), 'marcas colombianas de ropa de ciclismo' (#2), 'safetti' (#1) and 'safetti tiendas Medellín' (#2)",
-        "Rendered and no-JS home <title>: 'Ropa y accesorios para ciclismo, runnig, pádel y triatlón– Safetti'",
-        "No <meta name=description> in either view on /pages/contact, /pages/preguntas-frecuentes, /pages/personalizacion",
-        "Rendered product <title>: 'CAMISA CICLISMO MANGA CORTA TRACE PARA MUJER– Safetti'; Google also shows 'PANTALONETA CICLISMO CON CARGADERAS ... - Safetti' in capitals"
-      ],
-      "technical_note": "Sampled 10 indexable pages (home, conoce-safetti, house, contact, personalizacion, ropa-deportiva-medellin, preguntas-frecuentes, product, collection ropa-ciclismo, blog article): all titles unique; house, Medellín, collection and article titles/descriptions are already good, so the pattern exists.",
-      "pin": null
-    },
-    {
-      "id": "seo-5",
-      "title": "En pádel y triatlón apareces lejos del primer lugar",
-      "summary": "Ya apareces en esas búsquedas, pero tan abajo que pocos compradores llegan a verte, y tienes muy poco contenido de guía que te ayude a subir.",
-      "now": "En «trisuit triatlón Colombia» apareces de noveno en la primera página y en «ropa para pádel mujer Colombia» apareces en la segunda página. El blog tiene un solo artículo (qué es un trisuit) y sus datos estructurados tienen un error que impide leerlos.",
-      "fix": "Publicar guías de compra enlazadas a tus productos (cómo elegir un trisuit, tallas, ropa de pádel para mujer, cuidado de las prendas), ampliar el texto de las categorías de triatlón y pádel, y corregir los datos del artículo.",
-      "why": "Pasar de la segunda página o del noveno puesto a los primeros resultados es donde se ganan los clics de compradores que ya decidieron comprar.",
-      "impact": 3,
-      "effort": "Medio",
-      "evidence": [
-        "Google Colombia 2026-11-06: 'trisuit triatlón Colombia' -> #9 safetti.com/collections/triatlon-hombre 'Trisuit y Trajes de Triatlón Hombre'; 'ropa para pádel mujer Colombia' -> not on page 1, page 2 (start=10) about #12 safetti.com/collections/padel 'Ropa de Pádel | Outfits, Camisas y Faldas'",
-        "raw/seo-sitemap-articles.xml: 1 article URL (/blogs/like-no-other/que-es-un-trisuit-y-cuando-vale-la-pena-usarlo)",
-        "Article JSON-LD fails to parse in both rendered and no-JS views: 'Invalid control character at line 5 column 74' (raw/seo-article-rendered.html)"
-      ],
-      "technical_note": "Pádel position counted as unique organic results: 9 on page 1, page 2 repeats Sportline first, then babalu.com.co, kaybu.co (Instagram), safetti.com. Rankings vary by person and location.",
-      "pin": null
-    },
-    {
-      "id": "seo-6",
-      "title": "Faltan o sobran títulos principales en páginas importantes",
-      "summary": "Google usa el título principal de cada página para entender de qué trata, y en varias páginas clave ese título falta o está repetido.",
-      "now": "La página de inicio y la categoría de ciclismo tienen dos títulos principales cada una; Conoce Safetti, Contacto, Preguntas frecuentes y Safetti House no tienen ninguno.",
-      "fix": "Dejar un solo título principal por página que diga qué ofrece (por ejemplo, «Safetti House: hospedaje para ciclistas en El Retiro») y quitar esa etiqueta del logo.",
-      "why": "Es una señal simple que ayuda a Google a asociar cada página con la búsqueda correcta.",
-      "impact": 2,
-      "effort": "Bajo",
-      "evidence": [
-        "Rendered view: home 2 <h1> ('Safetti' logo + 'Safetti ropa deportiva de alto rendimiento para cada disciplina'); collection ropa-ciclismo 2 <h1> ('Ropa de ciclismo Safetti', 'Ropa de Ciclismo: Pasión, Innovación y Gesta')",
-        "Rendered view: 0 <h1> on raw/seo-about-rendered.html, raw/seo-contact-rendered.html, raw/seo-faq-rendered.html, raw/seo-house2-rendered.html",
-        "Exactly 1 <h1>: product, personalizacion, ropa-deportiva-medellin, blog article (no-JS view identical)"
-      ],
-      "technical_note": "Theme renders <h1 class=\"header-logo\"> on the home template; page templates use h2/h3 for the visible page heading.",
-      "pin": null
-    },
-    {
-      "id": "seo-7",
-      "title": "Muchas fotos sin descripción para Google",
-      "summary": "Buena parte de las fotos de inicio, categorías y Safetti House no dicen qué muestran, así que no ayudan a que te encuentren en Google Imágenes.",
-      "now": "En la página de inicio 12 de 19 fotos no tienen texto descriptivo (banners y fotos de categoría); en Safetti House son 30 de 36 y en la categoría de ciclismo 6 de 12. En cambio, la página de producto revisada solo tiene 2 de 22 sin descripción.",
-      "fix": "Agregar a cada banner, foto de categoría y foto de Safetti House una descripción breve con prenda, deporte y color (por ejemplo, «camisa de ciclismo manga corta Trace para mujer»).",
-      "why": "Google Imágenes es otra puerta de entrada para quien busca ropa deportiva por cómo se ve.",
-      "impact": 2,
-      "effort": "Bajo",
-      "evidence": [
-        "Rendered view, unique non-SVG <img> by src: home 12/19 without alt (e.g. BANNER_Nexo, BANNER_PEQ_NEXO, IMAGENES_DEPORTE_ESPANOL-01..03, IMAGENES_CATEGORIA-06..08)",
-        "Rendered: raw/seo-house2-rendered.html 30/36, raw/seo-collection-rendered.html 6/12, raw/seo-product-rendered.html 2/22 without alt"
-      ],
-      "technical_note": "Counted on the rendered DOM after lazy-load, deduplicated by image path (size suffix stripped). Overlaps with the a11y alt-text criterion.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 55}
-    }
-  ],
-  "search_tests": [
-    {"query": "ropa de ciclismo Colombia", "appears": true, "position_or_note": "Puesto 2: «Ropa deportiva ciclismo para hombre y mujer» (safetti.com/collections/ropa-ciclismo) — «En Safetti Colombia encontrarás jerseys de ciclismo, pantalonetas, chaquetas y trajes de ciclismo diseñados con tecnología aerodinámica, ...»", "who_appears": ["komsportswear.com", "safetti.com", "enjoy.com.co", "givelo.co", "gorigogo.com", "trbsports.co", "nairo.com.co", "cyclewear.com.co", "winnercycling.com"]},
-    {"query": "uniformes de ciclismo personalizados Medellín", "appears": false, "position_or_note": "No aparece en las páginas 1, 2 y 3 (unos 25 resultados orgánicos únicos)", "who_appears": ["komsportswear.com", "tabasport.com", "gorigogo.com", "suarezcustom.com", "Salvatore Cycling (Facebook)", "tiendapatacon.com", "enjoy.com.co", "deportesregol.com", "xpedition.com.co", "trbsports.co"]},
-    {"query": "tienda ropa deportiva ciclismo Medellín", "appears": true, "position_or_note": "Puesto 3: «Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón» (safetti.com) — «Encuentra desde uniformes de ciclistas, bandanas de ciclismo para hombre, shorts de running para mujer y pantalonetas de running para mujer, hasta prendas ...»", "who_appears": ["enjoy.com.co", "zerie.com", "safetti.com", "cyclinglifecolombia.com.co", "winnercyclingwear (Instagram)", "cyclewear.com.co", "givelo.co", "deportesregol.com", "xpedition.com.co"]},
-    {"query": "trisuit triatlón Colombia", "appears": true, "position_or_note": "Puesto 9: «Trisuit y Trajes de Triatlón Hombre» (safetti.com/collections/triatlon-hombre) — «Trajes técnicos para triatlón hombre con tejido hidrodinámico y secado rápido. Diseñados para transiciones ágiles entre natación, ciclismo y carrera.»", "who_appears": ["blackmouth.com.co", "bikexperts.com", "komsportswear.com", "mercadolibre.com.co", "co.suarezclothing.com", "frenesi.com.co", "decathlon.com.co", "safetti.com", "gorigogo.com"]},
-    {"query": "ropa para pádel mujer Colombia", "appears": true, "position_or_note": "Página 2, puesto 12 aprox.: «Ropa de Pádel | Outfits, Camisas y Faldas» (safetti.com/collections/padel) — «Descubre la mejor ropa de pádel para hombre y mujer. Outfits, camisetas, faldas y más con tecnología innovadora para un mejor rendimiento en la cancha.»", "who_appears": ["colombiangymwear.com", "adidas.co", "enjoy.com.co", "oysho.com", "racketball.com.co", "smashpadel.com.co", "puntoblanco.co", "decathlon.com.co", "sportline.com.co", "babalu.com.co"]},
-    {"query": "pantaloneta de ciclismo con cargaderas Colombia", "appears": true, "position_or_note": "Puesto 5: «PANTALONETA CICLISMO CON CARGADERAS ... - Safetti» (página de producto) — «Esta pantaloneta, hecha con tejido elástico, ofrece un ajuste perfecto y gran resistencia durante la competencia. La banda antideslizante en las piernas y ...»", "who_appears": ["gwbicycles.com", "cyclewear.com.co", "mercadolibre.com.co", "ionik.co", "safetti.com", "equilibriumbike.com", "givelo.co"]},
-    {"query": "marcas colombianas de ropa de ciclismo", "appears": true, "position_or_note": "Puesto 2: «Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón» (safetti.com) — «Compra jersey de ciclismo online, shorts de running, trisuit o cualquier prenda técnica directamente en nuestra tienda — con la garantía de una marca colombiana ...»", "who_appears": ["komsportswear.com", "safetti.com", "laclasica.co", "gorigogo.com", "givelo.co", "co.suarezclothing.com", "cyclewear.com.co", "zueden.com", "winnercycling.com"]},
-    {"query": "hospedaje para ciclistas El Retiro Antioquia", "appears": true, "position_or_note": "Puesto 1: «Safetti House: Hospedaje para Ciclistas» (safetti.com/pages/house) — «Hospédate en Safetti House, una casa para ciclistas en El Retiro, Antioquia: 4 habitaciones, taller de bicicletas, rutas en Strava y desayuno incluido.»", "who_appears": ["safetti.com", "booking.com", "airbnb.com.co", "tripadvisor.co", "bubbleskyhotel.com"]},
-    {"query": "safetti", "appears": true, "position_or_note": "Búsqueda de marca. Puesto 1: «Safetti: Ropa y accesorios para ciclismo, runnig, pádel y triatlón» (safetti.com) — «Diseño de vanguardia y tecnología avanzada para equipar a los atletas más apasionados. ...»", "who_appears": ["safetti.com", "safetti (Instagram)", "cyclewear.com.co", "safetti (Facebook)", "safetti.us", "moovil.com.co"]},
-    {"query": "safetti tiendas Medellín", "appears": true, "position_or_note": "Búsqueda de marca. Puesto 1: «Ropa deportiva en Medellín» (safetti.com/pages/ropa-deportiva-medellin) — «Safetti Medellín: tienda de ropa sport y ropa deportiva para hombre y mujer. Ciclismo, running, triatlón y pádel con tecnología y diseño funcional.»", "who_appears": ["safetti.com", "safetti (Facebook)", "waze.com", "safetti (Instagram)", "safetti (TikTok)"]}
-  ],
-  "search_tests_note": "Búsquedas hechas en Google Colombia (hl=es, gl=co) en un navegador limpio sin sesión iniciada, el 6 de noviembre de 2026: 8 búsquedas de compradores y 2 de marca. Safetti apareció en 7 de las 8 búsquedas de compradores (en 5 de ellas en la primera mitad de la página) y en las 2 de marca. Los resultados varían según la persona, el historial y la ubicación. Ficha de Google: en «safetti tiendas Medellín» se ve la ficha de Safetti Laureles (4,6 de 5, «4,651 opiniones»); las fichas de Indiana, Llanogrande y Bogotá no se buscaron y quedan por confirmar con el dueño.",
-  "extra_pitch_es": "Google ya te pone entre los primeros en ropa de ciclismo y en Safetti House; te proponemos llevar esa misma visibilidad a tus uniformes personalizados, a pádel y triatlón, y arreglar el enlace roto de tus tiendas.",
-  "checks": [
-    {"id": "seo-appears", "result": "pass", "evidence": "Real Google Colombia, 2026-11-06: safetti.com in the first 20 organic results for 7 of 8 buyer queries (#1, #2, #2, #3, #5, #9, ~#12); absent only for 'uniformes de ciclismo personalizados Medellín' (pages 1-3). Brand queries 2/2 at #1."},
-    {"id": "seo-titles", "result": "partial", "evidence": "All 10 sampled titles unique (rendered view); house, Medellín, collection and article titles are descriptive, but contact, about, FAQ and personalización are generic ('Contáctanos– Safetti'), the home title has the typo 'runnig' that Google displays, and product titles are ALL CAPS."},
-    {"id": "seo-descriptions", "result": "partial", "evidence": "Meta description present on 7 of 10 sampled pages (rendered and no-JS identical); missing on /pages/contact, /pages/preguntas-frecuentes, /pages/personalizacion."},
-    {"id": "seo-h1", "result": "fail", "evidence": "Rendered view: exactly 1 H1 only on product, personalización, Medellín and article (4 of 10); home and collection ropa-ciclismo have 2; about, contact, FAQ and Safetti House have 0."},
-    {"id": "seo-structured-data", "result": "fail", "evidence": "Organization JSON-LD (rendered and no-JS) has name, logo, url and sameAs (with '' and null entries) but no address or telephone; no LocalBusiness/Store node for the 4 physical stores."},
-    {"id": "seo-product-pages", "result": "pass", "evidence": "1,312 product URLs and 231 collections in the product/collection sitemaps (fetched 2026-10-25); rendered product page has unique title, specific description, 1 H1, canonical and Product JSON-LD with offers (COP price, availability, GTIN-13) and brand; product and collection pages rank in Google (pantaloneta #5, ropa-ciclismo #2)."},
-    {"id": "seo-clean-index", "result": "partial", "evidence": "No 'Hello world'/'Sample page'; /pages/tiendas and /pages/safetti-black-friday (404) are no longer in the sitemap and /pages/wishlist now has robots noindex, but the sitemap (25 page URLs, 2026-11-06) still lists the empty /pages/personalizacion (3 words) and the noindexed /pages/wishlist."},
-    {"id": "seo-share", "result": "pass", "evidence": "No-JS view (what link previews receive): og:title, og:description and og:image present on all 10 sampled pages; contact, FAQ and personalización fall back to the generic site og:description."},
-    {"id": "seo-nap", "result": "partial", "evidence": "Name 'Safetti' consistent and Laureles phone (604) 4448461 matches the Google Business Profile panel, but the address differs (site 'Calle 41 # 73 - 29', listing 'Tv. 41 #73 - 29'), store addresses appear only on Contact, email domain safetti.com.co differs from safetti.com, and the other three store listings were not checked."},
-    {"id": "seo-ai-ready", "result": "pass", "evidence": "FAQ page /pages/preguntas-frecuentes (1,658 words) with valid FAQPage JSON-LD (21 questions); WebPage JSON-LD states 'Desde 2005'; home returns HTTP 200 with full HTML to GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot and Googlebot user agents (raw/seo-ai-crawler-status.txt; spoofed UA, indication only). llms.txt exists but is Shopify's generic agent file without brand facts."}
-  ]
+ "area": "seo",
+ "findings": [
+  {
+   "id": "seo-1",
+   "title": "No apareces en Google cuando buscan ropa deportiva",
+   "summary": "En 7 búsquedas de compra en Google Colombia tu sitio no salió en los resultados normales; las ventas de quien no te conoce se van a otras tiendas.",
+   "now": "Probamos 7 búsquedas de compra (por ejemplo «ropa de ciclismo colombia», «jersey de ciclismo hombre», «trisuit triatlon colombia», «tienda de ropa deportiva medellin») y safetti.com no salió en las 2 primeras páginas de resultados normales. Salen La Clásica, Mercado Libre, Arena, Adidas, tiendas de pádel y Pinterest. Tu marca sí aparece en el resumen de IA de Google para «ropa de ciclismo colombia» y en el bloque de productos con precio en 3 búsquedas, pero no como página.",
+   "fix": "Convertir las colecciones clave (ciclismo hombre/mujer, triatlón, pádel, personalizados) en páginas que respondan a esas búsquedas: título y texto con la frase que usa el comprador, preguntas frecuentes por categoría y enlaces desde la portada. Medir cada mes las mismas búsquedas.",
+   "why": "Quien busca «ropa de ciclismo» en Google está listo para comprar, y hoy encuentra a la competencia antes que a ti.",
+   "impact": 5,
+   "effort": "Alto",
+   "headline_metric": "0 de 7 búsquedas de compra",
+   "evidence": [
+    "Google Colombia (gl=co, hl=es), headless Chrome sin sesión, IP en Colombia (Google mostró 'Guadalajara de Buga, Valle del Cauca'), 2026-11-19: raw/seo-serp-01..08.html (page 2 in *b.html).",
+    "Organic results parsed from h3.LC20lb + cite: safetti.com absent from pages 1 and 2 for queries 01-07.",
+    "raw/seo-serp-01.html: AI overview 'Principales marcas y opciones en Colombia' lists 'Safetti' first, linking a product URL with utm_content=sag_organic.",
+    "Product/Shopping blocks show Safetti items: query 02 'Jersey Ciclismo Safetti Latitude 2.0 Hombre Nero $298.000'; query 05 'CROPTOP RUNNING/PÁDEL POCKET PARA MUJER $142.200 Safetti' (raw/seo-serp-02.html, seo-serp-05.html).",
+    "The site has a trisuit article (/blogs/like-no-other/que-es-un-trisuit-y-cuando-vale-la-pena-usarlo) and a Medellín page (/pages/ropa-deportiva-medellin), yet neither ranks for 'trisuit triatlon colombia' or 'tienda de ropa deportiva medellin'."
+   ],
+   "technical_note": "Query 02 page 1 first returned a Google captcha; it was re-run later and loaded (page 2 loaded in the first run). Headless SERPs returned only 4-10 organic results per page and some '/goto' encoded links without a cite; the raw HTML of each page was grepped for 'safetti' to confirm absence. Whether the product-block entries are free listings or Shopping ads was not confirmed. Only 1 blog article exists in sitemap_articles_1.xml.",
+   "pin": null
+  },
+  {
+   "id": "seo-2",
+   "title": "Al buscar «Safetti», Google muestra «Sugeridos Search»",
+   "summary": "Quien te busca por nombre ve primero Instagram y luego tu tienda con un título técnico que no dice qué vendes.",
+   "now": "En la búsqueda «safetti» el primer resultado es tu Instagram. El segundo es safetti.com con el título «Sugeridos Search» (la página de colecciones); tu portada no aparece entre los resultados. En el puesto 3 sale safetti.us con una página de Bogotá.",
+   "fix": "Revisar en Google Search Console qué páginas tiene indexadas, pedir que vuelva a leer la portada y la página de colecciones (hoy se llama «Colecciones– Safetti») y darle a la portada un título claro de marca y categoría.",
+   "why": "La búsqueda por tu nombre es la de clientes que ya te quieren comprar; debe llevarlos directo a la tienda con un mensaje claro.",
+   "impact": 3,
+   "effort": "Bajo",
+   "evidence": [
+    "raw/seo-serp-08.html (Google Colombia, 2026-11-19): 1 instagram.com 'SAFETTI | Veinte años de historia...'; 2 safetti.com › collections 'Sugeridos Search'; 3 www.safetti.us › pages › safetti-bogota; 5 safetti.com › collections › oferta-mujer.",
+    "Live /collections today (no-JS, raw/seo-collections-index.html): <title>Colecciones– Safetti</title>, H1 'All Collections', meta description copied from the home. Google's title is from an older crawl or a rewrite.",
+    "Home <title> has the typo 'runnig' (raw/seo-home-rendered.html)."
+   ],
+   "technical_note": "safetti.us is a separate domain (international distributor per /pages/tiendas 'SAFETTI EN EL MUNDO … USA'); duplicate Spanish Bogotá content there may compete with safetti.com. Confirm ownership with the client.",
+   "pin": null
+  },
+  {
+   "id": "seo-3",
+   "title": "Páginas vacías y con nombres técnicos publicadas en Google",
+   "summary": "Google tiene permitido mostrar páginas en blanco de tu sitio, lo que da mala imagen y diluye las páginas que sí venden.",
+   "now": "El mapa del sitio que lee Google incluye /pages/custom-clientes, /pages/custom-cotizar y /pages/custom-clubes: tienen como título y encabezado el nombre interno («custom-clientes») y ningún contenido. /pages/custom-personalizados también se titula «custom-personalizados». Además /pages/page-house repite el contenido de /pages/house, y /pages/registro-unico tiene solo 34 palabras.",
+   "fix": "Darles contenido real (por ejemplo, una página de uniformes personalizados para clubes con su propio título y descripción) o quitarlas del sitio y del mapa; dejar una sola versión de Safetti House.",
+   "why": "Las páginas de uniformes personalizados podrían atraer clubes y empresas, pero hoy no le dicen nada a Google ni al cliente.",
+   "impact": 3,
+   "effort": "Bajo",
+   "evidence": [
+    "raw/seo-sitemap_pages_1.xml lists custom-clientes, custom-cotizar, custom-clubes, custom-personalizados, page-house, registro-unico, registro-grupo.",
+    "raw/seo-pages-check.txt (no-JS): custom-clientes/custom-cotizar/custom-clubes: title 'custom-…– Safetti', H1 = slug, no meta description, no robots noindex, 24 words in <main>.",
+    "Rendered view raw/seo-custom-clientes-rendered.html: same 24 words (only breadcrumb + newsletter), so not filled by JavaScript.",
+    "raw/seo-personalizados-rendered.html: <title>custom-personalizados– Safetti</title>, H1 'custom-personalizados', no meta description.",
+    "page-house and house both 697 words in <main> with the same content; page-house title 'page.house– Safetti'."
+   ],
+   "technical_note": "Only /pages/wishlist carries robots noindex. Shopify pages can be hidden from the sitemap/search with the seo.hidden metafield.",
+   "pin": null
+  },
+  {
+   "id": "seo-4",
+   "title": "Páginas clave sin título principal ni descripción",
+   "summary": "Contacto, Tiendas, Preguntas frecuentes y Conoce Safetti no le dicen a Google de qué tratan, así que salen peor o con textos que Google inventa.",
+   "now": "Las páginas Conoce Safetti, Contáctanos, Tiendas y Preguntas frecuentes no tienen título principal (H1). Contáctanos y Preguntas frecuentes tampoco tienen descripción para Google. En la portada el único título principal es el logo («Safetti»), no una frase sobre lo que vendes.",
+   "fix": "Poner en cada página un título principal visible con su tema (por ejemplo «Tiendas Safetti en Medellín y Bogotá») y una descripción de unas 150 letras; en la portada, un título como «Ropa para ciclismo, running, pádel y triatlón».",
+   "why": "El título principal y la descripción son lo que Google usa para entender la página y lo que el comprador lee antes de hacer clic.",
+   "impact": 2,
+   "effort": "Bajo",
+   "evidence": [
+    "Rendered DOM (headless Chrome --dump-dom) and no-JS HTML agree: raw/seo-about-rendered.html, seo-contact-rendered.html, seo-tiendas-rendered.html, seo-faq-rendered.html: 0 <h1>.",
+    "No meta description: seo-contact(-rendered).html, seo-faq(-rendered).html, seo-personalizados(-rendered).html.",
+    "Home: single <h1 class=\"header-logo\"> wrapping the logo img alt='Safetti' (raw/seo-home-rendered.html).",
+    "Pages that pass: /collections/hombre, /collections/ciclismo-hombre, product page, /pages/ropa-deportiva-medellin and the blog article have exactly one descriptive H1 and their own title and description."
+   ],
+   "technical_note": "Collection meta description for /collections/hombre is cut mid-sentence ('…para mejorar tu').",
+   "pin": {
+    "screenshot": "desktop-viewport.png",
+    "x_pct": 8,
+    "y_pct": 8
+   }
+  },
+  {
+   "id": "seo-5",
+   "title": "Google no tiene la dirección ni el teléfono de tus tiendas",
+   "summary": "Tus 4 tiendas físicas no están descritas de forma que Google y las IA puedan leer, y parte de los datos estructurados está dañada.",
+   "now": "El sitio le dice a Google tu nombre, logo y redes, y un teléfono de servicio, pero no la dirección de ninguna tienda; las direcciones de Laureles, Indiana, Llanogrande y Bogotá solo están en el pie como texto. Los datos técnicos de las colecciones y del artículo del blog tienen un error de formato y Google no puede leerlos.",
+   "fix": "Agregar a la página de Tiendas los datos de cada sede (nombre, dirección, teléfono, horario) en formato de tienda local, corregir el formato de los datos de colecciones y blog y revisar el resultado en la prueba de resultados enriquecidos de Google.",
+   "why": "Con estos datos Google y los asistentes de IA pueden responder «dónde comprar ropa de ciclismo en Medellín» con tu tienda.",
+   "impact": 3,
+   "effort": "Medio",
+   "evidence": [
+    "JSON-LD (identical in no-JS and rendered HTML): Organization {name:'Safetti', logo, url, sameAs} with no address; publisher Organization with ContactPoint telephone '+57 318 2430082'; no LocalBusiness/Store on /pages/tiendas or city pages.",
+    "Footer text lists 'Safetti Store Laureles: Calle 41 # 73 - 29', 'Indiana: Carrera 6 # 24a sur 285 local 156', 'Llanogrande: Km 1.7 desde Don Diego…', 'Bogotá: Carrera 5 #69A 30 Zona G Chapinero'.",
+    "CollectionPage JSON-LD on /collections/hombre and /collections/ciclismo-hombre and Article JSON-LD on the blog fail JSON.parse: 'Invalid control character' (raw newlines inside the description/articleBody string); the CollectionPage description also contains escaped HTML (&lt;h2&gt;).",
+    "Organization sameAs array contains empty strings and null."
+   ],
+   "technical_note": "Fix by piping the description through | json (or strip_html | json) in the theme's Liquid. Product JSON-LD on the product page is valid (Product, Brand, Offer with price COP and availability), no aggregateRating.",
+   "pin": null
+  },
+  {
+   "id": "seo-6",
+   "title": "Páginas de ciudades prometen tiendas que no existen",
+   "summary": "Las páginas de Barranquilla, Bucaramanga, Cali y Tunja se titulan «Tienda de ropa deportiva en…» sin tienda física allí, lo que puede confundir al cliente y a Google.",
+   "now": "Hay páginas con título «Tienda de Ropa Deportiva en Barranquilla», «…en Bucaramanga», «…en Cali» y «…en Tunja». Ninguna tiene dirección; la de Barranquilla dice «compra online y recibe tu pedido». Tus tiendas listadas son solo Laureles, Indiana, Llanogrande y Bogotá.",
+   "fix": "Cambiar el enfoque a «Envíos de ropa de ciclismo a Barranquilla» (tiempos y costo de envío, puntos de recogida si existen) y dejar «tienda» solo en las ciudades con sede.",
+   "why": "Un cliente que llega buscando una tienda en su ciudad y no la encuentra se va con desconfianza.",
+   "impact": 2,
+   "effort": "Bajo",
+   "evidence": [
+    "raw/seo-pages-check.txt: titles 'Tienda de Ropa Deportiva en Barranquilla | Safetti', '…Tunja', '…Bucaramanga', '…Cali'; no street address in <main> (Tunja match was 'Avenida Universitaria', a running route).",
+    "Barranquilla <main> text: 'Safetti es tu tienda deportiva en Barranquilla… Compra online y recibe tu pedido en toda la ciudad.'",
+    "/pages/tiendas lists STORE LAURELES, INDIANA, LLANOGRANDE, BOGOTÁ only (raw/seo-tiendas-rendered.html)."
+   ],
+   "technical_note": "City pages run 600-760 words, mostly product grids repeated across cities with a city name swapped in; thin/duplicate local pages can be treated as doorway pages.",
+   "pin": null
+  },
+  {
+   "id": "seo-7",
+   "title": "Fotos de la portada sin descripción para Google",
+   "summary": "Las fotos de las colecciones en la portada no tienen texto alternativo, así que no te ayudan a aparecer en Google Imágenes.",
+   "now": "En la portada 9 de 19 imágenes no tienen texto alternativo, entre ellas las fotos de la colección Nexo y las miniaturas de video. Es lo único que la prueba SEO de Lighthouse marca como fallo.",
+   "fix": "Describir cada foto de producto o colección con lo que muestra (por ejemplo «Jersey de ciclismo Nexo Beacon para mujer»).",
+   "why": "Las imágenes son una puerta de entrada en ropa deportiva y hoy esas fotos no tienen nombre para Google.",
+   "impact": 1,
+   "effort": "Bajo",
+   "evidence": [
+    "raw/seo-home-rendered.html: 9 <img> without alt (e.g. NEXO …frontal-view-referenc__56521.png, DSC0889.jpg, DSC1537.jpg, DSC1131.jpg, video thumbnails) plus 4 with alt=''.",
+    "Lighthouse SEO 92 on mobile and desktop; only failing audit 'image-alt' (raw/lighthouse-mobile.json, raw/lighthouse-desktop.json)."
+   ],
+   "technical_note": "Lighthouse SEO only checks basics (title, description, crawlability, alt, link text). A 92 does not reflect the zero organic visibility found in seo-1, the empty pages in seo-3 or the invalid JSON-LD in seo-5.",
+   "pin": null
+  }
+ ],
+ "search_tests": [
+  {
+   "query": "ropa de ciclismo colombia",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2 de resultados normales. El resumen de IA de Google nombra «Safetti» primero en «Principales marcas y opciones en Colombia».",
+   "who_appears": [
+    "tiendaonline.puntoscolombia.com",
+    "instagram.com/cyclingshopcolombia",
+    "aerosockss.co",
+    "relevos.com.co",
+    "elitebikebicicletas.com",
+    "reyesdelciclismo.com",
+    "mobok.com.co",
+    "ulkomoutdoors.com",
+    "store-co.polar.com",
+    "tribike.com.co",
+    "noxwear.com.co",
+    "laclasica.co"
+   ]
+  },
+  {
+   "query": "jersey de ciclismo hombre",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2 de resultados normales. En el bloque de productos aparece «Jersey Ciclismo Safetti Latitude 2.0 Hombre Nero $298.000» [si es anuncio: dato por confirmar].",
+   "who_appears": [
+    "mercadolibre.com.co",
+    "mobok.com.co",
+    "naturalropadeportiva.com.co",
+    "nitrobikes.com.co",
+    "relevos.com.co",
+    "pacificycling.com",
+    "cyclinggab.com",
+    "laclasica.co",
+    "co.ebay.com",
+    "maillotcycling.com"
+   ]
+  },
+  {
+   "query": "ropa de ciclismo para mujer",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2 (Google mostró solo 9 resultados, casi todos de Pinterest).",
+   "who_appears": [
+    "pinterest.com",
+    "tiendaonline.puntoscolombia.com",
+    "atuestilob.com"
+   ]
+  },
+  {
+   "query": "trisuit triatlon colombia",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2, aunque el sitio tiene un artículo sobre trisuits.",
+   "who_appears": [
+    "instagram.com/trishopcolombia",
+    "arenacolombia.com",
+    "mercadolibre.com.co",
+    "tribike.com.co",
+    "terret.co",
+    "suarezcustom.com",
+    "111cientonce.com",
+    "adidas.co",
+    "gaviasp.com"
+   ]
+  },
+  {
+   "query": "ropa para padel mujer colombia",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2 de resultados normales. En el bloque de productos aparece «CROPTOP RUNNING/PÁDEL POCKET PARA MUJER $142.200 Safetti» [si es anuncio: dato por confirmar].",
+   "who_appears": [
+    "pinterest.com",
+    "tiendaonline.puntoscolombia.com",
+    "m.shein.com.co",
+    "tiendadepadel.co",
+    "vitalitysports.co",
+    "bjx.com.co",
+    "racketcenter.com.co",
+    "padelproshop.com",
+    "adidas.co",
+    "padelone.com.co",
+    "siroko.com"
+   ]
+  },
+  {
+   "query": "tienda de ropa deportiva medellin",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2, aunque tienes tiendas en Medellín y una página /pages/ropa-deportiva-medellin.",
+   "who_appears": [
+    "tiendaonline.puntoscolombia.com",
+    "tiendadim.com",
+    "forcemedellin.com",
+    "facebook.com",
+    "medellin.infoisinfo.com.co",
+    "instagram.com",
+    "latiendabarrista.com"
+   ]
+  },
+  {
+   "query": "uniformes de ciclismo personalizados",
+   "appears": false,
+   "position_or_note": "No está en las páginas 1 y 2 (resultados mayormente de Pinterest y marcas extranjeras).",
+   "who_appears": [
+    "pinterest.com",
+    "uniformes.cotanet.com.br",
+    "atuestilob.com"
+   ]
+  },
+  {
+   "query": "safetti",
+   "appears": true,
+   "position_or_note": "Puesto 2: «Sugeridos Search» (safetti.com › collections). Puesto 5: «Ropa Deportiva de Mujer en Descuento». Puesto 1 es tu Instagram y puesto 3 safetti.us.",
+   "who_appears": [
+    "instagram.com",
+    "safetti.com",
+    "safetti.us",
+    "facebook.com/safetticolombia",
+    "pasaporcaja.co"
+   ]
+  }
+ ],
+ "search_tests_note": "Búsquedas hechas en Google Colombia (gl=co, hl=es) en un navegador limpio sin sesión, desde una conexión en Colombia, el 19 de noviembre de 2026; se revisaron las páginas 1 y 2 de resultados normales, sin contar anuncios. Los resultados cambian según la persona, el dispositivo y la ubicación. No se revisó la ficha de Google Maps (no visible en una búsqueda sin sesión; confirmar con el dueño).",
+ "extra_pitch_es": "Tu marca es conocida y Google ya te nombra en sus resúmenes de IA, pero en 7 búsquedas de compra como «ropa de ciclismo colombia» tu tienda no sale en los resultados: con páginas de categoría pensadas para esas búsquedas, datos de tus tiendas y limpieza de páginas vacías puedes ganar compradores que hoy terminan en Mercado Libre o La Clásica.",
+ "checks": [
+  {
+   "id": "seo-appears",
+   "result": "fail",
+   "evidence": "Real Google Colombia, 8 tests: appears only in the brand query 'safetti' (1/8); 0/7 buyer queries in organic results pages 1-2 (raw/seo-serp-*.html)."
+  },
+  {
+   "id": "seo-titles",
+   "result": "partial",
+   "evidence": "Unique descriptive titles on home, collections, product, about, tiendas, Medellín and blog. Fail: custom-personalizados/custom-clientes/custom-cotizar/custom-clubes use the slug as title, page-house 'page.house– Safetti'; home title typo 'runnig'; Google shows 'Sugeridos Search' for /collections."
+  },
+  {
+   "id": "seo-descriptions",
+   "result": "partial",
+   "evidence": "Present on home, collections, product, about, tiendas, city pages, blog. Missing on /pages/contact, /pages/preguntas-frecuentes, /pages/custom-* (no-JS and rendered)."
+  },
+  {
+   "id": "seo-h1",
+   "result": "partial",
+   "evidence": "Exactly one descriptive H1 on collections, product, Medellín and blog. 0 H1 on conoce-safetti, contact, tiendas, preguntas-frecuentes; home H1 is the logo ('Safetti'). Rendered DOM."
+  },
+  {
+   "id": "seo-structured-data",
+   "result": "partial",
+   "evidence": "Organization JSON-LD with name, logo, sameAs and ContactPoint telephone +57 318 2430082; no address and no LocalBusiness for the 4 stores. CollectionPage and Article JSON-LD are invalid JSON."
+  },
+  {
+   "id": "seo-product-pages",
+   "result": "pass",
+   "evidence": "sitemap_products_1.xml alone lists 1,001 product URLs; product page has own title, H1, description with specs (UV 30-50, 4 pockets) and valid Product/Offer JSON-LD (price COP, availability). Rendered view."
+  },
+  {
+   "id": "seo-clean-index",
+   "result": "fail",
+   "evidence": "Sitemap lists empty placeholder pages /pages/custom-clientes, custom-cotizar, custom-clubes (24 words, slug title/H1, no noindex) plus duplicate page-house."
+  },
+  {
+   "id": "seo-share",
+   "result": "pass",
+   "evidence": "og:title, og:description and og:image present on every page checked in the no-JS HTML (home, collections, product, about, contact, tiendas, FAQ, Medellín, blog)."
+  },
+  {
+   "id": "seo-nap",
+   "result": "partial",
+   "evidence": "Name 'Safetti' consistent. Phone: schema and wa.me link use 318 2430082 but footer text shows 'WhatsApp Shopping: (+57) 318 2340082' (digits swapped). Store addresses only in footer text, not in /pages/tiendas body or schema; Google Business Profile not checked (no logged-in browser) [dato por confirmar]."
+  },
+  {
+   "id": "seo-ai-ready",
+   "result": "pass",
+   "evidence": "/pages/preguntas-frecuentes has valid FAQPage JSON-LD; /llms.txt returns 200 (Shopify agent/shopping instructions, no brand facts); 'Desde 2005' stated in WebPage JSON-LD. Home returns 200 to GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot and Googlebot user agents (raw/seo-bot-status.txt; spoofed UA, indicative only)."
+  }
+ ]
 }

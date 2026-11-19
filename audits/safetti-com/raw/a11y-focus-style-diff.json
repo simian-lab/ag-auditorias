@@ -1,0 +1,65 @@
+[
+ {
+  "s": "#header a.hdr_logo_lnk",
+  "same": true,
+  "fv": true,
+  "before": "rgb(17, 17, 17)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(17, 17, 17)|1|auto|1|none",
+  "after": "rgb(17, 17, 17)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(17, 17, 17)|1|auto|1|none"
+ },
+ {
+  "s": "#header li a",
+  "same": true,
+  "fv": true,
+  "before": "rgb(20, 20, 20)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(20, 20, 20)|1|auto|1|none",
+  "after": "rgb(20, 20, 20)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(20, 20, 20)|1|auto|1|none"
+ },
+ {
+  "s": "a.hdicon.user-menu",
+  "same": true,
+  "fv": true,
+  "before": "rgb(255, 255, 255)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(255, 255, 255)|1|auto|1|none",
+  "after": "rgb(255, 255, 255)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(255, 255, 255)|1|auto|1|none"
+ },
+ {
+  "s": "a.video-hero__button",
+  "same": true,
+  "fv": true,
+  "before": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|1px solid rgb(255, 255, 255)|1|auto|1|none",
+  "after": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|1px solid rgb(255, 255, 255)|1|auto|1|none"
+ },
+ {
+  "s": "a.cg-card",
+  "same": true,
+  "fv": true,
+  "before": "rgb(255, 252, 154)|rgb(34, 34, 34)|none|0px|none|none|0px none rgb(255, 252, 154)|1|325px|1|\"\"",
+  "after": "rgb(255, 252, 154)|rgb(34, 34, 34)|none|0px|none|none|0px none rgb(255, 252, 154)|1|325px|1|\"\""
+ },
+ {
+  "s": "a.grid_lnk",
+  "same": true,
+  "fv": true,
+  "before": "rgb(0, 0, 0)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(0, 0, 0)|1|auto|1|none",
+  "after": "rgb(0, 0, 0)|rgba(0, 0, 0, 0)|none|0px|none|none|0px none rgb(0, 0, 0)|1|auto|1|none"
+ },
+ {
+  "s": "a.quickShop",
+  "same": true,
+  "fv": false,
+  "before": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|0px none rgb(0, 0, 0)|0|auto|1|none",
+  "after": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|0px none rgb(0, 0, 0)|0|auto|1|none"
+ },
+ {
+  "s": "input.newstxt",
+  "same": true,
+  "fv": true,
+  "before": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|0px none rgb(0, 0, 0)|1|auto|1|none",
+  "after": "rgb(0, 0, 0)|rgb(255, 255, 255)|none|0px|none|none|0px none rgb(0, 0, 0)|1|auto|1|none"
+ },
+ {
+  "s": "a.scIcn",
+  "same": true,
+  "fv": true,
+  "before": "rgb(207, 203, 187)|rgba(0, 0, 0, 0)|none|0px|none|none|1px solid rgba(217, 206, 154, 0.5)|1|auto|1|none",
+  "after": "rgb(207, 203, 187)|rgba(0, 0, 0, 0)|none|0px|none|none|1px solid rgba(217, 206, 154, 0.5)|1|auto|1|none"
+ }
+]

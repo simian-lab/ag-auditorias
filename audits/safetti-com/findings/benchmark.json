@@ -4,7 +4,7 @@
       "name": "Suarez",
       "slug": "suarez",
       "url": "https://www.suarezclothing.com.co/",
-      "why_competitor": "Colombian technical cycling/triathlon/running apparel brand from Sabaneta (Valle de Aburra), official kit supplier of the Colombian Cycling Federation; same category, same region, own stores and e-commerce.",
+      "why_competitor": "Given by the user. Colombian cycling, running and triathlon apparel brand selling online (title: 'SUAREZ® Tienda Oficial Online - Ropa para ciclismo'); same disciplines and price segment as Safetti.",
       "screenshot": "screenshots/bench-suarez.png",
       "five_second": {
         "what": true,
@@ -13,40 +13,42 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Un pop-up de descuento y un aviso de cookies tapan la primera pantalla, y el titular del banner está dentro de la imagen; su puntaje de velocidad está afectado por esa ventana.",
+      "notes_es": "El menú y la frase «el ciclismo es más que un deporte» dejan claro qué vende y para quién, y el banner tiene «Comprar ahora», pero la oferta está dentro de la imagen. Al entrar, una ventana de «10% off» y un aviso de cookies tapan toda la página; la captura es después de cerrarlos y su banner rota.",
       "lighthouse": {
-        "performance": 30,
+        "performance": 35,
         "accessibility": 71,
         "seo": 85,
-        "total_mb": 3.22
-      }
+        "total_mb": 3.28
+      },
+      "evidence": "screenshots/bench-suarez.png (1440x900, taken after clicking cookie 'CONTINUAR' and '.__icommkt_modal_close_button'; first headless capture was fully covered by the icommkt '10% OFF' modal + cookie bar). Hero is <img alt='Tri Series 70.3'> / '3PACK' banner image (rotating carousel). raw/bench-suarez-lh.json (mobile, 2 runs: perf 34-35, total-byte-weight 3.25-3.28 MB, LCP 25.9-26.6 s simulated). LCP element on mobile is the pop-up image 'div.__icommkt_modal img.__icommkt_modal_image', so its load metrics are dominated by the pop-up."
     },
     {
       "name": "Go Rigo Go!",
-      "slug": "gorigogo",
+      "slug": "go-rigo-go",
       "url": "https://www.gorigogo.com/",
-      "why_competitor": "Rigoberto Uran's Medellin-based cycling apparel brand on Shopify with physical stores in Colombia; direct competitor for cycling kits.",
-      "screenshot": "screenshots/bench-gorigogo.png",
+      "why_competitor": "Given by the user. Colombian cycling apparel and accessories brand of Rigoberto Urán (title: 'GO RIGO GO! la marca de Rigoberto Urán'), selling jerseys, shorts, bikes and accessories online.",
+      "screenshot": "screenshots/bench-go-rigo-go.png",
       "five_second": {
         "what": true,
-        "for_whom": false,
-        "text_headline": false,
+        "for_whom": true,
+        "text_headline": true,
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Imagen de campaña a pantalla completa con el mensaje dentro de la foto; el menú está escondido y no dice para quién es.",
+      "notes_es": "Su titular «Gafas con IA para el deporte» es texto real con el botón «¡Las quiero!», aunque la primera pantalla muestra un solo producto (gafas Oakley Meta) y no su ropa de ciclismo; el menú está escondido en un ícono. Su banner rota.",
       "lighthouse": {
-        "performance": 39,
-        "accessibility": 92,
+        "performance": 49,
+        "accessibility": 88,
         "seo": 100,
-        "total_mb": 7.22
-      }
+        "total_mb": 7.05
+      },
+      "evidence": "screenshots/bench-go-rigo-go.png (1440x900, no pop-up). Rendered DOM: <h2> 'gafas con ia para el deporte' (slideshow). raw/bench-go-rigo-go-lh.json (mobile, 2 runs: perf 49-51, total-byte-weight 7.04-7.05 MB, LCP 7.5-12.4 s simulated; LCP element is the hero slide image). Lighthouse warning 'page loaded too slowly... results may be incomplete' on both runs, so weight may be a lower bound."
     },
     {
       "name": "GW",
       "slug": "gw",
       "url": "https://gwbicycles.com/",
-      "why_competitor": "Colombian cycling brand selling bikes, components and men's/women's cycling apparel online; overlaps on cycling clothing (big reference, broader catalogue).",
+      "why_competitor": "Given by the user. Large Colombian cycling reference selling bikes, components and men's/women's cycling apparel online (title: 'GW Bicycles | Bicicletas, Componentes y Ropa de Ciclismo').",
       "screenshot": "screenshots/bench-gw.png",
       "five_second": {
         "what": true,
@@ -55,13 +57,14 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Menú claro por categorías (Hombre, Mujer, Bicicletas) y la página más liviana del grupo, aunque su titular también es una imagen.",
+      "notes_es": "El menú (Bicicletas, Hombre, Mujer, Accesorios) y el buscador visible orientan de inmediato, pero «Todo para ciclismo» y «Black Days hasta 50%» están dentro de la imagen y el botón solo dice «Ver más». Su banner rota.",
       "lighthouse": {
-        "performance": 40,
-        "accessibility": 89,
-        "seo": 92,
-        "total_mb": 5.62
-      }
+        "performance": 53,
+        "accessibility": 91,
+        "seo": 100,
+        "total_mb": 5.92
+      },
+      "evidence": "screenshots/bench-gw.png (1440x900, no pop-up). 'TODO PARA CICLISMO' and 'BLACK DAYS' not present as DOM text (banner image). raw/bench-gw-lh.json (mobile, 2 runs: perf 51-53, total-byte-weight 5.90-5.92 MB, LCP 13.8-14.7 s simulated; LCP element is the hero slide image). Lighthouse 'loaded too slowly' warning on both runs, weight may be a lower bound."
     }
   ],
   "client": {
@@ -70,19 +73,21 @@
     "url": "https://safetti.com/",
     "screenshot": "screenshots/desktop-viewport.png",
     "five_second": {
-      "what": true,
-      "for_whom": true,
+      "what": false,
+      "for_whom": false,
       "text_headline": false,
       "trust_proof": false,
       "quote_cta": false
     },
-    "notes_es": "Foto de grupo potente y menú por público (Hombre, Mujer, Niños), pero el mensaje de la colección está dentro de la imagen, una ventana de suscripción aparece al cargar y la línea Custom no tiene un botón de cotización visible.",
+    "notes_es": "La primera pantalla muestra un video, el logo NEXO y un lema en inglés dentro de una imagen: no dice que vendes ropa de ciclismo, running, triatlón y pádel ni nombra ningún deporte; el único botón es «Conocer más». En el celular, una ventana de suscripción tapa la tienda.",
     "lighthouse": {
-      "performance": 54,
-      "accessibility": 93,
-      "seo": 100,
-      "total_mb": 3.54
-    }
+      "performance": 29,
+      "accessibility": 89,
+      "seo": 92,
+      "total_mb": 10.49
+    },
+    "evidence": "screenshots/desktop-viewport.png; raw/lighthouse-mobile.json (total-byte-weight 10.49 MB, LCP 26.3 s simulated, LCP element is the Omnisend pop-up text 'div.omnisend-mobile-container p#isPasted'; 'loaded too slowly' warning). Hero tagline is part of an image (see findings ux-1 / visual-1); marquee 'NO TODOS LOS DÍAS SE MUEVEN IGUAL... NEXO SÍGUE CRECIENDO' names no sport. Menu: Hombre, Complementos, Mujer, Colecciones, Custom, Safetti Experience, Deportes. Rule used for for_whom on every site: first screen names the sport or athlete served."
   },
-  "takeaway_es": "Ni Safetti ni Suarez, Go Rigo Go o GW muestran en su primera pantalla un mensaje en texto, una prueba de confianza o un botón para cotizar uniformes personalizados: la primera marca que lo haga se diferencia de inmediato."
+  "takeaway_es": "Tu portada pesa 10,5 MB, más que Go Rigo Go! (7,1 MB), GW (5,9 MB) y Suarez (3,3 MB): quien entra a Safetti descarga hasta 3,2 veces más datos que en la competencia antes de ver una prenda.",
+  "load_caveat_es": "En el celular, lo más grande que aparece al cargar Safetti y Suarez es una ventana emergente de suscripción, no la tienda, así que su tiempo de «contenido principal» mide esa ventana. Además, los banners de todos rotan y cambian entre visitas."
 }

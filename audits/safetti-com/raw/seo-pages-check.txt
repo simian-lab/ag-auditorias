@@ -1,0 +1,14 @@
+safetti-ropa-deportiva-barranquilla 200 | title= Tienda de Ropa Deportiva en Barranquilla | Safetti | desc= True | robots=  | h1= ['Safetti - Ropa Deportiva en Barranquilla'] | mainwords= 685 | addr= False
+safetti-ropa-deportiva-tunja 200 | title= Tienda de Ropa Deportiva en Tunja | Safetti | desc= True | robots=  | h1= ['Safetti - Ropa Deportiva en Tunja'] | mainwords= 674 | addr= True
+ropa-deportiva-bucaramanga 200 | title= Tienda de Ropa Deportiva en Bucaramanga | Safetti | desc= True | robots=  | h1= ['SAFETTI - ROPA DEPORTIVA EN BUCARAMANGA'] | mainwords= 756 | addr= False
+safetti-cali 200 | title= Tienda de Ropa Deportiva en Cali | Safetti | desc= True | robots=  | h1= ['SAFETTI ROPA DEPORTIVA EN CALI'] | mainwords= 596 | addr= False
+wishlist 200 | title= WishList&ndash; Safetti | desc= False | robots= noindex | h1= ['WishList'] | mainwords= 35 | addr= False
+registro-unico 200 | title= Registro unico&ndash; Safetti | desc= False | robots=  | h1= [] | mainwords= 34 | addr= False
+registro-grupo 200 | title= Registro grupo&ndash; Safetti | desc= False | robots=  | h1= [] | mainwords= 283 | addr= False
+page-house 200 | title= page.house&ndash; Safetti | desc= False | robots=  | h1= [] | mainwords= 697 | addr= False
+house 200 | title= Safetti House: Hospedaje para Ciclistas | Safetti | desc= True | robots=  | h1= [] | mainwords= 697 | addr= False
+safetti-house 200 | title= Safetti House | desc= False | robots=  | h1= ['Safetti House'] | mainwords= 26 | addr= False
+custom-clientes 200 | title= custom-clientes&ndash; Safetti | desc= False | robots=  | h1= ['custom-clientes'] | mainwords= 24 | addr= False
+custom-cotizar 200 | title= custom-cotizar&ndash; Safetti | desc= False | robots=  | h1= ['custom-cotizar'] | mainwords= 24 | addr= False
+custom-clubes 200 | title= custom-clubes&ndash; Safetti | desc= False | robots=  | h1= ['custom-clubes'] | mainwords= 24 | addr= False
+safetti-experience 200 | title= Safetti Experience | desc= False | robots=  | h1= [] | mainwords= 57 | addr= False

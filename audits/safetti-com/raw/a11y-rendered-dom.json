@@ -1,0 +1,338 @@
+{
+ "lang": "es",
+ "headings": [
+  "H1: SAFETTI",
+  "H2: BUSCAR PRODUCTOS",
+  "H3(hidden): ",
+  "H2: DESCUBRE NEXO",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA HOMBRE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA HOMBR",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA MUJE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA HOMB",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA HOMBRE",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA HOMBRE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA HOMBR",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA MUJE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA HOMB",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA HOMBRE",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: CHAQUETA ROMPEVIENTOS DE CICLISMO AQUALITE VERDE PRADO PARA ",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA HOMBRE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA HOMBR",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE BLUE PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA OUTLAND CODE GREEN PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA MUJE",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO SOUTH VERDE PARA HOMB",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA MUJER",
+  "H2: JERSEY DE CICLISMO MANGA CORTA LEGGERO MESH PARA HOMBRE",
+  "H2: DESCUBRE TU UNIVERSO",
+  "H2: TOP CICLISMO NEXO BEACON PARA MUJER",
+  "H2: CAMISA CICLISMO MANGA LARGA TRACE PARA HOMBRE",
+  "H2: CAMISA CICLISMO MANGA CORTA TRACE PARA MUJER",
+  "H2: CAMISA CICLISMO MANGA CORTA TRACE PARA HOMBRE",
+  "H2: CAMISA CICLISMO MANGA CORTA SIGNAL PARA MUJER",
+  "H2: CAMISA CICLISMO MANGA CORTA SIGNAL PARA HOMBRE",
+  "H2: CAMISA CICLISMO MANGA CORTA BEACON PARA MUJER",
+  "H2: CAMISA CICLISMO MANGA CORTA BEACON PARA HOMBRE",
+  "H2(hidden): CAMISETA RUNNING MANGA CORTA HORIZON PARA MUJER",
+  "H2(hidden): CAMISETA RUNNING MANGA CORTAHORIZON PARA HOMBRE",
+  "H2(hidden): CAMISETA RUNNING MANGA CORTATIDE SALMON PARA MUJER",
+  "H2(hidden): CAMISETA RUNNING MANGA CORTA TIDE SALMON PARA HOMBRE",
+  "H2(hidden): CAMISETA RUNNING MANGA SISA ORBIT PARA MUJER",
+  "H2(hidden): CAMISETA RUNNING MANGA SISA ORBIT PARA HOMBRE",
+  "H2(hidden): CAMISETA RUNNING MANGA SISA TIDE VERDE PARA MUJER",
+  "H2(hidden): CAMISETA RUNNING MANGA SISA TIDE VERDE PARA HOMBRE",
+  "H2(hidden): VESTIDO DE BAÑO TRIATLON SEABED PARA MUJER",
+  "H2(hidden): VESTIDO DE BAÑO TRIATLON SEATIDE PARA MUJER",
+  "H2(hidden): PANTALONETA DE BAÑO SEATIDEPARA HOMBRE",
+  "H2(hidden): ENTERIZO MANGA CORTA TRIATLON CORELIGHT PARA HOMBRE",
+  "H2(hidden): ENTERIZO MANGA SISA TRIATLON ARTROCK PARA HOMBRE",
+  "H2(hidden): ENTERIZO MANGA SISA TRIATLON ARTROCK PARA MUJER",
+  "H2(hidden): ENTERIZO MANGA SISA TRIATLON CLOUD PARA MUJER",
+  "H2(hidden): ENTERIZO MANGA SISA TRIATLON ROCKART PARA MUJER",
+  "H3: SUSCRÍBETE",
+  "H4: AYUDA",
+  "H4: NOSOTROS",
+  "H4(hidden): Carrito de compra (0)"
+ ],
+ "landmarks": [
+  "header=1",
+  "nav=0",
+  "main=1",
+  "footer=1",
+  "[role=main]=1"
+ ],
+ "imgs": [
+  {
+   "alt": "website",
+   "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwM",
+   "w": 1426
+  },
+  {
+   "alt": "Safetti",
+   "src": "LOGOS_SAFETTI-03_145x.png?v=1793805980",
+   "w": 145
+  },
+  {
+   "alt": "",
+   "src": "NEXO_ELEMENTOS_GRAFICOS-52.png?v=1793837056&width=1200",
+   "w": 360
+  },
+  {
+   "alt": null,
+   "src": "magnific__viewing-direction-completely-frontal-view-referenc",
+   "w": 325
+  },
+  {
+   "alt": null,
+   "src": "magnific__iewing-direction-completely-frontal-view-reference",
+   "w": 325
+  },
+  {
+   "alt": null,
+   "src": "magnific__viewing-direction-completely-frontal-view-referenc",
+   "w": 325
+  },
+  {
+   "alt": null,
+   "src": "magnific__viewing-direction-completely-frontal-view-referenc",
+   "w": 325
+  },
+  {
+   "alt": null,
+   "src": "DSC0889.jpg?v=1793996904&width=600",
+   "w": 459
+  },
+  {
+   "alt": null,
+   "src": "DSC1537.jpg?v=1793997274&width=600",
+   "w": 459
+  },
+  {
+   "alt": null,
+   "src": "DSC1131.jpg?v=1793996493&width=600",
+   "w": 459
+  },
+  {
+   "alt": "",
+   "src": "",
+   "w": 1285
+  },
+  {
+   "alt": "Safetti",
+   "src": "Recurso_33img_130x.png?v=1724010379",
+   "w": 130
+  },
+  {
+   "alt": "Whatsapp",
+   "src": "wp-con-texto_300x300.png?v=1725635504",
+   "w": 72
+  }
+ ],
+ "noname": [
+  "<a class=\"hdicon searchIcn hide-sm hide-md\" href=\"/search\" title=\"\"><svg id=\"uuid-56e64bbe-23fa-46ed-8156-29561a3bb792\" xmlns=\"http://www.w3.org/2000/svg\" width",
+  "<a class=\"cg-card\" href=\"https://safetti.com/collections/nexo-2/products/enterizo-triatlon-manga-corta-aerocooler-north-azul-hombre?variant=68058616234202?filte",
+  "<a class=\"cg-card\" href=\"https://safetti.com/collections/nexo-2/products/camiseta-running-manga-sisa-levit-south-mujer?variant=68058608828634?filter.v.availabil",
+  "<a class=\"cg-card\" href=\"https://safetti.com/collections/nexo-2/products/vestido-bano-natacion-mujer?filter.v.availability=1\"><img src=\"//safetti.com/cdn/shop/f",
+  "<a class=\"cg-card\" href=\"https://safetti.com/collections/nexo-2/products/jersey-ciclismo-manga-corta-leggero-south-verde-hombre?filter.v.availability=1\"><img sr"
+ ],
+ "videos": [
+  {
+   "auto": true,
+   "loop": true,
+   "muted": true,
+   "controls": false,
+   "paused": false,
+   "vis": true,
+   "src": "7b3f684d8eb973b61c7256151f.SD-480p-1.5Mbps-100940358.mp4?v=0"
+  },
+  {
+   "auto": true,
+   "loop": true,
+   "muted": true,
+   "controls": false,
+   "paused": false,
+   "vis": false,
+   "src": "9b26ab4df0be5125302191abbd.HD-720p-1.6Mbps-100939608.mp4?v=0"
+  }
+ ],
+ "anims": [
+  {
+   "n": "tscrol27793839620314__scroling_text_fW7MpU",
+   "el": "scrlTxt fl tc",
+   "dur": 12000,
+   "iter": null,
+   "state": "running"
+  }
+ ],
+ "hero": " CONOCER MÁS",
+ "marquee": [],
+ "pauseBtns": [],
+ "floating": [
+  "DIV.searchDrawer anim {\"x\":1425,\"y\":0,\"width\":450,\"height\":900,\"top\":0,\"right\":1875,\"bottom\":900,\"left\":1425}",
+  "A.gmk-widget {\"x\":1333,\"y\":675.96875,\"width\":72,\"height\":104.03125,\"top\":675.96875,\"right\":1405,\"bottom\":780,\"left\":1333}",
+  "IFRAME.WizybotShopifyWidget__iframe__outter__cl {\"x\":1330,\"y\":805,\"width\":80,\"height\":80,\"top\":805,\"right\":1410,\"bottom\":885,\"left\":1330}"
+ ],
+ "iframes": [
+  "wizybot-chat-iframe "
+ ],
+ "rmCss": [
+  "@media (prefers-reduced-motion: no-preference) {\n  :root { scroll-behavior: smooth; }\n}",
+  "@media (prefers-reduced-motion: reduce) {\n  #CategoryGrid-template--27793839620314__category_grid_mMcUAN .cg-card img { transition: none; }\n  #Categor",
+  "@media (prefers-reduced-motion: reduce) {\n  #CategoryGrid-template--27793839620314__category_grid_3h77GN .cg-card img { transition: none; }\n  #Categor"
+ ]
+}
+{
+ "small": [
+  {
+   "t": "A",
+   "c": "tablink db pr",
+   "n": "CICLISMO",
+   "w": 68,
+   "h": 21,
+   "y": 3061
+  },
+  {
+   "t": "A",
+   "c": "tablink db pr",
+   "n": "RUNNING",
+   "w": 65,
+   "h": 21,
+   "y": 3061
+  },
+  {
+   "t": "A",
+   "c": "tablink db pr",
+   "n": "TRIATLÓN",
+   "w": 68,
+   "h": 21,
+   "y": 3061
+  },
+  {
+   "t": "INPUT",
+   "c": "",
+   "n": "checkbox",
+   "w": 13,
+   "h": 13,
+   "y": 5423
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "Acepto política de tratam",
+   "w": 260,
+   "h": 17,
+   "y": 5419
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 3186150418",
+   "w": 109,
+   "h": 16,
+   "y": 5660
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 317 3806060",
+   "w": 118,
+   "h": 16,
+   "y": 5738
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 316 5282644",
+   "w": 118,
+   "h": 16,
+   "y": 5816
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 314 8302201",
+   "w": 116,
+   "h": 16,
+   "y": 5914
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 318 3516417",
+   "w": 112,
+   "h": 16,
+   "y": 5992
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "(+57) 318 2340082",
+   "w": 119,
+   "h": 16,
+   "y": 6050
+  },
+  {
+   "t": "A",
+   "c": "",
+   "n": "Safetti",
+   "w": 39,
+   "h": 16,
+   "y": 6223
+  }
+ ],
+ "forms": [
+  {
+   "name": "q",
+   "type": "search",
+   "id": "",
+   "ph": "¿Qué estás buscando?",
+   "label": null,
+   "aria": null,
+   "ac": "off",
+   "req": false
+  },
+  {
+   "name": "contact[email]",
+   "type": "email",
+   "id": "Email-",
+   "ph": "Dirección de correo electrónico",
+   "label": null,
+   "aria": null,
+   "ac": null,
+   "req": false
+  },
+  {
+   "name": "checkbox",
+   "type": "checkbox",
+   "id": "checkout_accept_terms",
+   "ph": "",
+   "label": "wrapped:Acepto política de tratamiento de datos",
+   "aria": null,
+   "ac": null,
+   "req": false
+  },
+  {
+   "name": "",
+   "type": "select-one",
+   "id": "",
+   "label": null,
+   "aria": "Select variant for GUANTES CICLISMO ESSENZIALES",
+   "ac": null,
+   "req": false
+  }
+ ],
+ "gmk": "<a href=\"https://wa.me/573182430082\" class=\"gmk-widget\" target=\"_blank\">\n    \n        <img src=\"//safetti.com/cdn/shop/files/wp-con-texto_300x300.png?v=1725635504\" alt=\"Whatsapp\">\n    \n</a>",
+ "mob": [],
+ "vp": "width=device-width,initial-scale=1"
+}
