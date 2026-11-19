@@ -63,6 +63,7 @@ Disallow: /cdn/wpm/*.js
 # Shopify-internal endpoints not meant for crawlers
 Disallow: /services
 Disallow: /sf_*
+Disallow: /.well-known/shopify/monorail
 
 # AJAX surfaces: agents should use UCP/MCP instead
 Disallow: /cart.js

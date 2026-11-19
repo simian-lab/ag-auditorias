@@ -2,30 +2,32 @@
   "competitors": [
     {
       "name": "Ben & Frank Colombia",
-      "url": "https://www.benandfrank.co/",
       "slug": "ben-frank",
-      "why_competitor": "Marca propia de gafas formuladas y de sol que vende online en Colombia y agenda examen visual en sus tiendas físicas: el mismo modelo de Sajú.",
+      "url": "https://www.benandfrank.co/",
+      "why_competitor": "Given by the user. Eyewear brand with stores in six Colombian cities (Bogotá, Medellín, Cartagena, Bucaramanga, Barranquilla, Cali per its home page), selling prescription glasses, sunglasses and computer glasses online with in-store eye exams; same fashion-eyewear segment as Sajú.",
+      "screenshot": "screenshots/bench-ben-frank.png",
       "five_second": {
         "what": true,
-        "for_whom": false,
-        "text_headline": false,
+        "for_whom": true,
+        "text_headline": true,
         "trust_proof": false,
         "quote_cta": true
       },
-      "notes_es": "Botón real «Agendar examen» en la primera pantalla; el titular cambia en cada visita (a veces es texto, a veces imagen) y un aviso de cookies tapa la parte baja de la primera pantalla.",
-      "screenshot": "screenshots/bench-ben-frank.png",
+      "notes_es": "Su titular «Yo y mis Ben & Frank — Tus próximas gafas favoritas te esperan» es texto real, nombra las ciudades donde te atienden y pone a la vista los botones «¡Yo quiero!» y «Agendar examen». Al entrar, un aviso de cookies tapa la parte de abajo; la captura es después de aceptarlo.",
       "lighthouse": {
-        "performance": 55,
-        "accessibility": 71,
+        "performance": 57,
+        "accessibility": 70,
         "seo": 92,
-        "total_mb": 7.31
-      }
+        "total_mb": 7.32
+      },
+      "evidence": "screenshots/bench-ben-frank.png (1440x900 via puppeteer, after clicking cookie 'Aceptar todas' and closing a country modal; first plain headless capture showed the cookie bar over the bottom ~120px). Rendered DOM: <h2>'Yo y mis Ben & Frank'</h2>, <h2>'Córrele al Templo'</h2> with 'Visítanos en Bogotá, Medellín, Cartagena, Bucaramanga, Barranquilla y Cali', buttons '¡Yo quiero!' and 'Agendar examen'. The two hero panels change between visits. raw/bench-ben-frank-lh.json (mobile, 2 runs: perf 52-57, a11y 70, seo 92, total-byte-weight 7.32 MB both runs, LCP 3.3-3.4 s simulated)."
     },
     {
       "name": "Breathe",
-      "url": "https://www.breatheeyewear.com/",
       "slug": "breathe",
-      "why_competitor": "Marca bogotana de diseño de monturas ópticas y gafas de sol con tiendas propias, con público similar al de Sajú.",
+      "url": "https://www.breatheeyewear.com/",
+      "why_competitor": "Given by the user. Eyewear brand selling opticals, sunglasses and accessories online with physical stores (menu: opticals, sunglasses, accessories, stores); same online fashion-eyewear model as Sajú.",
+      "screenshot": "screenshots/bench-breathe.png",
       "five_second": {
         "what": true,
         "for_whom": false,
@@ -33,56 +35,59 @@
         "trust_proof": false,
         "quote_cta": false
       },
-      "notes_es": "Mensaje en texto real («opticals», «sunglasses») y botón de compra, pero sin botón para agendar o contactar; una pestaña pequeña de «10% OFF» aparece en una esquina.",
-      "screenshot": "screenshots/bench-breathe.png",
+      "notes_es": "Su mensaje «never stop seeing the word — opticals» es texto real con un botón «shop now», pero todo está en inglés, no dice para quién es y no hay botón para agendar ni contactar; una pestaña de «10% OFF» aparece abajo a la izquierda. Su banner rota.",
       "lighthouse": {
-        "performance": 51,
+        "performance": 57,
         "accessibility": 84,
         "seo": 100,
-        "total_mb": 3.33
-      }
+        "total_mb": 3.45
+      },
+      "evidence": "screenshots/bench-breathe.png (1440x900 headless Chrome, no blocking pop-up; small '10% OFF' tab bottom-left and chat bubble bottom-right). 'never stop seeing the word' and 'opticals' present as text in the HTML (curl) and rendered page; 2-slide slideshow. raw/bench-breathe-lh.json (mobile, 2 runs: perf 46-57, a11y 84, seo 100, total-byte-weight 3.45-3.48 MB, LCP 11.6-15.7 s simulated; LCP element is the slideshow background div.bg_rp_norepeat)."
     },
     {
       "name": "Ópticas Lafam",
-      "url": "https://www.lafam.com.co/",
       "slug": "lafam",
-      "why_competitor": "Gran cadena óptica colombiana (referencia del mercado) que vende gafas formuladas y de sol online y ofrece consulta de optometría en sus sedes.",
+      "url": "https://www.lafam.com.co/",
+      "why_competitor": "Given by the user. Large Colombian optical chain (big reference) selling prescription glasses, sunglasses and contact lenses online plus optometry and medical services (Clínica Lafam).",
+      "screenshot": "screenshots/bench-lafam.png",
       "five_second": {
         "what": true,
         "for_whom": false,
         "text_headline": false,
         "trust_proof": false,
-        "quote_cta": false
+        "quote_cta": true
       },
-      "notes_es": "Categorías claras, pero el titular es un banner de imagen y la cita de optometría está en una franja-enlace arriba, no como botón en el banner; un popup de cupón tapa la página al entrar (no aparece en la captura).",
-      "screenshot": "screenshots/bench-lafam.png",
+      "notes_es": "El menú y el botón azul «Agenda tu examen visual» dejan claro qué ofrece y cómo pedir cita, pero la oferta principal («Hasta 40% en lentes de contacto») está dentro de una imagen que rota. Al entrar, una ventana de «Black Friday» tapa la página; la captura es después de cerrarla.",
       "lighthouse": {
-        "performance": 8,
+        "performance": 36,
         "accessibility": 84,
         "seo": 85,
-        "total_mb": 7.28
-      }
+        "total_mb": 7.61
+      },
+      "evidence": "screenshots/bench-lafam.png (1440x900 via puppeteer, after clicking the pop-up close 'x' at 1017,226; first headless capture was covered by a 'BLACK FRIDAY - Suscríbete aquí' modal with dark overlay). Hero is a rotating owl-carousel of banner images (e.g. Banner_Campana_LC_dto_simple_40_dto_desktop_noviembre); only visible heading is <h2>'Marcas Lafam'</h2>. 'AGENDA TU EXAMEN VISUAL' is a filled blue button in the nav. raw/bench-lafam-lh.json (mobile, 2 runs: perf 34-36, a11y 84, seo 85, total-byte-weight 7.51-7.61 MB, LCP 8.4-18.6 s simulated; LCP element is the slide image img.show-slide-768)."
     }
   ],
   "client": {
     "name": "Sajú",
-    "url": "https://www.saju.co/",
     "slug": "client",
+    "url": "https://www.saju.co/",
     "screenshot": "screenshots/desktop-viewport.png",
     "five_second": {
       "what": true,
       "for_whom": false,
       "text_headline": false,
       "trust_proof": false,
-      "quote_cta": true
+      "quote_cta": false
     },
-    "notes_es": "Se entiende que vende gafas, pero el titular y el botón «Agenda aquí» están pintados dentro de una imagen que rota, y no hay ninguna prueba de confianza (reseñas, años, reciclaje) en la primera pantalla.",
+    "notes_es": "El menú (Gafas, Accesorios) deja claro que vendes gafas, pero el mensaje «Phone Glasses — Nueva colección» está dentro de una imagen que rota, no dice para quién son y «Agenda tu examen visual» es un enlace más del menú, no un botón; solo queda el globo de WhatsApp.",
     "lighthouse": {
-      "performance": 50,
-      "accessibility": 93,
-      "seo": 92,
-      "total_mb": 3.81
-    }
+      "performance": 77,
+      "accessibility": 92,
+      "seo": 100,
+      "total_mb": 3.74
+    },
+    "evidence": "screenshots/desktop-viewport.png; rendered DOM: only visible heading is <h1>'Sajú Colombia'</h1> (logo); hero is a 4-slide slideshow of images (BannerDesktop.webp etc., alt=''), 'Phone Glasses' text is part of the image. 'AGENDA TU EXAMEN VISUAL' is a plain nav link styled like the other menu items; WhatsApp floating widget not counted. raw/lighthouse-mobile.json (perf 77, a11y 92, seo 100, total-byte-weight 3.74 MB, LCP 3.3 s simulated; 'loaded too slowly' warning, weight may be a lower bound). Rules used on every site: for_whom = first screen names an audience or place served; quote_cta = visible button to book an eye exam or contact (nav text links and floating chat widgets do not count); trust_proof = years, customers, certifications or numbers."
   },
-  "takeaway_es": "Ben & Frank, que vende como tú gafas propias con examen en tienda, muestra un botón real de «Agendar examen» en su primera pantalla; en Sajú la única llamada visible en la portada está pintada en una foto que rota, y en el menú existe, pero como un ítem más."
+  "takeaway_es": "Tu página carga mejor que la de los tres competidores en la simulación de celular (77 contra 34 a 57 puntos), pero tu primera pantalla solo deja claro que vendes gafas: Ben & Frank, con su mensaje en texto, sus ciudades y un botón «Agendar examen», cumple 4 de las 5 señales y tú 1.",
+  "load_caveat_es": "Al entrar a Lafam aparece una ventana de «Black Friday» y en Ben & Frank un aviso de cookies; las capturas son después de cerrarlos. Además, los banners de Sajú, Lafam y Breathe rotan, así que lo que se ve primero cambia entre visitas."
 }

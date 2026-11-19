@@ -1,0 +1,41 @@
+{
+  "rounds": 3,
+  "sites": {
+    "client": {
+      "lcp_ms": [
+        516,
+        639,
+        685
+      ],
+      "median_ms": 639,
+      "spread_ms": 71
+    },
+    "ben-frank": {
+      "lcp_ms": [
+        794,
+        817,
+        1662
+      ],
+      "median_ms": 817,
+      "spread_ms": 404
+    },
+    "breathe": {
+      "lcp_ms": [
+        497,
+        688,
+        718
+      ],
+      "median_ms": 688,
+      "spread_ms": 98
+    },
+    "lafam": {
+      "lcp_ms": [
+        1355,
+        1481,
+        1528
+      ],
+      "median_ms": 1481,
+      "spread_ms": 73
+    }
+  }
+}

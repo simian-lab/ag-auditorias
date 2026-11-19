@@ -3,48 +3,66 @@ HTTP/2 103
 link: <https://cdn.shopify.com>; rel=preconnect, <https://cdn.shopify.com>; crossorigin; rel=preconnect, <//www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188>; as=style; rel=preload
 
 HTTP/2 200 
-date: Sun, 25 Oct 2026 21:29:04 GMT
+date: Thu, 19 Nov 2026 20:04:11 GMT
 content-type: text/html; charset=utf-8
-x-permitted-cross-domain-policies: none
 x-download-options: noopen
-product-filtering-backend: bitset_roaring
-cf-cache-status: DYNAMIC
-set-cookie: localization=CO; path=/; expires=Mon, 25 Oct 2027 21:29:04 GMT; SameSite=Lax
-set-cookie: _shopify_essential=:AaF095IkAAEA1sMsR5YFL7WM-nugOiieHTFUaXsGp0ouDDAcG9FKAm1dt9ekgKHu5vSJIiQtl4LyDpq00TwwsVxg5Bg:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
-set-cookie: _shopify_analytics=:AaF095PFAAEAHDO4hxto_aquvyRcRw6fnLahTvVoQwjunI7pCsH-v855Z8igZffnFZhSbm0Z9-n3xifm_mRFeUWZ6_Y:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
-set-cookie: _shopify_marketing=:AaF095PFAAEAYJh30_wJCwSRtpQ45fZYni-C2QcdEnFwCbwnPrdmIM8o0mv9chr_LWhDd-g-iqm6IDQeZ8irbi9qnuU:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
 link: <https://cdn.shopify.com>; rel="preconnect", <https://cdn.shopify.com>; rel="preconnect"; crossorigin, <//www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188>; as="style"; rel="preload", </.well-known/ucp>; rel="ucp"; version="2026-08-25"
-etag: W/"page_cache:1544454259:IndexController:58e3b7111b8c7f74f37175dae96496dd:ffa7b24513f10317b76d7082fc7dc309"
-nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
-shopify-complexity-score: 0
-shopify-complexity-score-v2: 422
+product-filtering-backend: bitset_roaring
+etag: W/"sfr:computation:v2:11a5f188e2edcc4f147dfcc4353abce58bd2e6f8305f578ae2e30b7dfd1e8c02:fda5ccb0a836e80555ca49cfa05a8dfe"
+x-xss-protection: 1; mode=block
+set-cookie: _shopify_essential=:AaH1aNYIAAEAPUyZ5eRxp3Mqoo1_x65A-A5onQ_VQiYMr0Xe3rvy-GnL_Eobi7vgyqvZYVBIXFveXTHo0rJ-GK8y5vs:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_analytics=:AaH1aNYcAAEAJ0FAA9bQmolk0bkbzX11PCzSlJ-HxF9NS3ykst9BuKGkZc15lm3JKM4EhdDu2cz461iGAYPGhPW69U8:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_marketing=:AaH1aNYcAAEAl-GDKQ9ZVO0DrdZUB-3vC0b_K4f9ULG-BYEKIvKEDLJNMif4ybsWLXK1b1JMmiu_MEUwyl-a933-7ak:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: localization=CO; path=/; expires=Fri, 19 Nov 2027 20:04:10 GMT; SameSite=Lax
+set-cookie: _shopify_cmp=3.AMPS_COVAC_f_f_tOZbAOcGR1-mcq7pyfs5Vw%236bbbec88-f2d3-4efb-b507-3e51e93a9d84-1795118650; domain=saju.co; path=/; expires=Sat, 20 Nov 2027 02:04:10 GMT; secure; SameSite=Lax
 x-frame-options: DENY
 content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
 strict-transport-security: max-age=7889238
-vary: Accept
-cdn-cache-control: no-cache, no-store
+shopify-complexity-score: 3840
+shopify-complexity-score-v2: 384
 content-language: es-CO
-cache-control: private, max-age=0, must-revalidate
 powered-by: Shopify
-server-timing: processing;dur=427;desc="gc:6", db;dur=79, db_async;dur=126.559, render;dur=227, asn;desc="13489", edge;desc="BOG", country;desc="CO", theme;desc="190351180054", pageType;desc="index", servedBy;desc="c47r", requestID;desc="6ddd75f4-5ca7-4dd4-886b-3ebc95a2c26b-1792963744", _y;desc="dab3bd7c-56ff-484e-90b7-86756138733c", _s;desc="49334197-0d72-4ac1-9db8-33042294e1bc", _cmp;desc="3.AMPS_COANT_f_f_uRn8nml9RPSMx*-NGexE4w", _ye;desc="1824521344", _se;desc="1792965544", compressionLevel;desc="5", compressionTime;dur=10.127
-x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
-x-xss-protection: 1; mode=block
 alt-svc: h3=":443"; ma=86400
-server: cloudflare
-report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Dp09YErfAO%2FjPxR9QfPw7j161gE433zBnNC7gMcKw0mPGJy2aJhxoHfLfWsD%2BNWUty3a3d737QxoEQTSs02s8hWe4XKNRCFeMyINfGg3T3pTP6a4SZDwSoJjo26rbVR9lRr4eKS7eV1E"}]}
+cf-cache-status: DYNAMIC
+cache-control: private, max-age=0, must-revalidate
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9n5J27cLKhOHa1vShew21ooRm5J2%2B0hpDfRYb4laTfTayQMUPJA%2BtJVOuyC8eVLfUxjZiMwBCfXnLf%2BhIKgueg2WfwjtP7oz%2F1zcn8rWvK9AC3Bo8X0CLNrejqNWbrwrXiSGC%2BWsa8Tt"}]}
+cdn-cache-control: no-cache, no-store
+vary: Accept
+server-timing: processing;dur=386, db;dur=266, render;dur=157, asn;desc="270035", edge;desc="BOG", country;desc="CO", theme;desc="190351180054", pageType;desc="index", servedBy;desc="hkz8", requestID;desc="6bbbec88-f2d3-4efb-b507-3e51e93a9d84-1795118650", _y;desc="a312da29-ea8c-44b7-9675-cb7ba173eb6c", _s;desc="f5ab4006-7998-4408-bb2a-ccb3436ff857", _cmp;desc="3.AMPS_COVAC_f_f_tOZbAOcGR1-mcq7pyfs5Vw", _ye;desc="1826676251", _se;desc="1795120451", compressionLevel;desc="5", compressionTime;dur=14.075
+x-request-id: 6bbbec88-f2d3-4efb-b507-3e51e93a9d84-1795118650
 x-content-type-options: nosniff
-x-request-id: 6ddd75f4-5ca7-4dd4-886b-3ebc95a2c26b-1792963744
-cf-ray: a50450898fd97d6e-BOG
+nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+server: cloudflare
+x-permitted-cross-domain-policies: none
+cf-ray: a5d1d28fce783e9c-BOG
 server-timing: ipv6, earlyhints
+
+### curl -sI http://saju.co/
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 19 Nov 2026 20:04:11 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 167
+Connection: keep-alive
+Location: https://saju.co/
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=axZ9Vk8Jvld1BY3yG0pehegFxdTyfztx9N4s1wGIKq42wSX3dlUtV0v0muCZrfl0zwPC1O9R91yLoAInJz6bIMHQXdAfPtOMus4hYnnaX3NqNBqWzjsnQdE%3D"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Download-Options: noopen
+Server: cloudflare
+CF-RAY: a5d1d2945a0c353a-GUA
+alt-svc: h3=":443"; ma=86400
 
 ### curl -sI http://www.saju.co/
 HTTP/1.1 301 Moved Permanently
-Date: Sun, 25 Oct 2026 21:29:05 GMT
+Date: Thu, 19 Nov 2026 20:04:11 GMT
 Content-Type: text/html; charset=UTF-8
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.saju.co/
-Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=T9cJBbxW4MpG0UXqV2gRRSdKGQt0Fq0h8jMxj9lSlwSzdPPJwUPrWbdohQY8BRRy12zgaNjLuwPtwJTb89RaAnWJaBaFN3pEvrAmhlxsSwL6b%2BZC4ufE6BzYJdqsLytHuBdeZDbbDGB%2F"}]}
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2Bmom0oSv0OHfbYmJaiXxRYVDoOdV8PZ33iWu4V1BvWi72vIolj7AjzTwqBcGScI95o8fXWy016QA0inQfyo1iBvkmJB%2BrwlSNqFeBPYv58bTFx40IB1IPq%2F5BLIhLTKrE4Yga3WR4dkd"}]}
 Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
 X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
@@ -52,69 +70,133 @@ X-Permitted-Cross-Domain-Policies: none
 X-Download-Options: noopen
 Server-Timing: ipv6
 Server: cloudflare
-CF-RAY: a50450908e773198-MIA
-alt-svc: h3=":443"; ma=86400
-
-### curl -sI http://saju.co/
-HTTP/1.1 301 Moved Permanently
-Date: Sun, 25 Oct 2026 21:29:06 GMT
-Content-Type: text/html; charset=UTF-8
-Content-Length: 167
-Connection: keep-alive
-Location: https://saju.co/
-Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=LzFTHMtXFEiVkXsuTra5lZR7WqH7PRvJZNKsqx1eFdnx0y6a69wBPioh7xNadDjvP4xXYZUE%2BOP9JxFvJkw%2BPZEIBgA5ZjadpirRAcOqT7HZJcUmXpNagoI%3D"}]}
-Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Permitted-Cross-Domain-Policies: none
-X-Download-Options: noopen
-Server: cloudflare
-CF-RAY: a50450974ef26333-ATL
+CF-RAY: a5d1d294fdedd267-BOG
 alt-svc: h3=":443"; ma=86400
 
 ### curl -sI https://saju.co/
 HTTP/2 301 
-date: Sun, 25 Oct 2026 21:29:06 GMT
+date: Thu, 19 Nov 2026 20:04:12 GMT
 content-type: text/html; charset=utf-8
 content-length: 0
 location: https://www.saju.co/
-x-download-options: noopen
 x-redirect-reason: canonical_host_redirection
-shopify-complexity-score: 0
-shopify-complexity-score-v2: 17
-set-cookie: _shopify_essential=:AaF095w3AAEAva-geb-3OtI5oYRwZkEieJ9pNL44JcC8XJaACALbyixuLbRw-8gpvpTjiYF4n4_tdGFU_ZDFvfD6T-I:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_essential=:AaH1aNt4AAEAQH1DThHGZZkCUXfm4rP9UnnMmXXi6cnEFGmUq7f3jER1mxAHX-nexjMp17j33Rd_lRB-oWT3dgC_mTo:; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
 x-frame-options: DENY
 content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
 strict-transport-security: max-age=7889238
-report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=n65Y52%2F%2BDK8q1CvxTHy1W99MH6%2FstS%2FFLBk2CxTz%2FCaY2qhzSPvhSP30H4VKHw6y9fm5C%2B7Nl%2BDl0geowlm%2B1nINGSJmDdDtbwOY9NAq2UEBTkIGlOHXQhE%3D"}]}
-vary: Accept
-cdn-cache-control: no-cache, no-store
-cache-control: private, no-store
+shopify-complexity-score: 80
+shopify-complexity-score-v2: 8
 link: </.well-known/ucp>; rel="ucp"; version="2026-08-25"
 powered-by: Shopify
-server-timing: processing;dur=22;desc="gc:1", db;dur=4, db_async;dur=4.511, asn;desc="13489", edge;desc="BOG", country;desc="CO", pageType;desc="index", servedBy;desc="qpn4", requestID;desc="b8a2b083-0d1a-411b-8e3b-49c8931b0766-1792963746", _y;desc="113350da-e8ba-42ed-947a-ac80aeb539cf", _s;desc="cafe35cc-372a-4a0c-aa48-d628e1f66e69", _cmp;desc="3.AMPS_COANT_f_f_UP4etu6hT3yEJpG-OaYRNA", _ye;desc="1824521346", _se;desc="1792965546"
-server: cloudflare
-cf-cache-status: DYNAMIC
-alt-svc: h3=":443"; ma=86400
+cache-control: private, no-store
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=AfXBBbsAKRK8OZIbFDrMkJVK3mL9%2BnJPoddTISnJSwwTR2cOq%2FUG1Va3Nwz4kMATRdWyPXm81t0doS0YQhI1lJRMZjoK65Zd1URYEUfJDSSnSwEDOBLB3Wk%3D"}]}
 nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+cdn-cache-control: no-cache, no-store
+vary: Accept
+server-timing: processing;dur=9, db;dur=6, asn;desc="52468", edge;desc="GUA", country;desc="CO", servedBy;desc="39vv", requestID;desc="d73812e5-987a-4508-b00d-9b78646051d9-1795118652", _y;desc="b5e39830-b4ee-4b56-bf98-d98f94ffb04b", _s;desc="a7a4faf5-6184-44c8-8458-9d47862530ea", _cmp;desc="3.AMPS_CODC_f_f_84zNO5qKQ2mkBlWXj6p1dQ", _ye;desc="1826676252", _se;desc="1795120452"
 x-content-type-options: nosniff
+cf-cache-status: DYNAMIC
 x-xss-protection: 1; mode=block
-x-permitted-cross-domain-policies: none
 x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
-x-request-id: b8a2b083-0d1a-411b-8e3b-49c8931b0766-1792963746
-cf-ray: a50450999a6cffac-BOG
+alt-svc: h3=":443"; ma=86400
+x-permitted-cross-domain-policies: none
+x-request-id: d73812e5-987a-4508-b00d-9b78646051d9-1795118652
+server: cloudflare
+x-download-options: noopen
+cf-ray: a5d1d2987f1f5ea7-GUA
 
-### 404 test https://www.saju.co/pagina-que-no-existe-xyz
-404 196866
-### https://www.saju.co/cdn/shop/t/56/assets/theme.js?v=13968561988284492361790625188
-HTTP/2 200 
-content-type: text/javascript
-cache-control: public, max-age=31557600
-### https://www.saju.co/cdn/shop/t/56/assets/theme.css?v=102440721477998494661790625188
+### 404 https://www.saju.co/pagina-que-no-existe-xyz
+404
+### asset theme.css
 HTTP/2 200 
 content-type: text/css
 cache-control: public, max-age=31557600
-### https://www.saju.co/cdn/shop/files/TripleCaseMobile.webp?v=1791479834&width=800
+x-content-type-options: nosniff
+### asset image
 HTTP/2 200 
 content-type: image/jpeg
 cache-control: public, max-age=31557600
+x-content-type-options: nosniff
+### Internal links (40 of       97 unique, GET -L, 2s spacing)
+200 /
+200 /cart
+429 /collections/acetate-renew
+429 /collections/best-sellers-sol
+429 /collections/clip-ons
+429 /collections/daydreamer
+429 /collections/gafas-acetato-sol
+200 /collections/gafas-de-metal-sol
+429 /collections/gafas-especializadas
+429 /collections/gafas-formuladas-acetate-renew
+429 /collections/gafas-lentes-sol-plastico-reciclado-saju
+429 /collections/lentes-de-contacto
+200 /collections/mala-suerte-2-0-simon-vargas
+429 /collections/phone-glasses
+429 /collections/saju-grip-sol
+429 /collections/triple-cases
+200 /pages/collabs
+200 /pages/mi-pedido
+200 /pages/tachalo
+200 /pages/terminos-y-condiciones-optica-y-gafas-formuladas
+200 /policies/refund-policy
+429 /products/belucci-clear-gray
+200 /products/belucci-dark-brown
+429 /products/boss-babe
+429 /products/chelsea-earth
+200 /products/chelsea-mars
+429 /products/chelsea-pluto
+429 /products/dream-chaser
+429 /products/examen-visual-calle-122
+429 /products/examen-visual-calle-54
+429 /products/examen-visual-gran-estacion
+429 /products/examen-visual-san-roque
+429 /products/gafas-lectura-celular-phone-glasses-gray
+200 /products/gafas-manhattan-1
+429 /products/gafas-plastico-venice-black-gris
+429 /products/hustle-honey
+429 /products/jane-dark-brown
+429 /products/m12-green
+429 /products/m52c201f
+429 /products/m54c101f
+### Images
+200 https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp?v=1747191712&amp;wid
+200 https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp?v=1747191712&amp;wid
+200 https://www.saju.co/cdn/shop/files/AF.webp?v=1747191783&width=400
+200 https://www.saju.co/cdn/shop/files/banner-agenda-examen-1.webp?v=1792008487&amp;width=2000
+200 https://www.saju.co/cdn/shop/files/banner-agenda-examen-1.webp?v=1792008487&amp;width=800
+200 https://www.saju.co/cdn/shop/files/banner-agenda-examen-1.webp?v=1792008487&width=800
+200 https://www.saju.co/cdn/shop/files/Banner-CuelgaGafas_84c74fea-c095-47bd-b174-7143bfbe88d0.webp?v=17
+200 https://www.saju.co/cdn/shop/files/Banner-CuelgaGafas_84c74fea-c095-47bd-b174-7143bfbe88d0.webp?v=17
+200 https://www.saju.co/cdn/shop/files/BannerDesktop.webp?v=1793812043&amp;width=3200
+200 https://www.saju.co/cdn/shop/files/BannerDesktop.webp?v=1793812043&amp;width=800
+200 https://www.saju.co/cdn/shop/files/BannerFormuladas_b91cde4d-5d23-4bd4-9725-c3b40394841e.webp?v=1747
+200 https://www.saju.co/cdn/shop/files/BannerFormuladas_b91cde4d-5d23-4bd4-9725-c3b40394841e.webp?v=1747
+### Retry of 429s (10 s spacing)
+429 /collections/acetate-renew
+429 /collections/best-sellers-sol
+429 /collections/clip-ons
+429 /collections/daydreamer
+429 /collections/gafas-acetato-sol
+429 /collections/gafas-especializadas
+429 /collections/gafas-formuladas-acetate-renew
+429 /collections/gafas-lentes-sol-plastico-reciclado-saju
+429 /collections/lentes-de-contacto
+429 /collections/phone-glasses
+429 /collections/saju-grip-sol
+429 /collections/triple-cases
+429 /products/belucci-clear-gray
+429 /products/boss-babe
+429 /products/chelsea-earth
+429 /products/chelsea-pluto
+429 /products/dream-chaser
+429 /products/examen-visual-calle-122
+429 /products/examen-visual-calle-54
+429 /products/examen-visual-gran-estacion
+429 /products/examen-visual-san-roque
+429 /products/gafas-lectura-celular-phone-glasses-gray
+429 /products/gafas-plastico-venice-black-gris
+429 /products/hustle-honey
+429 /products/jane-dark-brown
+429 /products/m12-green
+429 /products/m52c201f
+429 /products/m54c101f

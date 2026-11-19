@@ -2,223 +2,152 @@
   "serp": {
     "today": [
       {
-        "page": "Inicio",
+        "page": "inicio",
         "url": "https://www.saju.co",
-        "breadcrumb": "saju.co",
+        "canonical": "https://www.saju.co/",
         "title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
         "meta_description": "Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta",
-        "note": "El título es solo el eslogan en inglés: no dice gafas, ni Colombia, ni ópticas. La descripción no menciona productos, tiendas ni envío."
+        "site_name": "Sajú Colombia",
+        "evidence": "raw/home.html (Shopify Liquid output, server-rendered: <title> and meta[name=description] are emitted in the HTML, not injected by JS). Title is the English slogan with no product word ('gafas'); description (88 chars) does not mention sunglasses, prescription glasses, recycled plastic or stores. site_name from og:site_name and WebSite JSON-LD 'Sajú Colombia' [dato por confirmar en Google]."
       },
       {
-        "page": "Producto (Cumbre Gravel)",
-        "url": "https://www.saju.co/products/cumbre-gravel",
-        "breadcrumb": "saju.co › products › cumbre-gravel",
-        "title": "Cumbre Gravel · Gafas de sol cuadradas compactas TR90 | Sajú",
-        "meta_description": "Cumbre Gravel: gafas de sol cuadradas compactas en TR90 negro grava, con Grip antideslizante y filtro UV400. Envío a toda Colombia.",
-        "note": "Bien resuelto: título y descripción propios y descriptivos."
-      },
-      {
-        "page": "Tiendas",
-        "url": "https://www.saju.co/pages/tiendas-1",
-        "breadcrumb": "saju.co › pages › tiendas-1",
-        "title": "TIENDAS",
-        "meta_description": null,
-        "note": "Título de una sola palabra sin marca ni ciudad; sin descripción, Google improvisa el texto."
+        "page": "producto (Sozo Dark Brown)",
+        "url": "https://www.saju.co › products › m55c201s",
+        "canonical": "https://www.saju.co/products/m55c201s",
+        "title": "M55C201S · Gafas de sol redondas | Sajú",
+        "meta_description": "Gafas de sol M55C201S en aluminio reciclado, forma redonda. 54-22-145 mm. Filtro UV400, estuche y paño incluidos. Envío gratis desde $150.000.",
+        "evidence": "raw/ux-product-rendered.html: the title uses the internal reference 'M55C201S' while the page H1 and og:title say 'Sozo Dark Brown'. The description promises free shipping from $150.000, but the top bar of every page says 'Envíos gratis por compras superiores a $249,000'."
       }
     ],
     "proposed": [
       {
-        "page": "Inicio",
-        "title": "Sajú: gafas de sol, formuladas y ópticas en Colombia",
-        "description": "Gafas de sol con filtro UV400, gafas formuladas y examen visual en ópticas Sajú de Bogotá, Chía y Medellín. Envío a toda Colombia."
+        "page": "inicio",
+        "title": "Sajú | Gafas de sol y formuladas de material reciclado",
+        "description": "Gafas de sol y formuladas hechas con plástico y aluminio reciclado. Examen visual y óptica en tiendas de Bogotá, Chía, Medellín y Cartagena."
       },
       {
-        "page": "Tiendas",
-        "title": "Tiendas y ópticas Sajú en Colombia y otros países",
-        "description": "Direcciones, horarios y teléfonos de las tiendas y ópticas Sajú en Bogotá, Chía, Medellín, Cartagena, Barranquilla y Costa Rica. Agenda tu cita."
+        "page": "producto (Sozo Dark Brown)",
+        "title": "Gafas de sol Sozo Dark Brown, aluminio reciclado | Sajú",
+        "description": "Gafas de sol redondas Sozo Dark Brown en aluminio reciclado, filtro UV400, medidas 54-22-145 mm. Incluyen estuche y paño. Compra en Sajú."
       }
-    ]
+    ],
+    "notes": "Facts from the site: recycled plastic and recycled aluminium lines (menu 'Plástico reciclado', 'Alumino reciclado'; Organization description), optical service and eye exams per store (/pages/tiendas-1), store cities Bogotá, Chía, Medellín, Cartagena (/pages/tiendas-1). findings/seo.json did not exist when this ran and this agent ran no Google searches, so no google_snippet is used (both pages have their own meta description). Free-shipping amount left out of the proposals because the site states two thresholds ($249,000 vs $150.000); confirm with the client."
   },
   "share_preview": {
     "today": {
       "home": {
+        "og:site_name": "Sajú Colombia",
+        "og:url": "https://www.saju.co/",
         "og:title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
+        "og:type": "website",
         "og:description": "Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta",
-        "og:image": "https://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png (1080×1080, logo on white)",
-        "twitter:card": "summary"
+        "og:image": "http://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png?v=1783344929&width=2048",
+        "og:image:secure_url": "https://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png?v=1783344929&width=2048",
+        "og:image:width": "1080",
+        "og:image:height": "1080",
+        "twitter:card": "summary",
+        "twitter:title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
+        "twitter:description": "Somos una marca de gafas que busca hacerle la vida más fácil a las personas y al planeta",
+        "twitter:image": "https://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png?crop=center&height=1200&v=1783344929&width=1200"
       },
-      "product": {
-        "og:title": "Cumbre Gravel",
-        "og:image": "https://www.saju.co/cdn/shop/files/CUMBREGRAVEL_2.jpg (2048×2048)",
-        "twitter:description": "full product body dumped without spaces between headings (e.g. 'UVB.MaterialMontura en TR90')"
+      "producto_sozo_dark_brown": {
+        "og:title": "Sozo Dark Brown",
+        "og:description": "Gafas de sol M55C201S en aluminio reciclado, forma redonda. 54-22-145 mm. Filtro UV400, estuche y paño incluidos. Envío gratis desde $150.000.",
+        "og:image": "http://www.saju.co/cdn/shop/files/M55C201S_-_Frente.jpg?v=1786645083&width=2048"
       },
       "tiendas": {
         "og:title": "TIENDAS",
-        "og:description": null,
-        "twitter:description": "TIENDAS"
-      },
-      "whatsapp_today": "Al compartir el inicio por WhatsApp/LinkedIn sale el logo sobre fondo blanco (imagen cuadrada) con el eslogan en inglés; al compartir la página de tiendas sale solo 'TIENDAS' y el logo, sin texto que explique qué es."
+        "og:image": "http://www.saju.co/cdn/shop/files/Fondo_Blanco_Saju-03.png?v=1783344929&width=2048",
+        "og:description": null
+      }
     },
+    "today_title": "Sajú - FEEL GOOD, LOOK GOOD, DO GOOD",
+    "today_og_image_local": "og-today.jpg",
+    "what_shows_today": "Si compartes el inicio por WhatsApp o LinkedIn, sale el logo «sajú.» y el mono con gafas en negro sobre fondo blanco, con el título en inglés «Sajú - FEEL GOOD, LOOK GOOD, DO GOOD» y el texto «Somos una marca de gafas…». No se ve ninguna gafa ni ninguna persona usándolas, y es la misma imagen que sale al compartir la página de tiendas o la de exámenes visuales.",
+    "issues": [
+      "Home og:image Fondo_Blanco_Saju-03.png is a logo on white, square 1080x1080 (screenshots/og-today.jpg); it is also the og:image of /pages/tiendas-1, /collections/examenes-visuales and /pages/tachalo.",
+      "og:image uses http:// (og:image:secure_url has https://).",
+      "twitter:card is 'summary' (small thumbnail), not 'summary_large_image'.",
+      "/pages/tiendas-1 og:title is 'TIENDAS' in capitals and has no og:description; /pages/tachalo og:description is the placeholder 'Hola esto es tachalo'.",
+      "Product og:description promises 'Envío gratis desde $150.000' while the site-wide bar says $249,000."
+    ],
     "proposed": {
-      "og:title": "Sajú: gafas de sol y formuladas, ópticas en Colombia",
-      "og:description": "Gafas de sol UV400, gafas formuladas y examen visual en ópticas Sajú. Envío a toda Colombia.",
-      "og:image": "https://www.saju.co/cdn/shop/files/AD_0b5d539d-4e94-477b-b3f0-e225a6f5b21a.webp",
-      "og:image:width": 2400,
-      "og:image:height": 1200,
-      "twitter:card": "summary_large_image",
-      "og_image_local": "og-source.jpg"
+      "og:title": "Sajú | Gafas de sol y formuladas de material reciclado",
+      "og:description": "Gafas hechas con plástico y aluminio reciclado. Examen visual y óptica en tiendas de Bogotá, Chía, Medellín y Cartagena.",
+      "og:image": "https://www.saju.co/cdn/shop/files/SAJU37325.JPG.p.jpg",
+      "og_image_local": "og-source.jpg",
+      "note": "SAJU37325.JPG.p.jpg is a home-page photo (woman wearing cream cat-eye frames), HTTP 200 image/jpeg, served at 1600x1600. screenshots/og-source.jpg is that photo cropped to a 1600x840 band (offset y=120) and resized to 1200x630 JPEG (about 120 KB). Best: upload this crop as its own file and point og:image to its https URL; the 'Tropical' home banner was not used because it is a seasonal campaign."
     }
   },
   "ai_answer": {
     "status": "not_collected",
     "aeo_fixes": [
       {
-        "title": "Arreglar la página de preguntas frecuentes",
-        "fix": "Publicar una página de preguntas frecuentes real (garantía, cambios, tiempos de envío, cómo funciona el examen visual, cuánto tarda una gafa formulada, qué es el plástico reciclado de Sajú) para que la IA tenga respuestas tuyas que citar.",
-        "evidence": "https://www.saju.co/pages/faqs → 301 to /pages/preguntas-frecuentes → 404 (checked 2026-10-25)"
+        "title": "Ficha de cada tienda y óptica para Google",
+        "fix": "Publicar en la página de tiendas la ficha de cada local (LocalBusiness/Optician) con dirección, teléfono y horario, separando el horario de la tienda del de la óptica. Así Google y los asistentes de IA pueden responder «¿dónde hay una óptica Sajú cerca y a qué hora abre?».",
+        "evidence": "/pages/tiendas-1 (raw/ux-tiendas.html): 0 matches for LocalBusiness/Optician; the only JSON-LD on the site is WebSite, Organization and BreadcrumbList (raw/home.html)."
       },
       {
-        "title": "Ficha de marca con datos verificables",
-        "fix": "Crear una página 'Sobre Sajú' con datos comprobables: año de fundación, número de tiendas y ópticas por ciudad, materiales (plástico reciclado, TR90), garantías (reparación de por vida en plástico reciclado, 365 días en acetato y metal) y razón social. Hoy no existe una página así.",
-        "evidence": "/pages/nosotros → 404; home links only to collabs, envíos, privacidad, tachalo, términos, tiendas-1"
+        "title": "Un solo dato por tienda",
+        "fix": "Unificar los datos que hoy se contradicen en la misma página de tiendas: la dirección de La Serrezuela en Cartagena, el horario de Medellín y Chapinero, y el teléfono compartido de Calle 140 y Parque La Colina. Con datos contradictorios, la IA no sabe cuál dar.",
+        "evidence": "raw/ux-tiendas.html: store locator list vs detailed store blocks on the same page (see nap.rows)."
       },
       {
-        "title": "Cada tienda como negocio local en los datos del sitio",
-        "fix": "Añadir datos estructurados de tienda/óptica (LocalBusiness / Optician) por cada sede, con dirección, teléfono y horario idénticos a los publicados, y completar el bloque de organización con teléfono, correo y razón social.",
-        "evidence": "JSON-LD on home: only WebSite, Organization (name, logo, description, slogan, sameAs) and BreadcrumbList; no telephone, email, address or LocalBusiness on /pages/tiendas-1"
+        "title": "Un mismo monto de envío gratis",
+        "fix": "Decidir un solo monto para el envío gratis y usarlo en la barra superior y en las descripciones de producto. Hoy la barra dice $249.000 y la ficha de producto dice $150.000.",
+        "evidence": "Top bar on every page 'Envíos gratis por compras superiores a $249,000' (raw/home.html, raw/ux-product.html); product meta/og description 'Envío gratis desde $150.000' (raw/ux-product.html)."
       },
       {
-        "title": "Una sola versión de cada dirección y horario",
-        "fix": "Corregir el buscador de tiendas para que coincida con las fichas de la misma página (ver datos contradictorios). La IA y Google desconfían de un negocio que da dos direcciones para la misma tienda.",
-        "evidence": "/pages/tiendas-1: locator cards vs. detail blocks disagree on Calle 122, Parque La Colina, La Serrezuela and Medellín (see nap)"
+        "title": "Datos de la empresa completos",
+        "fix": "Completar la ficha de empresa (Organization): razón social La Familia del Mono SAS, WhatsApp de atención, todas las redes (hoy faltan LinkedIn y YouTube) y una descripción limpia; la actual termina en «Accesorios para Gafas, ! ».",
+        "evidence": "raw/home.html Organization JSON-LD: sameAs only instagram.com/saju and tiktok.com/@losdesaju; no telephone/contactPoint; description '¡Visítanos y encuentra Gafas de Sol hechas de plástico reciclado, Cuelga Gafas, Accesorios para Gafas, ! '. Footer links include linkedin.com/company/sajucolombia and youtube.com/@tachalo."
       },
       {
-        "title": "Completar el archivo llms.txt con la marca",
-        "fix": "El archivo llms.txt actual solo trae instrucciones genéricas de compra de Shopify. Añadir un resumen de quién es Sajú, qué vende, dónde están las ópticas y enlaces a tiendas, garantía y preguntas frecuentes.",
-        "evidence": "https://www.saju.co/llms.txt → 200, content is Shopify's default 'Agent Instructions' (Shop skill / UCP), no brand facts"
+        "title": "Una página de preguntas frecuentes",
+        "fix": "Crear una página de preguntas frecuentes con respuestas cortas: cuánto cuesta y dura el examen visual, en cuánto tiempo entregan gafas formuladas, de qué material reciclado son, garantía y envíos. Son las preguntas que la gente le hace a la IA antes de comprar.",
+        "evidence": "No FAQ page or FAQPage schema found (0 matches in raw/home.html, raw/ux-tiendas.html); exam details (30-minute appointment, 100% consumable deposit) live only in the exam product description (raw/ux-exam-rendered.html)."
       },
       {
-        "title": "Descripciones legibles en las fichas de producto",
-        "fix": "Separar la descripción de producto en frases y secciones limpias; hoy los textos se pegan entre sí ('UVB.MaterialMontura…') en los datos que leen buscadores y asistentes.",
-        "evidence": "/products/cumbre-gravel: twitter:description and Product JSON-LD description concatenate headings without spaces"
+        "title": "Un archivo llms.txt con tu negocio",
+        "fix": "Ampliar saju.co/llms.txt, que hoy solo trae las instrucciones genéricas de compra de Shopify, con quién eres (gafas de material reciclado), tus tiendas y ópticas, cómo agendar un examen visual y tus canales de contacto.",
+        "evidence": "https://www.saju.co/llms.txt HTTP 200 (2026-11-19), content 'Agent Instructions — Sajú Colombia' about Shop skill and UCP only (raw/presence-llms.txt)."
       }
     ]
   },
   "nap": {
     "rows": [
-      {
-        "field": "Nombre",
-        "source": "Footer (todas las páginas)",
-        "value": "La Familia del Mono SAS · © 2026 - Sajú Colombia"
-      },
-      {
-        "field": "Nombre",
-        "source": "JSON-LD Organization (home)",
-        "value": "Sajú Colombia"
-      },
-      {
-        "field": "Nombre",
-        "source": "Términos de envío (/pages/envios-garantias-y-devoluciones)",
-        "value": "La Familia Del Mono S.A.S."
-      },
-      {
-        "field": "Teléfono",
-        "source": "Enlace del botón flotante de WhatsApp (todas las páginas; el número no se ve escrito)",
-        "value": "+57 312 322 5855"
-      },
-      {
-        "field": "Teléfono",
-        "source": "JSON-LD Organization",
-        "value": "no declarado"
-      },
-      {
-        "field": "Email",
-        "source": "/pages/envios-garantias-y-devoluciones",
-        "value": "sac@sajucompany.com (dominio distinto a saju.co)"
-      },
-      {
-        "field": "Email",
-        "source": "Footer / contacto",
-        "value": "no publicado; /pages/contact devuelve 404"
-      },
-      {
-        "field": "Dirección Calle 122",
-        "source": "Buscador de tiendas (/pages/tiendas-1)",
-        "value": "Carrera 58d #146-51"
-      },
-      {
-        "field": "Dirección Calle 122",
-        "source": "Ficha de tienda (/pages/tiendas-1)",
-        "value": "Calle 122 #17-19"
-      },
-      {
-        "field": "Dirección Parque La Colina",
-        "source": "Buscador de tiendas",
-        "value": "CC Parque La Colina, Cra. 72 # 145, LC338"
-      },
-      {
-        "field": "Dirección Parque La Colina",
-        "source": "Ficha de tienda",
-        "value": "Cra. 58d #146-51 - Local 338"
-      },
-      {
-        "field": "Dirección Parque La Colina",
-        "source": "Directorio VisitBogotá (indicio, por confirmar)",
-        "value": "Carrera 58D # 146 - 51 (dirección del centro comercial)"
-      },
-      {
-        "field": "Dirección La Serrezuela",
-        "source": "Buscador de tiendas",
-        "value": "Cra. 5 #4 - 49 (igual a Cartagena Centro)"
-      },
-      {
-        "field": "Dirección La Serrezuela",
-        "source": "Ficha de tienda",
-        "value": "Comercial La Serrezuela, Cra. 11 #39-21 Local S25-1"
-      },
-      {
-        "field": "Horario La Serrezuela",
-        "source": "Buscador de tiendas",
-        "value": "Lun a Dom: 10am - 8pm"
-      },
-      {
-        "field": "Horario La Serrezuela",
-        "source": "Ficha de tienda",
-        "value": "Lun a Sáb 10:00–20:00 | Dom y festivos 10:00–21:00"
-      },
-      {
-        "field": "Horario Medellín",
-        "source": "Buscador de tiendas",
-        "value": "Lun a Sáb: 10am - 7pm · Dom: 11am - 6pm (en octubre decía 8pm)"
-      },
-      {
-        "field": "Horario Medellín",
-        "source": "Ficha de tienda (Amsterdam Plaza)",
-        "value": "Lun a Sáb 10:00–20:00 | Dom y festivos 10:00–18:00"
-      },
-      {
-        "field": "Teléfono Cedritos-140",
-        "source": "Ficha de tienda",
-        "value": "323 808 9097 (mismo número que Parque La Colina)"
-      },
-      {
-        "field": "Redes",
-        "source": "Footer",
-        "value": "instagram.com/saju, tiktok.com/@losdesaju, linkedin.com/company/sajucolombia, youtube.com/@tachalo"
-      },
-      {
-        "field": "Redes",
-        "source": "JSON-LD Organization sameAs",
-        "value": "instagram.com/saju, tiktok.com/@losdesaju (sin LinkedIn ni YouTube)"
-      }
+      {"field": "nombre", "source": "Sitio: og:site_name, schema WebSite/Organization", "value": "Sajú Colombia"},
+      {"field": "razón social", "source": "Sitio: pie de todas las páginas", "value": "La Familia del Mono SAS"},
+      {"field": "WhatsApp", "source": "Sitio: botón flotante de WhatsApp (todas las páginas)", "value": "wa.me/573123225855"},
+      {"field": "contacto", "source": "Sitio: /pages/contact", "value": "Devuelve 404; no hay página de contacto ni correo publicado (raw/ux-contact.html)"},
+      {"field": "Calle 81 (Flagship)", "source": "Sitio: /pages/tiendas-1, listado y bloque", "value": "Cra. 9 #81-25; tienda L-S 10:00-19:00, Dom/fest 10:00-17:00; tel. 310 324 8107"},
+      {"field": "Calle 122", "source": "Sitio: /pages/tiendas-1, listado y bloque", "value": "Calle 122 #17-19; L-S 10:00-19:00, Dom/fest 10:00-17:00; tel. 310 325 3754"},
+      {"field": "Calle 140 (Cedritos)", "source": "Sitio: /pages/tiendas-1, bloque", "value": "Calle 140 #10a-53; L-S 10:00-19:00, Dom/fest 10:00-17:00; tel. 323 808 9097"},
+      {"field": "Parque La Colina", "source": "Sitio: /pages/tiendas-1, bloque", "value": "Cra. 58d #146-51 Local 338; L-D 10:00-20:00; tel. 323 808 9097 (el mismo de Calle 140)"},
+      {"field": "Gran Estación", "source": "Sitio: /pages/tiendas-1, listado y bloque", "value": "Ac. 26 #62-47 Local 259; L-D 10:00-20:00; tel. 312 6685593"},
+      {"field": "Chapinero", "source": "Sitio: /pages/tiendas-1, listado", "value": "Calle 54 #4-10; L-V 10:00-18:00, Sáb 9:00-18:00, Dom/fest 9:00-16:00"},
+      {"field": "Chapinero", "source": "Sitio: /pages/tiendas-1, bloque", "value": "Calle 54 #4-10; L-S 9:00-18:00, Dom/fest 9:00-16:00; óptica «Lun-Mie-Jue» y «Mar-Mie-Vie-Sab» (miércoles dos veces); tel. 322 932 7750"},
+      {"field": "Chía San Roque", "source": "Sitio: /pages/tiendas-1 bloque y producto Examen Visual - San Roque", "value": "Carrera 5 #11d 2, Cajicá - Chía #21 sur KM 7; L-S 10:00-19:00, Dom/fest 10:00-17:00; tel. 312 6682112"},
+      {"field": "Medellín Amsterdam Plaza", "source": "Sitio: /pages/tiendas-1, listado", "value": "Cra. 25 #4-165; L-S 10:00-19:00, Dom 11:00-18:00"},
+      {"field": "Medellín Amsterdam Plaza", "source": "Sitio: /pages/tiendas-1, bloque", "value": "Cra. 25 #4-165, El Poblado; L-S 10:00-20:00, Dom/fest 10:00-18:00; tel. 305 225 6308"},
+      {"field": "Cartagena La Serrezuela", "source": "Sitio: /pages/tiendas-1, listado", "value": "Cra. 5 #4-49 (la misma dirección de la tienda Cartagena Centro); L-D 10:00-20:00"},
+      {"field": "Cartagena La Serrezuela", "source": "Sitio: /pages/tiendas-1, bloque", "value": "C.C. La Serrezuela, Cra. 11 #39-21 Local S25-1; L-S 10:00-20:00, Dom/fest 10:00-21:00; tel. 317 441 0459"},
+      {"field": "Cartagena Centro (Casa Entre Calles)", "source": "Sitio: /pages/tiendas-1", "value": "Cra. 5 #4-49 Local 3; L-D 10:00-20:00; sin teléfono"},
+      {"field": "Barranquilla", "source": "Sitio: /pages/tiendas-1, solo listado", "value": "Cra 55 #99-51; tienda propia; no aparece en los bloques de detalle ni en el menú de exámenes"},
+      {"field": "envío gratis", "source": "Sitio: barra superior de todas las páginas", "value": "compras superiores a $249,000"},
+      {"field": "envío gratis", "source": "Sitio: descripción de producto (meta y og:description de /products/m55c201s)", "value": "desde $150.000"},
+      {"field": "redes", "source": "Sitio: pie", "value": "instagram.com/saju, tiktok.com/@losdesaju, linkedin.com/company/sajucolombia, youtube.com/@tachalo"},
+      {"field": "redes", "source": "Sitio: JSON-LD Organization sameAs", "value": "solo Instagram y TikTok"},
+      {"field": "listados públicos", "source": "WebSearch (larepublica.co, forbes.co, farmatodo.com.co) — por confirmar", "value": "Notas de prensa de 2022 sobre la flagship en Bogotá y productos Sajú vendidos en Farmatodo; ningún listado con dirección u horario de tiendas para comparar"}
     ],
     "inconsistencies": [
-      "La óptica de la Calle 122 aparece con dos direcciones en la misma página de tiendas: «Carrera 58d #146-51» en el buscador y «Calle 122 #17-19» en su ficha; la primera es en realidad la dirección del centro comercial Parque La Colina.",
-      "La óptica de Parque La Colina tiene dos direcciones distintas: «Cra. 72 # 145» en el buscador y «Cra. 58d #146-51» en su ficha (esta última parece ser la del centro comercial [dato por confirmar]).",
-      "La tienda La Serrezuela (Cartagena) muestra en el buscador la dirección de la tienda del Centro (Cra. 5 #4-49) y en su ficha otra (Cra. 11 #39-21); además el horario del domingo cambia de 8 p.m. a 9 p.m. según dónde mires.",
-      "El horario de domingo de la tienda de Medellín es de 11 a.m. en el buscador y de 10 a.m. en su ficha.",
-      "El sitio no tiene una página de contacto (devuelve error) y el único correo publicado, en la política de envíos, usa otro dominio (sajucompany.com); los datos del sitio para Google no incluyen ni teléfono ni correo.",
-      "La política de envíos dice que tienes tiendas físicas en «Bogotá, Medellín, Cali, Cartagena y Barranquilla», pero el buscador no muestra ninguna en Cali; y San Roque aparece como Chía con una dirección de Cajicá."
-    ]
+      "La tienda La Serrezuela de Cartagena tiene dos direcciones en la misma página de tiendas: el listado dice Cra. 5 #4-49 (que es la dirección de la tienda del Centro) y el bloque de detalle dice C.C. La Serrezuela, Cra. 11 #39-21: quien siga el listado llega a la otra tienda.",
+      "El horario de Medellín Amsterdam Plaza cambia en la misma página: el listado dice lunes a sábado hasta las 7:00 p.m. y domingo desde las 11:00 a.m.; el detalle dice hasta las 8:00 p.m. y domingo desde las 10:00 a.m.",
+      "El horario de Chapinero también cambia: el listado dice lunes a viernes 10:00 a.m. a 6:00 p.m.; el detalle dice lunes a sábado 9:00 a.m. a 6:00 p.m. Además el horario de la óptica pone el miércoles en dos turnos distintos.",
+      "Las tiendas de Calle 140 y Parque La Colina publican el mismo teléfono (323 808 9097), así que no queda claro a cuál tienda se llama.",
+      "El envío gratis tiene dos montos: la barra superior de todas las páginas dice desde $249.000 y la descripción del producto (la que sale en Google y al compartir) dice desde $150.000.",
+      "La página /pages/contact da error 404 y el sitio no publica correo; el único canal general es el WhatsApp 312 322 5855."
+    ],
+    "technical_note": "Evidence: raw/home.html, raw/ux-tiendas.html (/pages/tiendas-1: store-locator list with filter + detailed per-store blocks; both read from the same HTML), raw/ux-product.html and raw/ux-product-rendered.html (/products/m55c201s), raw/ux-exam-rendered.html, raw/ux-contact.html (404), raw/presence-llms.txt. The store locator also lists own stores in Costa Rica (Alajuela, Plaza Cronos, Avenida Escazú) and Venezuela (Cerro Verde, Caracas) and allies (Dufry El Dorado, El Market JMC, Lünnetta and Solsona Panamá, Tres60Lab, etc.); these are not compared because they have no second source on the site. WebSearch found no directory/Maps listing with store NAP; press (larepublica.co, forbes.co 2022) is only a lead and kept out of inconsistencies. No Google searches were run by this agent."
   }
 }

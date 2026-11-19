@@ -1,9 +1,9 @@
 {
-  "ux": 50,
-  "a11y": 73,
-  "visual": 39,
-  "tech": 70,
-  "overall": 58,
+  "ux": 48,
+  "a11y": 70,
+  "visual": 36,
+  "tech": 73,
+  "overall": 57,
   "seo": 56,
   "target": 80,
   "version": "3",
@@ -11,21 +11,21 @@
   "detail": {
     "ux": {
       "passed": 3,
-      "partial": 2,
-      "total": 9
+      "partial": 3,
+      "total": 10
     },
     "a11y": {
-      "passed": 3,
-      "partial": 6,
+      "passed": 4,
+      "partial": 3,
       "total": 11
     },
     "visual": {
-      "passed": 3,
-      "partial": 4,
+      "passed": 2,
+      "partial": 5,
       "total": 11
     },
     "tech": {
-      "passed": 8,
+      "passed": 7,
       "partial": 2,
       "total": 11
     },

@@ -1,0 +1,6 @@
+Googlebot 200 566665
+GPTBot 200 566665
+OAI-SearchBot 200 566665
+ChatGPT-User 200 566665
+ClaudeBot 200 566665
+PerplexityBot 200 566665
