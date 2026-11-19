@@ -1,0 +1,15 @@
+200 15197-2 | - Salud Total EPS-S | None | [''] | words 320
+200 delta-3 | Plan Delta - Salud Total EPS-S | None | ['Plan Delta', 'DOCUMENTO INTEGRAL: MANUAL DEL USUARIO Y ANEXOS TÉ'] | words 5250
+200 deltasc | ANEXOS TÉCNICOS – PLAN DELTA - Salud Total EPS-S | None | ['ANEXOS TÉCNICOS – PLAN DELTA', 'SERVICIOS DE CONSULTAS'] | words 2610
+200 conocenos-2 | Conócenos - Salud Total EPS-S | None | ['Conócenos'] | words 409
+200 valores-agregados-2 | Valores agregados - Salud Total EPS-S | None | ['Valores agregados'] | words 549
+200 participacion-social-2 | Participación Social - Salud Total EPS-S | None | ['Participación Social', '¿Qué es la participación Social?'] | words 547
+200 tabla-pac | Tabla comparativa de coberturas - Salud Total EPS-S | None | ['Tabla comparativa de coberturas', 'Compara y descubre el plan que se ajusta a ti'] | words 394
+200 sorpresapac | ¡Disfruta tu sorpresa! - Salud Total EPS-S | None | ['¡Disfruta tu sorpresa!'] | words 417
+200 dulas-pac | Dulas PAC - Salud Total EPS-S | None | ['Dulas PAC', 'Dashboard Dulas PAC'] | words 293
+200 perfil/plan-delta | Plan Delta Archives - Salud Total EPS-S | None | ['Novedades'] | words 1393
+200 perfil/plan-gama | Plan Gama Archives - Salud Total EPS-S | None | ['Novedades'] | words 1003
+200 perfil/plan-omega | Plan Omega Archives - Salud Total EPS-S | None | ['Novedades'] | words 861
+200 mivacuna-covid19 | MiVacuna COVID-19 - Salud Total EPS-S | None | ['MiVacuna COVID-19'] | words 667
+200 plan-de-vacunacion-covid-19 | Información Oficial sobre la vacunación contra el Coronavirus en Colombia - Salud Total EPS-S | None | ['Novedades'] | words 486
+200 una-razon-mas-para-que-te-sientas-tranquilo | Una razón más para que te sientas tranquilo - Salud Total EPS-S | None | ['Una razón más para que te sientas tranquilo'] | words 431

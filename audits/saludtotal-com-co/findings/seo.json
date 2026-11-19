@@ -1,0 +1,313 @@
+{
+  "area": "seo",
+  "findings": [
+    {
+      "id": "seo-1",
+      "title": "Tus planes complementarios no tienen página propia de venta",
+      "summary": "Quien busca un plan Alfa, Gama, Delta u Omega en Google termina en PDFs de años anteriores o en una lista de noticias, no en una página que le explique el plan y le permita comprarlo.",
+      "now": "Al buscar «plan alfa salud total» en Google, el primer resultado es el portafolio en PDF de 2025 y aparecen también manuales en PDF de 2020 y 2024. El segundo resultado es una página titulada en inglés «Plan Alfa Archives» cuyo título principal es «Novedades». Desde la página de Planes Complementarios, los botones de los cuatro planes llevan a estas listas de noticias. La información real de cada plan (especialidades, precios, cobertura) solo está en PDFs. El plan Delta tiene una página con contenido (/delta-3/), pero no está enlazada desde ahí.",
+      "fix": "Crear una página por plan (Alfa, Gama, Delta, Omega) con lo que incluye, para quién es, en qué ciudades está, preguntas frecuentes y un botón para afiliarse. Retirar del buscador o redirigir los PDFs de años anteriores al portafolio vigente.",
+      "why": "Los planes complementarios son lo que vendes, y alguien que lee un PDF viejo puede ver condiciones que ya no aplican o irse sin un camino claro para comprar.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "Google Colombia 2026-11-19, «plan alfa salud total»: 1 PDF PORTAFOLIO-ALFA-2025.pdf; 2 «Plan Alfa Archives» /perfil/plan-alfa-salud-total/; 4 PDF /wp-content/uploads/2020/06/Alfa_3_10_19-Manual-de-Usuario-...PEREIRA.IBAGUE.pdf; 6 PDF Portafolio-ALFA-2024; 8 PDF Manual-de-Usuario-ALFA- (2024/08) (raw/seo-serp.json)",
+        "Google view (rendered, raw/seo-plan-alfa-rendered.html): <title>Plan Alfa Archives - Salud Total EPS-S</title>, único H1 «Novedades», sin meta description, og:title «Plan Alfa archivos»",
+        "/perfil/plan-gama/, /perfil/plan-omega/, /perfil/plan-delta/: títulos «Plan X Archives», H1 «Novedades» (raw/seo-odd-pages.txt)",
+        "raw/seo-planes-complementarios-rendered.html: los enlaces de plan apuntan a /perfil/plan-*/ y a PDFs PORTAFOLIO-*-2026.pdf y Manual-de-Usuario-*-2026-1.pdf; no hay enlace a /delta-3/",
+        "/delta-3/ existe: título «Plan Delta», ~5.250 palabras (manual del usuario en HTML)",
+        "Same result in no-JS view (curl): the site is server-rendered WordPress"
+      ],
+      "technical_note": "/perfil/ is a custom taxonomy archive (Yoast profile-sitemap). Options: build 4 landing pages (or turn the taxonomy archive template into a plan landing with intro content, Product/Offer or Service schema and FAQPage), 301 old PDFs (2020, 2024, 2025) to the current portfolio or serve X-Robots-Tag: noindex on superseded PDFs.",
+      "pin": null
+    },
+    {
+      "id": "seo-2",
+      "title": "El mapa del sitio envía a Google 59 enlaces rotos",
+      "summary": "Le estás pidiendo a Google que visite páginas que no existen, de prueba o repetidas, lo que gasta su atención en contenido que no te trae afiliados.",
+      "now": "El mapa del sitio que lee Google incluye 59 direcciones de «iconos» y todas responden «página no encontrada». También incluye 7 páginas de autores, una página sin título llamada «15197-2», páginas repetidas como «Conócenos» (dos versiones), «Valores agregados» (dos) y «Participación social» (cinco), y páginas de la vacunación COVID-19.",
+      "fix": "Sacar del mapa del sitio los iconos y las páginas de autores, revisar si las páginas repetidas, de prueba y de COVID se deben borrar, redirigir a la versión vigente u ocultar de Google, y revisar el mapa del sitio cada trimestre.",
+      "why": "Un índice limpio ayuda a que Google priorice las páginas que sí venden y evita que alguien llegue a información vieja o vacía.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "59 enlaces rotos",
+      "evidence": [
+        "https://saludtotal.com.co/sitemap_index.xml (Yoast): post 377, page 101, icons 59, category 6, profile 9, author 7 URLs (raw/seo-sitemap-*.xml)",
+        "icons-sitemap.xml: 59 of 59 URLs return HTTP 404 (raw/seo-icons-status.txt)",
+        "/15197-2/: HTTP 200, <title>- Salud Total EPS-S</title>, empty H1 (raw/seo-odd-pages.txt)",
+        "page-sitemap.xml lists /conocenos/ and /conocenos-2/, /valores-agregados/ and -2, /participacion-social/ and -2 to -5, /mivacuna-covid19/, /plan-de-vacunacion-covid-19/, /puntos-de-vacunacion-covid-19-sin-cita/",
+        "category-sitemap.xml lists /categoria/sin-categoria/"
+      ],
+      "technical_note": "Yoast > Settings > Content types: set 'icons' CPT and author archives to not show in search results (removes them from the sitemap). One author slug in author-sitemap.xml looks like an email-derived username; another is 'jdaniel_provisional' — remove author archives from the index for that reason too.",
+      "pin": null
+    },
+    {
+      "id": "seo-3",
+      "title": "La portada no le dice a Google qué ofreces",
+      "summary": "La descripción de la portada es solo el eslogan y la página tiene tres títulos principales que no mencionan EPS ni planes, así que Google y las redes tienen que adivinar qué mostrar.",
+      "now": "La descripción de la portada dice solo «Tu salud no es a medias debe ser total». La portada tiene 3 títulos principales: «Ingresa a nuestra sección de medicamentos y verifica», «En Salud Total EPS, no necesitas intermediarios para tus trámites» y «Novedades». De 12 páginas clave revisadas, 6 no tienen descripción (Conócenos, Servicios, Pide tu cita, Canales, PAC y Plan Alfa) y 4 tienen un título principal que falta, está repetido o dice solo «Novedades». Google ya cambia la descripción de la portada por un texto sobre Planes Complementarios.",
+      "fix": "Escribir para cada página clave un título y una descripción propios que digan qué es y para quién (por ejemplo, afiliación al régimen contributivo y subsidiado, planes complementarios), y dejar un solo título principal por página.",
+      "why": "Ese texto es lo que la persona lee en Google antes de decidir si entra, y una descripción clara gana más clics que un eslogan.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Rendered (Google view) and curl (no-JS) identical, raw/seo-onpage.json: home meta description «Tu salud no es a medias debe ser total»; 3 H1",
+        "Missing meta description: /conocenos/, /nuestros-servicios/, /pide-tus-citas-medicas/, /canalesdeatencion/, /pac/, /perfil/plan-alfa-salud-total/",
+        "H1 issues: home 3 H1; /pac/ 0 H1; /home-planes-complementarios/ single H1 «Novedades»; /perfil/plan-alfa-salud-total/ H1 «Novedades»",
+        "Google Colombia «salud total eps»: puesto 1, Google shows snippet «Con Planes Complementarios accede directamente a especialistas...» instead of the meta description (raw/seo-serp.json)",
+        "Lighthouse SEO score 100 on mobile and desktop (raw/lighthouse-*.json): it only checks basics such as having a title and crawlable links, not whether the text describes the business"
+      ],
+      "technical_note": "Yoast is installed: fill the meta description per page and the taxonomy templates for /perfil/. Theme renders section headings as <h1> on the home (medicamentos block, trámites block, Novedades); change them to <h2> and add one H1 naming the EPS.",
+      "pin": null
+    },
+    {
+      "id": "seo-4",
+      "title": "Tus teléfonos y tu nombre aparecen distintos según dónde",
+      "summary": "Un afiliado o un buscador que ve varios números y nombres no sabe cuál es el oficial, lo que genera llamadas fallidas y menos confianza.",
+      "now": "En las preguntas frecuentes de planes complementarios el teléfono de Bogotá aparece como «(1) 4854555», el formato anterior al cambio de marcación de 2021. En Google Maps varias sedes de Bogotá muestran «14854555». El pie de página muestra la línea 018000 114524, que en otras páginas aparece escrita de otras tres formas. El nombre también cambia: «Salud Total EPS-S» en los títulos, «Salud Total EPS» en los datos para Google y «SaludTotal EPS-S» en una descripción, y en Maps hay fichas como «Salud Total E.P.S. Virrey Solís» y «Salud Total Eps». El sitio no tiene una dirección de sede principal en el pie de página.",
+      "fix": "Definir un nombre oficial y un formato único para cada línea (601 485 4555, 01 8000 114524, WhatsApp) y usarlos en el sitio, en los datos para Google y en las fichas de Google Maps que la empresa administre.",
+      "why": "Google y los asistentes de IA cruzan el nombre, el teléfono y la dirección entre fuentes, y si no coinciden confían menos en tus datos.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-faq-pac.html (no-JS and rendered): «línea Bogotá (1) 4854555», «Call Center (1)4854555», «018000 1 14524», «01 8000 114524», «018000114524»",
+        "Footer (all pages): «Linea Nacional 018000 114524», WhatsApp 3107737993; no street address",
+        "JSON-LD Organization name «Salud Total EPS» vs WebSite name and titles «Salud Total EPS-S»; /home-planes-complementarios/ meta description «SaludTotal EPS-S»",
+        "Google Maps «Salud Total EPS Bogotá» 2026-11-19: «Salud Total EPS - VS Olaya» tel 14854555, «Salud Total EPS - VS Chapinero» tel 14854555, «Salud Total E.P.S. Virrey Solís», «Salud Total Eps» (raw/seo-serp.json)",
+        "Facts differ too: /conocenos/ «35 años de experiencia» vs YouTube channel description in Google «más de 34 años»"
+      ],
+      "technical_note": "Colombia moved to 10-digit landline dialing (601 + number for Bogotá) in 2021. Maps listing ownership is unknown from outside [dato por confirmar]; some may belong to IPS (Virrey Solís) rather than the EPS.",
+      "pin": null
+    },
+    {
+      "id": "seo-5",
+      "title": "Google no tiene tu dirección ni teléfono en datos estructurados",
+      "summary": "Le das a Google tu nombre y logo en un formato que entiende directamente, pero no tus teléfonos, sedes ni preguntas frecuentes, que es lo que más busca un afiliado.",
+      "now": "Cada página incluye una ficha técnica de la organización con nombre, logo y redes sociales, pero sin dirección, teléfono ni horario. Las dos páginas de preguntas frecuentes (unas 2.500 y 3.500 palabras) no están marcadas como preguntas frecuentes para Google, y la página de 15 sucursales no incluye las sedes en ese formato.",
+      "fix": "Completar la ficha de la organización con teléfonos, dirección principal y horario de atención, marcar las preguntas frecuentes y agregar las sucursales con su dirección.",
+      "why": "Con esos datos Google y los asistentes de IA pueden responder «¿cuál es el teléfono de Salud Total?» con tu información oficial y no con la de un tercero.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "JSON-LD @graph (Yoast) on all 12 pages: Organization {name, url, logo, sameAs x6}; no address, telephone, contactPoint (raw/seo-home.html)",
+        "Schema types found: WebSite, WebPage/CollectionPage, BreadcrumbList, Organization, ImageObject; no FAQPage, LocalBusiness/MedicalOrganization, Product/Service (raw/seo-onpage.json)",
+        "/preguntas-frecuentes-pbs/ ~2.500 words, /preguntas-frecuentes-pac/ ~3.500 words of Q&A without FAQPage markup",
+        "Same in both views (server-rendered)"
+      ],
+      "technical_note": "Add contactPoint (telephone, contactType customer service, areaServed CO) to Yoast Organization via wpseo_schema_organization filter; Yoast FAQ block or FAQPage JSON-LD on the two FAQ pages. Note Google shows FAQ rich results only for some government/health sites now, but the markup still helps parsers and AI engines.",
+      "pin": null
+    },
+    {
+      "id": "seo-6",
+      "title": "Algunos asistentes de IA tienen bloqueado tu sitio",
+      "summary": "Tu archivo de reglas para buscadores impide que Perplexity y otros asistentes lean tu sitio, así que pueden responder sobre Salud Total con información de terceros.",
+      "now": "El archivo robots.txt bloquea por completo a PerplexityBot, Applebot-Extended, Google-Extended, Meta y msnbot, entre otros. Sí deja entrar a los robots de ChatGPT, Claude y Google. En una prueba simulando cada robot, todos recibieron la portada normal (código 200), así que el bloqueo viene de esas reglas y no de un firewall. Tampoco hay un archivo llms.txt.",
+      "fix": "Decidir con el área de comunicaciones qué asistentes deben poder leer el sitio y quitar el bloqueo a los de búsqueda (al menos PerplexityBot). Mantener bloqueados solo los robots que no aportan visitas.",
+      "why": "Cada vez más personas preguntan a asistentes de IA cómo afiliarse o pedir una cita, y si no pueden leer tu sitio responden con lo que digan otros.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/seo-robots.txt: «User-agent: PerplexityBot / Disallow: /», also Disallow: / for Applebot-Extended, Google-Extended, anthropic-ai, meta-externalagent, FacebookBot, CCBot, msnbot, cohere-ai; GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Perplexity-User only Crawl-delay: 2",
+        "raw/seo-bot-status.txt: home with GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot and Googlebot user agents → HTTP 200, 285.132 bytes each (spoofed UA from a normal IP: indication only)",
+        "https://saludtotal.com.co/llms.txt → HTTP 404",
+        "No-JS view (curl) equals rendered view: content is readable by crawlers that are allowed"
+      ],
+      "technical_note": "Google-Extended does not affect Google Search or AI Overviews; it controls Gemini apps/training use. PerplexityBot is Perplexity's index crawler, so the Disallow keeps the site out of its search index. The 'Perplexity‑User' line uses a non-ASCII hyphen (U+2011), so that rule likely does not match the real user agent. Contact email in the footer is Cloudflare-obfuscated ([email protected]) in the no-JS view, so crawlers do not see it.",
+      "pin": null
+    },
+    {
+      "id": "seo-7",
+      "title": "Al compartir tu portada, el enlace sale sin imagen",
+      "summary": "Cuando alguien comparte tu portada o la página de planes por WhatsApp o Facebook, el enlace se ve sin foto y con el eslogan, lo que le resta clics.",
+      "now": "La portada, la página de Planes Complementarios, la de PAC y la de Plan Alfa no tienen imagen para compartir. Seis de las 12 páginas revisadas tampoco tienen descripción para compartir.",
+      "fix": "Definir una imagen y una descripción para compartir en la portada, los planes y las páginas de trámites más usadas.",
+      "why": "Muchos afiliados se pasan enlaces por WhatsApp, y una vista previa con imagen y texto claro genera confianza y más visitas.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "No-JS view (curl, what WhatsApp/Facebook previews read), raw/seo-onpage.json: og:image missing on /, /home-planes-complementarios/, /pac/, /perfil/plan-alfa-salud-total/",
+        "og:description missing on /conocenos/, /nuestros-servicios/, /pide-tus-citas-medicas/, /canalesdeatencion/, /pac/",
+        "Home og:description «Tu salud no es a medias debe ser total»"
+      ],
+      "technical_note": "Yoast > Settings > Site basics / Social sharing: set a default og:image and per-page social image.",
+      "pin": null
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "planes complementarios de salud colombia",
+      "appears": true,
+      "position_or_note": "Puesto 1: «Planes Complementarios» (saludtotal.com.co/home-planes-complementarios/) — «Los planes complementarios (PAC) de SaludTotal EPS-S te permiten acceder directamente a 16 especialidades…»",
+      "who_appears": [
+        "epssura.com",
+        "epssanitas.com",
+        "colmedica.com",
+        "pac-sos.com.co",
+        "coomeva.com.co",
+        "epsdelagente.com.co",
+        "salud.colsubsidio.com",
+        "colsanitas.com"
+      ]
+    },
+    {
+      "query": "mejor eps de colombia",
+      "appears": false,
+      "position_or_note": "No aparece en las páginas 1 y 2 (18 resultados orgánicos). Salud Total solo se menciona dentro de un ranking de consultorsalud.com.",
+      "who_appears": [
+        "consultorsalud.com",
+        "reddit.com",
+        "defensoria.gov.co",
+        "eltiempo.com",
+        "portafolio.co",
+        "pulzo.com",
+        "anuariolatamseguros.com",
+        "queseguro.co"
+      ]
+    },
+    {
+      "query": "como afiliarse a una eps",
+      "appears": true,
+      "position_or_note": "Puesto 2: «¿Cómo afiliarte a Salud Total EPS-S?» — «Afíliate aquí Sistema de Afiliación Transaccional ¿Quiénes pueden ser tus beneficiarios?…»",
+      "who_appears": [
+        "miseguridadsocial.gov.co",
+        "epssura.com",
+        "coosalud.com",
+        "enlace.com.co",
+        "famisanar.com.co",
+        "minsalud.gov.co",
+        "emssanareps.co"
+      ]
+    },
+    {
+      "query": "plan complementario de salud precio",
+      "appears": true,
+      "position_or_note": "Puesto 2: «Planes Complementarios» — «El plan complementario de Salud se trata de un paquete de servicios especiales…». El snippet no muestra precio; Famisanar sí muestra precios en Google.",
+      "who_appears": [
+        "epssura.com",
+        "corporativo.compensar.com",
+        "caracol.com.co",
+        "epsdelagente.com.co",
+        "famisanar.com.co",
+        "pac-sos.com.co",
+        "queseguro.co",
+        "online.axacolpatria.co"
+      ]
+    },
+    {
+      "query": "eps para independientes",
+      "appears": true,
+      "position_or_note": "Puesto 3: «Cotizaciones como independiente» — «Acceda a atención exclusiva en ACH-SOI llamando en Bogotá al: 601 3902182…»",
+      "who_appears": [
+        "epssura.com",
+        "comfenalcovalle.com.co",
+        "comfandi.com.co",
+        "siaseguros.co",
+        "ugpp.gov.co",
+        "enlace.com.co"
+      ]
+    },
+    {
+      "query": "como cambiarse de eps",
+      "appears": true,
+      "position_or_note": "Puesto 5: «Cambio de IPS y portabilidad - protegidos» — página sobre cambio de IPS, no sobre traslado a Salud Total.",
+      "who_appears": [
+        "miseguridadsocial.gov.co",
+        "consultorsalud.com",
+        "epssura.com",
+        "youtube.com",
+        "centrodeinformacion.manizales.gov.co",
+        "epssanitas.com"
+      ]
+    },
+    {
+      "query": "plan complementario de salud para mayores de 60 años",
+      "appears": true,
+      "position_or_note": "Puesto 8: «Planes Complementarios» — mismo snippet genérico de 16 especialidades; SURA, Compensar y SOS tienen página específica para mayores de 60.",
+      "who_appears": [
+        "epssura.com",
+        "corporativo.compensar.com",
+        "segurosbolivar.com",
+        "colmedica.com",
+        "pac-sos.com.co",
+        "queseguro.co",
+        "colsubsidio.com"
+      ]
+    },
+    {
+      "query": "salud total eps",
+      "appears": true,
+      "position_or_note": "Marca. Puesto 1: «Salud Total EPS-S - Tu salud no es a medias debe ser total».",
+      "who_appears": [
+        "facebook.com",
+        "play.google.com",
+        "apps.apple.com",
+        "youtube.com",
+        "x.com",
+        "minsalud.gov.co"
+      ]
+    },
+    {
+      "query": "plan alfa salud total",
+      "appears": true,
+      "position_or_note": "Marca. Puesto 1: PDF «Plan Alfa» (PORTAFOLIO-ALFA-2025.pdf); puesto 2: «Plan Alfa Archives»; además PDFs de 2020 y 2024 y una copia en scribd.com.",
+      "who_appears": [
+        "scribd.com",
+        "transaccional.saludtotal.com.co"
+      ]
+    }
+  ],
+  "search_tests_note": "Pruebas hechas en Google Colombia (google.com, gl=co, hl=es) el 19 de noviembre de 2026, leyendo los resultados orgánicos sin anuncios. Se usó el Chrome del equipo de Simian con una sesión de Google iniciada, no un navegador limpio, así que los resultados pueden estar algo personalizados; además varían según la persona y la ubicación. En Google Maps, al buscar «Salud Total EPS Bogotá», aparecen varias fichas de sedes con calificaciones entre 2,5 y 3,6; no podemos confirmar desde afuera quién las administra [dato por confirmar].",
+  "extra_pitch_es": "Ya apareces en los primeros puestos cuando alguien busca cómo afiliarse o un plan complementario; con una página propia para cada plan y un índice limpio, esas búsquedas pueden terminar en una afiliación y no en un PDF desactualizado.",
+  "checks": [
+    {
+      "id": "seo-appears",
+      "result": "pass",
+      "evidence": "Real Google Colombia 2026-11-19: appears in 6 of 7 buyer queries (puestos 1, 2, 2, 3, 5, 8); absent from 18 organic results for «mejor eps de colombia». Brand queries excluded from the count."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "Unique descriptive titles on /, /conocenos/, /como-afiliarte.../, /home-planes-complementarios/, /nuestros-servicios/, /pide-tus-citas-medicas/, FAQ pages, /canalesdeatencion/. Plan pages titled «Plan Alfa/Gama/Delta/Omega Archives» (English archive label), /pac/ just «PAC», /15197-2/ empty title, /sucursales-a-nivel-nacional/ titled only «Cobertura». Rendered = no-JS."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "partial",
+      "evidence": "6 of 12 key pages have a meta description (home, cómo afiliarte, planes complementarios, sucursales, FAQ PBS, FAQ PAC); missing on conocenos, servicios, citas, canales, pac, plan-alfa. Home description is only the slogan."
+    },
+    {
+      "id": "seo-h1",
+      "result": "partial",
+      "evidence": "8 of 12 key pages have exactly one meaningful H1. Home has 3 H1; /pac/ has 0; /home-planes-complementarios/ and /perfil/plan-alfa-salud-total/ have one H1 reading «Novedades»."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "partial",
+      "evidence": "Yoast Organization JSON-LD present and valid on all pages with name «Salud Total EPS», logo and sameAs; no address, telephone or contactPoint; no LocalBusiness/FAQPage."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "partial",
+      "evidence": "PAC overview page and /tabla-pac/ exist; Plan Delta has an indexable content page (/delta-3/) not linked from the PAC home. Plans Alfa, Gama and Omega have no page of their own: links go to /perfil/ news archives (H1 «Novedades») and details live only in PDFs; Google ranks 2020-2025 PDFs for «plan alfa salud total»."
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "fail",
+      "evidence": "Sitemap lists 59 icon URLs that all return 404, 7 author archives, /15197-2/ (empty title and H1), duplicates /conocenos-2/, /valores-agregados-2/, /participacion-social-2..5/, and COVID-19 pages; /categoria/sin-categoria/ in category sitemap."
+    },
+    {
+      "id": "seo-share",
+      "result": "partial",
+      "evidence": "og:title present on all 12; og:image missing on home, planes complementarios, pac, plan-alfa; og:description missing on 5 pages (no-JS view, what link previews read)."
+    },
+    {
+      "id": "seo-nap",
+      "result": "partial",
+      "evidence": "National line 018000 114524 consistent in footer, but written 4 ways across pages; Bogotá line shown as «(1) 4854555» (pre-2021 format) on FAQ PAC and «14854555» on Maps listings; name varies (Salud Total EPS-S / Salud Total EPS / SaludTotal EPS-S / Salud Total E.P.S.); no street address on site footer."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "pass",
+      "evidence": "Two long FAQ pages (/preguntas-frecuentes-pbs/ ~2.500 words, /preguntas-frecuentes-pac/ ~3.500 words) and citable facts on /conocenos/ (35 años, más de 5.5 millones de protegidos, 15 ciudades, más de 300 municipios), all in the no-JS HTML. No llms.txt (404) and PerplexityBot disallowed in robots.txt (see seo-6)."
+    }
+  ]
+}

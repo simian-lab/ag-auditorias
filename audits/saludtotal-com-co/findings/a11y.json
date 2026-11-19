@@ -1,0 +1,145 @@
+{
+  "area": "a11y",
+  "findings": [
+    {
+      "id": "a11y-1",
+      "title": "Los submenús del menú principal no abren con teclado",
+      "summary": "Quien navega con teclado o lector de pantalla no llega a Conócenos, Cobertura, PQRD ni Transparencia desde el menú, y abandona o llama a la línea de atención.",
+      "now": "Los submenús de Nosotros, Protegidos, Canales de atención y PQRD y Transparencia solo aparecen al pasar el ratón. Con la tecla Tab se salta de Nosotros a Afíliate aquí sin entrar en sus opciones, y al pulsar Enter sobre Nosotros la página se recarga y vuelve a salir el aviso de PQRD. Tampoco hay un enlace para saltar directo al contenido.",
+      "fix": "Que cada opción del menú se pueda abrir con Enter y recorrer con Tab o con las flechas, que anuncie si está abierta o cerrada, y añadir al inicio un enlace «Saltar al contenido».",
+      "why": "Una EPS atiende a muchos afiliados mayores o con discapacidad, y si no encuentran el trámite en la web lo hacen en oficina o por teléfono, que cuesta más.",
+      "impact": 5,
+      "effort": "Medio",
+      "evidence": [
+        "Live headless Chrome 1440x900, real Tab presses via CDP Input.dispatchKeyEvent (raw/a11y-keyboard-tab-order.log): TAB 12 'NOSOTROS' (href=\"\") -> TAB 13 'AFÍLIATE AQUÍ'; same for PROTEGIDOS, CANALES DE ATENCIÓN Y PQRD, TRANSPARENCIA; no submenu link ever receives focus.",
+        "Submenu <ul> under 'Nosotros' stays display:none on keyboard focus (screenshots/a11y-desktop-nav-focus.png) and becomes visible only on mouse hover (screenshots/a11y-desktop-nav-hover.png: Conócenos, Cobertura, Nuestros servicios, Nuestro orgullo).",
+        "Enter on 'Nosotros' (<a href=\"\">) reloads the page: a window marker set before the key press is gone afterwards and the PQRD pop-up opens again (raw/a11y-interaction-tests.log).",
+        "No skip link: first Tab stop is the hidden 'Alto contraste' checkbox, then the font-size buttons; 17 Tab presses before reaching the carousel."
+      ],
+      "technical_note": "Top-level items are <a href=\"\"> with no aria-expanded/aria-haspopup; submenus open on :hover only (no :focus-within rule found in the inline critical CSS). Lighthouse (mobile 85, desktop 81) does not test this: its score comes from automated rules only and missed this, the carousel tabindex issue and the broken contrast toggle. Fix: make top items <button aria-expanded> (or keep links with a real href plus a toggle button), open on Enter/Space, add li:focus-within > ul {display:block} as a minimum, plus a skip link to #main.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 27, "y_pct": 3}
+    },
+    {
+      "id": "a11y-2",
+      "title": "El carrusel principal no se usa con teclado",
+      "summary": "Los nueve banners de la portada, incluidos los avisos de atención en Valle, Risaralda y Quindío, no se pueden abrir sin ratón ni detener mientras se leen.",
+      "now": "Cada banner tiene su enlace marcado para que el teclado lo salte, así que con Tab nunca se llega a ellos. Los nueve puntos de navegación se anuncian todos igual, en inglés («Move to slide»). El carrusel cambia solo y no hay botón de pausa.",
+      "fix": "Hacer que cada banner tenga un enlace o botón alcanzable con Tab y con un texto claro («Ver la línea de WhatsApp para Valle del Cauca»), nombrar los puntos en español («Banner 3 de 9») y añadir un botón de pausa; que no avance solo si el visitante pidió menos movimiento.",
+      "why": "Los banners son el canal que eligieron para avisos urgentes de servicio, y hoy una parte de los afiliados no puede abrirlos.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "Rendered DOM: 9 slide links (<a tabindex=\"-1\" ...>Enlace del slide</a>, position:absolute, 1425px wide) all with tabindex=-1; slide wrappers, text and images also tabindex=-1 (raw/a11y-interaction-tests.log, raw/home.html).",
+        "Tab order (raw/a11y-keyboard-tab-order.log): TAB 19 'Ir al slide anterior', TAB 20 'Ir al slide siguiente', TAB 21-29 nine dots each named 'Move to slide' (<a href=\"\" class=\"move-to-slide\" slide=\"1\">Move to slide</a>), then TAB 30 jumps to the PQRD quick-access icon: no slide content reachable.",
+        "Auto-advance: active dot index sampled every 2 s read 0,0,0,0,0,0,0,1 (changed on its own within 16 s); no pause/stop control found in the DOM.",
+        "prefers-reduced-motion: 4 media rules in the page, all from WordPress core image/lightbox styles; none for the slider (swipe.min.js)."
+      ],
+      "technical_note": "Content varies per visit (9 rotating slides; order observed starting with the PQRD banner). Remove tabindex=-1 from the slide link of the visible slide (and inert/aria-hidden on off-screen slides), give it the slide headline as name, add aria-label='Ir al banner N de 9' / aria-current on dots, a pause button (WCAG 2.2.2) and disable auto-play under @media (prefers-reduced-motion: reduce).",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 59, "y_pct": 13.7}
+    },
+    {
+      "id": "a11y-3",
+      "title": "El aviso de PQRD es una imagen sin texto",
+      "summary": "El aviso emergente que se abre en cada visita no le dice nada a quien usa lector de pantalla: oye un enlace vacío en lugar de «Radica tu PQRD».",
+      "now": "A los 2,5 segundos de entrar se abre un aviso que tapa la página, en todas las visitas (no recuerda que ya lo cerraste). Su mensaje y su botón «Haz clic aquí» están dibujados dentro de la imagen, sin descripción. La X para cerrar mide 23 × 18 píxeles y, en celular, el aviso queda en parte debajo del banner de cookies. Lo bueno: con teclado el foco queda dentro del aviso y Esc lo cierra.",
+      "fix": "Poner el mensaje y el botón como texto real (o describir la imagen: «Radica tu PQRD con nosotros, haz clic aquí»), dar nombre al aviso, una X de al menos 44 × 44 píxeles, devolver el foco a donde estaba al cerrar y no volver a mostrarlo a quien ya lo cerró.",
+      "why": "Es la puerta de entrada al trámite de quejas que la propia EPS quiere promover, y hoy se pierde para lectores de pantalla y estorba a todos en cada visita.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse aria-dialog-name (mobile + desktop): div#pum-18336[role=dialog][aria-modal] has no accessible name.",
+        "Lighthouse link-name: div.pum-content > div.wp-block-image > figure.aligncenter > a (href TeEscuchamos) contains only <img src=\"Pop-Up-PQRD-700x394.png\" alt=\"\">; the image contains the text 'Radica tu PQRD Con nosotros / Haz clic aquí' (screenshots/a11y-desktop-popup.png).",
+        "Popup Maker config in raw/home.html: trigger auto_open delay 2500 ms, \"cookies\":[] (re-shown on every load; observed again after a reload).",
+        "Keyboard (raw/a11y-keyboard-popup.log): focus starts on .pum-content, Tab cycles link -> 'Cerrar' button -> container for 45 presses (contained, as intended for a modal); Escape closes it; afterwards document.activeElement is BODY (focus not restored).",
+        "Close button .pum-close measures 23x18 CSS px on desktop and on 390px mobile emulation; mobile capture shows the pop-up partly under the cookie banner (screenshots/a11y-mobile-popup.png)."
+      ],
+      "technical_note": "Popup Maker plugin (pum-18336). Add aria-labelledby to a visible heading or aria-label, meaningful alt on the image/link, a cookie on close, larger .pum-close, and enable 'return focus' behavior. The cookie banner (button 'Aceptar todo' at the end of the DOM) is reachable only after tabbing through the whole page; it is the plugin 'simian-gdpr-consent' (main.min.js), worth knowing before presenting.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 50}
+    },
+    {
+      "id": "a11y-4",
+      "title": "Textos blancos sobre celeste casi no se leen",
+      "summary": "Las cifras de «Nuestra gestión» y el botón «Ver más novedades» se leen con dificultad, sobre todo para personas mayores o con baja visión y en celular al sol.",
+      "now": "El blanco sobre el celeste de la marca (#14a4e5) tiene un contraste de 2,81 a 1, por debajo del mínimo de 4,5 a 1 para texto normal y de 3 a 1 para texto grande. Afecta al título «Nuestra gestión», a las cifras 41ML, 5.6MLL y 1.2 ML con sus rótulos finos («Afiliados PAC», «Afiliados EPS», «Red de IPS») y al botón «Ver más novedades».",
+      "fix": "Usar un azul más oscuro de la misma familia detrás del texto blanco (por ejemplo el azul de la franja de íconos), o texto azul oscuro sobre el celeste, y engrosar los rótulos finos.",
+      "why": "Son justamente los números que muestran el tamaño y la solidez de la EPS, y si no se leen no generan confianza.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "2,81:1",
+      "evidence": [
+        "Lighthouse color-contrast: a.blue-button 'Ver más novedades' #ffffff on #14a4e5, 12px bold, 2.81:1 (needs 4.5:1); div.our-numbers > h2 24px bold 2.81:1 (needs 3:1); div.swipe-wrap div.number > p 64px bold and 15px weight 100, 2.81:1.",
+        "Own rendered sweep of every visible text node vs its nearest opaque background (raw/a11y-contrast-sweep.json): the only confirmed failures are these 8 elements, all rgb(255,255,255) on rgb(20,164,229); WCAG formula gives 2.81:1. Header, footer, cards, cookie banner and nav pass.",
+        "Text over photos/gradients (PAC block, carousel images) was excluded from the automatic sweep; visually the PAC block and slides use solid dark backgrounds."
+      ],
+      "technical_note": "Relative luminance #14a4e5 = 0.323 -> (1.05)/(0.373) = 2.81. The 'Alto contraste' toggle applies html{filter:invert(1)}, which turns this into black on #eb5b1a (about 6:1), but it only works by mouse click (see a11y-5) and is not a fix for the default view.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 67}
+    },
+    {
+      "id": "a11y-5",
+      "title": "El botón de alto contraste no funciona con teclado",
+      "summary": "Las herramientas de accesibilidad que la EPS ofrece en la parte superior fallan justo para quienes más las necesitan.",
+      "now": "En computador, el interruptor «Alto contraste» se marca con la barra espaciadora pero la página no cambia; solo responde al clic con ratón, y además no muestra dónde está el foco ni se anuncia por su nombre. En celular, las opciones «Cambiar contraste», «Aumentar letra» y «Disminuir letra» no son botones reales, y sus íconos están cruzados (el de «Aumentar letra» se describe como «reducir»). Los botones de tamaño de letra de computador sí funcionan con teclado.",
+      "fix": "Convertir el interruptor y las opciones móviles en botones reales que respondan a Enter y espacio, con nombre («Alto contraste: desactivado») y foco visible, y corregir los íconos. Mejor aún, que el diseño normal ya cumpla el contraste para no depender de este modo.",
+      "why": "Un control de accesibilidad que no funciona transmite descuido a usuarios y entes de control, más que no tenerlo.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Inline script in raw/home.html: modifyContrast() is attached with slider.addEventListener('click') to the decorative <span class=\"slider\">, not to the checkbox change event.",
+        "Live test (raw/a11y-interaction-tests.log): Tab to <input type=\"checkbox\">, Space -> checked=true but body.bgContrast=false (no change); mouse click on the span -> bgContrast=true while the checkbox becomes checked=false (state out of sync).",
+        "Lighthouse label (desktop): div.accessibility-bar > div.widget-fuction > label.switch > input has no accessible name. Focused checkbox has opacity:0 and outline none; the only focus style is box-shadow 0 0 1px #2196f3 on the span.",
+        "Mobile widget (390px emulation): <div class=\"mobile-option zoomin-mobile\"><img src=\"zoom_out.svg\" alt=\"reducir\"><p>Aumentar letra</p></div> and zoomout-mobile uses zoom_in.svg alt='Aumentar'; all three options are <div> with click listeners, no role/tabindex.",
+        "Desktop '+' button (.zoomin) with keyboard Enter sets .wrap zoom to 110% (works)."
+      ],
+      "technical_note": "Alto contraste = html.highContarst {filter: invert(1)} (inverts photos too). Bind to the input's change event, give it aria-label or visible label association, add :focus-visible style; mobile options -> <button>. Not credited as a fix for a11y-4.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 78.6, "y_pct": 0.6}
+    },
+    {
+      "id": "a11y-6",
+      "title": "Íconos, logos y menú del celular sin nombre útil",
+      "summary": "Con lector de pantalla, la portada suena como «enlace», «Logo», «Enlace a» repetidos, y en celular el botón del menú no se anuncia.",
+      "now": "El botón de menú del celular (las tres rayas) no tiene nombre. Los ocho íconos de «Canales de atención» se describen todos como «Enlace a», los ocho logos de aliados solo como «Logo» y dos íconos de cifras como «price». La portada tiene además tres títulos principales (dos dentro de banners) y saltos en el orden de los títulos, lo que desordena la navegación por títulos.",
+      "fix": "Dar a cada ícono y logo un texto que diga a dónde lleva («Clínica Los Nogales», «Pablo, asistente virtual 24 horas»), nombrar el botón de menú («Abrir menú»), dejar un solo título principal en la página y bajar los de los banners a un nivel menor.",
+      "why": "Si el afiliado no sabe qué hace cada enlace, no lo usa, y los aliados pierden visibilidad para ese público.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "Lighthouse link-name (mobile): header#site-header a#mobile-menu-button (<a href=\"\"> with two SVG icons, no text/aria-label).",
+        "raw/home.html: img.icono alt=\"Enlace a \" x16 (icons icon-1..7-2x.png, Contenido-PQRD.png, MicrosoftTeams-image-9.png, desktop and mobile copies); partner logos (Logo-Virrey.png, Logo-CPO.png, Logo-Nogales.png, Funtalentum, Cooptalentum, Univer, Alianza Diagnóstica, Gold RH) alt=\"Logo \" x8, announced as 'Logo' at Tab stops 55-62; hospital2.svg alt=\"price\", price.svg alt=\"price\"; mini-pac.png alt=\"Salud Total PBS\" (wrong plan).",
+        "Rendered H1s: 'Ingresa a nuestra sección de medicamentos...' (slide), 'En Salud Total EPS, no necesitas intermediarios...' (slide), 'Novedades'. Lighthouse heading-order fails on slide h5/h4/h3 and ul.posts-list h3.",
+        "Good: carousel images have descriptive alt text, arrows are named ('Ir al slide anterior/siguiente'), html lang=\"es\" and zoom is allowed (viewport width=device-width, initial-scale=1.0)."
+      ],
+      "technical_note": "Slides use headings for visual size (h1-h5 with inline text-align) — switch to <p> with classes. The 'Canales de atención' cards reveal their text on hover (.reverse-content); the icon alt should name the channel.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 92, "y_pct": 1}
+    },
+    {
+      "id": "a11y-7",
+      "title": "Enlaces del pie de página diminutos en celular",
+      "summary": "En celular es fácil tocar el enlace equivocado entre los documentos legales, como tiempos de espera, copagos o derechos y deberes.",
+      "now": "Los enlaces del pie (Legales y Normatividad) miden unos 13 píxeles de alto y están muy juntos, por debajo del mínimo de 24 × 24 píxeles. La X que cierra el aviso de PQRD mide 23 × 18 píxeles.",
+      "fix": "Dar a cada enlace del pie al menos 24 píxeles de alto (ideal 44) con espacio entre ellos, por ejemplo aumentando el interlineado o el relleno.",
+      "why": "Son las páginas que buscan afiliados con dudas concretas y obligaciones legales de la EPS; si cuesta tocarlas, crece la consulta por otros canales.",
+      "impact": 2,
+      "effort": "Bajo",
+      "headline_metric": "13,8 px",
+      "evidence": [
+        "Lighthouse target-size (mobile): div.column > ul > li > a e.g. 'nuestros-tiempos-de-espera' 203.7x13.8 px, 'cuotas-moderadoras-copagos' 207x13.8 px, 'canal-anticorrupcion' 175.8x13.8 px; safe clickable space 15.6-22.2 px (needs 24 px). Desktop: same links 12.6 px tall.",
+        "Popup close button .pum-close 23x18 CSS px (CDP getBoundingClientRect, 390px mobile emulation)."
+      ],
+      "technical_note": "Footer links are 13px text with ~20px line pitch; add padding-block: 6px or min-height:24px on footer li a.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 30, "y_pct": 79}
+    }
+  ],
+  "checks": [
+    {"id": "a11y-contrast", "result": "fail", "evidence": "White on #14a4e5 = 2.81:1 for the 'Ver más novedades' button (12px bold), 'Nuestra gestión' heading and the number labels (15px weight 100), below 4.5:1 and even below 3:1 for the 64px numbers (Lighthouse color-contrast + own rendered sweep). Header, nav, footer, cards and cookie banner pass."},
+    {"id": "a11y-text-not-image", "result": "partial", "evidence": "Desktop carousel slides show their headline as real text next to the image, and blog card titles are text. But the PQRD pop-up message and button exist only inside an image with alt=\"\", and in the 390px mobile capture the slide shows only the image with baked text ('Radica tu PQRD Con nosotros')."},
+    {"id": "a11y-alt", "result": "partial", "evidence": "Carousel images, logo, app-store badges and regulator logos have meaningful alt. Failing: 16 icons alt=\"Enlace a \", 8 partner logos alt=\"Logo \", alt=\"price\" on hospital2.svg/price.svg, mini-pac alt 'Salud Total PBS', pop-up image alt=\"\" inside a link, mobile widget icons swapped ('reducir' on 'Aumentar letra')."},
+    {"id": "a11y-headings", "result": "fail", "evidence": "Three rendered H1 (two inside carousel slides plus 'Novedades'); Lighthouse heading-order fails (slide h5/h4/h3, posts-list h3)."},
+    {"id": "a11y-names", "result": "fail", "evidence": "Mobile menu button a#mobile-menu-button has no name (Lighthouse link-name); pop-up link empty; 9 carousel dots all 'Move to slide' (English, not distinct); partner logos 'Logo'; contrast checkbox unlabeled (Lighthouse label). Carousel arrows and font-size buttons are named."},
+    {"id": "a11y-focus", "result": "partial", "evidence": "Real Tab presses: most links/buttons show the browser default outline (auto 1px), scroll-top button 2px. No visible focus on the 'Alto contraste' checkbox (opacity 0, only 1px blur box-shadow) and the search input (outline none observed)."},
+    {"id": "a11y-keyboard", "result": "fail", "evidence": "Desktop submenus (Nosotros, Protegidos, Canales de atención y PQRD, Transparencia) open only on hover; Enter on them reloads the page. Carousel slide links have tabindex=-1. Alto contraste does not respond to the keyboard. No skip link. Pop-up keeps focus inside and closes with Esc (no trap beyond the modal)."},
+    {"id": "a11y-form-labels", "result": "partial", "evidence": "The only form on the main site is the search box: it has a programmatic label 'Buscar:' but visually only the placeholder 'Buscar...'. Cookie-settings switches share a duplicate id='switch-'. The PQRD/affiliation forms live on transaccional.saludtotal.com.co (separate app) and were not audited."},
+    {"id": "a11y-motion", "result": "fail", "evidence": "Home carousel advanced on its own within 16 s of observation; no pause control; no prefers-reduced-motion rule for the slider (only 4 WordPress core image/lightbox rules)."},
+    {"id": "a11y-lang", "result": "pass", "evidence": "<html class=\"no-js\" lang=\"es\">."},
+    {"id": "a11y-targets", "result": "fail", "evidence": "Lighthouse target-size (mobile): footer links 13.8 px tall with 15.6-22.2 px safe space (need 24 px); pop-up close 23x18 px. Main nav and quick-access icons are large enough."}
+  ]
+}

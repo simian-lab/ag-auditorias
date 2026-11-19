@@ -1,0 +1,6 @@
+GPTBot/1.1; +https://openai.com/gptbot: 200 285132
+OAI-SearchBot/1.0; +https://openai.com/searchbot: 200 285132
+ChatGPT-User/1.0; +https://openai.com/bot: 200 285132
+ClaudeBot/1.0; +claudebot@anthropic.com: 200 285132
+PerplexityBot/1.0; +https://perplexity.ai/perplexitybot: 200 285132
+Googlebot/2.1; +http://www.google.com/bot.html: 200 285132

@@ -1,0 +1,49 @@
+SLIDE active idx every 2s 0,0,0,0,0,0,0,1
+SLIDER info {"slideLinks":9,"tabidx":["-1","-1","-1","-1","-1","-1","-1","-1","-1"],"slideLinkDisplay":["block/absolute/1425","block/absolute/1425"],"pause":0,"dotsHTML":"<a href=\"\" class=\"move-to-slide\" slide=\"1\">Move to slide</a>"}
+SLIDE text visible? block visible relative 624x53 clip=auto op=0.0212391 ;; block visible relative 790x84 clip=auto op=0.954409 ;; block visible relative 825x135 clip=auto op=0
+REDUCED MOTION rules rules=4 crossOriginSheets=1
+H1s [["INGRESA A NUESTRA SECCIÓN DE MEDICAMENTOS Y VERIFI",true,"inSlide"],["En Salud Total EPS, no necesitas intermediarios pa",true,"inSlide"],["NOVEDADES",true,""]]
+NAV focused sub UL. disp=none vis=visible op=1 h=0 aria-expanded=null href=
+NAV after Enter sub UL. disp=none vis=visible op=1 h=0 aria-expanded=null href=
+NEXT focus after NOSOTROS+Enter+Tab  null
+NAV menu html <li>
+										<a href="">Nosotros</a>
+
+																																	<ul>
+																																																																																																<li><a href="https://saludtotal.com.co/conocenos/">Conócenos</a></li>
+																																																								<li><a href="https://saludtotal.com.co/sucursales-a-nivel-nacional/">Cobertura</a></li>
+																																																								<li><a href="https://saludtotal.com.co/nuestros-servicios/">Nuestros servicios / Plan de Beneficios en Salud</a></li>
+																																						
+BEFORE contrast btn rgb(255, 255, 255) on rgb(20, 164, 229) fs=12px fw=700 | h2 rgb(255, 255, 255) on rgb(20, 164, 229) fs=24px | htmlclass=no-js bodyclass=home blog wp-theme-salud-total show-cookie
+switch <input type="checkbox"> parent:ALTO CONTRASTE
+AFTER contrast btn rgb(255, 255, 255) on rgb(20, 164, 229) fs=12px fw=700 | h2 rgb(255, 255, 255) on rgb(20, 164, 229) fs=24px | htmlclass=no-js bodyclass=home blog wp-theme-salud-total show-cookie
+FS before 12px html=16px p=16px
+FS after 5x zoomin 12px html=16px p=16px
+SEARCH <input type="text" value="" name="s" id="s" placeholder="Buscar..."> labels=["Buscar:/block","Buscar:/block"]
+POPUP link <a href="https://transaccional.saludtotal.com.co/TeEscuchamos/#/"><img fetchpriority="high" decoding="async" width="700" height="394" src="https://saludtotal.com.co/wp-content/uploads/2026/09/Pop-Up-PQRD-700x394.png" alt="" class="wp-image-26407" style="width:572px;height:auto" srcset="https://saludtotal.com.co/wp-content/uploads/2026/09/Pop-Up-PQRD-700x394.png 700w, https://saludtotal.com.co/wp-c
+init body.bgContrast=false checked=false firstSlider=widget-fuction
+focused <input type="checkbox">
+after Space body.bgContrast=false checked=true firstSlider=widget-fuction
+after mouse click body.bgContrast=true checked=false firstSlider=widget-fuction
+contrast colors btn rgb(255, 255, 255) on rgb(20, 164, 229) | h2 rgb(255, 255, 255) on rgb(20, 164, 229) | htmlFilter=invert(1) bodyFilter=none
+zoom after 2 Enter  header= footerZoom=inWrap
+zoomin Enter wrap.zoom=110%
+NAV after Enter mark=undefined url=https://saludtotal.com.co/ sub disp=none focus=ALTO CONTRASTE
+
+TAMAÑO DE LETR
+NAV on hover mark=undefined url=https://saludtotal.com.co/ sub disp=none focus=
+hover ["nav-pac w=156 y=128","home blog wp-theme-salud-total show-cookie w=0 y=0"]
+focus ["nav-pac w=0 y=0","home blog wp-theme-salud-total show-cookie w=0 y=0"]
+next tab AFÍLIATE AQUÍ
+menu btn <a href="" id="mobile-menu-button">
+					<svg class="icon icon-menu-open">
+						<use xlink:href="#icon-menu-open"></use>
+					</svg>
+					<svg class="icon icon-menu-close">
+						<use xlink:href="#icon-menu-close"></use>
+					</svg>
+				</a> rect=352,-50,23,150
+popup close <button type="button" class="pum-close popmake-close" aria-label="Cerrar">
+			×			</button> rect=257,316,23,18
+widget-mobile <div class="widget-mobile"> <div class="mobile-option contrast-mobile"> <img src="https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/contrast_icon.svg" alt=" contraste"> <p>Cambiar Contraste</p> </div> <div class="mobile-option zoomin-mobile"> <img src="https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/zoom_out.svg" alt="reducir"> <p>Aumentar letra</p> </div> <div class="mobile-option zoomout-mobile"> <img src="https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/zoom_in.svg" alt="Aumentar"> <p>Disminuir letra</p> </div> </div> rect=348,233,200,138
+dots 20x20 vis=block,20x20 vis=block

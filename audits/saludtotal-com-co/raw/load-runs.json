@@ -1,0 +1,41 @@
+{
+  "rounds": 3,
+  "sites": {
+    "client": {
+      "lcp_ms": [
+        568,
+        642,
+        972
+      ],
+      "median_ms": 642,
+      "spread_ms": 176
+    },
+    "eps-sura": {
+      "lcp_ms": [
+        2440,
+        2476,
+        2620
+      ],
+      "median_ms": 2476,
+      "spread_ms": 78
+    },
+    "compensar-eps": {
+      "lcp_ms": [
+        12938,
+        13218,
+        14457
+      ],
+      "median_ms": 13218,
+      "spread_ms": 660
+    },
+    "famisanar": {
+      "lcp_ms": [
+        900,
+        1052,
+        1055
+      ],
+      "median_ms": 1052,
+      "spread_ms": 72
+    }
+  }
+}

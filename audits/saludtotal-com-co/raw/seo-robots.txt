@@ -1,0 +1,177 @@
+# robots.txt - Sin rutas sensibles para evitar fuga de información (OWASP)
+# No se listan directorios ni extensiones que revelen CMS o estructura interna.
+
+User-agent: *
+Disallow:
+
+# Reglas por bot (no revelan estructura del sitio)
+
+User-agent: AdsBot-Google-Mobile
+Crawl-delay: 2
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
+
+User-agent: Amazonbot
+Crawl-delay: 2
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+User-agent: Bingbot
+Crawl-delay: 2
+
+User-agent: bingbot
+Crawl-delay: 2
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CazoodleBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Crawl-delay: 2
+
+User-agent: Claude-Web
+Crawl-delay: 2
+
+User-agent: ClaudeBot
+Crawl-delay: 2
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: dotbot/1.0
+Disallow: /
+
+User-agent: duggmirror
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Gigabot
+Disallow: /
+
+User-agent: Go-http-client
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Crawl-delay: 2
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: libwww
+Disallow: /
+
+User-agent: magpie-crawler
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Microsoft.URL.Control
+Disallow: /
+
+User-agent: MSIECrawler
+Disallow: /
+
+User-agent: msnbot
+Disallow: /
+
+User-agent: Node/simplecrawler
+Disallow: /
+
+User-agent: noxtrumbot
+Disallow: /
+
+User-agent: Nuclei
+Disallow: /
+
+User-agent: OAI-SearchBot
+Crawl-delay: 2
+
+User-agent: omgili
+Disallow: /
+
+User-agent: Perplexity‑User
+Crawl-delay: 2
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Riddler
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-BA
+Disallow: /
+
+User-agent: SemrushBot-FT
+Disallow: /
+
+User-agent: SemrushBot-OCOB
+Disallow: /
+
+User-agent: SemrushBot-SI
+Disallow: /
+
+User-agent: SemrushBot-SWA
+Disallow: /
+
+User-agent: SentiBot
+Disallow: /
+
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: SplitSignalBot
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WikiDo
+Disallow: /
+
+User-agent: YandexBot
+Crawl-delay: 2
+
+User-agent: Zoominfobot
+Disallow: /
+
+# End rules for some bots

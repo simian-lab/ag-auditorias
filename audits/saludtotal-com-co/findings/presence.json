@@ -1,0 +1,226 @@
+{
+  "serp": {
+    "today": [
+      {
+        "page": "inicio",
+        "url": "https://saludtotal.com.co",
+        "canonical": "https://saludtotal.com.co/",
+        "title": "Salud Total EPS-S - Tu salud no es a medias debe ser total",
+        "meta_description": "Tu salud no es a medias debe ser total",
+        "site_name": "Salud Total EPS-S",
+        "evidence": "Rendered DOM (headless Chrome --dump-dom) raw/presence-rendered-home.html: <title> and meta[name=description]; identical in no-JS HTML raw/presence-curl-home.html. WebSite schema name 'Salud Total EPS-S' (Yoast), which Google usually uses as site name."
+      },
+      {
+        "page": "planes complementarios (productos)",
+        "url": "https://saludtotal.com.co › home-planes-complementarios",
+        "canonical": "https://saludtotal.com.co/home-planes-complementarios/",
+        "title": "Planes Complementarios - Salud Total EPS-S",
+        "meta_description": "Los planes complementarios (PAC) de SaludTotal EPS-S te permiten acceder directamente a 16 especialidades médicas a nivel nacional, así contarás con las coberturas y el acompañamiento de los mejores profesionales de la salud para el cuidado y la atención de las personas más importantes de tu vida.",
+        "evidence": "raw/presence-rendered-home-planes-complementarios.html: meta description is 298 characters, so Google cuts it around 155; the slug 'home-planes-complementarios' shows in the breadcrumb. The home menu links here."
+      }
+    ],
+    "proposed": [
+      {
+        "page": "inicio",
+        "title": "Salud Total EPS-S | EPS y Planes Complementarios",
+        "description": "EPS con más de 5,5 millones de protegidos en Colombia. Pide citas y haz trámites con Pablo por WhatsApp (310 773 7993) o en la Línea Total de tu ciudad."
+      },
+      {
+        "page": "planes complementarios (productos)",
+        "title": "Planes Complementarios (PAC) | Salud Total EPS-S",
+        "description": "Con un Plan Complementario (PAC) de Salud Total EPS-S accedes directamente a 16 especialidades médicas en todo el país. Compara los planes y elige el tuyo."
+      }
+    ],
+    "notes": "Home description is only the slogan ('Tu salud no es a medias debe ser total'): it says neither that this is an EPS nor what you can do on the site. The PAC description is truthful but too long. Facts used come from the site: 'más de 5.5 millones de protegidos' (/conocenos/), Pablo WhatsApp 3107737993 (home), Línea Total per department (/sin-categoria/linea-total/), '16 especialidades médicas a nivel nacional' and 'Compara los PAC' (PAC page). findings/seo.json not available when this ran, and no Google searches were run by this agent, so no google_snippet is used (both pages have their own meta description)."
+  },
+  "share_preview": {
+    "today": {
+      "home": {
+        "og:locale": "es_ES",
+        "og:type": "website",
+        "og:title": "Salud Total EPS-S",
+        "og:description": "Tu salud no es a medias debe ser total",
+        "og:url": "https://saludtotal.com.co/",
+        "og:site_name": "Salud Total EPS-S",
+        "og:image": null,
+        "twitter:card": "summary_large_image",
+        "twitter:site": "@epssaludtotal"
+      },
+      "planes_complementarios": {
+        "og:title": "Planes Complementarios",
+        "og:description": "Los planes complementarios (PAC) de SaludTotal EPS-S te permiten acceder directamente a 16 especialidades médicas a nivel nacional, así contarás con las coberturas y el acompañamiento de los mejores profesionales de la salud para el cuidado y la atención de las personas más importantes de tu vida.",
+        "og:url": "https://saludtotal.com.co/home-planes-complementarios/",
+        "og:site_name": "Salud Total EPS-S",
+        "og:image": null,
+        "twitter:card": "summary_large_image"
+      },
+      "linea_total": {
+        "og:title": "Línea Total",
+        "og:description": "Comunícate a la Línea Total de tu departamento para obtener más información de tus trámites...",
+        "og:image": "https://saludtotal.com.co/wp-content/uploads/2021/10/BANNER-1-1.png",
+        "og:image:width": "1200",
+        "og:image:height": "675"
+      },
+      "conocenos": {
+        "og:title": "Conócenos",
+        "og:description": null,
+        "og:image": "https://saludtotal.com.co/wp-content/uploads/2022/07/Grupo-Empresarial-1-1.jpg",
+        "og:image:width": "1800",
+        "og:image:height": "377"
+      }
+    },
+    "today_title": "Salud Total EPS-S",
+    "what_shows_today": "Si compartes el inicio por WhatsApp o LinkedIn, sale «Salud Total EPS-S · Tu salud no es a medias debe ser total» con tu ícono en miniatura (un cuadrito de 32×32 píxeles) en vez de una imagen grande. La página de Planes Complementarios tampoco tiene imagen y se ve solo como «Planes Complementarios», con un texto que se corta.",
+    "issues": [
+      "Home and /home-planes-complementarios/ have no og:image (raw/presence-curl-home.html, raw/presence-curl-home-planes-complementarios.html); the largest declared icon is /favicon-32x32.png (screenshots/og-today-icon.png, 32x32).",
+      "twitter:card is 'summary_large_image' on both pages but there is no image to show.",
+      "PAC og:title is just 'Planes Complementarios' (no brand) and og:description is 293 characters.",
+      "/conocenos/ og:image is a 1800x377 strip (ratio 4.8:1), which previews crop heavily; /conocenos/ and /nuestros-servicios/ have no og:description.",
+      "Inner pages credit 'excolaboradores' as author (twitter:data1 'Escrito por' on /sin-categoria/linea-total/ and /plan-de-beneficios-en-salud/numeros-de-atencion/)."
+    ],
+    "proposed": {
+      "og:title": "Salud Total EPS-S | EPS y Planes Complementarios",
+      "og:description": "EPS con más de 5,5 millones de protegidos y Planes Complementarios. Citas y trámites con Pablo por WhatsApp o en la Línea Total de tu ciudad.",
+      "og:image": "https://saludtotal.com.co/wp-content/uploads/2021/10/BANNER-1-1.png",
+      "og_image_local": "og-source.jpg",
+      "note": "Image is the site's own Línea Total banner (HTTP 200 image/png, 1200x675), already used as og:image on /sin-categoria/linea-total/; screenshots/og-source.jpg is that banner center-cropped to 1200x630 JPEG (84.5 KB). Better: a dedicated 1200x630 image with the Salud Total logo for the home, and a PAC-specific one for /home-planes-complementarios/ (the PAC banner Banners-PAC-Generico-3.jpg is only 700x368)."
+    },
+    "today_icon_local": "og-today-icon.png"
+  },
+  "ai_answer": {
+    "status": "not_collected",
+    "aeo_fixes": [
+      {
+        "title": "Datos de la empresa completos para Google y la IA",
+        "fix": "Completar la ficha de empresa (Organization) del sitio con el nombre que usas en todas partes, «Salud Total EPS-S», la Línea Gratuita Nacional 01 8000 114524, el WhatsApp de Pablo y todas tus redes (incluido TikTok). Hoy dice «Salud Total EPS», sin teléfono ni correo.",
+        "evidence": "JSON-LD Organization on every page checked: name 'Salud Total EPS', logo, sameAs (6 URLs, no TikTok); no telephone, email, address or contactPoint (raw/presence-curl-*.html)."
+      },
+      {
+        "title": "Teléfonos que se puedan leer y marcar",
+        "fix": "Poner los números de la Línea Total y la línea nacional como enlaces para llamar (tel:) y el correo como texto normal. Hoy ningún teléfono se puede tocar para llamar, y el correo del pie le aparece a buscadores e IA como «[email protected]».",
+        "evidence": "0 href='tel:' links on home, PAC, Línea Total, Conócenos, Puntos de Atención, Cobertura. Footer email is Cloudflare-obfuscated in no-JS HTML (span.__cf_email__ '[email protected]'); 'Linea Nacional 018000 114524' links to the DirectorioPos app, not to tel:."
+      },
+      {
+        "title": "Una página de preguntas frecuentes",
+        "fix": "Crear una página de preguntas frecuentes con respuestas cortas: cómo afiliarse, cómo pedir una cita, qué cubre un Plan Complementario, cuánto cuesta y cómo radicar una PQRD. Hoy esas respuestas están en PDF de coyuntura o repartidas en noticias,, un formato que a la IA le cuesta leer y citar.",
+        "evidence": "No FAQPage schema on the pages checked; FAQ content exists only as PDFs (e.g. /wp-content/uploads/2026/08/Preguntas-Frecuentes-Situacion-15-agosto-2026.pdf, found via web search)."
+      },
+      {
+        "title": "Una sola cifra de cobertura",
+        "fix": "Unificar en todo el sitio cuántas sucursales, ciudades y departamentos atiendes. Hoy una página dice «15 sucursales en 17 ciudades», Conócenos dice «15 ciudades» y la Línea Total da números para 19 departamentos; con cifras que se contradicen, la IA no sabe dónde recomendarte.",
+        "evidence": "meta description /sucursales-a-nivel-nacional/; /conocenos/ body; /sin-categoria/linea-total/ table (raw/presence-curl-*.html)."
+      },
+      {
+        "title": "Planes Complementarios con datos verificables",
+        "fix": "En la página de Planes Complementarios, publicar en texto (no solo en imágenes del carrusel) qué incluye cada plan, desde dónde se puede contratar y la línea de PAC Bogotá (601 4430000), que hoy solo aparece en la página de Línea Total.",
+        "evidence": "'4430000' appears only in raw/presence-curl-linea-total.html; PAC page text points to 'Línea Total en cada ciudad' without numbers."
+      },
+      {
+        "title": "Archivo llms.txt",
+        "fix": "Publicar saludtotal.com.co/llms.txt con un resumen de quién eres (EPS y Planes Complementarios), tus canales de atención y los enlaces clave, como fuente ordenada para los asistentes de IA.",
+        "evidence": "https://saludtotal.com.co/llms.txt returns HTTP 404 (2026-11-19)."
+      }
+    ]
+  },
+  "nap": {
+    "rows": [
+      {
+        "field": "nombre",
+        "source": "Sitio: <title>, og:site_name, schema WebSite y pie de todas las páginas revisadas",
+        "value": "Salud Total EPS-S"
+      },
+      {
+        "field": "nombre",
+        "source": "Sitio: datos estructurados Organization (todas las páginas)",
+        "value": "Salud Total EPS"
+      },
+      {
+        "field": "línea nacional",
+        "source": "Sitio: pie de todas las páginas revisadas",
+        "value": "Linea Nacional 018000 114524 (enlace al directorio, no para llamar)"
+      },
+      {
+        "field": "línea nacional",
+        "source": "Sitio: /sin-categoria/linea-total/",
+        "value": "Línea Gratuita Nacional Servicio al Protegido 018000114524"
+      },
+      {
+        "field": "WhatsApp",
+        "source": "Sitio: inicio, Planes Complementarios, Línea Total, Conócenos (Pablo)",
+        "value": "310 773 7993 (wa.me/573107737993)"
+      },
+      {
+        "field": "WhatsApp temporal",
+        "source": "Sitio: carrusel del inicio (aviso de emergencia, contenido que rota)",
+        "value": "333 033 4094, solo para Valle del Cauca, Risaralda y Quindío"
+      },
+      {
+        "field": "teléfonos por departamento",
+        "source": "Sitio: /sin-categoria/linea-total/",
+        "value": "Tabla con 20 filas (19 departamentos + «Bogotá D.C PAC» 601 4430000), p. ej. Bogotá 601 4055440, Antioquia 604 3199919, Valle del Cauca 602 3981018"
+      },
+      {
+        "field": "teléfonos por departamento",
+        "source": "Sitio: /sin-categoria/linea-total/",
+        "value": "Quindío y Risaralda muestran la misma línea de información, 606 3497301 [dato por confirmar si es intencional]"
+      },
+      {
+        "field": "correo",
+        "source": "Sitio: pie (visible solo con JavaScript; sin JavaScript aparece «[email protected]»)",
+        "value": "Notificacionesjud@saludtotal.com.co (notificaciones judiciales; no hay correo de atención publicado)"
+      },
+      {
+        "field": "cobertura",
+        "source": "Sitio: meta description de /sucursales-a-nivel-nacional/",
+        "value": "15 sucursales en 17 ciudades de Colombia"
+      },
+      {
+        "field": "cobertura",
+        "source": "Sitio: /conocenos/",
+        "value": "15 ciudades y más de 300 municipios; más de 5.5 millones de protegidos"
+      },
+      {
+        "field": "cobertura",
+        "source": "Sitio: /sucursales-a-nivel-nacional/ (lista)",
+        "value": "16 nombres: 15 departamentos más Girardot"
+      },
+      {
+        "field": "cobertura",
+        "source": "Sitio: /plan-de-beneficios-en-salud/numeros-de-atencion/",
+        "value": "125 puntos de atención a nivel nacional"
+      },
+      {
+        "field": "dirección y horario",
+        "source": "Sitio: inicio, Conócenos, Línea Total",
+        "value": "Sin dirección de sede principal; las direcciones y horarios están en el buscador de 125 puntos de atención. Línea Total: 24 horas, toda la semana"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: pie de todas las páginas",
+        "value": "facebook.com/saludtotaleps, instagram.com/saludtotalpac, twitter.com/EPSSaludTotal, linkedin.com/company/saludtotaleps, youtube.com/user/saludtotaleps, tiktok.com/@saludtotalepsoficial"
+      },
+      {
+        "field": "redes",
+        "source": "Sitio: datos estructurados Organization sameAs",
+        "value": "Las mismas sin TikTok, más youtube.com/c/saludtotal (segundo canal de YouTube)"
+      },
+      {
+        "field": "widget de chat",
+        "source": "Sitio: HTML renderizado",
+        "value": "Sin widget embebido; enlaces a Pablo (transaccional.saludtotal.com.co/chatbotMVC) y a WhatsApp 573107737993"
+      },
+      {
+        "field": "listados públicos",
+        "source": "Búsqueda web general (indicio, por confirmar)",
+        "value": "App «Salud Total EPS-S» en App Store (id972508544); no se confirmó una cuenta de Instagram propia de la EPS distinta de @saludtotalpac"
+      }
+    ],
+    "inconsistencies": [
+      "El nombre cambia: en todo el sitio eres «Salud Total EPS-S», pero la ficha que leen Google y la IA dice «Salud Total EPS».",
+      "Tu cobertura tiene tres versiones: una página dice «15 sucursales en 17 ciudades», Conócenos dice «15 ciudades» y la Línea Total publica números para 19 departamentos.",
+      "La lista de redes no coincide: el pie de página incluye TikTok, pero la ficha para Google no; y esa ficha enlaza dos canales de YouTube distintos mientras el pie enlaza solo uno.",
+      "El único Instagram enlazado, en el pie y en la ficha para Google, es el de @saludtotalpac, cuyo nombre corresponde a Planes Complementarios, aunque el sitio es de la EPS."
+    ],
+    "technical_note": "Evidence: raw/presence-curl-{home,home-planes-complementarios,conocenos,linea-total,numeros-de-atencion,sucursales-a-nivel-nacional}.html (curl no-JS, 2026-11-19) and raw/presence-rendered-{home,home-planes-complementarios}.html (headless Chrome --dump-dom). /linea-total/ returns 404; the real URL is /sin-categoria/linea-total/ (category 'sin-categoria' in the URL). Inner posts list author 'excolaboradores' in Yoast meta. WebSearch ('Salud Total EPS-S instagram oficial línea nacional 018000114524') returned only site PDFs, App Store listing and court documents; no confirmed Google Business or directory listing, so no third-party values are used. The Quindío/Risaralda shared number is kept out of inconsistencies until confirmed."
+  }
+}

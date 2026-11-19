@@ -1,0 +1,131 @@
+{
+  "verdict": "La portada tiene el contenido de una EPS seria, pero se ve armada por partes: cada sección trae su propio botón, su propio azul y su propio tipo de título, y nada le indica al afiliado qué es lo más importante.",
+  "inventory": [
+    {
+      "kind": "buttons",
+      "title": "Seis botones y ninguno manda",
+      "explanation": "En una sola página hay un rectángulo con degradado morado-rosado, un bloque celeste de 12 px, un contorno blanco redondeado, dos píldoras que en realidad son imágenes y un texto amarillo sin forma de botón. Cuando cada acción se ve distinta, el visitante no distingue cuál es la principal ni reconoce de un vistazo qué se puede tocar.",
+      "items": [
+        {"label": "«Planes Complementarios»: degradado #A615C0→#E61E7E, esquinas rectas, 14 px grosor 100 en mayúsculas", "crop": "ui-crop-btn-planes.png"},
+        {"label": "«Ver más novedades»: celeste #14A4E5 sólido, 12 px, 32 px de alto", "crop": "ui-crop-btn-ver-mas.png"},
+        {"label": "«Conocelo aqui»: solo borde blanco de 1 px, esquinas de 5 px, 18 px", "crop": "ui-crop-btn-conocelo.png"},
+        {"label": "«Afíliate aquí»: imagen SVG con letra condensada cursiva, flota sobre el contenido", "crop": "ui-crop-btn-afiliate.png"},
+        {"label": "«Canales de atención»: imagen PNG con ilustración y otra tipografía", "crop": "ui-crop-btn-canales.png"},
+        {"label": "«Haz clic aquí» del carrusel: texto amarillo #FFFF00 de 13 px, sin forma de botón", "crop": "ui-crop-btn-haz-clic.png"}
+      ],
+      "proposal": "Dos botones para todo el sitio, en texto real: principal azul #004D84 con letra blanca y secundario con borde azul, misma altura (48 px), mismas esquinas (8 px) y misma letra; «Afíliate aquí» siempre como principal."
+    },
+    {
+      "kind": "headings",
+      "title": "Cada título se viste distinto",
+      "explanation": "Los títulos de sección cambian entre mayúsculas y minúsculas, entre 24 y 25 px y entre grosor 700 y 200, y «Novedades» está marcado como título principal (H1) aunque va debajo de títulos secundarios. Sin una escala fija, el ojo no sabe qué es sección, qué es subtítulo y qué es detalle.",
+      "items": [
+        {"label": "Carrusel: H2 24 px 700, minúsculas, blanco", "crop": "ui-crop-h-hero.png"},
+        {"label": "«Radica tu PQRD con nosotros»: H2 24 px 700, minúsculas", "crop": "ui-crop-h-radica.png"},
+        {"label": "«NOVEDADES»: H1 25 px 700, mayúsculas, espaciado 1 px", "crop": "ui-crop-h-novedades.png"},
+        {"label": "Bloque PAC: H3 30 px grosor 200 más la palabra PAC gigante dentro de otra composición", "crop": "ui-crop-h-pac.png"},
+        {"label": "«NUESTRA GESTIÓN»: H2 24 px 700, mayúsculas, espaciado 1,8 px", "crop": "ui-crop-h-gestion.png"},
+        {"label": "Título de tarjeta: H3 14 px en IBM Plex Sans, otra familia", "crop": "ui-crop-h-card.png"},
+        {"label": "Pie «LEGALES»: 18 px 700, mayúsculas, espaciado 1,8 px", "crop": "ui-crop-h-legales.png"}
+      ],
+      "proposal": "Una escala fija: H1 único arriba (40 px en computador, 28 px en celular), H2 de sección 28/22 px, H3 de tarjeta 18/16 px, todos en Open Sans 700 y en minúsculas; las mayúsculas solo para rótulos pequeños."
+    },
+    {
+      "kind": "colors",
+      "title": "Once azules, dos amarillos y dos degradados",
+      "explanation": "El logo usa solo un azul (#004D84) y un amarillo (#E9DC0B), pero la portada suma once tonos de azul o violeta como fondo entre carrusel, barras y franjas, contando el del logo, un amarillo puro distinto al del logo y dos degradados morado-rosados que no coinciden entre sí. Esa suma de tonos parecidos se percibe como descuido, no como variedad.",
+      "items": [
+        {"label": "Azul del logo y de los títulos", "hex": "#004D84"},
+        {"label": "Celeste de «Nuestra gestión» y «Ver más novedades»", "hex": "#14A4E5"},
+        {"label": "Índigo del primer banner del carrusel", "hex": "#2E2D83"},
+        {"label": "Otro azul de fondo del carrusel", "hex": "#003B82"},
+        {"label": "Otro azul de fondo del carrusel", "hex": "#2B4C99"},
+        {"label": "Violeta de fondo del carrusel", "hex": "#5701AA"},
+        {"label": "Turquesa de fondo del carrusel", "hex": "#0CB4C8"},
+        {"label": "Azul del degradado de la barra de íconos", "hex": "#0079C2"},
+        {"label": "Degradado del botón PAC (inicio)", "hex": "#A615C0"},
+        {"label": "Degradado de la franja PAC (inicio, distinto al del botón)", "hex": "#9E1BB4"},
+        {"label": "Amarillo puro de los enlaces del carrusel", "hex": "#FFFF00"},
+        {"label": "Amarillo del logo", "hex": "#E9DC0B"}
+      ],
+      "proposal": "Partir del logo: azul #004D84 como color principal, un azul de apoyo más oscuro que el celeste actual para que el texto blanco se lea, el amarillo del logo como único acento y un solo magenta reservado para los planes complementarios."
+    },
+    {
+      "kind": "fonts",
+      "title": "Cuatro familias cargadas, más las de las imágenes",
+      "explanation": "El texto usa Open Sans en 8 grosores (del 100 al 900) e IBM Plex Sans en los títulos de tarjeta, y además se declaran Montserrat y Nunito Sans; los botones flotantes y los banners agregan letras condensadas y redondeadas dibujadas dentro de las imágenes. Para quien mira, cada bloque parece hecho por una persona diferente.",
+      "items": [
+        {"label": "Open Sans, 8 grosores en texto visible", "family": "Open Sans"},
+        {"label": "IBM Plex Sans, títulos de las 6 tarjetas", "family": "IBM Plex Sans"},
+        {"label": "Montserrat 100, declarada sin usarse", "family": "Montserrat"},
+        {"label": "Nunito Sans, declarada sin usarse en el texto", "family": "Nunito Sans"},
+        {"label": "Letra condensada cursiva dentro de «Afíliate aquí» y «Canales de atención» (imagen)", "family": null}
+      ],
+      "proposal": "Solo Open Sans, ya instalada: 700 para títulos, 600 para rótulos y botones, 400 para texto. Quitar IBM Plex Sans, Montserrat y Nunito Sans, y rehacer en texto real los botones que hoy son imágenes."
+    },
+    {
+      "kind": "cards",
+      "title": "Tarjetas con la misma etiqueta y mensajes en tres formatos",
+      "explanation": "Las seis tarjetas de artículos repiten la misma etiqueta «PLAN DE BENEFICIOS EN SALUD», así que no ayuda a distinguirlas, y el mensaje real va escrito dentro de cada imagen con otra tipografía. Los beneficios del PAC y las cifras de gestión no tienen forma de tarjeta, con lo que el sitio mezcla tres maneras de presentar información parecida.",
+      "items": [
+        {"label": "Tarjeta PQRD: fecha sin año, etiqueta repetida, texto dentro de la imagen y título en IBM Plex Sans", "crop": "ui-crop-card-pqrd.png"},
+        {"label": "Tarjeta de novedades: la misma etiqueta «PLAN DE BENEFICIOS EN SALUD» para un tema de pólvora", "crop": "ui-crop-card-novedades.png"},
+        {"label": "Beneficios PAC: lista suelta sobre degradado, sin tarjeta", "crop": "ui-crop-card-pac.png"},
+        {"label": "Cifra de gestión: «5.6MLL» con rótulo de grosor 100 sobre celeste", "crop": "ui-crop-card-stat.png"}
+      ],
+      "proposal": "Un solo modelo de tarjeta (imagen limpia sin texto incrustado, categoría real, título en Open Sans 18 px y enlace «Leer más») y un bloque de cifras con números completos («5,6 millones de afiliados»)."
+    },
+    {
+      "kind": "icons",
+      "title": "Íconos de líneas, sólidos e ilustrados a la vez",
+      "explanation": "La barra de trámites usa íconos de línea fina en blanco, el bloque PAC usa íconos sólidos rellenos, las redes sociales van sólidas en azul, el botón para subir es un círculo con degradado y «Canales de atención» trae una ilustración de persona. Cinco estilos de ícono en una página rompen la sensación de un mismo sistema.",
+      "items": [
+        {"label": "Barra de trámites: íconos de línea fina", "crop": "ui-crop-icon-bar.png"},
+        {"label": "Bloque PAC: íconos sólidos blancos", "crop": "ui-crop-icon-pac.png"},
+        {"label": "Redes sociales: sólidos azules de distinto tamaño", "crop": "ui-crop-icon-social.png"},
+        {"label": "Botón para subir: círculo con degradado", "crop": "ui-crop-icon-scrolltop.png"}
+      ],
+      "proposal": "Una sola familia de íconos de línea con el mismo grosor y tamaño (24 o 32 px), en el azul principal sobre fondo claro o en blanco sobre fondo azul, y sin ilustraciones dentro de los botones."
+    }
+  ],
+  "proposed_system": {
+    "colors": [
+      {"name": "Azul Salud Total", "hex": "#004D84", "role": "Color principal: títulos, botón principal, menú y franjas oscuras, texto blanco encima con contraste 8,77:1. Es el azul del logo"},
+      {"name": "Azul de apoyo", "hex": "#0A6AA1", "role": "Reemplaza al celeste #14A4E5 en la franja de cifras y en enlaces destacados, texto blanco encima con contraste 5,85:1 (hoy 2,81:1)"},
+      {"name": "Amarillo del logo", "hex": "#E9DC0B", "role": "Único acento: subrayados, etiquetas y botón principal sobre fondos azules, texto azul #004D84 encima con contraste 6,14:1. Reemplaza al amarillo puro #FFFF00"},
+      {"name": "Magenta PAC", "hex": "#B0186F", "role": "Solo para planes complementarios, como color plano en lugar de dos degradados distintos, texto blanco encima con contraste 6,55:1"},
+      {"name": "Texto", "hex": "#1F2933", "role": "Texto de párrafos sobre blanco, contraste 14,76:1"},
+      {"name": "Fondo suave", "hex": "#F1F5F9", "role": "Fondo de secciones alternas y del pie, títulos azules #004D84 encima con contraste 8,0:1"}
+    ],
+    "fonts": [
+      {"role": "Títulos", "family": "Open Sans", "weight": 700},
+      {"role": "Rótulos y botones", "family": "Open Sans", "weight": 600},
+      {"role": "Texto", "family": "Open Sans", "weight": 400}
+    ],
+    "button_primary": "Fondo #004D84, texto blanco Open Sans 600 de 16 px (8,77:1), 48 px de alto, esquinas de 8 px, en texto real; sobre fondos azules se invierte a fondo #E9DC0B con texto #004D84 (6,14:1). Uno solo por sección.",
+    "button_secondary": "Fondo transparente, borde de 2 px y texto #004D84 (8,77:1 sobre blanco), mismas medidas que el principal; sobre fondos oscuros, borde y texto blancos.",
+    "heading_scale": "H1 40 px / 28 px en celular (uno por página); H2 de sección 28 px / 22 px; H3 de tarjeta 18 px / 16 px; texto 16 px; rótulos 13 px 600 en mayúsculas con espaciado 0,08 em. Todo en Open Sans y en minúsculas salvo los rótulos."
+  },
+  "hierarchy_notes": [
+    "Encabezado: lo que más pesa es el botón degradado morado-rosado «Planes Complementarios», el único color fuerte de la barra. Debería mandar «Afíliate aquí» o la entrada a trámites; los planes complementarios pueden ir como enlace secundario.",
+    "Carrusel: el ojo va primero a la cara del modelo y a la palabra «PQRD» en amarillo dentro de la imagen; el titular en texto y el «Haz clic aquí» amarillo de 13 px quedan en segundo plano. Debería verse primero una frase que diga qué es Salud Total y un botón claro. La diapositiva visible cambia cada 20 segundos.",
+    "Barra de íconos y pestañas: siete íconos del mismo tamaño y cuatro pestañas (Protegidos, Aportante | Empleador, IPS, Comercial) compiten con el mismo peso, y en la primera pantalla los botones flotantes tapan la pestaña «Comercial». Debería destacarse el trámite más buscado y las pestañas deberían leerse como «elige tu perfil».",
+    "Radica tu PQRD: tres tarjetas con fotos de modelos y texto grande dentro de la imagen; el ojo lee las imágenes y salta los títulos de 14 px. Es la cuarta vez que la portada habla de PQRD, así que lo que debería verse aquí son los servicios para el afiliado.",
+    "Novedades: «NOVEDADES» es el título más llamativo de la parte media (mayúsculas, H1), pero el contenido son noticias de temporada. Debería pesar menos que las secciones de servicio.",
+    "Bloque PAC: la palabra «PAC» gigante domina la página entera, más que el logo y que cualquier mensaje de la EPS, y el botón «Conocelo aqui» es solo un contorno fino. Debería verse primero qué gana el afiliado con el plan y un botón sólido «Quiero el plan».",
+    "Nuestra gestión: los números gigantes son lo primero que se ve, pero con abreviaturas confusas («41ML», «5.6MLL», «1.2 ML») y rótulos finos que casi no se leen sobre el celeste. Debería leerse de inmediato «5,6 millones de afiliados» junto a los sellos de vigilancia.",
+    "Pie: los sellos de MinSalud y Supersalud, la mejor prueba de confianza, quedan al final y apretados junto a enlaces de 13 px, y los botones flotantes tapan parte de esos enlaces al bajar. Deberían subir a una franja de confianza cerca del inicio."
+  ],
+  "sharp_headlines": {
+    "1": "Lo primero que ves es un aviso",
+    "2": "Sin ratón, tu menú no existe",
+    "3": "Tu portada no dice quién eres",
+    "4": "Tus avisos urgentes hacen fila en el carrusel",
+    "5": "Casi 5 MB solo para abrir tu portada",
+    "6": "Tus teléfonos se leen, pero no llaman",
+    "7": "Nueve campos y un PDF frenan la venta",
+    "8": "Tus mejores cifras casi no se leen",
+    "9": "Cada sección parece de otra marca",
+    "10": "Tu pie de página sigue en 2020"
+  }
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+	<!-- Critical CSS -->
+		<style>
+		/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}select:focus{outline:0}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}*{box-sizing:border-box}body{overflow-x:hidden}a,address,figcaption,h1,h2,h3,h4,h5,h6,input,li,p,select,span,table,time{font-family:"Open Sans",sans-serif}figure,h1,h2,h3,h4,h5,h6,p,ul{margin:0}h1,h2,h3,h4,h5,h6{color:#004d84}h1:not(.post-title){font-size:1.5625rem;letter-spacing:1px;margin-top:2.3125rem;text-align:center;text-transform:uppercase}img{display:block}table{border-spacing:0}input{border-color:#e9e9e9;border-radius:.3125rem;border-style:solid;border-width:.0625rem;color:#585858}input:focus{outline:0}p{font-size:.9375rem;font-weight:lighter}time{color:#585858;display:block;font-size:.875rem;font-style:italic}ol{list-style:none;counter-reset:custom-counter}ol li{counter-increment:custom-counter}ol li::before{color:#004d84;content:counter(custom-counter) ". ";font-weight:700}ul{list-style:none;padding:0}#main-container{overflow-x:hidden;position:relative;padding-top:8.9375rem}@media (max-width:800px){#main-container{padding-top:4.875rem}}.bgContrast{background-color:#fff}.aligncenter{margin:0 auto}.icon{display:inline-block;width:1rem;height:1rem;stroke-width:0;stroke:currentColor;fill:currentColor}.highContarst{filter:invert(100%)}.secWrap{margin:.5rem auto;max-width:74.6875rem}#our-numbers-slider{max-width:120rem;margin:0 auto}#our-allies-slider{max-width:120rem;margin:0 auto}#site-header>div:nth-child(3) .nav-pac>a:first-of-type{background:linear-gradient(to right,#a615c0,#e61e7e)}section.banner-split{background-color:#fafafa;box-shadow:0 2px 4px 0 rgba(0,0,0,.15);display:flex;margin-bottom:2.1875rem;width:100%}@media (max-width:800px){section.banner-split{background-color:#fff;box-shadow:none;flex-wrap:wrap;margin-bottom:.625rem}}section.banner-split>*{width:50%;display:flex;flex-direction:column;min-height:8.4375rem}@media (max-width:800px){section.banner-split>*{width:100%}}section.banner-split figure{box-shadow:2px 0 4px 0 rgba(0,0,0,.15);position:relative}section.banner-split figure img{width:100%;object-fit:cover;position:absolute;height:100%;object-position:center top}section.banner-split .banner-inner-content{padding:.9375rem .625rem .9375rem .9375rem}@media (max-width:800px){section.banner-split .banner-inner-content{padding:.75rem .9375rem}}section.banner-split .banner-inner-content h1{color:#14a4e5;font-size:1.4375rem;font-weight:400;margin-bottom:.75rem;text-transform:none;text-align:left;margin-top:0;margin-bottom:.75rem}@media (max-width:65.625rem){section.banner-split .banner-inner-content h1{font-size:16px}}section.banner-split .banner-inner-content p{font-size:.84375rem}@media (max-width:800px){section.banner-split .banner-inner-content p{font-size:.875rem;padding-top:.6875rem;line-height:1.4;letter-spacing:.42px}}.searchform{align-items:center;display:flex}.searchform div{display:flex;align-items:center}.searchform div label{font-size:0}.searchform div input[type=text]{height:1.1875rem;font-size:.75rem;margin-right:.625rem;width:15.75rem}.searchform div .search-button{display:none}.searchform div .search-link{color:#004d84;display:flex;font-size:0}.searchform div .search-link:visited{color:#004d84}.searchform div .search-link p{font-size:0}.social-links{align-items:center;display:flex}.social-links a{font-size:0!important;text-decoration:none;margin-left:.3125rem;margin-right:.3125rem}.social-links a:first-of-type>svg{width:1.5rem;height:1.5rem}.social-links a:nth-of-type(3)>svg{width:1.3rem;height:1.3rem;margin-left:.375rem;margin-right:.375rem}.social-links a:nth-of-type(4)>svg{width:1.3rem;height:1.3rem}.social-links a:last-of-type>svg{width:1.4rem;height:1.4rem}.social-links a .icon{color:#004d84}.social-links a:first-of-type{margin-left:0}.social-links a:last-of-type{margin-right:0}#site-header{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.15);position:fixed;top:0;width:100%;z-index:2}#site-header .cta-container{display:flex;align-items:center;justify-content:center;padding:0 15px;box-sizing:border-box}#site-header .cta-container a{text-decoration:none;color:#004d84;font-weight:700;font-size:.9375rem;transition:all .45s ease}#site-header .cta-container a:hover{color:#14a4e5}@media (max-width:800px){#site-header{display:flex;flex-direction:column}}#site-header a{text-decoration:none}#site-header ul li.active a{color:#14a4e5!important}#site-header>div:nth-child(2),#site-header>div:nth-child(3){display:flex;padding:0 2.1875rem;max-width:1900px;margin:0 auto}@media (max-width:56.25rem){#site-header>div:nth-child(2),#site-header>div:nth-child(3){padding:0 .9375rem}}#site-header>div:nth-child(2){border-bottom-style:solid;border-bottom-color:#e9e9e9;border-bottom-width:1px;justify-content:flex-end;padding-bottom:.3125rem;padding-top:.4375rem}@media (max-width:800px){#site-header>div:nth-child(2){height:1.75rem;justify-content:center;order:2;padding:0}}#site-header>div:nth-child(2) .social-links{margin-right:1.75rem}@media (max-width:800px){#site-header>div:nth-child(2) .social-links{display:none}}@media (max-width:800px){#site-header>div:nth-child(2) .searchform{display:none}}#site-header>div:nth-child(2)>div:nth-of-type(2){align-items:center;display:flex}#site-header>div:nth-child(2)>div:nth-of-type(2) a{color:#585858;font-size:.75rem;margin:0 .75rem;position:relative}#site-header>div:nth-child(2)>div:nth-of-type(2) a:hover{color:#14a4e5}@media (max-width:800px){#site-header>div:nth-child(2)>div:nth-of-type(2) a{font-size:.875rem;margin:0 .4375rem}}@media (max-width:21.5625rem){#site-header>div:nth-child(2)>div:nth-of-type(2) a{margin:0 3px}}#site-header>div:nth-child(2)>div:nth-of-type(2) a:not(:last-child)::after{background-color:#e9e9e9;content:'';display:block;height:1.25rem;position:absolute;right:-.75rem;top:50%;transform:translateY(-50%);width:.0625rem}@media (max-width:800px){#site-header>div:nth-child(2)>div:nth-of-type(2) a:not(:last-child)::after{right:-.4375rem}}@media (max-width:21.5625rem){#site-header>div:nth-child(2)>div:nth-of-type(2) a:not(:last-child)::after{right:-.1875rem}}#site-header>div:nth-child(3){align-items:center;font-size:.875rem;justify-content:space-between}@media (max-width:800px){#site-header>div:nth-child(3){align-items:center;height:3.125rem;order:1;width:100%}}#site-header>div:nth-child(3) .logos-container a:nth-child(2){position:relative}#site-header>div:nth-child(3) .logos-container a:nth-child(2)::before{background-color:#000;content:'';display:block;height:2.5rem;position:absolute;left:.8125rem;top:50%;transform:translateY(-50%);width:.0625rem}@media (max-width:800px){#site-header>div:nth-child(3) .logos-container a:nth-child(2)::before{height:1.875rem;right:.5rem}}@media (max-width:800px){#site-header>div:nth-child(3) .logos-container a:nth-child(2) figure img{width:9.375rem}}#site-header>div:nth-child(3) .logos-container a:first-child{margin:.5625rem 0}@media (max-width:800px){#site-header>div:nth-child(3) .logos-container a:first-child{margin:0}#site-header>div:nth-child(3) .logos-container a:first-child figure img{width:8.5625rem}}#site-header>div:nth-child(3) .nav-pac{align-items:center;display:flex}#site-header>div:nth-child(3) .nav-pac nav{flex-shrink:0}@media (max-width:800px){#site-header>div:nth-child(3) .nav-pac nav{display:none}}#site-header>div:nth-child(3) .nav-pac nav>ul{display:flex;margin:0;padding:0}#site-header>div:nth-child(3) .nav-pac nav>ul>li{margin:0 .75rem;position:relative}#site-header>div:nth-child(3) .nav-pac nav>ul>li::after{content:'';display:none;height:1.75rem;position:absolute;width:100%;z-index:1}#site-header>div:nth-child(3) .nav-pac nav>ul>li:hover::after{display:block}#site-header>div:nth-child(3) .nav-pac nav>ul>li:hover ul{display:block;z-index:1}#site-header>div:nth-child(3) .nav-pac nav>ul>li a{color:#585858;text-transform:uppercase}#site-header>div:nth-child(3) .nav-pac nav>ul>li a:hover{color:#14a4e5}#site-header>div:nth-child(3) .nav-pac nav>ul>li ul{background-color:rgba(255,255,255,.9);display:none;position:absolute;top:2.75rem;width:13rem}@media (max-width:800px){#site-header>div:nth-child(3) .nav-pac nav>ul>li ul{display:none}}#site-header>div:nth-child(3) .nav-pac nav>ul>li ul li{margin:0;width:100%}#site-header>div:nth-child(3) .nav-pac nav>ul>li ul li:hover{background-color:#14a4e5}#site-header>div:nth-child(3) .nav-pac nav>ul>li ul li:hover a{color:#fff}#site-header>div:nth-child(3) .nav-pac nav>ul>li ul li a{display:block;padding:.75rem .8125rem;text-transform:none;max-width:75%}#site-header>div:nth-child(3) .nav-pac>a:first-of-type{background-color:#004d84;color:#fff;font-weight:lighter;margin-left:1.25rem;padding:.5625rem 2.5rem;text-align:center;text-transform:uppercase}@media (max-width:71.875rem){#site-header>div:nth-child(3) .nav-pac>a:first-of-type{display:none}}#site-header>div:nth-child(3) #mobile-menu-button{display:none;font-size:0}@media (max-width:800px){#site-header>div:nth-child(3) #mobile-menu-button{display:block}}#site-header>div:nth-child(3) #mobile-menu-button .icon-menu-close,#site-header>div:nth-child(3) #mobile-menu-button .icon-menu-open{color:#14a4e5;height:auto}#site-header>div:nth-child(3) #mobile-menu-button .icon-menu-open{width:1.4375rem}#site-header>div:nth-child(3) #mobile-menu-button .icon-menu-close{width:1.0625rem;display:none}#site-header>div:nth-child(3) .pac-bar{bottom:-.3125rem;display:flex;height:.3125rem;position:absolute;width:100%}#site-header>div:nth-child(3) .pac-bar span{width:100%}#site-header #mobile-menu{background-color:#fff;box-shadow:0 4px 4px 0 rgba(0,0,0,.25);display:none;flex-direction:column;height:calc(100vh - 78px);order:3;position:absolute;right:-100%;top:4.875rem;transition:right .3s ease-in-out;width:100%;z-index:2}@media (max-width:800px){#site-header #mobile-menu{display:flex}}#site-header #mobile-menu .searchform{margin:.3125rem .8125rem;position:relative}#site-header #mobile-menu .searchform div{position:relative;width:100%}#site-header #mobile-menu .searchform div input{font-size:1rem;height:2.375rem;margin:0;width:100%;padding-left:.8125rem;padding-right:2.1875rem}#site-header #mobile-menu .searchform div #search-link{position:absolute;right:.5625rem}#site-header #mobile-menu .searchform div #search-link::after{font-size:1.0625rem}#site-header #mobile-menu ul li{align-items:center;border-top:solid 1px #e9e9e9;display:flex;flex-direction:column;position:relative}#site-header #mobile-menu ul li a{color:#585858}#site-header #mobile-menu ul li div{margin:.625rem 0}#site-header #mobile-menu ul li div a:nth-of-type(1){text-transform:uppercase}#site-header #mobile-menu ul li div .open-submenu{border:solid #585858;border-width:0 .125rem .125rem 0;display:inline-block;font-size:0;padding:.1875rem;position:absolute;right:1.5rem;top:.875rem;transform:rotate(45deg);transition:.2s ease-in}#site-header #mobile-menu ul li ul{background-color:#f1f1f1;display:none;width:100%}#site-header #mobile-menu ul li ul li{padding:.625rem 0}#site-header #mobile-menu ul li ul li a{text-transform:none}#site-header #mobile-menu ul li.opened div a{transform:rotate(-134deg)}#site-header #mobile-menu ul li.opened ul{display:block}@media (max-width:800px){#site-header.menu-opened{box-shadow:none}}@media (max-width:800px){#site-header.menu-opened>div:first-of-type{border-bottom:none}}#site-header.menu-opened>div:nth-child(2) #mobile-menu-button .icon-menu-open{display:none}#site-header.menu-opened>div:nth-child(2) #mobile-menu-button .icon-menu-close{display:block}@media (max-width:800px){#site-header.menu-opened #mobile-menu{right:0}}body.pac-header #site-header>div:nth-child(3){padding-left:0}body.pac-header #site-header>div:nth-child(3) .logos-container{align-items:center;display:flex}body.pac-header #site-header>div:nth-child(3) .logos-container a:first-child{display:block}body.pac-header #site-header>div:nth-child(3) .nav-pac nav>ul>li::after{height:2.0625rem}body.pac-header #site-header>div:nth-child(3) .nav-pac>a{display:none}body.logged-in #wpadminbar{position:fixed}body.logged-in #site-header{top:2rem}@media (max-width:48.875rem){body.logged-in #site-header{top:2.875rem}}.accessibility-bar{position:relative;width:100%;height:2.0625rem;margin:0rem;padding:0rem;box-sizing:border-box;display:flex;flex-direction:wrap;background-color:#53565a;color:#fff;justify-content:flex-end;align-items:center}.widget-fuction{text-transform:uppercase;padding:0 25px;display:flex;align-items:center;height:2.3125rem}.widget-fuction:nth-child(1){border-right:1px solid #fff}.widget-fuction p{font-size:.7813rem!important;font-weight:500}.widget-fuction p:nth-child(1){margin:0;padding-right:10px}.widget-fuction p:nth-last-child(2){margin:0;padding:0 10px}.switch{position:relative;display:inline-block;width:2.5rem;height:1.125rem}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#9a9a9a;-webkit-transition:.4s;transition:.4s}.slider:before{position:absolute;content:'';height:1.25rem;width:1.25rem;bottom:-1px;background-color:#fff;-webkit-transition:.4s;transition:.4s}input:checked+.slider{background-color:#2196f3}input:focus+.slider{box-shadow:0 0 1px #2196f3}input:checked+.slider:before{-webkit-transform:translateX(20px);-ms-transform:translateX(20px);transform:translateX(20px);background-color:#acdaff}.slider.round{border-radius:2.125rem}.slider.round:before{border-radius:50%}.widget-fuction button{font-size:21px;font-weight:800;padding:4px;width:1.375rem;border-radius:50%;border:none;cursor:pointer;height:1.375rem}.widget-fuction button:hover{background-color:#acdaff;scale:.96}.widget-fuction button:active{scale:1;background-color:#2196f3}.widget-mobile{display:none}@media (max-width:800px){.accessibility-bar{display:none}.widget-mobile{position:fixed;display:flex;flex-direction:column;align-items:center;justify-content:center;top:18.875rem;right:0rem;right:calc(0px - (204px - 46px));width:auto;height:auto;transform:translateY(-50%);-webkit-transform:translateY(-50%);-o-transform:translateY(-50%);background-color:#53565a;z-index:4000;border-radius:10px 0 0 10px;cursor:pointer;transition:right .2s;-webkit-transition:right .2s}.widget-mobile p{margin:0;color:#fff}.widget-mobile:hover{right:0}.mobile-option{position:relative;display:flex;width:11.875rem;height:1.625rem;margin:0rem;flex-direction:row;align-items:center;justify-content:flex-start;margin:.625rem;margin-right:0}.mobile-option img{width:1.5rem;margin-right:10px!important}}	</style>
+	<!-- End Critical CSS -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-554579353&amp;cx=c&amp;gtm=4e6bh1"></script><script src="https://connect.facebook.net/signals/config/3270593046393813?v=2.9.441&amp;r=stable&amp;domain=saludtotal.com.co&amp;hme=abf59d235177e3601acac6035d7c2a28fadbda4b0c64009bc203ceed9fa8bb90&amp;ex_m=119%2C243%2C172%2C27%2C82%2C83%2C163%2C78%2C77%2C11%2C182%2C102%2C20%2C154%2C142%2C46%2C85%2C90%2C184%2C111%2C150%2C177%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C116%2C162%2C72%2C186%2C110%2C185%2C212%2C264%2C37%2C84%2C284%2C283%2C282%2C14%2C25%2C28%2C40%2C62%2C118%2C68%2C10%2C73%2C112%2C113%2C114%2C120%2C145%2C38%2C36%2C147%2C148%2C149%2C144%2C143%2C173%2C86%2C176%2C174%2C175%2C57%2C69%2C67%2C138%2C19%2C180%2C52%2C335%2C336%2C337%2C334%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C55%2C164%2C87%2C127%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C125%2C161%2C165%2C53%2C126%2C29%2C26%2C134%2C79%2C43%2C167%2C166%2C168%2C158%2C156%2C30%2C42%2C66%2C124%2C179%2C80%2C21%2C129%2C93%2C76%2C23%2C97%2C98%2C131%2C96%2C152%2C151%2C155%2C109%2C178%2C181%2C41%2C351%2C353%2C374%2C257%2C239%2C70%2C240%2C238%2C377%2C368%2C59%2C258%2C122%2C146%2C92%2C136%2C61%2C54%2C56%2C128%2C135%2C141%2C140%2C65%2C74%2C169%2C88%2C89%2C130%2C44%2C39%2C60%2C63%2C115%2C183%2C1%2C139%2C16%2C137%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C133%2C101%2C100%2C188%2C189%2C106%2C107%2C9%2C117%2C187%2C58%2C159%2C99%2C91%2C81%2C132%2C121%2C170%2C50%2C160%2C0%2C94%2C153%2C157%2C171%2C45%2C123%2C13%2C190%2C232%2C227%2C230%2C231%2C209%2C225%2C208%2C228%2C229%2C260%2C226%2C224%2C352%2C237%2C236%2C235%2C288%2C244%2C222%2C223%2C221%2C395%2C387%2C388%2C379%2C384%2C381%2C383%2C382%2C380%2C389%2C391%2C386%2C392%2C385%2C390%2C378%2C347%2C346%2C344%2C345%2C349%2C348%2C277%2C275%2C270%2C272%2C273%2C343%2C233" async=""></script><script src="https://connect.facebook.net/signals/config/662066194446496?v=2.9.441&amp;r=stable&amp;domain=saludtotal.com.co&amp;hme=abf59d235177e3601acac6035d7c2a28fadbda4b0c64009bc203ceed9fa8bb90&amp;ex_m=119%2C243%2C172%2C27%2C82%2C83%2C163%2C78%2C77%2C11%2C182%2C102%2C20%2C154%2C142%2C46%2C85%2C90%2C184%2C111%2C150%2C177%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C116%2C162%2C72%2C186%2C110%2C185%2C212%2C264%2C37%2C84%2C284%2C283%2C282%2C14%2C25%2C28%2C40%2C62%2C118%2C68%2C10%2C73%2C112%2C113%2C114%2C120%2C145%2C38%2C36%2C147%2C148%2C149%2C144%2C143%2C173%2C86%2C176%2C174%2C175%2C57%2C69%2C67%2C138%2C19%2C180%2C52%2C335%2C336%2C337%2C334%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C55%2C164%2C87%2C127%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C125%2C161%2C165%2C53%2C126%2C29%2C26%2C134%2C79%2C43%2C167%2C166%2C168%2C158%2C156%2C30%2C42%2C66%2C124%2C179%2C80%2C21%2C129%2C93%2C76%2C23%2C97%2C98%2C131%2C96%2C152%2C151%2C155%2C109%2C178%2C181%2C41%2C351%2C353%2C374%2C257%2C239%2C70%2C240%2C238%2C377%2C368%2C59%2C258%2C122%2C146%2C92%2C136%2C61%2C54%2C56%2C128%2C135%2C141%2C140%2C65%2C74%2C169%2C88%2C89%2C130%2C44%2C39%2C60%2C63%2C115%2C183%2C1%2C139%2C16%2C137%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C133%2C101%2C100%2C188%2C189%2C106%2C107%2C9%2C117%2C187%2C58%2C159%2C99%2C91%2C81%2C132%2C121%2C170%2C50%2C160%2C0%2C94%2C153%2C157%2C171%2C45%2C123%2C13%2C190" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HLKQFWWVKW&amp;cx=c&amp;gtm=4e6bh1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/4i3aN5wAweL7i3ADI7BSX4B-/recaptcha__es_419.js" crossorigin="anonymous" integrity="sha384-hpEkODobKxSHeTf3cl7nDG3cjIciy76HyD4IBxFsB2uJ4Q7WL8vfXMviZmZycwWA"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KZVNPMB"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-61401421-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-61401421-1',{
+			'cookie_domain': 'auto'
+		});
+	</script>
+	<!-- End Global site tag (gtag.js) - Google Analytics -->
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-KZVNPMB');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300&amp;display=swap" rel="stylesheet">
+
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v28.6 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+	<title>PAC - Salud Total EPS-S</title>
+	<link rel="canonical" href="https://saludtotal.com.co/pac/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="PAC">
+	<meta property="og:url" content="https://saludtotal.com.co/pac/">
+	<meta property="og:site_name" content="Salud Total EPS-S">
+	<meta property="article:publisher" content="https://www.facebook.com/saludtotaleps">
+	<meta property="article:modified_time" content="2025-12-26T21:36:49+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@epssaludtotal">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/saludtotal.com.co\/pac\/","url":"https:\/\/saludtotal.com.co\/pac\/","name":"PAC - Salud Total EPS-S","isPartOf":{"@id":"https:\/\/saludtotal.com.co\/#website"},"datePublished":"2025-12-11T21:02:12+00:00","dateModified":"2025-12-26T21:36:49+00:00","breadcrumb":{"@id":"https:\/\/saludtotal.com.co\/pac\/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https:\/\/saludtotal.com.co\/pac\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/saludtotal.com.co\/pac\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https:\/\/saludtotal.com.co\/"},{"@type":"ListItem","position":2,"name":"PAC"}]},{"@type":"WebSite","@id":"https:\/\/saludtotal.com.co\/#website","url":"https:\/\/saludtotal.com.co\/","name":"Salud Total EPS-S","description":"Tu salud no es a medias debe ser total","publisher":{"@id":"https:\/\/saludtotal.com.co\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/saludtotal.com.co\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es"},{"@type":"Organization","@id":"https:\/\/saludtotal.com.co\/#organization","name":"Salud Total EPS","url":"https:\/\/saludtotal.com.co\/","logo":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/saludtotal.com.co\/#\/schema\/logo\/image\/","url":"https:\/\/saludtotal.com.co\/wp-content\/uploads\/2020\/10\/logo-st.png","contentUrl":"https:\/\/saludtotal.com.co\/wp-content\/uploads\/2020\/10\/logo-st.png","width":605,"height":156,"caption":"Salud Total EPS"},"image":{"@id":"https:\/\/saludtotal.com.co\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/saludtotaleps","https:\/\/x.com\/epssaludtotal","https:\/\/www.instagram.com\/saludtotalpac\/","https:\/\/www.linkedin.com\/company\/saludtotaleps","https:\/\/www.youtube.com\/c\/saludtotal","https:\/\/www.youtube.com\/user\/saludtotaleps"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://saludtotal.com.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsaludtotal.com.co%2Fpac%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://saludtotal.com.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsaludtotal.com.co%2Fpac%2F&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="contact-form-7-css" href="https://saludtotal.com.co/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.2.5" media="all">
+<link rel="stylesheet" id="wpa-css-css" href="https://saludtotal.com.co/wp-content/plugins/honeypot/includes/css/wpa.css?ver=2.4.02" media="all">
+<link rel="stylesheet" id="simian-gdpr-icofont-css" href="https://saludtotal.com.co/wp-content/plugins/simian-gdpr-consent/assets/icofont/icofont.css?ver=1.0.24" media="all">
+<link rel="stylesheet" id="simian-gdpr-styles-css" href="https://saludtotal.com.co/wp-content/plugins/simian-gdpr-consent/assets/css/main.min.css?ver=1.0.24" media="all">
+<link rel="stylesheet" id="salud-total-styles-css" href="https://saludtotal.com.co/wp-content/themes/salud-total/assets/css/page-pac-4b284afe.css?ver=1.13.3" media="all">
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+
+<!-- Fragmento de código de la etiqueta de Google (gtag.js) añadida por Site Kit -->
+<!-- Fragmento de código de Google Analytics añadido por Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=G-HLKQFWWVKW" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["saludtotal.com.co"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-HLKQFWWVKW");
+//# sourceURL=google_gtagjs-js-after
+</script>
+<link rel="https://api.w.org/" href="https://saludtotal.com.co/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://saludtotal.com.co/wp-json/wp/v2/pages/22510"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://saludtotal.com.co/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.1.4">
+<link rel="shortlink" href="https://saludtotal.com.co/?p=22510">
+<meta name="generator" content="Site Kit by Google 1.188.0"><meta name="generator" content="performance-lab 4.2.0; plugins: ">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<meta name="application-name" content="Salud Total">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/554579353/?random=1795105910955&amp;cv=11&amp;fst=1795105910955&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6bh1z8831176985za20gzb831176985zd831176985xeaxf1&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115616985~115938466~115938468~118897920~118897930~120385422~120469145~120469153~121246026~121246034&amp;u_w=800&amp;u_h=600&amp;url=https%3A%2F%2Fsaludtotal.com.co%2Fpac%2F&amp;rcb=4&amp;frm=0&amp;tiba=PAC%20-%20Salud%20Total%20EPS-S&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=532165003.1795105911&amp;uaa=&amp;uab=&amp;uafvl=&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=&amp;uaw=0&amp;_tu=CA&amp;gap.plf=5&amp;ept=9&amp;rfmt=3&amp;fmt=4"></script></head>
+
+<body class="wp-singular page-template page-template-page-pac page-template-page-pac-php page page-id-22510 wp-theme-salud-total show-cookie">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZVNPMB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<section id="seccion-header" class="seccion">
+    <div class="container">
+        <div class="encabezado">
+                        <img src="https://saludtotal.com.co/wp-content/uploads/2025/06/MicrosoftTeams-image-3.png" alt="Salud Total Pac" loading="lazy">
+        </div>
+        <div class="banner-superior">
+            <div class="alerta-tramites">Este formulario es para recibir información sobre los <strong> Planes Complementarios. </strong><br>
+Si deseas agendar una cita o realizar otro trámite relacionado con tu afiliación a <strong>Salud Total</strong>, ingresa a nuestros canales de atención.<p></p>
+<h3><a class="mi-boton-blanco" href="https://saludtotal.com.co/te-escuchamos-pbs/"> Conócelos aquí</a></h3>
+</div>
+        </div>
+    </div>
+</section>
+
+<section id="seccion-beneficios" class="contenedor-video-beneficios seccion">
+    <div class="contenedor-video">
+                <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kiRS5j-CwQQ" allowfullscreen=""></iframe>
+    </div>
+    <div class="beneficios-lateral">
+
+                        <div class="beneficio">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <strong>Conoce cómo nuestros Planes te acompañan en cada etapa de tu vida:</strong><br>
+                                            </div>
+                </div>
+                        <div class="beneficio">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <strong>¡Más tiempo para ti!</strong><br>
+                        Accede directamente a especialistas sin necesidad de remisión.                    </div>
+                </div>
+                        <div class="beneficio">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <strong>Servicio a tu elección</strong><br>
+                        Selecciona tu IPS preferida dentro de una red amplia y confiable.                    </div>
+                </div>
+                        <div class="beneficio">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <strong>Comodidad en casa</strong><br>
+                        Recibe atención médica sin salir de tu hogar.                    </div>
+                </div>
+                        <div class="beneficio">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <strong>Para diligenciar el formulario debes pertenecer al régimen contributivo</strong><br>
+                                            </div>
+                </div>
+            </div>
+</section>
+
+<section class="formulario seccion">
+    <h3>¡Tener un Plan Complementario es muy fácil!</h3><span class="wpcf7-spinner"></span>
+    
+<div class="wpcf7 js" id="wpcf7-f22515-o1" lang="es-ES" dir="ltr" data-wpcf7-id="22515">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/pac/#wpcf7-f22515-o1" method="post" class="wpcf7-form init" aria-label="Formulario de contacto" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="22515"><input type="hidden" name="_wpcf7_version" value="6.2.5"><input type="hidden" name="_wpcf7_locale" value="es_ES"><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f22515-o1"><input type="hidden" name="_wpcf7_container_post" value="0"><input type="hidden" name="_wpcf7_posted_data_hash" value=""><input type="hidden" name="_wpcf7_recaptcha_response" value="0cAFcWeA6kuN_Oq9litKhqqq4qsGlhSwPvEltGaIY35Xx3SGiPWGMc7bHixWhf6rk8uGT3WAqmRpLeY8f1oABq5sEXyeNbCcxkiWytikla8LhHBCM4hcsNNEyDaRKvMh2KI03GxwwpQRSWxT1ytQoEVxqecsfUNjF8I6j0OLYB2aVGiWBBG5lWHYL_5hR02wtpo5g8h5ux08qiHISuPMEPIwypt6gClL-Y6BAlpAcWqCZkDKlLuupPWiiyB-orz2KE5LTqyYm7adCHm4PXVGyExyFYZ5eL9pWyRrDq03k_NOvlLzGoHUJMSCg1OHKDqD-ba945Uhf05nseq6b-49ZKYxkYZYo0xONStsTsMfSI7ib7xk_IrW01ZqbIWBa3NyDKzXB1S67oVLFp638RIonWm7e2Kvqq2jn8YfEdBoFijiUKZ4wK5uGeXnkPZjhDhudnBOTjQpamNArvGq9cCyUaToPrBEV6vszjh9cAveoiS9r9axsyxCU7rcZSvtwma0zaiWeIAf-g5HBTHEWej8uiA9fbhuaPFeuy7Qswi1FAUI3q8d9_Kmp6koUL1GKZes398Xuou1eA12zq5gEczrMP8ZfQ-0-Ufjx4ZlACHhWJUbrWNVut8tDR0GI3mwJ27IAOlHNSXplLwcdq6w7GEUZNVCCIp5VOHXZ2rPxrSFa6HGMyK4cGAHJk9Rqess0kLchfeRBCZj6miDqiJ7F7Z6GNemHg2Wf1e1sLIdjcysCccQfqPyM9FRophTDnm0pjoGZBTcylTzD6ufl-ETHbnwo0Tm4vZHmURkFtC_RHMAOvk9-yMrbKi5SdFGCIhqCJzSLB7oQqQpEUDx9xtuLg9v6_XxQPVQdHlMuUFr46bYMUPjgF87dpso8m6rl-Wf9FMskiPES3lB31PR98ZmKuDRjcczle2U_c1xLWf_-CRjOAvtzkJVrLrPAsoW2usYNCFHttj3VlgAQFWW0OB-lXLPhjuZ_tWVLcRbxZ0jxzkyyT-7VUuW124vQuz-lEg54LXA-oMbcdDPaO7bGyp0jRwSeBMjgmifs5ydPwApl2qN9-fuhVqiY183-TKk0ux8Z-1BtPeSJ5hKELoPR21DOwaxeE2u53U_92iwbzrfS1vaelJoJEHyUZbkYhFvW_VICM-AmyTlwfmaenJLVW7EqUJshJtTjG2IMU2Ry-PltN_q8Vczhqh3BaIs6W4ZdGQ9KUdRUEbzRoAmIn5NHQ8zjdXhOvFGLa9IMVTfbIUQ4HuHnYG8mlt5eBSeplCnFQ_8uOCvksWmDFE4W1bc28M76qgBaiEc4daJz8Y_MERDATVigGtpqkYkuJRr_1GHQlBlQ5QsjrHWhW9eEI72l07aFS2hdDoaxlYPXY57pGev_gvT_nOoultkRXh-nosPFGPrN84vuIVRImPVAQmHxVqNRQNNg8JKxba7hDAsmy3fyd9ULNFK2-r8Rh95XofbhTDTXgqK9PWZEF_XvedpB_vJkckfxSR4ieBNPh8G7hxtyGiy7K_cQtx8gLQhgYS_C8zweQkniikew_qxPsN27kagdgCiZLxc8QrADNrCTizy9uEhGTf23qBoiqh0SP25aMl1Mg5jpUHiTGH6lODtED7-uzoQqRAM6t0y9yxy5uFjHj0L5vxflPhH3xQfP8_vB8_zG1W178CxwEEUOczSmusexG__qVgsV9lUA1n6A34WHrwO3wEe2aaBxwXQyuyd8nas4nFlji-zyn_dSehU_GR651KHLCfAWNuDiiTT2uOL1pcnOwLaY06jRsvGVHBR2eei5dWxAeAKt7TgMmvRUkPz2OSC4YGgq-TWpyKQWCBzkaFZwah1u2myLKDkfjiEWnTcjIiKmBzezH7eMiNm52OqIKVIjiTXbS59jHGL0FDMc8faIKT0m7HKN-Ci1efbVbKl3K71YhRcyx7_7Z8wB_HtNCJxTdaQH58iQHVmcOdXmrMxUKWE5Qnh6MbaPbMUzPS8WILAbQjxrjgbns6v2bM14AzztrX9HmO-H5cV2SEPI69nzNKzkMbjtL45GQjXLgTEkv7MkjcdClO1ts_ftGn5fZZraigfrTHulHxHrCw118gZaOzc26oe6lk_mFaHVHorJUC5iX3yby4ru95-RI3er0-QGfxkMoIKjr34J34fFF08Serjxu6w1-niayTtrcQCBPxKGdERSmR_mHRf_pBLXGgYLi7-_J_iuTlOPBt729RSefD9MIDlxEFdekqUsq_XV0J_f7BwzT37hNrCsYhQeeTMA-RT59I5lEB5QsQ16ENhsgAk7bft1f2mEoEUqGj4q2qVD8hxnYiKXH-50CtSXpNL-Sxnb-aF5sNCi7OhMahLx6uwwFB7XSN6iHgdU">
+</fieldset>
+<div class="wpcf7-response-output" aria-hidden="true"></div><div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="nombre-completo"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required landing" aria-required="true" aria-invalid="false" placeholder="*Nombre Completo" value="" type="text" name="nombre-completo"></span>
+	</p>
+</div>
+<div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="ciudad"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required landing" aria-required="true" aria-invalid="false" name="ciudad"><option value="">*Ciudad</option><option value="Bogotá">Bogotá</option><option value="Medellín">Medellín</option><option value="Barranquilla">Barranquilla</option><option value="Cali">Cali</option><option value="Cartagena">Cartagena</option><option value="Girardot">Girardot</option><option value="Ibagué">Ibagué</option><option value="Manizales">Manizales</option><option value="Pereira">Pereira</option><option value="Sincelejo">Sincelejo</option><option value="Santa Marta">Santa Marta</option><option value="Valledupar">Valledupar</option><option value="Bucaramanga">Bucaramanga</option></select></span>
+	</p>
+</div>
+<div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="tipo-identificacion"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required landing" aria-required="true" aria-invalid="false" name="tipo-identificacion"><option value="">*Tipo de Identificación</option><option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option><option value="Tarjeta de Identidad">Tarjeta de Identidad</option><option value="Registro Civil">Registro Civil</option><option value="Cédula de Extranjería">Cédula de Extranjería</option></select></span>
+	</p>
+</div>
+<div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="numero-identificacion"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel landing" aria-required="true" aria-invalid="false" placeholder="*No. de Identificación" value="" type="tel" name="numero-identificacion"></span>
+	</p>
+</div>
+<div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="correo"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email landing" aria-required="true" aria-invalid="false" placeholder="*Correo Electrónico" value="" type="email" name="correo"></span>
+	</p>
+</div>
+<div class="col-6">
+	<p><span class="wpcf7-form-control-wrap" data-name="celular"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel landing" aria-required="true" aria-invalid="false" placeholder="*Celular" value="" type="tel" name="celular"></span>
+	</p>
+</div>
+<div class="col-12">
+	<p><span class="wpcf7-form-control-wrap" data-name="Aceptacion"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="Aceptacion" value="1" class="casilla" aria-invalid="false"><span class="wpcf7-list-item-label">He leído y acepto la <a href="https://transaccional.saludtotal.com.co/Terminos/PoliticasTratamientodatos.aspx" target="_blank">política de tratamiento de datos</a></span></label></span></span></span><br>
+<span class="wpcf7-form-control-wrap" data-name="afiliado"><span class="wpcf7-form-control wpcf7-acceptance optional"><span class="wpcf7-list-item"><label><input type="checkbox" name="afiliado" value="1" class="check-afiliado" aria-invalid="false"><span class="wpcf7-list-item-label">Estoy afiliado a <img src="https://saludtotal.com.co/wp-content/uploads/2021/05/Copia-de-Logo-ST-e1621009710834.png" alt="Salud Total" class="logo-st"><small>(ítem opcional)</small></span></label></span></span></span>
+	</p>
+	<div class="wrap-button">
+		<p><input class="wpcf7-form-control wpcf7-submit has-spinner boton-enviar" type="submit" value="Quiero saber más" disabled="">
+		</p>
+	</div>
+	<div class="aclaracion">
+		<p>* Autorizo a la EPS a utilizar la información almacenada en el presente formulario para los fines propios del desarrollo de su objeto social, así como todo tratamiento lícito que se suponga.
+		</p>
+	</div>
+</div><input type="hidden" class="wpcf7-pum" value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:false,&quot;openpopup_id&quot;:0}">
+<div id="altEmail_container" class="altEmail_container"><label for="alt_s">Alternative:</label><input type="text" id="alt_s" name="alt_s"></div><span class="wpa_hidden_field" style="display:none;height:0;width:0;"><label>WPA <input type="text" name="ihcklz4666" value="757252"></label></span></form>
+</div>
+    <br>
+     
+
+    <div id="wrap-botones-principales" class="wrap-botones-principales">
+        <div id="texto-gdpr-shortcode">
+            <p><strong>Información que recopilamos:</strong></p>
+            <p>En cumplimiento de la normativa vigente en materia de protección de datos personales, Salud Total EPS informa que este sitio web utiliza cookies con diversas finalidades. Al aceptar todas las cookies, usted autoriza a Salud Total, de forma directa o a través de terceros, a almacenar, acceder y procesar la información relacionada con su visita al sitio web. En la opción ‘Personalizar’ podrá conocer los tipos de cookies utilizadas y decidir cuáles desea activar o desactivar, con excepción de aquellas que son esenciales para el funcionamiento del sitio. Para mayor control y conocimiento sobre el tratamiento de sus datos personales, lo invitamos a consultar nuestro Manual de Protección de Datos Personales.</p>
+            <br>
+        </div>
+
+                    <button id="simian-gdpr-personalize-button" class="gdpr-button">Personalizar</button>
+                <button id="simian-gdpr-denegar-button" class="gdpr-button">Denegar</button>
+        <button id="simian-gdpr-accept-button" class="gdpr-button">Aceptar todo</button>
+    </div>
+    </section>
+
+<section class="logo-inferior seccion">
+        <img src="https://saludtotal.com.co/wp-content/uploads/2025/06/MicrosoftTeams-image-2.png" alt="Logo de vigilancia" loading="lazy">
+</section>
+
+<script>
+    document.addEventListener('keydown', function(e) {
+        if (e.target.name !== 'numero-identificacion') {
+            return;
+        }
+
+        const teclasPermitidas = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+
+        if (teclasPermitidas.indexOf(e.key) !== -1 || e.ctrlKey || e.metaKey) {
+            return;
+        }
+
+        if (!/^[0-9]$/.test(e.key)) {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('input', function(e) {
+        if (e.target.name !== 'numero-identificacion') {
+            return;
+        }
+
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+</script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/salud-total/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+        <div id="simian-gdpr-modal" class="simian-gdpr-modal" style="display: none;">
+        <div class="simian-gdpr-modal-content">
+            <span id="simian-gdpr-modal-close" class="simian-gdpr-modal-close-button">×</span>
+            <div class="simian-gdpr-modal-header">
+                <h2>Configuración de privacidad</h2>
+                <p>En esta sección puede conocer las distintas cookies que se recopilan y puede activar o desactivar su seguimiento, excepto las cookies esenciales.</p>
+<p><a href="https://saludtotal.com.co/proteccion-de-datos-personales/" target="_blank" rel="noopener">Conoce nuestro manual de uso de cookies</a></p>
+            </div>
+            
+            <div class="simian-gdpr-modal-body">
+                <!-- Pestañas para Categorías y Servicios -->
+                <ul class="simian-gdpr-modal-tabs">
+                    <li class="tab-item active" data-tab="categorias">Categorías</li>
+                    <li class="tab-item" data-tab="servicios">Servicios</li>
+                </ul>
+                <!-- Contenido de la pestaña 'Categorías' -->
+                <div class="simian-gdpr-tab-content active" id="tab-categorias">
+                                                                        <div class="categoria-item" data-categoria="Marketing">
+                                <div class="wrap-categoria">
+                                    <div class="wrap-titulo">
+                                        <h4>Marketing</h4>
+                                        <p></p><p>Los anunciantes utilizan estas tecnologías para publicar anuncios que sean relevantes para sus intereses.</p>
+<p></p>
+                                    </div>
+                                    <div class="services-list-wrap" style="display:none;">
+                                        <ul class="services-list"></ul>
+                                    </div>
+                                </div>
+                                <div class="wrap-switch">
+                                    <input type="checkbox" id="switch-" class="switch-input category-switch" checked="checked">
+                                    <button type="button" class="toggle-servicio-info"><i class="icofont-rounded-down"></i></button>
+                                </div>                                
+                            </div>
+                                                            </div>
+                <!-- Contenido de la pestaña 'Servicios' -->
+                <div class="simian-gdpr-tab-content" id="tab-servicios" style="display:none;">
+                    <!--  -->
+                    <div class="categoria-item main-item" style="display:none;">
+                        <div class="wrap-categoria">
+                            <div class="wrap-titulo">
+                                <h4></h4>
+                                <h5></h5>
+                            </div>
+                            <div class="servicio-info-wrap" style="display:none;">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="wrap-switch">
+                            <input type="checkbox" id="switch-" class="switch-input" checked="checked">
+                            <button type="button" class="toggle-servicio-info"><i class="icofont-rounded-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="simian-gdpr-modal-footer">
+                <button id="simian-gdpr-modal-save-prefs-button" class="gdpr-button gdpr-button-save">Guardar configuración</button>
+                <button id="simian-gdpr-modal-denegar-button" class="gdpr-button gdpr-button-denegar">Denegar</button>
+                <button id="simian-gdpr-modal-accept-all-button" class="gdpr-button gdpr-button-accept">Aceptar todo</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrap-config-modal" class="wrap-config-modal" style="display: none;">
+        <i class="icofont-gears"></i>
+    </div>
+    <script>let searchLink=document.getElementsByClassName("search-link")[0],searchButton=document.getElementsByClassName("search-button")[0];searchLink&&searchButton&&searchLink.addEventListener("click",(e=>{e.preventDefault(),searchButton.click()}));let mobileMenuButton=document.getElementById("mobile-menu-button"),siteHeader=document.getElementById("site-header");mobileMenuButton&&siteHeader&&mobileMenuButton.addEventListener("click",(e=>{e.preventDefault(),siteHeader.classList.toggle("menu-opened"),mobileMenuButton.classList.contains("icon-menu")?(mobileMenuButton.classList.remove("icon-menu"),mobileMenuButton.classList.add("icon-x")):mobileMenuButton.classList.contains("icon-x")&&(mobileMenuButton.classList.remove("icon-x"),mobileMenuButton.classList.add("icon-menu"))}));let submenuButtons=document.getElementsByClassName("open-submenu");for(let e of submenuButtons)e.addEventListener("click",(e=>{e.preventDefault(),e.target.closest("li").classList.toggle("opened")}));</script><script>const body=document.querySelector("body"),html=document.querySelector("html"),container=document.querySelector(".wrap"),headerSearch=document.querySelector(" #site-header>div:nth-child(2)"),header=document.querySelector(" #site-header>div:nth-child(3)"),slider=document.querySelector(".slider"),zoomout=document.querySelector(".zoomout"),zoomin=document.querySelector(".zoomin"),contrastMobile=document.querySelector(".contrast-mobile"),zoomoutMobile=document.querySelector(".zoomout-mobile"),zoominMobile=document.querySelector(".zoomin-mobile");function modifyContrast(){body.classList.toggle("bgContrast"),html.classList.contains("highContarst")?html.classList.remove("highContarst"):html.classList.add("highContarst")}slider&&slider.addEventListener("click",modifyContrast),contrastMobile&&contrastMobile.addEventListener("click",modifyContrast);let increase=100;function zin(){return 100===increase?(increase+=10,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):110===increase?(increase+=15,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):125===increase||150===increase||175===increase?(increase+=25,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):void 0}function zout(){return 200===increase||175===increase||150===increase?(increase-=25,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):125===increase?(increase-=15,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):110===increase?(increase-=10,container.style.zoom=`${increase}%`,headerSearch.style.zoom=`${increase}%`,void(header.style.zoom=`${increase}%`)):void 0}container&&headerSearch&&header&&(zoomin&&zoomin.addEventListener("click",zin),zoominMobile&&zoominMobile.addEventListener("click",zin),zoomout&&zoomout.addEventListener("click",zout),zoomoutMobile&&zoomoutMobile.addEventListener("click",zout));</script><script>var scrollToTopBtn=document.getElementById("scrollToTopBtn"),rootElement=document.documentElement;function scrollToTop(){rootElement.scrollTo({top:0,behavior:"smooth"})}scrollToTopBtn&&scrollToTopBtn.addEventListener("click",scrollToTop);</script><script id="wp-hooks-js" src="https://saludtotal.com.co/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://saludtotal.com.co/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://saludtotal.com.co/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.2.5"></script>
+<script id="contact-form-7-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2026-10-26 18:46:22+0000","generator":"GlotPress\/4.1.0","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"es"},"This contact form is placed in the wrong place.":["Este formulario de contacto est\u00e1 situado en el lugar incorrecto."],"Error:":["Error:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+</script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/saludtotal.com.co\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://saludtotal.com.co/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.2.5"></script>
+<script id="jquery-core-js" src="https://saludtotal.com.co/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://saludtotal.com.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="wpascript-js" src="https://saludtotal.com.co/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.4.02"></script>
+<script id="wpascript-js-after">
+wpa_field_info = JSON.parse(atob("eyJ3cGFfZmllbGRfbmFtZSI6ImloY2tsejQ2NjYiLCJ3cGFfZmllbGRfdmFsdWUiOjc1NzI1Miwid3BhX2FkZF90ZXN0Ijoibm8ifQ=="));
+//# sourceURL=wpascript-js-after
+</script>
+<script id="simian-gdpr-scripts-js-extra">
+var simianGdprData = {"cookiesDirectoryUrl":"https://saludtotal.com.co/wp-content/plugins/simian-gdpr-consent/assets/js/cookies_directory.json"};
+//# sourceURL=simian-gdpr-scripts-js-extra
+</script>
+<script id="simian-gdpr-scripts-js" src="https://saludtotal.com.co/wp-content/plugins/simian-gdpr-consent/assets/js/main.min.js?ver=1.0.24"></script>
+<script id="page-pac-script-js" src="https://saludtotal.com.co/wp-content/themes/salud-total/assets/js/page-pac.js?ver=0.0.3"></script>
+<script id="canales-atencion-js" src="https://saludtotal.com.co/wp-content/themes/salud-total/assets/js/canales-atencion.js?ver=1.13.3"></script>
+<script id="google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6LflYcktAAAAANaWDcABQYm6k0keIX7Fm98RGKw3&amp;ver=3.0"></script>
+<script id="wp-polyfill-js" src="https://saludtotal.com.co/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"></script>
+<script id="wpcf7-recaptcha-js-before">
+var wpcf7_recaptcha = {
+    "sitekey": "6LflYcktAAAAANaWDcABQYm6k0keIX7Fm98RGKw3",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+</script>
+<script id="wpcf7-recaptcha-js" src="https://saludtotal.com.co/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.2.5"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7a3759299a2b43bcbe31769e6341df60&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","662066194446496");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=662066194446496&amp;ev=PageView&amp;noscript=1"></noscript>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","3270593046393813");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3270593046393813&amp;ev=PageView&amp;noscript=1"></noscript>
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-u8la7tz5ecs2" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LflYcktAAAAANaWDcABQYm6k0keIX7Fm98RGKw3&amp;co=aHR0cHM6Ly9zYWx1ZHRvdGFsLmNvbS5jbzo0NDM.&amp;hl=es-419&amp;v=4i3aN5wAweL7i3ADI7BSX4B-&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;ovv=CADq00gF&amp;cb=15ph1ajtc4mt"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></body></html>

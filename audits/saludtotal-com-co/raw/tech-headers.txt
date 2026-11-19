@@ -1,0 +1,110 @@
+## curl -sI https://saludtotal.com.co/
+HTTP/2 200 
+date: Thu, 19 Nov 2026 16:19:10 GMT
+content-type: text/html; charset=UTF-8
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3TeAg8AS2Ge9QvvFHtVqiRLoKbYYiU9m682w4Rwy2bt7hCQMDcHXfIJcxlVSr4Vjk9nUa8N6L8RJnDF0Icq41I1S0eopd6FV%2BuEfjO8ZhmDyC%2FbP%2BZJZ5LuLjCGfQGilu8Q4DJPt%2BIoXUt4%2FkSH8Sw%3D%3D"}]}
+cache-control: public, max-age=450, stale-while-revalidate=450, stale-if-error=86400
+content-security-policy: default-src 'self';     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.facebook.net https://*.facebook.com https://*.googleapis.com https://*.doubleclick.net https://*.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://stackpath.bootstrapcdn.com https://code.jquery.com https://static.cloudflareinsights.com https://yoast.com https://*.yoast.com;     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com;     img-src 'self' data: blob: https:;     font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://maxcdn.bootstrapcdn.com;     connect-src 'self' https://googleads.g.doubleclick.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net https://*.facebook.com https://*.facebook.net https://yoast.com https://*.yoast.com;     frame-src 'self' blob: https://www.google.com https://*.googletagmanager.com https://*.facebook.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com;     frame-ancestors 'self';     base-uri 'self';     form-action 'self';
+cross-origin-embedder-policy: unsafe-none
+cross-origin-opener-policy: unsafe-none
+cross-origin-resource-policy: cross-origin
+expires: Thu, 19 Nov 2026 16:17:44 GMT
+link: <https://saludtotal.com.co/wp-json/>; rel="https://api.w.org/"
+permissions-policy: geolocation=(), accelerometer=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=()
+referrer-policy: strict-origin-when-cross-origin
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+via: 1.1 varnish (Varnish/6.6), 1.1 08dc97955bd2deffaa4ff081d908767a.cloudfront.net (CloudFront)
+x-content-type-options: nosniff
+x-varnish: 1540257 1474681
+x-varnish-cache: HIT
+x-varnish-cacheable: YES
+x-varnish-unsetcookies: TRUE
+x-xss-protection: 1; mode=block
+vary: Accept-Encoding
+x-cache: Hit from cloudfront
+x-amz-cf-pop: PHL51-P4
+x-amz-cf-id: m0KCrbs6rQ9Q7-nRjbBuY8mvPzuNAuOMqAOg_Zdxnva_dfZkoCkL9Q==
+age: 205
+cf-cache-status: DYNAMIC
+server: cloudflare
+cf-ray: a5d088f8ccf431b6-JAX
+alt-svc: h3=":443"; ma=86400
+
+## curl -sI http://saludtotal.com.co/
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 19 Nov 2026 16:19:11 GMT
+Content-Type: text/html
+Connection: keep-alive
+Server: cloudflare
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Location: https://saludtotal.com.co/
+X-Cache: Redirect from cloudfront
+Via: 1.1 cbd6c1c070d79184d1d9d4e03b848e76.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: PHL51-P4
+X-Amz-Cf-Id: HnMpi1QNXTI0Ggoqb8umqZqbhgNoTB-G2f_TUb_WoOEz_CDN4vP59g==
+cf-cache-status: DYNAMIC
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wlZd6rP%2FQcoh70okGFmpfpYTm7uIoCN3c08cgmuA2wX7z6BqGiF6RrMUQqs%2FpY64OODooowLrImXJLqZvMYVx%2FiKcxpXf2fiQNkG47Ql0s1fDkww8zTQGAvoYN%2BRKWtsrnqxECw55QbfdZOMWitQnQ%3D%3D"}]}
+CF-RAY: a5d088fa1c692733-JAX
+alt-svc: h3=":443"; ma=86400
+
+## http://www
+HTTP/1.1 301 Moved Permanently
+Server: CloudFront
+Date: Thu, 19 Nov 2026 16:19:11 GMT
+Content-Type: text/html
+Content-Length: 167
+Connection: keep-alive
+Location: https://www.saludtotal.com.co/
+X-Cache: Redirect from cloudfront
+Via: 1.1 f8a6366492980e8eaf5cd28b9679e5c4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: BOG51-P3
+X-Amz-Cf-Id: uNUTL0UeH-HvfKnf927hvnRogfhmcbaO_bibzucpDnW63WR2NMJseA==
+
+## https://www
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+content-length: 344
+location: http://saludtotal.com.co/
+cache-control: public, max-age=450, stale-while-revalidate=450, stale-if-error=86400
+date: Thu, 19 Nov 2026 16:17:04 GMT
+expires: Thu, 19 Nov 2026 16:19:04 GMT
+via: 1.1 varnish (Varnish/6.6), 1.1 1c9d1286c902487d04363b9ef20b83ac.cloudfront.net (CloudFront)
+x-varnish: 1081570 1605740
+x-varnish-cache: HIT
+x-varnish-cacheable: YES
+x-varnish-unsetcookies: TRUE
+x-cache: Miss from cloudfront
+x-amz-cf-pop: BOG51-P3
+x-amz-cf-id: HWgfA0hI-cW4FmQ6kWzo7409OZl0iiarvnycspbWO22yIAx-lhWUNg==
+age: 126
+
+## 404 test
+404 229202
+## static assets
+# https://saludtotal.com.co/wp-content/themes/salud-total/assets/css/home-050f781f.css?ver=1.13.3
+HTTP/2 200 
+content-type: text/css
+cache-control: public, max-age=31536000
+expires: Thu, 18 Nov 2027 19:23:24 GMT
+cf-cache-status: HIT
+# https://saludtotal.com.co/wp-content/uploads/2026/09/Pop-Up-PQRD.png
+HTTP/2 200 
+content-type: image/png
+content-length: 1014850
+cache-control: public, max-age=31536000
+expires: Wed, 03 Nov 2027 12:44:18 GMT
+cf-cache-status: HIT
+# https://saludtotal.com.co/wp-content/plugins/popup-maker/dist/assets/site.js?defer&ver=1.25.0
+HTTP/2 200 
+content-type: application/x-javascript
+cache-control: public, max-age=31536000
+expires: 31536000.000
+cf-cache-status: HIT
+# https://saludtotal.com.co/wp-content/plugins/simian-gdpr-consent/assets/icofont/fonts/icofont.woff2
+HTTP/2 200 
+content-type: application/font-woff2
+content-length: 16964
+cache-control: max-age=31536000
+expires: 31536000.000
+cf-cache-status: HIT

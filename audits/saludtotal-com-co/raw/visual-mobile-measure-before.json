@@ -1,0 +1,660 @@
+{
+ "vw": 412,
+ "docH": 4586,
+ "fams": {
+  "Open Sans": 156,
+  "IBM Plex Sans": 6,
+  "Times": 1
+ },
+ "weights": {
+  "Open Sans 700": 44,
+  "Open Sans 400": 76,
+  "Open Sans 100": 16,
+  "Open Sans 900": 9,
+  "Open Sans 300": 6,
+  "IBM Plex Sans 700": 6,
+  "Open Sans 200": 1,
+  "Open Sans 600": 4,
+  "Times 700": 1
+ },
+ "heads": [
+  {
+   "tag": "H2",
+   "text": "Gestiona tu PQRD de manera rápida y segura",
+   "size": "18px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 420
+  },
+  {
+   "tag": "H2",
+   "text": "Descubre qué es la andropausia y cómo adoptar hábitos saluda",
+   "size": "18px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 397
+  },
+  {
+   "tag": "H4",
+   "text": "Lee la Revista PAC aquí",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 485
+  },
+  {
+   "tag": "H3",
+   "text": "Por afectación en oficinas de atención presencial en Valle d",
+   "size": "18.72px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 356
+  },
+  {
+   "tag": "H4",
+   "text": "Habilitamos la línea exclusiva de WhatsApp 333 033 4094 para",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 426
+  },
+  {
+   "tag": "H4",
+   "text": "Conoce más aquí",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 526
+  },
+  {
+   "tag": "H2",
+   "text": "Si eres protegido en Cali, Pereira y Armenia por afectacione",
+   "size": "18px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 398
+  },
+  {
+   "tag": "H2",
+   "text": "Seguimos trabajando para restablecer nuestros servicios y ac",
+   "size": "18px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 389
+  },
+  {
+   "tag": "H2",
+   "text": "Los horarios en Centro de Soluciones y Gestores de Servicio ",
+   "size": "18px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 408
+  },
+  {
+   "tag": "H4",
+   "text": "Conoce más aquí",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 475
+  },
+  {
+   "tag": "H1",
+   "text": "Ingresa a nuestra sección de medicamentos y verifica",
+   "size": "24px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "uppercase",
+   "y": 385
+  },
+  {
+   "tag": "H3",
+   "text": "si puedes reclamarlo en la farmacia directamente",
+   "size": "18.72px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 473
+  },
+  {
+   "tag": "H1",
+   "text": "En Salud Total EPS, no necesitas intermediarios para tus trá",
+   "size": "24px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 397
+  },
+  {
+   "tag": "H4",
+   "text": "Conoce más aquí",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 485
+  },
+  {
+   "tag": "H3",
+   "text": "Con Planes Complementarios accede directamente a especialist",
+   "size": "18.72px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 386
+  },
+  {
+   "tag": "H2",
+   "text": "Radica tu PQRD con nosotros",
+   "size": "24px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 1124
+  },
+  {
+   "tag": "H3",
+   "text": "¿Qué es una PQRD y cómo usarla en Salud Total EPS-S?",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 1392
+  },
+  {
+   "tag": "H3",
+   "text": "Cómo radicar tu PQRD en Salud Total EPS-S paso a paso",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 1669
+  },
+  {
+   "tag": "H3",
+   "text": "PQRD en Salud Total EPS-S: un canal para escucharte",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 1946
+  },
+  {
+   "tag": "H1",
+   "text": "Novedades",
+   "size": "25px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "uppercase",
+   "y": 2025
+  },
+  {
+   "tag": "H3",
+   "text": "Por unas celebraciones sin pólvora",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 2294
+  },
+  {
+   "tag": "H3",
+   "text": "Conoce de cerca nuestro programa madre canguro",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 2555
+  },
+  {
+   "tag": "H3",
+   "text": "Día Mundial de las Personas con Talla Baja",
+   "size": "14px",
+   "weight": "700",
+   "family": "\"IBM Plex Sans\"",
+   "color": "rgb(0, 77, 132)",
+   "transform": "none",
+   "y": 2832
+  },
+  {
+   "tag": "H3",
+   "text": "Estás a un clic de saber qué es el",
+   "size": "12px",
+   "weight": "200",
+   "family": "\"Open Sans\"",
+   "color": "rgb(255, 255, 255)",
+   "transform": "none",
+   "y": 3004
+  },
+  {
+   "tag": "H2",
+   "text": "Nuestra gestión",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(255, 255, 255)",
+   "transform": "uppercase",
+   "y": 3204
+  },
+  {
+   "tag": "H2",
+   "text": "Nuestros aliados",
+   "size": "16px",
+   "weight": "700",
+   "family": "\"Open Sans\"",
+   "color": "rgb(255, 255, 255)",
+   "transform": "uppercase",
+   "y": 3345
+  }
+ ],
+ "btns": [
+  {
+   "text": "Ver más novedades",
+   "bg": "rgb(20, 164, 229)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px",
+   "font": "12px 700 \"Open Sans\"",
+   "cls": "blue-button"
+  },
+  {
+   "text": "",
+   "bg": "rgb(239, 239, 239)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "50%",
+   "font": "22px 400 Times",
+   "cls": ""
+  },
+  {
+   "text": "Personalizar",
+   "bg": "rgb(0, 77, 132)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px",
+   "font": "14px 600 \"Open Sans\"",
+   "cls": "gdpr-button"
+  },
+  {
+   "text": "Denegar",
+   "bg": "rgb(0, 77, 132)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px",
+   "font": "14px 600 \"Open Sans\"",
+   "cls": "gdpr-button"
+  },
+  {
+   "text": "Aceptar todo",
+   "bg": "rgb(0, 77, 132)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px",
+   "font": "14px 600 \"Open Sans\"",
+   "cls": "gdpr-button"
+  },
+  {
+   "text": "×",
+   "bg": "rgba(255, 255, 255, 0)",
+   "color": "rgb(255, 255, 255)",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "15px",
+   "font": "23px 700 Times",
+   "cls": "pum-close popmake-close"
+  }
+ ],
+ "imgs": [
+  {
+   "src": "logo-salud-total.svg",
+   "alt": "Logo de Salud Total",
+   "w": 137,
+   "h": 35,
+   "nat": "213x55",
+   "y": 7
+  },
+  {
+   "src": "contrast_icon.svg",
+   "alt": " contraste",
+   "w": 24,
+   "h": 24,
+   "nat": "150x150",
+   "y": 244
+  },
+  {
+   "src": "zoom_out.svg",
+   "alt": "reducir",
+   "w": 24,
+   "h": 24,
+   "nat": "200x200",
+   "y": 290
+  },
+  {
+   "src": "zoom_in.svg",
+   "alt": "Aumentar",
+   "w": 24,
+   "h": 24,
+   "nat": "200x200",
+   "y": 336
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Ir al slide anterior",
+   "w": 30,
+   "h": 35,
+   "nat": "30x35",
+   "y": 311
+  },
+  {
+   "src": "Banner-PQRD-2-700x394.png",
+   "alt": "Gestiona tu PQRD de manera rápida y segura??",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Banner-2-100-700x369.jpg",
+   "alt": "Revista PAC, edición 40",
+   "w": 474,
+   "h": 250,
+   "nat": "700x369",
+   "y": 78
+  },
+  {
+   "src": "Banner-Linea-WA-2-2-700x394.png",
+   "alt": "Atención protegidos de Valle del Cauca, Risaralda y Quindío ",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 76
+  },
+  {
+   "src": "IMG_8296-700x394.png",
+   "alt": "Si eres protegido en Cali, Pereira y Armenia por afectacione",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Diseno-sin-titulo-2.png",
+   "alt": "Juntos saldremos adelante  Seguimos trabajando para restable",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Mesa-de-trabajo-20-700x394.png",
+   "alt": "Los horarios en Centro de Soluciones y Gestores de Servicio ",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Banner-medicamentos-1-700x394.png",
+   "alt": "Ingresa a nuestra sección de medicamentos y verifica   si pu",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Banner-No-te-dejes-enganar-700x394.png",
+   "alt": "En Salud Total EPS, no necesitas intermediarios para tus trá",
+   "w": 444,
+   "h": 250,
+   "nat": "700x394",
+   "y": 78
+  },
+  {
+   "src": "Banners-PAC-Generico-3.jpg",
+   "alt": "Planes Complementarios",
+   "w": 476,
+   "h": 250,
+   "nat": "700x368",
+   "y": 78
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Ir al slide siguiente",
+   "w": 30,
+   "h": 35,
+   "nat": "30x35",
+   "y": 311
+  },
+  {
+   "src": "Peticiones-quejas-reclamos-y-denuncias-%C2%BFcual-es-la-diferencia--700x394.png",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x185",
+   "y": 1203
+  },
+  {
+   "src": "Paso-a-paso-para-radicar-tu-PQRD-en-Salud-Total-EPS-S-1-700x394.png",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x185",
+   "y": 1480
+  },
+  {
+   "src": "Te-acompanamos-durante-todo-el-proceso-de-tu-PQRD-700x394.png",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x185",
+   "y": 1757
+  },
+  {
+   "src": "Banner-Polvora-700x405.jpg",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x190",
+   "y": 2105
+  },
+  {
+   "src": "Banner-Prematuro-700x394.png",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x185",
+   "y": 2366
+  },
+  {
+   "src": "Banner-Talla-Baja-1-700x394.png",
+   "alt": "",
+   "w": 330,
+   "h": 180,
+   "nat": "330x185",
+   "y": 2643
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Ir a números anteriores",
+   "w": 20,
+   "h": 23,
+   "nat": "30x35",
+   "y": 3270
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Ir a números siguientes",
+   "w": 20,
+   "h": 23,
+   "nat": "30x35",
+   "y": 3270
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Mostrar logos anteriores",
+   "w": 20,
+   "h": 23,
+   "nat": "30x35",
+   "y": 3387
+  },
+  {
+   "src": "arrow.svg",
+   "alt": "Mostrar logos siguientes",
+   "w": 20,
+   "h": 23,
+   "nat": "30x35",
+   "y": 3387
+  },
+  {
+   "src": "btn-afiliate.svg",
+   "alt": "Afíliate aquí",
+   "w": 165,
+   "h": 54,
+   "nat": "300x96",
+   "y": 818
+  },
+  {
+   "src": "logo-canales-atencion.png",
+   "alt": "Canales de atención",
+   "w": 165,
+   "h": 56,
+   "nat": "415x142",
+   "y": 818
+  },
+  {
+   "src": "icon-1-2x.png",
+   "alt": "Enlace a ",
+   "w": 123,
+   "h": 110,
+   "nat": "375x336",
+   "y": 914
+  },
+  {
+   "src": "icon-2-2x.png",
+   "alt": "Enlace a ",
+   "w": 123,
+   "h": 110,
+   "nat": "375x336",
+   "y": 914
+  },
+  {
+   "src": "icon-3-2x.png",
+   "alt": "Enlace a ",
+   "w": 123,
+   "h": 110,
+   "nat": "375x336",
+   "y": 1059
+  },
+  {
+   "src": "icon-4-2x.png",
+   "alt": "Enlace a ",
+   "w": 123,
+   "h": 110,
+   "nat": "375x336",
+   "y": 1059
+  },
+  {
+   "src": "icon-5-2x.png",
+   "alt": "Enlace a ",
+   "w": 122,
+   "h": 110,
+   "nat": "375x337",
+   "y": 1204
+  },
+  {
+   "src": "Contenido-PQRD.png",
+   "alt": "Enlace a ",
+   "w": 66,
+   "h": 99,
+   "nat": "66x99",
+   "y": 1210
+  },
+  {
+   "src": "icon-7-2x.png",
+   "alt": "Enlace a ",
+   "w": 122,
+   "h": 110,
+   "nat": "375x337",
+   "y": 1349
+  },
+  {
+   "src": "MicrosoftTeams-image-9.png",
+   "alt": "Enlace a ",
+   "w": 93,
+   "h": 85,
+   "nat": "93x85",
+   "y": 1362
+  },
+  {
+   "src": "ST_flecha_home.svg",
+   "alt": "scroll top",
+   "w": 40,
+   "h": 40,
+   "nat": "150x150",
+   "y": 450
+  },
+  {
+   "src": "Pop-Up-PQRD.png",
+   "alt": "",
+   "w": 391,
+   "h": 220,
+   "nat": "412x231",
+   "y": 345
+  }
+ ],
+ "copy": [
+  "© Copyright 2020 - Todos los derechos reservados - Desarrolla",
+  "© Copyright 2020 - Todos los derechos reservados - Desarrolla"
+ ],
+ "fonts": [
+  "Open Sans 300 italic unloaded",
+  "Open Sans 300 italic loaded",
+  "Open Sans 300 normal unloaded",
+  "Open Sans 300 normal loaded",
+  "Open Sans 400 normal unloaded",
+  "Open Sans 400 normal loaded",
+  "Open Sans 700 normal unloaded",
+  "Open Sans 700 normal loaded",
+  "Open Sans 800 normal unloaded",
+  "Open Sans 800 normal loaded",
+  "IcoFont normal normal loaded",
+  "Montserrat 100 normal unloaded"
+ ],
+ "years": {
+  "2016": 2,
+  "2018": 1,
+  "2020": 2,
+  "2026": 2
+ }
+}

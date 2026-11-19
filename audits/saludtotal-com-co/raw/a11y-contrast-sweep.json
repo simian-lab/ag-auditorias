@@ -1,0 +1,241 @@
+[
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 12px/700",
+  {
+   "ratio": "1.00",
+   "need": 4.5,
+   "n": 7,
+   "ex": [
+    "A. \"PQRD\"",
+    "A. \"Contribución Solidaria\"",
+    "A. \"Actualiza tus datos\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 30px/200",
+  {
+   "ratio": "1.00",
+   "need": 3,
+   "n": 1,
+   "ex": [
+    "H3. \"Estás a un clic de saber qué es el\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 245px/900",
+  {
+   "ratio": "1.00",
+   "need": 3,
+   "n": 1,
+   "ex": [
+    "P.bigPac \"PAC\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 36px/100",
+  {
+   "ratio": "1.00",
+   "need": 3,
+   "n": 1,
+   "ex": [
+    "P.benefits \"y sus beneficios\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 36px/600",
+  {
+   "ratio": "1.00",
+   "need": 3,
+   "n": 1,
+   "ex": [
+    "STRONG. \"beneficios\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 18px/100",
+  {
+   "ratio": "1.00",
+   "need": 4.5,
+   "n": 3,
+   "ex": [
+    "P. \"Acceso directo a especialidades en el ce\"",
+    "P. \"Sin cuota moderadora en Centros Integral\"",
+    "P. \"Atención médica y realización de terapia\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(255,255,255) 18px/700",
+  {
+   "ratio": "1.00",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Conocelo aqui\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(87,1,170) 0px/400",
+  {
+   "ratio": "1.12",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(32,77,144) 0px/400",
+  {
+   "ratio": "1.13",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(241,241,241) 14px/400",
+  {
+   "ratio": "1.13",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A.active \"Protegidos\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(0,59,130) 0px/400",
+  {
+   "ratio": "1.15",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(43,76,153) 0px/400",
+  {
+   "ratio": "1.16",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(46,45,131) 0px/400",
+  {
+   "ratio": "1.23",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(0,49,116) 0px/400",
+  {
+   "ratio": "1.32",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(30,10,123) 0px/400",
+  {
+   "ratio": "1.61",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(32,128,127) 0px/400",
+  {
+   "ratio": "1.99",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(20,164,229) 12px/700",
+  {
+   "ratio": "2.81",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A.blue-button \"Ver más novedades\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(20,164,229) 24px/700",
+  {
+   "ratio": "2.81",
+   "need": 3,
+   "n": 1,
+   "ex": [
+    "H2. \"Nuestra gestión\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(20,164,229) 64px/700",
+  {
+   "ratio": "2.81",
+   "need": 3,
+   "n": 3,
+   "ex": [
+    "P. \"41ML\"",
+    "P. \"5.6MLL\"",
+    "P. \"1.2 ML\""
+   ]
+  }
+ ],
+ [
+  "rgb(255, 255, 255) on rgb(20,164,229) 15px/100",
+  {
+   "ratio": "2.81",
+   "need": 4.5,
+   "n": 3,
+   "ex": [
+    "P. \"Afiliados PAC\"",
+    "P. \"Afiliados EPS\"",
+    "P. \"Red de IPS\""
+   ]
+  }
+ ],
+ [
+  "rgb(0, 0, 238) on rgb(12,180,200) 0px/400",
+  {
+   "ratio": "3.75",
+   "need": 4.5,
+   "n": 1,
+   "ex": [
+    "A. \"Enlace del slide\""
+   ]
+  }
+ ]
+]

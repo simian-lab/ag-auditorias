@@ -1,0 +1,93 @@
+{
+ "heads": [
+  "P: Cambiar Contraste",
+  "P: Aumentar letra",
+  "P: Disminuir letra",
+  "H2: Gestiona tu PQRD de manera rápida y segura",
+  "H2: Descubre qué es la andropausia y cómo adoptar hábitos saludables para seguir disfrutando de una vida activa.",
+  "H3: Por afectación en oficinas de atención presencial en Valle del Cauca, Risaralda y Quindío",
+  "H2: Si eres protegido en Cali, Pereira y Armenia por afectaciones en sedes físicas realiza tus trámites en nuestra Oficina V",
+  "P: Haz clic aquí",
+  "H2: Seguimos trabajando para restablecer nuestros servicios y acompañarte en este momento.",
+  "P: Conoce las novedades sobre la atención en Valle del Cauca, Risaralda, Quindío ,Caldas y Chocó.",
+  "P: CONOCE LAS NOVEDADES AQUÍ",
+  "H2: Los horarios en Centro de Soluciones y Gestores de Servicio cambian desde el 15 de agosto de 2026",
+  "H1: INGRESA A NUESTRA SECCIÓN DE MEDICAMENTOS Y VERIFICA",
+  "H3: si puedes reclamarlo en la farmacia directamente",
+  "H1: En Salud Total EPS, no necesitas intermediarios para tus trámites",
+  "H3: Con Planes Complementarios accede directamente a especialistas en ginecología, pediatría, dermatología y más.\nSin remisi",
+  "P: Información que recopilamos: En cumplimiento de la normativa vigente en materia de protección de datos personales, Salud",
+  "P: Conoce nuestro manual de uso de cookies"
+ ],
+ "links": [
+  {
+   "h": "https://saludtotal.com.co/plan-de-beneficios-en-salud/direccionamiento-whatsapp/",
+   "t": "Enlace del slide"
+  },
+  {
+   "h": "https://wa.me/573107737993",
+   "t": ""
+  },
+  {
+   "h": "https://api.whatsapp.com/send/?phone=573107737993&text&type=phone_number&app_absent=0",
+   "t": ""
+  },
+  {
+   "h": "https://transaccional.saludtotal.com.co/DirectorioPos/?_ga=2.24430906.1668020612.1604073367-1514046164.1603487868",
+   "t": "Linea Nacional 018000 114524"
+  },
+  {
+   "h": "#",
+   "t": "Notificacionesjud@saludtotal.com.co"
+  },
+  {
+   "h": "https://www.tiktok.com/@saludtotalepsoficial",
+   "t": "TikTok"
+  }
+ ],
+ "popups": [
+  "HTML#.no-js pum-open pum-open-overlay pum-open-scrollable",
+  "DIV#pum-18336.pum pum-overlay pum-theme-18334 pum-theme-content-only popmake-overlay pum-click",
+  "DIV#popmake-18336.pum-container popmake theme-18334 pum-responsive pum-responsive-medium responsiv",
+  "DIV#.pum-content popmake-content",
+  "BUTTON#.pum-close popmake-close"
+ ],
+ "sliders": [
+  {
+   "c": "slider round",
+   "n": 0,
+   "top": 0
+  },
+  {
+   "c": "main-slider slider-container",
+   "n": 0,
+   "top": 78
+  },
+  {
+   "c": "slider-container",
+   "n": 0,
+   "top": 3247
+  },
+  {
+   "c": "slider-container",
+   "n": 0,
+   "top": 3387
+  }
+ ],
+ "a0": [],
+ "iframes": [
+  "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LflYcktAAAAANaWDcABQYm6k0keIX7Fm98RGKw3&co=aHR0",
+  ""
+ ],
+ "fixed": [
+  "HEADER#site-header. [0,0 412x78]",
+  "DIV#.widget-mobile [370,233 200x138]",
+  "DIV#canales-mobile. [0,700 412x683]",
+  "BUTTON#scrollToTopBtn. [350,358 40x40]",
+  "DIV#simian-gdpr-banner.simian-gdpr-banner [0,423 412x400]",
+  "DIV#pum-18336.pum pum-overlay pum-theme-18334 pum-theme-content- [0,0 412x823]",
+  "DIV#.grecaptcha-badge [342,749 256x60]"
+ ],
+ "a8": [],
+ "menuBtn": "<button type=\"button\" class=\"toggle-servicio-info\"><i class=\"icofont-rounded-down\"></i></button>"
+}

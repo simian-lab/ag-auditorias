@@ -1,0 +1,144 @@
+{
+  "area": "visual",
+  "findings": [
+    {
+      "id": "visual-1",
+      "title": "La primera pantalla se llena de capas que compiten",
+      "summary": "Al entrar, el afiliado ve a la vez una ventana emergente, el aviso de cookies, el carrusel y botones flotantes, y no sabe dónde mirar primero.",
+      "now": "En la primera visita aparecen juntos la ventana emergente «Radica tu PQRD» encima del carrusel, el aviso de cookies que tapa la parte de abajo (unos 170 px de 900) y los botones flotantes «Afíliate aquí» y «Canales de atención». El mismo mensaje de PQRD sale cuatro veces en la misma pantalla: enlace superior, carrusel, ventana emergente y título de la sección. La ventana emergente puede cambiar o no salir según la visita.",
+      "fix": "Deja un solo protagonista en la primera pantalla: un mensaje principal con una acción clara. Quita la ventana emergente automática, o muéstrala solo después de que la persona haga scroll, y usa un aviso de cookies compacto.",
+      "why": "La primera impresión de orden y calma es la que hace sentir a un afiliado que la EPS es seria y que lo va a atender bien.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "screenshots/desktop-viewport.png: popup .pum-overlay (Pop-Up-PQRD-700x394.png, 572x322 px rendered) centered at ~x 434-1005, y 244-565; cookie banner .simian-gdpr-banner from y 732 to 900",
+        "screenshots/visual-desktop-firstload.png and visual-mobile-firstload.png (own CDP run, 2026-11-19): popup and cookie banner both present on first load; on mobile (412 px) the cookie banner takes from ~y 515 to the bottom of the 915 px viewport",
+        "PQRD message repeated in the first desktop viewport: top link 'Radica tu PQRD' (y 49), hero slide H2 'Gestiona tu PQRD de manera rápida y segura' + in-image 'Radica tu PQRD Con nosotros', popup, section H2 'Radica tu PQRD con nosotros' (y 633)",
+        "Floating images btn-afiliate.svg and btn-canales-atencion.png (200x65 px) fixed at right edge, overlapping the PROTEGIDOS/APORTANTE/IPS tab bar"
+      ],
+      "technical_note": "Popup is Popup Maker (classes pum pum-overlay auto_open pum-active). Pop-ups vary per visit/cookie state; both of our runs and the shared screenshot showed it on first load.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "visual-2",
+      "title": "El mensaje principal es pequeño en celular",
+      "summary": "En el celular el titular del carrusel se ve en letra pequeña y repite lo que ya dice la imagen, así que el mensaje pierde fuerza.",
+      "now": "El carrusel tiene 9 diapositivas. La primera muestra el titular «Gestiona tu PQRD de manera rápida y segura» como texto real, a 24 px en computador pero solo a 18 px en un celular de 412 px. Justo encima, la imagen repite el mismo mensaje con otra tipografía («Radica tu PQRD Con nosotros»). La diapositiva que se ve primero puede cambiar.",
+      "fix": "Usa un solo titular como texto real, de al menos 24–28 px en celular, y deja que la foto acompañe sin repetir la frase escrita dentro de la imagen.",
+      "why": "Si el mensaje principal no se lee de un vistazo en el celular, que es donde más consultan los afiliados, la portada no comunica nada.",
+      "impact": 4,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/visual-mobile-measure-before.json: hero H2 'Gestiona tu PQRD de manera rápida y segura' font-size 18px at 412 px viewport (24px at 1440 px, raw/visual-desktop-measure-before.json)",
+        "Other slide headings on mobile: 5 H2 at 18px, 2 H1 at 24px, H3 18.72px, H4 16px",
+        "Slide image Banner-PQRD-2-700x394.png contains the text 'Radica tu PQRD Con nosotros' baked into the image (screenshots/visual-mobile-clean-full.png top; visual-desktop-clean-viewport.png x 890-1185, y 175-305)",
+        "9 carousel dots visible at y ~400 in screenshots/visual-desktop-clean-viewport.png"
+      ],
+      "technical_note": "Slide image alt text ends with stray '??' ('Gestiona tu PQRD de manera rápida y segura??'). Carousel content changes per slide/visit.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 32, "y_pct": 31}
+    },
+    {
+      "id": "visual-3",
+      "title": "Demasiadas tipografías y grosores mezclados",
+      "summary": "La mezcla de letras distintas en textos e imágenes hace que el sitio se vea armado por partes y no como una sola marca.",
+      "now": "En el texto se usan Open Sans en 8 grosores distintos (del 100 al 900) e IBM Plex Sans en los títulos de las tarjetas. Además se cargan Montserrat y Nunito Sans. Dentro de las imágenes aparecen otras letras: una redondeada y gruesa en los banners, y otra condensada en cursiva en «Afíliate aquí», «Canales de atención» y en los íconos de canales («Pablo Asesor en Línea», «Línea Total», «AsoUsuarios»).",
+      "fix": "Define una tipografía para títulos y otra para textos, con tres grosores como máximo, y úsalas también en los banners y botones que hoy son imágenes.",
+      "why": "Una tipografía constante es de las señales más baratas de una marca cuidada y confiable.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/visual-desktop-measure-before.json (computed styles of visible text nodes): Open Sans weights 100, 200, 300, 400, 500, 600, 700, 900 (+800 loaded); IBM Plex Sans 700 on 6 card H3s (14px)",
+        "raw/home.html links Google Fonts: Open Sans (300,400,700,800,300i), Montserrat:100, Nunito Sans (variable 200-1000)",
+        "Text inside images in a condensed italic face: btn-afiliate.svg, btn-canales-atencion.png (desktop-viewport.png x 1215-1415, y 527-673) and channel icons (screenshots/visual-mobile-clean-full.png, section below the tab menu)",
+        "Banners (e.g. Pop-Up-PQRD, Banner-Polvora, Banner-Prematuro) use additional rounded/geometric display faces baked into images"
+      ],
+      "technical_note": "Montserrat 100 is declared but reported 'unloaded' by document.fonts; IcoFont also loaded for icons.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 91, "y_pct": 66}
+    },
+    {
+      "id": "visual-4",
+      "title": "Cada botón tiene un estilo diferente",
+      "summary": "Como los botones no se parecen entre sí, el afiliado no reconoce de inmediato qué se puede tocar ni cuál es la acción principal.",
+      "now": "En la portada conviven al menos cinco estilos de botón. «Planes Complementarios» es un rectángulo con degradado morado-rosado y letra muy delgada en mayúsculas. «Ver más novedades» es azul claro, sólido y con letra de 12 px. «Conocelo aqui» tiene solo borde blanco y esquinas redondeadas de 5 px. «Afíliate aquí» y «Canales de atención» son imágenes con forma de píldora. «Haz clic aquí» del carrusel es un texto amarillo sin forma de botón.",
+      "fix": "Define dos estilos de botón, principal y secundario, con el mismo color, tamaño, esquinas y tipografía en todas las secciones, y conviértelos en texto real en lugar de imágenes.",
+      "why": "Unos botones constantes guían la mirada hacia afiliarse o hacer un trámite y hacen que el sitio se sienta profesional.",
+      "impact": 3,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/visual-desktop-layout.json ctas: 'Planes Complementarios' bg linear-gradient(to right, rgb(166,21,192), rgb(230,30,126)), radius 0, 14px weight 100 uppercase",
+        "'Ver más novedades' .blue-button bg rgb(20,164,229), radius 0, 12px 700",
+        "'Conocelo aqui' transparent, 1px white border, radius 5px, 18px 700",
+        "'Afíliate aquí' / 'Canales de atención' are images (btn-afiliate.svg 300x96, btn-canales-atencion.png 210x70) with pill outline; hero 'Haz clic aquí' is yellow text link (desktop-viewport.png x ~462, y 301)"
+      ],
+      "technical_note": "",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 90, "y_pct": 10}
+    },
+    {
+      "id": "visual-5",
+      "title": "Títulos y colores sin un sistema fijo",
+      "summary": "Los títulos cambian de tamaño y estilo entre secciones y hay muchos tonos de azul parecidos, así que la página no se percibe como un sistema ordenado.",
+      "now": "«NOVEDADES» va en mayúsculas a 25 px, mientras que «Radica tu PQRD con nosotros», del mismo nivel, va en minúsculas a 24 px. En el celular, «NUESTRA GESTIÓN» y «NUESTROS ALIADOS» bajan a 16 px pero «NOVEDADES» se queda en 25 px. Las franjas de fondo usan al menos cinco azules distintos (índigo del carrusel, degradado de la barra de íconos, azul claro de cifras, azul oscuro de aliados, azul de la pestaña PROTEGIDOS), además de un degradado morado-rosado y amarillo.",
+      "fix": "Fija una escala de títulos (una medida y un estilo por nivel) y una paleta corta: un azul principal, un azul de apoyo y un color de acento para las acciones, cada uno con un uso definido.",
+      "why": "Un orden visual constante transmite que detrás hay una organización ordenada, algo clave para una entidad de salud.",
+      "impact": 2,
+      "effort": "Medio",
+      "evidence": [
+        "raw/visual-desktop-measure-before.json headings: H1 'Novedades' 25px uppercase; H2 'Radica tu PQRD con nosotros' 24px no transform; H2 'Nuestra gestión' / 'Nuestros aliados' 24px uppercase; card H3 14px IBM Plex Sans; PAC H3 'Estás a un clic de saber qué es el' 30px weight 200",
+        "raw/visual-mobile-measure-before.json: 'Novedades' 25px vs 'Nuestra gestión' / 'Nuestros aliados' 16px; PAC H3 12px",
+        "raw/visual-desktop-layout.json section backgrounds: hero rgb(46,45,131); icon strip linear-gradient rgb(0,121,194)->rgb(1,94,155); our-numbers rgb(20,164,229); our-allies rgb(0,77,132); PAC linear-gradient rgb(158,27,180)->rgb(216,40,133); header CTA gradient rgb(166,21,192)->rgb(230,30,126); slide backgrounds add rgb(0,59,130), rgb(0,49,116), rgb(43,76,153), rgb(32,77,144), rgb(30,10,123), rgb(87,1,170)"
+      ],
+      "technical_note": "Carousel slides use H1 (32px uppercase), H2 (24px), H3 (18.72px) and H4 (16px) interchangeably for the slide headline; multiple H1s on the page.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 72}
+    },
+    {
+      "id": "visual-6",
+      "title": "Detalles de acabado hacen ver el sitio descuidado",
+      "summary": "Un año de copyright viejo, franjas que no llegan al borde y cifras escritas de forma inconsistente hacen pensar que nadie revisa el sitio.",
+      "now": "El pie de página dice «© Copyright 2020», aunque el sitio ya tiene contenidos de 2026. Debajo del carrusel, todas las franjas de color terminan unos 15 px antes del borde derecho y dejan una línea blanca, en computador y en celular. En el pie, una columna tiene la línea decorativa pero le falta el título. Las cifras de «Nuestra gestión» usan tres abreviaturas distintas: «41ML», «5.6MLL» y «1.2 ML».",
+      "fix": "Actualiza el año automáticamente, haz que todas las franjas ocupen el ancho completo, pon título a la columna vacía y escribe las cifras de una sola forma clara (por ejemplo, «5,6 millones de afiliados»).",
+      "why": "Los pequeños descuidos visibles le restan credibilidad a una entidad a la que la gente le confía su salud.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "© 2020",
+      "evidence": [
+        "Footer text '© Copyright 2020 - Todos los derechos reservados' (raw/visual-desktop-measure-before.json copy); body text also contains 'Cuotas moderadoras y copagos 2026'",
+        "raw/visual-desktop-layout.json: hero width 1440 (right 1440) but icon strip, tab bar, PAC, our-numbers, our-allies and footer width 1425 / right 1425 in a 1440 px viewport (document scrollWidth 1440); same strip visible in screenshots/visual-mobile-clean-full.png (bands end ~15 px before right edge) and in desktop-viewport.png at x 1425-1440, y 433-583",
+        "screenshots/visual-desktop-clean-full.png footer second column: decorative rule at y ~2385 with no heading (x 382-452)",
+        "Our-numbers band: '41ML AFILIADOS PAC', '5.6MLL AFILIADOS EPS', '1.2 ML RED DE IPS' (visual-desktop-clean-full.png y ~1880)"
+      ],
+      "technical_note": "Section containers appear to be sized to viewport minus a scrollbar width (1425 = 1440 - 15) while the hero is 100vw; check width/overflow rules on the section wrappers.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 99, "y_pct": 55}
+    },
+    {
+      "id": "visual-7",
+      "title": "Las imágenes no muestran la atención real",
+      "summary": "La portada usa modelos genéricos y avisos de trámites en lugar de mostrar sedes, profesionales o pruebas del servicio, así que no ayuda a generar confianza.",
+      "now": "Casi todas las imágenes de la portada son banners con modelos sonrientes en estudio sobre fondos degradados (los tres de PQRD, la ventana emergente y el carrusel). No aparecen médicos, sedes ni afiliados reales. Las cifras de respaldo («Nuestra gestión») y los sellos de MinSalud y Supersalud quedan al final de la página, y en el celular las cifras se ven de a una en un carrusel. Varias diapositivas hablan de afectaciones y de restablecer servicios. (Negocio inferido del sitio: EPS colombiana del régimen subsidiado con planes complementarios PAC.)",
+      "fix": "Usa fotos reales de sedes, equipos médicos y afiliados, y sube a la primera mitad de la página una franja de confianza con cifras claras, la red de atención y los sellos de vigilancia.",
+      "why": "En salud, ver personas y lugares reales y pruebas concretas pesa más que cualquier frase para que alguien elija o se quede en la EPS.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "Images on home (raw/visual-desktop-measure-before.json imgs): Banner-PQRD-2, Pop-Up-PQRD, Peticiones-quejas-reclamos..., Paso-a-paso-para-radicar-tu-PQRD..., Te-acompanamos-durante-todo-el-proceso-de-tu-PQRD — all studio-style model photos on gradient backgrounds (screenshots/visual-desktop-clean-viewport.png, visual-mobile-clean-full.png)",
+        "Slide alt texts: 'Por afectación en oficinas de atención presencial en Valle d...', 'Juntos saldremos adelante Seguimos trabajando para restablecer...'",
+        "Our-numbers band at y 1806 of 2681 px (desktop); MinSalud / Vigilado Supersalud seals only in the footer (visual-desktop-clean-full.png y ~2250)",
+        "Mobile: 'Nuestra gestión' shows one figure per slide with arrows (visual-mobile-clean-full.png ~y 3200)"
+      ],
+      "technical_note": "Whether the model photos are licensed stock or own productions is [dato por confirmar]; the judgment is on their generic studio look, not their origin.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 60, "y_pct": 30}
+    }
+  ],
+  "checks": [
+    {"id": "vis-headline-legible", "result": "fail", "evidence": "Headline is real text (H2 'Gestiona tu PQRD de manera rápida y segura') but 18px at a 412 px viewport (24px on desktop); 5 of the 9 slide headlines are 18px on mobile, only 2 H1 slides reach 24px. Carousel slide shown first may vary."},
+    {"id": "vis-focal-point", "result": "fail", "evidence": "First load shows popup + cookie banner + carousel + floating buttons at once; PQRD message repeated 4 times in the first desktop viewport (desktop-viewport.png). Lower sections (Novedades, PAC) do have a single focus."},
+    {"id": "vis-fonts", "result": "fail", "evidence": "Text uses Open Sans (8 weights 100-900 in use) + IBM Plex Sans (card titles); Montserrat and Nunito Sans also linked; additional condensed italic and rounded display faces inside images (Afíliate aquí, Canales, channel icons, banners)."},
+    {"id": "vis-buttons", "result": "fail", "evidence": "At least 5 button styles: gradient rectangle (Planes Complementarios), solid light-blue square (Ver más novedades), white outline 5px radius (Conocelo aqui), image pills (Afíliate aquí, Canales de atención), yellow text link (Haz clic aquí)."},
+    {"id": "vis-headings", "result": "fail", "evidence": "Section titles of the same role differ: Novedades 25px uppercase vs Radica tu PQRD 24px sentence case; on mobile Novedades 25px vs Nuestra gestión/aliados 16px; slide headlines use H1-H4 at 32/24/18.7/16px."},
+    {"id": "vis-palette", "result": "fail", "evidence": "Brand dark blue rgb(0,77,132) used consistently for text headings, but section/slide backgrounds use 5+ near-duplicate blues (rgb(46,45,131), rgb(0,77,132), rgb(20,164,229), gradient rgb(0,121,194)-rgb(1,94,155), rgb(0,59,130), rgb(32,77,144)...) plus two different purple-pink gradients and yellow, without fixed roles."},
+    {"id": "vis-photos", "result": "partial", "evidence": "Photos are sharp and well lit, but main imagery is generic studio-model banners with text baked in; no real staff, sites or members shown."},
+    {"id": "vis-products", "result": "pass", "evidence": "PAC (plan complementario) section shows its name and three concrete benefits; service shortcuts (PQRD, Citas Médicas, Directorio, Oficina Virtual) have visible labels."},
+    {"id": "vis-positioning", "result": "partial", "evidence": "Proof exists (Nuestra gestión figures, MinSalud/Supersalud seals, allies logos) but sits at the bottom, figures use inconsistent abbreviations (41ML / 5.6MLL / 1.2 ML), and on mobile they rotate one at a time."},
+    {"id": "vis-spacing", "result": "partial", "evidence": "Card grids align on a 3-column grid on desktop and stack cleanly on mobile, but every band below the hero ends 15 px short of the right edge (1425 of 1440 px; also visible on mobile) and a footer column has a rule with no heading."},
+    {"id": "vis-up-to-date", "result": "fail", "evidence": "Footer shows '© Copyright 2020' while the page lists 2026 content."}
+  ]
+}

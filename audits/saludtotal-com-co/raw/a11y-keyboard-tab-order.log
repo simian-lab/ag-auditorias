@@ -1,0 +1,70 @@
+TAB 1 INPUT |  | "" |  | ol=none 0px | sh=none | rect=1116,22,0,0 | onscreen=false
+TAB 2 BUTTON | .zoomout | "Disminuir" |  | ol=auto 1px | sh=none | rect=1328,6,22,22 | onscreen=true
+TAB 3 BUTTON | .zoomin | "Aumentar" |  | ol=auto 1px | sh=none | rect=1378,6,22,22 | onscreen=true
+TAB 4 A |  | "Radica tu PQRD" | https://transaccional.saludtotal.com.co/TeEscucham | ol=auto 1px | sh=none | rect=652,41,116,17 | onscreen=true
+TAB 5 INPUT | #s | "" |  | ol=none 0px | sh=none | rect=783,40,252,19 | onscreen=true
+TAB 6 A | .search-link | "Buscar" |  | ol=auto 1px | sh=none | rect=1045,42,16,16 | onscreen=true
+TAB 7 A |  | "Preguntas Frecuentes" | /preguntas-frecuentes-pbs/ | ol=auto 1px | sh=none | rect=1073,43,122,14 | onscreen=true
+TAB 8 A |  | "Oficina Virtual" | https://transaccional.saludtotal.com.co/OficinaVir | ol=auto 1px | sh=none | rect=1219,43,79,14 | onscreen=true
+TAB 9 A |  | "Regístrate" | https://transaccional.saludtotal.com.co/OficinaVir | ol=auto 1px | sh=none | rect=1322,43,56,14 | onscreen=true
+TAB 10 A |  | "Logo de Salud Total" | / | ol=auto 1px | sh=none | rect=35,65,213,55 | onscreen=true
+TAB 11 A |  | "INICIO" | https://saludtotal.com.co/ | ol=auto 1px | sh=none | rect=260,82,42,19 | onscreen=true
+TAB 12 A |  | "NOSOTROS" |  | ol=auto 1px | sh=none | rect=326,82,75,19 | onscreen=true
+TAB 13 A |  | "AFÍLIATE AQUÍ" | https://transaccional.saludtotal.com.co/ComercialA | ol=auto 1px | sh=none | rect=425,82,93,19 | onscreen=true
+TAB 14 A |  | "PROTEGIDOS" |  | ol=auto 1px | sh=none | rect=542,82,86,19 | onscreen=true
+TAB 15 A |  | "CANALES DE ATENCIÓN Y PQRD" |  | ol=auto 1px | sh=none | rect=652,82,207,19 | onscreen=true
+TAB 16 A |  | "REDES INTEGRALES" | https://saludtotal.com.co/redes-intregrales/ | ol=auto 1px | sh=none | rect=884,82,126,19 | onscreen=true
+TAB 17 A |  | "TRANSPARENCIA" |  | ol=auto 1px | sh=none | rect=1034,82,109,19 | onscreen=true
+TAB 18 A |  | "PLANES COMPLEMENTARIOS" | /home-planes-complementarios/ | ol=auto 1px | sh=none | rect=1175,67,215,50 | onscreen=true
+TAB 19 A | .prev-slide | "Ir al slide anterior" |  | ol=auto 1px | sh=none | rect=40,271,30,35 | onscreen=true
+TAB 20 A | .next-slide | "Ir al slide siguiente" |  | ol=auto 1px | sh=none | rect=1355,271,30,35 | onscreen=true
+TAB 21 A | .move-to-slide.active | "Move to slide" |  | ol=auto 1px | sh=none | rect=567,390,20,20 | onscreen=true
+TAB 22 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=601,390,20,20 | onscreen=true
+TAB 23 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=635,390,20,20 | onscreen=true
+TAB 24 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=669,390,20,20 | onscreen=true
+TAB 25 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=703,390,20,20 | onscreen=true
+TAB 26 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=737,390,20,20 | onscreen=true
+TAB 27 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=771,390,20,20 | onscreen=true
+TAB 28 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=805,390,20,20 | onscreen=true
+TAB 29 A | .move-to-slide. | "Move to slide" |  | ol=auto 1px | sh=none | rect=839,390,20,20 | onscreen=true
+TAB 30 A |  | "PQRD" | https://transaccional.saludtotal.com.co/TeEscucham | ol=auto 1px | sh=none | rect=172,441,60,80 | onscreen=true
+TAB 31 A |  | "Contribución Solidaria" | https://transaccional.saludtotal.com.co/contribuci | ol=auto 1px | sh=none | rect=304,441,134,80 | onscreen=true
+TAB 32 A |  | "Actualiza tus datos" | https://transaccional.saludtotal.com.co/Actualizad | ol=auto 1px | sh=none | rect=509,441,114,80 | onscreen=true
+TAB 33 A |  | "Citas Médicas" | https://saludtotal.com.co/pide-tus-citas-medicas/ | ol=auto 1px | sh=none | rect=695,441,82,80 | onscreen=true
+TAB 34 A |  | "Direccionamientos" | https://transaccional.saludtotal.com.co/OficinaVir | ol=auto 1px | sh=none | rect=849,441,113,80 | onscreen=true
+TAB 35 A |  | "Directorio" | https://transaccional.saludtotal.com.co/Directorio | ol=auto 1px | sh=none | rect=1034,441,60,80 | onscreen=true
+TAB 36 A |  | "Oficina Virtual" | https://transaccional.saludtotal.com.co/OficinaVir | ol=auto 1px | sh=none | rect=1166,441,87,80 | onscreen=true
+TAB 37 A | .active | "PROTEGIDOS" | https://saludtotal.com.co | ol=auto 1px | sh=none | rect=0,528,352,55 | onscreen=true
+TAB 38 A |  | "APORTANTE | EMPLEADOR" | https://saludtotal.com.co/perfil/empresas-aportant | ol=auto 1px | sh=none | rect=352,528,443,55 | onscreen=true
+TAB 39 A |  | "IPS" | https://saludtotal.com.co/perfil/ips/ | ol=auto 1px | sh=none | rect=795,528,286,55 | onscreen=true
+TAB 40 A |  | "COMERCIAL" | https://saludtotal.com.co/perfil/comercial/ | ol=auto 1px | sh=none | rect=1081,528,344,55 | onscreen=true
+TAB 41 A |  | "¿Qué es una PQRD y cómo usarla en Salud " | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=135,712,328,180 | onscreen=true
+TAB 42 A |  | "¿Qué es una PQRD y cómo usarla en Salud " | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=135,434,328,32 | onscreen=true
+TAB 43 A |  | "Cómo radicar tu PQRD en Salud Total EPS-" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=549,245,328,180 | onscreen=true
+TAB 44 A |  | "Cómo radicar tu PQRD en Salud Total EPS-" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=549,434,328,32 | onscreen=true
+TAB 45 A |  | "PQRD en Salud Total EPS-S: un canal para" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=962,245,328,180 | onscreen=true
+TAB 46 A |  | "PQRD en Salud Total EPS-S: un canal para" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=962,434,328,32 | onscreen=true
+TAB 47 A |  | "Por unas celebraciones sin pólvora" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=135,593,328,180 | onscreen=true
+TAB 48 A |  | "Por unas celebraciones sin pólvora" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=135,782,328,16 | onscreen=true
+TAB 49 A |  | "Conoce de cerca nuestro programa madre c" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=549,593,328,180 | onscreen=true
+TAB 50 A |  | "Conoce de cerca nuestro programa madre c" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=549,782,328,32 | onscreen=true
+TAB 51 A |  | "Día Mundial de las Personas con Talla Ba" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=962,593,328,180 | onscreen=true
+TAB 52 A |  | "Día Mundial de las Personas con Talla Ba" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=962,782,328,16 | onscreen=true
+TAB 53 A | .blue-button | "Ver más novedades" | https://saludtotal.com.co/perfil/protegidos/?filte | ol=auto 1px | sh=none | rect=624,858,177,32 | onscreen=true
+TAB 54 A |  | "Conocelo aqui" | https://saludtotal.com.co/home-planes-complementar | ol=auto 1px | sh=none | rect=939,432,192,36 | onscreen=true
+TAB 55 A |  | "Logo" | https://www.virreysolisips.com/ | ol=auto 1px | sh=none | rect=100,410,153,80 | onscreen=true
+TAB 56 A |  | "Logo" | https://www.cpo.com.co/cpo/ | ol=auto 1px | sh=none | rect=253,410,153,80 | onscreen=true
+TAB 57 A |  | "Logo" | https://www.clinicanogales.com/ | ol=auto 1px | sh=none | rect=406,410,153,80 | onscreen=true
+TAB 58 A |  | "Logo" | https://funtalentum.org/ | ol=auto 1px | sh=none | rect=559,410,153,80 | onscreen=true
+TAB 59 A |  | "Logo" | https://cooptalentum.coop/ | ol=auto 1px | sh=none | rect=713,410,153,80 | onscreen=true
+TAB 60 A |  | "Logo" | https://opticasuniver.com/ | ol=auto 1px | sh=none | rect=866,410,153,80 | onscreen=true
+TAB 61 A |  | "Logo" | https://www.alianzadiagnostica.com/ | ol=auto 1px | sh=none | rect=1019,410,153,80 | onscreen=true
+TAB 62 A |  | "Logo" | https://www.goldrh.com.co/ | ol=auto 1px | sh=none | rect=1172,410,153,80 | onscreen=true
+TAB 63 A |  | "Salud Total EPS-S" | https://transaccional.saludtotal.com.co/ComercialA | ol=auto 1px | sh=none | rect=1300,484,0,0 | onscreen=false
+TAB 64 A |  | "Planes Complementarios" | https://transaccional.saludtotal.com.co/landingpac | ol=auto 1px | sh=none | rect=1300,484,0,0 | onscreen=false
+TAB 65 BUTTON | #scrollToTopBtn | "scroll top" |  | ol=auto 2px | sh=none | rect=1363,685,40,40 | onscreen=true
+TAB 66 A |  | "Portabilidad" | https://saludtotal.com.co/cambio-de-ips-y-potabili | ol=auto 1px | sh=none | rect=69,613,62,13 | onscreen=true
+TAB 67 A |  | "Protección de datos personales" | https://saludtotal.com.co/proteccion-de-datos-pers | ol=auto 1px | sh=none | rect=69,632,161,13 | onscreen=true
+TAB 68 A |  | "Nuestros tiempos de espera en citas" | https://saludtotal.com.co/nuestros-tiempos-de-espe | ol=auto 1px | sh=none | rect=69,652,187,13 | onscreen=true
+TAB 69 A |  | "Cuotas moderadoras y copagos 2026" | https://saludtotal.com.co/plan-de-beneficios-en-sa | ol=auto 1px | sh=none | rect=69,672,190,13 | onscreen=true
+TAB 70 A |  | "Informe de Gestión" | https://saludtotal.com.co/informe-de-gestion/ | ol=auto 1px | sh=none | rect=69,692,99,13 | onscreen=true

@@ -1,0 +1,150 @@
+{
+  "area": "ux",
+  "findings": [
+    {
+      "id": "ux-1",
+      "title": "Un pop-up de PQRD tapa la página en cada visita",
+      "summary": "Quien entra a buscar afiliarse, pedir una cita o un teléfono primero tiene que cerrar un aviso que no pidió, y en celular también el aviso de cookies.",
+      "now": "A los 2,5 segundos de cargar el inicio se abre un pop-up 'Radica tu PQRD' sobre el contenido. Al cerrarlo, vuelve a salir cada vez que se recarga el inicio, porque no recuerda que ya lo cerraste. En celular vuelve a aparecer encima del menú cuando tocas el botón de menú. Al mismo tiempo, el aviso de cookies ocupa casi la mitad de la pantalla del celular. El mismo mensaje de PQRD ya está en el primer slide del banner y en el enlace 'Radica tu PQRD' de la parte superior.",
+      "fix": "Quita el pop-up o muéstralo una sola vez por visitante. Que no se abra al tocar el menú. Deja la PQRD en el enlace fijo de arriba y en el banner, donde ya está, y reduce el aviso de cookies en celular a una franja corta.",
+      "why": "Cada obstáculo antes del contenido es un motivo para volver a Google y entrar a otra EPS o a otro sitio.",
+      "impact": 4,
+      "effort": "Bajo",
+      "headline_metric": "2,5 s",
+      "evidence": [
+        "raw/home.html: #pum-18336 (Popup Maker, slug 'banner-home') data-popmake triggers=[{type:auto_open, delay:2500}], cookies:[] (no suppression cookie)",
+        "Headless Chrome, mobile emulation 412x823: popup display=block at t=2s after load; closed via .pum-close; reload of home -> display=block again; tap on #mobile-menu-button (386,39) -> #mobile-menu left=0 and popup display=block again (reproduced with touch tap and JS click)",
+        "screenshots/ux-mobile-menu.png: open mobile menu covered by the PQRD popup",
+        "screenshots/desktop-viewport.png and screenshots/ux-home-mobile-firstload.png: first load with popup plus cookie banner",
+        "#simian-gdpr-banner on mobile: 412x400 px at top 423 of an 823 px viewport (about 49% of the screen)",
+        "The popup content may vary per visit/campaign; the behavior above is what the live site did on 2026-11-19"
+      ],
+      "technical_note": "Popup Maker 'auto_open' with empty cookie_name, so it fires on every pageview of the home (not on /conocenos/). Set a cookie on close (e.g. 'on_popup_close' cookie, 30 days) or disable auto_open. #mobile-menu-button is <a href=\"\"> and its tap re-opens the popup; investigate the click_open trigger/extra selectors and call preventDefault on the menu button.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "ux-2",
+      "title": "La primera pantalla no dice qué ofrece Salud Total",
+      "summary": "Quien llega por primera vez no ve en texto que Salud Total es una EPS, ni a quién atiende ni por qué afiliarse.",
+      "now": "La primera pantalla, en computador y en celular, muestra el banner rotativo con 'Radica tu PQRD con nosotros' / 'Gestiona tu PQRD de manera rápida y segura'. Ninguna frase dice qué es Salud Total, a quién atiende ni qué gana alguien al afiliarse. La frase de marca 'Tu salud no es a medias debe ser total' solo está en el título de la pestaña del navegador. En celular, el texto del primer slide queda debajo de una imagen que repite lo mismo.",
+      "fix": "Pon arriba del banner, en texto, una frase fija tipo 'EPS con más de 5,5 millones de afiliados en Colombia: afíliate, pide citas y haz trámites en línea', con el botón 'Afíliate aquí' al lado. Las campañas siguen en el banner, debajo.",
+      "why": "Si en pocos segundos no queda claro qué ofreces y a quién, el visitante nuevo no sigue leyendo.",
+      "impact": 4,
+      "effort": "Medio",
+      "evidence": [
+        "Headless Chrome desktop 1440x900 and mobile emulation 412x823 (screenshots/ux-home-mobile-clean.png, screenshots/desktop-viewport.png): visible text in first viewport is the nav, 'Radica tu PQRD' and slide 1 h2 'Gestiona tu PQRD de manera rápida y segura'",
+        "raw/home.html: the only h1 elements are inside slides ('Ingresa a nuestra sección de medicamentos...', 'En Salud Total EPS, no necesitas intermediarios...') and 'Novedades'; no persistent heading naming the EPS offer",
+        "<title>: 'Salud Total EPS-S - Tu salud no es a medias debe ser total'",
+        "Business inferred from the site: Colombian EPS (Plan de Beneficios en Salud) plus complementary plans (PAC)"
+      ],
+      "technical_note": "Mobile slide: .slide-content .image (250 px tall, text baked into Banner-PQRD-2-700x394.png) above .text h2. Add a static hero block outside #main-slider.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 30, "y_pct": 30}
+    },
+    {
+      "id": "ux-3",
+      "title": "Avisos urgentes quedan escondidos en un banner de 9",
+      "summary": "Afiliados afectados por el cierre de oficinas o el cambio de horarios pueden no enterarse, y entonces llaman o van a una sede cerrada.",
+      "now": "El banner principal tiene 9 slides y cambia solo cada 20 segundos. Mezcla campañas (PQRD, revista PAC, planes complementarios) con avisos de servicio: cierre de oficinas presenciales en Valle del Cauca, Risaralda y Quindío, una línea exclusiva de WhatsApp 333 033 4094 para direccionamientos y el cambio de horarios desde el 15 de agosto. Para ver el aviso de oficinas hay que esperar unos 40 segundos o pulsar las flechas.",
+      "fix": "Saca los avisos de servicio del carrusel y ponlos en una franja fija arriba ('Si estás en Valle, Risaralda o Quindío: haz tus trámites en la Oficina Virtual o por WhatsApp 333 033 4094'). Deja en el banner solo 3 o 4 campañas.",
+      "why": "Un afiliado mal informado genera quejas y llamadas, justo lo que la PQRD intenta resolver.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "9 slides",
+      "evidence": [
+        "raw/home.html: #main-slider (Swipe.js) with 9 .slide-content; inline script sliderBehavior='auto', autoSliderTime=20 -> mainSliderConfiguration.auto=20000 ms",
+        "Slide 3 h3: 'Por afectación en oficinas de atención presencial en Valle del Cauca, Risaralda y Quindío' with 'Habilitamos la línea exclusiva de WhatsApp 333 033 4094 para la gestión de direccionamientos'",
+        "Other slides: 'Seguimos trabajando para restablecer nuestros servicios...', 'Los horarios en Centro de Soluciones y Gestores de Servicio cambian desde el 15 de agosto de 2026'",
+        "screenshots/ux-home-mobile-clean.png: 9 dots under the hero on mobile",
+        "Slide order and content can change per visit or campaign"
+      ],
+      "technical_note": "Slides have real text (h2/h3) plus images that repeat the text. Consider a persistent alert bar (role=status) for operational notices, and drop auto-rotation or raise the interval.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 95, "y_pct": 32}
+    },
+    {
+      "id": "ux-4",
+      "title": "Teléfonos y correo no se pueden tocar para llamar",
+      "summary": "En celular, quien quiere llamar a la línea nacional o a la Línea Total tiene que copiar el número a mano, y muchos desisten.",
+      "now": "En el pie de todas las páginas, 'Linea Nacional 018000 114524' lleva al directorio médico, no a una llamada. El correo del pie es el de notificaciones judiciales, no uno de atención, y al tocarlo no pasa nada. La página 'Línea Total' publica más de 20 números de atención y de citas por departamento, y ninguno se puede tocar para llamar.",
+      "fix": "Convierte cada número en un enlace que abra la llamada, en el pie y en 'Línea Total'. En el pie, pon el contacto de atención al afiliado en vez del correo judicial, o al lado de él.",
+      "why": "Un número que se toca y llama convierte la necesidad en contacto en un segundo; uno que hay que copiar se pierde.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "0 enlaces de llamada",
+      "evidence": [
+        "Rendered DOM (headless Chrome, desktop and mobile): footer <a href=\"https://transaccional.saludtotal.com.co/DirectorioPos/?_ga=...\">Linea Nacional 018000 114524</a>; email <a href=\"#\">Notificacionesjud@saludtotal.com.co</a> (Cloudflare email obfuscation inside href='#')",
+        "a[href^='tel:'] count = 0 and a[href^='mailto:'] count = 0 on home, /conocenos/, /nuestros-servicios/, /como-afiliarte-a-salud-total-eps-s/, /home-planes-complementarios/, /plan-de-beneficios-en-salud/numeros-de-atencion/ (raw/ux-*.html)",
+        "raw/ux-linea-total.html (/sin-categoria/linea-total/, served HTML): table with phone numbers per department (e.g. Antioquia 604 3199919, Bogotá D.C 601 4055440), 'tel:' count = 0"
+      ],
+      "technical_note": "Use href=\"tel:+5718000114524\" style links (check correct E.164 for 01 8000 lines) and tel: per row in Línea Total. Cloudflare Email Obfuscation keeps href='#'; use a real mailto: with the obfuscation-friendly markup or disable it for that link.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 81, "y_pct": 91}
+    },
+    {
+      "id": "ux-5",
+      "title": "El formulario de afiliación pide mucho y no promete respuesta",
+      "summary": "Quien quiere afiliarse llena nueve campos obligatorios sin saber cuándo lo van a contactar, y en ese camino algunos abandonan.",
+      "now": "'Afíliate aquí' lleva a un formulario con 9 campos obligatorios más la aceptación de datos: tipo y número de documento, primer nombre, primer apellido, correo, prefijo, celular, departamento y ciudad. El celular se pide en dos partes (prefijo en lista y número en texto) y en el celular abre el teclado de letras. Solo dice 'uno de nuestros asesores se ponga en contacto', sin decir en cuánto tiempo. Si envías vacío, los mensajes rojos quedan encima de los campos siguientes en el celular.",
+      "fix": "Deja lo mínimo para que un asesor llame (nombre, celular, ciudad y documento) y pide el resto en la llamada. Usa un solo campo de celular que abra el teclado numérico. Agrega una promesa clara: 'Te llamamos en menos de X horas hábiles'.",
+      "why": "Cada campo de más y la falta de una promesa de respuesta bajan las solicitudes de afiliación que llegan a los asesores.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "9 campos obligatorios",
+      "evidence": [
+        "https://transaccional.saludtotal.com.co/ComercialAfiliacionesPBS/ (raw/ux-afiliacion.html, screenshots/ux-afiliacion-desktop.png): fields marked * = Tipo documento, Número documento, Primer nombre, Primer apellido, Correo electrónico, Prefijo, Número celular, Departamento, Ciudad + privacy checkbox",
+        "Input types: Número celular type=text with no inputmode; Correo type=email",
+        "Empty submit on mobile emulation (screenshots/ux-afiliacion-empty-submit-mobile.png): 10 invalid fields, messages 'Campo obligatorio*' / 'Elija una opción válida*' overlap the next field",
+        "Copy: 'Registra tus datos para que uno de nuestros asesores se ponga en contacto.' with no response time"
+      ],
+      "technical_note": "Use type=tel / inputmode=numeric and autocomplete attributes (given-name, family-name, email, tel). Fix tooltip positioning of the validation messages. The form page has no site navigation back to saludtotal.com.co except the footer logo/URL image.",
+      "pin": null
+    },
+    {
+      "id": "ux-6",
+      "title": "Las cifras de confianza son confusas y están lejos",
+      "summary": "Los datos que más convencen (millones de afiliados, red de IPS, años) se leen como abreviaturas sueltas y no aparecen junto a 'Afíliate aquí'.",
+      "now": "En el inicio, casi al final, aparecen '41ML Afiliados PAC', '5.6MLL Afiliados EPS' y '1.2 ML Red de IPS'. No es fácil saber si son miles o millones. Otras páginas dan cifras distintas: Conócenos dice 'más de 5.5 millones de protegidos', 'superior a 1.300 IPS' y '35 años', y la página de afiliación dice 'más de 33 años'.",
+      "fix": "Escribe las cifras completas y con la misma fuente en todo el sitio ('5,6 millones de afiliados', 'más de 1.200 IPS', '35 años') y ponlas junto al botón 'Afíliate aquí' y en la página de afiliación.",
+      "why": "Un número claro y coherente justo antes de decidir da confianza; uno ambiguo o contradictorio genera dudas.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/home.html #our-numbers-slider: '41ML Afiliados PAC', '5.6MLL Afiliados EPS', '1.2 ML Red de IPS' (Swipe slider; on mobile one figure at a time with arrows, see screenshots/mobile-fullpage.jpg)",
+        "screenshots/ux-footer-desktop.png: figures section right above the footer, far from the header CTA",
+        "raw/ux-conocenos.html: '35 años de experiencia', 'más de 5.5 millones de protegidos', 'red de prestación de servicios es superior a 1.300 IPS'",
+        "raw/ux-como-afiliarte.html: 'Somos una EPS sólida con más de 33 años'"
+      ],
+      "technical_note": "Single source of truth for corporate figures (e.g. ACF options) reused across pages.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 67}
+    },
+    {
+      "id": "ux-7",
+      "title": "Los planes complementarios terminan en un PDF",
+      "summary": "Quien compara Delta, Gama, Alfa u Omega llega a un portafolio en PDF y no ve un botón para pedir ese plan.",
+      "now": "En la página de Planes Complementarios, las pestañas Plan Delta, Gama, Alfa y Omega llevan a un portafolio PDF de cada plan. Para pedirlo hay que volver al botón flotante 'Afíliate aquí', abrir el panel y elegir 'Planes Complementarios'. El chat de WhatsApp 'Pablo' (310 773 7993) abre sin mensaje escrito.",
+      "fix": "Junto a cada plan, pon 'Quiero el plan Delta' (y así con cada uno), que abra el formulario con el plan ya elegido o un WhatsApp con el mensaje escrito ('Hola, quiero información del plan Delta').",
+      "why": "Pasar de 'me interesa' a 'lo pido' en un solo toque es lo que más ventas de planes cierra.",
+      "impact": 3,
+      "effort": "Medio",
+      "evidence": [
+        "raw/ux-planes-complementarios.html: plan tabs link to /wp-content/uploads/2026/02/PORTAFOLIO-DELTA-2026.pdf, PORTAFOLIO-GAMA-2026.pdf, PORTAFOLIO-ALFA-2026.pdf, PORTAFOLIO-OMEGA-2026-1.pdf",
+        "screenshots/ux-planes-complementarios-desktop.png: plan tabs and floating 'Afíliate aquí'",
+        "Floating 'Afíliate aquí' (a#canales-afiliacion-mob href='#') opens a panel linking to /ComercialAfiliacionesPBS/ and /landingpacmail/",
+        "raw/home.html: WhatsApp links https://wa.me/573107737993 and https://api.whatsapp.com/send/?phone=573107737993&text&type=phone_number (empty text); same number 3107737993 on home, /conocenos/ and /numeros-de-atencion/"
+      ],
+      "technical_note": "Pass plan as a query param to landingpacmail (e.g. ?plan=delta) and preselect it; add &text= with URL-encoded message to the WhatsApp links.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "ux-value-prop", "result": "fail", "evidence": "First viewport desktop 1440x900 and mobile 412x823: only 'Radica tu PQRD' / 'Gestiona tu PQRD de manera rápida y segura' (rotating slide). No text naming the EPS offer and who it is for. Tagline only in <title>."},
+    {"id": "ux-quote-cta", "result": "pass", "evidence": "Desktop: nav 'AFÍLIATE AQUÍ' and floating 'Afíliate aquí' button (.floating-buttons at 1215,526) visible in the first viewport. Mobile: 'Afíliate aquí' in the bottom drawer (#canales-mobile) visible once the cookie banner is dismissed, plus menu item."},
+    {"id": "ux-catalog-path", "result": "partial", "evidence": "Home 'Conócelo aquí' and services 'Leer más…' link to detail pages. PAC plan tabs (Delta/Gama/Alfa/Omega) open only PDF portfolios with no per-plan request action; the request happens through the generic floating button."},
+    {"id": "ux-contact-visible", "result": "pass", "evidence": "Footer 'Linea Nacional 018000 114524' and an email present on home and 5 inner pages checked (raw/ux-*.html). Exceptions: the affiliation form on the transaccional subdomain has no phone/email, and the footer email is the judicial-notifications address."},
+    {"id": "ux-contact-tappable", "result": "fail", "evidence": "0 tel: and 0 mailto: links on home and 6 inner pages; footer phone links to DirectorioPos, footer email href='#'; Línea Total page lists 20+ numbers with 0 tel: links."},
+    {"id": "ux-form-data", "result": "partial", "evidence": "PBS affiliation form asks document, names, email, phone, department and city (what an advisor needs to call back) but has no response-time promise and no plan selector."},
+    {"id": "ux-form-friction", "result": "fail", "evidence": "9 required fields + consent (more than 6); celular is type=text without inputmode; required fields are marked with * and errors are shown, but they overlap the next fields on mobile."},
+    {"id": "ux-chat-ready", "result": "partial", "evidence": "WhatsApp 'Pablo' 3107737993 is a real name and the same number appears on home, /conocenos/ and /numeros-de-atencion/; links have no prefilled message (api.whatsapp.com ...&text& empty, wa.me without text)."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Mobile emulation 412x823: #mobile-menu-button opens #mobile-menu showing Inicio, Nosotros, Afíliate aquí, Protegidos, Canales de atención y PQRD, Redes integrales, Transparencia, Planes complementarios (screenshots/ux-mobile-menu.png). Caveat: the PQRD popup re-opens over the menu (see ux-1)."},
+    {"id": "ux-trust-near-cta", "result": "fail", "evidence": "Home figures ('41ML', '5.6MLL', '1.2 ML') sit near the end of the page above the footer, not next to 'Afíliate aquí'; the affiliation form page shows no trust figures; figures differ from Conócenos (5.5 millones, 1.300 IPS) and years differ (35 vs 33)."},
+    {"id": "ux-content-not-hidden", "result": "fail", "evidence": "Operational notices (office closures in Valle/Risaralda/Quindío, exclusive WhatsApp 333 033 4094, schedule change) exist only as slides 3-5 of a 9-slide auto carousel (20 s per slide)."}
+  ]
+}

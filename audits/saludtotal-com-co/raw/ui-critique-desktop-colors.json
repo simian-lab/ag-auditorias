@@ -1,0 +1,43 @@
+{
+ "g88": [
+  "INPUT.:",
+  "A.:Preguntas Frecuentes",
+  "A.:Oficina Virtual",
+  "A.:Regístrate",
+  "A.:Inicio"
+ ],
+ "blue": [
+  "A.:",
+  "FIGURE.:",
+  "IMG.:",
+  "A.prev-slide:",
+  "IMG.:",
+  "A.:Enlace del slide",
+  "A.:Enlace del slide",
+  "A.:Enlace del slide"
+ ],
+ "yellow": [
+  "SPAN.:Haz clic aquí",
+  "SPAN.:Valle del Cauca, Risaralda y Q",
+  "SPAN.:línea exclusiva de WhatsApp 33",
+  "SPAN.:Seguimos trabajando para resta",
+  "STRONG.:restablecer nuestros servicios",
+  "SPAN.:CONOCE LAS NOVEDADES AQUÍ",
+  "STRONG.:CONOCE LAS NOVEDADES AQUÍ",
+  "SPAN.:Conoce más aquí",
+  "SPAN.:sección de medicamentos",
+  "SPAN.:Salud Total EPS"
+ ],
+ "lilac": [
+  "SPAN.:Planes Complementarios",
+  "SPAN.:Sin remisiones, sin trámites. "
+ ],
+ "g73": [
+  "A.:Portabilidad",
+  "A.:Protección de datos personales",
+  "A.:Nuestros tiempos de espera en ",
+  "A.:Cuotas moderadoras y copagos 2",
+  "A.:Informe de Gestión"
+ ],
+ "logo": "https://saludtotal.com.co/wp-content/themes/salud-total/assets/img/logo-salud-total.svg"
+}

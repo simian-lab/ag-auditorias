@@ -1,0 +1,242 @@
+{
+  "client": "Salud Total EPS-S",
+  "domain": "saludtotal.com.co",
+  "date": "Noviembre 2026",
+  "big_stat": {
+    "value": "2,5 s",
+    "count_to": null,
+    "suffix": null,
+    "headline": "A los 2,5 segundos, una ventana tapa tu portada",
+    "explain": "Es lo que tarda en abrirse sola la ventana «Radica tu PQRD» en cada visita: no recuerda si ya la cerraste, así que el afiliado que entra a pedir una cita, buscar un teléfono o afiliarse la tiene que cerrar una y otra vez antes de ver el contenido. En celular vuelve a salir incluso al abrir el menú.",
+    "grid_pct": null,
+    "grid_legend": [],
+    "source": "Configuración de la ventana en el código de la portada (apertura automática a los 2.500 ms, sin cookie que la suprima), comprobada en navegador el 19 de noviembre de 2026 en computador y en celular emulado."
+  },
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "ux-1",
+        "visual-1",
+        "a11y-3",
+        "tech-4"
+      ],
+      "imp": 5,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Lo primero que ves es un aviso",
+      "t_plain": "La ventana emergente de PQRD se abre sola en cada visita",
+      "s": "Quien entra a afiliarse, pedir una cita o buscar un teléfono primero tiene que cerrar un aviso que no pidió, y en celular también el aviso de cookies.",
+      "now": "A los 2,5 segundos se abre la ventana «Radica tu PQRD» sobre el contenido, y vuelve a salir en cada visita porque no recuerda que ya la cerraste. En celular reaparece encima del menú al tocar el botón de menú, y el aviso de cookies ocupa casi la mitad de la pantalla. El mensaje y el botón están dibujados dentro de la imagen, así que un lector de pantalla solo anuncia un enlace vacío, y la X para cerrar mide 23 × 18 píxeles. El mismo mensaje de PQRD ya aparece tres veces más en la primera pantalla. La ventana puede cambiar según la campaña.",
+      "fix": "Quitar la ventana emergente o mostrarla una sola vez por visitante, y nunca al abrir el menú. Dejar la PQRD en el enlace fijo de arriba y en el banner, con el mensaje como texto real, y reducir el aviso de cookies en celular a una franja corta.",
+      "why": "Cada obstáculo antes del contenido es un motivo para cerrar la página y resolver el trámite por teléfono o en una oficina, que cuesta más.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 50,
+        "y": 45
+      }
+    },
+    {
+      "n": 2,
+      "c": "a11y",
+      "src": [
+        "a11y-1",
+        "a11y-6"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Sin ratón, tu menú no existe",
+      "t_plain": "Los submenús solo abren con el ratón",
+      "s": "Quien navega con teclado o lector de pantalla no llega a Conócenos, Cobertura, PQRD ni Transparencia desde el menú.",
+      "now": "Los submenús de Nosotros, Protegidos, Canales de atención y PQRD y Transparencia solo aparecen al pasar el ratón. Con la tecla Tab se salta de «Nosotros» a «Afíliate aquí» sin entrar en sus opciones, y al pulsar Enter sobre «Nosotros» la página se recarga y vuelve a salir la ventana de PQRD. No hay un enlace para saltar al contenido, el botón de menú del celular no tiene nombre y los íconos de canales se anuncian todos como «Enlace a».",
+      "fix": "Que cada opción del menú se abra con Enter y se recorra con Tab o con las flechas, anunciando si está abierta, añadir un enlace «Saltar al contenido» y dar nombre al botón de menú y a cada ícono («Abrir menú», «Citas médicas»).",
+      "why": "Una EPS atiende a muchos afiliados mayores o con discapacidad; si no encuentran el trámite en la web, llaman o van a una oficina.",
+      "shot": {
+        "img": "a11y-desktop-nav-hover.png",
+        "x": 30,
+        "y": 25
+      }
+    },
+    {
+      "n": 3,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "visual-2",
+        "visual-7"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu portada no dice quién eres",
+      "t_plain": "La primera pantalla no explica qué ofrece la EPS",
+      "s": "Quien llega por primera vez no ve en texto que Salud Total es una EPS, a quién atiende ni por qué afiliarse.",
+      "now": "La primera pantalla solo promociona la PQRD: «Gestiona tu PQRD de manera rápida y segura». Ninguna frase dice qué es Salud Total ni qué gana alguien al afiliarse; la frase de marca solo está en el título de la pestaña del navegador. En celular ese titular se ve a 18 px y la imagen de al lado repite el mismo mensaje. Las fotos son modelos de estudio, y las cifras y los sellos de MinSalud y Supersalud quedan al final de la página.",
+      "fix": "Poner arriba del banner una frase fija en texto, tipo «EPS con más de 5,5 millones de afiliados en Colombia: afíliate, pide citas y haz trámites en línea», con «Afíliate aquí» al lado y a buen tamaño en celular. Subir una franja de confianza con cifras claras y sellos, y usar fotos reales de sedes y equipos.",
+      "why": "Si en pocos segundos no queda claro qué ofreces y a quién, el visitante nuevo no sigue leyendo.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 32,
+        "y": 9
+      }
+    },
+    {
+      "n": 4,
+      "c": "ux",
+      "src": [
+        "ux-3",
+        "a11y-2"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tus avisos urgentes hacen fila en el carrusel",
+      "t_plain": "Los avisos de servicio están dentro de un carrusel de 9 banners",
+      "s": "Afiliados afectados por el cierre de oficinas o el cambio de horarios pueden no enterarse, y llaman o van a una sede cerrada.",
+      "now": "El banner principal tiene 9 diapositivas y cambia solo cada 20 segundos. Mezcla campañas con avisos de servicio: el cierre de oficinas presenciales en Valle del Cauca, Risaralda y Quindío, una línea exclusiva de WhatsApp y el cambio de horarios. Para ver el aviso de oficinas hay que esperar unos 40 segundos o pulsar las flechas. Con teclado no se llega a ningún banner, los puntos se anuncian en inglés («Move to slide») y no hay botón de pausa.",
+      "fix": "Sacar los avisos de servicio del carrusel y ponerlos en una franja fija arriba («Si estás en Valle, Risaralda o Quindío: haz tus trámites en la Oficina Virtual o por WhatsApp»). Dejar en el banner 3 o 4 campañas, alcanzables con teclado y con botón de pausa.",
+      "why": "Un afiliado mal informado genera quejas y llamadas, justo lo que la PQRD intenta resolver.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 50,
+        "y": 13.7
+      }
+    },
+    {
+      "n": 5,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-2",
+        "tech-3"
+      ],
+      "imp": 4,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "Casi 5 MB solo para abrir tu portada",
+      "t_plain": "La portada pesa 4,8 MB en celular",
+      "s": "Cada visita desde un celular descarga 4,8 MB, y más de la mitad son imágenes pesadas y códigos que sobran.",
+      "now": "Las 55 imágenes suman unos 3 MB, casi todas en PNG, y la imagen de la ventana de PQRD llega al celular en su versión original de 1921 px y 991 KB aunque se muestra a unos 370 px. Otros 1,4 MB son 15 códigos de terceros: una versión antigua de Google Analytics que Google ya no procesa, la versión actual cargada dos veces, dos píxeles de Meta y un sistema antispam en una portada sin formulario. Además, ocho archivos de estilo y tres familias de letra retrasan lo primero que se ve.",
+      "fix": "Convertir las imágenes a WebP, servir en celular la versión de 700 píxeles de la imagen de PQRD que el sitio ya tiene (224 KB) y cargar las de abajo solo al bajar. Limpiar el administrador de etiquetas (una sola Analytics, revisar los dos píxeles, antispam solo donde hay formulario) y quitar las fuentes que no se usan. Meta: portada por debajo de 3 MB.",
+      "why": "Muchos afiliados entran desde celulares con datos limitados, y una página liviana carga antes y se abandona menos.",
+      "shot": {
+        "img": "tech-peso-pqrd.png",
+        "x": 37,
+        "y": 46
+      }
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-4",
+        "a11y-7"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus teléfonos se leen, pero no llaman",
+      "t_plain": "Ningún teléfono ni correo abre la llamada o el correo",
+      "s": "En celular, quien quiere llamar a la línea nacional o a la Línea Total tiene que copiar el número a mano, y muchos desisten.",
+      "now": "En las 7 páginas revisadas no hay ni un enlace que abra la llamada o el correo. En el pie, «Linea Nacional 018000 114524» lleva al directorio médico y el único correo es el de notificaciones judiciales. La página «Línea Total» publica más de 20 números y ninguno se puede tocar. Los enlaces del pie miden unos 13 píxeles de alto en celular, la mitad del mínimo recomendado.",
+      "fix": "Convertir cada número en un enlace que abra la llamada, en el pie y en «Línea Total», poner el contacto de atención al afiliado junto al correo judicial y dar a los enlaces del pie al menos 24 píxeles de alto.",
+      "why": "Un número que se toca y llama convierte la necesidad en contacto en un segundo; uno que hay que copiar se pierde.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 84,
+        "y": 91
+      }
+    },
+    {
+      "n": 7,
+      "c": "ux",
+      "src": [
+        "ux-5",
+        "ux-7"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Nueve campos y un PDF frenan la venta",
+      "t_plain": "El formulario de afiliación y los planes complementarios frenan la solicitud",
+      "s": "Quien quiere afiliarse llena nueve campos sin saber cuándo lo van a llamar, y quien compara planes complementarios termina en un PDF.",
+      "now": "«Afíliate aquí» lleva a un formulario con 9 campos obligatorios más la aceptación de datos; el celular se pide en dos partes y abre el teclado de letras, y no dice en cuánto tiempo llamará un asesor. En celular los mensajes de error tapan los campos siguientes. En Planes Complementarios, las pestañas Delta, Gama, Alfa y Omega solo abren un portafolio en PDF, sin botón para pedir el plan, y el WhatsApp abre sin mensaje escrito.",
+      "fix": "Pedir solo lo necesario para que un asesor llame (nombre, celular, ciudad y documento), con un campo de celular numérico y una promesa clara («Te llamamos en menos de X horas hábiles»). Junto a cada plan, un botón «Quiero el plan Delta» que abra el formulario o un WhatsApp con el mensaje escrito.",
+      "why": "Cada campo de más y cada paso extra bajan las solicitudes que llegan a los asesores.",
+      "shot": {
+        "img": "ux-afiliacion-desktop.png",
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "n": 8,
+      "c": "a11y",
+      "src": [
+        "a11y-4",
+        "a11y-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus mejores cifras casi no se leen",
+      "t_plain": "Texto blanco sobre celeste y alto contraste que no funciona con teclado",
+      "s": "Las cifras de «Nuestra gestión» y el botón «Ver más novedades» se leen con dificultad, y el modo de alto contraste falla justo para quien lo necesita.",
+      "now": "El blanco sobre el celeste de la marca tiene un contraste de 2,81 a 1, por debajo del mínimo de 4,5 a 1 (3 a 1 en texto grande). Afecta al título «Nuestra gestión», a las cifras y sus rótulos finos y al botón «Ver más novedades». El interruptor «Alto contraste» se marca con la barra espaciadora pero la página no cambia, no muestra el foco y no tiene nombre, y en celular sus opciones no son botones y tienen los íconos cruzados.",
+      "fix": "Usar un azul más oscuro detrás del texto blanco, o texto azul oscuro sobre el celeste, y engrosar los rótulos. Convertir el interruptor y las opciones móviles en botones reales con nombre y foco visible.",
+      "why": "Son los números que muestran la solidez de la EPS, y un control de accesibilidad que no funciona transmite descuido a afiliados y entes de control.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 50,
+        "y": 67
+      }
+    },
+    {
+      "n": 9,
+      "c": "vis",
+      "src": [
+        "visual-3",
+        "visual-4",
+        "visual-5"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Cada sección parece de otra marca",
+      "t_plain": "Tipografías, botones, títulos y colores sin reglas",
+      "s": "La mezcla de letras, botones y tonos hace que el sitio se vea armado por partes y no como una sola marca.",
+      "now": "El texto usa Open Sans en 8 grosores e IBM Plex Sans en las tarjetas, y además se cargan Montserrat y Nunito Sans; dentro de las imágenes aparecen otras letras. En la portada conviven al menos cinco estilos de botón: degradado morado-rosado, celeste sólido de 12 px, solo borde, imágenes con forma de píldora y texto amarillo. Los títulos del mismo nivel cambian de tamaño y estilo, y los fondos usan al menos cinco azules distintos más un degradado morado-rosado.",
+      "fix": "Definir una tipografía para títulos y otra para textos con tres grosores como máximo, dos estilos de botón (principal y secundario) en texto real, una escala fija de títulos y una paleta corta: un azul principal, uno de apoyo y un acento para las acciones.",
+      "why": "Un orden visual constante transmite que detrás hay una organización ordenada, algo clave para una entidad de salud.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 89,
+        "y": 3
+      }
+    },
+    {
+      "n": 10,
+      "c": "vis",
+      "src": [
+        "visual-6",
+        "ux-6"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 3,
+      "t": "Tu pie de página sigue en 2020",
+      "t_plain": "Copyright 2020, franjas incompletas y cifras contradictorias",
+      "s": "Un año de copyright viejo, franjas que no llegan al borde y cifras que no coinciden hacen pensar que nadie revisa el sitio.",
+      "now": "El pie dice «© Copyright 2020» aunque el sitio ya tiene contenidos de 2026. Debajo del carrusel todas las franjas de color terminan unos 15 px antes del borde derecho, y una columna del pie no tiene título. Las cifras usan tres abreviaturas distintas («41ML», «5.6MLL», «1.2 ML») y otras páginas dan números diferentes: 5,5 millones de afiliados, 1.300 IPS, 35 años en una página y 33 en otra.",
+      "fix": "Actualizar el año automáticamente, hacer que todas las franjas ocupen el ancho completo, titular la columna vacía y escribir las cifras completas y con la misma fuente en todo el sitio («5,6 millones de afiliados»), junto al botón «Afíliate aquí».",
+      "why": "Los pequeños descuidos visibles le restan credibilidad a una entidad a la que la gente le confía su salud.",
+      "shot": {
+        "img": "visual-desktop-clean-full.png",
+        "x": 22,
+        "y": 99
+      }
+    }
+  ]
+}

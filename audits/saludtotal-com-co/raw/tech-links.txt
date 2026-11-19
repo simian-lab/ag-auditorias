@@ -1,0 +1,46 @@
+# internal links found 64 images 56
+LINK 200 https://saludtotal.com.co/preguntas-frecuentes-pbs/ 
+LINK 200 https://saludtotal.com.co/ 
+LINK 200 https://saludtotal.com.co/conocenos/ 
+LINK 200 https://saludtotal.com.co/sucursales-a-nivel-nacional/ 
+LINK 200 https://saludtotal.com.co/nuestros-servicios/ 
+LINK 200 https://saludtotal.com.co/nuestro-orgullo/ 
+LINK 200 https://saludtotal.com.co/pide-tus-citas-medicas/ 
+LINK 200 https://saludtotal.com.co/salud-total-cuidamos-tu-salud/ 
+LINK 200 https://saludtotal.com.co/estas-sin-trabajo/ 
+LINK 200 https://saludtotal.com.co/centro-de-informacion-de-medicamentos-cim/ 
+LINK 200 https://saludtotal.com.co/como-afiliarte-a-salud-total-eps-s/ 
+LINK 200 https://saludtotal.com.co/carta-de-derechos-y-deberes-del-afiliado-y-el-paciente/ 
+LINK 200 https://saludtotal.com.co/cambio-de-ips-y-potabilidad/ 
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/salud-total-eps-s-pensando-en-el-bienestar-de-todos-los-protegidos/ 
+LINK 200 https://saludtotal.com.co/te-escuchamos-pbs/ 
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/conoce-y-aprende-a-dar-uso-de-todos-nuestros-canales-virtuales/ -> https://saludtotal.com.co/plan-de-beneficios-en-salud/conoce-y-aprende-a-dar-uso-de-todos-nuestros-canales/
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/pqrd/ 
+LINK 200 https://saludtotal.com.co/redes-intregrales/ 
+LINK 200 https://saludtotal.com.co/rendicion-de-cuentas/ 
+LINK 200 https://saludtotal.com.co/participacion-social/ 
+LINK 200 https://saludtotal.com.co/transparencia-y-acceso-a-la-informacion-publica/ 
+LINK 200 https://saludtotal.com.co/home-planes-complementarios/ 
+LINK 200 https://saludtotal.com.co/home-planes-complementarios -> https://saludtotal.com.co/home-planes-complementarios/
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/direccionamiento-whatsapp/ 
+LINK 200 https://saludtotal.com.co/wp-content/uploads/2026/11/Preguntas-Frecuentes-Situacion-11-noviembre-2026.-1.pdf 
+LINK 200 https://saludtotal.com.co/informacion-puntos-atencion-3/ 
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/25623/ 
+LINK 200 https://saludtotal.com.co/plan-de-beneficios-en-salud/en-salud-total-eps-no-necesitas-intermediarios-para-tus-tramites/ 
+LINK 200 https://saludtotal.com.co 
+LINK 200 https://saludtotal.com.co/perfil/empresas-aportantes-salud-total/ 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/minus.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/plus.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/img/logo-salud-total.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/contrast_icon.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/zoom_out.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/icons/zoom_in.svg 
+IMG 200 https://saludtotal.com.co/wp-content/themes/salud-total/assets/img/arrow.svg 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/03/Banner-PQRD-2-700x394.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/10/Banner-2-100-700x369.jpg 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/10/Banner-Linea-WA-2-2-700x394.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/08/IMG_8296-700x394.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/08/Diseno-sin-titulo-2.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/07/Mesa-de-trabajo-20-700x394.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/07/Banner-medicamentos-1-700x394.png 
+IMG 200 https://saludtotal.com.co/wp-content/uploads/2026/06/Banner-No-te-dejes-enganar-700x394.png 

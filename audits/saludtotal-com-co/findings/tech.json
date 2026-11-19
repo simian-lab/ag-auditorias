@@ -1,0 +1,142 @@
+{
+  "area": "tech",
+  "findings": [
+    {
+      "id": "tech-1",
+      "title": "La portada pesa casi 5 MB en celular",
+      "summary": "Cada visita desde un celular descarga 4,8 MB, sobre todo imágenes pesadas, lo que hace la página más lenta y consume los datos de tus afiliados.",
+      "now": "En celular la portada descarga 4,8 MB (3,4–3,5 MB en computador). Solo las 55 imágenes suman unos 3 MB y casi todas son PNG. La imagen de la ventana emergente de PQRD llega al celular en su versión original de 1921 px y 991 KB, aunque se muestra a unos 370 px de ancho.",
+      "fix": "Convertir las imágenes a WebP, crear un tamaño intermedio de la imagen de PQRD para celular y cargar las imágenes que no se ven al inicio solo cuando el usuario baja. La meta es dejar la portada por debajo de 3 MB.",
+      "why": "Muchos afiliados de una EPS entran desde celulares con planes de datos limitados, y una página liviana carga antes y se abandona menos.",
+      "impact": 4,
+      "effort": "Medio",
+      "headline_metric": "4,8 MB",
+      "evidence": [
+        "Lighthouse mobile total-byte-weight: 4.883 KiB (4,8 MB) en 3 corridas (4.881–4.885 KiB); desktop 3.504–3.538 KiB (3,4–3,5 MB)",
+        "Network: 55 imágenes = 3.037 KiB en móvil; 118 solicitudes",
+        "Recurso más pesado: /wp-content/uploads/2026/09/Pop-Up-PQRD.png, 991 KiB, 1921x1081 px (raw/tech-popup.png). El srcset ofrece 330w, 700w y 1921w con sizes=\"(max-width: 700px) 100vw, 700px\", así que un celular con DPR ~1,75 elige el original de 1921w",
+        "modern-image-formats (móvil): ahorro estimado de 2.429 KiB; uses-responsive-images: 1.212 KiB; image-delivery-insight: 2.014 KiB",
+        "Otras imágenes pesadas: Paso-a-paso-para-radicar-tu-PQRD…-700x394.png 279 KiB, Peticiones-quejas-reclamos-y-denuncias…-700x394.png 247 KiB, Te-acompanamos…-700x394.png 236 KiB, Banner-PQRD-2-700x394.png 176 KiB",
+        "offscreen-images (móvil): 667 KiB de imágenes fuera de pantalla sin carga diferida (p. ej. Banner-medicamentos-1, Mesa-de-trabajo-20, IMG_8296); 47 de 79 <img> en el HTML tienen loading=\"lazy\""
+      ],
+      "technical_note": "Add a ~1080w intermediate size (add_image_size) or serve WebP/AVIF through the existing Performance Lab plugin (modern image formats module) or the CDN. Lazy-load below-the-fold news/slider images. The popup image carries fetchpriority=high even though it opens after 2.5 s.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 45}
+    },
+    {
+      "id": "tech-2",
+      "title": "Herramientas de medición duplicadas y obsoletas cargan 1,4 MB",
+      "summary": "Casi un tercio del peso de la portada son códigos de terceros, algunos repetidos o que ya no funcionan, que hacen trabajar más al celular sin aportar datos nuevos.",
+      "now": "La portada carga 15 scripts externos que suman 1,4 MB, frente a 121 KB del código propio del sitio. Entre ellos hay una versión antigua de Google Analytics que Google ya dejó de procesar, la versión actual cargada dos veces, dos píxeles de Meta distintos y el sistema antispam de Google (353 KB) aunque la portada no tiene formulario de contacto.",
+      "fix": "Revisar el administrador de etiquetas: quitar la etiqueta antigua de Analytics, dejar una sola carga de la versión actual, confirmar si los dos píxeles de Meta son necesarios y cargar el sistema antispam solo en las páginas con formulario.",
+      "why": "Menos código externo significa una página más rápida y datos de campañas más limpios, sin cuentas duplicadas.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "1,4 MB",
+      "evidence": [
+        "Lighthouse mobile network-requests: 15 scripts de terceros = 1.432 KiB; 15 scripts propios = 121 KiB; total scripts 1.554 KiB",
+        "gtag/js?id=UA-61401421-1 (Universal Analytics, 126 KiB) + google-analytics.com/analytics.js (21 KiB) se siguen cargando",
+        "gtag/js?id=G-HLKQFWWVKW se descarga dos veces (188 KiB cada una: directa y vía GTM con &cx=c)",
+        "GTM-KZVNPMB 172 KiB; gtag/destination AW-554579353 151 KiB",
+        "Dos píxeles de Meta: signals/config/662066194446496 y signals/config/3270593046393813 + fbevents.js 97 KiB",
+        "recaptcha__es_419.js 353 KiB (api.js?render=…): la portada solo tiene formularios de búsqueda y un selector de perfil, sin formulario de contacto",
+        "unused-javascript (móvil): ahorro estimado de 632 KiB; mainthread-work-breakdown móvil 3,0 s"
+      ],
+      "technical_note": "Universal Analytics stopped processing hits in July 2024, so the UA tag is dead weight. Restrict Contact Form 7 reCAPTCHA v3 to pages with forms (dequeue on others). Confirm with marketing which Meta pixel is in use before removing one.",
+      "pin": null
+    },
+    {
+      "id": "tech-3",
+      "title": "Estilos y fuentes retrasan lo primero que se ve",
+      "summary": "Antes de mostrar cualquier cosa, el navegador debe esperar ocho hojas de estilo y tres familias de letra, lo que retrasa la primera imagen de la página en conexiones lentas.",
+      "now": "En la simulación de celular con red lenta lo primero aparece a los 2,6–2,7 s (3 corridas). Lighthouse estima que entre 0,2 y 1,2 s se pierden esperando 8 archivos de estilo (fuentes de Google, formulario, antispam, banner de cookies, ventana emergente y tema). Se piden tres familias de letra (Open Sans en 5 variantes, Montserrat y Nunito Sans) más una de íconos.",
+      "fix": "Cargar al inicio solo los estilos de la primera pantalla y diferir el resto, quitar las familias de letra que no se usen y alojar las fuentes en el mismo sitio.",
+      "why": "Mostrar algo útil cuanto antes reduce la sensación de lentitud y el abandono en la primera visita.",
+      "impact": 3,
+      "effort": "Medio",
+      "headline_metric": "2,6–2,7 s",
+      "evidence": [
+        "FCP simulado móvil: 2,6 s / 2,6 s / 2,7 s (raw/lighthouse-mobile.json, raw/tech-lighthouse-mobile-run2.json, run3). FCP observado sin limitar red: 0,56 s (equipo de escritorio emulando celular)",
+        "render-blocking-insight móvil: ahorro estimado 1.180 ms / 1.100 ms / 220 ms; escritorio 500 / 510 / 600 ms",
+        "render-blocking-resources: fonts.googleapis.com Open Sans (wght 300,400,700,800 + 300 italic), fonts.googleapis.com Montserrat:100, contact-form-7 styles.css, honeypot wpa.css, simian-gdpr-consent icofont.css y main.min.css, popup-maker site.css, theme home-050f781f.css",
+        "Nunito Sans (variable 200..1000, cursiva incluida) también se solicita en el HTML",
+        "font-display: icofont.woff2 sin font-display (114 ms)"
+      ],
+      "technical_note": "Inline critical CSS for the header/slider, load plugin CSS (CF7, honeypot, popup-maker) with media=print onload or only on pages that need them, self-host Open Sans with only used weights, drop Montserrat 100 / Nunito Sans if unused. Add font-display: swap to icofont.",
+      "pin": null
+    },
+    {
+      "id": "tech-4",
+      "title": "Ventana emergente y carrusel hacen saltar la portada",
+      "summary": "La pieza más grande de la portada es una ventana emergente que aparece sola a los 2,5 s en cada visita, y en celular el carrusel hace saltar el contenido mientras carga.",
+      "now": "En computador, el elemento principal que mide Google es la imagen de la ventana emergente de PQRD, programada para abrirse a los 2,5 s en cada visita, sin recordar si ya se cerró. Por eso el contenido principal tarda 5,0–5,5 s en la simulación (3,5–3,6 s sin limitar la red). En celular, las imágenes del carrusel no tienen tamaño reservado y la página se desplaza mientras cargan (CLS 0,127, por encima del límite recomendado de 0,1).",
+      "fix": "Mostrar la ventana emergente una sola vez por visitante (o reemplazarla por un aviso dentro de la página) y reservar el alto de las imágenes del carrusel para que nada salte.",
+      "why": "Google usa estas dos medidas para evaluar la experiencia de la página, y un contenido que salta provoca toques equivocados.",
+      "impact": 3,
+      "effort": "Bajo",
+      "headline_metric": "5,0–5,5 s",
+      "evidence": [
+        "largest-contentful-paint-element escritorio (3 corridas): div.wp-block-image > figure.aligncenter > a > img.wp-image-26407 (Pop-Up-PQRD-700x394.png); render delay 4.700 ms (85 % del LCP)",
+        "LCP simulado escritorio: 5,5 s / 5,0 s / 5,3 s; observedLargestContentfulPaint: 3.475 / 3.583 / 3.634 ms",
+        "Configuración de popup-maker en raw/home.html: popup id 18336 'banner-home', trigger auto_open delay 2500, cookies: [] (se muestra en cada carga)",
+        "CLS móvil 0,127 / 0,127 / 0,128; layout-shifts: div.swipe-wrap > div > div.slide-content > div.image > img (Banner-PQRD-2-700x394.png), cause 'Unsized image element'",
+        "LCP móvil: el elemento es el texto del banner de cookies (div#simian-gdpr-banner > div.wrap-texto > p); simulado 2,6 / 2,9 / 7,7 s, observado 555–597 ms",
+        "screenshots/desktop-viewport.png: ventana emergente centrada sobre el carrusel"
+      ],
+      "technical_note": "Add a cookie to popup-maker's auto_open trigger (e.g. 7-30 days) and drop fetchpriority=high on the popup image. Add width/height or aspect-ratio to slider <img>. Mobile simulated LCP varied 2.6–7.7 s between runs, so it is not headlined.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 72, "y_pct": 29}
+    },
+    {
+      "id": "tech-5",
+      "title": "La propia seguridad del sitio bloquea al píxel de Meta",
+      "summary": "La página registra errores en cada carga porque su política de seguridad impide que el píxel de Meta envíe algunos datos, lo que conviene revisar con quien maneja la pauta.",
+      "now": "En las dos corridas iniciales (celular y computador) la consola muestra 4 errores: el script de configuración del píxel de Meta intenta conectarse a dos servidores externos y la política de seguridad del sitio lo bloquea. El evento básico de visita a la página sí se envía.",
+      "fix": "Confirmar con el equipo de pauta si esas conexiones son necesarias; si lo son, autorizarlas en la política de seguridad, y si no, desactivar la función del píxel que las genera.",
+      "why": "Una consola limpia facilita detectar fallas reales y asegura que la medición de campañas funcione completa.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "errors-in-console (raw/lighthouse-mobile.json y raw/lighthouse-desktop.json): 4 errores en cada una",
+        "2 x source 'security': conexión a dos endpoints /events?cee=no bloqueada por la directiva connect-src de la Content-Security-Policy; origen connect.facebook.net/signals/config/3270593046393813",
+        "2 x source 'javascript': 'Fetch API cannot load … Refused to connect because it violates the document's Content Security Policy'",
+        "Las solicitudes facebook.com/tr/?…&ev=PageView de ambos píxeles sí aparecen en network-requests",
+        "Las re-ejecuciones (solo rendimiento) no incluyen esta auditoría; el conteo proviene de 2 cargas"
+      ],
+      "technical_note": "Blocked hosts are a *.ecs.us-east-2.on.aws endpoint and a *.run.app endpoint requested by Meta's signals config. Decide whether to allow them in connect-src or disable the related Meta feature.",
+      "pin": null
+    },
+    {
+      "id": "tech-6",
+      "title": "La dirección con www pasa por una versión no segura",
+      "summary": "Quien escribe la dirección con www da tres saltos, uno de ellos sin cifrado, antes de llegar a la página segura.",
+      "now": "http://www.saludtotal.com.co lleva a https://www…, de ahí a http://saludtotal.com.co (sin cifrado) y de ahí a https://saludtotal.com.co: tres redirecciones. La dirección principal sí funciona bien: http redirige a https en un paso y el servidor activa las cinco protecciones básicas revisadas.",
+      "fix": "Hacer que la versión con www redirija en un solo paso directamente a https://saludtotal.com.co.",
+      "why": "Cada salto añade espera y el paso sin cifrado es un punto débil innecesario en un sitio que maneja datos de salud.",
+      "impact": 2,
+      "effort": "Bajo",
+      "evidence": [
+        "raw/tech-headers.txt: http://www.saludtotal.com.co/ → 301 https://www.saludtotal.com.co/ → 301 http://saludtotal.com.co/ → 301 https://saludtotal.com.co/ (curl num_redirects = 3)",
+        "http://saludtotal.com.co/ → 301 https://saludtotal.com.co/ (1 salto)",
+        "HSTS: present (max-age=31536000; includeSubDomains; preload)",
+        "CSP: present",
+        "X-Frame-Options/frame-ancestors: present (frame-ancestors 'self')",
+        "X-Content-Type-Options: present (nosniff)",
+        "Referrer-Policy: present (strict-origin-when-cross-origin)"
+      ],
+      "technical_note": "The https://www hop redirects to http:// on the apex at the origin, and HSTS then upgrades it in browsers that already have the policy. Fix the origin rule to target https://saludtotal.com.co/. Response headers also disclose server and CDN stack details (Via/X-Varnish) and the HTML exposes CMS and plugin version numbers in generator meta and asset query strings; consider removing them. Do not put these in client-facing text.",
+      "pin": null
+    }
+  ],
+  "checks": [
+    {"id": "tech-weight", "result": "fail", "evidence": "total-byte-weight 4.881–4.885 KiB (4,8 MB) en móvil y 3.504–3.538 KiB (3,4–3,5 MB) en escritorio en 3 corridas; ambos superan 3 MB"},
+    {"id": "tech-lcp", "result": "pass", "evidence": "observedLargestContentfulPaint móvil 580 / 555 / 597 ms (≤ 2,5 s). Ojo: el elemento LCP móvil es el texto del banner de cookies; el LCP simulado varió 2,6–7,7 s y el LCP observado en escritorio fue 3,5–3,6 s (ventana emergente)"},
+    {"id": "tech-images", "result": "fail", "evidence": "modern-image-formats ahorro 2.429 KiB, uses-responsive-images 1.212 KiB, uses-optimized-images 92 KiB (móvil); imágenes casi todas PNG; Pop-Up-PQRD.png de 991 KiB servido a celular"},
+    {"id": "tech-lazy", "result": "partial", "evidence": "47 de 79 <img> tienen loading=lazy y offscreen-images pasa en escritorio, pero en móvil quedan 667 KiB de imágenes fuera de pantalla sin carga diferida (7 banners de noticias y botones del tema)"},
+    {"id": "tech-render-blocking", "result": "fail", "evidence": "render-blocking-insight móvil 1.180 / 1.100 / 220 ms y escritorio 500 / 510 / 600 ms (2 de 3 corridas móviles y todas las de escritorio sobre 300 ms); 8 CSS bloqueantes; 3 familias de Google Fonts (Open Sans 5 variantes, Montserrat 100, Nunito Sans variable) + icofont"},
+    {"id": "tech-cache", "result": "pass", "evidence": "CSS, JS, imágenes y fuentes propios con cache-control max-age=31536000 (raw/tech-headers.txt); uses-long-cache-ttl solo señala 9 recursos de terceros (Meta, Google Analytics, Cloudflare, reCAPTCHA)"},
+    {"id": "tech-https", "result": "pass", "evidence": "https://saludtotal.com.co/ 200; http://saludtotal.com.co/ → 301 https en 1 salto; is-on-https pasa. Salvedad: la variante www pasa por http en una cadena de 3 redirecciones (tech-6)"},
+    {"id": "tech-security-headers", "result": "pass", "evidence": "5 de 5: HSTS presente, CSP presente, frame-ancestors 'self' presente, X-Content-Type-Options nosniff presente, Referrer-Policy strict-origin-when-cross-origin presente"},
+    {"id": "tech-console", "result": "fail", "evidence": "errors-in-console: 4 errores en móvil y 4 en escritorio (CSP connect-src bloquea dos endpoints que pide el script de configuración del píxel de Meta)"},
+    {"id": "tech-links", "result": "pass", "evidence": "raw/tech-links.txt: 30 enlaces internos y 15 imágenes de la portada revisados, todos HTTP 200"},
+    {"id": "tech-404", "result": "pass", "evidence": "/esta-pagina-no-existe-simian-test/ devuelve HTTP 404 con la plantilla del sitio, menú completo y el texto '404 Página no encontrada' (raw/tech-404.html)"}
+  ]
+}

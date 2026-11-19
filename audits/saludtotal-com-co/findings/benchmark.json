@@ -1,0 +1,45 @@
+{
+  "competitors": [
+    {
+      "name": "EPS SURA",
+      "slug": "eps-sura",
+      "url": "https://www.epssura.com/",
+      "why_competitor": "Found by us (user said 'búscalos tú'). Big reference: one of the largest contributory-regime EPS in Colombia, also sells complementary plans (PAC menu item), same affiliate/employer audience as Salud Total.",
+      "screenshot": "screenshots/bench-eps-sura.png",
+      "five_second": {"what": false, "for_whom": true, "text_headline": true, "trust_proof": false, "quote_cta": false},
+      "notes_es": "Abre con un carrusel de avisos en texto (la primera diapositiva fue una reunión de usuarios en Cartagena); separa el menú por público (Afiliados, Empleadores, Independientes), pero fuera del logo ninguna frase dice qué ofrece y no hay botón para afiliarse, solo «Iniciar sesión».",
+      "lighthouse": {"performance": 0.34, "accessibility": 0.96, "seo": 0.92, "total_mb": 4.17}
+    },
+    {
+      "name": "Compensar EPS",
+      "slug": "compensar-eps",
+      "url": "https://corporativo.compensar.com/salud",
+      "why_competitor": "Found by us. Contributory-regime EPS from a caja de compensación, strong in Bogotá/Cundinamarca, sells EPS plus complementary plans and prepaid medicine; the /salud section is its EPS home.",
+      "screenshot": "screenshots/bench-compensar-eps.png",
+      "five_second": {"what": true, "for_whom": true, "text_headline": true, "trust_proof": false, "quote_cta": false},
+      "notes_es": "Dice en texto «¡Haz más fáciles tus trámites de EPS!» y «Accede a todos los servicios de Compensar Salud», con menú Persona/Empresa; su carrusel de 4 diapositivas cambia y solo una trae «Elige el plan para ti», así que no siempre hay un botón para afiliarse en la primera pantalla.",
+      "lighthouse": {"performance": 0.33, "accessibility": 0.74, "seo": 0.54, "total_mb": 12.69}
+    },
+    {
+      "name": "Famisanar EPS",
+      "slug": "famisanar",
+      "url": "https://www.famisanar.com.co/",
+      "why_competitor": "Found by us. Contributory-regime EPS of comparable size and audience (Afiliados, Empleadores, IPS) that also offers 'Planes de Atención Complementaria'.",
+      "screenshot": "screenshots/bench-famisanar.png",
+      "five_second": {"what": false, "for_whom": true, "text_headline": true, "trust_proof": false, "quote_cta": false},
+      "notes_es": "Al entrar, una ventana emergente de actualización de datos tapa la portada (en escritorio y en celular); detrás, el titular en texto es un aviso para Valledupar y no hay botón para afiliarse, solo un WhatsApp flotante.",
+      "lighthouse": {"performance": 0.54, "accessibility": 0.88, "seo": 1, "total_mb": 11.43}
+    }
+  ],
+  "client": {
+    "name": "Salud Total EPS-S",
+    "slug": "client",
+    "url": "https://saludtotal.com.co/",
+    "screenshot": "screenshots/desktop-viewport.png",
+    "five_second": {"what": false, "for_whom": false, "text_headline": true, "trust_proof": false, "quote_cta": true},
+    "notes_es": "Es la única de las cuatro con un botón «Afíliate aquí» a la vista, pero la ventana de PQRD y el aviso de cookies tapan la portada, y el titular en texto solo habla de PQRD, no de qué es Salud Total.",
+    "lighthouse": {"performance": 0.85, "accessibility": 0.85, "seo": 1, "total_mb": 4.77}
+  },
+  "load_caveat_es": "Tu página abre una ventana de PQRD a los pocos segundos y la de Famisanar abre una ventana de actualización de datos que tapa casi toda la pantalla del celular; además las cuatro portadas tienen carruseles cuya primera imagen cambia. Por eso el tiempo medido del contenido principal puede no coincidir con lo que ve un visitante.",
+  "takeaway_es": "En la prueba de Lighthouse en celular tu portada salió más rápida que las de EPS SURA, Compensar y Famisanar y es la única con «Afíliate aquí» a la vista, pero esa ventaja la tapa una ventana de PQRD y ninguna frase dice qué es Salud Total ni por qué elegirla."
+}
