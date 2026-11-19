@@ -46,7 +46,7 @@
       "twitter_tags_found": []
     },
     "today_title": "eBiopacking Colombia – Soluciones en Empaques",
-    "what_shows_today": "Al compartir tu sitio por WhatsApp o LinkedIn solo aparece la dirección y el título de la pestaña «eBiopacking Colombia – Soluciones en Empaques», sin imagen ni descripción. Lo mismo pasa con la página de Productos.",
+    "what_shows_today": "Al compartir tu sitio por WhatsApp solo aparece el ícono de la hoja (el de la pestaña del navegador) en miniatura, el título «eBiopacking Colombia – Soluciones en Empaques» y la dirección, sin descripción ni una imagen que muestre tus productos. Lo mismo pasa con la página de Productos.",
     "evidence": "curl without JavaScript (raw/presence/presence-home.html, presence-productos.html, presence-contacto.html, presence-nosotros.html, presence-servicio-al-cliente.html): zero og:* and twitter:* meta tags; only <title>.",
     "proposed": {
       "og:title": "eBiopacking: empaques de cartón corrugado desde 2006",
@@ -54,7 +54,8 @@
       "og:image": "https://ebiopacking.com/wp-content/uploads/2025/11/01-EBIO_INICIO_BANNER_01-2.png",
       "og_image_local": "og-source.jpg",
       "technical_note": "Source banner 1920x1080 PNG (3,624,275 bytes = 3.5 MB, HTTP 200). Resampled to 1200x675 and center-cropped to 1200x630 JPEG (213.6 KB) at screenshots/og-source.jpg. Publish a JPEG of that size as og:image instead of the heavy PNG."
-    }
+    },
+    "today_icon_local": "og-today-icon.png"
   },
   "ai_answer": {
     "status": "not_collected",
