@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safetti · Propuesta de portada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Sistema propuesto en findings/ui-critique.json: Inter 400/600; Tinta, Dorado, Noche, Arena clara, Blanco */
+:root{
+  --tinta:#111111; --dorado:#D4CA9F; --noche:#141414; --arena:#EFEFEF; --blanco:#FFFFFF;
+  --tinta-2:rgba(17,17,17,.72); --r:999px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 16px/1.5 Inter,system-ui,sans-serif;color:var(--tinta);background:var(--blanco);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1312px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-weight:600;letter-spacing:-.01em}
+
+/* botones: un sistema, dos variantes, misma forma y alto */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 28px;border-radius:var(--r);font:600 13px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--tinta);transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--tinta);color:var(--blanco)}
+.btn-primary:hover{background:var(--dorado);border-color:var(--dorado);color:var(--tinta)}
+.btn-secondary{background:transparent;color:var(--tinta)}
+.btn-secondary:hover{background:var(--tinta);color:var(--blanco)}
+.arrow{width:16px;height:16px}
+
+/* franja y encabezado */
+.topbar{background:var(--noche);color:var(--arena);font-size:13px;text-align:center;padding:9px 16px}
+.topbar b{color:var(--dorado);font-weight:600}
+header{border-bottom:1px solid var(--arena);background:var(--blanco);position:relative;z-index:2}
+.hdr{display:flex;align-items:center;gap:40px;height:76px}
+.logo img{height:46px;width:auto}
+nav.main{display:flex;gap:28px;font-size:14px;font-weight:600;flex:1}
+nav.main a{padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--dorado)}
+nav.main .sep{width:1px;background:var(--arena);margin:4px 0}
+.icons{display:flex;gap:6px;align-items:center}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;position:relative}
+.icon-btn:hover{background:var(--arena)}
+.icon-btn svg{width:22px;height:22px}
+.cart-n{position:absolute;top:5px;right:4px;background:var(--tinta);color:var(--blanco);font-size:10px;font-weight:600;min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center}
+.menu-btn{display:none}
+
+/* portada */
+.hero{background:var(--blanco);overflow:hidden;border-bottom:1px solid var(--arena)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;min-height:640px}
+.hero-copy{padding:64px 56px 56px 0;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta);background:var(--dorado);padding:6px 12px;border-radius:var(--r)}
+.hero h1{font-size:40px;line-height:1.12;max-width:560px}
+.hero p.lead{font-size:18px;line-height:1.6;color:var(--tinta-2);max-width:520px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-media{position:relative;margin-right:calc(-1 * max(32px, (100vw - 1312px)/2 + 32px))}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.perks{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--tinta-2);border-top:1px solid var(--arena);padding-top:22px;margin-top:4px}
+.perks span{display:flex;align-items:center;gap:8px}
+.perks svg{width:18px;height:18px;color:var(--tinta);flex:none}
+
+/* secciones */
+section.block{padding:80px 0 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.sec-head h2{font-size:28px;line-height:1.2}
+.sec-head p{color:var(--tinta-2);font-size:16px;margin-top:6px}
+
+/* deportes */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:var(--noche);color:var(--blanco);display:flex;align-items:flex-end}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.cat:hover img{transform:scale(1.04)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.75))}
+.cat .lbl{position:relative;z-index:1;padding:22px;width:100%;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.cat h3{font-size:22px;line-height:1.2}
+.cat small{display:block;line-height:1.35;font-size:14px;font-weight:400;margin-top:4px;opacity:.9}
+.cat .go{width:44px;height:44px;border-radius:50%;background:var(--dorado);color:var(--tinta);display:grid;place-items:center;flex:none;font-weight:600}
+.cat.padel{background:var(--dorado);color:var(--tinta)}
+.cat.padel::after{display:none}
+.cat.padel .go{background:var(--tinta);color:var(--blanco)}
+.cat.padel .mark{position:absolute;top:22px;left:22px;right:22px;font-size:120px;line-height:.9;font-weight:600;letter-spacing:-.04em;color:rgba(17,17,17,.08)}
+
+/* pruebas */
+.proof{margin-top:80px;background:var(--arena);padding:56px 0}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.proof-item svg{width:30px;height:30px;color:var(--tinta)}
+.proof-item h3{font-size:17px;margin:14px 0 6px}
+.proof-item p{font-size:15px;color:var(--tinta-2)}
+.ph{color:var(--tinta-2);font-style:normal;font-size:.92em;background:var(--blanco);border:1px dashed rgba(17,17,17,.35);border-radius:6px;padding:1px 6px;white-space:nowrap}
+
+/* productos */
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{display:flex;flex-direction:column}
+.card .ph-img{position:relative;background:var(--blanco);border:1px solid var(--arena);border-radius:16px;overflow:hidden;aspect-ratio:1/1.08}
+.card .ph-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.badge{position:absolute;top:14px;left:14px;background:var(--tinta);color:var(--blanco);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+.card .meta{padding:14px 2px 0;display:flex;flex-direction:column;gap:3px;flex:1}
+.card .sport{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2)}
+.card h3{font-size:14px;font-weight:400;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .who{font-size:13px;color:var(--tinta-2)}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;gap:10px}
+.price{font-size:15px;font-weight:600}
+.stars{font-size:13px;color:var(--tinta-2);margin-top:2px}
+
+/* ayuda */
+.help{margin:88px 0 0;background:var(--arena)}
+.help-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;padding-top:64px;padding-bottom:64px;align-items:center}
+.help h2{font-size:28px}
+.help p{color:var(--tinta-2);font-size:17px;margin:12px 0 24px;max-width:520px}
+.stores{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.store{background:var(--blanco);border-radius:14px;padding:18px}
+.store b{display:block;font-size:15px;font-weight:600;margin-bottom:4px}
+.store span{font-size:14px;color:var(--tinta-2)}
+
+.float-wa{position:fixed;right:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:#25d366;color:#0b3d20;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:10}
+.float-wa svg{width:28px;height:28px}
+
+footer{background:var(--noche);color:var(--arena);padding:28px 0;font-size:13px;text-align:center}
+
+/* celular */
+@media (max-width:900px){
+  .wrap{padding:0 16px}
+  nav.main{display:none}
+  .menu-btn{display:grid}
+  .hdr{height:64px;gap:8px}
+  .logo{margin-right:auto}
+  .logo img{height:36px}
+  .icons .hide-sm{display:none}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-media{order:-1;margin:0 -16px;height:240px}
+  .hero-copy{padding:28px 0 36px;gap:18px}
+  .hero h1{font-size:28px}
+  .hero p.lead{font-size:16px}
+  .ctas .btn{flex:1 1 100%}
+  .perks{gap:12px 20px;font-size:13px}
+  section.block{padding-top:56px}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:20px}
+  .sec-head h2,.help h2{font-size:22px}
+  .cats{grid-template-columns:1fr 1fr;gap:10px}
+  .cat{aspect-ratio:4/5;border-radius:12px}
+  .cat h3{font-size:18px}
+  .cat small{font-size:12px}
+  .cat .lbl{padding:14px}
+  .cat .go{width:34px;height:34px}
+  .cat.padel .mark{font-size:72px}
+  .proof{margin-top:56px;padding:40px 0}
+  .proof-grid{grid-template-columns:1fr 1fr;gap:26px 18px}
+  .proof-item h3{font-size:15px}
+  .proof-item p{font-size:14px}
+  .ph{white-space:normal}
+  .prods{grid-template-columns:1fr 1fr;gap:20px 12px}
+  .card .row{flex-direction:column;align-items:stretch}
+  .card .btn{width:100%;padding:0 12px}
+  .help{margin-top:64px}
+  .help-grid{grid-template-columns:1fr;gap:28px;padding-top:44px;padding-bottom:44px}
+  .help .btn{width:100%}
+  .stores{grid-template-columns:1fr}
+  .float-wa{right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Envío gratis en compras superiores a <b>$250.000</b> · Compra a crédito con Addi o Sistecredito</div>
+
+<header>
+  <div class="wrap hdr">
+    <a class="logo" href="#" aria-label="Safetti, inicio"><img src="logo-safetti.png" alt="Safetti" width="94" height="46"></a>
+    <nav class="main" aria-label="Principal">
+      <a href="#">Ciclismo</a><a href="#">Running</a><a href="#">Triatlón</a><a href="#">Pádel</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="#">Hombre</a><a href="#">Mujer</a><a href="#">Complementos</a><a href="#">Ofertas</a>
+    </nav>
+    <div class="icons">
+      <a class="icon-btn" href="#" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+      <a class="icon-btn hide-sm" href="#" aria-label="Mi cuenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></a>
+      <a class="icon-btn" href="#" aria-label="Carrito, 0 productos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-n" aria-hidden="true">0</span></a>
+      <button class="icon-btn menu-btn" aria-label="Abrir menú" style="border:0;background:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Nueva colección NEXO</span>
+      <h1>Ropa técnica para ciclismo, running, triatlón y pádel</h1>
+      <p class="lead">Jerseys, chaquetas, enterizos y pantalonetas para hombre y mujer. Compra en línea o pruébatela en nuestras tiendas de Laureles, Indiana, Llanogrande y Bogotá.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">Comprar ciclismo <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-secondary" href="#">Ver colección NEXO</a>
+      </div>
+      <div class="perks">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Envío gratis desde $250.000</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>Paga a crédito con Addi o Sistecredito</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="hero-ciclismo.jpg" alt="Dos ciclistas con ropa Safetti rodando por una calle" width="1040" height="1300" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-cats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="h-cats">Compra por deporte</h2><p>Elige tu disciplina y encuentra la prenda para tu próximo entreno.</p></div>
+      <a class="btn btn-secondary" href="#">Ver toda la tienda</a>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#"><img src="cat-ciclismo.jpg" alt="" loading="lazy" style="object-position:18% 50%"><div class="lbl"><h3>Ciclismo<small>Jerseys, pantalonetas, chaquetas, gravel</small></h3><span class="go" aria-hidden="true">→</span></div></a>
+      <a class="cat" href="#"><img src="cat-running.jpg" alt="" loading="lazy" style="object-position:30% 50%"><div class="lbl"><h3>Running<small>Camisetas, shorts, capris</small></h3><span class="go" aria-hidden="true">→</span></div></a>
+      <a class="cat" href="#"><img src="cat-triatlon.jpg" alt="" loading="lazy"><div class="lbl"><h3>Triatlón<small>Enterizos y vestidos de baño</small></h3><span class="go" aria-hidden="true">→</span></div></a>
+      <a class="cat padel" href="#"><span class="mark" aria-hidden="true">PÁ<br>DEL</span><div class="lbl"><h3>Pádel<small>Ropa de pádel para hombre y mujer</small></h3><span class="go" aria-hidden="true">→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Por qué comprar en Safetti">
+  <div class="wrap proof-grid">
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10 12 4l8 6v10H4z"/><path d="M10 20v-6h4v6"/></svg>
+      <h3>4 tiendas físicas</h3>
+      <p>Laureles, Indiana, Llanogrande y Bogotá (Zona G). Ven y mídete la talla.</p>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>
+      <h3>Lo que dicen los clientes</h3>
+      <p><span class="ph">[Calificación y n.º de reseñas por confirmar]</span></p>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c3-6 13-6 16 0M4 18c3-4 13-4 16 0M12 4v4"/></svg>
+      <h3>Telas Aqualite y Aerocooler</h3>
+      <p><span class="ph">[Qué hace cada tela, por confirmar]</span></p>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M8.5 11.5 7 21l5-3 5 3-1.5-9.5"/></svg>
+      <h3>La usan en competencia</h3>
+      <p><span class="ph">[Atletas o equipos, por confirmar]</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-new">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="h-new">Lo nuevo de NEXO</h2><p>Nuevos colores, nuevas experiencias.</p></div>
+      <a class="btn btn-secondary" href="#">Ver colección NEXO</a>
+    </div>
+    <div class="prods">
+      <article class="card">
+        <a class="ph-img" href="#"><img src="p-aqualite.jpg" alt="Chaqueta rompevientos Aqualite verde prado para hombre" loading="lazy"><span class="badge">Nuevo</span></a>
+        <div class="meta"><span class="sport">Ciclismo</span><h3><a href="#">Chaqueta rompevientos Aqualite verde prado</a></h3><span class="who">Hombre</span><span class="stars">★★★★★ <span class="ph">[reseñas]</span></span>
+          <div class="row"><span class="price">$310.900</span><a class="btn btn-secondary" href="#">Elegir talla</a></div></div>
+      </article>
+      <article class="card">
+        <a class="ph-img" href="#"><img src="p-outland.jpg" alt="Jersey de ciclismo Outland Code Blue para hombre" loading="lazy"><span class="badge">Nuevo</span></a>
+        <div class="meta"><span class="sport">Ciclismo</span><h3><a href="#">Jersey manga corta Outland Code Blue</a></h3><span class="who">Hombre</span><span class="stars">★★★★★ <span class="ph">[reseñas]</span></span>
+          <div class="row"><span class="price">$353.400</span><a class="btn btn-secondary" href="#">Elegir talla</a></div></div>
+      </article>
+      <article class="card">
+        <a class="ph-img" href="#"><img src="p-beacon.jpg" alt="Camisa de ciclismo manga corta Beacon para mujer" loading="lazy"><span class="badge">Nuevo</span></a>
+        <div class="meta"><span class="sport">Ciclismo</span><h3><a href="#">Camisa manga corta Beacon</a></h3><span class="who">Mujer</span><span class="stars">★★★★★ <span class="ph">[reseñas]</span></span>
+          <div class="row"><span class="price">$298.000</span><a class="btn btn-secondary" href="#">Elegir talla</a></div></div>
+      </article>
+      <article class="card">
+        <a class="ph-img" href="#"><img src="p-artrock.jpg" alt="Enterizo de triatlón manga sisa Artrock para mujer" loading="lazy"></a>
+        <div class="meta"><span class="sport">Triatlón</span><h3><a href="#">Enterizo manga sisa Artrock</a></h3><span class="who">Mujer</span><span class="stars">★★★★★ <span class="ph">[reseñas]</span></span>
+          <div class="row"><span class="price">$635.400</span><a class="btn btn-secondary" href="#">Elegir talla</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="help" aria-labelledby="h-help">
+  <div class="wrap help-grid">
+    <div>
+      <h2 id="h-help">¿Dudas con tu talla?</h2>
+      <p>Escríbenos por WhatsApp y te ayudamos a elegir la prenda y la talla correctas antes de comprar. <span class="ph">[Tiempo de respuesta por confirmar]</span></p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>WhatsApp (+57) 318 243 0082</a>
+        <a class="btn btn-secondary" href="#">Ver tiendas y horarios</a>
+      </div>
+    </div>
+    <div class="stores">
+      <div class="store"><b>Safetti Store Laureles</b><span>Calle 41 # 73-29</span></div>
+      <div class="store"><b>Safetti Store Indiana</b><span>Carrera 6 # 24a sur 285, local 156</span></div>
+      <div class="store"><b>Safetti Store Llanogrande</b><span>Km 1.7 desde Don Diego hacia Llanogrande</span></div>
+      <div class="store"><b>Safetti Store Bogotá</b><span>Carrera 5 # 69A-30, Zona G Chapinero</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Concepto de portada preparado por Simian para Safetti · Contenido real de safetti.com; los textos entre [corchetes] están por confirmar.</div></footer>
+
+<a class="float-wa" href="#" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg></a>
+</body>
+</html>
