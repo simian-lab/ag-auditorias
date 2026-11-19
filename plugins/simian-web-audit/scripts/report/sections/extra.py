@@ -108,15 +108,21 @@ def _previews(ctx, pres) -> str:
     # today's real link preview (og tags read without JavaScript); plain title only when the site has no og image/description
     # collect_evidence.py saves og-today.jpg / og-today-icon.png; presence.json may name them explicitly
     th = (pres["share_preview"].get("today") or {}).get("home") or {}
+    icon_name = pres["share_preview"].get("today_icon_local") or "og-today-icon.png"
     t_img = pres["share_preview"].get("today_og_image_local") or ("og-today.jpg" if ctx["asset"]("og-today.jpg") else None)
-    icon = ctx["asset"](pres["share_preview"].get("today_icon_local") or "og-today-icon.png")
-    if t_img or (th.get("og:description") or "").strip():
-        wa_today = bubble(t_img, th.get("og:title") or preview_title, (th.get("og:description") or "").strip())
+    if t_img == icon_name:  # the icon is not an og:image: WhatsApp shows it small, never as the large picture
+        t_img = None
+    icon = ctx["asset"](icon_name)
+    t_title, t_desc = th.get("og:title") or preview_title, (th.get("og:description") or "").strip()
+    if t_img:
+        wa_today = bubble(t_img, t_title, t_desc)
     elif icon:
-        # no og:image: WhatsApp falls back to the site icon as a small square beside the title
+        # no og:image: WhatsApp falls back to the site icon as a small square beside the title (and description)
         wa_today = (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-mini">'
-                    f'<img src="{icon}" alt=""><div><b>{esc(preview_title)}</b></div></div>'
+                    f'<img src="{icon}" alt=""><div><b>{esc(t_title)}</b>{esc(t_desc)}</div></div>'
                     f'<span class="sa-extra-link">{esc(domain or today["url"])}</span></div></div>')
+    elif t_desc:
+        wa_today = bubble(None, t_title, t_desc)
     else:
         wa_today = (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(domain or today["url"])}</span>'
                     f'{esc(preview_title)}</div></div>')

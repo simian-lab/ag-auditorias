@@ -96,6 +96,18 @@ class ExtraTest(unittest.TestCase):
         self.assertIn("sa-extra-mini", wa)
         self.assertIn("og-today-icon.png", wa)
 
+    def test_whatsapp_today_icon_stays_small_with_og_description(self):
+        def f(d):
+            d["share_preview"]["today"] = {"home": {"og:title": "Example Hoy", "og:description": "Desc real de hoy"}}
+            d["share_preview"]["today_og_image_local"] = "og-today-icon.png"  # agent mislabels the icon
+        self._edit("presence.json", f)
+        shutil.copy(self.audit / "screenshots" / "desktop-fullpage.jpg", self.audit / "screenshots" / "og-today-icon.png")
+        sec = extra.build(self.ctx(extra=True))
+        wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):sec.html.index("Propuesta", sec.html.index("Así se ve tu enlace en WhatsApp"))]
+        self.assertIn("sa-extra-mini", wa)
+        self.assertNotIn("sa-extra-og", wa)
+        self.assertIn("Desc real de hoy", wa)
+
     def test_serp_site_name_only_when_given(self):
         self.assertNotIn('class="sa-extra-site"', extra.build(self.ctx(extra=True)).html)
         self._edit("presence.json", lambda d: d["serp"]["today"][0].__setitem__("site_name", "example.com"))
