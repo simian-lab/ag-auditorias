@@ -27,6 +27,9 @@ CSS = """
 .sa-extra-og img{width:100%;aspect-ratio:1.91/1;object-fit:cover;display:block}
 .sa-extra-og div{padding:8px 10px}.sa-extra-og b{display:block;color:#111;font-size:13px}
 .sa-extra-link{display:block;font-size:13px;color:#027eb5;padding:6px 4px 2px}
+.sa-extra-mini{display:flex;align-items:stretch;background:#f0f0f0;border-radius:6px;overflow:hidden}
+.sa-extra-mini img{width:72px;height:72px;object-fit:contain;background:#fff;flex:none}
+.sa-extra-mini div{padding:8px 10px;align-self:center}.sa-extra-mini b{display:block;color:#111;font-size:13px}
 .sa-extra-nap{padding:28px;margin-top:16px;text-align:left}
 .sa-extra-nap li{list-style:none;padding:10px 0;border-top:1px solid var(--fog);font-size:14px;color:var(--graphite)}
 .sa-extra-ai{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;text-align:left}
@@ -103,10 +106,17 @@ def _previews(ctx, pres) -> str:
         return (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-og">{og_img}'
                 f'<div><b>{esc(title)}</b>{esc(desc or "")}</div></div><span class="sa-extra-link">{esc(domain or today["url"])}</span></div></div>')
     # today's real link preview (og tags read without JavaScript); plain title only when the site has no og image/description
+    # collect_evidence.py saves og-today.jpg / og-today-icon.png; presence.json may name them explicitly
     th = (pres["share_preview"].get("today") or {}).get("home") or {}
-    t_img = pres["share_preview"].get("today_og_image_local")
+    t_img = pres["share_preview"].get("today_og_image_local") or ("og-today.jpg" if ctx["asset"]("og-today.jpg") else None)
+    icon = ctx["asset"](pres["share_preview"].get("today_icon_local") or "og-today-icon.png")
     if t_img or (th.get("og:description") or "").strip():
         wa_today = bubble(t_img, th.get("og:title") or preview_title, (th.get("og:description") or "").strip())
+    elif icon:
+        # no og:image: WhatsApp falls back to the site icon as a small square beside the title
+        wa_today = (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><div class="sa-extra-mini">'
+                    f'<img src="{icon}" alt=""><div><b>{esc(preview_title)}</b></div></div>'
+                    f'<span class="sa-extra-link">{esc(domain or today["url"])}</span></div></div>')
     else:
         wa_today = (f'<div class="sa-extra-wa"><div class="sa-extra-bubble"><span class="sa-extra-link">{esc(domain or today["url"])}</span>'
                     f'{esc(preview_title)}</div></div>')

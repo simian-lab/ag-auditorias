@@ -74,6 +74,7 @@ class CollectTest(unittest.TestCase):
             self.assertEqual((d / "raw" / "home.html").read_text(), "<html></html>")
             self.assertEqual(summary["mobile"]["total"], "13,4 MB")
             self.assertEqual(summary["mobile"]["lcp"], "8,1 s")
+            self.assertEqual(summary["share_preview"], {})
 
     def test_collect_never_shoots_narrow_chrome(self):
         run = FakeRun()
@@ -86,6 +87,34 @@ class CollectTest(unittest.TestCase):
                 for a in c:
                     if a.startswith("--window-size="):
                         self.assertGreaterEqual(int(a.split("=")[1].split(",")[0]), 500)
+
+
+class ShareImageTest(unittest.TestCase):
+    def _run(self, tmp, html):
+        run = FakeRun()
+        # FakeRun writes files after "--out"; emulate curl's "-o" too
+        def r(argv, **kw):
+            if "-o" in argv:
+                Path(argv[argv.index("-o") + 1]).write_bytes(b"img")
+            return run(argv, **kw)
+        return collect_evidence.share_image(html, "https://example.com/", Path(tmp), run=r), run
+
+    def test_og_image_wins(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out, run = self._run(tmp, '<meta property="og:image" content="/og.png"><link rel="icon" href="/i.png" sizes="192x192">')
+            self.assertEqual(out, {"source": "https://example.com/og.png", "today_og_image_local": "og-today.jpg"})
+
+    def test_largest_icon_without_og_image(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            html = ('<link rel="icon" href="/i32.png" sizes="32x32"><link rel="icon" href="/i192.png" sizes="192x192">'
+                    '<link rel="apple-touch-icon" href="/i180.png">')
+            out, run = self._run(tmp, html)
+            self.assertEqual(out, {"source": "https://example.com/i192.png", "today_icon_local": "og-today-icon.png"})
+            self.assertFalse((Path(tmp) / "og-today-icon-src").exists())
+
+    def test_nothing_to_show(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(self._run(tmp, "<html></html>")[0], {})
 
 
 class UrlFromMetaTest(unittest.TestCase):

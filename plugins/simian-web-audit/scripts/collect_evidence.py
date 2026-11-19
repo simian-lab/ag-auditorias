@@ -3,7 +3,9 @@ import base64
 import json
 import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import media, units  # noqa: E402
@@ -37,6 +39,45 @@ def extract_lighthouse_screenshots(lh_json: Path, out_dir: Path, prefix: str, ru
     return [media.to_jpeg(src, out_dir / f"{prefix}-fullpage.jpg", run=run)]
 
 
+class _ShareTags(HTMLParser):
+    """og:image and icon links, as link-preview crawlers (WhatsApp, LinkedIn) read them without JavaScript."""
+    def __init__(self):
+        super().__init__()
+        self.og_image, self.icons = None, []
+
+    def handle_starttag(self, tag, attrs):
+        a = {k: (v or "") for k, v in attrs}
+        if tag == "meta" and a.get("property", a.get("name", "")).lower() == "og:image" and a.get("content") and not self.og_image:
+            self.og_image = a["content"].strip()
+        rel = a.get("rel", "").lower().split()
+        if tag == "link" and a.get("href") and ("icon" in rel or "apple-touch-icon" in rel):
+            size = max((int(x.split("x")[0]) for x in a.get("sizes", "").lower().split() if x.split("x")[0].isdigit()), default=0)
+            self.icons.append((size, a["href"].strip()))
+
+
+def share_image(html: str, base_url: str, shots: Path, run=subprocess.run) -> dict:
+    """Save what WhatsApp shows today: og:image -> og-today.jpg; without one, the largest site icon -> og-today-icon.png."""
+    tags = _ShareTags()
+    tags.feed(html)
+    if tags.og_image:
+        url, tmp, name = urljoin(base_url, tags.og_image), shots / "og-today-src", "og-today.jpg"
+    elif tags.icons:
+        url, tmp, name = urljoin(base_url, max(tags.icons)[1]), shots / "og-today-icon-src", "og-today-icon.png"
+    else:
+        return {}
+    if run(["curl", "-sfL", "--max-time", "30", "-A", UA, "-o", str(tmp), url], check=False, capture_output=True).returncode:
+        return {}
+    if name.endswith(".jpg"):
+        media.to_jpeg(tmp, shots / name, max_px=1200, run=run)
+    else:
+        run(["sips", "-s", "format", "png", str(tmp), "--out", str(shots / name)], check=False, capture_output=True)
+    tmp.unlink(missing_ok=True)
+    if not (shots / name).exists():
+        return {}
+    key = "today_og_image_local" if name.endswith(".jpg") else "today_icon_local"
+    return {"source": url, key: name}
+
+
 def _summary(lh: dict) -> dict:
     audits = lh.get("audits", {})
     return {
@@ -48,8 +89,9 @@ def _summary(lh: dict) -> dict:
 
 def collect(audit_dir: Path, url: str, run=subprocess.run, fetch=fetch_html) -> dict:
     raw, shots = audit_dir / "raw", audit_dir / "screenshots"
-    (raw / "home.html").write_text(fetch(url), encoding="utf-8")
-    summary = {}
+    html = fetch(url)
+    (raw / "home.html").write_text(html, encoding="utf-8")
+    summary = {"share_preview": share_image(html, url, shots, run=run)}
     for ff, extra in [("mobile", ["--form-factor=mobile"]), ("desktop", ["--preset=desktop"])]:
         out = raw / f"lighthouse-{ff}.json"
         run(["lighthouse", url, "--quiet", "--chrome-flags=--headless=new", "--output=json",

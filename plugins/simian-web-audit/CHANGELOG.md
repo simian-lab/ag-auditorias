@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+- WhatsApp «Hoy» preview: a site without `og:image` now shows its icon as a small square beside the title (`share_preview.today_icon_local`), as WhatsApp really does, instead of a bare title.
+- `collect_evidence.py` saves today's share image itself (`og-today.jpg` from `og:image`, else the largest icon as `og-today-icon.png`), and the report uses those files even when `presence.json` does not name them.
+
 ## [0.4.0] - 2026-10-27
 
 ### Added

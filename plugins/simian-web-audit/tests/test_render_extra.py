@@ -88,6 +88,14 @@ class ExtraTest(unittest.TestCase):
         self.assertIn("Desc real de hoy", wa)
         self.assertIn("og-today.jpg", wa)
 
+    def test_whatsapp_today_shows_site_icon_without_og_image(self):
+        self._edit("presence.json", lambda d: d["share_preview"].__setitem__("today_icon_local", "og-today-icon.png"))
+        shutil.copy(self.audit / "screenshots" / "desktop-fullpage.jpg", self.audit / "screenshots" / "og-today-icon.png")
+        sec = extra.build(self.ctx(extra=True))
+        wa = sec.html[sec.html.index("Así se ve tu enlace en WhatsApp"):sec.html.index("Propuesta", sec.html.index("Así se ve tu enlace en WhatsApp"))]
+        self.assertIn("sa-extra-mini", wa)
+        self.assertIn("og-today-icon.png", wa)
+
     def test_serp_site_name_only_when_given(self):
         self.assertNotIn('class="sa-extra-site"', extra.build(self.ctx(extra=True)).html)
         self._edit("presence.json", lambda d: d["serp"]["today"][0].__setitem__("site_name", "example.com"))
