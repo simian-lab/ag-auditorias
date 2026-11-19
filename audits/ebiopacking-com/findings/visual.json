@@ -1,145 +1,209 @@
 {
   "area": "visual",
-  "business_context": "INFERRED from the site (not provided): Colombian manufacturer of corrugated-cardboard sheets and boxes, founded 2006 (per 'Nosotros' text), selling B2B in three lines: industrial, regular and agro packaging (flowers, fruit, herbs). Claims biodegradable/sustainable packaging.",
   "findings": [
     {
       "id": "visual-1",
-      "title": "El mensaje principal es una imagen ilegible en celular",
-      "summary": "Quien entra desde el celular no alcanza a leer qué ofreces en la primera pantalla, y Google tampoco puede leerlo.",
-      "now": "\"Naturalmente resistentes\", la frase de apoyo y el botón \"Productos\" están dibujados dentro de la foto del banner; en celular la foto se encoge y el título queda de unos 18 px, la frase de unos 9 px y el botón no se puede pulsar.",
-      "fix": "Escribir el título, la frase y el botón como texto real sobre el banner, con un título de al menos 28 px en celular y un botón que lleve a productos o a cotizar.",
-      "why": "La primera impresión decide si el comprador sigue o se va, y un mensaje que no se lee no vende.",
+      "title": "El mensaje principal es una imagen diminuta en celular",
+      "summary": "En el celular, donde llega la mayoría de visitas, tu promesa principal se ve en letra muy pequeña y Google no la lee como texto.",
+      "now": "El titular «Naturalmente resistentes» y los otros dos mensajes del carrusel («Confía en empaques seguros…», «Cada calibre soporta un peso diferente») están dibujados dentro de fotos. En un celular la foto se encoge a 412 px de ancho y el titular queda de unos 15 px y la frase de apoyo de unos 9 px; los íconos de redes y el botón «Productos» dentro de la foto también se vuelven diminutos.",
+      "fix": "Escribir el titular, la frase de apoyo y el botón como texto real encima de la foto (titular de 28 px o más en celular) y dejar en la imagen solo los productos; idealmente un solo mensaje fijo en lugar de un carrusel.",
+      "why": "Lo primero que ve un comprador decide si sigue leyendo; si no puede leerlo sin hacer zoom, se va con la duda de qué ofreces.",
       "impact": 5,
       "effort": "Medio",
-      "headline_metric": "~18 px",
+      "headline_metric": "≈15 px",
       "evidence": [
-        "raw/home.html: hero is an Elementor image carousel of three PNGs (01-EBIO_INICIO_BANNER_01-2.png, 01-EBIO_INICIO_BANNER_02.png, 03-EBIO_INICIO_BANNER_03.png); the string 'Naturalmente' does not appear anywhere in the HTML; no <h1> on the page (only two <h2>: 'Nosotros', 'Productos').",
-        "Hero slides are not wrapped in <a>: the 'Productos' button and the Facebook/Instagram/TikTok icons drawn in the banner are not clickable.",
-        "screenshots/mobile-fullpage.jpg (412 px wide, Lighthouse): banner scaled to ~200 px tall; measured on screenshots/visual-mobile-hero-zoom3x.png (3x zoom, 10 px grid): 'Naturalmente' cap height ~13 px (≈18 px font), subtitle ≈9 px, button label ≈6 px. Approximate, measured from the screenshot.",
-        "screenshots/desktop-viewport.png: on desktop the same image text reads well (~60 px headline), so the problem is mobile-specific."
+        "Hero is an Elementor image carousel of 3 PNG banners 1920x1080 with baked-in text: 01-EBIO_INICIO_BANNER_01-2.png, 01-EBIO_INICIO_BANNER_02.png, 03-EBIO_INICIO_BANNER_03.png (raw/visual-01-EBIO_INICIO_BANNER_02.png, raw/visual-03-EBIO_INICIO_BANNER_03.png)",
+        "Rendered with headless Chrome, mobile emulation 412x915 DPR2: banner renders at 412x232 CSS px (scale 0.215 of the original); screenshots/visual-mobile-hero.png shows 'Naturalmente' cap height ≈15 CSS px and subtitle ≈9 CSS px (measured on the 2x screenshot)",
+        "document.querySelectorAll('h1').length === 0 on the rendered page; only text headings are h2 'Nosotros' and h2 'Productos'",
+        "Carousel rotates between the 3 banners, so the first message varies per visit"
       ],
-      "technical_note": "Replace the image carousel with a container that has a background image (product cut-outs only) and real Heading (h1) + Text + Button widgets; set responsive font sizes. Keep the carousel only if each slide gets its own real-text overlay and link.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 25, "y_pct": 7}
+      "technical_note": "Replace the image-carousel slide with an Elementor container: background image (products only), h1 + p + button as live text. Text sizes are estimated from glyph height in the 2x screenshot, not a computed font-size (text is raster).",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 25,
+        "y_pct": 7
+      }
     },
     {
       "id": "visual-2",
-      "title": "Productos sin nombre: solo fotos de cajas",
-      "summary": "El comprador ve cajas sueltas pero no sabe qué es cada una ni para qué sirve, así que no puede pedir cotización con seguridad.",
-      "now": "Las 18 fotos de producto de la página de inicio aparecen en carruseles sin nombre, sin uso y sin enlace; en celular se ve una sola caja por categoría.",
-      "fix": "Mostrar cada producto como tarjeta con nombre, uso principal (\"para exportar flores\", \"para frutas\") y un enlace a su ficha o a cotizar.",
-      "why": "Un producto con nombre y uso claro se entiende y se pide; una foto sola obliga a llamar para preguntar.",
+      "title": "Los productos aparecen sin nombre ni para qué sirven",
+      "summary": "Quien entra a ver tu catálogo ve cajas sueltas y no sabe cuál pedir ni para qué uso está pensada cada una.",
+      "now": "Las tres filas de productos (Industriales, Regulares, Sector Agro) muestran solo fotos de cajas sobre fondo blanco dentro de tarjetas, sin nombre, sin medida ni uso. Varias cajas se ven casi iguales entre sí (caja regular, caja impresa, telescópica).",
+      "fix": "Poner debajo de cada foto el nombre del producto y una línea de uso (por ejemplo «Caja para flores – exportación»), y que la tarjeta lleve a su ficha.",
+      "why": "Un comprador B2B compara por tipo y uso; si tiene que adivinar, pide cotización a quien se lo explica mejor.",
       "impact": 4,
-      "effort": "Medio",
-      "headline_metric": "18 fotos sin nombre",
+      "effort": "Bajo",
       "evidence": [
-        "raw/home.html: 18 <img class='swiper-slide-image'> in three image carousels under 'Empaques Industriales', 'Empaques Regulares', 'Empaques Sector Agro'; 0 <figcaption> on the page; no <a> around the slides.",
-        "The only names are in alt attributes taken from file names, several misspelled: 'Tlescopicas', 'Tipo-Bnadeja', 'Cjas-personalizadas', 'asilador-de-calor', 'Caja-ready-to-seel'.",
-        "screenshots/desktop-fullpage.jpg: product cards at ~y 50–90% show white-background box photos with no visible text.",
-        "screenshots/mobile-fullpage.jpg: one card per carousel visible (~y 25–45%)."
+        "Rendered DOM: carousel slides have empty innerText; product names exist only as image alt/file names, e.g. alt='Tlescopicas', 'Tipo-Bnadeja', 'Cjas-personalizadas', 'Caja-ready-to-seel'",
+        "screenshots/desktop-fullpage.jpg y≈1620–1975 and y≈2110–2460: cards with photo only, no caption"
       ],
-      "technical_note": "Use a loop grid / image box widget (image + title + short description + link) instead of the Image Carousel widget; fix the misspelled file names/alt texts while doing it.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 51}
+      "technical_note": "Alt texts are file names with typos (Tlescopicas, Bnadeja, Cjas, seel, asilador); fixing them is a11y/SEO lane but the same captions can feed both.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 51
+      }
     },
     {
       "id": "visual-3",
       "title": "La promesa ecológica no se demuestra en pantalla",
-      "summary": "Dices que tus empaques son biodegradables y sostenibles, pero el sitio no muestra ninguna prueba que lo respalde frente a la competencia.",
-      "now": "La sostenibilidad solo aparece en un párrafo de \"Nosotros\"; no hay sellos, certificaciones, datos de material reciclado ni capacidad de planta. La única prueba visual es una foto de la fábrica y el año de fundación (2006).",
-      "fix": "Agregar una franja de pruebas: certificaciones o sellos que tengas, años en el mercado, clientes o sectores que atiendes, y 2–3 fotos reales del proceso.",
-      "why": "Un comprador de exportación necesita evidencia para elegir proveedor, y lo que no se ve no cuenta.",
+      "summary": "Tu marca se llama «eBIO» y habla de empaques biodegradables, pero la página no muestra ninguna prueba que lo respalde.",
+      "now": "La única mención es una frase en «Nosotros» («empaques biodegradables, contribuyendo así a la sostenibilidad»). No hay sellos, certificaciones, porcentaje de material reciclado, ni imágenes del proceso más allá de una foto de planta. Las fotos de producto son cajas recortadas sobre blanco que podrían ser de cualquier fabricante.",
+      "fix": "Agregar una franja corta de pruebas: certificaciones o sellos que tengas, datos concretos (años desde 2006, capacidad de producción, tipo de material), y 2–3 fotos reales de tu planta y de tus cajas en uso con clientes.",
+      "why": "Muchas empresas dicen ser sostenibles; el comprador confía en la que lo demuestra con hechos visibles.",
       "impact": 4,
       "effort": "Medio",
       "evidence": [
-        "raw/home.html 'Nosotros' text: 'empaques biodegradables, contribuyendo así a la sostenibilidad y al cuidado del medio ambiente'; no other sustainability content, seals, certification logos, numbers or client logos on the home page.",
-        "screenshots/desktop-fullpage.jpg ~y 27–37%: single real factory photo (operator with corrugated paper roll) next to the text — the only process imagery.",
-        "Hero banner (image) shows the claim 'Naturalmente resistentes' with no supporting proof."
+        "raw/home.html: no occurrences of FSC, certific*, ISO, reciclad*, numbers of clients/tons; 'biodegradables' appears once in the Nosotros paragraph",
+        "Only real process photo: imag-e1764119687408-1024x684.png (worker at corrugated paper roll), screenshots/desktop-fullpage.jpg y≈960–1300",
+        "Product images are cut-out renders on white (e.g. Caja-regular.jpg, Caja-regular-impresa.jpg)"
       ],
-      "technical_note": "Do not invent certifications: confirm with the client which ones they hold (e.g. FSC or similar) before showing any seal.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 70, "y_pct": 32}
+      "technical_note": "Do not invent certifications; ask the client which ones they hold. [dato por confirmar] whether any certification exists.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 70,
+        "y_pct": 32
+      }
     },
     {
       "id": "visual-4",
-      "title": "Demasiados tonos de verde y elementos que parecen botones",
-      "summary": "La marca se ve menos cuidada porque cada sección usa un verde distinto y hay títulos que parecen botones pero no hacen nada.",
-      "now": "Se usan seis verdes diferentes; el título \"Productos\" es una barra verde y las categorías son píldoras con borde y sombra que parecen botones, pero no se pueden pulsar, mientras los botones reales son pequeños.",
-      "fix": "Definir una paleta corta (un verde oscuro, un verde lima de acción y un neutro) y reservar la forma de botón solo para lo que se puede pulsar.",
-      "why": "La coherencia visual transmite que la empresa es seria y ordenada, y evita que el cliente haga clic donde no pasa nada.",
+      "title": "Botones y títulos cambian de estilo en cada sección",
+      "summary": "La página se ve armada por partes, lo que resta seriedad frente a competidores más ordenados.",
+      "now": "Hay al menos cinco estilos de botón: el verde con sombra dentro de la foto del carrusel, «Conoce más» (verde, minúsculas), «VER MÁS PRODUCTOS» (verde, mayúsculas), las píldoras blancas con borde y sombra de «Empaques Industriales/Regulares/Sector Agro» (que parecen botones pero no se pueden pulsar) y el botón verde claro de WhatsApp. Los dos títulos de sección del mismo nivel se ven distintos: «Nosotros» es texto verde y «Productos» es texto blanco dentro de una barra verde con sombra.",
+      "fix": "Definir un botón principal y uno secundario y usarlos en toda la página; mostrar los nombres de categoría como títulos de texto (no con forma de botón) y dar a todos los títulos de sección el mismo estilo.",
+      "why": "La coherencia visual es una señal rápida de empresa organizada; la falta de ella hace dudar de la calidad del producto.",
       "impact": 3,
       "effort": "Bajo",
-      "headline_metric": "6 verdes",
       "evidence": [
-        "raw/home.html inline CSS hex counts: dark greens #194414 (16), #1E5000 (6), #4A7147 (2); lime greens #97C61B (15), #98C71B (4), #7CA50A (3) — near-duplicate shades.",
-        "Elementor global colors left at defaults and not matching the brand: --e-global-color-primary:#6EC1E4 (light blue), --e-global-color-accent:#61CE70.",
-        "Category headings 'Empaques Industriales/Regulares/Sector Agro' are icon-list items in containers with border 2px #194414, radius 30px and box-shadow 0 0 10px rgba(0,0,0,.5); no link.",
-        "Real buttons: 'Conoce más' and 'VER MÁS PRODUCTOS' (both small, lime #97C61B, radius 10px, one Title case, one UPPERCASE); the large 'Productos' button in the hero is part of the image and not clickable.",
-        "Both section titles are <h2> but 'Nosotros' is plain #4A7147 text while 'Productos' is white text inside a lime bar with shadow (screenshots/desktop-fullpage.jpg ~y 40%)."
+        "Computed styles (headless Chrome 1440x900): 'Conoce más' bg rgb(151,198,27), Roboto 15px/500, radius 10px, textTransform none; 'VER MÁS PRODUCTOS' same colors, uppercase text",
+        "h2 'Nosotros': Roboto 32px/600 rgb(74,113,71), transparent background; h2 'Productos': Roboto 32px/600 rgb(255,255,255) on lime bar with drop shadow (screenshots/desktop-fullpage.jpg y≈1405–1460)",
+        "Category labels are .elementor-icon-list-text inside outlined pill containers with shadow, not links",
+        "Hero 'Productos' button is part of the banner PNG (drop shadow, different green/shape); WhatsApp widget uses its own green"
       ],
-      "technical_note": "Set Elementor Site Settings > Global Colors/Fonts to the brand tokens and replace hard-coded hex values; style category headings as plain headings (or make them real links to the category pages).",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 44}
+      "technical_note": "Set Elementor global button style + global heading style; current Elementor globals are still defaults (--e-global-color-primary #6EC1E4, accent #61CE70) and not used by the design.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 40
+      }
     },
     {
       "id": "visual-5",
-      "title": "Cuatro tipografías distintas en una sola página",
-      "summary": "Mezclar letras distintas resta personalidad a la marca y además hace la página más pesada.",
-      "now": "La página carga Roboto, Roboto Slab y Poppins (cada una con 18 grosores) y el banner usa una cuarta letra dibujada dentro de la imagen.",
-      "fix": "Quedarse con una tipografía para títulos y otra para texto, y usar la misma del banner como texto real.",
-      "why": "Una tipografía consistente hace que la marca se reconozca y se vea profesional.",
+      "title": "Demasiadas tipografías y tonos de verde mezclados",
+      "summary": "La mezcla de letras y verdes hace que la marca se vea menos sólida de lo que es.",
+      "now": "En pantalla conviven Roboto (menú, títulos, botones), Poppins (textos de «Nosotros» y pie), una tercera letra redondeada distinta dentro de las fotos del carrusel y la letra del sistema en el botón de WhatsApp; además se descarga Roboto Slab, que no se usa. Se usan al menos seis verdes distintos, dos de ellos casi idénticos.",
+      "fix": "Quedarse con una tipografía para títulos y otra para textos (y usar esas mismas en los banners), y fijar una paleta corta: un verde oscuro, un verde de acción y el kraft como apoyo.",
+      "why": "Una identidad visual consistente se recuerda más y transmite que la empresa cuida los detalles, como en sus empaques.",
       "impact": 2,
       "effort": "Bajo",
-      "headline_metric": "4 tipografías",
       "evidence": [
-        "raw/home.html: three Google Fonts stylesheets — Roboto, Roboto Slab, Poppins — each requesting weights 100–900 plus italics (18 variants each).",
-        "Global typography: primary/text/accent = Roboto, secondary = Roboto Slab; 'Nosotros' body text uses Poppins (font-family:\"Poppins\" x2 in inline CSS).",
-        "Hero image text ('Naturalmente resistentes', screenshots/desktop-viewport.png ~x 10–40%, y 40–65%) is a geometric sans that is none of the loaded fonts."
+        "raw/home.html loads Google Fonts Roboto, Roboto Slab and Poppins, each with 18 weight/style variants",
+        "Rendered text font families (1440px): Roboto 600/500, Poppins 500, -apple-system (WhatsApp widget), Inter 400 (1 element); banner PNGs use a rounded geometric sans not loaded on the page",
+        "Green hex values in inline CSS: #97C61B (15), #98C71B (4, near-duplicate), #7CA50A, #194414, #1E5000, #4A7147"
       ],
-      "technical_note": "Load only the families and weights actually used (e.g. 400/600/700); Roboto Slab appears only in the global 'secondary' token.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 48}
+      "technical_note": "Remove Roboto Slab and unused weights from the Elementor font settings; also a load-weight win (tech lane).",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 44,
+        "y_pct": 5
+      }
     },
     {
       "id": "visual-6",
-      "title": "Espacios vacíos y saltos de fondo desordenan la página",
-      "summary": "Los huecos irregulares hacen que la página se sienta inacabada y alargan el recorrido hasta los productos.",
-      "now": "Hay franjas vacías entre secciones, separaciones distintas entre las categorías de productos y, en celular, una banda blanca bajo el banner y un fondo que cambia de blanco a textura gris.",
-      "fix": "Usar una misma separación entre secciones, alinear las tres categorías igual y mantener un solo fondo continuo en celular.",
-      "why": "Un diseño ordenado transmite el mismo cuidado que el cliente espera de su empaque.",
+      "title": "Espacios vacíos y fondos que cambian en celular",
+      "summary": "En el celular la página se siente desordenada: hay huecos grandes y el fondo cambia de golpe entre secciones.",
+      "now": "En celular, entre el carrusel y la foto de «Nosotros» queda una banda en blanco de unos 100 px, y el fondo salta de blanco a gris con textura entre «Empaques Regulares» y «Sector Agro». En escritorio hay huecos de unos 100 px antes y después de la barra «Productos».",
+      "fix": "Usar un mismo fondo y un mismo espacio entre secciones (por ejemplo 64 px en escritorio y 40 px en celular).",
+      "why": "Los huecos y cortes bruscos dan sensación de sitio sin terminar.",
       "impact": 2,
       "effort": "Bajo",
       "evidence": [
-        "screenshots/desktop-fullpage.jpg: empty band of ~150 px between 'Nosotros' and the 'Productos' bar (~y 37–40%) and ~90 px between the bar and the first category; gap above 'Empaques Sector Agro' (~y 70–73%) is about three times the gap above 'Empaques Regulares' (~y 56–57%).",
-        "Inline CSS: spacer widgets of 50px and 10px mixed between sections (--spacer-size:50px, --spacer-size:10px).",
-        "screenshots/mobile-fullpage.jpg: white band ~90 px below the hero (~y 11–14%); background switches between white and grey texture at the product carousels (~y 30% and ~y 38%)."
+        "screenshots/visual-mobile-hero.png (412px, 2x): hero ends at ≈373 CSS px, photo frame starts at ≈473 CSS px, empty white band between",
+        "screenshots/mobile-fullpage.jpg y≈1790–2550: textured grey background block starts/ends abruptly against white",
+        "screenshots/desktop-fullpage.jpg y≈1300–1400 and y≈1460–1545: empty bands around the 'Productos' bar"
       ],
-      "technical_note": "Replace ad-hoc spacer widgets with consistent container padding (e.g. 64/40 px desktop/mobile); set the page background on the body, not per container.",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 38}
+      "technical_note": "Section padding is set per-section in Elementor; mobile background differs because the texture is set on some sections only.",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 12
+      }
     },
     {
       "id": "visual-7",
-      "title": "El pie de página dice ©2025",
-      "summary": "Un año desactualizado hace pensar que el sitio no se mantiene y resta confianza.",
-      "now": "El pie de página muestra \"Todos los derechos reservados ©2025\" y estamos en 2026.",
-      "fix": "Poner el año automático para que siempre esté al día.",
-      "why": "Pequeños descuidos visibles hacen dudar al cliente de si la empresa sigue activa.",
+      "title": "El pie de página muestra el año 2025",
+      "summary": "Un año pasado en el pie hace pensar que el sitio no se actualiza.",
+      "now": "El pie dice «Todos los derechos reservados ©2025» y hoy estamos en noviembre de 2026.",
+      "fix": "Poner el año de forma automática o quitarlo.",
+      "why": "Es un detalle pequeño que algunos compradores usan para juzgar si la empresa sigue activa.",
       "impact": 1,
       "effort": "Bajo",
       "evidence": [
-        "raw/home.html footer: 'Todos los derechos reservados ©2025 | eBiopacking.com | Protección de datos personales | Términos y condiciones'; audit date 2026-10-24.",
-        "screenshots/desktop-fullpage.jpg ~y 96%."
+        "Rendered body text matches '©2025' (footer); screenshots/desktop-fullpage.jpg y≈3395"
       ],
-      "technical_note": "Use a dynamic year (Elementor dynamic tag 'Current Date Time' with format Y, or a [year] shortcode).",
-      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 49, "y_pct": 96}
+      "technical_note": "Use a dynamic year shortcode/tag in the Elementor footer.",
+      "pin": {
+        "screenshot": "desktop-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 96
+      }
     }
   ],
   "checks": [
-    {"id": "vis-headline-legible", "result": "fail", "evidence": "Headline 'Naturalmente resistentes' is baked into the hero PNG (not in HTML, no h1). On the 412 px Lighthouse mobile screenshot it renders at ≈18 px (subtitle ≈9 px), below the ~24 px threshold and not real text."},
-    {"id": "vis-focal-point", "result": "partial", "evidence": "Desktop hero has a clear focal headline. But the product section competes with itself (lime 'Productos' bar + three shadowed pills that look like buttons) and on mobile the hero shrinks so nothing dominates the first screen."},
-    {"id": "vis-fonts", "result": "fail", "evidence": "Roboto, Roboto Slab and Poppins loaded (Poppins used in 'Nosotros' body) plus a fourth geometric sans inside the hero image."},
-    {"id": "vis-buttons", "result": "partial", "evidence": "Clickable buttons ('Conoce más', 'VER MÁS PRODUCTOS') share lime #97C61B / radius 10px but differ in case; the hero 'Productos' button is an image (larger, shadowed, not clickable) and category pills/'Productos' bar mimic buttons without being links."},
-    {"id": "vis-headings", "result": "fail", "evidence": "Both are h2: 'Nosotros' is plain #4A7147 text, 'Productos' is white text in a lime bar with drop shadow; category labels are styled as outlined pills."},
-    {"id": "vis-palette", "result": "fail", "evidence": "Six greens with near-duplicates (#194414/#1E5000/#4A7147, #97C61B/#98C71B/#7CA50A); Elementor global colors left at defaults (#6EC1E4, #61CE70)."},
-    {"id": "vis-photos", "result": "partial", "evidence": "One real factory photo in 'Nosotros' and clean, consistent white-background product cut-outs; but products are shown isolated with no real use/context, and at least one (mobile Industriales card) carries generic English 'THIS SIDE UP / FRAGILE' labels rather than own branding."},
-    {"id": "vis-products", "result": "fail", "evidence": "18 product images in carousels with 0 captions and no links; names only in file-name alt text (several misspelled)."},
-    {"id": "vis-positioning", "result": "partial", "evidence": "Biodegradable/sustainability claim only in text; no seals, certifications, numbers or client logos. Partial proof: one real factory process photo and 'fundada en el año 2006'."},
-    {"id": "vis-spacing", "result": "fail", "evidence": "Desktop: ~150 px empty band before 'Productos', uneven gaps between category blocks (Sector Agro gap ~3x Regulares). Mobile: ~90 px white band below hero and background switching white/grey texture."},
-    {"id": "vis-up-to-date", "result": "fail", "evidence": "Footer shows '©2025' on 2026-10-24; heavy drop shadows (box-shadow 0 0 10px rgba(0,0,0,.5)) on headings/pills. Uploads are from 2025/11–12, so content itself is recent."}
+    {
+      "id": "vis-headline-legible",
+      "result": "fail",
+      "evidence": "Headline is raster text inside a 1920x1080 carousel PNG; at 412px wide it renders ≈15 CSS px cap height, subtitle ≈9 px; no h1 on page."
+    },
+    {
+      "id": "vis-focal-point",
+      "result": "partial",
+      "evidence": "Desktop hero has a clear headline but competes with 3 product images, social icons and a rotating carousel; in Productos the lime title bar and outlined category pills outweigh the products themselves; Nosotros section is clear."
+    },
+    {
+      "id": "vis-fonts",
+      "result": "fail",
+      "evidence": "Roboto + Poppins in HTML text, a third rounded sans baked into banners, system font in WhatsApp widget; Roboto Slab also loaded."
+    },
+    {
+      "id": "vis-buttons",
+      "result": "fail",
+      "evidence": "≥5 button looks: banner-baked 'Productos', 'Conoce más' (sentence case), 'VER MÁS PRODUCTOS' (uppercase), outlined shadow pills (non-clickable labels), WhatsApp widget."
+    },
+    {
+      "id": "vis-headings",
+      "result": "fail",
+      "evidence": "h2 'Nosotros' is green text on texture; h2 'Productos' is white text in a lime bar with drop shadow; category subheads are outlined pills."
+    },
+    {
+      "id": "vis-palette",
+      "result": "fail",
+      "evidence": "Six greens in CSS (#97C61B, #98C71B near-duplicate, #7CA50A, #194414, #1E5000, #4A7147) plus WhatsApp green; Elementor global palette left at defaults."
+    },
+    {
+      "id": "vis-photos",
+      "result": "partial",
+      "evidence": "One real, well-lit factory photo in Nosotros; hero and product imagery are cut-out renders/composites and a stock-style truck scene in banner 3."
+    },
+    {
+      "id": "vis-products",
+      "result": "fail",
+      "evidence": "Product carousel cards show photo only; slide innerText empty; names exist only as file-name alt text."
+    },
+    {
+      "id": "vis-positioning",
+      "result": "partial",
+      "evidence": "Sustainability/'bio' claim has no seals, certifications or figures; only proof is founding year 2006 and one plant photo for manufacturing capability."
+    },
+    {
+      "id": "vis-spacing",
+      "result": "partial",
+      "evidence": "Desktop grid aligned (3 equal cards per row) but ~100px empty bands around 'Productos'; mobile has a ~100px blank band after the hero and abrupt white/texture background switches."
+    },
+    {
+      "id": "vis-up-to-date",
+      "result": "fail",
+      "evidence": "Footer shows ©2025 (audit date 2026-11-18); layout itself is recent (uploads 2025/11–12)."
+    }
   ]
 }
