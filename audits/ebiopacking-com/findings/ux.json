@@ -3,218 +3,138 @@
   "findings": [
     {
       "id": "ux-1",
-      "title": "El WhatsApp envía un mensaje de prueba",
-      "summary": "El canal de contacto más directo saluda a tus clientes con texto de demostración y a un número que no coincide con el de tu página de Contacto.",
-      "now": "Al pulsar \"¿Cómo puedo ayudarte?\" el chat abre con el mensaje \"¡Hola! Estoy probando el plugin Social Chat\" y un enlace al fabricante del plugin; el contacto se llama \"John Doe\" y apunta al +57 310 311 8117, mientras Contacto muestra +57 310 325 0267 y +57 310 451 4510.",
-      "fix": "Cambiar el mensaje por uno de venta (por ejemplo: \"Hola, quiero cotizar empaques de cartón para…\"), poner el nombre real del asesor y usar el mismo número comercial que aparece en Contacto.",
-      "why": "Un cliente que ve texto de prueba duda de que alguien atienda, y si el número no es el comercial la consulta puede perderse.",
+      "title": "El chat de WhatsApp dice que están probando un plugin",
+      "summary": "Quien escribe por WhatsApp envía un mensaje de prueba ajeno a tu negocio, y además a un número que no coincide con tu página de contacto.",
+      "now": "Al abrir el botón verde \"¿Cómo puedo ayudarte?\" el mensaje que se envía es \"¡Hola! Estoy probando el plugin Social Chat\" con un enlace al fabricante del plugin, el contacto se llama \"John Doe\" y el número (+57 310 311 8117) no aparece en tu página de Contacto, que muestra otros dos celulares.",
+      "fix": "Configurar el chat con un mensaje real (por ejemplo \"Hola, quiero cotizar empaques para…\"), el nombre del asesor de ventas y el mismo número que aparece en Contacto.",
+      "why": "WhatsApp es el canal más rápido para pedir cotización en Colombia y hoy da una primera impresión de sitio sin terminar.",
       "impact": 5,
       "effort": "Bajo",
-      "headline_metric": null,
       "evidence": [
-        "raw/home.html: div.qlwapp data-button.message = \"¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/landing/whatsapp-chat/?utm_source=qlwapp_plugin...\"",
-        "raw/home.html: data-contacts firstname \"John\", lastname \"Doe\", avatar gravatar 000…0, phone \"573103118117\"",
-        "raw/ux-contacto.html: \"Numero celular +57 3103250267 I +57 3104514510\" — neither matches 573103118117",
-        "Widget visible on every page (desktop-viewport.png bottom-right, x≈1278 y≈856)"
+        "raw/home.html qlwapp settings: \"message\":\"¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/landing/whatsapp-chat/?utm_source=qlwapp_plugin...\"",
+        "raw/home.html qlwapp contact: \"firstname\":\"John\",\"lastname\":\"Doe\",\"label\":\"Soporte\",\"phone\":\"573103118117\"",
+        "raw/ux-contacto.html 'Numero celular': +57 3103250267 | +57 3104514510 (neither matches 573103118117)",
+        "Widget visible on every page, bottom-right (screenshots/desktop-viewport.png x≈1278,y≈856)"
       ],
-      "technical_note": "Plugin: wp-whatsapp-chat (QuadLayers Social Chat) 8.1.0. Box header also contains 'Powered by' link to quadlayers.com. Unconfirmed whether 573103118117 belongs to the company; it simply differs from the numbers published on /contacto/.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 88.8,
-        "y_pct": 95.1
-      }
+      "technical_note": "Plugin: QuadLayers Social Chat (qlwapp) 8.1.0, defaults never edited. Edit in WP admin > Social Chat > Contacts/Button. Same widget config on /productos/, /nosotros/, /servicio-al-cliente/, /contacto/.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 89, "y_pct": 95}
     },
     {
       "id": "ux-2",
-      "title": "Los productos no llevan a cotizar ni a detalle",
-      "summary": "Quien encuentra la caja que necesita no tiene cómo pedirla desde ahí, así que el interés se queda en la foto.",
-      "now": "En Productos hay 17 referencias (caja regular, bandejas para frutas, cajas para flores, etc.) con nombre y foto, pero ninguna tiene enlace, medidas, botón ni texto de \"cotizar\". En el inicio, las tres franjas de productos son carruseles de fotos que tampoco se pueden pulsar; el único paso siguiente es \"VER MÁS PRODUCTOS\", que lleva a la misma lista sin acciones.",
-      "fix": "Agregar a cada producto un botón \"Cotizar\" que abra WhatsApp o el formulario con el nombre del producto ya escrito, y una ficha corta con usos, medidas o materiales disponibles.",
-      "why": "Cada clic extra entre \"esto es lo que necesito\" y \"pedir precio\" es un punto donde el comprador se va a otro proveedor.",
+      "title": "Los productos no llevan a ninguna ficha ni cotización",
+      "summary": "Un comprador que encuentra la caja que necesita no tiene cómo pedirla desde el producto y debe buscar por su cuenta cómo contactarte.",
+      "now": "La página Productos muestra 17 productos (6 industriales, 6 regulares, 5 agro) con foto y nombre, pero ninguno es un enlace ni tiene botón; en el inicio los productos están en carruseles que tampoco llevan a ningún lado.",
+      "fix": "Dar a cada producto un botón \"Cotizar\" que abra WhatsApp o el formulario con el nombre del producto ya escrito, y si es posible una ficha corta con medidas, usos y pedido mínimo.",
+      "why": "El catálogo es justo donde el cliente decide, y hoy ahí se corta el camino hacia la venta.",
       "impact": 5,
       "effort": "Medio",
-      "headline_metric": "17 productos sin acción",
       "evidence": [
-        "raw/ux-productos.html: 17 product headings (h2) in 3 categories; the only <a href> on the page are header menu, social links and skip link — no product links, no CTA",
-        "raw/home.html: carousels 7ebf4b8, 49b3a6c, b5360d7 contain only <img class=swiper-slide-image> without <a>; only home CTAs are 'Conoce más' (/nosotros/) and 'VER MÁS PRODUCTOS' (/productos/)",
-        "screenshots/ux-productos-desktop.png: product cards with title + photo only"
+        "raw/ux-productos.html: only <a> elements are nav, social icons and skip link; product names (Caja regular, Caja regular impresa, Tipo bandeja, Telescopica, Particiones, Lamina de cartón corrugado, Cajas exibidoras, Cajas tipo nevera, Cajas personalizadas, Aislador de calor, Caja ready to sell, Bandejas para frutas, Lámina corrugada para flores, Cajas para flores, Separadores de Ramos, Caja para verdes hierbas, + Caja regular repeated) are plain text",
+        "raw/home.html: 3 Elementor image-carousels (17 slides) with <figure> and no <a>; only links in body are 'Conoce más' (/nosotros/) and 'VER MÁS PRODUCTOS' (/productos/)",
+        "screenshots/ux-productos-desktop.png: product cards with no button"
       ],
-      "technical_note": "Quote path walked: Home -> 'VER MÁS PRODUCTOS' -> /productos/ (dead end, no CTA) -> must go back to header 'Contacto' -> generic form. Product carousels on home show images without product names.",
-      "pin": {
-        "screenshot": "desktop-fullpage.jpg",
-        "x_pct": 49.6,
-        "y_pct": 50.6
-      }
+      "technical_note": "Elementor image-carousel 'link' setting unset. A wa.me link with ?text=Quiero%20cotizar%20<producto> per card is the cheapest fix.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 50, "y_pct": 51}
     },
     {
       "id": "ux-3",
-      "title": "No hay botón para cotizar en la primera pantalla",
-      "summary": "El visitante que llega listo para pedir precio no encuentra una invitación clara a hacerlo.",
-      "now": "La primera pantalla es un banner de imágenes; el botón verde \"Productos\" y los íconos de redes que se ven en él son parte de la foto y no se pueden pulsar. La única vía a ventas es la palabra \"Contacto\" en el menú, y en celular queda escondida dentro del menú de tres rayas.",
-      "fix": "Poner un botón real \"Solicita tu cotización\" en el banner y en la cabecera fija, que lleve al formulario o a WhatsApp, y usar ese mismo texto en todas las páginas.",
-      "why": "Un llamado a la acción visible y concreto es lo que convierte una visita en una solicitud de precio.",
+      "title": "No hay ningún botón para pedir cotización",
+      "summary": "El sitio no le dice al visitante cuál es el siguiente paso para comprar, así que muchos se van sin preguntar.",
+      "now": "Los botones del sitio dicen \"Productos\", \"Conoce más\", \"VER MÁS PRODUCTOS\" y \"Contáctanos\"; ninguno dice \"Cotizar\". El botón verde \"Productos\" de la portada es parte de la imagen y no se puede pulsar. En celular, el único acceso a Contacto está dentro del menú.",
+      "fix": "Poner un botón \"Cotiza tus empaques\" visible en la primera pantalla y en el encabezado de todas las páginas, que lleve a WhatsApp o al formulario.",
+      "why": "Un comprador B2B llega con una necesidad concreta y espera un camino directo para pedir precio.",
       "impact": 4,
       "effort": "Bajo",
-      "headline_metric": null,
       "evidence": [
-        "raw/home.html: hero is elementor image-carousel 958f370 with 3 <img> (01-EBIO_INICIO_BANNER_01-2.png, _02, 03-…_03) and no <a> inside the slides",
-        "desktop-viewport.png: 'Productos' button drawn at x≈361 y≈770 and social icons at y≈698 are pixels of the slide image",
-        "No link text containing 'cotiz' on any fetched page (home, productos, contacto, nosotros, servicio-al-cliente)",
-        "mobile-fullpage.jpg: first screen shows logo, hamburger and a small banner; no visible contact button"
+        "raw/home.html anchors: Inicio, Nosotros, Productos, Servicio al Cliente, Contacto (nav x2), 'Conoce más', 'VER MÁS PRODUCTOS', social icons; no 'cotiz*' string in any fetched page",
+        "Hero is an Elementor image-carousel of 3 PNG slides (01-EBIO_INICIO_BANNER_01-2.png etc.) inside <figure> without <a>: the 'Productos' button and social icons at desktop-viewport.png x≈361,y≈770 are pixels of the image",
+        "screenshots/mobile-fullpage.jpg: first screen shows logo, hamburger and a small hero image; no button"
       ],
-      "technical_note": "Header menu is sticky on desktop/tablet/mobile; a CTA button there would remain visible while scrolling.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 25.1,
-        "y_pct": 85.6
-      }
+      "technical_note": "Grep for 'cotiz' over raw/home.html and raw/ux-*.html returns nothing. Servicio al Cliente has a 'Contáctanos' link to /contacto/.",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 86}
     },
     {
       "id": "ux-4",
-      "title": "El mensaje principal no dice qué fabricas",
-      "summary": "Quien llega desde Google no entiende en segundos que eres fabricante de empaques de cartón corrugado para empresas, y puede irse antes de descubrirlo.",
-      "now": "El banner dice \"Naturalmente resistentes. Diseñadas para cuidar tus flores y frutas con estilo.\", pero ese texto está dentro de una imagen, no menciona cartón corrugado, empaques industriales ni a quién le vendes, y en celular se ve muy pequeño. La frase \"empaques de cartón corrugado\" aparece recién en el bloque \"Nosotros\", más abajo.",
-      "fix": "Escribir como texto real en el banner una frase del tipo \"Fabricamos empaques de cartón corrugado para la industria, el comercio y el sector agro en Colombia\" con el botón de cotizar al lado.",
-      "why": "La primera pantalla decide si el visitante sigue leyendo; si no reconoce lo que busca, regresa a los resultados de búsqueda.",
+      "title": "El mensaje de la portada está dentro de una imagen",
+      "summary": "Lo que vendes y para quién solo se ve como dibujo, y en celular queda en letra diminuta.",
+      "now": "\"Naturalmente resistentes. Diseñadas para cuidar tus flores y frutas con estilo\" está pintado dentro de la foto del carrusel (3 imágenes que se cambian con flechas). No hay ningún texto real en la primera pantalla que diga que fabricas empaques de cartón corrugado, para qué sectores y en qué ciudad. En celular la imagen se reduce a una franja de unos 140 px de alto.",
+      "fix": "Escribir como texto real un titular del tipo \"Fabricantes de cajas y empaques de cartón corrugado para flores, frutas e industria en Mosquera, Cundinamarca\", con el botón de cotizar al lado, y dejar la foto como fondo.",
+      "why": "En los primeros segundos el visitante decide si está en el lugar correcto; si no lo lee claro, vuelve a Google.",
       "impact": 4,
       "effort": "Medio",
-      "headline_metric": null,
       "evidence": [
-        "raw/home.html: no <h1>; visible text extracted starts with menu, then 'Nosotros' section — hero copy exists only inside slide images",
-        "Slide img alt = file names ('01-EBIO_INICIO_BANNER_01')",
-        "desktop-viewport.png: headline at x≈360 y≈395–570 is part of the image",
-        "mobile-fullpage.jpg: hero rendered ~412px wide, headline text very small (top ~7% of page)"
+        "raw/home.html: only text headings are <h2>Nosotros</h2> and <h2>Productos</h2>; no <h1>",
+        "Hero slides are images with alt '01-EBIO_INICIO_BANNER_01', '01-EBIO_INICIO_BANNER_02', '03-EBIO_INICIO_BANNER_03'",
+        "First real text sentence ('Ebiopacking es una empresa fundada en el año 2006 ... cartón corrugado') sits in the Nosotros block below the first viewport (desktop-fullpage.jpg y≈30%)",
+        "screenshots/mobile-fullpage.jpg: hero rendered ~412x185 px, tagline text ~8 px tall"
       ],
-      "technical_note": "Business inferred from the site (not provided by client): eBiopacking, Colombian manufacturer of corrugated cardboard sheets and boxes (industrial, regular, agro: flowers/fruit), founded 2006, plant at Parque Industrial San Jorge, Mosquera; mentions export. Title tag: 'eBiopacking Colombia – Soluciones en Empaques'.",
-      "pin": {
-        "screenshot": "desktop-viewport.png",
-        "x_pct": 25.0,
-        "y_pct": 52.0
-      }
+      "technical_note": "Hero carousel has no autoplay (settings: navigation both, infinite, slide); content changes only on arrow/dot click. Mobile measured from Lighthouse mobile screenshot (412 px wide).",
+      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 25, "y_pct": 52}
     },
     {
       "id": "ux-5",
-      "title": "El formulario no pide lo que ventas necesita",
-      "summary": "Las solicitudes llegan sin empresa, producto ni cantidad, así que tu equipo debe volver a contactar a cada cliente antes de poder cotizar.",
-      "now": "El formulario de Contacto pide Número, Correo, Nombre y Mensaje. No pregunta empresa, tipo de empaque ni cantidad, no dice en cuánto tiempo responden y ningún campo es obligatorio. El campo \"Numero\" solo acepta cifras y el de correo no verifica que sea un correo.",
-      "fix": "Ordenar el formulario como solicitud de cotización: nombre, empresa, teléfono, correo, producto de interés (lista) y cantidad aproximada; marcar los obligatorios, validar el correo y prometer un tiempo de respuesta (por ejemplo, \"te respondemos en 1 día hábil\").",
-      "why": "Una solicitud completa se cotiza de inmediato; una incompleta se enfría mientras se piden los datos.",
+      "title": "Teléfono y correo solo aparecen en Contacto",
+      "summary": "Quien está viendo productos no tiene a mano cómo llamarte o escribirte, y desde el celular no puede tocar el número para marcar.",
+      "now": "Los celulares (+57 310 325 0267 y +57 310 451 4510) y ventas@ebiopacking.com solo están en la página Contacto, como texto plano. El pie de página de todas las páginas solo tiene redes sociales y textos legales.",
+      "fix": "Poner teléfono, WhatsApp y correo en el pie de página de todo el sitio, como enlaces que al tocarlos llamen o abran el correo.",
+      "why": "Un comprador con prisa llama; si no encuentra el número en dos segundos, llama al siguiente proveedor.",
       "impact": 4,
       "effort": "Bajo",
-      "headline_metric": null,
       "evidence": [
-        "raw/ux-contacto.html: form ce37277 fields — input type=number name=form_fields[name] placeholder 'Numero'; input type=text placeholder 'Correo'; input type=text placeholder 'Nombre'; textarea 'Mensaje'",
-        "0 'required' attributes and 0 'elementor-field-required' in the form",
-        "Labels are elementor-screen-only (placeholder-only visually)",
-        "No response-time text on /contacto/"
+        "No 'tel:' or 'mailto:' links in raw/home.html, raw/ux-contacto.html, raw/ux-productos.html, raw/ux-nosotros.html, raw/ux-servicio-al-cliente.html",
+        "Footer text on every page: 'Facebook Instagram Tiktok Todos los derechos reservados ©2025 | eBiopacking.com | Protección de datos personales | Términos y condiciones'",
+        "screenshots/ux-contacto-desktop.png: phone and email shown as plain text cards"
       ],
-      "technical_note": "Phone field is the one with name=form_fields[name] (field id 'name') — check the email notification mapping so the phone is not reported as the customer's name. type=number on phone strips '+' and leading zeros.",
-      "pin": {
-        "screenshot": "ux-contacto-desktop.png",
-        "x_pct": 30.8,
-        "y_pct": 15.0
-      }
+      "technical_note": "Elementor footer template is shared; one edit fixes all pages.",
+      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 96}
     },
     {
       "id": "ux-6",
-      "title": "Teléfono y correo solo aparecen en Contacto",
-      "summary": "Un comprador que quiere llamar desde cualquier página tiene que buscar, y en celular no puede marcar con un toque.",
-      "now": "El pie de página de todas las páginas solo tiene redes sociales y textos legales. Los teléfonos y ventas@ebiopacking.com aparecen únicamente en la página Contacto, como texto simple que no se puede pulsar para llamar o escribir.",
-      "fix": "Agregar teléfono, correo y ciudad en el pie de página de todo el sitio, y convertirlos en enlaces que abran la llamada o el correo con un toque.",
-      "why": "En celular, un número que se marca con un toque es la vía más corta entre la duda y la venta.",
+      "title": "El formulario no pide lo que ventas necesita",
+      "summary": "Cada solicitud llega sin empresa, producto ni cantidad, así que tu equipo debe volver a contactar antes de poder cotizar.",
+      "now": "El formulario de Contacto tiene 4 campos (Numero, Correo, Nombre, Mensaje), ninguno obligatorio, sin títulos visibles (solo el texto gris dentro del campo) y no dice en cuánto tiempo responden. El campo de teléfono es numérico, por lo que no acepta \"+57\" ni espacios.",
+      "fix": "Pedir nombre, empresa, celular, correo, tipo de empaque (lista) y cantidad aproximada; marcar los obligatorios y decir \"Te respondemos en menos de X horas hábiles\".",
+      "why": "Una solicitud completa se convierte en cotización el mismo día; una incompleta se enfría.",
       "impact": 3,
       "effort": "Bajo",
-      "headline_metric": null,
       "evidence": [
-        "Footer on home, productos, nosotros, servicio-al-cliente, contacto: only Facebook/Instagram/TikTok + '©2025 | eBiopacking.com | Protección de datos personales | Términos y condiciones'",
-        "0 'tel:' and 0 'mailto:' links across the 5 fetched pages",
-        "raw/ux-contacto.html: phones and email as plain text"
+        "raw/ux-contacto.html form fields: input type=number name=form_fields[name] placeholder 'Numero'; input type=text placeholder 'Correo' (not type=email); input type=text 'Nombre'; textarea 'Mensaje'",
+        "No 'required' attribute and no elementor-field-required class in the form",
+        "Labels exist but have class elementor-screen-only (visually hidden); only placeholders visible (screenshots/ux-contacto-desktop.png)",
+        "No response-time text on the page"
       ],
-      "technical_note": "'Protección de datos personales' and 'Términos y condiciones' in the footer are plain text, not links, although the form consent text sends users to the footer to read them.",
-      "pin": {
-        "screenshot": "desktop-fullpage.jpg",
-        "x_pct": 49.4,
-        "y_pct": 95.8
-      }
+      "technical_note": "Phone field id is 'name' (form_fields[name]) with type=number. Submission and confirmation message not tested to avoid sending a fake lead.",
+      "pin": null
     },
     {
       "id": "ux-7",
-      "title": "Tu experiencia y respaldo están lejos de los productos",
-      "summary": "Lo que te diferencia (casi 20 años, fabricación propia, exportación) no acompaña al cliente en el momento de decidir.",
-      "now": "En el inicio solo se menciona \"fundada en el año 2006\" en el bloque Nosotros. Que eres fabricante con maquinaria propia y que exportas solo aparece en la página Nosotros. No hay logos de clientes, certificaciones ni testimonios junto a los productos ni junto al formulario.",
-      "fix": "Poner una franja corta de datos junto a los productos y al formulario: años en el mercado, \"fabricantes directos en Mosquera\", sectores o clientes atendidos y certificaciones, si las tienes.",
-      "why": "Al elegir proveedor de empaques, el comprador busca señales de capacidad y cumplimiento justo antes de pedir precio.",
+      "title": "Faltan pruebas de confianza junto a los productos",
+      "summary": "El comprador no ve clientes, certificados ni cifras que le den seguridad para pedirte una cotización.",
+      "now": "La única prueba concreta es \"fundada en el año 2006\" en el párrafo de Nosotros. No hay logos de clientes, testimonios, certificaciones, capacidad de planta ni sectores atendidos cerca de los productos o del contacto. La página Nosotros menciona clientes nacionales e internacionales y exportación sin nombrar ninguno.",
+      "fix": "Agregar junto al catálogo y al formulario una franja con años de experiencia, logos de clientes (con permiso), certificaciones reales y alguna cifra de producción verificable.",
+      "why": "En empaque industrial el comprador elige a quien le demuestra que cumple con volumen y calidad.",
       "impact": 3,
       "effort": "Medio",
-      "headline_metric": null,
       "evidence": [
-        "raw/home.html: only trust element is the sentence 'fundada en el año 2006' in the Nosotros block (above the product section, not next to a CTA)",
-        "raw/ux-nosotros.html: 'Somos Fabricantes', 'maquinaria de última generación', 'productos de exportación' — not repeated on /productos/ or /contacto/",
-        "No testimonials, client logos or certification marks found on the 5 fetched pages"
+        "raw/home.html body text: only trust element is 'fundada en el año 2006'",
+        "raw/ux-nosotros.html: '...clientes de diferentes sectores, tanto a nivel nacional como internacional, respaldando así la confianza en nuestros productos de exportación' with no named clients or certifications",
+        "raw/ux-productos.html and raw/ux-contacto.html: no trust elements"
       ],
-      "technical_note": "Do not claim certifications that the company does not hold; none are listed on the site.",
-      "pin": {
-        "screenshot": "desktop-fullpage.jpg",
-        "x_pct": 70.0,
-        "y_pct": 31.0
-      }
+      "technical_note": "Do not invent clients or certifications; collect them from the owner.",
+      "pin": {"screenshot": "desktop-fullpage.jpg", "x_pct": 70, "y_pct": 31}
     }
   ],
   "checks": [
-    {
-      "id": "ux-value-prop",
-      "result": "fail",
-      "evidence": "Hero copy ('Naturalmente resistentes… flores y frutas') is baked into carousel images, not real text; no H1; 'cartón corrugado' first appears as text in the Nosotros block below the first viewport (desktop and mobile)."
-    },
-    {
-      "id": "ux-quote-cta",
-      "result": "partial",
-      "evidence": "Desktop header shows a 'Contacto' nav link in the first viewport; no quote/sales button. The hero 'Productos' button is part of the image (not a link). On mobile Contacto is inside the hamburger; only the WhatsApp widget is visible."
-    },
-    {
-      "id": "ux-catalog-path",
-      "result": "fail",
-      "evidence": "17 products on /productos/ and the 3 home carousels have no links or quote actions; only 'VER MÁS PRODUCTOS' links to the same list."
-    },
-    {
-      "id": "ux-contact-visible",
-      "result": "fail",
-      "evidence": "Phone and email appear only in the body of /contacto/; header and footer on all pages have no phone or email."
-    },
-    {
-      "id": "ux-contact-tappable",
-      "result": "fail",
-      "evidence": "0 tel: and 0 mailto: links on the 5 fetched pages; contact data is plain text."
-    },
-    {
-      "id": "ux-form-data",
-      "result": "fail",
-      "evidence": "Form asks Numero, Correo, Nombre, Mensaje; no company, product or quantity; no response time stated."
-    },
-    {
-      "id": "ux-form-friction",
-      "result": "fail",
-      "evidence": "Only 4 fields (ok), but 0 required fields, email is type=text, phone is type=number, labels screen-only (placeholder as label)."
-    },
-    {
-      "id": "ux-chat-ready",
-      "result": "fail",
-      "evidence": "WhatsApp prefilled message is plugin demo text ('Estoy probando el plugin Social Chat'), contact 'John Doe', number 573103118117 differs from contact page numbers 3103250267 / 3104514510."
-    },
-    {
-      "id": "ux-mobile-nav",
-      "result": "pass",
-      "evidence": "mobile-fullpage.jpg shows a hamburger toggle; Elementor dropdown contains all 5 sections (Inicio, Nosotros, Productos, Servicio al Cliente, Contacto); header is sticky on mobile."
-    },
-    {
-      "id": "ux-trust-near-cta",
-      "result": "partial",
-      "evidence": "Home mentions 'fundada en el año 2006' in the Nosotros block above the product list; no clients, certifications, testimonials or numbers next to products or the contact form."
-    },
-    {
-      "id": "ux-content-not-hidden",
-      "result": "partial",
-      "evidence": "Hero message exists only inside carousel images; home products are image-only autoplay carousels (2000 ms) without names. /productos/ does list all products as real text."
-    }
+    {"id": "ux-value-prop", "result": "fail", "evidence": "Tagline 'Naturalmente resistentes... flores y frutas' is only inside hero carousel PNGs; no <h1>; first real text naming corrugated packaging is in the Nosotros block below the fold on desktop and mobile."},
+    {"id": "ux-quote-cta", "result": "partial", "evidence": "No quote button anywhere; hero 'Productos' button is part of the image. Desktop header shows a plain 'Contacto' menu link in the first viewport; on mobile it is hidden behind the hamburger."},
+    {"id": "ux-catalog-path", "result": "fail", "evidence": "17 product cards on /productos/ and 17 carousel slides on home have no link or action; only 'VER MÁS PRODUCTOS' goes to /productos/, which is also a dead end."},
+    {"id": "ux-contact-visible", "result": "fail", "evidence": "Phone and email appear only on /contacto/; header and footer on all pages have neither."},
+    {"id": "ux-contact-tappable", "result": "fail", "evidence": "No tel: or mailto: links on any of the 5 fetched pages; numbers and email are plain text."},
+    {"id": "ux-form-data", "result": "fail", "evidence": "Form asks Numero, Correo, Nombre, Mensaje; no company, product or quantity; no response-time statement."},
+    {"id": "ux-form-friction", "result": "fail", "evidence": "4 fields (meets ≤6), but none required/marked, email is type=text, phone is type=number (rejects +57/spaces), labels visually hidden; error messages not testable since nothing is required."},
+    {"id": "ux-chat-ready", "result": "fail", "evidence": "WhatsApp widget prefilled message is plugin demo text ('Estoy probando el plugin Social Chat'), contact 'John Doe', number 573103118117 differs from contact page numbers 3103250267 / 3104514510."},
+    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Lighthouse mobile screenshot shows hamburger toggle; HTML includes elementor-menu-toggle with dropdown nav containing all 5 sections (Inicio, Nosotros, Productos, Servicio al Cliente, Contacto)."},
+    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "'fundada en el año 2006' appears in Nosotros block right above the product section on home; no clients, testimonials, certifications or numbers near products or the contact form."},
+    {"id": "ux-content-not-hidden", "result": "partial", "evidence": "On home, products appear only inside 3 auto-advancing carousels (autoplay 2000 ms) as images, and the hero offer is text inside images; /productos/ lists the products with real-text names."}
   ]
 }

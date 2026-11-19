@@ -1,16 +1,17 @@
-### HTTPS home
+### date: Wed Nov 18 20:38:35 UTC 2026
+### GET https://ebiopacking.com/
 HTTP/2 200 
 content-type: text/html; charset=UTF-8
 link: <https://ebiopacking.com/wp-json/>; rel="https://api.w.org/"
 link: <https://ebiopacking.com/wp-json/wp/v2/pages/34>; rel="alternate"; title="JSON"; type="application/json"
 link: <https://ebiopacking.com/>; rel=shortlink
-etag: "3-1792788195;;;"
+etag: "103-1794515859;;;"
 x-litespeed-cache: hit
-date: Sat, 24 Oct 2026 20:05:47 GMT
+date: Wed, 18 Nov 2026 20:38:35 GMT
 server: LiteSpeed
 alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
 
-### HTTP home
+### http://ebiopacking.com/
 HTTP/1.1 301 Moved Permanently
 Connection: Keep-Alive
 Keep-Alive: timeout=5, max=100
@@ -19,55 +20,109 @@ X-Redirect-By: WordPress
 Location: https://ebiopacking.com/
 X-LiteSpeed-Cache-Control: public,max-age=604800
 X-LiteSpeed-Tag: 1f7_front,1f7_URL.6666cd76f96956469e7be39d750cc7d9,1f7_F,1f7_Po.34,1f7_PGS,1f7_
-Date: Sat, 24 Oct 2026 20:05:48 GMT
+Date: Wed, 18 Nov 2026 20:38:35 GMT
 Server: LiteSpeed
 
-### www
+### http://www.ebiopacking.com/
+HTTP/1.1 301 Moved Permanently
+Connection: Keep-Alive
+Keep-Alive: timeout=5, max=100
+Content-Type: text/html; charset=UTF-8
+X-Redirect-By: WordPress
+Location: https://ebiopacking.com/
+X-LiteSpeed-Cache-Control: public,max-age=604800
+X-LiteSpeed-Tag: 1f7_front,1f7_URL.6666cd76f96956469e7be39d750cc7d9,1f7_F,1f7_Po.34,1f7_PGS,1f7_
+Date: Wed, 18 Nov 2026 20:38:36 GMT
+Server: LiteSpeed
+
+### https://www.ebiopacking.com/
 HTTP/2 301 
 content-type: text/html; charset=UTF-8
 x-redirect-by: WordPress
 location: https://ebiopacking.com/
 x-litespeed-cache-control: public,max-age=604800
 x-litespeed-tag: 1f7_front,1f7_URL.6666cd76f96956469e7be39d750cc7d9,1f7_F,1f7_Po.34,1f7_PGS,1f7_
-date: Sat, 24 Oct 2026 20:05:49 GMT
+date: Wed, 18 Nov 2026 20:38:36 GMT
 server: LiteSpeed
 alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
 
-### 404 test
-status=404
-### static jpg
-HTTP/2 200 
-cache-control: public, max-age=31536000
-expires: Sun, 24 Oct 2027 20:05:49 GMT
-content-type: image/jpeg
-last-modified: Mon, 01 Dec 2025 23:44:36 GMT
-accept-ranges: bytes
-content-length: 67335
-date: Sat, 24 Oct 2026 20:05:49 GMT
-server: LiteSpeed
-alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
-
-### static js
+(eval):6: no matches found: https://ebiopacking.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1
+### https://ebiopacking.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1
 HTTP/2 200 
 content-type: text/javascript
 last-modified: Mon, 28 Aug 2023 22:14:24 GMT
 accept-ranges: bytes
 content-length: 87553
-date: Sat, 24 Oct 2026 20:05:50 GMT
+date: Wed, 18 Nov 2026 20:38:44 GMT
 server: LiteSpeed
 alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
 
-### static css
+### https://ebiopacking.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.33.2
 HTTP/2 200 
 cache-control: public, max-age=31536000
-expires: Sun, 24 Oct 2027 20:05:50 GMT
+expires: Thu, 18 Nov 2027 20:38:44 GMT
 content-type: text/css
-last-modified: Thu, 04 Dec 2025 00:36:36 GMT
+last-modified: Tue, 25 Nov 2025 01:08:00 GMT
 accept-ranges: bytes
-content-length: 42043
-date: Sat, 24 Oct 2026 20:05:50 GMT
+content-length: 53644
+date: Wed, 18 Nov 2026 20:38:44 GMT
 server: LiteSpeed
 alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
 
-### wp-json users
-status=200
+### https://ebiopacking.com/wp-content/uploads/2025/11/01-EBIO_INICIO_BANNER_02.png
+HTTP/2 200 
+cache-control: public, max-age=31536000
+expires: Thu, 18 Nov 2027 20:38:44 GMT
+content-type: image/png
+last-modified: Tue, 25 Nov 2025 01:39:41 GMT
+accept-ranges: bytes
+content-length: 2845376
+date: Wed, 18 Nov 2026 20:38:44 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+### 404 test https://ebiopacking.com/pagina-que-no-existe-simian-xyz/
+HTTP/2 404 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+link: <https://ebiopacking.com/wp-json/>; rel="https://api.w.org/"
+x-litespeed-cache-control: public,max-age=3600
+x-litespeed-tag: 1f7_HTTP.404,1f7_404,1f7_URL.0fdca6678fbc687874c1e9343b438e31,1f7_
+x-litespeed-cache: miss
+date: Wed, 18 Nov 2026 20:38:44 GMT
+server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
+
+### Link/image check Wed Nov 18 20:39:00 UTC 2026 (HEAD, fallback GET)
+200 https://ebiopacking.com/
+200 https://ebiopacking.com/contacto/
+301 https://ebiopacking.com/inicio/
+200 https://ebiopacking.com/nosotros/
+200 https://ebiopacking.com/productos/
+200 https://ebiopacking.com/servicio-al-cliente/
+200 https://ebiopacking.com/wp-content/uploads/2025/07/cropped-favicon-180x180.png
+200 https://ebiopacking.com/wp-content/uploads/2025/07/cropped-favicon-192x192.png
+200 https://ebiopacking.com/wp-content/uploads/2025/07/cropped-favicon-32x32.png
+200 https://ebiopacking.com/wp-content/uploads/2025/11/01-EBIO_INICIO_BANNER_01-2.png
+200 https://ebiopacking.com/wp-content/uploads/2025/11/01-EBIO_INICIO_BANNER_02.png
+200 https://ebiopacking.com/wp-content/uploads/2025/11/03-EBIO_INICIO_BANNER_03.png
+200 https://ebiopacking.com/wp-content/uploads/2025/11/ICONOS-Y-LOGOS-1-1024x529.png
+200 https://ebiopacking.com/wp-content/uploads/2025/11/imag-e1764119687408-1024x684.png
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Bandejad-para-frutas.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Caja-para-verdes-hierbas.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Caja-ready-to-seel.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Caja-regular-impresa.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Caja-regular.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Cajas-exhibidoras.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Cajas-tipo-nevera.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Cjas-personalizadas.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Lamina-carton-corrugado.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Lamina-corrugada-flores.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Particiones.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Separadores-ramos.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Tipo-Baul.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Tipo-Bnadeja.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/Tlescopicas.jpg
+200 https://ebiopacking.com/wp-content/uploads/2025/12/asilador-de-calor.jpg

@@ -1,0 +1,41 @@
+{
+  "rounds": 3,
+  "sites": {
+    "client": {
+      "lcp_ms": [
+        552,
+        555,
+        878
+      ],
+      "median_ms": 555,
+      "spread_ms": 153
+    },
+    "ccorrugados": {
+      "lcp_ms": [
+        974,
+        1975,
+        2400
+      ],
+      "median_ms": 1975,
+      "spread_ms": 598
+    },
+    "divipack": {
+      "lcp_ms": [
+        1587,
+        1645,
+        2248
+      ],
+      "median_ms": 1645,
+      "spread_ms": 299
+    },
+    "smurfit-westrock": {
+      "lcp_ms": [
+        2109,
+        2219,
+        2476
+      ],
+      "median_ms": 2219,
+      "spread_ms": 154
+    }
+  }
+}

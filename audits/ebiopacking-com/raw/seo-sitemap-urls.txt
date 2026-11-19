@@ -1,0 +1,16 @@
+== posts-post-1
+https://ebiopacking.com/2025/07/25/hello-world/
+== posts-page-1
+https://ebiopacking.com/sample-page/
+https://ebiopacking.com/proximamente/
+https://ebiopacking.com/
+https://ebiopacking.com/productos/
+https://ebiopacking.com/nosotros/
+https://ebiopacking.com/servicio-al-cliente/
+https://ebiopacking.com/contacto/
+== posts-e-floating-buttons-1
+https://ebiopacking.com/e-floating-buttons/whatssap/
+== taxonomies-category-1
+https://ebiopacking.com/category/uncategorized/
+== users-1
+https://ebiopacking.com/author/georgecoffee/

@@ -3,20 +3,24 @@
     "today": [
       {
         "page": "Inicio",
-        "url": "https://ebiopacking.com/",
+        "url": "https://ebiopacking.com",
+        "canonical": "https://ebiopacking.com/",
         "breadcrumb": "ebiopacking.com",
+        "site_name": "ebiopacking.com",
         "title": "eBiopacking Colombia – Soluciones en Empaques",
         "meta_description": null,
-        "evidence": "raw/home.html: <title>eBiopacking Colombia &#8211; Soluciones en Empaques</title>; no <meta name=\"description\">; canonical https://ebiopacking.com/",
+        "evidence": "Rendered DOM (headless Chrome, 2026-11-18) raw/presence/presence-rendered-home.html: <title>eBiopacking Colombia – Soluciones en Empaques</title>; no meta[name=description], no og:site_name, no WebSite JSON-LD. site_name set to the domain because the page declares no site name; not confirmed against a live Google result (no SEO brand test available in this run). No google_snippet: findings/seo.json not present, so Google's real snippet is not quoted. UPDATE (orchestrator): google_snippet quoted from the SEO brand test 'ebiopacking Mosquera', Google Colombia 2026-11-18, raw/seo-serp-organic-2026-11-18.txt (q8-0, result 1).",
         "google_snippet": "Ebiopacking es una empresa fundada en el año 2006 con el firme compromiso de brindar soluciones innovadoras en el sector de empaques de cartón corrugado."
       },
       {
         "page": "Productos",
-        "url": "https://ebiopacking.com/productos/",
+        "url": "https://ebiopacking.com › productos",
+        "canonical": "https://ebiopacking.com/productos/",
         "breadcrumb": "ebiopacking.com › productos",
         "title": "Productos – eBiopacking Colombia",
         "meta_description": null,
-        "evidence": "raw/ux-productos.html: <title>Productos &#8211; eBiopacking Colombia</title>; no <meta name=\"description\">"
+        "evidence": "raw/presence/presence-rendered-productos.html: <title>Productos – eBiopacking Colombia</title>; no meta[name=description]. Same pattern on /contacto/, /nosotros/, /servicio-al-cliente/. google_snippet from the same brand test (q8-0, result 7).",
+        "google_snippet": "Lamina de cartón corrugado . Empaques Regulares. Caja regular. Cajas exibidoras. Cajas tipo nevera. Cajas personalizadas. Aislador de calor ..."
       }
     ],
     "proposed": [
@@ -24,29 +28,32 @@
         "page": "Inicio",
         "title": "Empaques de cartón corrugado en Mosquera | eBiopacking",
         "description": "Fabricantes de cajas, láminas y empaques de cartón corrugado desde 2006 para flores, frutas e industria. Parque Industrial San Jorge, Mosquera.",
-        "basis": "Facts from site: founded 2006 (home 'Nosotros' block), corrugated cardboard, flowers/fruits (hero banner), 'Empaques Industriales / Sector Agro' (home), address on /contacto/"
+        "basis": "Site facts: 'fundada en el año 2006 ... empaques de cartón corrugado' (home), hero banner 'cuidar tus flores y frutas', address 'Parque industrial San Jorge, Mosquera, Colombia' on /contacto/."
       },
       {
         "page": "Productos",
         "title": "Cajas para flores, frutas e industria | eBiopacking",
         "description": "Cajas regulares e impresas, telescópicas, tipo nevera, bandejas para frutas, cajas para flores, particiones y láminas corrugadas. Cotiza con nosotros.",
-        "basis": "Product headings on raw/ux-productos.html"
+        "basis": "Product headings in raw/presence/presence-rendered-productos.html."
       }
     ]
   },
   "share_preview": {
     "today": {
+      "home": {},
+      "productos": {},
       "og_tags_found": [],
-      "twitter_tags_found": [],
-      "whatsapp_linkedin": "Sin etiquetas Open Graph en inicio ni en productos: al compartir el enlace, WhatsApp y LinkedIn muestran solo la dirección y, como mucho, el título de la pestaña, sin imagen ni descripción.",
-      "evidence": "raw/home.html and raw/ux-productos.html: zero og:* and twitter:* meta tags"
+      "twitter_tags_found": []
     },
+    "today_title": "eBiopacking Colombia – Soluciones en Empaques",
+    "what_shows_today": "Al compartir tu sitio por WhatsApp o LinkedIn solo aparece la dirección y el título de la pestaña «eBiopacking Colombia – Soluciones en Empaques», sin imagen ni descripción. Lo mismo pasa con la página de Productos.",
+    "evidence": "curl without JavaScript (raw/presence/presence-home.html, presence-productos.html, presence-contacto.html, presence-nosotros.html, presence-servicio-al-cliente.html): zero og:* and twitter:* meta tags; only <title>.",
     "proposed": {
       "og:title": "eBiopacking: empaques de cartón corrugado desde 2006",
       "og:description": "Cajas y láminas de cartón corrugado para flores, frutas e industria, fabricadas en Mosquera, Cundinamarca.",
       "og:image": "https://ebiopacking.com/wp-content/uploads/2025/11/01-EBIO_INICIO_BANNER_01-2.png",
       "og_image_local": "og-source.jpg",
-      "technical_note": "Source banner 1920x1080 PNG (3.5 MB). Resampled to 1200x675 and center-cropped to 1200x630 JPEG (~214 KB) at screenshots/og-source.jpg. Publish a JPEG of that size as og:image instead of the heavy PNG."
+      "technical_note": "Source banner 1920x1080 PNG (3,624,275 bytes = 3.5 MB, HTTP 200). Resampled to 1200x675 and center-cropped to 1200x630 JPEG (213.6 KB) at screenshots/og-source.jpg. Publish a JPEG of that size as og:image instead of the heavy PNG."
     }
   },
   "ai_answer": {
@@ -55,32 +62,32 @@
       {
         "title": "Página de preguntas frecuentes",
         "fix": "Publica una página con 8 a 10 preguntas reales de tus compradores (pedido mínimo, tiempos de entrega, si imprimen logo, qué caja sirve para exportar flores) con respuestas cortas y claras.",
-        "evidence": "No FAQ page among the site URLs (raw/tech-urls.txt); no 'Preguntas frecuentes' text in any fetched page."
+        "evidence": "No FAQ page linked from home, productos, nosotros, contacto or servicio-al-cliente; no 'Preguntas frecuentes' text in those rendered pages."
       },
       {
         "title": "Ficha de empresa en datos estructurados",
-        "fix": "Agrega a todas las páginas una ficha Organization/LocalBusiness con nombre, logo, teléfono, correo, dirección en Mosquera y redes sociales, para que Google y los asistentes de IA identifiquen sin dudas quién eres.",
-        "evidence": "0 application/ld+json blocks in home, productos, nosotros, contacto and servicio-al-cliente."
+        "fix": "Agrega a todas las páginas una ficha de empresa (Organization/LocalBusiness) con nombre, logo, teléfono, correo, dirección en Mosquera y redes sociales, para que Google y los asistentes de IA sepan sin dudas quién eres.",
+        "evidence": "0 application/ld+json blocks in the rendered home, productos, nosotros, contacto and servicio-al-cliente (raw/presence/presence-rendered-*.html)."
       },
       {
         "title": "Una página por producto",
-        "fix": "Crea una página propia para cada producto (caja para flores, bandeja para frutas, caja tipo nevera, lámina corrugada…) con medidas, usos y una foto, en lugar de tenerlos todos en una sola lista.",
-        "evidence": "raw/ux-productos.html lists 17 products as headings on a single page; no individual product URLs in raw/tech-urls.txt."
+        "fix": "Crea una página propia para cada producto (caja para flores, bandeja para frutas, caja tipo nevera, lámina corrugada…) con medidas, usos y foto, en lugar de tenerlos todos en una sola lista.",
+        "evidence": "All products are headings on the single /productos/ page; no individual product URLs linked."
       },
       {
         "title": "Hoja de datos verificables",
-        "fix": "Publica en 'Nosotros' cifras que puedas respaldar: año de fundación, capacidad de producción, tipos de cartón (flauta, gramaje), certificaciones y sectores o países a los que exportas.",
-        "evidence": "Nosotros states 'fundada en el año 2006' and mentions export clients, but gives no verifiable figures (capacity, certifications, countries)."
+        "fix": "Publica en «Nosotros» cifras que puedas respaldar: año de fundación, capacidad de producción, tipos de cartón, certificaciones y sectores o países a los que vendes.",
+        "evidence": "Home/Nosotros state 'fundada en el año 2006' but give no capacity, certifications or other verifiable figures."
       },
       {
         "title": "Datos de contacto iguales en todo el sitio",
         "fix": "Usa el mismo teléfono, correo y dirección en el pie de página de todas las páginas, en el botón de WhatsApp y en tus redes, para que buscadores y asistentes no reciban datos contradictorios.",
-        "evidence": "Phones/email/address appear only on /contacto/; WhatsApp widget uses a third number (see nap)."
+        "evidence": "Phones, email and address appear only on /contacto/; the WhatsApp button uses a third number (see nap)."
       },
       {
         "title": "Archivo llms.txt",
-        "fix": "Publica un archivo llms.txt con un resumen de la empresa, tus productos y los enlaces principales, para que los asistentes de IA lean lo esencial de tu sitio sin esfuerzo.",
-        "evidence": "https://ebiopacking.com/llms.txt returns HTTP 404."
+        "fix": "Publica un archivo llms.txt con un resumen de la empresa, tus productos y los enlaces principales, para que los asistentes de IA lean lo esencial de tu sitio.",
+        "evidence": "https://ebiopacking.com/llms.txt returns HTTP 404 (checked 2026-11-18)."
       }
     ]
   },
@@ -88,8 +95,8 @@
     "rows": [
       {
         "field": "Nombre",
-        "source": "Título y pie de página (todas las páginas)",
-        "value": "eBiopacking Colombia / eBiopacking.com"
+        "source": "Título de todas las páginas",
+        "value": "eBiopacking Colombia"
       },
       {
         "field": "Nombre",
@@ -109,7 +116,7 @@
       {
         "field": "Mensaje WhatsApp",
         "source": "Botón de WhatsApp (todas las páginas)",
-        "value": "¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/..."
+        "value": "«¡Hola! Estoy probando el plugin Social Chat https://quadlayers.com/...»"
       },
       {
         "field": "Correo",
@@ -119,12 +126,17 @@
       {
         "field": "Dirección",
         "source": "Página Contacto",
-        "value": "Parque industrial San Jorge, Mosquera, Colombia (más mapa de Google incrustado)"
+        "value": "Parque industrial San Jorge, Mosquera, Colombia (con mapa de Google incrustado)"
       },
       {
         "field": "Horario",
         "source": "Todo el sitio",
         "value": "No publicado"
+      },
+      {
+        "field": "Redes",
+        "source": "Pie de página (todas las páginas)",
+        "value": "Facebook, Instagram @ebiopacking_, TikTok @ebiopacking"
       },
       {
         "field": "Datos estructurados",
@@ -133,15 +145,15 @@
       },
       {
         "field": "Directorios públicos",
-        "source": "Directorios citados en una respuesta de ChatGPT (por confirmar en la fuente)",
-        "value": "[dato por confirmar] «E Biopacking S.A.S.», Calle 2 #18-93, Parque Industrial San Jorge, Mosquera"
+        "source": "Búsqueda web (por confirmar)",
+        "value": "[dato por confirmar] No se encontró ninguna ficha pública de Ebiopacking"
       }
     ],
     "inconsistencies": [
       "El botón de WhatsApp que aparece en todas las páginas lleva a un número (310 311 8117) distinto de los dos que publicas en Contacto (310 325 0267 y 310 451 4510).",
-      "El botón de WhatsApp tiene todavía la configuración de prueba: al abrirse, el mensaje ya escrito dice «¡Hola! Estoy probando el plugin Social Chat».",
+      "El botón de WhatsApp conserva la configuración de prueba: el mensaje que se envía dice «¡Hola! Estoy probando el plugin Social Chat».",
       "Teléfonos, correo y dirección solo aparecen en la página de Contacto; el resto del sitio no los muestra y no publicas horario de atención."
     ],
-    "technical_note": "qlwapp (QuadLayers Social Chat) data-contacts/data-button in every fetched page: phone 573103118117, firstname John, lastname Doe, default plugin test message, timefrom/timeto 00:00, timezone UTC+0, plus a WhatsApp group link. WebSearch queries for 'Ebiopacking Mosquera', '\"ebiopacking\" Colombia empaques' and the phones/email returned no matching listings; however the OpenSEO ChatGPT answer (run eaeeaa5b) cites empresite.eleconomistaamerica.co/BIOPACKING-SAS.html and informacolombia.com/.../biopacking-sas, so directory listings do exist. No Google Business Profile confirmed."
+    "technical_note": "qlwapp (QuadLayers Social Chat) data-contacts/data-button identical in all 5 rendered pages (raw/presence/presence-rendered-*.html): phone 573103118117, firstname John, lastname Doe, label Soporte, default plugin test message, timefrom/timeto 00:00, empty timezone, plus a WhatsApp group link. Social links: facebook.com/profile.php?id=61574718148709, instagram.com/ebiopacking_/, tiktok.com/@ebiopacking. WebSearch 'Ebiopacking Mosquera empaques cartón corrugado' (2026-11-18) returned no listing for Ebiopacking; no Google Business Profile confirmed."
   }
 }

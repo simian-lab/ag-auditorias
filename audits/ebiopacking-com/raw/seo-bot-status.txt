@@ -1,0 +1,7 @@
+200 Googlebot/2.1 (+http://www.google.com/bot.html)
+200 GPTBot/1.1
+200 OAI-SearchBot/1.0
+200 ChatGPT-User/1.0
+200 ClaudeBot/1.0
+200 PerplexityBot/1.0
+200 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/131 Safari/537.36

@@ -4,7 +4,7 @@
       "name": "Compañía Colombiana de Corrugados",
       "slug": "ccorrugados",
       "url": "https://www.ccorrugados.com/",
-      "why_competitor": "Bogotá-based maker of custom corrugated cardboard boxes with national dispatch and an online quote tool; same B2B buyer.",
+      "why_competitor": "Given by the user. Bogotá-based maker of custom corrugated cardboard boxes with national dispatch and an online quote tool; same B2B buyer.",
       "screenshot": "screenshots/bench-ccorrugados.png",
       "five_second": {
         "what": true,
@@ -13,54 +13,54 @@
         "trust_proof": false,
         "quote_cta": true
       },
-      "notes_es": "En la primera pantalla dice en texto que fabrica cajas de cartón y ofrece un botón \"Cotiza ahora\" con cotización en dos pasos.",
+      "notes_es": "En la primera pantalla dice en texto «Fabricamos cajas y empaques de cartón» y tiene dos botones: «Cotiza ahora» y «Contáctanos para asesorarte».",
       "lighthouse": {
-        "performance": 0.7,
+        "performance": 0.54,
         "accessibility": 0.96,
         "seo": 1,
-        "total_mb": 2.75
+        "total_mb": 0.91
       }
     },
     {
       "name": "Divipack",
       "slug": "divipack",
       "url": "https://www.divipack.com/",
-      "why_competitor": "Bogotá corrugated box and packaging maker (also sells in Medellín) whose site targets floriculture and export packaging.",
+      "why_competitor": "Given by the user. Corrugated box factory in Bogotá and Medellín selling boxes and packaging directly from the factory.",
       "screenshot": "screenshots/bench-divipack.png",
       "five_second": {
         "what": true,
         "for_whom": false,
         "text_headline": false,
         "trust_proof": false,
-        "quote_cta": false
+        "quote_cta": true
       },
-      "notes_es": "Muestra teléfonos de Bogotá y Medellín arriba, pero su mensaje principal es una imagen de cajas para archivo y no tiene botón para cotizar.",
+      "notes_es": "Dice «Cajas de cartón directo de fábrica» con un botón «Cotizar por WhatsApp», aunque ambos están dibujados dentro de la imagen del carrusel, no escritos como texto.",
       "lighthouse": {
-        "performance": 0.58,
+        "performance": 0.57,
         "accessibility": 0.86,
         "seo": 0.92,
-        "total_mb": 4.53
+        "total_mb": 3.88
       }
     },
     {
       "name": "Smurfit Westrock Colombia",
       "slug": "smurfit-westrock",
       "url": "https://www.smurfitwestrock.com.co/",
-      "why_competitor": "Big reference: global corrugated packaging leader with operations in Colombia that supplies flower and agro exporters.",
+      "why_competitor": "Given by the user. Big reference: global corrugated packaging leader with operations in Colombia. Note: the .com.co address now redirects (HTTP 302) to the global English site smurfitwestrock.com, which is what was measured.",
       "screenshot": "screenshots/bench-smurfit-westrock.png",
       "five_second": {
         "what": true,
         "for_whom": false,
         "text_headline": true,
-        "trust_proof": true,
-        "quote_cta": false
+        "trust_proof": false,
+        "quote_cta": true
       },
-      "notes_es": "Referente grande: su página es la más liviana (0,6 MB) y se presenta como líder mundial que cotiza en bolsa, aunque no ofrece cotizar en la primera pantalla.",
+      "notes_es": "Referente grande: su dirección de Colombia lleva al sitio global en inglés, con el mensaje en texto «socio de empaques sostenibles» y un botón «Contact» visible arriba.",
       "lighthouse": {
-        "performance": 0.59,
+        "performance": 0.52,
         "accessibility": 0.87,
-        "seo": 0.77,
-        "total_mb": 2.19
+        "seo": 0.85,
+        "total_mb": 2.36
       }
     }
   ],
@@ -76,13 +76,14 @@
       "trust_proof": false,
       "quote_cta": false
     },
-    "notes_es": "Dice que sus empaques son para flores y frutas, pero ese mensaje está dentro de una imagen, no dice que fabrica cajas de cartón corrugado y no hay botón para cotizar.",
+    "notes_es": "Dice que sus empaques cuidan flores y frutas, pero ese mensaje está dentro de una imagen del carrusel, no dice que fabrica cajas de cartón y el único botón es «Productos», no uno para cotizar.",
     "lighthouse": {
-      "performance": 0.58,
+      "performance": 0.6,
       "accessibility": 0.93,
       "seo": 0.92,
-      "total_mb": 13.26
+      "total_mb": 12.92
     }
   },
-  "takeaway_es": "Tu página de inicio pesa 13,3 MB, casi el triple que el competidor más pesado. Tu encabezado aparece rápido, pero el banner principal llega tarde porque solo él pesa cerca de 10 MB; en la simulación de celular con 4G lenta tarda unos 36 segundos, cuando tus competidores tardan entre 4 y 20."
+  "load_caveat_es": "El sitio de Smurfit Westrock muestra un aviso de cookies en la franja inferior de la pantalla, y tu página y la de Divipack abren con un carrusel cuya primera imagen puede cambiar; por eso lo que ve un visitante puede no coincidir exactamente con el tiempo medido del contenido principal.",
+  "takeaway_es": "Tus tres competidores muestran en la primera pantalla un botón para cotizar o contactar a ventas y tu página no; además, tu página de inicio pesa 12,9 MB, más de tres veces lo que pesa la más pesada de ellas (3,9 MB)."
 }
