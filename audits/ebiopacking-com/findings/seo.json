@@ -238,9 +238,10 @@
     },
     {
       "query": "ebiopacking",
-      "appears": false,
-      "position_or_note": "Búsqueda de marca. El resumen de IA de Google cita tu sitio, pero ebiopacking.com no aparece en los 13 resultados orgánicos de las páginas 1 y 2: salen directorios de empresas con nombres parecidos (Empacking Global, Ingepacking), tu Instagram y tu perfil en ProColombia. Sin ficha de empresa ni mapa.",
+      "appears": true,
+      "position_or_note": "Búsqueda de marca. Puesto 1: «eBiopacking Colombia – Soluciones en Empaques» — «Ebiopacking es una empresa fundada en el año 2006…» (verificado el 24 de noviembre de 2026; el 18 de noviembre no salía en las páginas 1 y 2). Sin ficha de empresa ni mapa.",
       "who_appears": [
+        "ebiopacking.com",
         "directorio-empresas.einforma.co (Empacking Global)",
         "Instagram: Empaques Colombia (@ebiopacking_)",
         "directorio-empresas.einforma.co (Ingepacking)",
@@ -263,7 +264,7 @@
       ]
     }
   ],
-  "search_tests_note": "Pruebas hechas el 18 de noviembre de 2026 en Google Colombia (google.com, hl=es, gl=co) desde un navegador limpio y sin sesión, leyendo las páginas 1 y 2 cuando tu dominio no estaba en la primera. Los resultados varían según la persona y la ubicación. Las 6 primeras son búsquedas de compradores y las 2 últimas de marca. Tu ficha de empresa en Google no fue visible en una búsqueda sin sesión; confírmalo con quien la administra.",
+  "search_tests_note": "Pruebas hechas el 18 de noviembre de 2026 en Google Colombia (google.com, hl=es, gl=co) desde un navegador limpio y sin sesión, leyendo las páginas 1 y 2 cuando tu dominio no estaba en la primera. Los resultados varían según la persona y la ubicación. La búsqueda «ebiopacking» se volvió a revisar el 24 de noviembre de 2026. Las 6 primeras son búsquedas de compradores y las 2 últimas de marca. Tu ficha de empresa en Google no fue visible en una búsqueda sin sesión; confírmalo con quien la administra.",
   "extra_pitch_es": "Hoy un comprador que busca cajas de cartón corrugado en Google te encuentra en 1 de 6 búsquedas y casi siempre llega a tu competencia: con páginas por producto, datos de contacto claros y tu ficha de Google en orden, podemos ponerte en esa lista.",
   "checks": [
     {
