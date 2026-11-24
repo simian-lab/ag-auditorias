@@ -63,12 +63,31 @@ class ExtraTest(unittest.TestCase):
             doc["search_tests"][1]["position_or_note"] = "Puesto 12 (segunda página): «Example»"
         self._edit("seo.json", f)
         sec = extra.build(self.ctx(extra=True))
-        self.assertIn("Apareces · puesto 12", sec.html)
-        self.assertIn(">No apareces<", sec.html)
+        self.assertIn(">Puesto 12<", sec.html)
+        self.assertIn(">No sales<", sec.html)
+
+    def test_search_row_with_only_own_profiles(self):
+        def f(doc):
+            t = next(t for t in doc["search_tests"] if not t["appears"])
+            t["who_appears"] = ["Instagram: Acme Box (@acmebox_)", "Latin Pack"]
+        self._edit("seo.json", f)
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn(">Solo tu Instagram · puesto 1<", sec.html)
+
+    def test_score_card_lists_unmet_seo_criteria(self):
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn('class="sa-extra-crit"', sec.html)
+        self.assertIn("criterios cumplidos", sec.html)
 
     def test_search_row_without_position_keeps_plain_label(self):
         sec = extra.build(self.ctx(extra=True))
-        self.assertIn(">Apareces<", sec.html)
+        self.assertIn(">Sí sales<", sec.html)
+
+    def test_brand_queries_get_their_own_table(self):
+        self._edit("seo.json", lambda d: d["search_tests"][1].__setitem__("query", "acmebox"))
+        sec = extra.build(self.ctx(extra=True))
+        self.assertIn("Cuando te buscan por tu nombre", sec.html)
+        self.assertIn("Te encuentran en 0 de 1 búsquedas de compradores", sec.html)
 
     def test_whatsapp_today_uses_preview_title_when_given(self):
         self._edit("presence.json", lambda d: d["share_preview"].__setitem__("today_title", "Solo Shell"))

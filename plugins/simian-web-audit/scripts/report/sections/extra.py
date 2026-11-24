@@ -2,17 +2,21 @@
 import re
 
 from report.render import Section, esc
+from report.sections.score import MARK
 
 CSS = """
-.sa-extra-grid{display:grid;grid-template-columns:320px 1fr;gap:24px;margin-top:40px;text-align:left}
-.sa-extra-score{padding:32px}
+.sa-extra-block{padding:32px;margin-top:40px;text-align:left}
+.sa-extra-block h4{font-size:16px;margin-top:36px}
+.sa-extra-q{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;table-layout:fixed}.sa-extra-q th:first-child{width:46%}.sa-extra-q th:nth-child(2){width:28%}
+.sa-extra-q th{text-align:left;font-size:12px;font-weight:600;color:var(--ash);text-transform:uppercase;letter-spacing:.04em;padding:8px}
+.sa-extra-q td{padding:12px 8px;border-top:1px solid var(--fog);vertical-align:top}
+.sa-extra-q .sa-extra-first{color:var(--graphite)}
+.sa-extra-pill{display:inline-block;border-radius:9999px;padding:4px 12px;font-size:13px;font-weight:500;background:var(--ember-wash);color:var(--ember-ink);margin-top:12px}.sa-extra-pill.sa-extra-ok{background:var(--mint-wash);color:var(--mint-ink)}
+.sa-extra-sum{margin-top:12px;font-weight:600}
+.sa-extra-scorebox{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start;margin-top:8px}
 .sa-extra-num{font-size:110px;font-weight:600;letter-spacing:-6px;line-height:1}
 .sa-extra-num small{font-size:30px;color:var(--ash);letter-spacing:-1px}
-.sa-extra-pill{display:inline-block;border-radius:9999px;padding:4px 12px;font-size:13px;font-weight:500;background:var(--ember-wash);color:var(--ember-ink);margin-top:12px}
-.sa-extra-q{width:100%;border-collapse:collapse;font-size:14px}
-.sa-extra-q td{padding:12px 8px;border-top:1px solid var(--fog);vertical-align:top}
-.sa-extra-who{color:var(--ash);font-size:12px}
-.sa-extra-no{color:var(--ember-ink);font-weight:600;white-space:nowrap}.sa-extra-yes{color:var(--mint-ink);font-weight:600;white-space:nowrap}
+.sa-extra-no{color:var(--ember-ink);font-weight:600;white-space:nowrap}.sa-extra-yes{color:var(--mint-ink);font-weight:600;white-space:nowrap}.sa-extra-mid{color:var(--amber-ink);font-weight:600;white-space:nowrap}
 .sa-extra-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;text-align:left}
 .sa-extra-card{padding:28px}
 .sa-extra-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin:16px 0 8px}
@@ -44,7 +48,12 @@ CSS = """
 .sa-extra-aeo{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;text-align:left}
 .sa-extra-aeo li{list-style:none;padding:20px;font-size:14px;color:var(--graphite)}
 .sa-extra-aeo b{display:block;color:var(--carbon);font-size:15px;margin-bottom:6px}
-@media(max-width:860px){.sa-extra-grid,.sa-extra-pair,.sa-extra-ai,.sa-extra-aeo{grid-template-columns:1fr}}
+.sa-extra-crit{list-style:none;margin-top:16px;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;font-size:13px;color:var(--graphite)}
+.sa-extra-crit li{display:flex;gap:8px;padding:6px 0;border-top:1px solid var(--fog)}
+.sa-extra-crit li span{font-weight:700;width:14px;flex-shrink:0}
+.sa-extra-crit .sa-score-pa span{color:var(--amber-ink)}.sa-extra-crit .sa-score-ko span{color:var(--ember-ink)}
+@media(max-width:860px){.sa-extra-scorebox,.sa-extra-crit{grid-template-columns:1fr}.sa-extra-q thead{display:none}.sa-extra-q tr{display:block;border-top:1px solid var(--fog);padding:10px 0}.sa-extra-q td{display:block;border:0;padding:2px 0}}
+@media(max-width:860px){.sa-extra-pair,.sa-extra-ai,.sa-extra-aeo{grid-template-columns:1fr}}
 """
 
 
@@ -57,27 +66,77 @@ def is_brand(name: str, brand: str) -> bool:
     return bool(b) and b in _norm(name)
 
 
-def _result_label(t) -> str:
+def _is_profile(entry: str) -> bool:
+    # who_appears names profiles as "Instagram: …" or "site.com (Name)"; the client's own site is a bare domain
+    return ":" in entry or " (" in entry
+
+
+def _result(t, brand: str) -> tuple[str, str]:
+    """(css class, label) for «Dónde sales tú». who_appears is in Google order, so the client's best spot is
+    the first entry that is theirs, site or profile."""
+    own = next(((i + 1, w) for i, w in enumerate(t.get("who_appears", [])) if is_brand(w, brand)), None)
+    kind = (f'tu {own[1].split(":")[0].strip()}' if own and ":" in own[1] else "tu perfil") if own else ""
     if not t["appears"]:
-        return "No apareces"
+        return ("sa-extra-mid", f"Solo {kind} · puesto {own[0]}") if own else ("sa-extra-no", "No sales")
     m = re.search(r"[Pp]uesto (\d+)", t.get("position_or_note") or "")
-    return f"Apareces · puesto {m.group(1)}" if m else "Apareces"
+    site = int(m.group(1)) if m else None
+    if own and _is_profile(own[1]) and (site is None or own[0] < site):
+        return "sa-extra-yes", f"Puesto {own[0]} ({kind})"
+    pos = min(p for p in (site, own and own[0]) if p) if (site or own) else None
+    return "sa-extra-yes", f"Puesto {pos}" if pos else "Sí sales"
 
 
-def _search(seo, score) -> tuple[str, str]:
-    tests = seo.get("search_tests", [])
-    hits = sum(1 for t in tests if t["appears"])
+def _table(tests, brand: str, first_col: str) -> str:
     rows = "".join(
-        f'<tr><td>«{esc(t["query"])}»<div class="sa-extra-who">Aparecen: {esc(", ".join(t.get("who_appears", [])[:3]))}</div></td>'
-        f'<td class="{"sa-extra-yes" if t["appears"] else "sa-extra-no"}">{esc(_result_label(t))}</td></tr>'
-        for t in tests)
+        f'<tr><td>«{esc(t["query"])}»</td><td class="sa-extra-first">{esc((t.get("who_appears") or ["—"])[0])}</td>'
+        f'<td class="{_result(t, brand)[0]}">{esc(_result(t, brand)[1])}</td></tr>' for t in tests)
+    return (f'<table class="sa-extra-q"><thead><tr><th>{first_col}</th><th>Quién sale primero</th><th>Dónde sales tú</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table>')
+
+
+def _score_block(seo, rubric) -> str:
+    """Criteria count, not the weighted score: what the client reads is exactly what is counted."""
+    results = {c["id"]: c["result"] for c in seo.get("checks", [])}
+    crit = [c for c in (rubric or {}).get("areas", {}).get("seo", []) if results.get(c["id"], "na") != "na"]
+    if not crit:
+        return ""
+    ok = sum(results[c["id"]] == "pass" for c in crit)
+    half = sum(results[c["id"]] == "partial" for c in crit)
+    items = "".join(
+        f'<li class="{MARK[results[c["id"]]][0]}"><span>{MARK[results[c["id"]]][1]}</span>{esc(c["label"])}'
+        f'{" (la prueba de arriba)" if c["id"] == "seo-appears" else ""}</li>'
+        for c in crit if results[c["id"]] in ("fail", "partial"))
+    ul = f'<p class="why">Lo que te falta:</p><ul class="sa-extra-crit">{items}</ul>' if items else ""
+    return (f'<div class="card sa-extra-block"><div class="eyebrow">Tu puntaje en buscadores</div><div class="sa-extra-scorebox">'
+            f'<div><div class="sa-extra-num">{ok}<small> de {len(crit)}</small></div>'
+            f'<p class="sa-extra-sum">criterios cumplidos{f" · {half} a medias" if half else ""}</p></div>'
+            f'<div><p class="why">Revisamos {len(crit)} criterios que Google y la IA tienen en cuenta para mostrarte.</p>{ul}</div></div></div>')
+
+
+def _search(seo, brand: str = "", rubric=None) -> tuple[str, str]:
+    tests = seo.get("search_tests", [])
+    named = [t for t in tests if is_brand(t["query"], brand)]
+    buyer = [t for t in tests if t not in named] or tests
+    named = [t for t in named if t not in buyer]
+    hits = sum(1 for t in buyer if t["appears"])
     headline = ("Buscamos lo que buscan tus compradores. No apareciste ni una vez." if hits == 0
-                else f"Buscamos lo que buscan tus compradores. Apareciste en {hits} de {len(tests)}.")
-    score_html = f'<div class="sa-extra-num">{score}<small>/100</small></div>' if score is not None else ""
-    grid = (f'<div class="sa-extra-grid"><div class="card sa-extra-score"><div class="eyebrow">Visibilidad en buscadores</div>{score_html}'
-            f'<span class="sa-extra-pill">{hits} de {len(tests)} búsquedas</span></div>'
-            f'<div class="card" style="padding:12px 20px"><table class="sa-extra-q">{rows}</table></div></div>')
-    return headline, grid
+                else f"Buscamos lo que buscan tus compradores. Apareciste en {hits} de {len(buyer)}.")
+    html = ('<div class="card sa-extra-block"><h3>¿Te encuentra un comprador en Google?</h3>'
+            '<p class="why">Buscamos en Google lo que escribiría un comprador que todavía no te conoce, sin sesión iniciada.</p>'
+            f'<span class="sa-extra-pill{" sa-extra-ok" if hits * 2 >= len(buyer) else ""}">{hits} de {len(buyer)} búsquedas</span>'
+            f'{_table(buyer, brand, "Lo que buscan los compradores")}'
+            f'<p class="sa-extra-sum">Te encuentran en {hits} de {len(buyer)} búsquedas de compradores.</p>')
+    if named:
+        if not all(t["appears"] for t in named):
+            note = "Ni buscándote por tu nombre apareces siempre."
+        elif hits * 2 < len(buyer):
+            note = "Quien ya te conoce te encuentra; un comprador nuevo, casi nunca."
+        else:
+            note = "Quien ya te conoce te encuentra."
+        html += (f'<h4>Cuando te buscan por tu nombre</h4>{_table(named, brand, "Tu nombre")}'
+                 f'<p class="sa-extra-sum">{note}</p>')
+    html += "</div>" + _score_block(seo, rubric)
+    return headline, html
 
 
 def _previews(ctx, pres) -> str:
@@ -162,7 +221,7 @@ def build(ctx) -> Section | None:
     seo, pres, ai = ctx["seo"] or {}, ctx["presence"], ctx["ai"]
     parts = []
     if seo.get("search_tests"):
-        headline, grid = _search(seo, (ctx["scores"] or {}).get("seo"))
+        headline, grid = _search(seo, (ctx["ai"] or {}).get("brand") or ctx["top10"]["client"], ctx.get("rubric"))
         parts.append(grid)
     else:
         headline = "¿Te encuentran Google y la IA cuando un comprador busca lo que vendes?"

@@ -57,10 +57,10 @@
       {"id": "seo-appears", "weight": 3, "label": "Apareces cuando un comprador busca lo que vendes", "check": "The site appears in at least half of the recorded buyer search tests."},
       {"id": "seo-titles", "weight": 2, "label": "Cada página tiene un título propio y claro", "check": "Unique, descriptive <title> per main page."},
       {"id": "seo-descriptions", "weight": 2, "label": "Cada página tiene descripción para Google", "check": "Meta description present on main pages."},
-      {"id": "seo-h1", "weight": 1, "label": "Cada página tiene un título principal", "check": "Exactly one H1 per main page."},
+      {"id": "seo-h1", "weight": 1, "label": "Cada página tiene un título principal (H1)", "check": "Exactly one H1 per main page."},
       {"id": "seo-structured-data", "weight": 2, "label": "Google sabe quién eres y dónde estás", "check": "Organization or LocalBusiness structured data with name, address, phone."},
       {"id": "seo-product-pages", "weight": 2, "label": "Cada producto tiene su propia página", "check": "Products or product lines have indexable pages with descriptions."},
-      {"id": "seo-clean-index", "weight": 1, "label": "No hay páginas de prueba publicadas", "check": "No placeholder pages (Hello world, Sample page, empty archives) in the sitemap or index."},
+      {"id": "seo-clean-index", "weight": 1, "label": "Google solo muestra páginas reales de tu sitio (sin páginas de prueba como «Hello world!»)", "check": "No placeholder pages (Hello world, Sample page, empty archives) in the sitemap or index."},
       {"id": "seo-share", "weight": 1, "label": "El enlace se ve bien al compartirlo", "check": "Open Graph title, description and image present."},
       {"id": "seo-nap", "weight": 1, "label": "Nombre, teléfono y dirección iguales en todas partes", "check": "Consistent business name, phone and address across the site and listings."},
       {"id": "seo-ai-ready", "weight": 1, "label": "La IA tiene datos claros para recomendarte", "check": "FAQ, fact sheet with verifiable figures or llms.txt present."}
