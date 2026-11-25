@@ -270,52 +270,62 @@
     {
       "id": "seo-appears",
       "result": "fail",
-      "evidence": "Google Colombia 2026-11-18, clean headless Chrome: ebiopacking.com in 1/6 buyer queries ('empaques biodegradables cartón corrugado Colombia', #8); absent from pages 1-2 in the other 5."
+      "evidence": "Google Colombia 2026-11-18, clean headless Chrome: ebiopacking.com in 1/6 buyer queries ('empaques biodegradables cartón corrugado Colombia', #8); absent from pages 1-2 in the other 5.",
+      "note_es": "Un comprador que busca lo que vendes te encuentra en 1 de 6 búsquedas; en las otras 5 solo salen tus competidores."
     },
     {
       "id": "seo-titles",
       "result": "partial",
-      "evidence": "Rendered view: 5/5 main pages have unique titles, but only home names the activity ('Soluciones en Empaques'); the other 4 are '<Página> – eBiopacking Colombia' with no product or location."
+      "evidence": "Rendered view: 5/5 main pages have unique titles, but only home names the activity ('Soluciones en Empaques'); the other 4 are '<Página> – eBiopacking Colombia' with no product or location.",
+      "note_es": "Las 5 páginas tienen título propio, pero solo Inicio dice qué haces; las demás se llaman «Nosotros – eBiopacking Colombia» o «Contacto – …», sin producto ni ciudad."
     },
     {
       "id": "seo-descriptions",
       "result": "fail",
-      "evidence": "Rendered and no-JS view: meta description missing on 5/5 main pages; Lighthouse meta-description audit fails."
+      "evidence": "Rendered and no-JS view: meta description missing on 5/5 main pages; Lighthouse meta-description audit fails.",
+      "note_es": "Ninguna de tus 5 páginas tiene descripción, así que Google improvisa el texto que aparece bajo tu nombre."
     },
     {
       "id": "seo-h1",
       "result": "fail",
-      "evidence": "Rendered view: 0 H1 on home, productos, nosotros, contacto, servicio-al-cliente."
+      "evidence": "Rendered view: 0 H1 on home, productos, nosotros, contacto, servicio-al-cliente.",
+      "note_es": "Ninguna de tus 5 páginas tiene un título principal (H1), que es lo que Google lee primero para saber de qué trata cada página."
     },
     {
       "id": "seo-structured-data",
       "result": "fail",
-      "evidence": "Rendered view: no application/ld+json on any of the 5 main pages; no Organization/LocalBusiness."
+      "evidence": "Rendered view: no application/ld+json on any of the 5 main pages; no Organization/LocalBusiness.",
+      "note_es": "Tu sitio no le entrega a Google, en su formato, tu nombre, dirección y teléfono; Google tiene que adivinarlos."
     },
     {
       "id": "seo-product-pages",
       "result": "fail",
-      "evidence": "17 products listed as name+image on /productos/ only; no product URLs in sitemap; no descriptions."
+      "evidence": "17 products listed as name+image on /productos/ only; no product URLs in sitemap; no descriptions.",
+      "note_es": "Tus 17 productos están en una sola página, solo con nombre y foto; ninguno tiene página propia con medidas y usos."
     },
     {
       "id": "seo-clean-index",
       "result": "fail",
-      "evidence": "Sitemap lists /hello-world/, /sample-page/, /proximamente/, /e-floating-buttons/whatssap/, /category/uncategorized/ and an author archive; all HTTP 200 without noindex."
+      "evidence": "Sitemap lists /hello-world/, /sample-page/, /proximamente/, /e-floating-buttons/whatssap/, /category/uncategorized/ and an author archive; all HTTP 200 without noindex.",
+      "note_es": "«Hello world!», «Sample Page» y «Próximamente» siguen publicadas, y Google ya muestra «Hello world!» cuando te buscan."
     },
     {
       "id": "seo-share",
       "result": "fail",
-      "evidence": "og:title, og:description and og:image absent on 5/5 main pages (rendered and no-JS view)."
+      "evidence": "og:title, og:description and og:image absent on 5/5 main pages (rendered and no-JS view).",
+      "note_es": "Tus páginas no tienen la imagen ni la descripción que usan WhatsApp y las redes, así que tu enlace se comparte sin foto."
     },
     {
       "id": "seo-nap",
       "result": "fail",
-      "evidence": "Contact page shows 2 phones (3104514510, 3103250267), WhatsApp widget uses a third (573103118117); footer has no NAP; address incomplete vs directories; Instagram says Bogotá; name varies (eBiopacking / E Biopacking SAS / Biopacking)."
+      "evidence": "Contact page shows 2 phones (3104514510, 3103250267), WhatsApp widget uses a third (573103118117); footer has no NAP; address incomplete vs directories; Instagram says Bogotá; name varies (eBiopacking / E Biopacking SAS / Biopacking).",
+      "note_es": "El botón de WhatsApp lleva al 310 311 8117, distinto de los dos números de Contacto, y tu Instagram dice Bogotá aunque estás en Mosquera."
     },
     {
       "id": "seo-ai-ready",
       "result": "fail",
-      "evidence": "No FAQ, no fact sheet with figures (only 'fundada en 2006'), llms.txt returns 404."
+      "evidence": "No FAQ, no fact sheet with figures (only 'fundada en 2006'), llms.txt returns 404.",
+      "note_es": "No tienes preguntas frecuentes, cifras verificables ni archivo llms.txt, que es lo que la IA usa para entenderte y citarte."
     }
   ]
 }
