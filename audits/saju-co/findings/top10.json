@@ -1,235 +1,235 @@
 {
- "client": "Sajú",
- "domain": "saju.co",
- "date": "Noviembre 2026",
- "big_stat": {
-  "value": "3,0:1",
-  "headline": "Tus precios se leen con la mitad del contraste necesario",
-  "explain": "El precio es lo que más mira quien compra gafas, y en tu portada está escrito en gris claro de 12 px sobre blanco. Su contraste es 3,0:1, cuando el mínimo para leer cómodo es 4,5:1. Justo tu cliente, alguien que busca gafas porque no ve bien, es quien más se esfuerza para leerlo.",
-  "source": "Medición sobre la página renderizada en Chrome a 1440×900, noviembre 2026 (color del precio rgba(92,92,92,0,65) sobre blanco)."
- },
- "items": [
-  {
-   "n": 1,
-   "c": "ux",
-   "src": [
-    "ux-1",
-    "visual-1",
-    "a11y-1",
-    "a11y-2",
-    "a11y-6"
-   ],
-   "imp": 5,
-   "eff": "Medio",
-   "stage": 2,
-   "t": "Tu portada no dice qué vendes",
-   "t_plain": "El mensaje principal está pintado dentro de fotos que rotan",
-   "s": "Quien llega desde Google ve fotos que cambian cada 5 segundos, pero ninguna frase le dice que aquí compra gafas de sol y formuladas y agenda su examen visual.",
-   "now": "La primera pantalla es un carrusel de 4 imágenes. «Phone Glasses», «Nueva colección» y «¡Llegamos a San Roque!» están pintados dentro de las fotos, que no tienen descripción, y los banners son enlaces sin nombre. El único título principal de la página es el logo.",
-   "fix": "Poner sobre la primera imagen una frase en texto real, por ejemplo «Gafas de sol y formuladas hechas con material reciclado · Examen visual en nuestras ópticas», marcada como título principal, con dos botones: «Ver gafas» y «Agendar examen».",
-   "why": "Si el visitante no entiende en segundos qué ofreces, se va antes de mirar el catálogo; y lo que está dentro de una foto tampoco lo leen Google ni los asistentes de IA.",
-   "shot": {
-    "img": "desktop-viewport.png",
-    "x": 75,
-    "y": 48
-   }
+  "client": "Sajú",
+  "domain": "saju.co",
+  "date": "Noviembre 2026",
+  "big_stat": {
+    "value": "3,0:1",
+    "headline": "Tus precios se leen con la mitad del contraste necesario",
+    "explain": "El precio es lo que más mira quien compra gafas, y en tu portada está escrito en gris claro de 12 px sobre blanco. Su contraste es 3,0:1, cuando el mínimo para leer cómodo es 4,5:1. Justo tu cliente, alguien que busca gafas porque no ve bien, es quien más se esfuerza para leerlo.",
+    "source": "Medición sobre la página renderizada en Chrome a 1440×900, noviembre 2026 (color del precio rgba(92,92,92,0,65) sobre blanco)."
   },
-  {
-   "n": 2,
-   "c": "ux",
-   "src": [
-    "ux-2",
-    "ux-6"
-   ],
-   "imp": 4,
-   "eff": "Bajo",
-   "stage": 1,
-   "t": "Fuera de WhatsApp, nadie puede contactarte",
-   "t_plain": "No hay teléfono, correo ni página de contacto",
-   "s": "Un cliente con una duda sobre su fórmula o su pedido no encuentra cómo llamar o escribir, salvo el botón de WhatsApp.",
-   "now": "Ninguna página muestra teléfono ni correo, y la dirección /pages/contact da error. En «Tiendas» solo algunas ópticas tienen teléfono, como texto que no se puede pulsar. El WhatsApp llega siempre con el mismo saludo («Hola, estoy interesado en los productos del 🐵»), sin decir qué gafa o qué sede mira el cliente.",
-   "fix": "Agregar al pie de todas las páginas un bloque «Contáctanos» con WhatsApp, teléfono que se pueda pulsar y correo; crear una página de contacto corta, y hacer que el mensaje de WhatsApp diga la página desde donde escribe el cliente («Hola, me interesan las gafas Sozo Dark Brown»).",
-   "why": "Las gafas formuladas generan preguntas antes de comprar; si no hay a quién preguntar, la venta se va a otra óptica.",
-   "shot": {
-    "img": "top-2-crop.jpg",
-    "x": 82,
-    "y": 40
-   }
-  },
-  {
-   "n": 3,
-   "c": "ux",
-   "src": [
-    "ux-3"
-   ],
-   "imp": 4,
-   "eff": "Bajo",
-   "stage": 1,
-   "t": "Tus reseñas vacías siembran dudas al comprar",
-   "t_plain": "El bloque de opiniones de las fichas muestra texto incompleto y cero reseñas",
-   "s": "Justo cuando el cliente decide, el bloque de opiniones de la ficha muestra frases incompletas y ninguna reseña, y eso le hace dudar.",
-   "now": "En la ficha de producto, «¿Qué opinan nuestros clientes?» dice «clientes han reseñado este producto. Puntaje promedio: /5», sin números. Más abajo aparece en inglés «Customer Reviews – Be the first to write a review» con 0 reseñas.",
-   "fix": "Arreglar o quitar el bloque roto ya mismo, y pedir reseñas por correo a quienes ya compraron para mostrar estrellas reales en las fichas y en la portada.",
-   "why": "Unas gafas de $399.000 se compran con pruebas de que otros quedaron contentos; un bloque vacío o roto hace pensar lo contrario.",
-   "shot": {
-    "img": "ux-product-desktop.png",
-    "x": 76,
-    "y": 79
-   }
-  },
-  {
-   "n": 4,
-   "c": "a11y",
-   "src": [
-    "a11y-3",
-    "visual-6"
-   ],
-   "imp": 4,
-   "eff": "Bajo",
-   "stage": 1,
-   "t": "Tu precio se lee con esfuerzo",
-   "t_plain": "Precios y nombres en gris claro y pequeño",
-   "s": "El precio, el dato que más mira un comprador, está en gris claro de 12 px, y quien busca gafas suele ser quien peor lee.",
-   "now": "Todos los precios de las tarjetas de la portada están en gris claro de 12 px sobre blanco, con contraste 3,0:1 (el mínimo es 4,5:1). Los nombres de las collabs y de algunas colecciones son texto blanco pequeño sobre fotos claras, y las tarjetas no dicen si la gafa es de sol o formulada.",
-   "fix": "Oscurecer el precio al mismo gris del nombre del producto (6,7:1), subir el tamaño, añadir el tipo (sol o formulada) en cada tarjeta y poner una franja oscura detrás de los textos blancos sobre fotos.",
-   "why": "Si un cliente no lee bien el precio, duda o se va; es una barrera directa a la compra.",
-   "shot": {
-    "img": "top-4-crop.jpg",
-    "x": 62,
-    "y": 57
-   }
-  },
-  {
-   "n": 5,
-   "c": "ux",
-   "src": [
-    "ux-5"
-   ],
-   "imp": 3,
-   "eff": "Bajo",
-   "stage": 1,
-   "t": "En celular, nadie ve cómo agendar examen",
-   "t_plain": "En celular no hay un botón visible para agendar el examen",
-   "s": "El examen visual es la puerta de entrada a vender gafas formuladas, pero en celular no hay un botón visible para agendarlo.",
-   "now": "En computador está en el menú superior. En celular solo aparece dentro del menú de tres rayas, en una foto del carrusel que rota y en un banner con el texto pintado en la imagen, a dos tercios de la página. Además, el menú llama a una sede «Chapinero» y la lista de exámenes la llama «Calle 54».",
-   "fix": "Agregar en la primera pantalla del celular un botón «Agenda tu examen» y usar el mismo nombre de sede en el menú, la lista y la página de cada examen.",
-   "why": "Cada examen agendado es un cliente probable de gafas formuladas; si el botón no se ve, la cita no se pide.",
-   "shot": {
-    "img": "top-5-crop.jpg",
-    "x": 88,
-    "y": 59
-   }
-  },
-  {
-   "n": 6,
-   "c": "ux",
-   "src": [
-    "ux-4"
-   ],
-   "imp": 3,
-   "eff": "Bajo",
-   "stage": 3,
-   "t": "Tu mejor garantía está escondida al final",
-   "t_plain": "Garantías y razones para comprar quedan escondidas",
-   "s": "Lo que te diferencia, arreglos gratis de por vida y marca colombiana desde 2017, está casi al final de la portada y dentro de un carrusel.",
-   "now": "La sección «¿Por qué Sajú?» está cerca del final de la página y muestra un mensaje a la vez en un carrusel de 4 tarjetas; en celular hay que deslizar para llegar a «Garantías».",
-   "fix": "Mostrar una franja fija con 3 o 4 datos cortos («Arreglos gratis de por vida», «Examen gratis si compras tus gafas», «Marca colombiana desde 2017», «Envío gratis desde $249.000») debajo de la primera imagen y cerca del botón de compra.",
-   "why": "Las garantías convencen cuando se ven en el momento de decidir, no al final de la página.",
-   "shot": {
-    "img": "top-6-crop.jpg",
-    "x": 50,
-    "y": 78
-   }
-  },
-  {
-   "n": 7,
-   "c": "vis",
-   "src": [
-    "visual-4"
-   ],
-   "imp": 3,
-   "eff": "Medio",
-   "stage": 3,
-   "t": "Prometes sostenibilidad sin mostrar una prueba",
-   "t_plain": "La promesa de materiales reciclados no tiene respaldo visible",
-   "s": "Hablas de metal reciclado, eco-acetato y cuidar el planeta, pero el sitio no muestra nada que lo respalde.",
-   "now": "La portada nombra «Metal reciclado», «Eco-acetato», «Plástico reciclado» y «Compromiso… con el planeta» con un ícono genérico de reciclaje. No hay sello, cifra, origen del material ni foto del proceso.",
-   "fix": "Agregar prueba junto a esas frases: de qué está hecho cada marco y cuánto material reciclado lleva, la certificación del proveedor si existe, o fotos del taller y del proceso. [dato por confirmar con Sajú]",
-   "why": "Una promesa sin prueba no te diferencia de Ben & Frank o Lafam; una prueba concreta sí.",
-   "shot": {
-    "img": "top-7-crop.jpg",
-    "x": 33,
-    "y": 31
-   }
-  },
-  {
-   "n": 8,
-   "c": "tec",
-   "src": [
-    "tech-1",
-    "tech-2",
-    "tech-3"
-   ],
-   "imp": 3,
-   "eff": "Medio",
-   "stage": 1,
-   "t": "31 herramientas externas frenan tu portada",
-   "t_plain": "Portada de casi 4 MB, con fotos sobredimensionadas y etiquetas repetidas",
-   "s": "Cada visita desde el celular descarga 3,7 MB, y las herramientas de seguimiento pesan más que todas las fotos de la página.",
-   "now": "La portada pide 31 archivos a servicios externos (757 KB): Google en tres etiquetas, una cargada dos veces, Facebook, TikTok, Clarity, Omnisend y otras apps. Las fotos de producto se descargan a 800 px aunque en celular se muestran a unos 206 px; Lighthouse estima 599 KB de ahorro solo en imágenes.",
-   "fix": "Hacer un inventario de etiquetas y apps y dejar una sola instalación de cada una, retrasar las no esenciales hasta después de la carga y pedir cada foto al tamaño en que se muestra.",
-   "why": "Una tienda que abre rápido en el celular retiene más visitantes hasta que ven el producto, y con menos etiquetas repetidas tus mediciones de campañas son más confiables.",
-   "shot": {
-    "img": "top-8-crop.jpg",
-    "x": 50,
-    "y": 22
-   }
-  },
-  {
-   "n": 9,
-   "c": "a11y",
-   "src": [
-    "a11y-4",
-    "a11y-5",
-    "tech-4"
-   ],
-   "imp": 3,
-   "eff": "Bajo",
-   "stage": 1,
-   "t": "Tus banners cambian antes de poder leerlos",
-   "t_plain": "Carruseles automáticos sin pausa y controles diminutos en celular",
-   "s": "El banner principal cambia cada 5 segundos sin botón de pausa, y en celular los controles son tan pequeños que se falla al tocarlos.",
-   "now": "Los dos carruseles avanzan solos cada 5 segundos, sin botón de pausa, y siguen moviéndose aunque la persona tenga activado «reducir movimiento». La franja de envíos se desplaza sin parar. En celular, los íconos de menú, buscar y carrito miden 22×22 px y los puntos del carrusel 6×6 px.",
-   "fix": "Agregar un botón de pausa, detener el movimiento cuando el usuario pide «reducir movimiento» y ampliar el área táctil de los íconos a 44×44 px y la de los puntos a 24×24 px.",
-   "why": "Un mensaje que se va antes de leerse no vende, y un toque fallido en el carrito es una compra que se interrumpe.",
-   "shot": {
-    "img": "desktop-viewport.png",
-    "x": 92,
-    "y": 74
-   }
-  },
-  {
-   "n": 10,
-   "c": "vis",
-   "src": [
-    "visual-2",
-    "visual-3",
-    "visual-5"
-   ],
-   "imp": 3,
-   "eff": "Medio",
-   "stage": 3,
-   "t": "Cada banner habla con otra letra",
-   "t_plain": "Tipografías, botones y títulos sin un mismo sistema",
-   "s": "La mezcla de letras y de estilos de botón hace que la marca se vea menos cuidada de lo que es.",
-   "now": "El sitio usa Jost y Poppins, pero los banners agregan al menos cuatro letras más. Conviven un botón gris que parece desactivado, enlaces subrayados, una etiqueta crema y un recuadro con borde pintados en las fotos, y los títulos de sección cambian de tamaño en cada bloque.",
-   "fix": "Definir dos letras de marca, un botón principal con el color de marca y uno secundario, y un tamaño fijo de título de sección; rehacer los banners con ese sistema.",
-   "why": "Una marca de moda se juzga por su coherencia; cada estilo distinto le resta sensación premium.",
-   "shot": {
-    "img": "desktop-viewport.png",
-    "x": 90,
-    "y": 23
-   }
-  }
- ]
+  "items": [
+    {
+      "n": 1,
+      "c": "ux",
+      "src": [
+        "ux-1",
+        "visual-1",
+        "a11y-1",
+        "a11y-2",
+        "a11y-6"
+      ],
+      "imp": 5,
+      "eff": "Medio",
+      "stage": 2,
+      "t": "Tu portada no dice qué vendes",
+      "t_plain": "El mensaje principal está pintado dentro de fotos que rotan",
+      "s": "Quien llega desde Google ve fotos que cambian cada 5 segundos, pero ninguna frase le dice que aquí compra gafas de sol y formuladas y agenda su examen visual.",
+      "now": "La primera pantalla es un carrusel de 4 imágenes. «Phone Glasses», «Nueva colección» y «¡Llegamos a San Roque!» están pintados dentro de las fotos, que no tienen descripción, y los banners son enlaces sin nombre. El único título principal de la página es el logo.",
+      "fix": "Poner sobre la primera imagen una frase en texto real, por ejemplo «Gafas de sol y formuladas hechas con material reciclado · Examen visual en nuestras ópticas», marcada como título principal, con dos botones: «Ver gafas» y «Agendar examen».",
+      "why": "Si el visitante no entiende en segundos qué ofreces, se va antes de mirar el catálogo; y lo que está dentro de una foto tampoco lo leen Google ni los asistentes de IA.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 75,
+        "y": 48
+      }
+    },
+    {
+      "n": 2,
+      "c": "ux",
+      "src": [
+        "ux-2",
+        "ux-6"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Fuera de WhatsApp, nadie puede contactarte",
+      "t_plain": "No hay teléfono, correo ni página de contacto",
+      "s": "Un cliente con una duda sobre su fórmula o su pedido no encuentra cómo llamar o escribir, salvo el botón de WhatsApp.",
+      "now": "Ni el encabezado ni el pie muestran teléfono o correo, no hay ningún enlace para llamar o escribir con un toque, y la dirección /pages/contact da error. En «Tiendas» las tarjetas del mapa casi no tienen teléfono; aparece más abajo, como texto que no se puede pulsar. El WhatsApp llega siempre con el mismo saludo («Hola, estoy interesado en los productos del 🐵»), sin decir qué gafa o qué sede mira el cliente.",
+      "fix": "Agregar al pie de todas las páginas un bloque «Contáctanos» con WhatsApp, teléfono que se pueda pulsar y correo; crear una página de contacto corta, y hacer que el mensaje de WhatsApp diga la página desde donde escribe el cliente («Hola, me interesan las gafas Sozo Dark Brown»).",
+      "why": "Las gafas formuladas generan preguntas antes de comprar; si no hay a quién preguntar, la venta se va a otra óptica.",
+      "shot": {
+        "img": "top-2-crop.jpg",
+        "x": 82,
+        "y": 40
+      }
+    },
+    {
+      "n": 3,
+      "c": "ux",
+      "src": [
+        "ux-3"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus reseñas vacías siembran dudas al comprar",
+      "t_plain": "El bloque de opiniones de las fichas muestra texto incompleto y cero reseñas",
+      "s": "Justo cuando el cliente decide, el bloque de opiniones de la ficha muestra frases incompletas y ninguna reseña, y eso le hace dudar.",
+      "now": "En la ficha de producto, al abrir «¿Qué opinan nuestros clientes?» aparece «clientes han reseñado este producto. Puntaje promedio: /5», sin números ni ninguna reseña.",
+      "fix": "Arreglar o quitar el bloque roto ya mismo, y pedir reseñas por correo a quienes ya compraron para mostrar estrellas reales en las fichas y en la portada.",
+      "why": "Unas gafas de $399.000 se compran con pruebas de que otros quedaron contentos; un bloque vacío o roto hace pensar lo contrario.",
+      "shot": {
+        "img": "ux-product-desktop.png",
+        "x": 76,
+        "y": 79
+      }
+    },
+    {
+      "n": 4,
+      "c": "a11y",
+      "src": [
+        "a11y-3",
+        "visual-6"
+      ],
+      "imp": 4,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tu precio se lee con esfuerzo",
+      "t_plain": "Precios en gris claro y pequeño",
+      "s": "El precio, el dato que más mira un comprador, está en gris claro de 12 px, y quien busca gafas suele ser quien peor lee.",
+      "now": "Todos los precios de las tarjetas de la portada están en gris claro de 12 px sobre blanco, con contraste 3,0:1 (el mínimo es 4,5:1). Los nombres de las collabs y de algunas colecciones son texto blanco pequeño sobre fotos claras con una capa oscura muy leve, y las tarjetas no dicen si la gafa es de sol o formulada.",
+      "fix": "Oscurecer el precio al mismo gris del nombre del producto (6,7:1), subir el tamaño, añadir el tipo (sol o formulada) en cada tarjeta y poner una franja oscura detrás de los textos blancos sobre fotos.",
+      "why": "Si un cliente no lee bien el precio, duda o se va; es una barrera directa a la compra.",
+      "shot": {
+        "img": "top-4-crop.jpg",
+        "x": 62,
+        "y": 57
+      }
+    },
+    {
+      "n": 5,
+      "c": "ux",
+      "src": [
+        "ux-5"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "En celular, nadie ve cómo agendar examen",
+      "t_plain": "En celular no hay un botón visible para agendar el examen",
+      "s": "El examen visual es la puerta de entrada a vender gafas formuladas, pero en celular no hay un botón visible para agendarlo.",
+      "now": "En computador está en el menú superior. En celular solo aparece dentro del menú de tres rayas, en una foto del carrusel que rota y en un banner con el texto pintado en la imagen, a dos tercios de la página. Además, el menú llama a una sede «Chapinero» y la lista de exámenes la llama «Calle 54».",
+      "fix": "Agregar en la primera pantalla del celular un botón «Agenda tu examen» y usar el mismo nombre de sede en el menú, la lista y la página de cada examen.",
+      "why": "Cada examen agendado es un cliente probable de gafas formuladas; si el botón no se ve, la cita no se pide.",
+      "shot": {
+        "img": "top-5-crop.jpg",
+        "x": 88,
+        "y": 59
+      }
+    },
+    {
+      "n": 6,
+      "c": "ux",
+      "src": [
+        "ux-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 3,
+      "t": "Tu mejor garantía está escondida al final",
+      "t_plain": "Garantías y razones para comprar quedan escondidas",
+      "s": "Lo que te diferencia, arreglos gratis de por vida y marca colombiana desde 2017, está casi al final de la portada y dentro de un carrusel.",
+      "now": "La sección «¿Por qué Sajú?» está cerca del final de la página y muestra un mensaje a la vez: en computador se ilumina uno por uno al bajar, y en celular es un carrusel de 4 tarjetas en el que hay que deslizar para llegar a «Garantías».",
+      "fix": "Mostrar una franja fija con 3 o 4 datos cortos («Arreglos gratis de por vida», «Examen gratis si compras tus gafas», «Marca colombiana desde 2017», «Envío gratis desde $249.000») debajo de la primera imagen y cerca del botón de compra.",
+      "why": "Las garantías convencen cuando se ven en el momento de decidir, no al final de la página.",
+      "shot": {
+        "img": "top-6-crop.jpg",
+        "x": 50,
+        "y": 78
+      }
+    },
+    {
+      "n": 7,
+      "c": "vis",
+      "src": [
+        "visual-4"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Prometes sostenibilidad sin mostrar una prueba",
+      "t_plain": "La promesa de materiales reciclados no tiene respaldo visible",
+      "s": "Hablas de metal reciclado, eco-acetato y cuidar el planeta, pero el sitio no muestra nada que lo respalde.",
+      "now": "La portada nombra «Metal reciclado», «Eco-acetato», «Plástico reciclado» y «Compromiso… con el planeta» con un ícono genérico de reciclaje. No hay sello, cifra, origen del material ni foto del proceso.",
+      "fix": "Agregar prueba junto a esas frases: de qué está hecho cada marco y cuánto material reciclado lleva, la certificación del proveedor si existe, o fotos del taller y del proceso. [dato por confirmar con Sajú]",
+      "why": "Una promesa sin prueba no te diferencia de Ben & Frank o Lafam; una prueba concreta sí.",
+      "shot": {
+        "img": "top-7-crop.jpg",
+        "x": 33,
+        "y": 31
+      }
+    },
+    {
+      "n": 8,
+      "c": "tec",
+      "src": [
+        "tech-1",
+        "tech-2",
+        "tech-3"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 1,
+      "t": "31 herramientas externas frenan tu portada",
+      "t_plain": "Portada de casi 4 MB, con fotos sobredimensionadas y etiquetas repetidas",
+      "s": "Cada visita desde el celular descarga 3,7 MB, y las herramientas de seguimiento pesan más que todas las fotos de la página.",
+      "now": "La portada pide 31 archivos a servicios externos (757 KB): Google en dos etiquetas, una cargada dos veces, Facebook, TikTok, Clarity, Omnisend y otras apps. Las fotos de producto se descargan a 800 px aunque en celular se muestran a unos 206 px; Lighthouse estima 599 KB de ahorro solo en imágenes.",
+      "fix": "Hacer un inventario de etiquetas y apps y dejar una sola instalación de cada una, retrasar las no esenciales hasta después de la carga y pedir cada foto al tamaño en que se muestra.",
+      "why": "Una tienda que abre rápido en el celular retiene más visitantes hasta que ven el producto, y con menos etiquetas repetidas tus mediciones de campañas son más confiables.",
+      "shot": {
+        "img": "top-8-crop.jpg",
+        "x": 50,
+        "y": 22
+      }
+    },
+    {
+      "n": 9,
+      "c": "a11y",
+      "src": [
+        "a11y-4",
+        "a11y-5",
+        "tech-4"
+      ],
+      "imp": 3,
+      "eff": "Bajo",
+      "stage": 1,
+      "t": "Tus banners cambian antes de poder leerlos",
+      "t_plain": "Carruseles automáticos sin pausa y controles diminutos en celular",
+      "s": "El banner principal cambia cada 5 segundos sin botón de pausa, y en celular los controles son tan pequeños que se falla al tocarlos.",
+      "now": "El carrusel principal avanza solo cada 5 segundos, sin botón de pausa, y siguen moviéndose aunque la persona tenga activado «reducir movimiento». La franja de envíos se desplaza sin parar. En celular, los íconos de menú, buscar y carrito miden 22×22 px y los puntos del carrusel se ven de 6×6 px y se pueden tocar en un área de 22×22 px.",
+      "fix": "Agregar un botón de pausa, detener el movimiento cuando el usuario pide «reducir movimiento» y ampliar el área táctil de los íconos a 44×44 px y la de los puntos a 24×24 px.",
+      "why": "Un mensaje que se va antes de leerse no vende, y un toque fallido en el carrito es una compra que se interrumpe.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 92,
+        "y": 74
+      }
+    },
+    {
+      "n": 10,
+      "c": "vis",
+      "src": [
+        "visual-2",
+        "visual-3",
+        "visual-5"
+      ],
+      "imp": 3,
+      "eff": "Medio",
+      "stage": 3,
+      "t": "Cada banner habla con otra letra",
+      "t_plain": "Tipografías, botones y títulos sin un mismo sistema",
+      "s": "La mezcla de letras y de estilos de botón hace que la marca se vea menos cuidada de lo que es.",
+      "now": "El sitio usa Jost y Poppins, pero los banners agregan al menos cuatro letras más. Conviven un botón gris que parece desactivado, enlaces subrayados, una etiqueta crema y un recuadro con borde pintados en las fotos, y los títulos de sección cambian de tamaño en cada bloque.",
+      "fix": "Definir dos letras de marca, un botón principal con el color de marca y uno secundario, y un tamaño fijo de título de sección; rehacer los banners con ese sistema.",
+      "why": "Una marca de moda se juzga por su coherencia; cada estilo distinto le resta sensación premium.",
+      "shot": {
+        "img": "desktop-viewport.png",
+        "x": 90,
+        "y": 23
+      }
+    }
+  ]
 }

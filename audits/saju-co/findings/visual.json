@@ -17,13 +17,17 @@
         "Contenido rotativo: el slide visible cambia en cada visita/captura (desktop-viewport muestra «Phone Glasses», desktop-fullpage muestra «¡Llegamos a San Roque!»)"
       ],
       "technical_note": "Hero is a Shopify slideshow of image-only slides with baked-in typography; H1 wraps the logo. Add a real heading (h1) overlay or text block per slide.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 75, "y_pct": 48}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 75,
+        "y_pct": 48
+      }
     },
     {
       "id": "visual-2",
       "title": "Demasiadas tipografías mezcladas en la página",
       "summary": "La mezcla de letras distintas hace que la marca se vea menos cuidada de lo que es.",
-      "now": "El sitio usa dos letras (Jost para títulos y Poppins para textos), pero las imágenes de portada y los banners agregan al menos tres más: una serif condensada («Phone Glasses», «Agenda tu examen»), una serif itálica («Nueva colección»), una sans condensada («LOCAL SAJÚ», «AGENDA AQUÍ») y una sans negrita («LA ÓPTICA DEL MONO»). La barra superior de envíos sale en Helvetica/Arial.",
+      "now": "El sitio usa dos letras (Jost para títulos y Poppins para textos), pero las imágenes de portada y los banners agregan al menos cuatro más: una serif condensada («Phone Glasses», «Agenda tu examen»), una serif itálica («Nueva colección»), una sans condensada («LOCAL SAJÚ», «AGENDA AQUÍ») y una sans negrita («LA ÓPTICA DEL MONO»). La barra superior de envíos sale en Helvetica/Arial.",
       "fix": "Definir dos letras de marca (una para títulos, una para textos) y rehacer los banners usando solo esas, o escribir esos textos como texto real sobre la foto.",
       "why": "Una marca de moda se juzga por su coherencia; letras distintas en cada banner restan sensación de marca premium.",
       "impact": 3,
@@ -34,7 +38,11 @@
         "screenshots/desktop-fullpage.jpg: banner de examen con «LA ÓPTICA DEL MONO» (sans negrita), «Agenda tu examen» (serif condensada) y «CLICK AQUÍ» (sans condensada)"
       ],
       "technical_note": "Theme fonts: Jost 400 headings, Poppins 300 body (6 woff2 files from fonts.shopifycdn.com). Image-embedded typefaces add 3-4 families; announcement bar falls back to Helvetica/Arial.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 90, "y_pct": 23}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 90,
+        "y_pct": 23
+      }
     },
     {
       "id": "visual-3",
@@ -51,7 +59,11 @@
         "raw/home.html: --button-background con 5 valores distintos: 178 0 0, 255 255 255, 38 38 38, 72 13 13, 92 92 92"
       ],
       "technical_note": "Theme defines five button background tokens across color schemes; home uses #5c5c5c pill as primary. Image-baked CTAs are not real buttons.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 54}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 54
+      }
     },
     {
       "id": "visual-4",
@@ -68,7 +80,11 @@
         "raw/home.html: textos «reciclado», «ECO-ACETATO», «planeta»; ninguna imagen de sello o certificación (17 imágenes con alt vacío)"
       ],
       "technical_note": "Inferred positioning (sustainable eyewear) from home copy; business context not provided.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 79}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 79
+      }
     },
     {
       "id": "visual-5",
@@ -85,13 +101,17 @@
         "screenshots/desktop-fullpage.jpg: «NUESTROS MATERIALES» en letra pequeña sobre pestañas mucho más grandes"
       ],
       "technical_note": "Featured-collections tabs act as visual headings without heading markup; inconsistent section header pattern.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 90}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 90
+      }
     },
     {
       "id": "visual-6",
       "title": "Nombres de productos y collabs casi no se leen",
       "summary": "El cliente ve fotos bonitas, pero no sabe rápido qué es cada producto ni quién es cada colaborador.",
-      "now": "Los nombres de producto y precios están en mayúsculas pequeñas y gris claro (unos 12 px en la captura de escritorio), sin decir si son de sol o formuladas salvo algunos nombres. En «Nuestras collabs» los nombres (JAMES, SIMÓN VARGAS…) son texto blanco pequeño sobre fotos sin fondo.",
+      "now": "Los nombres de producto (en gris medio) y los precios (en gris claro) están en mayúsculas pequeñas de unos 12 px, sin decir si son de sol o formuladas salvo algunos nombres. En «Nuestras collabs» los nombres (JAMES, SIMÓN VARGAS…) son texto blanco pequeño sobre fotos con una capa oscura muy leve (20–30 %).",
       "fix": "Subir el tamaño y contraste del nombre del producto, añadir el tipo (sol / formulada / material) en cada tarjeta y poner los nombres de las collabs más grandes sobre un degradado oscuro.",
       "why": "Las colaboraciones con figuras conocidas son un gran argumento de venta que hoy pasa desapercibido.",
       "impact": 3,
@@ -100,21 +120,69 @@
         "screenshots/desktop-fullpage.jpg: tarjetas «SOZO DARK BROWN / $399,000 COP» en gris claro letterspaced; «SOZO DARK BROWN FORMULADAS» es la única pista del tipo",
         "screenshots/mobile-fullpage.jpg: «SIMÓN VARGAS» blanco sobre fondo claro de la foto, x≈75%, y≈61%; «JAMES» x≈25%, y≈61%"
       ],
-      "technical_note": "Product card title/price use low-contrast light grey small uppercase; collab overlay text has no scrim. Contrast numbers belong to a11y.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 25, "y_pct": 61}
+      "technical_note": "Product card title/price use low-contrast light grey small uppercase; collab overlay text only has a light overlay (--content-over-media-overlay 0.2–0.3), not a scrim behind the text. Rechecked 2026-11-25: name is #5C5C5C (6.69:1), only the price is light grey (3.0:1). Contrast numbers belong to a11y.",
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 25,
+        "y_pct": 61
+      }
     }
   ],
   "checks": [
-    {"id": "vis-headline-legible", "result": "fail", "evidence": "Hero headlines («Phone Glasses», «¡Llegamos a San Roque!») are baked into slideshow images; no real-text headline; only h1 is the logo."},
-    {"id": "vis-focal-point", "result": "partial", "evidence": "Hero photo gives a clear focal point, but the rotating slideshow changes it per visit; first product section and category grid have no title, so the eye lands on tabs/photos rather than a message."},
-    {"id": "vis-fonts", "result": "fail", "evidence": "Jost + Poppins in CSS, Helvetica/Arial announcement bar, plus 3-4 extra typefaces inside hero/exam banner images."},
-    {"id": "vis-buttons", "result": "fail", "evidence": "Grey pill (VER TODAS, SUSCRIBIRSE), underlined white links (VER), cream badge (AGENDA AQUÍ) and outlined box (CLICK AQUÍ) in images; 5 --button-background tokens in theme."},
-    {"id": "vis-headings", "result": "partial", "evidence": "NUESTRAS COLLABS and PARA SOL | FORMULADAS share h2 style; NUESTROS MATERIALES is a tiny eyebrow over larger tabs; first product section and category grid have no heading."},
-    {"id": "vis-palette", "result": "partial", "evidence": "Visible home palette is mostly black/white/greys with warm photo tones, but theme defines near-duplicate greys (239/247/255, 28/31) and unused-on-home accents (yellow 251,239,6 / 247,210,84, maroon 72,13,13, red 178,0,0) without clear roles."},
-    {"id": "vis-photos", "result": "pass", "evidence": "Real, well-lit lifestyle and collab photography (desktop-fullpage.jpg) and consistent packshots on light grey backgrounds."},
-    {"id": "vis-products", "result": "partial", "evidence": "Every tile shows name and price, but type/use (sun vs prescription, material) is missing except when it is part of the product name (e.g. «SOZO DARK BROWN FORMULADAS»)."},
-    {"id": "vis-positioning", "result": "fail", "evidence": "Recycled metal/eco-acetate/recycled plastic and 'planeta' claims with only a generic recycle icon; no seal, figure or process imagery."},
-    {"id": "vis-spacing", "result": "partial", "evidence": "Mobile layout aligns well; on desktop at 1350 px (desktop-fullpage.jpg) the main menu wraps and «SALE» drops alone to a second line; grids otherwise even."},
-    {"id": "vis-up-to-date", "result": "pass", "evidence": "Footer © 2026; current collections and new store announcement; no dated patterns."}
+    {
+      "id": "vis-headline-legible",
+      "result": "fail",
+      "evidence": "Hero headlines («Phone Glasses», «¡Llegamos a San Roque!») are baked into slideshow images; no real-text headline; only h1 is the logo."
+    },
+    {
+      "id": "vis-focal-point",
+      "result": "partial",
+      "evidence": "Hero photo gives a clear focal point, but the rotating slideshow changes it per visit; first product section and category grid have no title, so the eye lands on tabs/photos rather than a message."
+    },
+    {
+      "id": "vis-fonts",
+      "result": "fail",
+      "evidence": "Jost + Poppins in CSS, Helvetica/Arial announcement bar, plus 3-4 extra typefaces inside hero/exam banner images."
+    },
+    {
+      "id": "vis-buttons",
+      "result": "fail",
+      "evidence": "Grey pill (VER TODAS, SUSCRIBIRSE), underlined white links (VER), cream badge (AGENDA AQUÍ) and outlined box (CLICK AQUÍ) in images; 5 --button-background tokens in theme."
+    },
+    {
+      "id": "vis-headings",
+      "result": "partial",
+      "evidence": "NUESTRAS COLLABS and PARA SOL | FORMULADAS share h2 style; NUESTROS MATERIALES is a tiny eyebrow over larger tabs; first product section and category grid have no heading."
+    },
+    {
+      "id": "vis-palette",
+      "result": "partial",
+      "evidence": "Visible home palette is mostly black/white/greys with warm photo tones, but theme defines near-duplicate greys (239/247/255, 28/31) and unused-on-home accents (yellow 251,239,6 / 247,210,84, maroon 72,13,13, red 178,0,0) without clear roles."
+    },
+    {
+      "id": "vis-photos",
+      "result": "pass",
+      "evidence": "Real, well-lit lifestyle and collab photography (desktop-fullpage.jpg) and consistent packshots on light grey backgrounds."
+    },
+    {
+      "id": "vis-products",
+      "result": "partial",
+      "evidence": "Every tile shows name and price, but type/use (sun vs prescription, material) is missing except when it is part of the product name (e.g. «SOZO DARK BROWN FORMULADAS»)."
+    },
+    {
+      "id": "vis-positioning",
+      "result": "fail",
+      "evidence": "Recycled metal/eco-acetate/recycled plastic and 'planeta' claims with only a generic recycle icon; no seal, figure or process imagery."
+    },
+    {
+      "id": "vis-spacing",
+      "result": "partial",
+      "evidence": "Mobile layout aligns well; on desktop at 1350 px (desktop-fullpage.jpg) the main menu wraps and «SALE» drops alone to a second line; grids otherwise even."
+    },
+    {
+      "id": "vis-up-to-date",
+      "result": "pass",
+      "evidence": "Footer © 2026; current collections and new store announcement; no dated patterns."
+    }
   ]
 }

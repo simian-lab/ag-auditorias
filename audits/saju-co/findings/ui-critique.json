@@ -6,37 +6,82 @@
       "title": "Seis botones, y los que venden están pintados en fotos",
       "explanation": "Las dos acciones más importantes, agendar el examen, son etiquetas dibujadas dentro de imágenes («AGENDA AQUÍ» crema, «CLICK AQUÍ» con borde), mientras los botones de verdad son una cápsula gris #5C5C5C que se lee como apagada y un «VER» subrayado de 14 px sobre fotos. Además conviven un círculo blanco con flecha y el círculo verde de WhatsApp, así que el ojo no aprende qué forma significa «haz clic aquí».",
       "items": [
-        {"label": "«VER TODAS»: cápsula gris #5C5C5C, texto blanco 13 px peso 300", "crop": "ui-crop-btn-ver-todas.png"},
-        {"label": "«VER»: texto blanco subrayado de 14 px sobre la foto", "crop": "ui-crop-btn-ver-link.png"},
-        {"label": "«AGENDA AQUÍ»: etiqueta crema pintada dentro del banner", "crop": "ui-crop-btn-agenda-aqui.png"},
-        {"label": "«CLICK AQUÍ»: recuadro con borde pintado dentro del banner", "crop": "ui-crop-btn-click-aqui.png"},
-        {"label": "Círculo blanco con flecha para bajar de sección", "crop": "ui-crop-btn-next-section.png"},
-        {"label": "Círculo verde de WhatsApp, flotante", "crop": "ui-crop-btn-whatsapp.png"}
+        {
+          "label": "«VER TODAS»: cápsula gris #5C5C5C, texto blanco 13 px peso 300",
+          "crop": "ui-crop-btn-ver-todas.png"
+        },
+        {
+          "label": "«VER»: texto blanco subrayado de 14 px sobre la foto",
+          "crop": "ui-crop-btn-ver-link.png"
+        },
+        {
+          "label": "«AGENDA AQUÍ»: etiqueta crema pintada dentro del banner",
+          "crop": "ui-crop-btn-agenda-aqui.png"
+        },
+        {
+          "label": "«CLICK AQUÍ»: recuadro con borde pintado dentro del banner",
+          "crop": "ui-crop-btn-click-aqui.png"
+        },
+        {
+          "label": "Círculo blanco con flecha para bajar de sección",
+          "crop": "ui-crop-btn-next-section.png"
+        },
+        {
+          "label": "Círculo verde de WhatsApp, flotante",
+          "crop": "ui-crop-btn-whatsapp.png"
+        }
       ],
       "proposal": "Dos botones reales en toda la tienda: principal relleno en negro Sajú con texto blanco para comprar y agendar, y secundario con contorno para explorar; la misma cápsula y 48 px de alto, también sobre los banners en lugar de etiquetas dibujadas."
     },
     {
       "kind": "headings",
       "title": "Los títulos más grandes son dibujos, y cada uno distinto",
-      "explanation": "Los cuatro banners de portada estrenan cada uno su letra y su color: serif amarilla para «Tropical», serif crema condensada para «Phone Glasses» y «¡Llegamos a San Roque!», y letra de western amarilla para «Triple Case». Debajo, todos los títulos reales tienen el mismo gris de 28 px con letras separadas, de modo que las pestañas «TROPICAL / PHONE GLASSES» y «METAL RECICLADO» se ven igual de importantes que los títulos de sección, y «NUESTROS MATERIALES» queda en 12 px.",
+      "explanation": "Los cuatro banners de portada usan tres letras y colores distintos: serif amarilla para «Tropical», serif crema condensada para «Phone Glasses» y «¡Llegamos a San Roque!», y letra de western amarilla para «Triple Case». Debajo, casi todos los títulos reales tienen el mismo gris de 28 px con letras separadas (solo «¿Por qué Sajú?» va en blanco de 32 px), de modo que las pestañas «TROPICAL / PHONE GLASSES» y «METAL RECICLADO» se ven igual de importantes que los títulos de sección, y «NUESTROS MATERIALES» queda en 12 px.",
       "items": [
-        {"label": "Banner 1: «Tropical» en serif amarilla", "crop": "ui-crop-h-hero-tropical.png"},
-        {"label": "Banner 2: «Phone Glasses» en serif crema condensada", "crop": "ui-crop-h-hero-phone.png"},
-        {"label": "Banner 4: «Triple Case» en letra de western amarilla", "crop": "ui-crop-h-hero-triple.png"},
-        {"label": "Pestañas «TROPICAL / PHONE GLASSES»: Jost 28 px, igual que un título", "crop": "ui-crop-h-tabs.png"},
-        {"label": "«NUESTROS MATERIALES» en 12 px sobre pestañas de 28 px", "crop": "ui-crop-h-materiales.png"},
-        {"label": "Título de sección «NUESTRAS COLLABS»: Jost 28 px gris", "crop": "ui-crop-h-collabs.png"}
+        {
+          "label": "Banner 1: «Tropical» en serif amarilla",
+          "crop": "ui-crop-h-hero-tropical.png"
+        },
+        {
+          "label": "Banner 2: «Phone Glasses» en serif crema condensada",
+          "crop": "ui-crop-h-hero-phone.png"
+        },
+        {
+          "label": "Banner 4: «Triple Case» en letra de western amarilla",
+          "crop": "ui-crop-h-hero-triple.png"
+        },
+        {
+          "label": "Pestañas «TROPICAL / PHONE GLASSES»: Jost 28 px, igual que un título",
+          "crop": "ui-crop-h-tabs.png"
+        },
+        {
+          "label": "«NUESTROS MATERIALES» en 12 px sobre pestañas de 28 px",
+          "crop": "ui-crop-h-materiales.png"
+        },
+        {
+          "label": "Título de sección «NUESTRAS COLLABS»: Jost 28 px gris",
+          "crop": "ui-crop-h-collabs.png"
+        }
       ],
       "proposal": "Una escala fija con las dos letras de la marca: mensaje de portada en texto real como el más grande, títulos de sección en segundo nivel y pestañas claramente más pequeñas que el título que las agrupa."
     },
     {
       "kind": "cards",
       "title": "Tarjetas sin botón y fotos sin precio",
-      "explanation": "La tarjeta de producto muestra foto, nombre y un precio pálido, pero el botón «Añadir a la cesta» está invisible (opacidad 0) hasta pasar el mouse, algo que en celular no existe. Las categorías y las collabs son fotos a todo el ancho con un rótulo blanco de 12 px y un «VER» diminuto, y las mismas gafas cambian de tamaño entre la cuadrícula de 3 columnas y la de 4.",
+      "explanation": "La tarjeta de producto muestra foto, nombre y un precio pálido, pero en computador el botón «Añadir a la cesta» está invisible (opacidad 0) hasta pasar el mouse, y en celular es solo un «+» pequeño. Las categorías y las collabs son fotos a todo el ancho con un rótulo blanco de 12 px y un «VER» diminuto, y las mismas gafas cambian de tamaño entre la cuadrícula de 3 columnas y la de 4.",
       "items": [
-        {"label": "Producto en cuadrícula de 3: sin botón visible, precio en gris pálido", "crop": "ui-crop-card-product.png"},
-        {"label": "Producto en «Nuestros materiales»: misma tarjeta, otro tamaño", "crop": "ui-crop-card-material.png"},
-        {"label": "Categoría «Gafas de sol»: foto completa con rótulo de 12 px", "crop": "ui-crop-card-category.png"}
+        {
+          "label": "Producto en cuadrícula de 3: sin botón visible, precio en gris pálido",
+          "crop": "ui-crop-card-product.png"
+        },
+        {
+          "label": "Producto en «Nuestros materiales»: misma tarjeta, otro tamaño",
+          "crop": "ui-crop-card-material.png"
+        },
+        {
+          "label": "Categoría «Gafas de sol»: foto completa con rótulo de 12 px",
+          "crop": "ui-crop-card-category.png"
+        }
       ],
       "proposal": "Una sola tarjeta de producto en toda la tienda, con nombre, precio en negro legible, si es de sol o formulada, y un botón visible sin necesidad de pasar el mouse; las categorías con su nombre en un tamaño que se lea desde lejos."
     },
@@ -45,9 +90,18 @@
       "title": "Íconos de tres familias que no se hablan",
       "explanation": "El encabezado usa íconos de línea fina en gris, la sección «Para sol | Formuladas» trae íconos dentro de círculos con textos en negrita pintados en la foto, y los puntos del carrusel son círculos de 6 px casi invisibles. Cada familia viene de un lugar distinto y eso se lee como piezas armadas por separado.",
       "items": [
-        {"label": "Encabezado: cuenta, búsqueda y bolsa en línea fina gris", "crop": "ui-crop-icons-header.png"},
-        {"label": "«Para sol | Formuladas»: íconos en círculo pintados en la foto", "crop": "ui-crop-icons-painted.png"},
-        {"label": "Puntos del carrusel: 6 px sobre la foto", "crop": "ui-crop-icons-dots.png"}
+        {
+          "label": "Encabezado: cuenta, búsqueda y bolsa en línea fina gris",
+          "crop": "ui-crop-icons-header.png"
+        },
+        {
+          "label": "«Para sol | Formuladas»: íconos en círculo pintados en la foto",
+          "crop": "ui-crop-icons-painted.png"
+        },
+        {
+          "label": "Puntos del carrusel: 6 px sobre la foto",
+          "crop": "ui-crop-icons-dots.png"
+        }
       ],
       "proposal": "Un solo juego de íconos de línea, mismo grosor y tamaño (20 a 24 px), escritos como elementos reales de la página y no dentro de las fotos."
     },
@@ -56,30 +110,85 @@
       "title": "Un mono negro y una tienda pintada de gris",
       "explanation": "El logo es un mono en blanco y negro, pero el color que más se repite en la página es un gris #5C5C5C que hace de texto, de botón y de acento a la vez, y el precio va en ese gris al 65 %. El tema tiene definidos un crema, un vino, un rojo y un oliva que la portada casi no usa, mientras los banners traen sus propios amarillos y cremas.",
       "items": [
-        {"label": "Gris de texto, botones y acento (--accent, --button-background)", "hex": "#5C5C5C"},
-        {"label": "Precio: gris al 65 % sobre blanco, contraste 3,0:1", "hex": "#959595"},
-        {"label": "Fondo oscuro de «¿Por qué Sajú?» y barra de envíos", "hex": "#1C1C1C"},
-        {"label": "Fondo del encabezado y de «Para sol | Formuladas»", "hex": "#EFEFEF"},
-        {"label": "Crema definido en el tema (--text-color 247 247 227)", "hex": "#F7F7E3"},
-        {"label": "Vino definido como fondo de botón en el tema", "hex": "#480D0D"},
-        {"label": "Rojo de botón circular definido en el tema", "hex": "#B20000"},
-        {"label": "Oliva de botón circular definido en el tema", "hex": "#7D7243"},
-        {"label": "Rojo de la etiqueta de oferta", "hex": "#E32C2B"}
+        {
+          "label": "Gris de texto, botones y acento (--accent, --button-background)",
+          "hex": "#5C5C5C"
+        },
+        {
+          "label": "Precio: gris al 65 % sobre blanco, contraste 3,0:1",
+          "hex": "#959595"
+        },
+        {
+          "label": "Fondo oscuro de «¿Por qué Sajú?» y barra de envíos",
+          "hex": "#1C1C1C"
+        },
+        {
+          "label": "Fondo del encabezado y de «Para sol | Formuladas»",
+          "hex": "#EFEFEF"
+        },
+        {
+          "label": "Crema definido en el tema (--text-color 247 247 227)",
+          "hex": "#F7F7E3"
+        },
+        {
+          "label": "Vino definido como fondo de botón en el tema",
+          "hex": "#480D0D"
+        },
+        {
+          "label": "Rojo de botón circular definido en el tema",
+          "hex": "#B20000"
+        },
+        {
+          "label": "Oliva de botón circular definido en el tema",
+          "hex": "#7D7243"
+        },
+        {
+          "label": "Rojo de la etiqueta de oferta",
+          "hex": "#E32C2B"
+        }
       ],
       "proposal": "Tres colores con un papel fijo: negro Sajú para texto, precios y botón principal; crema para fondos de marca y texto sobre oscuro; y un solo color de acento para ofertas y novedades."
     }
   ],
   "proposed_system": {
     "colors": [
-      {"name": "Negro Sajú", "hex": "#1C1C1C", "role": "Texto, títulos, precios y botón principal. Sobre blanco: 17,04:1. Texto blanco encima: 17,04:1; texto crema encima: 15,72:1."},
-      {"name": "Crema", "hex": "#F7F7E3", "role": "Fondo de bandas de marca (garantía, examen visual) y texto sobre fondos oscuros o fotos. Texto Negro Sajú encima: 15,72:1."},
-      {"name": "Vino", "hex": "#480D0D", "role": "Acento único: etiqueta «Nuevo», bloque de examen visual. Texto blanco encima: 15,68:1; texto crema encima: 14,47:1."},
-      {"name": "Gris niebla", "hex": "#EFEFEF", "role": "Fondo de secciones de apoyo y encabezado. Texto Negro Sajú encima: 14,82:1; el gris #5C5C5C encima solo da 5,82:1 y queda para textos secundarios."},
-      {"name": "Blanco", "hex": "#FFFFFF", "role": "Fondo de página y de tarjetas de producto. Texto Negro Sajú encima: 17,04:1; texto gris #5C5C5C solo para notas: 6,69:1."}
+      {
+        "name": "Negro Sajú",
+        "hex": "#1C1C1C",
+        "role": "Texto, títulos, precios y botón principal. Sobre blanco: 17,04:1. Texto blanco encima: 17,04:1; texto crema encima: 15,72:1."
+      },
+      {
+        "name": "Crema",
+        "hex": "#F7F7E3",
+        "role": "Fondo de bandas de marca (garantía, examen visual) y texto sobre fondos oscuros o fotos. Texto Negro Sajú encima: 15,72:1."
+      },
+      {
+        "name": "Vino",
+        "hex": "#480D0D",
+        "role": "Acento único: etiqueta «Nuevo», bloque de examen visual. Texto blanco encima: 15,68:1; texto crema encima: 14,47:1."
+      },
+      {
+        "name": "Gris niebla",
+        "hex": "#EFEFEF",
+        "role": "Fondo de secciones de apoyo y encabezado. Texto Negro Sajú encima: 14,82:1; el gris #5C5C5C encima solo da 5,82:1 y queda para textos secundarios."
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "role": "Fondo de página y de tarjetas de producto. Texto Negro Sajú encima: 17,04:1; texto gris #5C5C5C solo para notas: 6,69:1."
+      }
     ],
     "fonts": [
-      {"family": "Jost", "weight": 500, "role": "Títulos, nombres de producto, menú, botones y también los títulos de los banners"},
-      {"family": "Poppins", "weight": 400, "role": "Texto de lectura, descripciones y precios (subir de 300 a 400 para que se lea mejor)"}
+      {
+        "family": "Jost",
+        "weight": 500,
+        "role": "Títulos, nombres de producto, menú, botones y también los títulos de los banners"
+      },
+      {
+        "family": "Poppins",
+        "weight": 400,
+        "role": "Texto de lectura, descripciones y precios (subir de 300 a 400 para que se lea mejor)"
+      }
     ],
     "button_primary": "Relleno Negro Sajú #1C1C1C, texto blanco (17,04:1), Jost 500 14 px en mayúsculas con 1 px de espaciado, cápsula (radio 60 px como hoy), alto 48 px. Al pasar el mouse: fondo Vino #480D0D (15,68:1). Uso: Comprar, Añadir a la bolsa, Agendar examen, Suscribirse.",
     "button_secondary": "Fondo transparente, borde 1 px Negro Sajú, texto Negro Sajú, misma forma y alto. Sobre fotos: borde y texto Crema #F7F7E3. Uso: Ver todas, Ver colección, Ver collab.",
@@ -89,10 +198,10 @@
     "Barra de envíos: lo primero que se lee es «ENVÍOS GRATIS…» en Helvetica 18 px blanco sobre negro, más grande que el menú y que los nombres de producto; debería ser una línea discreta.",
     "Portada: el ojo va a la foto y al título dibujado del banner que toque (Tropical, Phone Glasses, San Roque o Triple Case), que cambia solo; debería ver una frase fija que diga qué es Sajú y un botón «Ver gafas» / «Agendar examen».",
     "Primera sección de productos: lo más llamativo son las pestañas «TROPICAL / PHONE GLASSES» en 28 px, sin un título que explique qué son; debería verse primero un título de sección y luego las gafas con su precio.",
-    "Tarjetas de producto: se ve la foto; nombre y precio quedan en 12 px gris y el botón de compra no aparece hasta pasar el mouse; deberían verse precio y botón sin buscarlos.",
+    "Tarjetas de producto: se ve la foto; nombre y precio quedan en 12 px gris y el botón de compra no aparece hasta pasar el mouse en computador (en celular es un «+» pequeño); deberían verse precio y botón sin buscarlos.",
     "Categorías (Gafas de sol, Formuladas, Cuelga-gafas, Accesorios): cuatro fotos grandes con el nombre en 12 px blanco; el nombre de la categoría debería ser lo que más se lea del bloque.",
     "Nuestros materiales: el título es el texto más pequeño (12 px) y las pestañas de materiales gritan en 28 px; debería ser al revés, y explicar en una línea qué tiene de especial cada material.",
-    "Nuestras collabs: la cara de cada invitado domina, pero su nombre va en 12 px blanco sobre la foto sin fondo; el nombre y el «Ver» deberían leerse a primera vista.",
+    "Nuestras collabs: la cara de cada invitado domina, pero su nombre va en 12 px blanco sobre la foto con una capa oscura muy leve; el nombre y el «Ver» deberían leerse a primera vista.",
     "Banner de examen visual: el mensaje es fuerte («Agenda tu examen»), pero está pintado en la foto y el botón «CLICK AQUÍ» es parte de la imagen; debería ser un botón real con el estilo principal.",
     "Para sol | Formuladas: el ojo va a la comparación de caras; los beneficios (UV400, bisagras flexibles, ligeras) son textos diminutos pintados en la foto y deberían ser texto real legible.",
     "¿Por qué Sajú?: un bloque oscuro de unos 1.800 px de alto donde Compromiso, Garantías y Marca colombiana aparecen uno a uno al hacer scroll, junto a un solo ícono; la garantía de arreglos gratis de por vida debería ser lo primero y verse sin animación.",

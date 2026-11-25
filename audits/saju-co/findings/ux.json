@@ -18,13 +18,17 @@
         "Page <title>: 'Sajú - FEEL GOOD, LOOK GOOD, DO GOOD' (slogan, no product category)"
       ],
       "technical_note": "Hero slide shown varies per visit/time because of autoplay=5. Add a real <h1> with category + location; keep the logo as a link, not the h1.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 75, "y_pct": 48}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 75,
+        "y_pct": 48
+      }
     },
     {
       "id": "ux-2",
       "title": "No hay teléfono, correo ni página de contacto",
       "summary": "Un cliente con una duda sobre su fórmula o su pedido no encuentra cómo llamar o escribir, salvo el botón de WhatsApp.",
-      "now": "Ninguna página muestra teléfono ni correo en el encabezado o el pie. La dirección /pages/contact da error 404. En «Tiendas» solo algunas ópticas tienen teléfono y aparece como texto que no se puede pulsar para llamar.",
+      "now": "Ninguna página muestra teléfono ni correo en el encabezado o el pie. La dirección /pages/contact da error 404. En «Tiendas» las tarjetas del mapa casi no tienen teléfono (2 de 23); los bloques de detalle de cada óptica, más abajo, sí lo tienen, pero como texto que no se puede pulsar para llamar.",
       "fix": "Agregar al pie de todas las páginas un bloque «Contáctanos» con WhatsApp, teléfono que se pueda pulsar y correo, y crear una página de contacto con un formulario corto (nombre, celular, tema: pedido / gafas formuladas / examen).",
       "why": "Las gafas formuladas generan preguntas antes de comprar; si no hay a quién preguntar, la venta se pierde o se va a otra óptica.",
       "impact": 4,
@@ -33,34 +37,42 @@
         "raw/home.html, raw/ux-exam.html, raw/ux-product.html, raw/ux-tiendas.html, raw/ux-examenes.html: 0 'tel:' and 0 'mailto:' links",
         "curl https://www.saju.co/pages/contact -> HTTP 404 (raw/ux-contact.html: 'No hemos encontrado la página que buscabas')",
         "Footer (screenshots/mobile-fullpage.jpg, bottom): 'Encuentra tu tienda más cercana', newsletter, legal links, social icons; no phone, email or address",
-        "raw/ux-tiendas.html: store phones such as 3126685593 (Gran Estación) and 3126682112 (San Roque) shown as plain text; most stores list no phone"
+        "raw/ux-tiendas.html: store phones such as 3126685593 (Gran Estación) and 3126682112 (San Roque) shown as plain text; map cards: only 2 of 23 show a phone; the detail blocks lower on the page show «Línea de atención de la tienda» for 9 of 10 stores, all plain text (rechecked 2026-11-25)"
       ],
       "technical_note": "Only contact channel sitewide is the floating WhatsApp (wa.me/573123225855) and a WhatsApp social icon in the footer.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 88}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 88
+      }
     },
     {
       "id": "ux-3",
       "title": "Las reseñas de producto están vacías y con texto roto",
       "summary": "En la ficha de cada gafa el bloque de opiniones muestra frases incompletas y cero reseñas, lo que resta confianza justo al decidir la compra.",
-      "now": "En la ficha de producto, «¿Qué opinan nuestros clientes?» dice «clientes han reseñado este producto. Puntaje promedio: /5», sin números. Más abajo aparece en inglés «Customer Reviews – Be the first to write a review» con 0 reseñas.",
+      "now": "En la ficha de producto, al abrir «¿Qué opinan nuestros clientes?» aparece «clientes han reseñado este producto. Puntaje promedio: /5», sin números ni ninguna reseña.",
       "fix": "Arreglar o quitar el bloque roto, y pedir reseñas por correo a quienes ya compraron para mostrar estrellas reales en las fichas y en la portada.",
       "why": "Un precio de $399.000 se decide con pruebas de que otros compraron y quedaron contentos; un bloque vacío o roto hace dudar.",
       "impact": 4,
       "effort": "Medio",
       "evidence": [
         "raw/ux-product-rendered.html (headless Chrome, /products/m55c201s): accordion '¿Qué opinan nuestros clientes?' renders ' clientes han reseñado este producto. Puntaje promedio: /5' with empty values",
-        "raw/ux-product.html: 'Customer Reviews Be the first to write a review Write a review 0% (0) 0% (0) 0% (0) 0% (0) 0% (0)'",
+        "raw/ux-product.html: 'Customer Reviews Be the first to write a review Write a review 0% (0) 0% (0) 0% (0) 0% (0) 0% (0)' — this review-app widget is hidden by CSS (.jdgm-rev-widg{display:none}); the visitor does not see it (rechecked 2026-11-25)",
         "screenshots/ux-product-desktop.png: reviews accordion below the buy buttons",
         "raw/home.html: product cards show name and price only, no stars or review counts"
       ],
-      "technical_note": "Two review blocks coexist: a custom accordion with unfilled Liquid/JS placeholders and a review app widget in English with 0 reviews. Checked on one product only; the empty placeholder text comes from the shared product template.",
-      "pin": {"screenshot": "ux-product-desktop.png", "x_pct": 76, "y_pct": 79}
+      "technical_note": "Two review blocks coexist: a custom accordion with unfilled Liquid/JS placeholders (visible) and a Judge.me widget with 0 reviews that is hidden by CSS (.jdgm-rev-widg{display:none}). Checked on one product only; the empty placeholder text comes from the shared product template.",
+      "pin": {
+        "screenshot": "ux-product-desktop.png",
+        "x_pct": 76,
+        "y_pct": 79
+      }
     },
     {
       "id": "ux-4",
       "title": "Tus garantías y razones para comprar quedan escondidas",
       "summary": "Lo que te diferencia (arreglos gratis de por vida, marca colombiana desde 2017) está al final de la portada y dentro de un carrusel, lejos de los productos.",
-      "now": "La sección «¿Por qué Sajú?» está casi al final de la página y muestra un mensaje a la vez en un carrusel de 4 tarjetas; en celular se ve primero «Compromiso» y hay que deslizar para llegar a «Garantías».",
+      "now": "La sección «¿Por qué Sajú?» está casi al final de la página y muestra un mensaje a la vez: en computador se ilumina uno por uno al bajar, y en celular es un carrusel de 4 tarjetas; en celular se ve primero «Compromiso» y hay que deslizar para llegar a «Garantías».",
       "fix": "Mostrar una franja fija con 3 o 4 datos cortos («Arreglos gratis de por vida», «Examen gratis si compras tus gafas», «Marca colombiana desde 2017», «Envío gratis desde $249.000») justo debajo de la primera imagen y cerca del botón de compra.",
       "why": "Las garantías convencen cuando se ven en el momento de decidir, no al final de la página.",
       "impact": 3,
@@ -71,7 +83,11 @@
         "'Examen gratis si mandas a hacer tus gafas' appears only on /products/examen-visual-* pages (raw/ux-exam.html), not on the home"
       ],
       "technical_note": "Static trust bar (no carousel) below hero; reuse copy already in the theme.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 77}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 77
+      }
     },
     {
       "id": "ux-5",
@@ -89,7 +105,11 @@
         "Booking path works: menu -> store -> day/time calendar -> 'Añadir a la cesta' -> checkout ($50,000 anticipo), verified rendered in screenshots/ux-exam-desktop.png"
       ],
       "technical_note": "Hero slide 3 links to /products/examen-visual-san-roque but only shows while that slide is active (autoplay=5).",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 69}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 69
+      }
     },
     {
       "id": "ux-6",
@@ -105,20 +125,68 @@
         "a#whatsapp-button has href='#' until DOMContentLoaded sets wa.me link"
       ],
       "technical_note": "In the theme section whatsapp_flotante, build the message from Liquid ({{ product.title }}, {{ page.title }}) and render href server-side instead of via JS.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 97, "y_pct": 94}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 97,
+        "y_pct": 94
+      }
     }
   ],
   "checks": [
-    {"id": "ux-value-prop", "result": "fail", "evidence": "First viewport desktop and mobile has no real-text statement of category/customer; messages are painted inside rotating hero images; only h1 is the logo; title is a slogan."},
-    {"id": "ux-quote-cta", "result": "partial", "evidence": "Desktop nav shows 'Agenda tu examen visual' in the first viewport; on mobile the first viewport only has the hamburger, 'Gafas sol | Formuladas' links and the floating WhatsApp (does not count); no 'contact' link anywhere."},
-    {"id": "ux-catalog-path", "result": "pass", "evidence": "Home product cards link to /products/* and have 'Añadir a la cesta'/'Elige opciones'; category tiles (Gafas de sol, Formuladas, Cuelga-gafas, Accesorios) and collabs have 'VER' links to collections."},
-    {"id": "ux-contact-visible", "result": "fail", "evidence": "No phone or email in header or footer on home, product, exam, collection or stores pages; /pages/contact returns 404."},
-    {"id": "ux-contact-tappable", "result": "fail", "evidence": "0 tel: and 0 mailto: links on all fetched pages; store phones on /pages/tiendas-1 are plain text."},
-    {"id": "ux-form-data", "result": "fail", "evidence": "No contact or inquiry form exists (/pages/contact 404); only forms are search, cart/add, newsletter. Exam booking is a calendar + checkout, not an inquiry form."},
-    {"id": "ux-form-friction", "result": "na", "evidence": "No contact/quote form to evaluate; exam booking uses a day/time picker and standard Shopify checkout."},
-    {"id": "ux-chat-ready", "result": "pass", "evidence": "Floating WhatsApp wa.me/573123225855 with real prefilled text 'Hola, estoy interesado en los productos del 🐵' (no demo text); same number as footer WhatsApp icon. Message is generic on every page (see ux-6)."},
-    {"id": "ux-mobile-nav", "result": "pass", "evidence": "Lighthouse mobile screenshot shows hamburger menu; drawer markup in raw/home.html lists Home, Gafas (subsections), Accesorios, Agenda tu examen visual (8 sedes), Tiendas, Táchalo, Estado de mi pedido, Sale."},
-    {"id": "ux-trust-near-cta", "result": "partial", "evidence": "Product page shows 'Garantía 365 días' in the description below the buy buttons; but reviews block is empty/broken (0 reviews, 'Puntaje promedio: /5'), and home trust content ('¿Por qué Sajú?') is at ~77% of page height inside a carousel, away from products."},
-    {"id": "ux-content-not-hidden", "result": "partial", "evidence": "Hero offers (San Roque opening/exam, Triple cases) appear only inside 4 images of an autoplay=5 carousel; exam promo banner is text-in-image; Tropical and Phone Glasses are repeated as product tabs in real text."}
+    {
+      "id": "ux-value-prop",
+      "result": "fail",
+      "evidence": "First viewport desktop and mobile has no real-text statement of category/customer; messages are painted inside rotating hero images; only h1 is the logo; title is a slogan."
+    },
+    {
+      "id": "ux-quote-cta",
+      "result": "partial",
+      "evidence": "Desktop nav shows 'Agenda tu examen visual' in the first viewport; on mobile the first viewport only has the hamburger, 'Gafas sol | Formuladas' links and the floating WhatsApp (does not count); no 'contact' link anywhere."
+    },
+    {
+      "id": "ux-catalog-path",
+      "result": "pass",
+      "evidence": "Home product cards link to /products/* and have 'Añadir a la cesta'/'Elige opciones'; category tiles (Gafas de sol, Formuladas, Cuelga-gafas, Accesorios) and collabs have 'VER' links to collections."
+    },
+    {
+      "id": "ux-contact-visible",
+      "result": "fail",
+      "evidence": "No phone or email in header or footer on home, product, exam, collection or stores pages; /pages/contact returns 404."
+    },
+    {
+      "id": "ux-contact-tappable",
+      "result": "fail",
+      "evidence": "0 tel: and 0 mailto: links on all fetched pages; store phones on /pages/tiendas-1 are plain text."
+    },
+    {
+      "id": "ux-form-data",
+      "result": "fail",
+      "evidence": "No contact or inquiry form exists (/pages/contact 404); only forms are search, cart/add, newsletter. Exam booking is a calendar + checkout, not an inquiry form."
+    },
+    {
+      "id": "ux-form-friction",
+      "result": "na",
+      "evidence": "No contact/quote form to evaluate; exam booking uses a day/time picker and standard Shopify checkout."
+    },
+    {
+      "id": "ux-chat-ready",
+      "result": "pass",
+      "evidence": "Floating WhatsApp wa.me/573123225855 with real prefilled text 'Hola, estoy interesado en los productos del 🐵' (no demo text); same number as footer WhatsApp icon. Message is generic on every page (see ux-6)."
+    },
+    {
+      "id": "ux-mobile-nav",
+      "result": "pass",
+      "evidence": "Lighthouse mobile screenshot shows hamburger menu; drawer markup in raw/home.html lists Home, Gafas (subsections), Accesorios, Agenda tu examen visual (8 sedes), Tiendas, Táchalo, Estado de mi pedido, Sale."
+    },
+    {
+      "id": "ux-trust-near-cta",
+      "result": "partial",
+      "evidence": "Product page shows 'Garantía 365 días' in the description below the buy buttons; but reviews block is empty/broken (0 reviews, 'Puntaje promedio: /5'), and home trust content ('¿Por qué Sajú?') is at ~77% of page height inside a carousel, away from products."
+    },
+    {
+      "id": "ux-content-not-hidden",
+      "result": "partial",
+      "evidence": "Hero offers (San Roque opening/exam, Triple cases) appear only inside 4 images of an autoplay=5 carousel; exam promo banner is text-in-image; Tropical and Phone Glasses are repeated as product tabs in real text."
+    }
   ]
 }

@@ -39,13 +39,17 @@
         "modern-image-formats and uses-optimized-images pass (Shopify CDN negotiates WebP/AVIF)"
       ],
       "technical_note": "Product cards request width=800 with a sizes attribute that does not match the 2-column mobile grid (~50vw). Fix the sizes attribute in the Prestige product-card snippet / image_tag widths. Add loading=lazy to the featured-collection images and the footer badge.",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 25.0, "y_pct": 38.2}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 25.0,
+        "y_pct": 38.2
+      }
     },
     {
       "id": "tech-3",
       "title": "Demasiadas herramientas de marketing, algunas cargadas dos veces",
       "summary": "Las herramientas de seguimiento externas pesan más que todas las fotos de la página y ocupan el celular mientras el cliente intenta navegar.",
-      "now": "La página carga 31 archivos de servicios externos (757 KB): Google (509 KB en tres programas de etiquetas, uno de ellos cargado dos veces), Facebook, TikTok, Microsoft Clarity, Omnisend y otras apps. En la simulación de celular, este código externo bloquea la página unos 310 ms, y Lighthouse marca 454 KB de código que no se usa en esta página.",
+      "now": "La página carga 31 archivos de servicios externos (757 KB): Google (509 KB en dos etiquetas, una de ellas cargada dos veces), Facebook, TikTok, Microsoft Clarity, Omnisend y otras apps. En la simulación de celular, este código externo bloquea la página entre 250 y 310 ms, y Lighthouse marca 454 KB de código que no se usa en esta página.",
       "fix": "Hacer un inventario de etiquetas y apps: dejar una sola instalación de cada etiqueta de Google (por la app oficial de Shopify o por el tema, no por ambas), desinstalar apps que ya no se usen y retrasar las no esenciales hasta después de la carga.",
       "why": "Menos código externo hace la tienda más ágil y deja las mediciones de campañas más limpias y confiables.",
       "impact": 3,
@@ -66,7 +70,7 @@
       "id": "tech-4",
       "title": "Animaciones constantes mantienen ocupado al celular",
       "summary": "En celulares de gama media la página puede sentirse lenta al tocar o deslizar porque el teléfono nunca deja de trabajar.",
-      "now": "En la simulación de celular de Lighthouse (una sola corrida), el procesador del teléfono trabaja 23 segundos durante la carga, casi todo en dibujar y recalcular la página, y no queda libre para responder hasta los 22,9 s. La página tiene un texto en movimiento continuo y dos carruseles que cambian solos. En computador la misma carga queda lista en menos de 1 s.",
+      "now": "En la simulación de celular de Lighthouse (una sola corrida), el procesador del teléfono trabaja unos 20 segundos durante la carga (entre 16 y 23 s según la medición), casi todo en dibujar y recalcular la página, y no queda libre para responder hasta los 22,9 s. La página tiene un texto en movimiento continuo y un carrusel que cambia solo. En computador la misma carga queda lista en menos de 1 s.",
       "fix": "Revisar el texto en movimiento y los carruseles automáticos (pausarlos cuando no están en pantalla o reemplazarlos por versiones más livianas) y volver a medir en celular.",
       "why": "Una tienda que responde al primer toque transmite confianza y facilita llegar al carrito.",
       "impact": 2,
@@ -78,7 +82,11 @@
         "raw/home.html: <scrolling-text-...> marquee block (AI-generated theme block) and two <slideshow-carousel> with autoplay=\"5\""
       ],
       "technical_note": "Lab-only signal from one simulated run; the attribution to the marquee/autoplay slideshows is the likely cause (rendering/style work not attributable to scripts) but not proven — confirm with a Performance trace on a real mid-range Android. Observed metrics are fine: observed FCP 469 ms, observed LCP 514 ms (unthrottled desktop machine emulating a phone).",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50.0, "y_pct": 6.4}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50.0,
+        "y_pct": 6.4
+      }
     },
     {
       "id": "tech-5",
@@ -102,16 +110,60 @@
     }
   ],
   "checks": [
-    {"id": "tech-weight", "result": "fail", "evidence": "Lighthouse total-byte-weight 3,74 MB mobile / 4,10 MB desktop (above 3 MB); ~0,97 MB is post-load Shopify checkout prefetch"},
-    {"id": "tech-lcp", "result": "pass", "evidence": "observedLargestContentfulPaint mobile 514 ms (lab simulated LCP 3,3 s, single run); LCP element is hero banner img BannerHomeCR.webp with fetchpriority=high"},
-    {"id": "tech-images", "result": "fail", "evidence": "Formats pass (WebP/AVIF via Shopify CDN) but image-delivery-insight savings 599 KiB and uses-responsive-images 285 KiB mobile, above 100 KiB"},
-    {"id": "tech-lazy", "result": "partial", "evidence": "108 of 118 <img> use loading=lazy; offscreen-images flags 4 below-the-fold images (3 featured-collection images + footer badge, 35 KiB) loaded eagerly"},
-    {"id": "tech-render-blocking", "result": "pass", "evidence": "render-blocking-resources savings 0 ms (only theme.css); 3 font files (Jost 400, Poppins 300 and 400, ~33 KiB)"},
-    {"id": "tech-cache", "result": "partial", "evidence": "Own theme CSS/JS and images: cache-control public, max-age=31557600 (1 year); third-party scripts short: Facebook 20 min, Omnisend 1 h, Shopify shop-js 30 min (uses-long-cache-ttl, 10 resources)"},
-    {"id": "tech-https", "result": "pass", "evidence": "is-on-https passes; http://www.saju.co/ and http://saju.co/ 301 to HTTPS, saju.co 301 to www"},
-    {"id": "tech-security-headers", "result": "pass", "evidence": "4 of 5 present: HSTS, CSP (frame-ancestors), X-Frame-Options DENY, X-Content-Type-Options nosniff; Referrer-Policy absent"},
-    {"id": "tech-console", "result": "pass", "evidence": "errors-in-console passes with no items in both the mobile and desktop Lighthouse loads"},
-    {"id": "tech-links", "result": "pass", "evidence": "Of 40 internal links sampled from raw/home.html (97 unique), 12 returned 200 and 28 got HTTP 429 (Shopify/Cloudflare rate limit, also on a slow retry) so they could not be verified [dato por confirmar]; 12 of 12 homepage images returned 200; no 404 seen (raw/tech-headers.txt)"},
-    {"id": "tech-404", "result": "pass", "evidence": "https://www.saju.co/pagina-que-no-existe-xyz returns HTTP 404 with a page that says 'No hemos encontrado la página que buscabas', keeps the site navigation and a button back to the site (raw/tech-404.html)"}
+    {
+      "id": "tech-weight",
+      "result": "fail",
+      "evidence": "Lighthouse total-byte-weight 3,74 MB mobile / 4,10 MB desktop (above 3 MB); ~0,97 MB is post-load Shopify checkout prefetch"
+    },
+    {
+      "id": "tech-lcp",
+      "result": "pass",
+      "evidence": "observedLargestContentfulPaint mobile 514 ms (lab simulated LCP 3,3 s, single run); LCP element is hero banner img BannerHomeCR.webp with fetchpriority=high"
+    },
+    {
+      "id": "tech-images",
+      "result": "fail",
+      "evidence": "Formats pass (WebP/AVIF via Shopify CDN) but image-delivery-insight savings 599 KiB and uses-responsive-images 285 KiB mobile, above 100 KiB"
+    },
+    {
+      "id": "tech-lazy",
+      "result": "partial",
+      "evidence": "108 of 118 <img> use loading=lazy; offscreen-images flags 4 below-the-fold images (3 featured-collection images + footer badge, 35 KiB) loaded eagerly"
+    },
+    {
+      "id": "tech-render-blocking",
+      "result": "pass",
+      "evidence": "render-blocking-resources savings 0 ms (only theme.css); 3 font files (Jost 400, Poppins 300 and 400, ~33 KiB)"
+    },
+    {
+      "id": "tech-cache",
+      "result": "partial",
+      "evidence": "Own theme CSS/JS and images: cache-control public, max-age=31557600 (1 year); third-party scripts short: Facebook 20 min, Omnisend 1 h, Shopify shop-js 30 min (uses-long-cache-ttl, 10 resources)"
+    },
+    {
+      "id": "tech-https",
+      "result": "pass",
+      "evidence": "is-on-https passes; http://www.saju.co/ and http://saju.co/ 301 to HTTPS, saju.co 301 to www"
+    },
+    {
+      "id": "tech-security-headers",
+      "result": "pass",
+      "evidence": "4 of 5 present: HSTS, CSP (frame-ancestors), X-Frame-Options DENY, X-Content-Type-Options nosniff; Referrer-Policy absent"
+    },
+    {
+      "id": "tech-console",
+      "result": "pass",
+      "evidence": "errors-in-console passes with no items in both the mobile and desktop Lighthouse loads [dato por confirmar] Rechecked 2026-11-25 with Lighthouse 12.8.2: errors-in-console fails on mobile and desktop with Shopify telemetry errors (monorail-edge CORS / ERR_FAILED) and one Clarity reset; may depend on the network."
+    },
+    {
+      "id": "tech-links",
+      "result": "pass",
+      "evidence": "Of 40 internal links sampled from raw/home.html (97 unique), 12 returned 200 and 28 got HTTP 429 (Shopify/Cloudflare rate limit, also on a slow retry) so they could not be verified [dato por confirmar]; 12 of 12 homepage images returned 200; no 404 seen (raw/tech-headers.txt)"
+    },
+    {
+      "id": "tech-404",
+      "result": "pass",
+      "evidence": "https://www.saju.co/pagina-que-no-existe-xyz returns HTTP 404 with a page that says 'No hemos encontrado la página que buscabas', keeps the site navigation and a button back to the site (raw/tech-404.html)"
+    }
   ]
 }
