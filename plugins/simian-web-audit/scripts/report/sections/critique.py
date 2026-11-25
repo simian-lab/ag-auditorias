@@ -1,4 +1,6 @@
 """Design critique: verdict, inventory cards with real crops, proposed palette."""
+import struct
+
 from report.render import Section, esc
 
 CSS = """
@@ -7,6 +9,7 @@ CSS = """
 .sa-crit-card{padding:28px}
 .sa-crit-crops{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0;padding:20px;background:var(--linen);border-radius:12px;min-height:110px}
 .sa-crit-crops img{max-height:56px;max-width:100%;border-radius:6px;background:#fff}
+.sa-crit-crops img.sa-crit-tall{height:220px;max-height:none;width:auto;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .sa-crit-sw{width:44px;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
 .sa-crit-font{font-size:22px;font-weight:600;padding:6px 12px;background:#fff;border-radius:8px}
 .sa-crit-font small{font:12px var(--font-body);color:var(--ash)}
@@ -20,13 +23,28 @@ CSS = """
 """
 
 
+def _is_tall(path) -> bool:
+    """Portrait crops (product cards) need more room than buttons or icons; reads the PNG header, no PIL."""
+    try:
+        with open(path, "rb") as f:
+            head = f.read(24)
+        if head[:8] != b"\x89PNG\r\n\x1a\n":
+            return False
+        w, h = struct.unpack(">II", head[16:24])
+        return h > w * 1.2
+    except OSError:
+        return False
+
+
 def _crops(ctx, group) -> str:
     out = []
     for it in group.get("items", []):
         if it.get("crop"):
             src = ctx["asset"](it["crop"].split("/")[-1])
             if src:
-                out.append(f'<img src="{src}" alt="{esc(it["label"])}">')
+                name = it["crop"].split("/")[-1]
+                tall = ' class="sa-crit-tall"' if _is_tall(ctx["_used"].get(name, "")) else ""
+                out.append(f'<img src="{src}"{tall} alt="{esc(it["label"])}">')
         elif it.get("hex"):
             out.append(f'<span class="sa-crit-sw" title="{esc(it["hex"])}" style="background:{esc(it["hex"])}"></span>')
         elif it.get("family"):
