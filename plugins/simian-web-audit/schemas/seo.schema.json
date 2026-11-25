@@ -87,6 +87,9 @@
           },
           "evidence": {
             "type": "string"
+          },
+          "note_es": {
+            "type": "string"
           }
         }
       }

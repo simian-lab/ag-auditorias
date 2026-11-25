@@ -44,4 +44,5 @@ Evaluate EVERY criterion listed for `seo` in `<plugin_root>/config/rubric.json` 
 `{"id": "<criterion id>", "result": "pass" | "partial" | "fail" | "na", "evidence": "<what you measured or saw>"}`
 - Judge strictly by each criterion's `check` text; `na` only when the criterion truly does not apply (e.g. no chat widget).
 - `partial` (counts half): the criterion is met in part — e.g. on desktop but not on mobile, on some pages but not all, or most but not all items comply. Say in `evidence` what passes and what does not. Do not use `partial` to soften a clear fail.
+- For every `fail` or `partial` check, also write `note_es`: one plain-Spanish sentence for the owner (tú), saying concretely what is wrong on their site, with numbers or names when you have them (e.g. «Ninguna de tus 5 páginas tiene descripción, así que Google improvisa el texto bajo tu nombre.»). No jargon; it is shown under the criterion in the report.
 - Findings explain the problems; checks are the scorecard. A failed check should normally have a related finding.

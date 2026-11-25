@@ -72,12 +72,20 @@ class ExtraTest(unittest.TestCase):
             t["who_appears"] = ["Instagram: Acme Box (@acmebox_)", "Latin Pack"]
         self._edit("seo.json", f)
         sec = extra.build(self.ctx(extra=True))
-        self.assertIn(">Solo tu Instagram · puesto 1<", sec.html)
+        self.assertNotIn("Solo tu", sec.html)
 
     def test_score_card_lists_unmet_seo_criteria(self):
         sec = extra.build(self.ctx(extra=True))
         self.assertIn('class="sa-extra-crit"', sec.html)
         self.assertIn("criterios cumplidos", sec.html)
+        self.assertIn('class="sa-extra-light sa-score-', sec.html)
+
+    def test_criterion_shows_its_note(self):
+        def f(doc):
+            c = next(c for c in doc["checks"] if c["result"] in ("fail", "partial"))
+            c["note_es"] = "Nota para el dueño"
+        self._edit("seo.json", f)
+        self.assertIn("<small>Nota para el dueño</small>", extra.build(self.ctx(extra=True)).html)
 
     def test_search_row_without_position_keeps_plain_label(self):
         sec = extra.build(self.ctx(extra=True))

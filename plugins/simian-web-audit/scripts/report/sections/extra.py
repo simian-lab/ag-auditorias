@@ -2,7 +2,7 @@
 import re
 
 from report.render import Section, esc
-from report.sections.score import MARK
+from report.sections.score import MARK, VERDICT, _tone
 
 CSS = """
 .sa-extra-block{padding:32px;margin-top:40px;text-align:left}
@@ -15,8 +15,12 @@ CSS = """
 .sa-extra-sum{margin-top:12px;font-weight:600}
 .sa-extra-scorebox{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start;margin-top:8px}
 .sa-extra-num{font-size:110px;font-weight:600;letter-spacing:-6px;line-height:1}
+.sa-extra-num.sa-score-bad,.sa-extra-num.sa-score-mid,.sa-extra-num.sa-score-good{background:none}.sa-extra-num.sa-score-bad{color:var(--ember-ink)}.sa-extra-num.sa-score-mid{color:var(--amber-ink)}.sa-extra-num.sa-score-good{color:var(--mint-ink)}
+.sa-extra-light{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;padding:4px 12px;font-size:13px;font-weight:500;margin-top:12px}
+.sa-extra-light i{width:10px;height:10px;border-radius:50%;background:currentColor}
+.sa-extra-light.sa-score-bad{background:var(--ember-wash);color:var(--ember-ink)}.sa-extra-light.sa-score-mid{background:var(--amber-wash);color:var(--amber-ink)}.sa-extra-light.sa-score-good{background:var(--mint-wash);color:var(--mint-ink)}
 .sa-extra-num small{font-size:30px;color:var(--ash);letter-spacing:-1px}
-.sa-extra-no{color:var(--ember-ink);font-weight:600;white-space:nowrap}.sa-extra-yes{color:var(--mint-ink);font-weight:600;white-space:nowrap}.sa-extra-mid{color:var(--amber-ink);font-weight:600;white-space:nowrap}
+.sa-extra-no{color:var(--ember-ink);font-weight:600;white-space:nowrap}.sa-extra-yes{color:var(--mint-ink);font-weight:600;white-space:nowrap}
 .sa-extra-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;text-align:left}
 .sa-extra-card{padding:28px}
 .sa-extra-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin:16px 0 8px}
@@ -50,7 +54,7 @@ CSS = """
 .sa-extra-aeo b{display:block;color:var(--carbon);font-size:15px;margin-bottom:6px}
 .sa-extra-crit{list-style:none;margin-top:16px;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;font-size:13px;color:var(--graphite)}
 .sa-extra-crit li{display:flex;gap:8px;padding:6px 0;border-top:1px solid var(--fog)}
-.sa-extra-crit li span{font-weight:700;width:14px;flex-shrink:0}
+.sa-extra-crit li>div{color:var(--carbon);font-weight:600;font-size:14px}.sa-extra-crit small{display:block;font-size:14px;font-weight:400;color:var(--graphite);margin-top:4px}.sa-extra-crit li span{font-weight:700;width:14px;flex-shrink:0}
 .sa-extra-crit .sa-score-pa span{color:var(--amber-ink)}.sa-extra-crit .sa-score-ko span{color:var(--ember-ink)}
 @media(max-width:860px){.sa-extra-scorebox,.sa-extra-crit{grid-template-columns:1fr}.sa-extra-q thead{display:none}.sa-extra-q tr{display:block;border-top:1px solid var(--fog);padding:10px 0}.sa-extra-q td{display:block;border:0;padding:2px 0}}
 @media(max-width:860px){.sa-extra-pair,.sa-extra-ai,.sa-extra-aeo{grid-template-columns:1fr}}
@@ -66,22 +70,14 @@ def is_brand(name: str, brand: str) -> bool:
     return bool(b) and b in _norm(name)
 
 
-def _is_profile(entry: str) -> bool:
-    # who_appears names profiles as "Instagram: …" or "site.com (Name)"; the client's own site is a bare domain
-    return ":" in entry or " (" in entry
-
-
 def _result(t, brand: str) -> tuple[str, str]:
     """(css class, label) for «Dónde sales tú». who_appears is in Google order, so the client's best spot is
     the first entry that is theirs, site or profile."""
     own = next(((i + 1, w) for i, w in enumerate(t.get("who_appears", [])) if is_brand(w, brand)), None)
-    kind = (f'tu {own[1].split(":")[0].strip()}' if own and ":" in own[1] else "tu perfil") if own else ""
     if not t["appears"]:
-        return ("sa-extra-mid", f"Solo {kind} · puesto {own[0]}") if own else ("sa-extra-no", "No sales")
+        return "sa-extra-no", "No sales"  # only the site counts; a profile alone is not "showing up"
     m = re.search(r"[Pp]uesto (\d+)", t.get("position_or_note") or "")
     site = int(m.group(1)) if m else None
-    if own and _is_profile(own[1]) and (site is None or own[0] < site):
-        return "sa-extra-yes", f"Puesto {own[0]} ({kind})"
     pos = min(p for p in (site, own and own[0]) if p) if (site or own) else None
     return "sa-extra-yes", f"Puesto {pos}" if pos else "Sí sales"
 
@@ -94,26 +90,31 @@ def _table(tests, brand: str, first_col: str) -> str:
             f'<tbody>{rows}</tbody></table>')
 
 
-def _score_block(seo, rubric) -> str:
+def _score_block(seo, rubric, target: int = 80) -> str:
     """Criteria count, not the weighted score: what the client reads is exactly what is counted."""
     results = {c["id"]: c["result"] for c in seo.get("checks", [])}
+    notes = {c["id"]: c.get("note_es") for c in seo.get("checks", [])}
+    note = lambda cid: f"<small>{esc(notes[cid])}</small>" if notes.get(cid) else ""
     crit = [c for c in (rubric or {}).get("areas", {}).get("seo", []) if results.get(c["id"], "na") != "na"]
     if not crit:
         return ""
     ok = sum(results[c["id"]] == "pass" for c in crit)
     half = sum(results[c["id"]] == "partial" for c in crit)
+    # traffic light on the same thresholds as the base score (partial = half), target from the score config
+    tone = _tone(round(100 * (ok + half / 2) / len(crit)), target)
     items = "".join(
-        f'<li class="{MARK[results[c["id"]]][0]}"><span>{MARK[results[c["id"]]][1]}</span>{esc(c["label"])}'
-        f'{" (la prueba de arriba)" if c["id"] == "seo-appears" else ""}</li>'
+        f'<li class="{MARK[results[c["id"]]][0]}"><span>{MARK[results[c["id"]]][1]}</span><div>{esc(c["label"])}'
+        f'{" (la prueba de arriba)" if c["id"] == "seo-appears" else ""}{note(c["id"])}</div></li>'
         for c in crit if results[c["id"]] in ("fail", "partial"))
     ul = f'<p class="why">Lo que te falta:</p><ul class="sa-extra-crit">{items}</ul>' if items else ""
     return (f'<div class="card sa-extra-block"><div class="eyebrow">Tu puntaje en buscadores</div><div class="sa-extra-scorebox">'
-            f'<div><div class="sa-extra-num">{ok}<small> de {len(crit)}</small></div>'
-            f'<p class="sa-extra-sum">criterios cumplidos{f" · {half} a medias" if half else ""}</p></div>'
+            f'<div><div class="sa-extra-num {tone}">{ok}<small> de {len(crit)}</small></div>'
+            f'<p class="sa-extra-sum">criterios cumplidos{f" · {half} a medias" if half else ""}</p>'
+            f'<span class="sa-extra-light {tone}"><i></i>{VERDICT[tone]}</span></div>'
             f'<div><p class="why">Revisamos {len(crit)} criterios que Google y la IA tienen en cuenta para mostrarte.</p>{ul}</div></div></div>')
 
 
-def _search(seo, brand: str = "", rubric=None) -> tuple[str, str]:
+def _search(seo, brand: str = "", rubric=None, target: int = 80) -> tuple[str, str]:
     tests = seo.get("search_tests", [])
     named = [t for t in tests if is_brand(t["query"], brand)]
     buyer = [t for t in tests if t not in named] or tests
@@ -135,7 +136,7 @@ def _search(seo, brand: str = "", rubric=None) -> tuple[str, str]:
             note = "Quien ya te conoce te encuentra."
         html += (f'<h4>Cuando te buscan por tu nombre</h4>{_table(named, brand, "Tu nombre")}'
                  f'<p class="sa-extra-sum">{note}</p>')
-    html += "</div>" + _score_block(seo, rubric)
+    html += "</div>" + _score_block(seo, rubric, target)
     return headline, html
 
 
@@ -221,7 +222,7 @@ def build(ctx) -> Section | None:
     seo, pres, ai = ctx["seo"] or {}, ctx["presence"], ctx["ai"]
     parts = []
     if seo.get("search_tests"):
-        headline, grid = _search(seo, (ctx["ai"] or {}).get("brand") or ctx["top10"]["client"], ctx.get("rubric"))
+        headline, grid = _search(seo, (ctx["ai"] or {}).get("brand") or ctx["top10"]["client"], ctx.get("rubric"), (ctx["scores"] or {}).get("target", 80))
         parts.append(grid)
     else:
         headline = "¿Te encuentran Google y la IA cuando un comprador busca lo que vendes?"

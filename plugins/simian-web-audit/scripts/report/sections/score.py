@@ -41,6 +41,8 @@ def _color(v: int, target: int) -> str:
     return "var(--ember)" if v < 50 else ("var(--amber)" if v < target else "var(--mint)")
 
 
+VERDICT = {"sa-score-bad": "Necesita mejoras importantes", "sa-score-mid": "Por debajo del nivel recomendado",
+           "sa-score-good": "En buen nivel"}
 MARK = {"pass": ("sa-score-ok", "✓"), "partial": ("sa-score-pa", "◐"), "fail": ("sa-score-ko", "✕"), "na": ("sa-score-na", "—")}
 
 
@@ -65,8 +67,7 @@ def build(ctx) -> Section | None:
     if not s:
         return None
     target, overall = s["target"], s["overall"]
-    verdict = {"sa-score-bad": "Necesita mejoras importantes", "sa-score-mid": "Por debajo del nivel recomendado",
-               "sa-score-good": "En buen nivel"}[_tone(overall, target)]
+    verdict = VERDICT[_tone(overall, target)]
     detail = s.get("detail", {})
 
     def count(k):
