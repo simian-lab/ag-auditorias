@@ -45,9 +45,9 @@
     },
     {
       "id": "ux-3",
-      "title": "Teléfono y correo solo aparecen en Contacto",
-      "summary": "Quien quiere llamar desde la portada, Servicios o una ficha tiene que buscar la página de contacto para ver tu número o tu correo.",
-      "now": "El pie de página de todas las páginas solo trae «Términos y Condiciones · Privacidad · Contacto · WhatsApp». El teléfono +57 311 264 8768 y hello@metric.la, con enlaces para pulsar, solo están en /es/contacto; Nosotros muestra el correo pero no el teléfono. Tampoco aparece la oficina de North Miami Beach con un teléfono de EE. UU.",
+      "title": "Tu teléfono y tu correo no están a la vista",
+      "summary": "Quien quiere llamar desde la portada o Servicios no ve tu número ni tu correo: solo aparecen en Contacto y, como botón «Llamar», en las fichas de inmueble.",
+      "now": "El pie de página de todas las páginas trae «Términos y Condiciones · Privacidad · Contacto · WhatsApp» y tus redes, pero no el teléfono ni el correo. El teléfono +57 311 264 8768 y hello@metric.la, con enlaces para pulsar, solo están en /es/contacto; las fichas de inmueble tienen un botón «Llamar» y WhatsApp con el inmueble ya escrito, pero la portada y Servicios no tienen ninguno, y Nosotros muestra el correo pero no el teléfono. Tampoco aparece la oficina de North Miami Beach con un teléfono de EE. UU.",
       "fix": "Añade al pie de página de todas las páginas el teléfono de Colombia, el de Miami si lo tienes, el correo y la dirección de cada oficina, todos pulsables.",
       "why": "Ver un teléfono y una dirección reales en cada página da confianza y facilita la llamada justo cuando el cliente se decide.",
       "impact": 3,

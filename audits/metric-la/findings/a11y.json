@@ -5,8 +5,8 @@
       "id": "a11y-1",
       "title": "El texto bajo el titular casi no se lee",
       "summary": "La frase que explica la app y la línea «Gratis · iOS y Android» quedan con poco contraste sobre la foto, así que muchos visitantes no captan la propuesta de valor.",
-      "now": "El subtítulo blanco al 90 % («Búsqueda con IA, favoritos y alertas…») y la línea de 10 px «GRATIS · iOS Y ANDROID · ES / EN» van directamente sobre la foto clara del salón, sin capa oscura detrás. En computador el subtítulo queda en 3,6:1 y la línea pequeña baja hasta 1,8:1 en las zonas claras de la foto. El titular grande sí se lee bien.",
-      "fix": "Añadir un degradado oscuro suave detrás del bloque de texto del hero (o una sombra de texto más fuerte), subir la línea «Gratis…» a 12–13 px y a blanco pleno, hasta llegar a 4,5:1 en toda la foto.",
+      "now": "El subtítulo blanco al 90 % («Búsqueda con IA, favoritos y alertas…») y la línea de 10 px «GRATIS · iOS Y ANDROID · ES / EN» van sobre la foto clara del salón, y la capa oscura que tiene hoy (un degradado que se aclara hacia abajo) es demasiado suave en esa zona. En computador el subtítulo queda en 3,6:1 y la línea pequeña baja hasta 1,8:1 en las zonas claras de la foto. El titular grande sí se lee bien.",
+      "fix": "Reforzar el degradado oscuro que ya existe para que siga siendo oscuro detrás del subtítulo y de la línea «Gratis…» (o poner una sombra de texto más fuerte), subir la línea «Gratis…» a 12–13 px y a blanco pleno, hasta llegar a 4,5:1 en toda la foto.",
       "why": "Si el mensaje de la app no se lee a la primera, el visitante no entiende por qué descargarla ni qué ofrece Metric.",
       "impact": 3,
       "effort": "Bajo",
@@ -19,8 +19,12 @@
         "H1 (52px desktop / 28px mobile) passes: median 6.7:1 desktop, 9.1:1 mobile.",
         "screenshots/a11y-desktop-hero.png, screenshots/a11y-desktop-hero-notext.png"
       ],
-      "technical_note": "Hero section has no overlay; text sits over pexels_artbovich_6908502 photo. Lighthouse accessibility = 96/100 on both runs because axe cannot compute contrast over background images (it marks them 'incomplete', not failed) — the automated score overstates real accessibility. Fix: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.15)) under the text block or a scrim behind the copy.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 50, "y_pct": 44.8}
+      "technical_note": "Hero has an overlay, linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.16) 66%), already present on 2026-11-18 (raw/home.html); it fades too much where the subtitle and the 10px line sit, over the pexels_artbovich_6908502 photo. The ratios above were measured with it. Lighthouse accessibility = 96/100 on both runs because axe cannot compute contrast over background images (it marks them 'incomplete', not failed) — the automated score overstates real accessibility. Fix: keep the gradient at about .5 opacity or more down through the text block, or add a scrim behind the copy.",
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 50,
+        "y_pct": 44.8
+      }
     },
     {
       "id": "a11y-2",
@@ -56,7 +60,11 @@
         "Range triggers expose no aria-expanded (attribute null before/after Enter)."
       ],
       "technical_note": "Likely a portal rendered at end of body. Either focus the first range input on open (and trap/return focus), or render the popover inline after the trigger. Add aria-expanded/aria-controls to the trigger and aria-label (or aria-labelledby) + aria-valuetext to each range input.",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 33.5, "y_pct": 69}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 33.5,
+        "y_pct": 69
+      }
     },
     {
       "id": "a11y-4",
@@ -75,7 +83,11 @@
         "screenshots/a11y-desktop-focus-select.png, screenshots/a11y-desktop-focus-code.png"
       ],
       "technical_note": "Use <label htmlFor> or aria-labelledby pointing to the 'Ciudad' div; aria-label on the code input. Remove inline outline:none or add :focus-visible ring (box-shadow) to .dock-field-select and the code input. Lighthouse desktop also flags label-content-name-mismatch: header button visible 'Colombia' has aria-label 'Cambiar país' (voice-control users saying 'Colombia' won't hit it).",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 23, "y_pct": 70}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 23,
+        "y_pct": 70
+      }
     },
     {
       "id": "a11y-5",
@@ -93,7 +105,11 @@
         "Card buttons: 'Consultar por WhatsApp' 32×32, 'Agregar a favoritos' 32×32, 'Foto anterior/siguiente' 28×28 (pass 24px minimum)."
       ],
       "technical_note": "WCAG 2.2 SC 2.5.8 (24×24 minimum, spacing exception may apply for inline footer links separated by '·'); 44×44 per SC 2.5.5 / platform guidelines. Viewport does not disable zoom (width=device-width, initial-scale=1).",
-      "pin": {"screenshot": "mobile-fullpage.jpg", "x_pct": 50, "y_pct": 98}
+      "pin": {
+        "screenshot": "mobile-fullpage.jpg",
+        "x_pct": 50,
+        "y_pct": 98
+      }
     },
     {
       "id": "a11y-6",
@@ -117,16 +133,60 @@
     }
   ],
   "checks": [
-    {"id": "a11y-contrast", "result": "fail", "evidence": "Hero subtitle 16px white 90% over photo median 3.6:1 (desktop) and 10px 'GRATIS · iOS Y ANDROID' median 3.16:1, worst 1.83:1; mobile 10px line worst 1.99:1. Solid-background text (dock, nav, buttons, cards) passes: e.g. Arrendar/Proyectos 4.55:1, ALCOBAS 16.5:1, H1 6.7:1 median."},
-    {"id": "a11y-text-not-image", "result": "pass", "evidence": "H1, subtitle, app-store badges and all CTAs are live HTML text; no text baked into hero or card images."},
-    {"id": "a11y-alt", "result": "pass", "evidence": "Property photos alt = property title (e.g. 'Apartamento en Cabrera'); hero photo alt='' (decorative); logo img alt='' inside link with aria-label 'Metric Real Estate — inicio'; footer icon alt 'Metric Real Estate'. No file-name alts."},
-    {"id": "a11y-headings", "result": "pass", "evidence": "Home: one H1 'Tu próximo hogar, en tu bolsillo', H2 'Descubre estos inmuebles', H3 per property. Contacto: H1 'Contáctanos', H2 'Escríbenos'."},
-    {"id": "a11y-names", "result": "pass", "evidence": "All icon-only controls have names: Mapa, Consultar por WhatsApp, Agregar a favoritos, Foto anterior/siguiente, Facebook, Instagram, Toggle menu (English label on Spanish page). Form fields without names are covered under form labels."},
-    {"id": "a11y-focus", "result": "partial", "evidence": "Links and buttons show outline 2px solid rgb(7,26,27) on :focus-visible (real Tab presses). City select and property-code input show no focus change (outline none, border unchanged)."},
-    {"id": "a11y-keyboard", "result": "partial", "evidence": "Mobile menu opens with Enter and closes with Escape; Residencial submenu opens (aria-expanded true); photo arrows work with Enter; no focus trap (Tab cycles back to body). Alcobas/Metros/Precio range sliders cannot be reached: after Enter on the trigger, Tab jumps to the next trigger."},
-    {"id": "a11y-form-labels", "result": "partial", "evidence": "Contact form shows visible labels with autocomplete=name/email and type=email, but labels are not programmatically associated (no for/id) so all 4 fields have empty accessible names; home city select fails Lighthouse select-name; code input relies on placeholder."},
-    {"id": "a11y-motion", "result": "pass", "evidence": "No auto-advancing carousel (card photos unchanged after 8+ s; arrows are manual). Hover glow transitions gated by prefers-reduced-motion:no-preference; entrance animation meRise is a one-time 0.48s; looping meGlint/meChev classes not used on home or contact."},
-    {"id": "a11y-lang", "result": "pass", "evidence": "<html lang=\"es\"> on /es and /es/contacto."},
-    {"id": "a11y-targets", "result": "partial", "evidence": "Main buttons ≥ 28 px (Buscar 46, Mapa 46, card buttons 32, photo arrows 28). Mobile footer links 17 px tall, social icons 20×20, city select 23 px tall, cookie 'Más información' 16 px — below 24 px."}
+    {
+      "id": "a11y-contrast",
+      "result": "fail",
+      "evidence": "Hero subtitle 16px white 90% over photo median 3.6:1 (desktop) and 10px 'GRATIS · iOS Y ANDROID' median 3.16:1, worst 1.83:1; mobile 10px line worst 1.99:1. Solid-background text (dock, nav, buttons, cards) passes: e.g. Arrendar/Proyectos 4.55:1, ALCOBAS 16.5:1, H1 6.7:1 median."
+    },
+    {
+      "id": "a11y-text-not-image",
+      "result": "pass",
+      "evidence": "H1, subtitle, app-store badges and all CTAs are live HTML text; no text baked into hero or card images."
+    },
+    {
+      "id": "a11y-alt",
+      "result": "pass",
+      "evidence": "Property photos alt = property title (e.g. 'Apartamento en Cabrera'); hero photo alt='' (decorative); logo img alt='' inside link with aria-label 'Metric Real Estate — inicio'; footer icon alt 'Metric Real Estate'. No file-name alts."
+    },
+    {
+      "id": "a11y-headings",
+      "result": "pass",
+      "evidence": "Home: one H1 'Tu próximo hogar, en tu bolsillo', H2 'Descubre estos inmuebles', H3 per property. Contacto: H1 'Contáctanos', H2 'Escríbenos'."
+    },
+    {
+      "id": "a11y-names",
+      "result": "pass",
+      "evidence": "All icon-only controls have names: Mapa, Consultar por WhatsApp, Agregar a favoritos, Foto anterior/siguiente, Facebook, Instagram, Toggle menu (English label on Spanish page). Form fields without names are covered under form labels."
+    },
+    {
+      "id": "a11y-focus",
+      "result": "partial",
+      "evidence": "Links and buttons show outline 2px solid rgb(7,26,27) on :focus-visible (real Tab presses). City select and property-code input show no focus change (outline none, border unchanged)."
+    },
+    {
+      "id": "a11y-keyboard",
+      "result": "partial",
+      "evidence": "Mobile menu opens with Enter and closes with Escape; Residencial submenu opens (aria-expanded true); photo arrows work with Enter; no focus trap (Tab cycles back to body). Alcobas/Metros/Precio range sliders cannot be reached: after Enter on the trigger, Tab jumps to the next trigger."
+    },
+    {
+      "id": "a11y-form-labels",
+      "result": "partial",
+      "evidence": "Contact form shows visible labels with autocomplete=name/email and type=email, but labels are not programmatically associated (no for/id) so all 4 fields have empty accessible names; home city select fails Lighthouse select-name; code input relies on placeholder."
+    },
+    {
+      "id": "a11y-motion",
+      "result": "pass",
+      "evidence": "No auto-advancing carousel (card photos unchanged after 8+ s; arrows are manual). Hover glow transitions gated by prefers-reduced-motion:no-preference; entrance animation meRise is a one-time 0.48s; looping meGlint/meChev classes not used on home or contact."
+    },
+    {
+      "id": "a11y-lang",
+      "result": "pass",
+      "evidence": "<html lang=\"es\"> on /es and /es/contacto."
+    },
+    {
+      "id": "a11y-targets",
+      "result": "partial",
+      "evidence": "Main buttons ≥ 28 px (Buscar 46, Mapa 46, card buttons 32, photo arrows 28). Mobile footer links 17 px tall, social icons 20×20, city select 23 px tall, cookie 'Más información' 16 px — below 24 px."
+    }
   ]
 }

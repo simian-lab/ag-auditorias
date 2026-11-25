@@ -67,8 +67,8 @@
       "stage": 1,
       "t": "Tu sitio no invita a hablar contigo",
       "t_plain": "No hay botón para hablar con un asesor",
-      "s": "La única invitación a contactar está en una esquina del menú y el teléfono solo aparece en la página de Contacto; los botones grandes llevan a descargar la app.",
-      "now": "En computador, «Contacto» es un botón pequeño arriba a la derecha; en celular queda escondido dentro del menú y la primera pantalla solo muestra «Descargar la app» y el buscador. El pie de página solo trae «Términos y Condiciones · Privacidad · Contacto · WhatsApp»: el teléfono y el correo solo están en /es/contacto, y no aparece la oficina de North Miami Beach.",
+      "s": "La única invitación a contactar está en una esquina del menú y el teléfono no aparece ni en la portada ni en el pie de página; los botones grandes llevan a descargar la app.",
+      "now": "En computador, «Contacto» es un botón pequeño arriba a la derecha; en celular queda escondido dentro del menú y la primera pantalla solo muestra «Descargar la app» y el buscador. El pie de página trae «Términos y Condiciones · Privacidad · Contacto · WhatsApp» y tus redes, pero no el teléfono ni el correo: en la portada y en Servicios no aparecen; solo están en /es/contacto y, como botón «Llamar», en las fichas de inmueble. Tampoco aparece la oficina de North Miami Beach.",
       "fix": "Poner junto al titular un botón principal «Habla con un asesor» (WhatsApp o formulario), un botón fijo de contacto en celular, y en el pie de todas las páginas el teléfono, el correo y la dirección de cada oficina, todos pulsables.",
       "why": "Quien compra o arrienda en el segmento alto quiere hablar con una persona antes de decidir, y hoy no encuentra ese camino a la vista.",
       "shot": {
@@ -134,8 +134,8 @@
       "t": "Tu mensaje principal se pierde en la foto",
       "t_plain": "El texto bajo el titular casi no se lee",
       "s": "La frase que explica la app y la línea «Gratis · iOS y Android» quedan con poco contraste sobre la foto, así que muchos visitantes no captan el mensaje.",
-      "now": "El subtítulo blanco y la línea de 10 px «GRATIS · iOS Y ANDROID · ES / EN», en letra tipo máquina de escribir, van directamente sobre la foto clara del salón, sin capa oscura. En computador el subtítulo queda en 3,6:1 y la línea pequeña baja hasta 1,8:1; el mínimo recomendado es 4,5:1.",
-      "fix": "Añadir un degradado oscuro suave detrás del texto del encabezado, subir la línea «Gratis…» a 12–13 px en blanco pleno y en la misma letra del resto del texto, hasta llegar a 4,5:1 en toda la foto.",
+      "now": "El subtítulo blanco y la línea de 10 px «GRATIS · iOS Y ANDROID · ES / EN», en letra tipo máquina de escribir, van sobre la foto clara del salón, y la capa oscura que tiene hoy es demasiado suave en esa zona. En computador el subtítulo queda en 3,6:1 y la línea pequeña baja hasta 1,8:1; el mínimo recomendado es 4,5:1.",
+      "fix": "Reforzar el degradado oscuro que ya existe para que siga siendo oscuro detrás del texto del encabezado, subir la línea «Gratis…» a 12–13 px en blanco pleno y en la misma letra del resto del texto, hasta llegar a 4,5:1 en toda la foto.",
       "why": "Es lo primero que ve un comprador; si no se lee, el mensaje pasa desapercibido, sobre todo en el celular al sol.",
       "shot": {
         "img": "desktop-viewport.png",

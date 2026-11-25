@@ -73,7 +73,11 @@
         "raw/seo-search-tests.txt B2: metric.la/es #1 shows the Colombia-only description"
       ],
       "technical_note": "Same values in no-JS and rendered views. Each page has exactly one H1 (home: 'Tu próximo hogar, en tu bolsillo').",
-      "pin": {"screenshot": "desktop-viewport.png", "x_pct": 30, "y_pct": 40}
+      "pin": {
+        "screenshot": "desktop-viewport.png",
+        "x_pct": 30,
+        "y_pct": 40
+      }
     },
     {
       "id": "seo-5",
@@ -113,27 +117,170 @@
     }
   ],
   "search_tests": [
-    {"query": "apartamentos en venta en Miami", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)", "who_appears": ["zillow.com", "realtor.com", "miamiresidential.com", "movoto.com", "casasyapartamentosmiami.com", "trulia.com"]},
-    {"query": "comprar casa en Miami", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)", "who_appears": ["zillow.com", "movoto.com", "realtor.com", "trulia.com", "redfin.com", "miamiinmuebles.com"]},
-    {"query": "inmobiliaria en Miami que hable español", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)", "who_appears": ["montesolrealty.com", "reroot.app", "century21.com", "miamirealtors.com", "miaminmobiliario.com", "javiergramirez.com"]},
-    {"query": "condominios en venta North Miami Beach", "appears": false, "position_or_note": "No aparece en los primeros 18 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)", "who_appears": ["zillow.com", "trulia.com", "movoto.com", "redfin.com", "realtor.com", "discoverhomesmiami.com"]},
-    {"query": "condos for sale in Miami", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)", "who_appears": ["zillow.com", "realtor.com", "trulia.com", "miamicondoinvestments.com", "redfin.com", "homes.com"]},
-    {"query": "homes for sale North Miami Beach", "appears": false, "position_or_note": "No aparece en los primeros 17 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)", "who_appears": ["zillow.com", "trulia.com", "redfin.com", "homes.com", "movoto.com", "sothebysrealty.com"]},
-    {"query": "apartments for rent in Miami", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)", "who_appears": ["zillow.com", "apartments.com", "miamicondoinvestments.com", "realtor.com", "trulia.com", "rentcafe.com"]},
-    {"query": "real estate agency in Miami", "appears": false, "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)", "who_appears": ["zillow.com", "realtor.com", "compass.com", "metro1.com", "realestate.usnews.com", "barnes-miami.com"]}
+    {
+      "query": "apartamentos en venta en Miami",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)",
+      "who_appears": [
+        "zillow.com",
+        "realtor.com",
+        "miamiresidential.com",
+        "movoto.com",
+        "casasyapartamentosmiami.com",
+        "trulia.com"
+      ]
+    },
+    {
+      "query": "comprar casa en Miami",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)",
+      "who_appears": [
+        "zillow.com",
+        "movoto.com",
+        "realtor.com",
+        "trulia.com",
+        "redfin.com",
+        "miamiinmuebles.com"
+      ]
+    },
+    {
+      "query": "inmobiliaria en Miami que hable español",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)",
+      "who_appears": [
+        "montesolrealty.com",
+        "reroot.app",
+        "century21.com",
+        "miamirealtors.com",
+        "miaminmobiliario.com",
+        "javiergramirez.com"
+      ]
+    },
+    {
+      "query": "condominios en venta North Miami Beach",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 18 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=es)",
+      "who_appears": [
+        "zillow.com",
+        "trulia.com",
+        "movoto.com",
+        "redfin.com",
+        "realtor.com",
+        "discoverhomesmiami.com"
+      ]
+    },
+    {
+      "query": "condos for sale in Miami",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)",
+      "who_appears": [
+        "zillow.com",
+        "realtor.com",
+        "trulia.com",
+        "miamicondoinvestments.com",
+        "redfin.com",
+        "homes.com"
+      ]
+    },
+    {
+      "query": "homes for sale North Miami Beach",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 17 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)",
+      "who_appears": [
+        "zillow.com",
+        "trulia.com",
+        "redfin.com",
+        "homes.com",
+        "movoto.com",
+        "sothebysrealty.com"
+      ]
+    },
+    {
+      "query": "apartments for rent in Miami",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)",
+      "who_appears": [
+        "zillow.com",
+        "apartments.com",
+        "miamicondoinvestments.com",
+        "realtor.com",
+        "trulia.com",
+        "rentcafe.com"
+      ]
+    },
+    {
+      "query": "real estate agency in Miami",
+      "appears": false,
+      "position_or_note": "No aparece en los primeros 19 resultados orgánicos (páginas 1 y 2, Google EE. UU., hl=en)",
+      "who_appears": [
+        "zillow.com",
+        "realtor.com",
+        "compass.com",
+        "metro1.com",
+        "realestate.usnews.com",
+        "barnes-miami.com"
+      ]
+    }
   ],
   "search_tests_note": "Búsquedas hechas en Google Estados Unidos (gl=us, mitad en español y mitad en inglés) en un navegador sin sesión, el 18 de noviembre de 2026, leyendo las dos primeras páginas de resultados. Los resultados varían según la persona y el lugar. Al buscar tu marca («metric real estate miami», «metric.la») sí sales primero.",
   "extra_pitch_es": "Hoy un comprador que busca vivienda en Miami en Google no te encuentra en ninguna de 8 búsquedas reales; con páginas por zona, tus fichas del MLS en el mapa del sitio y tus datos de empresa claros, puedes empezar a competir por esos clientes.",
   "checks": [
-    {"id": "seo-appears", "result": "fail", "evidence": "0 of 8 buyer queries on Google USA (4 es, 4 en), pages 1-2 read, 2026-11-18 (raw/seo-search-tests.txt). Only brand queries show metric.la."},
-    {"id": "seo-titles", "result": "partial", "evidence": "Unique descriptive titles on buscar, servicios, contacto, about, property pages. Home /es and /en are only 'Metric Real Estate'; /es/us and /es/us/buscar share 'Metric Real Estate — Miami'; MLS listing title is just the address (both views)."},
-    {"id": "seo-descriptions", "result": "pass", "evidence": "Meta description present on all 10 pages checked (home es/en, us, us/buscar, buscar, servicios, contacto, about, property, MLS listing); /es/us and /es/us/buscar share the same one."},
-    {"id": "seo-h1", "result": "pass", "evidence": "Exactly one H1 on every page checked, in no-JS and rendered views (e.g. home 'Tu próximo hogar, en tu bolsillo', contacto 'Contáctanos')."},
-    {"id": "seo-structured-data", "result": "fail", "evidence": "No Organization/LocalBusiness/RealEstateAgent JSON-LD on any page checked (no-JS and rendered); only RealEstateListing on Colombian property pages."},
-    {"id": "seo-product-pages", "result": "partial", "evidence": "842 Colombian property pages are in the sitemap with canonical, description and RealEstateListing JSON-LD. Miami MLS listing pages exist but are not in the sitemap and lack canonical and JSON-LD."},
-    {"id": "seo-clean-index", "result": "pass", "evidence": "raw/seo-sitemap.xml: 849 URLs, all real pages or properties; no Hello world / sample / author / test URLs."},
-    {"id": "seo-share", "result": "partial", "evidence": "og:title/description/image present everywhere, page-specific on /us and property titles; but servicios, contacto, about and buscar reuse 'Metric Real Estate' / 'Inmobiliaria digital en Colombia' and property og:description is blank."},
-    {"id": "seo-nap", "result": "partial", "evidence": "Colombian phone +57 311 264 8768 consistent across pages; US phone +1 786 470 9890 on /us. Miami address only on About (not on Contacto or /us); name varies ('Metric Real Estate' vs 'Metric Estate' on Facebook and privacy page title); no Google Maps listing visible logged out."},
-    {"id": "seo-ai-ready", "result": "partial", "evidence": "About page has a verifiable fact block (Florida license CQ1074903, office address, expiry, verification link). No FAQ section or FAQPage schema and /llms.txt returns 404."}
+    {
+      "id": "seo-appears",
+      "result": "fail",
+      "evidence": "0 of 8 buyer queries on Google USA (4 es, 4 en), pages 1-2 read, 2026-11-18 (raw/seo-search-tests.txt). Only brand queries show metric.la.",
+      "note_es": "En las 8 búsquedas de compradores en Miami (4 en español y 4 en inglés) no sales en las dos primeras páginas; salen Zillow, Realtor.com y otros portales."
+    },
+    {
+      "id": "seo-titles",
+      "result": "partial",
+      "evidence": "Unique descriptive titles on buscar, servicios, contacto, about, property pages. Home /es and /en are only 'Metric Real Estate'; /es/us and /es/us/buscar share 'Metric Real Estate — Miami'; MLS listing title is just the address (both views).",
+      "note_es": "Casi todas tus páginas tienen título propio, pero el Inicio se llama solo «Metric Real Estate», las dos páginas de Miami comparten «Metric Real Estate — Miami» y cada propiedad de Miami lleva solo la dirección."
+    },
+    {
+      "id": "seo-descriptions",
+      "result": "pass",
+      "evidence": "Meta description present on all 10 pages checked (home es/en, us, us/buscar, buscar, servicios, contacto, about, property, MLS listing); /es/us and /es/us/buscar share the same one."
+    },
+    {
+      "id": "seo-h1",
+      "result": "pass",
+      "evidence": "Exactly one H1 on every page checked, in no-JS and rendered views (e.g. home 'Tu próximo hogar, en tu bolsillo', contacto 'Contáctanos')."
+    },
+    {
+      "id": "seo-structured-data",
+      "result": "fail",
+      "evidence": "No Organization/LocalBusiness/RealEstateAgent JSON-LD on any page checked (no-JS and rendered); only RealEstateListing on Colombian property pages.",
+      "note_es": "Ninguna página le entrega a Google, en su formato, que eres una inmobiliaria con nombre, dirección y teléfono; Google tiene que adivinarlo."
+    },
+    {
+      "id": "seo-product-pages",
+      "result": "partial",
+      "evidence": "842 Colombian property pages are in the sitemap with canonical, description and RealEstateListing JSON-LD. Miami MLS listing pages exist but are not in the sitemap and lack canonical and JSON-LD.",
+      "note_es": "Tus propiedades de Colombia tienen página propia lista para Google, pero las de Miami no están en el mapa del sitio que lee Google ni le dicen cuál es su dirección oficial."
+    },
+    {
+      "id": "seo-clean-index",
+      "result": "pass",
+      "evidence": "raw/seo-sitemap.xml: 849 URLs, all real pages or properties; no Hello world / sample / author / test URLs."
+    },
+    {
+      "id": "seo-share",
+      "result": "partial",
+      "evidence": "og:title/description/image present everywhere, page-specific on /us and property titles; but servicios, contacto, about and buscar reuse 'Metric Real Estate' / 'Inmobiliaria digital en Colombia' and property og:description is blank.",
+      "note_es": "Al compartir Servicios, Contacto, Nosotros o Buscar, el enlace dice «Inmobiliaria digital en Colombia», y tus propiedades se comparten sin descripción."
+    },
+    {
+      "id": "seo-nap",
+      "result": "partial",
+      "evidence": "Colombian phone +57 311 264 8768 consistent across pages; US phone +1 786 470 9890 on /us. Miami address only on About (not on Contacto or /us); name varies ('Metric Real Estate' vs 'Metric Estate' on Facebook and privacy page title); no Google Maps listing visible logged out.",
+      "note_es": "La dirección de Miami solo aparece en Nosotros, no en Contacto ni en la página de Miami, y tu nombre cambia entre «Metric Real Estate» y «Metric Estate»."
+    },
+    {
+      "id": "seo-ai-ready",
+      "result": "partial",
+      "evidence": "About page has a verifiable fact block (Florida license CQ1074903, office address, expiry, verification link). No FAQ section or FAQPage schema and /llms.txt returns 404.",
+      "note_es": "Nosotros tiene datos verificables (licencia de Florida y oficina), pero no tienes preguntas frecuentes ni archivo llms.txt para la IA."
+    }
   ]
 }
